@@ -1,8 +1,14 @@
 //
-//  File.swift
+//  Parse+Vapor.swift
 //  
 //
-//  Created by Corey Baker on 6/20/22.
+//  Created by Corey E. Baker on 6/20/22.
 //
 
-import Foundation
+import Vapor
+import ParseSwift
+
+extension ParseHookFunctionRequest: Content {}
+extension ParseHookTriggerRequest: Content {}
+extension ParseHookResponse: Content {}
+extension ParseFile: Content {}
