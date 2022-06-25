@@ -13,16 +13,16 @@ import Vapor
  Parse Hook Triggers can be created by conforming to
  `ParseHookFunctionable`.
  */
-struct HookTrigger: ParseHookTriggerable {
-    var className: String?
-    var triggerName: ParseHookTriggerType?
-    var url: URL?
+public struct HookTrigger: ParseHookTriggerable {
+    public var className: String?
+    public var triggerName: ParseHookTriggerType?
+    public var url: URL?
 }
 
 // MARK: RoutesBuilder
-extension RoutesBuilder {
+public extension RoutesBuilder {
     @discardableResult
-    public func post<Response>(
+    func post<Response>(
         _ path: PathComponent...,
         className: String,
         triggerName: ParseHookTriggerType,
@@ -51,7 +51,7 @@ extension RoutesBuilder {
     }
 
     @discardableResult
-    public func post<Response>(
+    func post<Response>(
         _ path: [PathComponent],
         className: String,
         triggerName: ParseHookTriggerType,

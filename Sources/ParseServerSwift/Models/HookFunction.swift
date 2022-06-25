@@ -13,15 +13,15 @@ import Vapor
  Parse Hook Functions can be created by conforming to
  `ParseHookFunctionable`.
  */
-struct HookFunction: ParseHookFunctionable {
-    var functionName: String?
-    var url: URL?
+public struct HookFunction: ParseHookFunctionable {
+    public var functionName: String?
+    public var url: URL?
 }
 
 // MARK: RoutesBuilder
-extension RoutesBuilder {
+public extension RoutesBuilder {
     @discardableResult
-    public func post<Response>(
+    func post<Response>(
         _ path: PathComponent...,
         name: String,
         use closure: @escaping (Request) async throws -> Response
@@ -48,7 +48,7 @@ extension RoutesBuilder {
     }
 
     @discardableResult
-    public func post<Response>(
+    func post<Response>(
         _ path: [PathComponent],
         name: String,
         triggerName: ParseHookTriggerType,

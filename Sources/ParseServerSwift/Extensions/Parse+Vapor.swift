@@ -8,6 +8,6 @@
 import Vapor
 import ParseSwift
 
-extension ParseHookFunctionRequest: Content {}
-extension ParseHookTriggerRequest: Content {}
-extension ParseHookResponse: Content {}
+public extension ParseHookFunctionRequest: Content {}
+public extension ParseHookTriggerRequest: Content {}
+public extension ParseHookResponse: Content {}
