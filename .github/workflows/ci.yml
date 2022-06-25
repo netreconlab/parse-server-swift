@@ -59,3 +59,17 @@ jobs:
         with:
           env_vars: LINUX
           fail_ci_if_error: true
+
+  windows:
+    runs-on: windows-2019
+    steps:
+      - uses: actions/checkout@v3
+      - uses: MaxDesiatov/swift-windows-action@v1
+        with:
+          swift-version: "5.5.1"
+          shell-action: swift test --enable-test-discovery --enable-code-coverage -v
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          env_vars: WINDOWS
+          fail_ci_if_error: false
