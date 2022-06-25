@@ -1,4 +1,4 @@
-import App
+import ParseServerSwift
 import Vapor
 
 var env = try Environment.detect()
