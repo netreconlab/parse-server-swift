@@ -60,11 +60,3 @@ jobs:
           env_vars: LINUX
           fail_ci_if_error: true
 
-  windows:
-    runs-on: windows-2019
-    steps:
-      - uses: actions/checkout@v3
-      - uses: MaxDesiatov/swift-windows-action@v1
-        with:
-          swift-version: "5.5.1"
-          shell-action: swift build -v
