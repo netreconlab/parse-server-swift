@@ -16,6 +16,8 @@ import Vapor
 public struct HookFunction: ParseHookFunctionable {
     public var functionName: String?
     public var url: URL?
+    
+    public init() {}
 }
 
 // MARK: RoutesBuilder

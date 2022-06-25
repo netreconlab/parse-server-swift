@@ -17,6 +17,8 @@ public struct HookTrigger: ParseHookTriggerable {
     public var className: String?
     public var triggerName: ParseHookTriggerType?
     public var url: URL?
+
+    public init() {}
 }
 
 // MARK: RoutesBuilder
