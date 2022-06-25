@@ -47,6 +47,9 @@ ParseSwift.initialize(applicationId: "applicationId", // Required: Change to you
 }
 ```
 
+## Starting the Server
+To start your server type, `swift run` in the terminal of the project root directory.
+
 ## Adding `ParseObject`'s
 It is recommended to add all of your `ParseObject`'s to [ParseServerSwift/Sources/ParseServerSwift/Models](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/Models). An example `GameScore` model is provided:
 
