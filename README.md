@@ -14,7 +14,7 @@ it becomes available to all mobile environments instantly. You don’t have to w
 This lets you change app behavior on the fly and add new features faster.
 
 ## Configure ParseServerSwift
-To configure, you should edit [ParseServerSwift/Sources/ParseServerSwift/configure.swift](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/App/configure.swift)
+To configure, you should edit [ParseServerSwift/Sources/ParseServerSwift/configure.swift](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/configure.swift)
 
 ### WebhookKey
 The `webhookKey` should match the [webhookKey on the Parse Server](https://github.com/parse-community/parse-server/blob/42c954318926823446326c95188b844e19954711/src/Options/Definitions.js#L491-L494). If you decide not the a `webhookKey`, set the value to `nil` in your ParseServerSwift.
@@ -29,7 +29,7 @@ app.http.server.configuration.tlsConfiguration = .none
 ```
 
 ### Parse Swift SDK
-Configure the SDK as described in the [documentation](https://parseplatform.org/Parse-Swift/release/documentation/parseswift/parseswift/initialize(applicationid:clientkey:masterkey:serverurl:livequeryserverurl:allowingcustomobjectids:usingtransactions:usingequalqueryconstraint:keyvaluestore:requestcachepolicy:cachememorycapacity:cachediskcapacity:migratingfromobjcsdk:deleti-97083)).
+Configure the SDK as described in the [documentation](https://parseplatform.org/Parse-Swift/release/documentation/parseswift/parseswift/initialize(configuration:)).
 
 ```swift
 // Required: Change to your Parse Server serverURL.
