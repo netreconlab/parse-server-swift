@@ -6,6 +6,9 @@ let package = Package(
     platforms: [
        .macOS(.v12)
     ],
+    products: [
+            .library(name: "ParseServerSwift", targets: ["ParseServerSwift"])
+    ],
     dependencies: [
         // 💧 A server-side Swift web framework.
         .package(url: "https://github.com/vapor/vapor.git", .upToNextMajor(from: "4.62.0")),
@@ -15,7 +18,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "App",
+            name: "ParseServerSwift",
             dependencies: [
                 .product(name: "Leaf", package: "leaf"),
                 .product(name: "Vapor", package: "vapor"),
@@ -28,9 +31,9 @@ let package = Package(
                 .unsafeFlags(["-cross-module-optimization"], .when(configuration: .release))
             ]
         ),
-        .executableTarget(name: "Run", dependencies: [.target(name: "App")]),
-        .testTarget(name: "AppTests", dependencies: [
-            .target(name: "App"),
+        .executableTarget(name: "Run", dependencies: [.target(name: "ParseServerSwift")]),
+        .testTarget(name: "ParseServerSwiftTests", dependencies: [
+            .target(name: "ParseServerSwift"),
             .product(name: "XCTVapor", package: "vapor"),
         ])
     ]

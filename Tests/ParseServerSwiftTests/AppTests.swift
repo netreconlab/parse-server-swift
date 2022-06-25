@@ -1,4 +1,4 @@
-@testable import App
+@testable import ParseServerSwift
 import XCTVapor
 
 final class AppTests: XCTestCase {

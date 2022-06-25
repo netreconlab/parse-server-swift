@@ -13,16 +13,25 @@ import Vapor
  Parse Hook Triggers can be created by conforming to
  `ParseHookFunctionable`.
  */
-struct HookTrigger: ParseHookTriggerable {
-    var className: String?
-    var triggerName: ParseHookTriggerType?
-    var url: URL?
+public struct HookTrigger: ParseHookTriggerable {
+    public var className: String?
+    public var triggerName: ParseHookTriggerType?
+    public var url: URL?
+
+    public init() {}
 }
 
 // MARK: RoutesBuilder
-extension RoutesBuilder {
+public extension RoutesBuilder {
+    /**
+     Creates a new route and for a Parse Cloud Code hook trigger.
+     - parameter path: A variadic list of paths.
+     - parameter className: The name of the `ParseObject` the trigger should act on.
+     - parameter triggerName: The `ParseHookTriggerType` type.
+     - parameter url: The endpoint of the hook.
+     */
     @discardableResult
-    public func post<Response>(
+    func post<Response>(
         _ path: PathComponent...,
         className: String,
         triggerName: ParseHookTriggerType,
@@ -50,8 +59,15 @@ extension RoutesBuilder {
         return self.post(path, use: closure)
     }
 
+    /**
+     Creates a new route and for a Parse Cloud Code hook trigger.
+     - parameter path: An array of paths.
+     - parameter className: The name of the `ParseObject` the trigger should act on.
+     - parameter triggerName: The `ParseHookTriggerType` type.
+     - parameter url: The endpoint of the hook.
+     */
     @discardableResult
-    public func post<Response>(
+    func post<Response>(
         _ path: [PathComponent],
         className: String,
         triggerName: ParseHookTriggerType,

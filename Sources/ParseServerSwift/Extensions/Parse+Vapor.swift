@@ -11,4 +11,3 @@ import ParseSwift
 extension ParseHookFunctionRequest: Content {}
 extension ParseHookTriggerRequest: Content {}
 extension ParseHookResponse: Content {}
-extension ParseFile: Content {}

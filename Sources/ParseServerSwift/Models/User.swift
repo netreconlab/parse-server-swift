@@ -13,7 +13,7 @@ import Vapor
  An example `ParseUser`. You will want to replace this
  with your version of `ParseUser`.
  */
-struct User: ParseCloudUser, Content {
+struct User: ParseCloudUser {
 
     var authData: [String: [String: String]?]?
     var username: String?
