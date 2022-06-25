@@ -2,8 +2,11 @@ import Leaf
 import ParseSwift
 import Vapor
 
-var webhookKey: String? = "webhookKey" // Change to your Parse Server's webhookKey or comment out.
-var serverPathname: String? // The current address of ParseServerSwift.
+/// The key used to authenticate incoming webhook calls from a Parse Server
+var webhookKey: String? = "webhookKey" // Change to match your Parse Server's webhookKey or comment out.
+
+/// The current address of ParseServerSwift.
+var serverPathname: String?
 
 // configures your application
 public func configure(_ app: Application) throws {
@@ -18,11 +21,16 @@ public func configure(_ app: Application) throws {
     ContentConfiguration.global.use(encoder: User.getJSONEncoder(), for: .json)
     ContentConfiguration.global.use(decoder: User.getDecoder(), for: .json)
 
+    guard let parseServerUrl = URL(string: "http://localhost:1337/1") else {
+        throw ParseError(code: .unknownError,
+                         message: "Could not make Parse Server URL")
+    }
+
     // Initialize the Parse-Swift SDK
     ParseSwift.initialize(applicationId: "applicationId", // Change to your applicationId
                           clientKey: "clientKey", // Change to your clientKey
                           masterKey: "masterKey", // Change to your masterKey
-                          serverURL: URL(string: "http://localhost:1337/1")!, // Change to your serverURL
+                          serverURL: parseServerUrl, // Change to your serverURL
                           allowingCustomObjectIds: false,
                           usingEqualQueryConstraint: false) { _, completionHandler in
         completionHandler(.performDefaultHandling, nil)
@@ -30,9 +38,10 @@ public func configure(_ app: Application) throws {
 
     Task {
         do {
-            print("Parse Server health is \"\(try await ParseHealth.check())\"")
+            let parseHealth = try await ParseHealth.check()
+            app.logger.notice("Parse Server (\(parseServerUrl.absoluteString)) health is \"\(parseHealth)\"")
         } catch {
-            print("Could not connect to Parse Server: \(error)")
+            app.logger.error("Could not connect to Parse Server (\(parseServerUrl.absoluteString)): \(error)")
         }
     }
 

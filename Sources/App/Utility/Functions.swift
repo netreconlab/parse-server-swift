@@ -23,54 +23,11 @@ func checkHeaders<T>(_ req: Request) -> ParseHookResponse<T>? {
     return nil
 }
 
-/**
- Register all Parse Hooks.
- */
-func registerHooks() async {
-    await registerFunctions()
-    await registerTriggers()
-}
-
-/**
- Register all Parse Hook Functions.
- - note: Add all of your Parse Hook Functions in this method.
- */
-func registerFunctions() async {
-    do {
-        let url = try buildServerPathname(["foo"])
-        let hookFunction = HookFunction(name: "foo",
-                                        url: url)
-        do {
-            _ = try await hookFunction.create()
-        } catch {
-            print("Could not create \"\(hookFunction)\" function: \(error)")
-        }
-    } catch {
-        print("Could not create server path: \(error)")
-    }
-}
-
-/**
- Register all Parse Hook Triggers.
- - note: Add all of your Parse Hook Triggers in this method.
- */
-func registerTriggers() async {
-    do {
-        let url = try buildServerPathname(["bar"])
-        let hookTrigger = HookTrigger(className: "GameScore",
-                                      triggerName: .afterSave,
-                                      url: url)
-        do {
-            _ = try await hookTrigger.create()
-        } catch {
-            print("Could not create \"\(hookTrigger)\" trigger: \(error)")
-        }
-    } catch {
-        print("Could not create server path: \(error)")
-    }
-}
-
 extension HTTPServer.Configuration {
+    /**
+     Construct the full server pathname.
+     - returns: The server path with scheme, hostname, and port.
+     */
     func buildServerURL() -> String {
         let scheme = tlsConfiguration == nil ? "http" : "https"
         let addressDescription: String
@@ -84,10 +41,14 @@ extension HTTPServer.Configuration {
     }
 }
 
+/**
+ Construct the full server pathname with route.
+ - returns: The server path with scheme, hostname, port, and route.
+ */
 func buildServerPathname(_ path: [PathComponent]) throws -> URL {
-    let pathString = path.map { "\($0)" }.joined(separator: "/")
+    let pathString = "/" + path.map { "\($0)" }.joined(separator: "/")
     guard let serverPathname = serverPathname,
-          let url = URL(string: serverPathname)?.appendingPathComponent("/"+pathString) else {
+          let url = URL(string: serverPathname)?.appendingPathComponent(pathString) else {
         throw ParseError(code: .unknownError,
                          message: "Cannot create a pathname for the server")
     }
