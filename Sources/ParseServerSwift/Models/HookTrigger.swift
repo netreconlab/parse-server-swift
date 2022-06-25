@@ -23,6 +23,13 @@ public struct HookTrigger: ParseHookTriggerable {
 
 // MARK: RoutesBuilder
 public extension RoutesBuilder {
+    /**
+     Creates a new route and for a Parse Cloud Code hook trigger.
+     - parameter path: A variadic list of paths.
+     - parameter className: The name of the `ParseObject` the trigger should act on.
+     - parameter triggerName: The `ParseHookTriggerType` type.
+     - parameter url: The endpoint of the hook.
+     */
     @discardableResult
     func post<Response>(
         _ path: PathComponent...,
@@ -52,6 +59,13 @@ public extension RoutesBuilder {
         return self.post(path, use: closure)
     }
 
+    /**
+     Creates a new route and for a Parse Cloud Code hook trigger.
+     - parameter path: An array of paths.
+     - parameter className: The name of the `ParseObject` the trigger should act on.
+     - parameter triggerName: The `ParseHookTriggerType` type.
+     - parameter url: The endpoint of the hook.
+     */
     @discardableResult
     func post<Response>(
         _ path: [PathComponent],

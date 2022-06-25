@@ -22,6 +22,12 @@ public struct HookFunction: ParseHookFunctionable {
 
 // MARK: RoutesBuilder
 public extension RoutesBuilder {
+    /**
+     Creates a new route and for a Parse Cloud Code hook function.
+     - parameter path: A variadic list of paths.
+     - parameter name: The name of the function.
+     - parameter url: The endpoint of the hook.
+     */
     @discardableResult
     func post<Response>(
         _ path: PathComponent...,
@@ -49,6 +55,12 @@ public extension RoutesBuilder {
         return self.post(path, use: closure)
     }
 
+    /**
+     Creates a new route and for a Parse Cloud Code hook function.
+     - parameter path: An array of paths.
+     - parameter name: The name of the function.
+     - parameter url: The endpoint of the hook.
+     */
     @discardableResult
     func post<Response>(
         _ path: [PathComponent],
