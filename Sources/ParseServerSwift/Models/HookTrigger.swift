@@ -58,12 +58,12 @@ public extension RoutesBuilder {
                     _ = try await hookTrigger.create()
                 } catch {
                     if !error.equalsTo(.invalidImageData) {
-                        print("Could not create \"\(String(describing: hookTrigger))\" trigger: \(error)")
+                        logger.error("Could not create \"\(String(describing: hookTrigger))\" trigger: \(error)")
                     }
                 }
             }
         } catch {
-            print(error)
+            logger.error("\(error)")
         }
         return self.post(path, use: closure)
     }
@@ -102,12 +102,12 @@ public extension RoutesBuilder {
                     _ = try await hookTrigger.create()
                 } catch {
                     if !error.equalsTo(.invalidImageData) {
-                        print("Could not create \"\(String(describing: hookTrigger))\" trigger: \(error)")
+                        logger.error("Could not create \"\(String(describing: hookTrigger))\" trigger: \(error)")
                     }
                 }
             }
         } catch {
-            print(error)
+            logger.error("\(error)")
         }
         return self.post(path, use: closure)
     }
