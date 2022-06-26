@@ -29,11 +29,12 @@ public extension RoutesBuilder {
      - parameter className: The name of the `ParseObject` the trigger should act on.
      - parameter triggerName: The `ParseHookTriggerType` type.
      - parameter url: The endpoint of the hook.
+     - warning: `className` should only be **nil** when creating `ParseFile` and `.beforeConnect` triggers.
      */
     @discardableResult
     func post<Response>(
         _ path: PathComponent...,
-        className: String,
+        className: String? = nil,
         triggerName: ParseHookTriggerType,
         use closure: @escaping (Request) async throws -> Response
     ) -> Route
@@ -41,15 +42,23 @@ public extension RoutesBuilder {
     {
         do {
             let url = try buildServerPathname(path)
-            let hookTrigger = HookTrigger(className: className,
+            let hookTrigger: HookTrigger!
+            
+            if let className = className {
+                hookTrigger = HookTrigger(className: className,
                                           triggerName: triggerName,
                                           url: url)
+            } else {
+                hookTrigger = try HookTrigger(triggerName: triggerName,
+                                              url: url)
+            }
+            
             Task {
                 do {
                     _ = try await hookTrigger.create()
                 } catch {
                     if !error.equalsTo(.invalidImageData) {
-                        print("Could not create \"\(hookTrigger)\" trigger: \(error)")
+                        print("Could not create \"\(String(describing: hookTrigger))\" trigger: \(error)")
                     }
                 }
             }
@@ -65,11 +74,12 @@ public extension RoutesBuilder {
      - parameter className: The name of the `ParseObject` the trigger should act on.
      - parameter triggerName: The `ParseHookTriggerType` type.
      - parameter url: The endpoint of the hook.
+     - warning: `className` should only be **nil** when creating `ParseFile` and `.beforeConnect` triggers.
      */
     @discardableResult
     func post<Response>(
         _ path: [PathComponent],
-        className: String,
+        className: String? = nil,
         triggerName: ParseHookTriggerType,
         use closure: @escaping (Request) async throws -> Response
     ) -> Route
@@ -77,15 +87,22 @@ public extension RoutesBuilder {
     {
         do {
             let url = try buildServerPathname(path)
-            let hookTrigger = HookTrigger(className: className,
-                                          triggerName: .afterSave,
+            let hookTrigger: HookTrigger!
+            
+            if let className = className {
+                hookTrigger = HookTrigger(className: className,
+                                          triggerName: triggerName,
                                           url: url)
+            } else {
+                hookTrigger = try HookTrigger(triggerName: triggerName,
+                                              url: url)
+            }
             Task {
                 do {
                     _ = try await hookTrigger.create()
                 } catch {
                     if !error.equalsTo(.invalidImageData) {
-                        print("Could not create \"\(hookTrigger)\" trigger: \(error)")
+                        print("Could not create \"\(String(describing: hookTrigger))\" trigger: \(error)")
                     }
                 }
             }
