@@ -40,9 +40,9 @@ guard let parseServerUrl = URL(string: "http://localhost:1337/1") else {
 
 // Initialize the Parse-Swift SDK
 ParseSwift.initialize(applicationId: "applicationId", // Required: Change to your applicationId.
-                        clientKey: "clientKey", // Required: Change to your clientKey.
-                        masterKey: "masterKey", // Required: Change to your masterKey.
-                        serverURL: parseServerUrl) { _, completionHandler in
+                      clientKey: "clientKey", // Required: Change to your clientKey.
+                      masterKey: "masterKey", // Required: Change to your masterKey.
+                      serverURL: parseServerUrl) { _, completionHandler in
     completionHandler(.performDefaultHandling, nil)
 }
 ```
@@ -119,10 +119,11 @@ app.post("foo",
 
 ### Cloud Code Triggers
 ```swift
+// A Parse Hook Trigger route.
 app.post("bar",
          className: "GameScore",
-         triggerName: .afterSave) { req async throws -> ParseHookResponse<Bool> in
-    if let error: ParseHookResponse<Bool> = checkHeaders(req) {
+         triggerName: .beforeSave) { req async throws -> ParseHookResponse<GameScore> in
+    if let error: ParseHookResponse<GameScore> = checkHeaders(req) {
         return error
     }
     var parseRequest = try req.content
@@ -133,10 +134,101 @@ app.post("bar",
         parseRequest = try await parseRequest.hydrateUser()
     }
 
+    guard let object = parseRequest.object else {
+        return ParseHookResponse(error: .init(code: .missingObjectId,
+                                              message: "Object not sent in request."))
+    }
     // To query using the masterKey pass the `useMasterKey option
     // to ther query.
     let scores = try await GameScore.query.findAll(options: [.useMasterKey])
     req.logger.info("All scores: \(scores)")
+    return ParseHookResponse(success: object)
+}
+
+// A Parse Hook Trigger route.
+app.post("find",
+         className: "GameScore",
+         triggerName: .beforeFind) { req async throws -> ParseHookResponse<[GameScore]> in
+    if let error: ParseHookResponse<[GameScore]> = checkHeaders(req) {
+        return error
+    }
+    let parseRequest = try req.content
+        .decode(ParseHookTriggerRequest<User, GameScore>.self)
+    req.logger.info("A query is being made: \(parseRequest)")
+    let score1 = GameScore(objectId: "yolo",
+                           createdAt: Date(),
+                           points: 50)
+    let score2 = GameScore(objectId: "yolo",
+                           createdAt: Date(),
+                           points: 60)
+    return ParseHookResponse(success: [score1, score2])
+}
+
+// A Parse Hook Trigger route.
+app.post("login",
+         className: "_User",
+         triggerName: .afterLogin) { req async throws -> ParseHookResponse<Bool> in
+    if let error: ParseHookResponse<Bool> = checkHeaders(req) {
+        return error
+    }
+    let parseRequest = try req.content
+        .decode(ParseHookTriggerRequest<User, GameScore>.self)
+
+    req.logger.info("A user has logged in: \(parseRequest)")
+    return ParseHookResponse(success: true)
+}
+
+// A Parse Hook Trigger route.
+app.post("file",
+         triggerName: .afterDelete) { req async throws -> ParseHookResponse<Bool> in
+    if let error: ParseHookResponse<Bool> = checkHeaders(req) {
+        return error
+    }
+    let parseRequest = try req.content
+        .decode(ParseHookTriggerRequest<User, GameScore>.self)
+
+    req.logger.info("A ParseFile is being saved: \(parseRequest)")
+    return ParseHookResponse(success: true)
+}
+
+// A Parse Hook Trigger route.
+app.post("connect",
+         triggerName: .beforeConnect) { req async throws -> ParseHookResponse<Bool> in
+    if let error: ParseHookResponse<Bool> = checkHeaders(req) {
+        return error
+    }
+    let parseRequest = try req.content
+        .decode(ParseHookTriggerRequest<User, GameScore>.self)
+
+    req.logger.info("A LiveQuery connection is being made: \(parseRequest)")
+    return ParseHookResponse(success: true)
+}
+
+// A Parse Hook Trigger route.
+app.post("subscribe",
+         className: "GameScore",
+         triggerName: .beforeSubscribe) { req async throws -> ParseHookResponse<Bool> in
+    if let error: ParseHookResponse<Bool> = checkHeaders(req) {
+        return error
+    }
+    let parseRequest = try req.content
+        .decode(ParseHookTriggerRequest<User, GameScore>.self)
+
+    req.logger.info("A LiveQuery subscribe is being made: \(parseRequest)")
+    return ParseHookResponse(success: true)
+}
+
+// A Parse Hook Trigger route.
+app.post("event",
+         className: "GameScore",
+         triggerName: .afterEvent) { req async throws -> ParseHookResponse<Bool> in
+    if let error: ParseHookResponse<Bool> = checkHeaders(req) {
+        return error
+    }
+    let parseRequest = try req.content
+        .decode(ParseHookTriggerRequest<User, GameScore>.self)
+
+    req.logger.info("A LiveQuery event occured: \(parseRequest)")
     return ParseHookResponse(success: true)
 }
 ```

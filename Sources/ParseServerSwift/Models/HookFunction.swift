@@ -16,7 +16,7 @@ import Vapor
 public struct HookFunction: ParseHookFunctionable {
     public var functionName: String?
     public var url: URL?
-    
+
     public init() {}
 }
 
@@ -45,12 +45,12 @@ public extension RoutesBuilder {
                     _ = try await hookFunction.create()
                 } catch {
                     if !error.equalsTo(.invalidImageData) {
-                        print("Could not create \"\(hookFunction)\" function: \(error)")
+                        logger.error("Could not create \"\(hookFunction)\" function: \(error)")
                     }
                 }
             }
         } catch {
-            print(error)
+            logger.error("\(error)")
         }
         return self.post(path, use: closure)
     }
@@ -79,12 +79,12 @@ public extension RoutesBuilder {
                     _ = try await hookFunction.create()
                 } catch {
                     if !error.equalsTo(.invalidImageData) {
-                        print("Could not create \"\(hookFunction)\" function: \(error)")
+                        logger.error("Could not create \"\(hookFunction)\" function: \(error)")
                     }
                 }
             }
         } catch {
-            print(error)
+            logger.error("\(error)")
         }
         return self.post(path, use: closure)
     }

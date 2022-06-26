@@ -8,6 +8,8 @@ let webhookKey: String? = "webhookKey" // Change to match your Parse Server's we
 /// The current address of ParseServerSwift.
 var serverPathname: String!
 
+let logger = Logger(label: "edu.parseserverswift")
+
 // configures your application
 public func configure(_ app: Application) throws {
     // uncomment to serve files from /Public folder
