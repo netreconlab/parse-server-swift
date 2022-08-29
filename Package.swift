@@ -11,10 +11,10 @@ let package = Package(
     ],
     dependencies: [
         // 💧 A server-side Swift web framework.
-        .package(url: "https://github.com/vapor/vapor.git", .upToNextMajor(from: "4.62.0")),
-        .package(url: "https://github.com/vapor/leaf.git", .upToNextMajor(from: "4.2.0")),
+        .package(url: "https://github.com/vapor/vapor.git", .upToNextMajor(from: "4.65.1")),
+        .package(url: "https://github.com/vapor/leaf.git", .upToNextMajor(from: "4.2.1")),
         .package(url: "https://github.com/parse-community/Parse-Swift.git",
-                 .upToNextMajor(from: "4.7.0"))
+                 .upToNextMajor(from: "4.9.1"))
     ],
     targets: [
         .target(

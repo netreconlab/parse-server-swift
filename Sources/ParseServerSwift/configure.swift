@@ -36,7 +36,8 @@ public func configure(_ app: Application) throws {
     ParseSwift.initialize(applicationId: "applicationId", // Required: Change to your applicationId.
                           clientKey: "clientKey", // Required: Change to your clientKey.
                           masterKey: "masterKey", // Required: Change to your masterKey.
-                          serverURL: parseServerUrl) { _, completionHandler in
+                          serverURL: parseServerUrl,
+                          usingPostForQuery: true) { _, completionHandler in
         completionHandler(.performDefaultHandling, nil)
     }
 
