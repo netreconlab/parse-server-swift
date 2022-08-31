@@ -7,7 +7,6 @@
 
 import Foundation
 import ParseSwift
-import Vapor
 
 /**
  An example `ParseUser`. You will want to replace this
