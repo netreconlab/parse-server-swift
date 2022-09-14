@@ -1,0 +1,20 @@
+name: release
+on:
+  release:
+    types: [published]
+env:
+  CI_XCODE_VER: '/Applications/Xcode_12.app/Contents/Developer'
+  CI_XCODE_13: '/Applications/Xcode_13.4.1.app/Contents/Developer'
+  
+jobs:
+  docs:
+    runs-on: macos-12
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use multiple cores
+        run: defaults write com.apple.dt.XCBuild EnableSwiftBuildSystemIntegration 1
+      - name: Build and Deploy Docs
+        run: set -o pipefail && env NSUnbufferedIO=YES Scripts/update-gh-pages-documentation-site
+        env:
+          CURRENT_BRANCH_NAME: release
+          DEVELOPER_DIR: ${{ env.CI_XCODE_13 }}

@@ -1,0 +1,58 @@
+@Tutorial(time: 5) {
+    @Intro(title: "Configuring Parse Swift Server") {
+        To configure, you should edit [ParseServerSwift/Sources/ParseServerSwift/configure.swift](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/configure.swift)
+    }
+    
+    @Section(title: "WebhookKey") {
+        @Steps {
+            @Step {
+                The `webhookKey` should match the [webhookKey on the Parse Server](https://github.com/parse-community/parse-server/blob/42c954318926823446326c95188b844e19954711/src/Options/Definitions.js#L491-L494). If you decide not the a `webhookKey`, set the value to `nil` in your ParseServerSwift.
+            }
+        }
+    }
+
+    @Section(title: "Hostname, Port, and TLS") {
+        @Steps {
+            @Step {
+                By default, the hostname is `127.0.0.1` and the port is `8081`. These values can easily be changed:
+                ```swift
+                app.http.server.configuration.hostname = "your.hostname.com"
+                app.http.server.configuration.port = 8081
+                app.http.server.configuration.tlsConfiguration = .none
+                ```
+            }
+        }
+    }
+
+    @Section(title: "Parse Swift SDK") {
+        @Steps {
+            @Step {
+                Configure the SDK as described in the [documentation](https://parseplatform.org/Parse-Swift/release/documentation/parseswift/).
+                ```swift
+                // Required: Change to your Parse Server serverURL.
+                guard let parseServerUrl = URL(string: "http://localhost:1337/1") else {
+                    throw ParseError(code: .unknownError,
+                                     message: "Could not make Parse Server URL")
+                }
+
+                // Initialize the Parse-Swift SDK
+                ParseSwift.initialize(applicationId: "applicationId", // Required: Change to your applicationId.
+                                      clientKey: "clientKey", // Required: Change to your clientKey.
+                                      masterKey: "masterKey", // Required: Change to your masterKey.
+                                      serverURL: parseServerUrl,
+                                      usingPostForQuery: true) { _, completionHandler in
+                    completionHandler(.performDefaultHandling, nil)
+                }
+                ```
+            }
+        }
+    }
+
+    @Section(title: "Starting Parse Swift Server") {
+        @Steps {
+            @Step {
+                To start your server type, `swift run` in the terminal of the project root directory.
+            }
+        }
+    }
+}

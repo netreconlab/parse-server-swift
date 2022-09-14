@@ -14,7 +14,7 @@ let package = Package(
         .package(url: "https://github.com/vapor/vapor.git", .upToNextMajor(from: "4.65.1")),
         .package(url: "https://github.com/vapor/leaf.git", .upToNextMajor(from: "4.2.1")),
         .package(url: "https://github.com/parse-community/Parse-Swift.git",
-                 .upToNextMajor(from: "4.9.1"))
+                 .upToNextMajor(from: "4.13.1")),
     ],
     targets: [
         .target(

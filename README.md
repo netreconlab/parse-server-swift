@@ -5,7 +5,7 @@
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fnetreconlab%2Fparse-server-swift%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/netreconlab/parse-server-swift)
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fnetreconlab%2Fparse-server-swift%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/netreconlab/parse-server-swift)
 
-Write Cloud Code in Swift!
+Write Parse Cloud Code in Swift!
 
 What is Cloud Code? For complex apps, sometimes you just need logic that isn’t running on a mobile device. Cloud Code makes this possible.
 Cloud Code in ParseServerSwift is easy to use because it’s built using [Parse-Swift](https://github.com/parse-community/Parse-Swift) 
@@ -29,7 +29,7 @@ app.http.server.configuration.tlsConfiguration = .none
 ```
 
 ### Parse Swift SDK
-Configure the SDK as described in the [documentation](https://parseplatform.org/Parse-Swift/release/documentation/parseswift/parseswift/initialize(configuration:)).
+Configure the SDK as described in the [documentation](https://parseplatform.org/Parse-Swift/release/documentation/parseswift/).
 
 ```swift
 // Required: Change to your Parse Server serverURL.

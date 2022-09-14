@@ -1,0 +1,21 @@
+@Tutorial(time: 3) {
+    @Intro(title: "Adding ParseObjects") {
+        The ParseObject models in your server should mirror the same models in your client applications.
+    }
+    
+    @Section(title: "Example Models") {
+        @Steps {
+            @Step {
+                It is recommended to add all of your `ParseObject`'s to [ParseServerSwift/Sources/ParseServerSwift/Models](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/Models).
+                
+                @Code(name: "GameScore Model", file: GameScore.swift)
+            }
+            
+            @Step {
+                Be sure to add all of the additional properties you have in your `_User` class to the `User` model which is located at [ParseServerSwift/Sources/ParseServerSwift/Models/User.swift](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/Models/User.swift).
+                
+                @Code(name: "User Model", file: GameScore.swift)
+            }
+        }
+    }
+}
