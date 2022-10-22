@@ -54,9 +54,9 @@ func routes(_ app: Application) throws {
             return ParseHookResponse(error: .init(code: .missingObjectId,
                                                   message: "Object not sent in request."))
         }
-        // To query using the masterKey pass the `useMasterKey option
+        // To query using the primaryKey pass the `usePrimaryKey` option
         // to ther query.
-        let scores = try await GameScore.query.findAll(options: [.useMasterKey])
+        let scores = try await GameScore.query.findAll(options: [.usePrimaryKey])
         req.logger.info("All scores: \(scores)")
         return ParseHookResponse(success: object)
     }
