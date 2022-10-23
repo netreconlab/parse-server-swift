@@ -41,7 +41,7 @@ guard let parseServerUrl = URL(string: "http://localhost:1337/1") else {
 // Initialize the Parse-Swift SDK
 ParseSwift.initialize(applicationId: "applicationId", // Required: Change to your applicationId.
                       clientKey: "clientKey", // Required: Change to your clientKey.
-                      masterKey: "masterKey", // Required: Change to your masterKey.
+                      primaryKey: "primaryKey", // Required: Change to your primaryKey.
                       serverURL: parseServerUrl,
                       usingPostForQuery: true) { _, completionHandler in
     completionHandler(.performDefaultHandling, nil)
@@ -139,9 +139,9 @@ app.post("bar",
         return ParseHookResponse(error: .init(code: .missingObjectId,
                                               message: "Object not sent in request."))
     }
-    // To query using the masterKey pass the `useMasterKey option
+    // To query using the primaryKey pass the `usePrimaryKey` option
     // to ther query.
-    let scores = try await GameScore.query.findAll(options: [.useMasterKey])
+    let scores = try await GameScore.query.findAll(options: [.usePrimaryKey])
     req.logger.info("All scores: \(scores)")
     return ParseHookResponse(success: object)
 }

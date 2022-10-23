@@ -35,7 +35,7 @@ public func configure(_ app: Application) throws {
     // Initialize the Parse-Swift SDK
     ParseSwift.initialize(applicationId: "applicationId", // Required: Change to your applicationId.
                           clientKey: "clientKey", // Required: Change to your clientKey.
-                          masterKey: "masterKey", // Required: Change to your masterKey.
+                          primaryKey: "primaryKey", // Required: Change to your primaryKey.
                           serverURL: parseServerUrl,
                           usingPostForQuery: true) { _, completionHandler in
         completionHandler(.performDefaultHandling, nil)
