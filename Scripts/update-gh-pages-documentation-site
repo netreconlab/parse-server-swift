@@ -66,14 +66,14 @@ CURRENT_COMMIT_HASH=`git rev-parse --short HEAD`
 cd gh-pages
 git add "$DEPLOYMENT_SUBDIRECTORY"
 
-if [ -n "$(git status --porcelain)" ]; then
+#if [ -n "$(git status --porcelain)" ]; then
     echo "Documentation changes found. Commiting the changes to the 'gh-pages' branch and pushing to origin."
     git commit -m "Update documentation to $CURRENT_COMMIT_HASH on '$CURRENT_BRANCH_NAME'"
     git push origin HEAD:gh-pages
-else
-  # No changes found, nothing to commit.
-  echo "No documentation changes found."
-fi
+#else
+#  # No changes found, nothing to commit.
+#  echo "No documentation changes found."
+#fi
 
 # Delete the git worktree we created
 cd ..
