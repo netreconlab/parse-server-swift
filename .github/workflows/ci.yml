@@ -66,8 +66,7 @@ jobs:
           fail_ci_if_error: true
 
   docs:
-    timeout-minutes: 10
-    needs: spm-test
+    timeout-minutes: 20
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
