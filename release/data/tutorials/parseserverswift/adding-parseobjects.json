@@ -1,0 +1,408 @@
+{
+  "hierarchy" : {
+    "modules" : [
+
+    ],
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/$volume"
+      ]
+    ],
+    "reference" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift"
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/Adding-ParseObjects"
+  },
+  "kind" : "project",
+  "metadata" : {
+    "category" : "ParseServerSwift",
+    "categoryPathComponent" : "ParseServerSwift",
+    "role" : "project",
+    "title" : "Adding ParseObjects"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+    {
+      "chapter" : "$volume",
+      "content" : [
+        {
+          "inlineContent" : [
+            {
+              "text" : "The ParseObject models in your server should mirror the same models in your client applications.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "estimatedTimeInMinutes" : 3,
+      "kind" : "hero",
+      "title" : "Adding ParseObjects"
+    },
+    {
+      "kind" : "tasks",
+      "tasks" : [
+        {
+          "anchor" : "Example-Models",
+          "contentSection" : [
+
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+
+              ],
+              "code" : "GameScore.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "It is recommended to add all of your ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "ParseObject",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : "’s to ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/github.com\/netreconlab\/ParseServerSwift\/blob\/main\/Sources\/ParseServerSwift\/Models",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "GameScore.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Be sure to add all of the additional properties you have in your ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "_User",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " class to the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "User",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " model which is located at ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/github.com\/netreconlab\/ParseServerSwift\/blob\/main\/Sources\/ParseServerSwift\/Models\/User.swift",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Example Models"
+        }
+      ]
+    },
+    {
+      "abstract" : [
+        {
+          "text" : "Adding routes for ParseHooks are as simple as adding ",
+          "type" : "text"
+        },
+        {
+          "identifier" : "https:\/\/docs.vapor.codes\/basics\/routing\/",
+          "isActive" : true,
+          "type" : "reference"
+        },
+        {
+          "text" : ". ",
+          "type" : "text"
+        },
+        {
+          "code" : "ParseServerSwift",
+          "type" : "codeVoice"
+        },
+        {
+          "text" : " adds some additional methods to routes to easily create and register ",
+          "type" : "text"
+        },
+        {
+          "identifier" : "https:\/\/parseplatform.org\/Parse-Swift\/release\/documentation\/parseswift\/parsehookfunctionable",
+          "isActive" : true,
+          "type" : "reference"
+        },
+        {
+          "text" : " and ",
+          "type" : "text"
+        },
+        {
+          "identifier" : "https:\/\/parseplatform.org\/Parse-Swift\/release\/documentation\/parseswift\/parsehooktriggerable\/",
+          "isActive" : true,
+          "type" : "reference"
+        },
+        {
+          "text" : ". All routes should be added to ",
+          "type" : "text"
+        },
+        {
+          "identifier" : "https:\/\/github.com\/netreconlab\/ParseServerSwift\/blob\/main\/Sources\/ParseServerSwift\/routes.swift",
+          "isActive" : true,
+          "type" : "reference"
+        }
+      ],
+      "action" : {
+        "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/Cloud-Code",
+        "isActive" : true,
+        "overridingTitle" : "Get started",
+        "overridingTitleInlineContent" : [
+          {
+            "text" : "Get started",
+            "type" : "text"
+          }
+        ],
+        "type" : "reference"
+      },
+      "featuredEyebrow" : "Tutorial",
+      "kind" : "callToAction",
+      "title" : "Cloud Code"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/tutorials\/parseserverswift\/adding-parseobjects"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"GameScore.swift": {
+  "content" : [
+    "\/\/",
+    "\/\/  GameScore.swift",
+    "\/\/  ",
+    "\/\/",
+    "\/\/  Created by Corey Baker on 8\/31\/22.",
+    "\/\/",
+    "",
+    "import Foundation",
+    "import ParseSwift",
+    "",
+    "\/**",
+    " An example `ParseObject`. This is for testing. You can",
+    " remove when creating your application.",
+    " *\/",
+    "struct GameScore: ParseObject {",
+    "    \/\/ These are required by ParseObject.",
+    "    var objectId: String?",
+    "    var createdAt: Date?",
+    "    var updatedAt: Date?",
+    "    var ACL: ParseACL?",
+    "    var originalData: Data?",
+    "",
+    "    \/\/ Your own properties.",
+    "    var points: Int?",
+    "",
+    "    \/\/ Implement your own version of merge.",
+    "    func merge(with object: Self) throws -> Self {",
+    "        var updated = try mergeParse(with: object)",
+    "        if updated.shouldRestoreKey(\\.points,",
+    "                                     original: object) {",
+    "            updated.points = object.points",
+    "        }",
+    "        return updated",
+    "    }",
+    "}"
+  ],
+  "fileName" : "User Model",
+  "fileType" : "",
+  "highlights" : [
+
+  ],
+  "identifier" : "GameScore.swift",
+  "syntax" : "",
+  "type" : "file"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/tutorials/ParseServerSwift": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift",
+  "kind" : "overview",
+  "role" : "overview",
+  "title" : "Welcome to ParseServerSwift",
+  "type" : "topic",
+  "url" : "\/tutorials\/parseserverswift"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/tutorials/ParseServerSwift/Cloud-Code": {
+  "abstract" : [
+    {
+      "text" : "Adding routes for ParseHooks are as simple as adding ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "https:\/\/docs.vapor.codes\/basics\/routing\/",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ". ",
+      "type" : "text"
+    },
+    {
+      "code" : "ParseServerSwift",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " adds some additional methods to routes to easily create and register ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "https:\/\/parseplatform.org\/Parse-Swift\/release\/documentation\/parseswift\/parsehookfunctionable",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " and ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "https:\/\/parseplatform.org\/Parse-Swift\/release\/documentation\/parseswift\/parsehooktriggerable\/",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ". All routes should be added to ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "https:\/\/github.com\/netreconlab\/ParseServerSwift\/blob\/main\/Sources\/ParseServerSwift\/routes.swift",
+      "isActive" : true,
+      "type" : "reference"
+    }
+  ],
+  "estimatedTime" : "5min",
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/Cloud-Code",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Cloud Code",
+  "type" : "topic",
+  "url" : "\/tutorials\/parseserverswift\/cloud-code"
+},
+"https://docs.vapor.codes/basics/routing/": {
+  "identifier" : "https:\/\/docs.vapor.codes\/basics\/routing\/",
+  "title" : "routes in Vapor",
+  "titleInlineContent" : [
+    {
+      "text" : "routes in Vapor",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.vapor.codes\/basics\/routing\/"
+},
+"https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/Models": {
+  "identifier" : "https:\/\/github.com\/netreconlab\/ParseServerSwift\/blob\/main\/Sources\/ParseServerSwift\/Models",
+  "title" : "ParseServerSwift\/Sources\/ParseServerSwift\/Models",
+  "titleInlineContent" : [
+    {
+      "text" : "ParseServerSwift\/Sources\/ParseServerSwift\/Models",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/netreconlab\/ParseServerSwift\/blob\/main\/Sources\/ParseServerSwift\/Models"
+},
+"https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/Models/User.swift": {
+  "identifier" : "https:\/\/github.com\/netreconlab\/ParseServerSwift\/blob\/main\/Sources\/ParseServerSwift\/Models\/User.swift",
+  "title" : "ParseServerSwift\/Sources\/ParseServerSwift\/Models\/User.swift",
+  "titleInlineContent" : [
+    {
+      "text" : "ParseServerSwift\/Sources\/ParseServerSwift\/Models\/User.swift",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/netreconlab\/ParseServerSwift\/blob\/main\/Sources\/ParseServerSwift\/Models\/User.swift"
+},
+"https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/routes.swift": {
+  "identifier" : "https:\/\/github.com\/netreconlab\/ParseServerSwift\/blob\/main\/Sources\/ParseServerSwift\/routes.swift",
+  "title" : "ParseServerSwift\/Sources\/ParseServerSwift\/routes.swift",
+  "titleInlineContent" : [
+    {
+      "text" : "ParseServerSwift\/Sources\/ParseServerSwift\/routes.swift",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/netreconlab\/ParseServerSwift\/blob\/main\/Sources\/ParseServerSwift\/routes.swift"
+},
+"https://parseplatform.org/Parse-Swift/release/documentation/parseswift/parsehookfunctionable": {
+  "identifier" : "https:\/\/parseplatform.org\/Parse-Swift\/release\/documentation\/parseswift\/parsehookfunctionable",
+  "title" : "Hook Functions",
+  "titleInlineContent" : [
+    {
+      "text" : "Hook Functions",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/parseplatform.org\/Parse-Swift\/release\/documentation\/parseswift\/parsehookfunctionable"
+},
+"https://parseplatform.org/Parse-Swift/release/documentation/parseswift/parsehooktriggerable/": {
+  "identifier" : "https:\/\/parseplatform.org\/Parse-Swift\/release\/documentation\/parseswift\/parsehooktriggerable\/",
+  "title" : "Hook Triggers",
+  "titleInlineContent" : [
+    {
+      "text" : "Hook Triggers",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/parseplatform.org\/Parse-Swift\/release\/documentation\/parseswift\/parsehooktriggerable\/"
+}
+}
+}

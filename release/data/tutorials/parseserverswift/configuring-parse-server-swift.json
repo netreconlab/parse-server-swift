@@ -1,0 +1,341 @@
+{
+  "hierarchy" : {
+    "modules" : [
+
+    ],
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/$volume"
+      ]
+    ],
+    "reference" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift"
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/Configuring-Parse-Server-Swift"
+  },
+  "kind" : "project",
+  "metadata" : {
+    "category" : "ParseServerSwift",
+    "categoryPathComponent" : "ParseServerSwift",
+    "role" : "project",
+    "title" : "Configuring Parse Swift Server"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+    {
+      "chapter" : "$volume",
+      "content" : [
+        {
+          "inlineContent" : [
+            {
+              "text" : "To configure, you should edit ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/github.com\/netreconlab\/ParseServerSwift\/blob\/main\/Sources\/ParseServerSwift\/configure.swift",
+              "isActive" : true,
+              "type" : "reference"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "estimatedTimeInMinutes" : 5,
+      "kind" : "hero",
+      "title" : "Configuring Parse Swift Server"
+    },
+    {
+      "kind" : "tasks",
+      "tasks" : [
+        {
+          "anchor" : "WebhookKey",
+          "contentSection" : [
+
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+
+              ],
+              "code" : null,
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "The ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "webhookKey",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " should match the ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/github.com\/parse-community\/parse-server\/blob\/42c954318926823446326c95188b844e19954711\/src\/Options\/Definitions.js#L491-L494",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ". If you decide not the a ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "webhookKey",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", set the value to ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "nil",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " in your ParseServerSwift.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "WebhookKey"
+        },
+        {
+          "anchor" : "Hostname-Port-and-TLS",
+          "contentSection" : [
+
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+
+              ],
+              "code" : null,
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "By default, the hostname is ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "127.0.0.1",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " and the port is ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "8081",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ". These values can easily be changed:",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Hostname, Port, and TLS"
+        },
+        {
+          "anchor" : "Parse-Swift-SDK",
+          "contentSection" : [
+
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+
+              ],
+              "code" : null,
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Configure the SDK as described in the ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/parseplatform.org\/Parse-Swift\/release\/documentation\/parseswift\/",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Parse Swift SDK"
+        },
+        {
+          "anchor" : "Starting-Parse-Swift-Server",
+          "contentSection" : [
+
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+
+              ],
+              "code" : null,
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "To start your server type, ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "swift run",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " in the terminal of the project root directory.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Starting Parse Swift Server"
+        }
+      ]
+    },
+    {
+      "abstract" : [
+        {
+          "text" : "The ParseObject models in your server should mirror the same models in your client applications.",
+          "type" : "text"
+        }
+      ],
+      "action" : {
+        "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/Adding-ParseObjects",
+        "isActive" : true,
+        "overridingTitle" : "Get started",
+        "overridingTitleInlineContent" : [
+          {
+            "text" : "Get started",
+            "type" : "text"
+          }
+        ],
+        "type" : "reference"
+      },
+      "featuredEyebrow" : "Tutorial",
+      "kind" : "callToAction",
+      "title" : "Adding ParseObjects"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/tutorials\/parseserverswift\/configuring-parse-server-swift"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/tutorials/ParseServerSwift": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift",
+  "kind" : "overview",
+  "role" : "overview",
+  "title" : "Welcome to ParseServerSwift",
+  "type" : "topic",
+  "url" : "\/tutorials\/parseserverswift"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/tutorials/ParseServerSwift/Adding-ParseObjects": {
+  "abstract" : [
+    {
+      "text" : "The ParseObject models in your server should mirror the same models in your client applications.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "3min",
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/Adding-ParseObjects",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Adding ParseObjects",
+  "type" : "topic",
+  "url" : "\/tutorials\/parseserverswift\/adding-parseobjects"
+},
+"https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/configure.swift": {
+  "identifier" : "https:\/\/github.com\/netreconlab\/ParseServerSwift\/blob\/main\/Sources\/ParseServerSwift\/configure.swift",
+  "title" : "ParseServerSwift\/Sources\/ParseServerSwift\/configure.swift",
+  "titleInlineContent" : [
+    {
+      "text" : "ParseServerSwift\/Sources\/ParseServerSwift\/configure.swift",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/netreconlab\/ParseServerSwift\/blob\/main\/Sources\/ParseServerSwift\/configure.swift"
+},
+"https://github.com/parse-community/parse-server/blob/42c954318926823446326c95188b844e19954711/src/Options/Definitions.js#L491-L494": {
+  "identifier" : "https:\/\/github.com\/parse-community\/parse-server\/blob\/42c954318926823446326c95188b844e19954711\/src\/Options\/Definitions.js#L491-L494",
+  "title" : "webhookKey on the Parse Server",
+  "titleInlineContent" : [
+    {
+      "text" : "webhookKey on the Parse Server",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/parse-community\/parse-server\/blob\/42c954318926823446326c95188b844e19954711\/src\/Options\/Definitions.js#L491-L494"
+},
+"https://parseplatform.org/Parse-Swift/release/documentation/parseswift/": {
+  "identifier" : "https:\/\/parseplatform.org\/Parse-Swift\/release\/documentation\/parseswift\/",
+  "title" : "documentation",
+  "titleInlineContent" : [
+    {
+      "text" : "documentation",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/parseplatform.org\/Parse-Swift\/release\/documentation\/parseswift\/"
+}
+}
+}
