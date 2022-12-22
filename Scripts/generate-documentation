@@ -100,13 +100,11 @@ cd "$PROJECT_ROOT"
 
 # Temporarily move the Xcode workspace aside so that xcodebuild uses the Swift package directly
 mkdir "$TEMP_WORKSPACE_DIR"
-mv Parse.xcworkspace "$TEMP_WORKSPACE_DIR/Parse.xcworkspace"
 
-xcodebuild clean build -scheme ParseServerSwift\ \(iOS\) \
-    -destination generic/platform=iOS \
+xcodebuild clean build -scheme ParseServerSwift \
+    -destination generic/platform=macOS \
     OTHER_SWIFT_FLAGS="-emit-symbol-graph -emit-symbol-graph-dir '$SGFS_DIR'" | xcpretty
 
-mv "$TEMP_WORKSPACE_DIR/Parse.xcworkspace" ./Parse.xcworkspace
 rm -r "$TEMP_WORKSPACE_DIR"
 
 # Pretty print DocC JSON output so that it can be consistently diffed between commits
@@ -118,7 +116,7 @@ EXTRA_DOCC_FLAGS="--index"
 # If building for publishing, don't pass the --index flag but pass additional flags for
 # static hosting configuration.
 if [ "$PUBLISH" = "YES" ]; then
-    EXTRA_DOCC_FLAGS="--transform-for-static-hosting --hosting-base-path Parse-Swift/$HOSTING_BASE_PATH"
+    EXTRA_DOCC_FLAGS="--transform-for-static-hosting --hosting-base-path parse-server-swift/$HOSTING_BASE_PATH"
 fi
 
 # Handle the case where a DocC catalog does not exist in the ParseServerSwift repo
