@@ -28,7 +28,7 @@ jobs:
     - name: Build and Test
       run: swift test --enable-code-coverage -v
       env:
-          DEVELOPER_DIR: ${{ env.CI_XCODE_13 }}
+          DEVELOPER_DIR: ${{ env.CI_XCODE }}
     - name: Prepare codecov
       uses: sersoft-gmbh/swift-coverage-action@v3
       id: coverage-files
