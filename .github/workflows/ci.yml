@@ -28,7 +28,7 @@ jobs:
     - name: Build and Test
       run: swift test --enable-code-coverage -v
       env:
-          DEVELOPER_DIR: ${{ env.CI_XCODE_13 }}
+          DEVELOPER_DIR: ${{ env.CI_XCODE }}
     - name: Prepare codecov
       uses: sersoft-gmbh/swift-coverage-action@v3
       id: coverage-files
@@ -56,6 +56,8 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and Test
         run: swift test --enable-test-discovery --enable-code-coverage -v
+      - name: Update codecov config
+        run: cat .codecov.yml | curl --data-binary @- https://codecov.io/validate
       - name: Prepare codecov
         run: |
           llvm-cov export -format="lcov" .build/x86_64-unknown-linux-gnu/debug/ParseServerSwiftPackageTests.xctest -instr-profile .build/x86_64-unknown-linux-gnu/debug/codecov/default.profdata > info_linux.lcov

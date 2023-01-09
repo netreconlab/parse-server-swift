@@ -1,4 +1,4 @@
-// swift-tools-version:5.5
+// swift-tools-version:5.5.2
 import PackageDescription
 
 let package = Package(
@@ -11,7 +11,7 @@ let package = Package(
     ],
     dependencies: [
         // 💧 A server-side Swift web framework.
-        .package(url: "https://github.com/vapor/vapor.git", .upToNextMajor(from: "4.67.5")),
+        .package(url: "https://github.com/vapor/vapor.git", .upToNextMajor(from: "4.68.0")),
         .package(url: "https://github.com/vapor/leaf.git", .upToNextMajor(from: "4.2.4")),
         .package(url: "https://github.com/netreconlab/Parse-Swift.git",
                  .upToNextMajor(from: "4.16.2")),
