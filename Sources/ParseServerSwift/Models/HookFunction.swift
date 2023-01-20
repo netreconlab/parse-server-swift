@@ -44,7 +44,7 @@ public extension RoutesBuilder {
                 do {
                     _ = try await hookFunction.create()
                 } catch {
-                    if !error.equalsTo(.invalidImageData) {
+                    if !error.equalsTo(.webhookError) {
                         logger.error("Could not create \"\(hookFunction)\" function: \(error)")
                     }
                 }
@@ -78,7 +78,7 @@ public extension RoutesBuilder {
                 do {
                     _ = try await hookFunction.create()
                 } catch {
-                    if !error.equalsTo(.invalidImageData) {
+                    if !error.equalsTo(.webhookError) {
                         logger.error("Could not create \"\(hookFunction)\" function: \(error)")
                     }
                 }

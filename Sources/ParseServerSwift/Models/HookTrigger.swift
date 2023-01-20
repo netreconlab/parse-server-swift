@@ -57,7 +57,7 @@ public extension RoutesBuilder {
                 do {
                     _ = try await hookTrigger.create()
                 } catch {
-                    if !error.equalsTo(.invalidImageData) {
+                    if !error.equalsTo(.webhookError) {
                         logger.error("Could not create \"\(String(describing: hookTrigger))\" trigger: \(error)")
                     }
                 }
@@ -101,7 +101,7 @@ public extension RoutesBuilder {
                 do {
                     _ = try await hookTrigger.create()
                 } catch {
-                    if !error.equalsTo(.invalidImageData) {
+                    if !error.equalsTo(.webhookError) {
                         logger.error("Could not create \"\(String(describing: hookTrigger))\" trigger: \(error)")
                     }
                 }

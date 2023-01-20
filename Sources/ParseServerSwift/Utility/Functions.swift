@@ -16,7 +16,7 @@ import Vapor
  */
 func checkHeaders<T>(_ req: Request) -> ParseHookResponse<T>? {
     guard req.headers.first(name: Headers.webhook) == webhookKey else {
-        let error = ParseError(code: .unknownError,
+        let error = ParseError(code: .otherCause,
                                message: "WebHook keys don't match")
         return ParseHookResponse<T>(error: error)
     }
@@ -49,7 +49,7 @@ func buildServerPathname(_ path: [PathComponent]) throws -> URL {
     let pathString = "/" + path.map { "\($0)" }.joined(separator: "/")
     guard let serverPathname = serverPathname,
           let url = URL(string: serverPathname)?.appendingPathComponent(pathString) else {
-        throw ParseError(code: .unknownError,
+        throw ParseError(code: .otherCause,
                          message: "Cannot create a pathname for the server")
     }
     return url

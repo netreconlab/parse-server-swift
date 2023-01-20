@@ -28,16 +28,16 @@ public func configure(_ app: Application) throws {
 
     // Required: Change to your Parse Server serverURL.
     guard let parseServerUrl = URL(string: "http://localhost:1337/1") else {
-        throw ParseError(code: .unknownError,
+        throw ParseError(code: .otherCause,
                          message: "Could not make Parse Server URL")
     }
 
     // Initialize the Parse-Swift SDK
-    ParseSwift.initialize(applicationId: "applicationId", // Required: Change to your applicationId.
-                          clientKey: "clientKey", // Required: Change to your clientKey.
-                          primaryKey: "primaryKey", // Required: Change to your primaryKey.
-                          serverURL: parseServerUrl,
-                          usingPostForQuery: true) { _, completionHandler in
+    try ParseSwift.initialize(applicationId: "applicationId", // Required: Change to your applicationId.
+                              clientKey: "clientKey", // Required: Change to your clientKey.
+                              primaryKey: "primaryKey", // Required: Change to your primaryKey.
+                              serverURL: parseServerUrl,
+                              usingPostForQuery: true) { _, completionHandler in
         completionHandler(.performDefaultHandling, nil)
     }
 
