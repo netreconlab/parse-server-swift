@@ -27,11 +27,14 @@ public extension RoutesBuilder {
      - parameter path: A variadic list of paths.
      - parameter name: The name of the function.
      - parameter url: The endpoint of the hook.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for. Defaults to
+     the set of servers added during configuration.
      */
     @discardableResult
     func post<Response>(
         _ path: PathComponent...,
         name: String,
+        parseServerURLStrings: [String] = parseServerURLStrings,
         use closure: @escaping (Request) async throws -> Response
     ) -> Route
         where Response: AsyncResponseEncodable
@@ -41,11 +44,13 @@ public extension RoutesBuilder {
             let hookFunction = HookFunction(name: name,
                                             url: url)
             Task {
-                do {
-                    _ = try await hookFunction.create()
-                } catch {
-                    if !error.equalsTo(.webhookError) {
-                        logger.error("Could not create \"\(hookFunction)\" function: \(error)")
+                for parseServerURLString in parseServerURLStrings {
+                    do {
+                        _ = try await hookFunction.create(options: [.serverURL(parseServerURLString)])
+                    } catch {
+                        if !error.equalsTo(.webhookError) {
+                            logger.error("Could not create \"\(hookFunction)\" function: \(error)")
+                        }
                     }
                 }
             }
@@ -60,12 +65,15 @@ public extension RoutesBuilder {
      - parameter path: An array of paths.
      - parameter name: The name of the function.
      - parameter url: The endpoint of the hook.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for. Defaults to
+     the set of servers added during configuration.
      */
     @discardableResult
     func post<Response>(
         _ path: [PathComponent],
         name: String,
         triggerName: ParseHookTriggerType,
+        parseServerURLStrings: [String] = parseServerURLStrings,
         use closure: @escaping (Request) async throws -> Response
     ) -> Route
         where Response: AsyncResponseEncodable
@@ -75,11 +83,13 @@ public extension RoutesBuilder {
             let hookFunction = HookFunction(name: name,
                                             url: url)
             Task {
-                do {
-                    _ = try await hookFunction.create()
-                } catch {
-                    if !error.equalsTo(.webhookError) {
-                        logger.error("Could not create \"\(hookFunction)\" function: \(error)")
+                for parseServerURLString in parseServerURLStrings {
+                    do {
+                        _ = try await hookFunction.create(options: [.serverURL(parseServerURLString)])
+                    } catch {
+                        if !error.equalsTo(.webhookError) {
+                            logger.error("Could not create \"\(hookFunction)\" function: \(error)")
+                        }
                     }
                 }
             }

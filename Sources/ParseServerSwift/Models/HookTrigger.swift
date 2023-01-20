@@ -29,6 +29,8 @@ public extension RoutesBuilder {
      - parameter className: The name of the `ParseObject` the trigger should act on.
      - parameter triggerName: The `ParseHookTriggerType` type.
      - parameter url: The endpoint of the hook.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for. Defaults to
+     the set of servers added during configuration.
      - warning: `className` should only be **nil** when creating `ParseFile` and `.beforeConnect` triggers.
      */
     @discardableResult
@@ -36,6 +38,7 @@ public extension RoutesBuilder {
         _ path: PathComponent...,
         className: String? = nil,
         triggerName: ParseHookTriggerType,
+        parseServerURLStrings: [String] = parseServerURLStrings,
         use closure: @escaping (Request) async throws -> Response
     ) -> Route
         where Response: AsyncResponseEncodable
@@ -54,11 +57,13 @@ public extension RoutesBuilder {
             }
             
             Task {
-                do {
-                    _ = try await hookTrigger.create()
-                } catch {
-                    if !error.equalsTo(.webhookError) {
-                        logger.error("Could not create \"\(String(describing: hookTrigger))\" trigger: \(error)")
+                for parseServerURLString in parseServerURLStrings {
+                    do {
+                        _ = try await hookTrigger.create(options: [.serverURL(parseServerURLString)])
+                    } catch {
+                        if !error.equalsTo(.webhookError) {
+                            logger.error("Could not create \"\(String(describing: hookTrigger))\" trigger: \(error)")
+                        }
                     }
                 }
             }
@@ -74,6 +79,8 @@ public extension RoutesBuilder {
      - parameter className: The name of the `ParseObject` the trigger should act on.
      - parameter triggerName: The `ParseHookTriggerType` type.
      - parameter url: The endpoint of the hook.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for. Defaults to
+     the set of servers added during configuration.
      - warning: `className` should only be **nil** when creating `ParseFile` and `.beforeConnect` triggers.
      */
     @discardableResult
@@ -81,6 +88,7 @@ public extension RoutesBuilder {
         _ path: [PathComponent],
         className: String? = nil,
         triggerName: ParseHookTriggerType,
+        parseServerURLStrings: [String] = parseServerURLStrings,
         use closure: @escaping (Request) async throws -> Response
     ) -> Route
         where Response: AsyncResponseEncodable
@@ -98,11 +106,13 @@ public extension RoutesBuilder {
                                               url: url)
             }
             Task {
-                do {
-                    _ = try await hookTrigger.create()
-                } catch {
-                    if !error.equalsTo(.webhookError) {
-                        logger.error("Could not create \"\(String(describing: hookTrigger))\" trigger: \(error)")
+                for parseServerURLString in parseServerURLStrings {
+                    do {
+                        _ = try await hookTrigger.create(options: [.serverURL(parseServerURLString)])
+                    } catch {
+                        if !error.equalsTo(.webhookError) {
+                            logger.error("Could not create \"\(String(describing: hookTrigger))\" trigger: \(error)")
+                        }
                     }
                 }
             }

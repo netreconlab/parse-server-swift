@@ -23,6 +23,23 @@ func checkHeaders<T>(_ req: Request) -> ParseHookResponse<T>? {
     return nil
 }
 
+/**
+ Returns the correct Parse Server `URL` string related to a particular `URI`.
+ - parameter uri: The `URI` to check against.
+ - parameter parseServerURLStrings: A set of Parse Server `URL`'s
+ to check the `URI` against. Defaults to the set of servers added during configuration.
+ - returns: The the Parse Server `URL` string related to a `URI`.
+ - throws: An error of `ParseError` type.
+ */
+func serverURLString(_ uri: URI,
+                     parseServerURLStrings: [String] = parseServerURLStrings) throws -> String {
+    guard let returnURLString = parseServerURLStrings.first else {
+        throw ParseError(code: .otherCause,
+                         message: "Missing at least one Parse Server URL")
+    }
+    return parseServerURLStrings.first(where: { uri.string.contains($0) }) ?? returnURLString
+}
+
 extension HTTPServer.Configuration {
     /**
      Construct the full server pathname.

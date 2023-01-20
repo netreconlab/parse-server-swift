@@ -33,7 +33,7 @@ Configure the SDK as described in the [documentation](https://netreconlab.github
 
 ```swift
 // Required: Change to your Parse Server serverURL.
-guard let parseServerUrl = URL(string: "http://localhost:1337/1") else {
+guard let parseServerURL = URL(string: "http://localhost:1337/1") else {
     throw ParseError(code: .unknownError,
                      message: "Could not make Parse Server URL")
 }
@@ -42,7 +42,7 @@ guard let parseServerUrl = URL(string: "http://localhost:1337/1") else {
 ParseSwift.initialize(applicationId: "applicationId", // Required: Change to your applicationId.
                       clientKey: "clientKey", // Required: Change to your clientKey.
                       primaryKey: "primaryKey", // Required: Change to your primaryKey.
-                      serverURL: parseServerUrl,
+                      serverURL: parseServerURL,
                       usingPostForQuery: true) { _, completionHandler in
     completionHandler(.performDefaultHandling, nil)
 }

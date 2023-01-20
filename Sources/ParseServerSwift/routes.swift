@@ -28,8 +28,8 @@ func routes(_ app: Application) throws {
         }
         
         // To query using the User's credentials who called this function,
-        // use the options() method from the request
-        let options = parseRequest.options()
+        // use the options() method from the parseRequest
+        let options = try parseRequest.options(req)
         let scores = try await GameScore.query.findAll(options: options)
         req.logger.info("Scores this user can access: \(scores)")
         return ParseHookResponse(success: "Hello, new world!")

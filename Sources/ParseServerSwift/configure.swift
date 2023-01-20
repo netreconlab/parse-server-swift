@@ -8,6 +8,8 @@ let webhookKey: String? = "webhookKey" // Change to match your Parse Server's we
 /// The current address of ParseServerSwift.
 var serverPathname: String!
 
+public var parseServerURLStrings = [String]()
+
 let logger = Logger(label: "edu.parseserverswift")
 
 // configures your application
@@ -27,7 +29,7 @@ public func configure(_ app: Application) throws {
     ContentConfiguration.global.use(decoder: User.getDecoder(), for: .json)
 
     // Required: Change to your Parse Server serverURL.
-    guard let parseServerUrl = URL(string: "http://localhost:1337/1") else {
+    guard let parseServerURL = URL(string: "http://localhost:1337/1") else {
         throw ParseError(code: .otherCause,
                          message: "Could not make Parse Server URL")
     }
@@ -36,17 +38,23 @@ public func configure(_ app: Application) throws {
     try ParseSwift.initialize(applicationId: "applicationId", // Required: Change to your applicationId.
                               clientKey: "clientKey", // Required: Change to your clientKey.
                               primaryKey: "primaryKey", // Required: Change to your primaryKey.
-                              serverURL: parseServerUrl,
+                              serverURL: parseServerURL,
                               usingPostForQuery: true) { _, completionHandler in
         completionHandler(.performDefaultHandling, nil)
     }
-
+    
+    parseServerURLStrings.append(parseServerURL.absoluteString)
+    // Append all other Parse Servers
+    // parseServerURLStrings.append("http://parse:1337/1")
+    
     Task {
-        do {
-            let parseHealth = try await ParseHealth.check()
-            app.logger.notice("Parse Server (\(parseServerUrl.absoluteString)) health is \"\(parseHealth)\"")
-        } catch {
-            app.logger.error("Could not connect to Parse Server (\(parseServerUrl)): \(error)")
+        for parseServerURLString in parseServerURLStrings {
+            do {
+                let serverHealth = try await ParseHealth.check(options: [.serverURL(parseServerURLString)])
+                app.logger.notice("Parse Server (\(parseServerURLString)) health is \"\(serverHealth)\"")
+            } catch {
+                app.logger.error("Could not connect to Parse Server (\(parseServerURL)): \(error)")
+            }
         }
     }
 
