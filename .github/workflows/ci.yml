@@ -45,24 +45,6 @@ jobs:
         fail_ci_if_error: true
       env:
           DEVELOPER_DIR: ${{ env.CI_XCODE }}
-  
-  windows:
-    timeout-minutes: 15
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: compnerd/gha-setup-swift@v0.0.1
-        with:
-          branch: swift-5.7.3-release
-          tag: 5.7.3-RELEASE
-      - name: Build
-        run: |
-          swift build -v
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
-        with:
-          env_vars: WINDOWS
-          fail_ci_if_error: false
 
   linux:
     runs-on: ubuntu-18.04
