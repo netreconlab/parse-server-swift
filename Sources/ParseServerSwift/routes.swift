@@ -61,7 +61,7 @@ func routes(_ app: Application) throws {
         return ParseHookResponse(success: object)
     }
 
-    // A Parse Hook Trigger route.
+    // Another Parse Hook Trigger route.
     app.post("find",
              className: "GameScore",
              triggerName: .beforeFind) { req async throws -> ParseHookResponse<[GameScore]> in
@@ -80,7 +80,7 @@ func routes(_ app: Application) throws {
         return ParseHookResponse(success: [score1, score2])
     }
 
-    // A Parse Hook Trigger route.
+    // Another Parse Hook Trigger route.
     app.post("login",
              className: "_User",
              triggerName: .afterLogin) { req async throws -> ParseHookResponse<Bool> in
@@ -94,7 +94,7 @@ func routes(_ app: Application) throws {
         return ParseHookResponse(success: true)
     }
 
-    // A Parse Hook Trigger route.
+    // A Parse Hook Trigger route for `ParseFile`.
     app.post("file",
              triggerName: .afterDelete) { req async throws -> ParseHookResponse<Bool> in
         if let error: ParseHookResponse<Bool> = checkHeaders(req) {
@@ -106,8 +106,22 @@ func routes(_ app: Application) throws {
         req.logger.info("A ParseFile is being saved: \(parseRequest)")
         return ParseHookResponse(success: true)
     }
+
+    // A Parse Hook Trigger route for `ParseFile` that collects streaming bodies (up to 1mb in size) before calling this route.
+    app.on("file", "stream",
+           body: .collect(maxSize: "1mb"),
+           triggerName: .afterDelete) { req async throws -> ParseHookResponse<Bool> in
+        if let error: ParseHookResponse<Bool> = checkHeaders(req) {
+            return error
+        }
+        let parseRequest = try req.content
+            .decode(ParseHookTriggerRequest<User, GameScore>.self)
+
+        req.logger.info("A ParseFile is being saved: \(parseRequest)")
+        return ParseHookResponse(success: true)
+    }
     
-    // A Parse Hook Trigger route.
+    // A Parse Hook Trigger route for `ParseLiveQuery`.
     app.post("connect",
              triggerName: .beforeConnect) { req async throws -> ParseHookResponse<Bool> in
         if let error: ParseHookResponse<Bool> = checkHeaders(req) {

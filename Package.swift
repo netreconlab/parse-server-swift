@@ -12,6 +12,7 @@ let package = Package(
     dependencies: [
         // 💧 A server-side Swift web framework.
         .package(url: "https://github.com/vapor/vapor.git", .upToNextMajor(from: "4.69.1")),
+        .package(url: "https://github.com/vapor/leaf.git", .upToNextMajor(from: "4.2.4")),
         .package(url: "https://github.com/netreconlab/Parse-Swift.git",
                  .upToNextMajor(from: "5.0.0-beta.3")),
     ],
@@ -20,6 +21,7 @@ let package = Package(
             name: "ParseServerSwift",
             dependencies: [
                 .product(name: "Vapor", package: "vapor"),
+                .product(name: "Leaf", package: "leaf"),
                 .product(name: "ParseSwift", package: "Parse-Swift")
             ],
             swiftSettings: [

@@ -8,6 +8,10 @@ let webhookKey: String? = "webhookKey" // Change to match your Parse Server's we
 /// The current address of ParseServerSwift.
 var serverPathname: String!
 
+/// The current Hook Functions and Triggers.
+public var hooks = Hooks()
+
+/// All Parse Server URL strings to connect to.
 public var parseServerURLStrings = [String]()
 
 let logger = Logger(label: "edu.parseserverswift")
@@ -22,6 +26,8 @@ public func configure(_ app: Application) throws {
     // app.http.server.configuration.hostname = "4threconbn.cs.uky.edu"
     app.http.server.configuration.port = 8081
     app.http.server.configuration.tlsConfiguration = .none
+    // Increases the streaming body collection limit to 500kb
+    app.routes.defaultMaxBodySize = "500kb"
     serverPathname = app.http.server.configuration.buildServerURL()
 
     // Parse uses tailored encoders/decoders. These can be retreived from any ParseObject.
