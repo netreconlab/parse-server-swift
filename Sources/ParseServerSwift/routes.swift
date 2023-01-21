@@ -107,9 +107,9 @@ func routes(_ app: Application) throws {
         return ParseHookResponse(success: true)
     }
 
-    // A Parse Hook Trigger route for `ParseFile` that collects streaming bodies (up to 1mb in size) before calling this route.
+    // A Parse Hook Trigger route for `ParseFile` and the body will not be collected into a buffer.
     app.on("file", "stream",
-           body: .collect(maxSize: "1mb"),
+           body: .stream,
            triggerName: .afterDelete) { req async throws -> ParseHookResponse<Bool> in
         if let error: ParseHookResponse<Bool> = checkHeaders(req) {
             return error

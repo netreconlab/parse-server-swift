@@ -17,7 +17,7 @@ import Vapor
 func checkHeaders<T>(_ req: Request) -> ParseHookResponse<T>? {
     guard req.headers.first(name: Headers.webhook) == webhookKey else {
         let error = ParseError(code: .otherCause,
-                               message: "WebHook keys don't match")
+                               message: "Webhook keys don't match")
         return ParseHookResponse<T>(error: error)
     }
     return nil

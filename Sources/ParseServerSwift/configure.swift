@@ -3,7 +3,7 @@ import ParseSwift
 import Vapor
 
 /// The key used to authenticate incoming webhook calls from a Parse Server
-let webhookKey: String? = "webhookKey" // Change to match your Parse Server's webhookKey or comment out.
+var webhookKey: String? = "webhookKey" // Change to match your Parse Server's webhookKey or comment out.
 
 /// The current address of ParseServerSwift.
 var serverPathname: String!
@@ -14,10 +14,17 @@ public var hooks = Hooks()
 /// All Parse Server URL strings to connect to.
 public var parseServerURLStrings = [String]()
 
+var isTesting = false
+
 let logger = Logger(label: "edu.parseserverswift")
 
-// configures your application
+/// Configures your application
 public func configure(_ app: Application) throws {
+    try configure(app, testing: false)
+}
+
+func configure(_ app: Application, testing: Bool) throws {
+    isTesting = testing
     // uncomment to serve files from /Public folder
     // app.middleware.use(FileMiddleware(publicDirectory: app.directory.publicDirectory))
 
@@ -53,17 +60,23 @@ public func configure(_ app: Application) throws {
     // Append all other Parse Servers
     // parseServerURLStrings.append("http://parse:1337/1")
     
-    Task {
-        for parseServerURLString in parseServerURLStrings {
-            do {
-                let serverHealth = try await ParseHealth.check(options: [.serverURL(parseServerURLString)])
-                app.logger.notice("Parse Server (\(parseServerURLString)) health is \"\(serverHealth)\"")
-            } catch {
-                app.logger.error("Could not connect to Parse Server (\(parseServerURL)): \(error)")
-            }
+    if !isTesting {
+        Task {
+            await checkServerHealth(app)
         }
     }
 
     // register routes
     try routes(app)
+}
+
+func checkServerHealth(_ app: Application) async {
+    for parseServerURLString in parseServerURLStrings {
+        do {
+            let serverHealth = try await ParseHealth.check(options: [.serverURL(parseServerURLString)])
+            app.logger.notice("Parse Server (\(parseServerURLString)) health is \"\(serverHealth)\"")
+        } catch {
+            app.logger.error("Could not connect to Parse Server (\(parseServerURLString)): \(error)")
+        }
+    }
 }
