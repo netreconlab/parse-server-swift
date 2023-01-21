@@ -30,9 +30,9 @@ extension Hooks {
     }
 
     /// Remove curent functions.
-    /// - parameter functions: A dictionary where the keys are Parse Server `URL`'s and the respective `HookFunction`.
-    func removeFunctions(_ functions: [String: HookFunction]) {
-        for (url, _) in functions {
+    /// - parameter url: An array of Parse Server `URL`'s.
+    func removeFunctions(_ urls: [String]) {
+        for url in urls {
             self.functions.removeValue(forKey: url)
         }
     }
@@ -60,9 +60,9 @@ extension Hooks {
     }
 
     /// Remove curent triggers.
-    /// - parameter triggers: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
-    func removeTriggers(_ triggers: [String: HookTrigger]) {
-        for (url, _) in triggers {
+    /// - parameter urls: An array of Parse Server `URL`'s.
+    func removeTriggers(_ urls: [String]) {
+        for url in urls {
             self.triggers.removeValue(forKey: url)
         }
     }
