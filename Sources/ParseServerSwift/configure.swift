@@ -3,16 +3,16 @@ import ParseSwift
 import Vapor
 
 /// The key used to authenticate incoming webhook calls from a Parse Server
-var webhookKey: String? = "webhookKey" // Change to match your Parse Server's webhookKey or comment out.
-
-/// The current address of ParseServerSwift.
-var serverPathname: String!
+public var webhookKey: String? = "webhookKey" // Change to match your Parse Server's webhookKey or comment out.
 
 /// The current Hook Functions and Triggers.
 public var hooks = Hooks()
 
 /// All Parse Server URL strings to connect to.
 public var parseServerURLStrings = [String]()
+
+/// The current address of ParseServerSwift.
+var serverPathname: String!
 
 var isTesting = false
 
@@ -68,43 +68,4 @@ func configure(_ app: Application, testing: Bool) throws {
 
     // register routes
     try routes(app)
-}
-
-func checkServerHealth(_ app: Application) async {
-    for parseServerURLString in parseServerURLStrings {
-        do {
-            let serverHealth = try await ParseHealth.check(options: [.serverURL(parseServerURLString)])
-            app.logger.notice("Parse Server (\(parseServerURLString)) health is \"\(serverHealth)\"")
-        } catch {
-            app.logger.error("Could not connect to Parse Server (\(parseServerURLString)): \(error)")
-        }
-    }
-}
-
-/// Delete all Parse Hooks from all Parse Servers.
-public func deleteHooks(_ app: Application) async {
-    let functions = await hooks.getFunctions()
-    let triggers = await hooks.getTriggers()
-    
-    app.logger.notice("Deleting Hooks from all Parse Servers, please wait...")
-    
-    for (urlString, function) in functions {
-        do {
-            try await function.delete(options: [.serverURL(urlString)])
-            app.logger.notice("Successfully removed Hook Function: \(function); on Parse Server: (\(urlString))")
-        } catch {
-            app.logger.error("Could not remove Hook Function: \(function); on Parse Server: (\(urlString)); due to error: \(error)")
-        }
-        await hooks.removeFunctions([urlString])
-    }
-
-    for (urlString, trigger) in triggers {
-        do {
-            try await trigger.delete(options: [.serverURL(urlString)])
-            app.logger.notice("Successfully removed Hook Trigger: \(trigger); on Parse Server: (\(urlString))")
-        } catch {
-            app.logger.error("Could not remove Hook Trigger: \(trigger); on Parse Server: (\(urlString)); due to error: \(error)")
-        }
-        await hooks.removeTriggers([urlString])
-    }
 }
