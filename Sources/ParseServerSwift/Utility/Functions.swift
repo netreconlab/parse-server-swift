@@ -16,11 +16,28 @@ import Vapor
  */
 func checkHeaders<T>(_ req: Request) -> ParseHookResponse<T>? {
     guard req.headers.first(name: Headers.webhook) == webhookKey else {
-        let error = ParseError(code: .unknownError,
-                               message: "WebHook keys don't match")
+        let error = ParseError(code: .otherCause,
+                               message: "Webhook keys don't match")
         return ParseHookResponse<T>(error: error)
     }
     return nil
+}
+
+/**
+ Returns the correct Parse Server `URL` string related to a particular `URI`.
+ - parameter uri: The `URI` to check against.
+ - parameter parseServerURLStrings: A set of Parse Server `URL`'s
+ to check the `URI` against. Defaults to the set of servers added during configuration.
+ - returns: The the Parse Server `URL` string related to a `URI`.
+ - throws: An error of `ParseError` type.
+ */
+func serverURLString(_ uri: URI,
+                     parseServerURLStrings: [String] = parseServerURLStrings) throws -> String {
+    guard let returnURLString = parseServerURLStrings.first else {
+        throw ParseError(code: .otherCause,
+                         message: "Missing at least one Parse Server URL")
+    }
+    return parseServerURLStrings.first(where: { uri.string.contains($0) }) ?? returnURLString
 }
 
 extension HTTPServer.Configuration {
@@ -49,7 +66,7 @@ func buildServerPathname(_ path: [PathComponent]) throws -> URL {
     let pathString = "/" + path.map { "\($0)" }.joined(separator: "/")
     guard let serverPathname = serverPathname,
           let url = URL(string: serverPathname)?.appendingPathComponent(pathString) else {
-        throw ParseError(code: .unknownError,
+        throw ParseError(code: .otherCause,
                          message: "Cannot create a pathname for the server")
     }
     return url

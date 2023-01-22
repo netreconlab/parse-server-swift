@@ -1,9 +1,13 @@
 # ParseServerSwift
 
+[![Documentation](http://img.shields.io/badge/read_the-docs-2196f3.svg)](https://swiftpackageindex.com/netreconlab/parse-server-swift/documentation)
+[![Tuturiol](http://img.shields.io/badge/read_the-tuturials-2196f3.svg)](https://netreconlab.github.io/parse-server-swift/release/tutorials/parseserverswift/)
 [![Build Status CI](https://github.com/netreconlab/parse-server-swift/workflows/ci/badge.svg?branch=main)](https://github.com/netreconlab/parse-server-swift/actions?query=workflow%3Aci+branch%3Amain)
 [![codecov](https://codecov.io/gh/netreconlab/parse-server-swift/branch/main/graph/badge.svg?token=RC3FLU6BGW)](https://codecov.io/gh/netreconlab/parse-server-swift)
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fnetreconlab%2Fparse-server-swift%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/netreconlab/parse-server-swift)
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fnetreconlab%2Fparse-server-swift%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/netreconlab/parse-server-swift)
+
+---
 
 Write Parse Cloud Code in Swift!
 
@@ -33,7 +37,7 @@ Configure the SDK as described in the [documentation](https://netreconlab.github
 
 ```swift
 // Required: Change to your Parse Server serverURL.
-guard let parseServerUrl = URL(string: "http://localhost:1337/1") else {
+guard let parseServerURL = URL(string: "http://localhost:1337/1") else {
     throw ParseError(code: .unknownError,
                      message: "Could not make Parse Server URL")
 }
@@ -42,7 +46,7 @@ guard let parseServerUrl = URL(string: "http://localhost:1337/1") else {
 ParseSwift.initialize(applicationId: "applicationId", // Required: Change to your applicationId.
                       clientKey: "clientKey", // Required: Change to your clientKey.
                       primaryKey: "primaryKey", // Required: Change to your primaryKey.
-                      serverURL: parseServerUrl,
+                      serverURL: parseServerURL,
                       usingPostForQuery: true) { _, completionHandler in
     completionHandler(.performDefaultHandling, nil)
 }
