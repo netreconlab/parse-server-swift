@@ -27,6 +27,44 @@ final class AppTests: XCTestCase {
         })
     }
 
+    func testCheckServerHealth() async throws {
+        let app = try setupAppForTesting()
+        defer { app.shutdown() }
+
+        XCTAssertGreaterThan(parseServerURLStrings.count, 0)
+        await checkServerHealth(app)
+    }
+
+    func testDeleteHooks() async throws {
+        let app = try setupAppForTesting()
+        defer { app.shutdown() }
+
+        let urlString = "https://parse.com/1"
+        guard let url = URL(string: urlString) else {
+            XCTFail("Should have unwrapped")
+            return
+        }
+        XCTAssertGreaterThan(parseServerURLStrings.count, 0)
+
+        let function = HookFunction(name: "hello", url: url)
+        let trigger = try HookTrigger(triggerName: .afterSave, url: url)
+
+        await hooks.updateFunctions([ urlString: function ])
+        await hooks.updateTriggers([ urlString: trigger ])
+
+        let currentFunctions = await hooks.getFunctions()
+        let currentTriggers = await hooks.getTriggers()
+        XCTAssertGreaterThan(currentFunctions.count, 0)
+        XCTAssertGreaterThan(currentTriggers.count, 0)
+
+        await deleteHooks(app)
+
+        let currentFunctions2 = await hooks.getFunctions()
+        let currentTriggers2 = await hooks.getTriggers()
+        XCTAssertEqual(currentFunctions2.count, 0)
+        XCTAssertEqual(currentTriggers2.count, 0)
+    }
+
     func testFunctionWebhookKeyNotEqual() throws {
         let app = try setupAppForTesting(hookKey: "wow")
         defer { app.shutdown() }
@@ -86,7 +124,18 @@ final class AppTests: XCTestCase {
                                                                from: encoded)
 
         let options = hookRequest.options()
-        XCTAssertEqual(options, API.Options([.installationId(installationId)]))
+        let installationOption = options.first(where: { $0 == .installationId("") })
+        XCTAssertEqual(options.count, 1)
+        XCTAssertTrue(installationOption.debugDescription.contains(installationId))
+
+        let uri = URI(stringLiteral: urlString)
+        let request = Request(application: app, url: uri, on: app.eventLoopGroup.any())
+        let options2 = try hookRequest.options(request)
+        let installationOption2 = options2.first(where: { $0 == .installationId("") })
+        let serverURLOption = options2.first(where: { $0 == .serverURL("") })
+        XCTAssertEqual(options2.count, 2)
+        XCTAssertTrue(installationOption2.debugDescription.contains(installationId))
+        XCTAssertTrue(serverURLOption.debugDescription.contains("\"\(urlString)\""))
     }
 
     func testHooksFunctions() async throws {

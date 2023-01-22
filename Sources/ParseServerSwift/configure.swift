@@ -80,3 +80,31 @@ func checkServerHealth(_ app: Application) async {
         }
     }
 }
+
+/// Delete all Parse Hooks from all Parse Servers.
+public func deleteHooks(_ app: Application) async {
+    let functions = await hooks.getFunctions()
+    let triggers = await hooks.getTriggers()
+    
+    app.logger.notice("Deleting Hooks from all Parse Servers, please wait...")
+    
+    for (urlString, function) in functions {
+        do {
+            try await function.delete(options: [.serverURL(urlString)])
+            app.logger.notice("Successfully removed Hook Function: \(function); on Parse Server: (\(urlString))")
+        } catch {
+            app.logger.error("Could not remove Hook Function: \(function); on Parse Server: (\(urlString)); due to error: \(error)")
+        }
+        await hooks.removeFunctions([urlString])
+    }
+
+    for (urlString, trigger) in triggers {
+        do {
+            try await trigger.delete(options: [.serverURL(urlString)])
+            app.logger.notice("Successfully removed Hook Trigger: \(trigger); on Parse Server: (\(urlString))")
+        } catch {
+            app.logger.error("Could not remove Hook Trigger: \(trigger); on Parse Server: (\(urlString)); due to error: \(error)")
+        }
+        await hooks.removeTriggers([urlString])
+    }
+}
