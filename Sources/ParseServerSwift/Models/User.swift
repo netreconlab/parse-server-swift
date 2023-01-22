@@ -25,6 +25,6 @@ struct User: ParseCloudUser {
     var ACL: ParseACL?
     var originalData: Data?
     var sessionToken: String?
-    // var _failed_login_count: Int?
-    // var _account_lockout_expires_at: Date?
+    var _failed_login_count: Int?
+    var _account_lockout_expires_at: Date?
 }
