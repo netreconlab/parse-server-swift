@@ -35,11 +35,27 @@ final class AppTests: XCTestCase {
         await checkServerHealth(app)
     }
 
+    func testGetParseServerURLs() async throws {
+        let urls = try getParseServerURLs()
+        XCTAssertEqual(urls.0, "http://localhost:1337/parse")
+        XCTAssertEqual(urls.1.count, 0)
+        let urlStrings = "http://parse2:1337/parse, http://parse:1337/parse"
+        let urls2 = try getParseServerURLs(urlStrings)
+        XCTAssertEqual(urls2.0, "http://parse:1337/parse")
+        XCTAssertEqual(urls2.1.count, 1)
+        XCTAssertEqual(urls2.1.first, "http://parse2:1337/parse")
+        let urlStrings2 = "http://parse2:1337/parse,http://parse:1337/parse"
+        let urls3 = try getParseServerURLs(urlStrings2)
+        XCTAssertEqual(urls3.0, "http://parse:1337/parse")
+        XCTAssertEqual(urls3.1.count, 1)
+        XCTAssertEqual(urls3.1.first, "http://parse2:1337/parse")
+    }
+
     func testDeleteHooks() async throws {
         let app = try setupAppForTesting()
         defer { app.shutdown() }
 
-        let urlString = "https://parse.com/1"
+        let urlString = "https://parse.com/parse"
         guard let url = URL(string: urlString) else {
             XCTFail("Should have unwrapped")
             return
@@ -88,7 +104,7 @@ final class AppTests: XCTestCase {
     func testMatchServerURLString() async throws {
         let app = try setupAppForTesting()
         defer { app.shutdown() }
-        let urlString = "https://parse.com/1"
+        let urlString = "https://parse.com/parse"
         let uri = URI(stringLiteral: urlString)
         let serverString = try serverURLString(uri, parseServerURLStrings: [urlString])
         XCTAssertEqual(serverString, urlString)
@@ -98,7 +114,7 @@ final class AppTests: XCTestCase {
         let serverString2 = try serverURLString(uri2, parseServerURLStrings: [urlString])
         XCTAssertEqual(serverString2, urlString)
         
-        parseServerURLStrings = ["http://localhost:1337/1"]
+        parseServerURLStrings = ["http://localhost:1337/parse"]
         let serverString3 = try serverURLString(uri)
         XCTAssertEqual(serverString3, parseServerURLStrings.first)
     }
@@ -107,7 +123,7 @@ final class AppTests: XCTestCase {
         let app = try setupAppForTesting()
         parseServerURLStrings.removeAll()
         defer { app.shutdown() }
-        let urlString = "https://parse.com/1"
+        let urlString = "https://parse.com/parse"
         let uri = URI(stringLiteral: urlString)
         XCTAssertThrowsError(try serverURLString(uri))
     }
@@ -116,7 +132,7 @@ final class AppTests: XCTestCase {
         let app = try setupAppForTesting()
         defer { app.shutdown() }
         let installationId = "naw"
-        let urlString = "https://parse.com/1"
+        let urlString = "https://parse.com/parse"
         parseServerURLStrings.append(urlString)
         let dummyHookRequest = DummyRequest(installationId: installationId, params: .init())
         let encoded = try ParseCoding.jsonEncoder().encode(dummyHookRequest)

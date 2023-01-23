@@ -3,7 +3,7 @@ import ParseSwift
 import Vapor
 
 /// The key used to authenticate incoming webhook calls from a Parse Server
-public var webhookKey: String? = "webhookKey" // Change to match your Parse Server's webhookKey or comment out.
+public var webhookKey: String? = Environment.process.PARSE_SWIFT_SERVER_WEBHOOK_KEY
 
 /// The current Hook Functions and Triggers.
 public var hooks = Hooks()
@@ -25,43 +25,47 @@ public func configure(_ app: Application) throws {
 
 func configure(_ app: Application, testing: Bool) throws {
     isTesting = testing
+
     // uncomment to serve files from /Public folder
     // app.middleware.use(FileMiddleware(publicDirectory: app.directory.publicDirectory))
 
     app.views.use(.leaf)
-    // Change to your specific hostname or comment out to use default.
-    // app.http.server.configuration.hostname = "4threconbn.cs.uky.edu"
-    app.http.server.configuration.port = 8081
+    // Setup current host
+    app.http.server.configuration.hostname = Environment.process.PARSE_SWIFT_SERVER_HOST_NAME ?? "localhost"
+    app.http.server.configuration.port = Int(Environment.process.PARSE_SWIFT_SERVER_PORT ?? 8081)
     app.http.server.configuration.tlsConfiguration = .none
-    // Increases the streaming body collection limit to 500kb
-    app.routes.defaultMaxBodySize = "500kb"
     serverPathname = app.http.server.configuration.buildServerURL()
 
-    // Parse uses tailored encoders/decoders. These can be retreived from any ParseObject.
+    // Increases the streaming body collection limit to 500kb
+    app.routes.defaultMaxBodySize = ByteCount(stringLiteral: Environment.process.PARSE_SWIFT_SERVER_DEFAULT_MAX_BODY_SIZE ?? "500kb")
+
+    // Parse uses tailored encoders/decoders. These can be retrieved from any ParseObject
     ContentConfiguration.global.use(encoder: User.getJSONEncoder(), for: .json)
     ContentConfiguration.global.use(decoder: User.getDecoder(), for: .json)
 
     // Required: Change to your Parse Server serverURL.
-    guard let parseServerURL = URL(string: "http://localhost:1337/1") else {
+    let serverURLStrings = try getParseServerURLs()
+    parseServerURLStrings.append(serverURLStrings.0)
+    // Append all additional Parse Servers
+    parseServerURLStrings.append(contentsOf: serverURLStrings.1)
+    
+    guard let parseServerURL = URL(string: serverURLStrings.0) else {
         throw ParseError(code: .otherCause,
-                         message: "Could not make Parse Server URL")
+                         message: "Could not make a URL from the Parse Server string")
     }
 
-    // Initialize the Parse-Swift SDK
-    try ParseSwift.initialize(applicationId: "applicationId", // Required: Change to your applicationId.
-                              clientKey: "clientKey", // Required: Change to your clientKey.
-                              primaryKey: "primaryKey", // Required: Change to your primaryKey.
+    // Initialize the Parse-Swift SDK. Add any additional parameters you need
+    try ParseSwift.initialize(applicationId: Environment.process.PARSE_SWIFT_SERVER_APPLICATION_ID ?? "applicationId",
+                              primaryKey: Environment.process.PARSE_SWIFT_SERVER_PRIMARY_KEY ?? "primaryKey",
                               serverURL: parseServerURL,
                               usingPostForQuery: true) { _, completionHandler in
+        // Setup to use default certificate pinning. See Parse-Swift docs for more info
         completionHandler(.performDefaultHandling, nil)
     }
     
-    parseServerURLStrings.append(parseServerURL.absoluteString)
-    // Append all other Parse Servers
-    // parseServerURLStrings.append("http://parse:1337/1")
-    
     if !isTesting {
         Task {
+            // Check the health of all Parse-Server
             await checkServerHealth(app)
         }
     }

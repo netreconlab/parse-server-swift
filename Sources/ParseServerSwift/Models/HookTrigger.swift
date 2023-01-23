@@ -11,7 +11,7 @@ import Vapor
 
 /**
  Parse Hook Triggers can be created by conforming to
- `ParseHookFunctionable`.
+ `ParseHookTriggerable`.
  */
 public struct HookTrigger: ParseHookTriggerable {
     public var className: String?
@@ -21,7 +21,7 @@ public struct HookTrigger: ParseHookTriggerable {
     public init() {}
 }
 
-// MARK: HookFunction - Internal
+// MARK: HookTrigger - Internal
 extension HookTrigger {
 
     @discardableResult
@@ -59,10 +59,15 @@ extension HookTrigger {
                         .delete(options: [.serverURL(parseServerURLString)])
                 default:
                     throw ParseError(code: .otherCause,
-                                     message: "Method \(method) is not supported for function: \"\(String(describing: hookTrigger))\"")
+                                     message: "Method \(method) is not supported for Hook Trigger: \"\(String(describing: hookTrigger))\"")
                 }
+                logger.notice("Successful \(method); Hook Trigger: \"\(String(describing: hookTrigger))\" on server: \(parseServerURLString)")
             } catch {
-                logger.error("Could not \(method) trigger: \"\(String(describing: hookTrigger))\"; error: \(error); on server: \(parseServerURLString)")
+                if error.containedIn([.webhookError]) && method == .POST {
+                    logger.warning("Hook Trigger: \"\(String(describing: hookTrigger))\"; warning: \(error); on server: \(parseServerURLString)")
+                } else {
+                    logger.error("Could not \(method) Hook Trigger: \"\(String(describing: hookTrigger))\"; error: \(error); on server: \(parseServerURLString)")
+                }
             }
         }
         return hookTriggers

@@ -96,6 +96,15 @@ public func deleteHooks(_ app: Application) async {
     }
 }
 
+func getParseServerURLs(_ urls: String? = nil) throws -> (String, [String]) {
+    let serverURLs = urls ?? Environment.process.PARSE_SWIFT_SERVER_URLS ?? "http://localhost:1337/parse"
+    var allServers = serverURLs.replacingOccurrences(of: " ", with: "").split(separator: ",").compactMap { String($0) }
+    guard let mainServer = allServers.popLast() else {
+        throw ParseError(code: .otherCause, message: "At least 1 server URL is required")
+    }
+    return (mainServer, allServers)
+}
+
 extension HTTPServer.Configuration {
     /**
      Construct the full server pathname.

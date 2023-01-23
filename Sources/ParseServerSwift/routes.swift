@@ -96,21 +96,21 @@ func routes(_ app: Application) throws {
 
     // A Parse Hook Trigger route for `ParseFile`.
     app.post("file",
-             triggerName: .afterDelete) { req async throws -> ParseHookResponse<Bool> in
+             triggerName: .beforeDelete) { req async throws -> ParseHookResponse<Bool> in
         if let error: ParseHookResponse<Bool> = checkHeaders(req) {
             return error
         }
         let parseRequest = try req.content
             .decode(ParseHookTriggerRequest<User, GameScore>.self)
 
-        req.logger.info("A ParseFile is being saved: \(parseRequest)")
+        req.logger.info("A ParseFile is being deleted: \(parseRequest)")
         return ParseHookResponse(success: true)
     }
 
-    // A Parse Hook Trigger route for `ParseFile` and the body will not be collected into a buffer.
+    // Another Parse Hook Trigger route for `ParseFile` where the body will not be collected into a buffer.
     app.on("file", "stream",
            body: .stream,
-           triggerName: .afterDelete) { req async throws -> ParseHookResponse<Bool> in
+           triggerName: .beforeSave) { req async throws -> ParseHookResponse<Bool> in
         if let error: ParseHookResponse<Bool> = checkHeaders(req) {
             return error
         }
@@ -134,7 +134,7 @@ func routes(_ app: Application) throws {
         return ParseHookResponse(success: true)
     }
 
-    // A Parse Hook Trigger route.
+    // Another Parse Hook Trigger route for `ParseLiveQuery`.
     app.post("subscribe",
              className: "GameScore",
              triggerName: .beforeSubscribe) { req async throws -> ParseHookResponse<Bool> in
@@ -148,7 +148,7 @@ func routes(_ app: Application) throws {
         return ParseHookResponse(success: true)
     }
 
-    // A Parse Hook Trigger route.
+    // Another Parse Hook Trigger route for `ParseLiveQuery`.
     app.post("event",
              className: "GameScore",
              triggerName: .afterEvent) { req async throws -> ParseHookResponse<Bool> in
