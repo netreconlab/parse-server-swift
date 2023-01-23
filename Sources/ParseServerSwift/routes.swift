@@ -24,7 +24,7 @@ func routes(_ app: Application) throws {
         
         // If a User called the request, fetch the complete user.
         if parseRequest.user != nil {
-            parseRequest = try await parseRequest.hydrateUser()
+            parseRequest = try await parseRequest.hydrateUser(request: req)
         }
         
         // To query using the User's credentials who called this function,
@@ -47,7 +47,7 @@ func routes(_ app: Application) throws {
 
         // If a User called the request, fetch the complete user.
         if parseRequest.user != nil {
-            parseRequest = try await parseRequest.hydrateUser()
+            parseRequest = try await parseRequest.hydrateUser(request: req)
         }
 
         guard let object = parseRequest.object else {
