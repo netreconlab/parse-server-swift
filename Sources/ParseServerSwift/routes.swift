@@ -36,7 +36,7 @@ func routes(_ app: Application) throws {
     }
 
     // A Parse Hook Trigger route.
-    app.post("scoreBeforeSave",
+    app.post("score", "save", "before",
              className: "GameScore",
              triggerName: .beforeSave) { req async throws -> ParseHookResponse<GameScore> in
         if let error: ParseHookResponse<GameScore> = checkHeaders(req) {
@@ -62,7 +62,7 @@ func routes(_ app: Application) throws {
     }
 
     // Another Parse Hook Trigger route.
-    app.post("scoreBeforeFind",
+    app.post("score", "find", "before",
              className: "GameScore",
              triggerName: .beforeFind) { req async throws -> ParseHookResponse<[GameScore]> in
         if let error: ParseHookResponse<[GameScore]> = checkHeaders(req) {
@@ -81,7 +81,7 @@ func routes(_ app: Application) throws {
     }
 
     // Another Parse Hook Trigger route.
-    app.post("login",
+    app.post("user", "login", "after",
              className: "_User",
              triggerName: .afterLogin) { req async throws -> ParseHookResponse<Bool> in
         if let error: ParseHookResponse<Bool> = checkHeaders(req) {
@@ -94,21 +94,8 @@ func routes(_ app: Application) throws {
         return ParseHookResponse(success: true)
     }
 
-    // A Parse Hook Trigger route for `ParseFile`.
-    app.post("file",
-             triggerName: .beforeDelete) { req async throws -> ParseHookResponse<Bool> in
-        if let error: ParseHookResponse<Bool> = checkHeaders(req) {
-            return error
-        }
-        let parseRequest = try req.content
-            .decode(ParseHookTriggerRequest<User, GameScore>.self)
-
-        req.logger.info("A ParseFile is being deleted: \(parseRequest)")
-        return ParseHookResponse(success: true)
-    }
-
-    // Another Parse Hook Trigger route for `ParseFile` where the body will not be collected into a buffer.
-    app.on("file", "stream",
+    // A Parse Hook Trigger route for `ParseFile` where the body will not be collected into a buffer.
+    app.on("file", "save", "before",
            body: .stream,
            triggerName: .beforeSave) { req async throws -> ParseHookResponse<Bool> in
         if let error: ParseHookResponse<Bool> = checkHeaders(req) {
@@ -120,9 +107,22 @@ func routes(_ app: Application) throws {
         req.logger.info("A ParseFile is being saved: \(parseRequest)")
         return ParseHookResponse(success: true)
     }
+
+    // Another Parse Hook Trigger route for `ParseFile`.
+    app.post("file", "delete", "before",
+             triggerName: .beforeDelete) { req async throws -> ParseHookResponse<Bool> in
+        if let error: ParseHookResponse<Bool> = checkHeaders(req) {
+            return error
+        }
+        let parseRequest = try req.content
+            .decode(ParseHookTriggerRequest<User, GameScore>.self)
+
+        req.logger.info("A ParseFile is being deleted: \(parseRequest)")
+        return ParseHookResponse(success: true)
+    }
     
     // A Parse Hook Trigger route for `ParseLiveQuery`.
-    app.post("connect",
+    app.post("connect", "before",
              triggerName: .beforeConnect) { req async throws -> ParseHookResponse<Bool> in
         if let error: ParseHookResponse<Bool> = checkHeaders(req) {
             return error
@@ -135,7 +135,7 @@ func routes(_ app: Application) throws {
     }
 
     // Another Parse Hook Trigger route for `ParseLiveQuery`.
-    app.post("subscribe",
+    app.post("score", "subscribe", "before",
              className: "GameScore",
              triggerName: .beforeSubscribe) { req async throws -> ParseHookResponse<Bool> in
         if let error: ParseHookResponse<Bool> = checkHeaders(req) {
@@ -149,7 +149,7 @@ func routes(_ app: Application) throws {
     }
 
     // Another Parse Hook Trigger route for `ParseLiveQuery`.
-    app.post("event",
+    app.post("score", "event", "after",
              className: "GameScore",
              triggerName: .afterEvent) { req async throws -> ParseHookResponse<Bool> in
         if let error: ParseHookResponse<Bool> = checkHeaders(req) {

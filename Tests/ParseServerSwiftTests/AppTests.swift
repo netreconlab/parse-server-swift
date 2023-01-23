@@ -100,7 +100,7 @@ final class AppTests: XCTestCase {
         let app = try setupAppForTesting(hookKey: "wow")
         defer { app.shutdown() }
         
-        try app.test(.POST, "scoreBeforeSave", afterResponse: { res in
+        try app.test(.POST, "score/save/before", afterResponse: { res in
             XCTAssertEqual(res.status, .ok)
             XCTAssertTrue(res.body.string.contains("Webhook keys"))
         })
