@@ -17,21 +17,80 @@ final class AppTests: XCTestCase {
         return app
     }
     
-    func testHelloWorld() throws {
+    func testFooBar() throws {
         let app = try setupAppForTesting()
         defer { app.shutdown() }
 
-        try app.test(.GET, "hello", afterResponse: { res in
+        try app.test(.GET, "foo", afterResponse: { res in
             XCTAssertEqual(res.status, .ok)
-            XCTAssertEqual(res.body.string, "Hello, world!")
+            XCTAssertEqual(res.body.string, "foo bar")
         })
+    }
+
+    func testCheckServerHealth() async throws {
+        let app = try setupAppForTesting()
+        defer { app.shutdown() }
+
+        XCTAssertGreaterThan(parseServerURLStrings.count, 0)
+        do {
+            try await checkServerHealth(app)
+            XCTFail("Should have thrown error")
+        } catch {
+            XCTAssertTrue(error.localizedDescription.contains("Unable to connect"))
+        }
+    }
+
+    func testGetParseServerURLs() async throws {
+        let urls = try getParseServerURLs()
+        XCTAssertEqual(urls.0, "http://localhost:1337/parse")
+        XCTAssertEqual(urls.1.count, 0)
+        let urlStrings = "http://parse2:1337/parse, http://parse:1337/parse"
+        let urls2 = try getParseServerURLs(urlStrings)
+        XCTAssertEqual(urls2.0, "http://parse:1337/parse")
+        XCTAssertEqual(urls2.1.count, 1)
+        XCTAssertEqual(urls2.1.first, "http://parse2:1337/parse")
+        let urlStrings2 = "http://parse2:1337/parse,http://parse:1337/parse"
+        let urls3 = try getParseServerURLs(urlStrings2)
+        XCTAssertEqual(urls3.0, "http://parse:1337/parse")
+        XCTAssertEqual(urls3.1.count, 1)
+        XCTAssertEqual(urls3.1.first, "http://parse2:1337/parse")
+    }
+
+    func testDeleteHooks() async throws {
+        let app = try setupAppForTesting()
+        defer { app.shutdown() }
+
+        let urlString = "https://parse.com/parse"
+        guard let url = URL(string: urlString) else {
+            XCTFail("Should have unwrapped")
+            return
+        }
+        XCTAssertGreaterThan(parseServerURLStrings.count, 0)
+
+        let function = HookFunction(name: "hello", url: url)
+        let trigger = try HookTrigger(triggerName: .afterSave, url: url)
+
+        await hooks.updateFunctions([ urlString: function ])
+        await hooks.updateTriggers([ urlString: trigger ])
+
+        let currentFunctions = await hooks.getFunctions()
+        let currentTriggers = await hooks.getTriggers()
+        XCTAssertGreaterThan(currentFunctions.count, 0)
+        XCTAssertGreaterThan(currentTriggers.count, 0)
+
+        await deleteHooks(app)
+
+        let currentFunctions2 = await hooks.getFunctions()
+        let currentTriggers2 = await hooks.getTriggers()
+        XCTAssertEqual(currentFunctions2.count, 0)
+        XCTAssertEqual(currentTriggers2.count, 0)
     }
 
     func testFunctionWebhookKeyNotEqual() throws {
         let app = try setupAppForTesting(hookKey: "wow")
         defer { app.shutdown() }
         
-        try app.test(.POST, "foo", afterResponse: { res in
+        try app.test(.POST, "hello", afterResponse: { res in
             XCTAssertEqual(res.status, .ok)
             XCTAssertTrue(res.body.string.contains("Webhook keys"))
         })
@@ -41,7 +100,7 @@ final class AppTests: XCTestCase {
         let app = try setupAppForTesting(hookKey: "wow")
         defer { app.shutdown() }
         
-        try app.test(.POST, "bar", afterResponse: { res in
+        try app.test(.POST, "score/save/before", afterResponse: { res in
             XCTAssertEqual(res.status, .ok)
             XCTAssertTrue(res.body.string.contains("Webhook keys"))
         })
@@ -50,7 +109,7 @@ final class AppTests: XCTestCase {
     func testMatchServerURLString() async throws {
         let app = try setupAppForTesting()
         defer { app.shutdown() }
-        let urlString = "https://parse.com/1"
+        let urlString = "https://parse.com/parse"
         let uri = URI(stringLiteral: urlString)
         let serverString = try serverURLString(uri, parseServerURLStrings: [urlString])
         XCTAssertEqual(serverString, urlString)
@@ -60,7 +119,7 @@ final class AppTests: XCTestCase {
         let serverString2 = try serverURLString(uri2, parseServerURLStrings: [urlString])
         XCTAssertEqual(serverString2, urlString)
         
-        parseServerURLStrings = ["http://localhost:1337/1"]
+        parseServerURLStrings = ["http://localhost:1337/parse"]
         let serverString3 = try serverURLString(uri)
         XCTAssertEqual(serverString3, parseServerURLStrings.first)
     }
@@ -69,7 +128,7 @@ final class AppTests: XCTestCase {
         let app = try setupAppForTesting()
         parseServerURLStrings.removeAll()
         defer { app.shutdown() }
-        let urlString = "https://parse.com/1"
+        let urlString = "https://parse.com/parse"
         let uri = URI(stringLiteral: urlString)
         XCTAssertThrowsError(try serverURLString(uri))
     }
@@ -78,7 +137,7 @@ final class AppTests: XCTestCase {
         let app = try setupAppForTesting()
         defer { app.shutdown() }
         let installationId = "naw"
-        let urlString = "https://parse.com/1"
+        let urlString = "https://parse.com/parse"
         parseServerURLStrings.append(urlString)
         let dummyHookRequest = DummyRequest(installationId: installationId, params: .init())
         let encoded = try ParseCoding.jsonEncoder().encode(dummyHookRequest)
@@ -86,7 +145,18 @@ final class AppTests: XCTestCase {
                                                                from: encoded)
 
         let options = hookRequest.options()
-        XCTAssertEqual(options, API.Options([.installationId(installationId)]))
+        let installationOption = options.first(where: { $0 == .installationId("") })
+        XCTAssertEqual(options.count, 1)
+        XCTAssertTrue(installationOption.debugDescription.contains(installationId))
+
+        let uri = URI(stringLiteral: urlString)
+        let request = Request(application: app, url: uri, on: app.eventLoopGroup.any())
+        let options2 = try hookRequest.options(request)
+        let installationOption2 = options2.first(where: { $0 == .installationId("") })
+        let serverURLOption = options2.first(where: { $0 == .serverURL("") })
+        XCTAssertEqual(options2.count, 2)
+        XCTAssertTrue(installationOption2.debugDescription.contains(installationId))
+        XCTAssertTrue(serverURLOption.debugDescription.contains("\"\(urlString)\""))
     }
 
     func testHooksFunctions() async throws {

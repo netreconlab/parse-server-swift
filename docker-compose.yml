@@ -16,15 +16,104 @@ version: '3.7'
 
 x-shared_environment: &shared_environment
   LOG_LEVEL: ${LOG_LEVEL:-debug}
+  PARSE_SERVER_APPLICATION_ID: ${PARSE_SERVER_APPLICATION_ID}
+  PARSE_SERVER_PRIMARY_KEY: ${PARSE_SERVER_PRIMARY_KEY}
+  PARSE_SERVER_READ_ONLY_PRIMARY_KEY: 367F7395-2E3A-46B1-ABA3-963A25D533C3
+  PARSE_SERVER_WEBHOOK_KEY: ${PARSE_SERVER_WEBHOOK_KEY}
+  PARSE_SERVER_ENCRYPTION_KEY: 72F8F23D-FDDB-4792-94AE-72897F0688F9
+  PARSE_SERVER_TRUST_PROXY: 'true'
+  PARSE_SERVER_OBJECT_ID_SIZE: 32
+  PARSE_SERVER_DATABASE_URI: postgres://${PG_PARSE_USER}:${PG_PARSE_PASSWORD}@db:${DB_PORT}/${PG_PARSE_DB}
+  PORT: ${PORT}
+  PARSE_SERVER_MOUNT_PATH: ${MOUNT_PATH}
+  PARSE_SERVER_CLOUD: /parse-server/cloud/main.js
+  PARSE_SERVER_MOUNT_GRAPHQL: 'false'
+  PARSE_SERVER_ALLOW_CLIENT_CLASS_CREATION: 'true' # Don't allow classes to be created on the client side. You can create classes by using ParseDashboard instead
+  PARSE_SERVER_ALLOW_CUSTOM_OBJECTID: 'true' # Required to be true for ParseCareKit
+  PARSE_SERVER_ENABLE_SCHEMA_HOOKS: 'true' # When this is true, only need one server for PARSE_SWIFT_SERVER_URLS 
+  PARSE_SERVER_DIRECT_ACCESS: 'false' # WARNING: Setting to 'true' is known to cause crashes on parse-hipaa running postgres
+  PARSE_SERVER_ENABLE_PRIVATE_USERS: 'true'
+  PARSE_SERVER_USING_PARSECAREKIT: 'false' # If you are not using ParseCareKit, set this to 'false'
+  PARSE_DASHBOARD_START: 'true'
+  PARSE_DASHBOARD_APP_NAME: Parse HIPAA
+  PARSE_DASHBOARD_USERNAMES: parse, parseRead
+  PARSE_DASHBOARD_USER_PASSWORDS: 1234, 1234
+  PARSE_DASHBOARD_USER_PASSWORD_ENCRYPTED: 'false'
+  PARSE_DASHBOARD_ALLOW_INSECURE_HTTP: 1
+  PARSE_DASHBOARD_COOKIE_SESSION_SECRET: AB8849B6-D725-4A75-AA73-AB7103F0363F # This should be constant across all deployments on your system
+  PARSE_DASHBOARD_MOUNT_PATH: /dashboard # This needs to be exactly what you plan it to be behind the proxy, i.e. If you want to access cs.uky.edu/dashboard it should be "/dashboard"
+  PARSE_VERBOSE: 'false'
+  POSTGRES_PASSWORD: ${POSTGRES_PASSWORD} # Needed for wait-for-postgres.sh
   
 services:
-  app:
+  cloud-code:
     image: parse-server-swift:latest
     build:
       context: .
     environment:
       <<: *shared_environment
-    ports:
-      - '8081:8080'
+      PARSE_SWIFT_SERVER_HOST_NAME: cloud-code # Should be same name as docker service
+      PARSE_SWIFT_SERVER_PORT: 8081
+      PARSE_SWIFT_SERVER_DEFAULT_MAX_BODY_SIZE: 500kb
+      PARSE_SWIFT_SERVER_URLS: http://parse:1337/parse #,http://parse2:1337/parse # Only need to list one server when PARSE_SERVER_ENABLE_SCHEMA_HOOKS='true' 
+      PARSE_SWIFT_SERVER_APPLICATION_ID: ${PARSE_SERVER_APPLICATION_ID}
+      PARSE_SWIFT_SERVER_PRIMARY_KEY: ${PARSE_SERVER_PRIMARY_KEY}
+      PARSE_SWIFT_SERVER_WEBHOOK_KEY: ${PARSE_SERVER_WEBHOOK_KEY}
+    # ports:
+    #  - '8081:8081'
     # user: '0' # uncomment to run as root for testing purposes even though Dockerfile defines 'vapor' user.
-    command: ["serve", "--env", "production", "--hostname", "0.0.0.0", "--port", "8080"]
+    restart: always
+    command: ["serve", "--env", "production", "--hostname", "0.0.0.0", "--port", "8081"]
+    # volumes:
+    #  - ./.env:/app/.env
+    #  - ./.env.production:/app/.env.production # Mount production environment if you have one.
+    depends_on:
+        - parse2
+  parse:
+    image: netreconlab/parse-hipaa:6.0.0-alpha-dashboard
+    environment:
+      <<: *shared_environment
+      PARSE_SERVER_URL: http://parse:${PORT}${MOUNT_PATH}
+      PARSE_SERVER_PUBLIC_URL: http://localhost:${PORT}${MOUNT_PATH}
+      PARSE_DASHBOARD_SERVER_URL: http://localhost:${PORT}${MOUNT_PATH}
+    ports:
+      - 127.0.0.1:${PORT}:${PORT}
+    volumes:
+      - ./parse/wait-for-postgres.sh:/parse-server/wait-for-postgres.sh
+      - ./parse/index.js:/parse-server/index.js
+      - ./parse/cloud:/parse-server/cloud
+      - ./parse/files:/parse-server/files # All files uploaded from users are stored to an ecrypted drive locally for HIPAA compliance
+    restart: always
+    command: ["./wait-for-postgres.sh", "db", "node", "index.js"]
+    depends_on:
+      - db
+  parse2:
+    image: netreconlab/parse-hipaa:6.0.0-alpha-dashboard
+    environment:
+      <<: *shared_environment
+      PARSE_SERVER_URL: http://parse2:${PORT}${MOUNT_PATH}
+      PARSE_SERVER_PUBLIC_URL: http://localhost:1338${MOUNT_PATH}
+      PARSE_DASHBOARD_SERVER_URL: http://localhost:1338${MOUNT_PATH}
+    ports:
+      - 127.0.0.1:1338:${PORT}
+    volumes:
+      - ./parse/wait-for-postgres.sh:/parse-server/wait-for-postgres.sh
+      - ./parse/index.js:/parse-server/index.js
+      - ./parse/cloud:/parse-server/cloud
+      - ./parse/files:/parse-server/files # All files uploaded from users are stored to an ecrypted drive locally for HIPAA compliance
+    restart: always
+    command: ["./wait-for-postgres.sh", "db", "node", "index.js"]
+    depends_on:
+      - parse
+  db:
+    image: netreconlab/hipaa-postgres:latest
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      PG_PARSE_USER: ${PG_PARSE_USER}
+      PG_PARSE_PASSWORD: ${PG_PARSE_PASSWORD}
+      PG_PARSE_DB: ${PG_PARSE_DB}
+      PMM_USER: ${PMM_USER}
+      PMM_PASSWORD: ${PMM_PASSWORD}
+    restart: always
+    ports:
+      - 127.0.0.1:${DB_PORT}:${DB_PORT}

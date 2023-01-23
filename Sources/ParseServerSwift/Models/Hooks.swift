@@ -14,7 +14,7 @@ public actor Hooks {
 }
 
 // MARK: Hook Functions
-extension Hooks {
+public extension Hooks {
     /// Get all of the current functions.
     /// - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookFunction`.
     func getFunctions() -> [String: HookFunction] {
@@ -44,7 +44,7 @@ extension Hooks {
 }
 
 // MARK: Hook Triggers
-extension Hooks {
+public extension Hooks {
     /// Get all of the current triggers.
     /// - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
     func getTriggers() -> [String: HookTrigger] {

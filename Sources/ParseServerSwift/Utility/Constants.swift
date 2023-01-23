@@ -10,10 +10,10 @@ import Foundation
 /**
  Additional headers sent from the Parse Server.
  */
-enum Headers {
+public enum Headers {
     /**
      Sent from a Parse Server to prove authenticity. The **webhookKey**
      is an optional configuration when initializing your nodejs Parse Server.
      */
-    static let webhook = "X-Parse-Webhook-Key"
+    public static let webhook = "X-Parse-Webhook-Key"
 }

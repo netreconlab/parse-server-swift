@@ -50,10 +50,15 @@ extension HookFunction {
                         .delete(options: [.serverURL(parseServerURLString)])
                 default:
                     throw ParseError(code: .otherCause,
-                                     message: "Method \(method) is not supported for function: \"\(String(describing: hookFunction))\"")
+                                     message: "Method \(method) is not supported for Hook Function: \"\(String(describing: hookFunction))\"")
                 }
+                logger.notice("Successful \(method); Hook Function: \"\(String(describing: hookFunction))\" on server: \(parseServerURLString)")
             } catch {
-                logger.error("Could not \(method) function: \"\(String(describing: hookFunction))\"; error: \(error); on server: \(parseServerURLString)")
+                if error.containedIn([.webhookError]) && method == .POST {
+                    logger.warning("Hook Function: \"\(String(describing: hookFunction))\"; warning: \(error); on server: \(parseServerURLString)")
+                } else {
+                    logger.error("Could not \(method) Hook Function: \"\(String(describing: hookFunction))\"; error: \(error); on server: \(parseServerURLString)")
+                }
             }
         }
         return hookFunctions
