@@ -51,6 +51,12 @@ The aforementioned environment variables automatically configure [Parse-Swift<su
 1. Fork this repo
 2. In your terminal, change directories into `ParseServerSwift` folder
 3. Type `docker-compose up`
+4. Accessing your containers:
+  - The first parse-hipaa server can be accessed at: http://localhost:1337/parse with the respective dashboard at: http://localhost:1337/dashboard/apps/Parse%20HIPAA/webhooks
+  - The second parse-hipaa server can be accessed at: http://localhost:1338/parse with the respective dashboard at: http://localhost:1338/dashboard/apps/Parse%20HIPAA/webhooks
+  - The default login for the dashboard is username: `parse` with password: `1234`
+  - If you login to any of the dashboards: Click the `Parse-Hipaa` app, click `Webhooks` to the left and you will see all of the example Cloud Code registered as webooks:
+  <img width="1311" alt="image" src="https://user-images.githubusercontent.com/8621344/214114654-a374dc04-f696-4a18-921b-612f19b07ede.png">
 
 ### On macOS
 To start your server type, `swift run` in the terminal of the project root directory.
