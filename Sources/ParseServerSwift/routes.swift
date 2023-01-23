@@ -71,10 +71,12 @@ func routes(_ app: Application) throws {
         let parseRequest = try req.content
             .decode(ParseHookTriggerRequest<User, GameScore>.self)
         req.logger.info("A query is being made: \(parseRequest)")
+        
+        // Return two custom scores instead.
         let score1 = GameScore(objectId: "yolo",
                                createdAt: Date(),
                                points: 50)
-        let score2 = GameScore(objectId: "yolo",
+        let score2 = GameScore(objectId: "nolo",
                                createdAt: Date(),
                                points: 60)
         return ParseHookResponse(success: [score1, score2])
@@ -144,7 +146,7 @@ func routes(_ app: Application) throws {
         let parseRequest = try req.content
             .decode(ParseHookTriggerRequest<User, GameScore>.self)
 
-        req.logger.info("A LiveQuery subscribe is being made: \(parseRequest)")
+        req.logger.info("A LiveQuery subscription is being made: \(parseRequest)")
         return ParseHookResponse(success: true)
     }
 
