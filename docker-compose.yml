@@ -87,12 +87,6 @@ services:
     command: ["./wait-for-postgres.sh", "db", "node", "index.js"]
     depends_on:
       - db
-    healthcheck:
-      test: curl --fail http://127.0.0.1 || exit 1
-      interval: 10s
-      retries: 5
-      start_period: 5s
-      timeout: 10s
   parse2:
     image: netreconlab/parse-hipaa:6.0.0-alpha-dashboard
     environment:
