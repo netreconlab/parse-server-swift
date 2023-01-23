@@ -65,11 +65,17 @@ func configure(_ app: Application, testing: Bool) throws {
     
     if !isTesting {
         Task {
-            // Check the health of all Parse-Server
-            await checkServerHealth(app)
+            do {
+                // Check the health of all Parse-Server
+                try await checkServerHealth(app)
+                // register routes
+                try routes(app)
+            } catch {
+                app.shutdown()
+            }
         }
+    } else {
+        // register routes
+        try routes(app)
     }
-
-    // register routes
-    try routes(app)
 }

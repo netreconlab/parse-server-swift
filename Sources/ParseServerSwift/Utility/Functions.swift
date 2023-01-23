@@ -56,14 +56,10 @@ public func buildServerPathname(_ path: [PathComponent]) throws -> URL {
 
 /// Check the Health of all Parse Servers.
 /// - parameter app: Core type representing a Vapor application.
-public func checkServerHealth(_ app: Application) async {
+public func checkServerHealth(_ app: Application) async throws {
     for parseServerURLString in parseServerURLStrings {
-        do {
-            let serverHealth = try await ParseHealth.check(options: [.serverURL(parseServerURLString)])
-            app.logger.notice("Parse Server (\(parseServerURLString)) health is \"\(serverHealth)\"")
-        } catch {
-            app.logger.error("Could not connect to Parse Server (\(parseServerURLString)): \(error)")
-        }
+        let serverHealth = try await ParseHealth.check(options: [.serverURL(parseServerURLString)])
+        app.logger.notice("Parse Server (\(parseServerURLString)) health is \"\(serverHealth)\"")
     }
 }
 

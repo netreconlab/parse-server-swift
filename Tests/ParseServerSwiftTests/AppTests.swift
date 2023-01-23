@@ -32,7 +32,12 @@ final class AppTests: XCTestCase {
         defer { app.shutdown() }
 
         XCTAssertGreaterThan(parseServerURLStrings.count, 0)
-        await checkServerHealth(app)
+        do {
+            try await checkServerHealth(app)
+            XCTFail("Should have thrown error")
+        } catch {
+            XCTAssertTrue(error.localizedDescription.contains("Unable to connect"))
+        }
     }
 
     func testGetParseServerURLs() async throws {
