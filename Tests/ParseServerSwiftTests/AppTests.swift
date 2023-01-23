@@ -17,13 +17,13 @@ final class AppTests: XCTestCase {
         return app
     }
     
-    func testHelloWorld() throws {
+    func testFooBar() throws {
         let app = try setupAppForTesting()
         defer { app.shutdown() }
 
-        try app.test(.GET, "hello", afterResponse: { res in
+        try app.test(.GET, "foo", afterResponse: { res in
             XCTAssertEqual(res.status, .ok)
-            XCTAssertEqual(res.body.string, "Hello, world!")
+            XCTAssertEqual(res.body.string, "foo bar")
         })
     }
 
@@ -90,7 +90,7 @@ final class AppTests: XCTestCase {
         let app = try setupAppForTesting(hookKey: "wow")
         defer { app.shutdown() }
         
-        try app.test(.POST, "foo", afterResponse: { res in
+        try app.test(.POST, "hello", afterResponse: { res in
             XCTAssertEqual(res.status, .ok)
             XCTAssertTrue(res.body.string.contains("Webhook keys"))
         })
@@ -100,7 +100,7 @@ final class AppTests: XCTestCase {
         let app = try setupAppForTesting(hookKey: "wow")
         defer { app.shutdown() }
         
-        try app.test(.POST, "bar", afterResponse: { res in
+        try app.test(.POST, "scoreBeforeSave", afterResponse: { res in
             XCTAssertEqual(res.status, .ok)
             XCTAssertTrue(res.body.string.contains("Webhook keys"))
         })
