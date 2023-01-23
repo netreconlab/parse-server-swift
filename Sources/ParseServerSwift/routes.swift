@@ -9,13 +9,13 @@ func routes(_ app: Application) throws {
     }
 
     // Another typical route in Vapor.
-    app.get("hello") { req async throws -> String in
-        return "Hello, world!"
+    app.get("foo") { req async throws -> String in
+        return "foo bar"
     }
 
     // A Parse Hook Function route.
-    app.post("foo",
-             name: "foo") { req async throws -> ParseHookResponse<String> in
+    app.post("hello",
+             name: "hello") { req async throws -> ParseHookResponse<String> in
         if let error: ParseHookResponse<String> = checkHeaders(req) {
             return error
         }
@@ -32,11 +32,11 @@ func routes(_ app: Application) throws {
         let options = try parseRequest.options(req)
         let scores = try await GameScore.query.findAll(options: options)
         req.logger.info("Scores this user can access: \(scores)")
-        return ParseHookResponse(success: "Hello, new world!")
+        return ParseHookResponse(success: "Hello world!")
     }
 
     // A Parse Hook Trigger route.
-    app.post("bar",
+    app.post("scoreBeforeSave",
              className: "GameScore",
              triggerName: .beforeSave) { req async throws -> ParseHookResponse<GameScore> in
         if let error: ParseHookResponse<GameScore> = checkHeaders(req) {
@@ -62,7 +62,7 @@ func routes(_ app: Application) throws {
     }
 
     // Another Parse Hook Trigger route.
-    app.post("find",
+    app.post("scoreBeforeFind",
              className: "GameScore",
              triggerName: .beforeFind) { req async throws -> ParseHookResponse<[GameScore]> in
         if let error: ParseHookResponse<[GameScore]> = checkHeaders(req) {
