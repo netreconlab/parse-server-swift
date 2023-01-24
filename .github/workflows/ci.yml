@@ -17,12 +17,6 @@ jobs:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Create and set the default keychain
-      run: |
-        security create-keychain -p "" temporary
-        security default-keychain -s temporary
-        security unlock-keychain -p "" temporary
-        security set-keychain-settings -lut 7200 temporary
     - name: Use multiple cores
       run: defaults write com.apple.dt.XCBuild EnableSwiftBuildSystemIntegration 1
     - name: Build and Test
