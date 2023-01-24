@@ -27,13 +27,13 @@ Technically, complete apps can be written with `ParseServerSwift`, the only diff
 The following enviroment variables are available and can be configured directly or through `.env`, `.env.production`, etc. See the [Vapor Docs for more details](https://docs.vapor.codes/basics/environment/).
 
 ```
-PARSE_SWIFT_SERVER_HOST_NAME: cloud-code # The name of your host. If you are running in Docker it should be same name as the docker service
-PARSE_SWIFT_SERVER_PORT: # This is the default port on the docker image
-PARSE_SWIFT_SERVER_DEFAULT_MAX_BODY_SIZE: 500kb # Set the default size for bodies that are collected into memory before calling your handlers (See Vapor docs for more details)
-PARSE_SWIFT_SERVER_URLS: http://parse:1337/parse # (Required) Specify one of your Parse Servers to connect to. Can connect to multiple by seperating URLs with commas
-PARSE_SWIFT_SERVER_APPLICATION_ID: appId # (Required) The application id of your Parse Server
-PARSE_SWIFT_SERVER_PRIMARY_KEY: primaryKey # (Required) The master key of your Parse Server 
-PARSE_SWIFT_SERVER_WEBHOOK_KEY: webookKey # The webhookKey of your Parse Server
+PARSE_SERVER_SWIFT_HOST_NAME: cloud-code # The name of your host. If you are running in Docker it should be same name as the docker service
+PARSE_SERVER_SWIFT_PORT: # This is the default port on the docker image
+PARSE_SERVER_SWIFT_DEFAULT_MAX_BODY_SIZE: 500kb # Set the default size for bodies that are collected into memory before calling your handlers (See Vapor docs for more details)
+PARSE_SERVER_SWIFT_URLS: http://parse:1337/parse # (Required) Specify one of your Parse Servers to connect to. Can connect to multiple by seperating URLs with commas
+PARSE_SERVER_SWIFT_APPLICATION_ID: appId # (Required) The application id of your Parse Server
+PARSE_SERVER_SWIFT_PRIMARY_KEY: primaryKey # (Required) The master key of your Parse Server 
+PARSE_SERVER_SWIFT_WEBHOOK_KEY: webookKey # The webhookKey of your Parse Server
 ```
 
 If you need to customize your configuration you will need to edit [ParseServerSwift/Sources/ParseServerSwift/configure.swift](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/configure.swift) directly.
