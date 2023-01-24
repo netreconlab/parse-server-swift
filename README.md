@@ -192,9 +192,8 @@ app.post("user", "login", "after",
     return ParseHookResponse(success: true)
 }
 
-// A Parse Hook Trigger route for `ParseFile` where the body will not be collected into a buffer.
+// A Parse Hook Trigger route for `ParseFile`.
 app.on("file", "save", "before",
-       body: .stream,
        triggerName: .beforeSave) { req async throws -> ParseHookResponse<Bool> in
     if let error: ParseHookResponse<Bool> = checkHeaders(req) {
         return error
