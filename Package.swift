@@ -4,17 +4,20 @@ import PackageDescription
 let package = Package(
     name: "ParseServerSwift",
     platforms: [
-       .macOS(.v12)
+        .iOS(.v13),
+        .macCatalyst(.v13),
+        .macOS(.v10_15),
+        .tvOS(.v13),
+        .watchOS(.v6)
     ],
     products: [
             .library(name: "ParseServerSwift", targets: ["ParseServerSwift"])
     ],
     dependencies: [
-        // 💧 A server-side Swift web framework.
         .package(url: "https://github.com/vapor/vapor.git", .upToNextMajor(from: "4.69.1")),
         .package(url: "https://github.com/vapor/leaf.git", .upToNextMajor(from: "4.2.4")),
         .package(url: "https://github.com/netreconlab/Parse-Swift.git",
-                 .upToNextMajor(from: "5.0.0-beta.5")),
+                 .upToNextMajor(from: "5.0.0-beta.6")),
     ],
     targets: [
         .target(
