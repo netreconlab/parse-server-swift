@@ -3,7 +3,7 @@ import ParseSwift
 import Vapor
 
 /// The key used to authenticate incoming webhook calls from a Parse Server
-public var webhookKey: String? = Environment.process.PARSE_SWIFT_SERVER_WEBHOOK_KEY
+public var webhookKey: String?
 
 /// The current Hook Functions and Triggers.
 public var hooks = Hooks()
@@ -31,13 +31,14 @@ func configure(_ app: Application, testing: Bool) throws {
 
     app.views.use(.leaf)
     // Setup current host
-    app.http.server.configuration.hostname = Environment.process.PARSE_SWIFT_SERVER_HOST_NAME ?? "localhost"
-    app.http.server.configuration.port = Int(Environment.process.PARSE_SWIFT_SERVER_PORT ?? 8081)
+    app.http.server.configuration.hostname = Environment.process.PARSE_SERVER_SWIFT_HOST_NAME ?? "localhost"
+    app.http.server.configuration.port = Int(Environment.process.PARSE_SERVER_SWIFT_PORT ?? 8081)
     app.http.server.configuration.tlsConfiguration = .none
     serverPathname = app.http.server.configuration.buildServerURL()
+    webhookKey = Environment.process.PARSE_SERVER_SWIFT_WEBHOOK_KEY
 
     // Increases the streaming body collection limit to 500kb
-    app.routes.defaultMaxBodySize = ByteCount(stringLiteral: Environment.process.PARSE_SWIFT_SERVER_DEFAULT_MAX_BODY_SIZE ?? "500kb")
+    app.routes.defaultMaxBodySize = ByteCount(stringLiteral: Environment.process.PARSE_SERVER_SWIFT_DEFAULT_MAX_BODY_SIZE ?? "500kb")
 
     // Parse uses tailored encoders/decoders. These can be retrieved from any ParseObject
     ContentConfiguration.global.use(encoder: User.getJSONEncoder(), for: .json)
@@ -55,8 +56,8 @@ func configure(_ app: Application, testing: Bool) throws {
     }
 
     // Initialize the Parse-Swift SDK. Add any additional parameters you need
-    try ParseSwift.initialize(applicationId: Environment.process.PARSE_SWIFT_SERVER_APPLICATION_ID ?? "applicationId",
-                              primaryKey: Environment.process.PARSE_SWIFT_SERVER_PRIMARY_KEY ?? "primaryKey",
+    try ParseSwift.initialize(applicationId: Environment.process.PARSE_SERVER_SWIFT_APPLICATION_ID ?? "applicationId",
+                              primaryKey: Environment.process.PARSE_SERVER_SWIFT_PRIMARY_KEY ?? "primaryKey",
                               serverURL: parseServerURL,
                               usingPostForQuery: true) { _, completionHandler in
         // Setup to use default certificate pinning. See Parse-Swift docs for more info
@@ -68,14 +69,12 @@ func configure(_ app: Application, testing: Bool) throws {
             do {
                 // Check the health of all Parse-Server
                 try await checkServerHealth(app)
-                // register routes
-                try routes(app)
             } catch {
                 app.shutdown()
             }
         }
-    } else {
-        // register routes
-        try routes(app)
     }
+    
+    // register routes
+    try routes(app)
 }

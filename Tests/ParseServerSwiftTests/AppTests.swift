@@ -11,8 +11,8 @@ final class AppTests: XCTestCase {
 
     func setupAppForTesting(hookKey: String? = nil) throws -> Application {
         let app = Application(.testing)
-        webhookKey = hookKey
         try configure(app, testing: true)
+        webhookKey = hookKey
         Parse.configuration.isTestingSDK = true
         return app
     }
