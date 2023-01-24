@@ -16,7 +16,8 @@ func routes(_ app: Application) throws {
     // A Parse Hook Function route.
     app.post("hello",
              name: "hello",
-             parseServerURLStrings: parseServerURLStrings) { req async throws -> ParseHookResponse<String> in
+             parseServerURLStrings: parseServerURLStrings,
+             hooks: hooks) { req async throws -> ParseHookResponse<String> in
         if let error: ParseHookResponse<String> = checkHeaders(req) {
             return error
         }
@@ -42,7 +43,8 @@ func routes(_ app: Application) throws {
     app.post("score", "save", "before",
              className: GameScore.className,
              triggerName: .beforeSave,
-             parseServerURLStrings: parseServerURLStrings) { req async throws -> ParseHookResponse<GameScore> in
+             parseServerURLStrings: parseServerURLStrings,
+             hooks: hooks) { req async throws -> ParseHookResponse<GameScore> in
         if let error: ParseHookResponse<GameScore> = checkHeaders(req) {
             return error
         }
@@ -70,7 +72,8 @@ func routes(_ app: Application) throws {
     app.post("score", "find", "before",
              className: GameScore.className,
              triggerName: .beforeFind,
-             parseServerURLStrings: parseServerURLStrings) { req async throws -> ParseHookResponse<[GameScore]> in
+             parseServerURLStrings: parseServerURLStrings,
+             hooks: hooks) { req async throws -> ParseHookResponse<[GameScore]> in
         if let error: ParseHookResponse<[GameScore]> = checkHeaders(req) {
             return error
         }
@@ -96,7 +99,8 @@ func routes(_ app: Application) throws {
     app.post("user", "login", "after",
              className: User.className,
              triggerName: .afterLogin,
-             parseServerURLStrings: parseServerURLStrings) { req async throws -> ParseHookResponse<Bool> in
+             parseServerURLStrings: parseServerURLStrings,
+             hooks: hooks) { req async throws -> ParseHookResponse<Bool> in
         if let error: ParseHookResponse<Bool> = checkHeaders(req) {
             return error
         }
@@ -110,7 +114,8 @@ func routes(_ app: Application) throws {
     // A Parse Hook Trigger route for `ParseFile`.
     app.on("file", "save", "before",
            triggerName: .beforeSave,
-           parseServerURLStrings: parseServerURLStrings) { req async throws -> ParseHookResponse<Bool> in
+           parseServerURLStrings: parseServerURLStrings,
+           hooks: hooks) { req async throws -> ParseHookResponse<Bool> in
         if let error: ParseHookResponse<Bool> = checkHeaders(req) {
             return error
         }
@@ -124,7 +129,8 @@ func routes(_ app: Application) throws {
     // Another Parse Hook Trigger route for `ParseFile`.
     app.post("file", "delete", "before",
              triggerName: .beforeDelete,
-             parseServerURLStrings: parseServerURLStrings) { req async throws -> ParseHookResponse<Bool> in
+             parseServerURLStrings: parseServerURLStrings,
+             hooks: hooks) { req async throws -> ParseHookResponse<Bool> in
         if let error: ParseHookResponse<Bool> = checkHeaders(req) {
             return error
         }
@@ -138,7 +144,8 @@ func routes(_ app: Application) throws {
     // A Parse Hook Trigger route for `ParseLiveQuery`.
     app.post("connect", "before",
              triggerName: .beforeConnect,
-             parseServerURLStrings: parseServerURLStrings) { req async throws -> ParseHookResponse<Bool> in
+             parseServerURLStrings: parseServerURLStrings,
+             hooks: hooks) { req async throws -> ParseHookResponse<Bool> in
         if let error: ParseHookResponse<Bool> = checkHeaders(req) {
             return error
         }
@@ -153,7 +160,8 @@ func routes(_ app: Application) throws {
     app.post("score", "subscribe", "before",
              className: GameScore.className,
              triggerName: .beforeSubscribe,
-             parseServerURLStrings: parseServerURLStrings) { req async throws -> ParseHookResponse<Bool> in
+             parseServerURLStrings: parseServerURLStrings,
+             hooks: hooks) { req async throws -> ParseHookResponse<Bool> in
         if let error: ParseHookResponse<Bool> = checkHeaders(req) {
             return error
         }
@@ -168,7 +176,8 @@ func routes(_ app: Application) throws {
     app.post("score", "event", "after",
              className: GameScore.className,
              triggerName: .afterEvent,
-             parseServerURLStrings: parseServerURLStrings) { req async throws -> ParseHookResponse<Bool> in
+             parseServerURLStrings: parseServerURLStrings,
+             hooks: hooks) { req async throws -> ParseHookResponse<Bool> in
         if let error: ParseHookResponse<Bool> = checkHeaders(req) {
             return error
         }

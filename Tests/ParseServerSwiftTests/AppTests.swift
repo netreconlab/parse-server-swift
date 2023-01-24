@@ -78,7 +78,7 @@ final class AppTests: XCTestCase {
         XCTAssertGreaterThan(currentFunctions.count, 0)
         XCTAssertGreaterThan(currentTriggers.count, 0)
 
-        await deleteHooks(app)
+        await deleteHooks(app, hooks: hooks)
 
         let currentFunctions2 = await hooks.getFunctions()
         let currentTriggers2 = await hooks.getTriggers()

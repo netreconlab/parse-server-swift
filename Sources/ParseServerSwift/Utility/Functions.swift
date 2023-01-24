@@ -72,7 +72,8 @@ public func checkServerHealth(_ app: Application) async throws {
 
 /// Delete all Parse Hooks from all Parse Servers.
 /// - parameter app: Core type representing a Vapor application.
-public func deleteHooks(_ app: Application) async {
+/// - parameter hooks: An actor containing all of the current Hooks.
+public func deleteHooks(_ app: Application, hooks: Hooks) async {
     let functions = await hooks.getFunctions()
     let triggers = await hooks.getTriggers()
     

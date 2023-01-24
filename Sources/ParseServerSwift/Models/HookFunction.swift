@@ -73,8 +73,7 @@ public extension HookFunction {
      Fetches a Parse Cloud Code hook function.
      - parameter path: A variadic list of paths.
      - parameter name: The name of the function.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for. Defaults to
-     the set of servers added during configuration.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookFunction`.
      - throws: An error of `ParseError` type.
      - note: WIll attempt to create functions on all `parseServerURLStrings`.
@@ -90,8 +89,7 @@ public extension HookFunction {
      Fetches a Parse Cloud Code hook function.
      - parameter path: An array of paths.
      - parameter name: The name of the function.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for. Defaults to
-     the set of servers added during configuration.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookFunction`.
      - throws: An error of `ParseError` type.
      - note: WIll attempt to create functions on all `parseServerURLStrings`.
@@ -107,8 +105,7 @@ public extension HookFunction {
      Fetches all Parse Cloud Code hook function.
      - parameter path: A variadic list of paths.
      - parameter name: The name of the function.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for. Defaults to
-     the set of servers added during configuration.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookFunction`'s.
      - throws: An error of `ParseError` type.
      - note: WIll attempt to create functions on all `parseServerURLStrings`.
@@ -124,8 +121,7 @@ public extension HookFunction {
      Fetches all Parse Cloud Code hook function.
      - parameter path: An array of paths.
      - parameter name: The name of the function.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for. Defaults to
-     the set of servers added during configuration.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookFunction`'s.
      - throws: An error of `ParseError` type.
      - note: WIll attempt to create functions on all `parseServerURLStrings`.
@@ -158,8 +154,7 @@ public extension HookFunction {
      Creates a Parse Cloud Code hook function.
      - parameter path: A variadic list of paths.
      - parameter name: The name of the function.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for. Defaults to
-     the set of servers added during configuration.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookFunction`.
      - throws: An error of `ParseError` type.
      - note: WIll attempt to create functions on all `parseServerURLStrings`.
@@ -175,8 +170,7 @@ public extension HookFunction {
      Creates a Parse Cloud Code hook function.
      - parameter path: An array of paths.
      - parameter name: The name of the function.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for. Defaults to
-     the set of servers added during configuration.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookFunction`.
      - throws: An error of `ParseError` type.
      - note: WIll attempt to create functions on all `parseServerURLStrings`.
@@ -196,8 +190,7 @@ public extension HookFunction {
      Updates a Parse Cloud Code hook function.
      - parameter path: A variadic list of paths.
      - parameter name: The name of the function.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for. Defaults to
-     the set of servers added during configuration.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookFunction`.
      - throws: An error of `ParseError` type.
      - note: WIll attempt to create functions on all `parseServerURLStrings`.
@@ -213,8 +206,7 @@ public extension HookFunction {
      Updates a Parse Cloud Code hook function.
      - parameter path: An array of paths.
      - parameter name: The name of the function.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for. Defaults to
-     the set of servers added during configuration.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookFunction`.
      - throws: An error of `ParseError` type.
      - note: WIll attempt to create functions on all `parseServerURLStrings`.
@@ -234,8 +226,7 @@ public extension HookFunction {
      Removes a Parse Cloud Code hook function.
      - parameter path: A variadic list of paths.
      - parameter name: The name of the function.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for. Defaults to
-     the set of servers added during configuration.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for.
      - throws: An error of `ParseError` type.
      - note: WIll attempt to create functions on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
@@ -250,8 +241,7 @@ public extension HookFunction {
      Removes a Parse Cloud Code hook function.
      - parameter path: An array of paths.
      - parameter name: The name of the function.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for. Defaults to
-     the set of servers added during configuration.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for.
      - throws: An error of `ParseError` type.
      - note: WIll attempt to create functions on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
@@ -269,8 +259,8 @@ public extension RoutesBuilder {
      Creates a new route for a Parse Cloud Code hook function.
      - parameter path: A variadic list of paths.
      - parameter name: The name of the function.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for. Defaults to
-     the set of servers added during configuration.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for.
+     - parameter hooks: An actor containing all of the current Hooks.
      - note: WIll attempt to create functions on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
@@ -279,6 +269,7 @@ public extension RoutesBuilder {
         _ path: PathComponent...,
         name: String,
         parseServerURLStrings: [String],
+        hooks: Hooks,
         use closure: @escaping (Request) async throws -> Response
     ) -> Route
         where Response: AsyncResponseEncodable
@@ -286,6 +277,7 @@ public extension RoutesBuilder {
         self.on(path,
                 name: name,
                 parseServerURLStrings: parseServerURLStrings,
+                hooks: hooks,
                 use: closure)
     }
 
@@ -293,8 +285,8 @@ public extension RoutesBuilder {
      Creates a new route for a Parse Cloud Code hook function.
      - parameter path: An array of paths.
      - parameter name: The name of the function.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for. Defaults to
-     the set of servers added during configuration.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for.
+     - parameter hooks: An actor containing all of the current Hooks.
      - note: WIll attempt to create functions on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
@@ -303,6 +295,7 @@ public extension RoutesBuilder {
         _ path: [PathComponent],
         name: String,
         parseServerURLStrings: [String],
+        hooks: Hooks,
         use closure: @escaping (Request) async throws -> Response
     ) -> Route
         where Response: AsyncResponseEncodable
@@ -310,6 +303,7 @@ public extension RoutesBuilder {
         self.on(path,
                 name: name,
                 parseServerURLStrings: parseServerURLStrings,
+                hooks: hooks,
                 use: closure)
     }
 
@@ -318,8 +312,8 @@ public extension RoutesBuilder {
      - parameter path: A variadic list of paths.
      - parameter body: Determines how an incoming HTTP request’s body is collected.
      - parameter name: The name of the function.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for. Defaults to
-     the set of servers added during configuration.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for.
+     - parameter hooks: An actor containing all of the current Hooks.
      - note: WIll attempt to create functions on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
@@ -329,6 +323,7 @@ public extension RoutesBuilder {
         body: HTTPBodyStreamStrategy = .collect,
         name: String,
         parseServerURLStrings: [String],
+        hooks: Hooks,
         use closure: @escaping (Request) async throws -> Response
     ) -> Route
         where Response: AsyncResponseEncodable
@@ -337,6 +332,7 @@ public extension RoutesBuilder {
                 body: body,
                 name: name,
                 parseServerURLStrings: parseServerURLStrings,
+                hooks: hooks,
                 use: closure)
     }
 
@@ -345,8 +341,8 @@ public extension RoutesBuilder {
      - parameter path: An array of paths.
      - parameter body: Determines how an incoming HTTP request’s body is collected.
      - parameter name: The name of the function.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for. Defaults to
-     the set of servers added during configuration.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for.
+     - parameter hooks: An actor containing all of the current Hooks.
      - note: WIll attempt to create functions on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
@@ -356,6 +352,7 @@ public extension RoutesBuilder {
         body: HTTPBodyStreamStrategy = .collect,
         name: String,
         parseServerURLStrings: [String],
+        hooks: Hooks,
         use closure: @escaping (Request) async throws -> Response
     ) -> Route
         where Response: AsyncResponseEncodable
