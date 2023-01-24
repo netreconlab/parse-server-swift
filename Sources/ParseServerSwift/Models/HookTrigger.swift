@@ -29,7 +29,7 @@ extension HookTrigger {
                        _ path: [PathComponent],
                        className: String? = nil,
                        triggerName: ParseHookTriggerType,
-                       parseServerURLStrings: [String] = parseServerURLStrings) async throws -> [String: Self] {
+                       parseServerURLStrings: [String]) async throws -> [String: Self] {
         let url = try buildServerPathname(path)
         let hookTrigger: HookTrigger!
         var hookTriggers = [String: Self]()
@@ -92,7 +92,7 @@ public extension HookTrigger {
     static func fetch(_ path: PathComponent...,
                       className: String? = nil,
                       triggerName: ParseHookTriggerType,
-                      parseServerURLStrings: [String] = parseServerURLStrings) async throws -> [String: Self] {
+                      parseServerURLStrings: [String]) async throws -> [String: Self] {
         try await fetch(path,
                         className: className,
                         triggerName: triggerName,
@@ -115,7 +115,7 @@ public extension HookTrigger {
     static func fetch(_ path: [PathComponent],
                       className: String? = nil,
                       triggerName: ParseHookTriggerType,
-                      parseServerURLStrings: [String] = parseServerURLStrings) async throws -> [String: Self] {
+                      parseServerURLStrings: [String]) async throws -> [String: Self] {
         try await method(.GET,
                          path,
                          className: className,
@@ -139,7 +139,7 @@ public extension HookTrigger {
     static func fetchAll(_ path: PathComponent...,
                          className: String? = nil,
                          triggerName: ParseHookTriggerType,
-                         parseServerURLStrings: [String] = parseServerURLStrings) async throws -> [String: [Self]] {
+                         parseServerURLStrings: [String]) async throws -> [String: [Self]] {
         try await fetchAll(path,
                            className: className,
                            triggerName: triggerName,
@@ -162,7 +162,7 @@ public extension HookTrigger {
     static func fetchAll(_ path: [PathComponent],
                          className: String? = nil,
                          triggerName: ParseHookTriggerType,
-                         parseServerURLStrings: [String] = parseServerURLStrings) async throws -> [String: [Self]] {
+                         parseServerURLStrings: [String]) async throws -> [String: [Self]] {
         let url = try buildServerPathname(path)
         let hookTrigger: HookTrigger!
         var hookTriggers = [String: [Self]]()
@@ -206,7 +206,7 @@ public extension HookTrigger {
     static func create(_ path: PathComponent...,
                        className: String? = nil,
                        triggerName: ParseHookTriggerType,
-                       parseServerURLStrings: [String] = parseServerURLStrings) async throws -> [String: Self] {
+                       parseServerURLStrings: [String]) async throws -> [String: Self] {
         try await create(path,
                          className: className,
                          triggerName: triggerName,
@@ -229,7 +229,7 @@ public extension HookTrigger {
     static func create(_ path: [PathComponent],
                        className: String? = nil,
                        triggerName: ParseHookTriggerType,
-                       parseServerURLStrings: [String] = parseServerURLStrings) async throws -> [String: Self] {
+                       parseServerURLStrings: [String]) async throws -> [String: Self] {
         try await method(.POST,
                          path,
                          className: className,
@@ -256,7 +256,7 @@ public extension HookTrigger {
     static func update(_ path: PathComponent...,
                        className: String? = nil,
                        triggerName: ParseHookTriggerType,
-                       parseServerURLStrings: [String] = parseServerURLStrings) async throws -> [String: Self] {
+                       parseServerURLStrings: [String]) async throws -> [String: Self] {
         try await update(path,
                          className: className,
                          triggerName: triggerName,
@@ -279,7 +279,7 @@ public extension HookTrigger {
     static func update(_ path: [PathComponent],
                        className: String? = nil,
                        triggerName: ParseHookTriggerType,
-                       parseServerURLStrings: [String] = parseServerURLStrings) async throws -> [String: Self] {
+                       parseServerURLStrings: [String]) async throws -> [String: Self] {
         try await method(.PUT,
                          path,
                          className: className,
@@ -306,7 +306,7 @@ public extension HookTrigger {
     static func delete(_ path: PathComponent...,
                        className: String? = nil,
                        triggerName: ParseHookTriggerType,
-                       parseServerURLStrings: [String] = parseServerURLStrings) async throws {
+                       parseServerURLStrings: [String]) async throws {
         try await delete(path,
                          className: className,
                          triggerName: triggerName,
@@ -328,7 +328,7 @@ public extension HookTrigger {
     static func delete(_ path: [PathComponent],
                        className: String? = nil,
                        triggerName: ParseHookTriggerType,
-                       parseServerURLStrings: [String] = parseServerURLStrings) async throws {
+                       parseServerURLStrings: [String]) async throws {
         try await method(.DELETE,
                          path,
                          className: className,
@@ -355,7 +355,7 @@ public extension RoutesBuilder {
         _ path: PathComponent...,
         className: String? = nil,
         triggerName: ParseHookTriggerType,
-        parseServerURLStrings: [String] = parseServerURLStrings,
+        parseServerURLStrings: [String],
         use closure: @escaping (Request) async throws -> Response
     ) -> Route
         where Response: AsyncResponseEncodable
@@ -384,7 +384,7 @@ public extension RoutesBuilder {
         _ path: [PathComponent],
         className: String? = nil,
         triggerName: ParseHookTriggerType,
-        parseServerURLStrings: [String] = parseServerURLStrings,
+        parseServerURLStrings: [String],
         use closure: @escaping (Request) async throws -> Response
     ) -> Route
         where Response: AsyncResponseEncodable
@@ -414,7 +414,7 @@ public extension RoutesBuilder {
         body: HTTPBodyStreamStrategy = .collect,
         className: String? = nil,
         triggerName: ParseHookTriggerType,
-        parseServerURLStrings: [String] = parseServerURLStrings,
+        parseServerURLStrings: [String],
         use closure: @escaping (Request) async throws -> Response
     ) -> Route
         where Response: AsyncResponseEncodable
@@ -445,7 +445,7 @@ public extension RoutesBuilder {
         body: HTTPBodyStreamStrategy = .collect,
         className: String? = nil,
         triggerName: ParseHookTriggerType,
-        parseServerURLStrings: [String] = parseServerURLStrings,
+        parseServerURLStrings: [String],
         use closure: @escaping (Request) async throws -> Response
     ) -> Route
         where Response: AsyncResponseEncodable

@@ -120,7 +120,8 @@ final class AppTests: XCTestCase {
         XCTAssertEqual(serverString2, urlString)
         
         parseServerURLStrings = ["http://localhost:1337/parse"]
-        let serverString3 = try serverURLString(uri)
+        let serverString3 = try serverURLString(uri,
+                                                parseServerURLStrings: parseServerURLStrings)
         XCTAssertEqual(serverString3, parseServerURLStrings.first)
     }
 
@@ -130,7 +131,8 @@ final class AppTests: XCTestCase {
         defer { app.shutdown() }
         let urlString = "https://parse.com/parse"
         let uri = URI(stringLiteral: urlString)
-        XCTAssertThrowsError(try serverURLString(uri))
+        XCTAssertThrowsError(try serverURLString(uri,
+                                                 parseServerURLStrings: parseServerURLStrings))
     }
 
     func testParseHookOptions() async throws {
@@ -151,7 +153,8 @@ final class AppTests: XCTestCase {
 
         let uri = URI(stringLiteral: urlString)
         let request = Request(application: app, url: uri, on: app.eventLoopGroup.any())
-        let options2 = try hookRequest.options(request)
+        let options2 = try hookRequest.options(request,
+                                               parseServerURLStrings: parseServerURLStrings)
         let installationOption2 = options2.first(where: { $0 == .installationId("") })
         let serverURLOption = options2.first(where: { $0 == .serverURL("") })
         XCTAssertEqual(options2.count, 2)

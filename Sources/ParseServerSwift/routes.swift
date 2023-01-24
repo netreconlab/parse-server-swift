@@ -15,7 +15,8 @@ func routes(_ app: Application) throws {
 
     // A Parse Hook Function route.
     app.post("hello",
-             name: "hello") { req async throws -> ParseHookResponse<String> in
+             name: "hello",
+             parseServerURLStrings: parseServerURLStrings) { req async throws -> ParseHookResponse<String> in
         if let error: ParseHookResponse<String> = checkHeaders(req) {
             return error
         }
@@ -24,12 +25,14 @@ func routes(_ app: Application) throws {
         
         // If a User called the request, fetch the complete user.
         if parseRequest.user != nil {
-            parseRequest = try await parseRequest.hydrateUser(request: req)
+            parseRequest = try await parseRequest.hydrateUser(request: req,
+                                                              parseServerURLStrings: parseServerURLStrings)
         }
         
         // To query using the User's credentials who called this function,
         // use the options() method from the parseRequest
-        let options = try parseRequest.options(req)
+        let options = try parseRequest.options(req,
+                                               parseServerURLStrings: parseServerURLStrings)
         let scores = try await GameScore.query.findAll(options: options)
         req.logger.info("Scores this user can access: \(scores)")
         return ParseHookResponse(success: "Hello world!")
@@ -38,7 +41,8 @@ func routes(_ app: Application) throws {
     // A Parse Hook Trigger route.
     app.post("score", "save", "before",
              className: GameScore.className,
-             triggerName: .beforeSave) { req async throws -> ParseHookResponse<GameScore> in
+             triggerName: .beforeSave,
+             parseServerURLStrings: parseServerURLStrings) { req async throws -> ParseHookResponse<GameScore> in
         if let error: ParseHookResponse<GameScore> = checkHeaders(req) {
             return error
         }
@@ -47,7 +51,8 @@ func routes(_ app: Application) throws {
 
         // If a User called the request, fetch the complete user.
         if parseRequest.user != nil {
-            parseRequest = try await parseRequest.hydrateUser(request: req)
+            parseRequest = try await parseRequest.hydrateUser(request: req,
+                                                              parseServerURLStrings: parseServerURLStrings)
         }
 
         guard let object = parseRequest.object else {
@@ -64,7 +69,8 @@ func routes(_ app: Application) throws {
     // Another Parse Hook Trigger route.
     app.post("score", "find", "before",
              className: GameScore.className,
-             triggerName: .beforeFind) { req async throws -> ParseHookResponse<[GameScore]> in
+             triggerName: .beforeFind,
+             parseServerURLStrings: parseServerURLStrings) { req async throws -> ParseHookResponse<[GameScore]> in
         if let error: ParseHookResponse<[GameScore]> = checkHeaders(req) {
             return error
         }
@@ -89,7 +95,8 @@ func routes(_ app: Application) throws {
     // Another Parse Hook Trigger route.
     app.post("user", "login", "after",
              className: User.className,
-             triggerName: .afterLogin) { req async throws -> ParseHookResponse<Bool> in
+             triggerName: .afterLogin,
+             parseServerURLStrings: parseServerURLStrings) { req async throws -> ParseHookResponse<Bool> in
         if let error: ParseHookResponse<Bool> = checkHeaders(req) {
             return error
         }
@@ -102,7 +109,8 @@ func routes(_ app: Application) throws {
 
     // A Parse Hook Trigger route for `ParseFile`.
     app.on("file", "save", "before",
-           triggerName: .beforeSave) { req async throws -> ParseHookResponse<Bool> in
+           triggerName: .beforeSave,
+           parseServerURLStrings: parseServerURLStrings) { req async throws -> ParseHookResponse<Bool> in
         if let error: ParseHookResponse<Bool> = checkHeaders(req) {
             return error
         }
@@ -115,7 +123,8 @@ func routes(_ app: Application) throws {
 
     // Another Parse Hook Trigger route for `ParseFile`.
     app.post("file", "delete", "before",
-             triggerName: .beforeDelete) { req async throws -> ParseHookResponse<Bool> in
+             triggerName: .beforeDelete,
+             parseServerURLStrings: parseServerURLStrings) { req async throws -> ParseHookResponse<Bool> in
         if let error: ParseHookResponse<Bool> = checkHeaders(req) {
             return error
         }
@@ -128,7 +137,8 @@ func routes(_ app: Application) throws {
     
     // A Parse Hook Trigger route for `ParseLiveQuery`.
     app.post("connect", "before",
-             triggerName: .beforeConnect) { req async throws -> ParseHookResponse<Bool> in
+             triggerName: .beforeConnect,
+             parseServerURLStrings: parseServerURLStrings) { req async throws -> ParseHookResponse<Bool> in
         if let error: ParseHookResponse<Bool> = checkHeaders(req) {
             return error
         }
@@ -142,7 +152,8 @@ func routes(_ app: Application) throws {
     // Another Parse Hook Trigger route for `ParseLiveQuery`.
     app.post("score", "subscribe", "before",
              className: GameScore.className,
-             triggerName: .beforeSubscribe) { req async throws -> ParseHookResponse<Bool> in
+             triggerName: .beforeSubscribe,
+             parseServerURLStrings: parseServerURLStrings) { req async throws -> ParseHookResponse<Bool> in
         if let error: ParseHookResponse<Bool> = checkHeaders(req) {
             return error
         }
@@ -156,7 +167,8 @@ func routes(_ app: Application) throws {
     // Another Parse Hook Trigger route for `ParseLiveQuery`.
     app.post("score", "event", "after",
              className: GameScore.className,
-             triggerName: .afterEvent) { req async throws -> ParseHookResponse<Bool> in
+             triggerName: .afterEvent,
+             parseServerURLStrings: parseServerURLStrings) { req async throws -> ParseHookResponse<Bool> in
         if let error: ParseHookResponse<Bool> = checkHeaders(req) {
             return error
         }

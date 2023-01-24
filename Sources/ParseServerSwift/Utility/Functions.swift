@@ -32,7 +32,7 @@ public func checkHeaders<T>(_ req: Request) -> ParseHookResponse<T>? {
  - throws: An error of `ParseError` type.
  */
 public func serverURLString(_ uri: URI,
-                            parseServerURLStrings: [String] = parseServerURLStrings) throws -> String {
+                            parseServerURLStrings: [String]) throws -> String {
     guard let returnURLString = parseServerURLStrings.first else {
         throw ParseError(code: .otherCause,
                          message: "Missing at least one Parse Server URL")
@@ -43,6 +43,7 @@ public func serverURLString(_ uri: URI,
 /**
  Construct the full server pathname with route.
  - returns: The server path with scheme, hostname, port, and route.
+ - throws: An error of `ParseError` type.
  */
 public func buildServerPathname(_ path: [PathComponent]) throws -> URL {
     let pathString = "/" + path.map { "\($0)" }.joined(separator: "/")
@@ -56,6 +57,7 @@ public func buildServerPathname(_ path: [PathComponent]) throws -> URL {
 
 /// Check the Health of all Parse Servers.
 /// - parameter app: Core type representing a Vapor application.
+/// - throws: An error of `ParseError` type.
 public func checkServerHealth(_ app: Application) async throws {
     for parseServerURLString in parseServerURLStrings {
         do {
@@ -97,7 +99,15 @@ public func deleteHooks(_ app: Application) async {
     }
 }
 
-func getParseServerURLs(_ urls: String? = nil) throws -> (String, [String]) {
+/**
+ Get all of the current Parse Server URL's from a String.
+ - parameter urls: A string of comma seperated URL's.
+ The last url in the string will be used as the main server url.
+ - returns: A tuple where the first item is the main server url
+ and the second item is an array of the rest of the server urls.
+ - throws: An error of `ParseError` type.
+ */
+public func getParseServerURLs(_ urls: String? = nil) throws -> (String, [String]) {
     let serverURLs = urls ?? Environment.process.PARSE_SERVER_SWIFT_URLS ?? "http://localhost:1337/parse"
     var allServers = serverURLs.replacingOccurrences(of: " ", with: "").split(separator: ",").compactMap { String($0) }
     guard let mainServer = allServers.popLast() else {
@@ -106,20 +116,19 @@ func getParseServerURLs(_ urls: String? = nil) throws -> (String, [String]) {
     return (mainServer, allServers)
 }
 
-extension HTTPServer.Configuration {
-    /**
-     Construct the full server pathname.
-     - returns: The server path with scheme, hostname, and port.
-     */
-    func buildServerURL() -> String {
-        let scheme = tlsConfiguration == nil ? "http" : "https"
-        let addressDescription: String
-        switch address {
-        case .hostname(let hostname, let port):
-            addressDescription = "\(scheme)://\(hostname ?? self.hostname):\(port ?? self.port)"
-        case .unixDomainSocket(let socketPath):
-            addressDescription = "\(scheme)+unix: \(socketPath)"
-        }
-        return addressDescription
+/**
+ Construct the full server pathname.
+ - parameter configuration: Engine server config struct.
+ - returns: The server path with scheme, hostname, and port.
+ */
+public func buildServerURL(from configuration: HTTPServer.Configuration) -> String {
+    let scheme = configuration.tlsConfiguration == nil ? "http" : "https"
+    let addressDescription: String
+    switch configuration.address {
+    case .hostname(let hostname, let port):
+        addressDescription = "\(scheme)://\(hostname ?? configuration.hostname):\(port ?? configuration.port)"
+    case .unixDomainSocket(let socketPath):
+        addressDescription = "\(scheme)+unix: \(socketPath)"
     }
+    return addressDescription
 }

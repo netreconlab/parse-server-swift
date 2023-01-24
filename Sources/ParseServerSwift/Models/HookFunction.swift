@@ -27,7 +27,7 @@ extension HookFunction {
     static func method(_ method: HTTPMethod,
                        _ path: [PathComponent],
                        name: String,
-                       parseServerURLStrings: [String] = parseServerURLStrings) async throws -> [String: HookFunction] {
+                       parseServerURLStrings: [String]) async throws -> [String: HookFunction] {
         let url = try buildServerPathname(path)
         let hookFunction = HookFunction(name: name,
                                         url: url)
@@ -82,7 +82,7 @@ public extension HookFunction {
      */
     static func fetch(_ path: PathComponent...,
                        name: String,
-                       parseServerURLStrings: [String] = parseServerURLStrings) async throws -> [String: HookFunction] {
+                       parseServerURLStrings: [String]) async throws -> [String: HookFunction] {
         try await fetch(path, name: name, parseServerURLStrings: parseServerURLStrings)
     }
 
@@ -99,7 +99,7 @@ public extension HookFunction {
      */
     static func fetch(_ path: [PathComponent],
                        name: String,
-                       parseServerURLStrings: [String] = parseServerURLStrings) async throws -> [String: HookFunction] {
+                       parseServerURLStrings: [String]) async throws -> [String: HookFunction] {
         try await method(.PUT, path, name: name, parseServerURLStrings: parseServerURLStrings)
     }
     
@@ -116,7 +116,7 @@ public extension HookFunction {
      */
     static func fetchAll(_ path: PathComponent...,
                          name: String,
-                         parseServerURLStrings: [String] = parseServerURLStrings) async throws -> [String: [HookFunction]] {
+                         parseServerURLStrings: [String]) async throws -> [String: [HookFunction]] {
         try await fetchAll(path, name: name, parseServerURLStrings: parseServerURLStrings)
     }
 
@@ -133,7 +133,7 @@ public extension HookFunction {
      */
     static func fetchAll(_ path: [PathComponent],
                          name: String,
-                         parseServerURLStrings: [String] = parseServerURLStrings) async throws -> [String: [HookFunction]] {
+                         parseServerURLStrings: [String]) async throws -> [String: [HookFunction]] {
         let url = try buildServerPathname(path)
         let hookFunction = HookFunction(name: name,
                                         url: url)
@@ -167,7 +167,7 @@ public extension HookFunction {
      */
     static func create(_ path: PathComponent...,
                        name: String,
-                       parseServerURLStrings: [String] = parseServerURLStrings) async throws -> [String: HookFunction] {
+                       parseServerURLStrings: [String]) async throws -> [String: HookFunction] {
         try await create(path, name: name, parseServerURLStrings: parseServerURLStrings)
     }
 
@@ -184,7 +184,7 @@ public extension HookFunction {
      */
     static func create(_ path: [PathComponent],
                        name: String,
-                       parseServerURLStrings: [String] = parseServerURLStrings) async throws -> [String: HookFunction] {
+                       parseServerURLStrings: [String]) async throws -> [String: HookFunction] {
         try await method(.POST, path, name: name, parseServerURLStrings: parseServerURLStrings)
     }
 }
@@ -205,7 +205,7 @@ public extension HookFunction {
      */
     static func update(_ path: PathComponent...,
                        name: String,
-                       parseServerURLStrings: [String] = parseServerURLStrings) async throws -> [String: HookFunction] {
+                       parseServerURLStrings: [String]) async throws -> [String: HookFunction] {
         try await update(path, name: name, parseServerURLStrings: parseServerURLStrings)
     }
 
@@ -222,7 +222,7 @@ public extension HookFunction {
      */
     static func update(_ path: [PathComponent],
                        name: String,
-                       parseServerURLStrings: [String] = parseServerURLStrings) async throws -> [String: HookFunction] {
+                       parseServerURLStrings: [String]) async throws -> [String: HookFunction] {
         try await method(.PUT, path, name: name, parseServerURLStrings: parseServerURLStrings)
     }
 }
@@ -242,7 +242,7 @@ public extension HookFunction {
      */
     static func delete(_ path: PathComponent...,
                        name: String,
-                       parseServerURLStrings: [String] = parseServerURLStrings) async throws {
+                       parseServerURLStrings: [String]) async throws {
         try await delete(path, name: name, parseServerURLStrings: parseServerURLStrings)
     }
 
@@ -258,7 +258,7 @@ public extension HookFunction {
      */
     static func delete(_ path: [PathComponent],
                        name: String,
-                       parseServerURLStrings: [String] = parseServerURLStrings) async throws {
+                       parseServerURLStrings: [String]) async throws {
         try await method(.DELETE, path, name: name, parseServerURLStrings: parseServerURLStrings)
     }
 }
@@ -278,7 +278,7 @@ public extension RoutesBuilder {
     func post<Response>(
         _ path: PathComponent...,
         name: String,
-        parseServerURLStrings: [String] = parseServerURLStrings,
+        parseServerURLStrings: [String],
         use closure: @escaping (Request) async throws -> Response
     ) -> Route
         where Response: AsyncResponseEncodable
@@ -302,7 +302,7 @@ public extension RoutesBuilder {
     func post<Response>(
         _ path: [PathComponent],
         name: String,
-        parseServerURLStrings: [String] = parseServerURLStrings,
+        parseServerURLStrings: [String],
         use closure: @escaping (Request) async throws -> Response
     ) -> Route
         where Response: AsyncResponseEncodable
@@ -328,7 +328,7 @@ public extension RoutesBuilder {
         _ path: PathComponent...,
         body: HTTPBodyStreamStrategy = .collect,
         name: String,
-        parseServerURLStrings: [String] = parseServerURLStrings,
+        parseServerURLStrings: [String],
         use closure: @escaping (Request) async throws -> Response
     ) -> Route
         where Response: AsyncResponseEncodable
@@ -355,7 +355,7 @@ public extension RoutesBuilder {
         _ path: [PathComponent],
         body: HTTPBodyStreamStrategy = .collect,
         name: String,
-        parseServerURLStrings: [String] = parseServerURLStrings,
+        parseServerURLStrings: [String],
         use closure: @escaping (Request) async throws -> Response
     ) -> Route
         where Response: AsyncResponseEncodable
