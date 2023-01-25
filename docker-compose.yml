@@ -71,6 +71,8 @@ services:
         - parse
   parse:
     image: netreconlab/parse-hipaa:6.0.0-alpha-dashboard
+    # Uncomment the image below to use Parse Server 5.4.0 instead. Be sure to comment out 6.0.0x
+    #image: netreconlab/parse-hipaa:5.4.0-dashboard
     environment:
       <<: *shared_environment
       PARSE_SERVER_URL: http://parse:${PORT}${MOUNT_PATH}
@@ -81,6 +83,8 @@ services:
     volumes:
       - ./parse/wait-for-postgres.sh:/parse-server/wait-for-postgres.sh
       - ./parse/index.js:/parse-server/index.js
+      # Uncomment the mount below to use Parse Server 5.4.0 instead. Be sure to comment out the index.js mount above
+      #- ./parse/index-5.4.0.js:/parse-server/index.js
       - ./parse/cloud:/parse-server/cloud
       - ./parse/files:/parse-server/files # All files uploaded from users are stored to an ecrypted drive locally for HIPAA compliance
     restart: always
