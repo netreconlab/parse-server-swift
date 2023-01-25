@@ -8,14 +8,13 @@
 import Foundation
 
 /// An actor containing all of the current Hooks.
-public actor Hooks {
+actor Hooks {
     var functions = [String: HookFunction]()
     var triggers = [String: HookTrigger]()
-    public init() { }
 }
 
 // MARK: Hook Functions
-public extension Hooks {
+extension Hooks {
     /// Get all of the current functions.
     /// - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookFunction`.
     func getFunctions() -> [String: HookFunction] {
@@ -45,7 +44,7 @@ public extension Hooks {
 }
 
 // MARK: Hook Triggers
-public extension Hooks {
+extension Hooks {
     /// Get all of the current triggers.
     /// - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
     func getTriggers() -> [String: HookTrigger] {

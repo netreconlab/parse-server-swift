@@ -5,6 +5,7 @@
 [![Build Status CI](https://github.com/netreconlab/parse-server-swift/workflows/ci/badge.svg?branch=main)](https://github.com/netreconlab/parse-server-swift/actions?query=workflow%3Aci+branch%3Amain)
 [![release](https://github.com/netreconlab/parse-server-swift/actions/workflows/release.yml/badge.svg)](https://github.com/netreconlab/parse-server-swift/actions/workflows/release.yml)
 [![codecov](https://codecov.io/gh/netreconlab/parse-server-swift/branch/main/graph/badge.svg?token=RC3FLU6BGW)](https://codecov.io/gh/netreconlab/parse-server-swift)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/netreconlab/parse-server-swift/blob/main/LICENSE)
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fnetreconlab%2Fparse-server-swift%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/netreconlab/parse-server-swift)
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fnetreconlab%2Fparse-server-swift%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/netreconlab/parse-server-swift)
 
@@ -23,8 +24,8 @@ and [Vapor](https://github.com/vapor/vapor). `ParseServerSwift` provides many ad
 
 Technically, complete apps can be written with `ParseServerSwift`, the only difference is that this code runs in your `ParseServerSwift` rather than running on the user’s mobile device. When you update your Cloud Code, it becomes available to all mobile environments instantly. You don’t have to wait for a new release of your application. This lets you change app behavior on the fly and add new features faster.
 
-## Installing ParseServerSwift
-Setup your Vapor project by following the [directions](https://www.kodeco.com/11555468-getting-started-with-server-side-swift-with-vapor-4) for installing and setting up your project on macOS or linux.
+## Creating Your Cloud Code App with ParseServerSwift
+Setup a Vapor project by following the [directions](https://www.kodeco.com/11555468-getting-started-with-server-side-swift-with-vapor-4) for installing and setting up your project on macOS or linux.
 
 Then add `ParseServerSwift` to `dependencies` in your `Package.swift` file:
 
@@ -40,11 +41,11 @@ let package = Package(
 )
 ```
 
-Adding `ParseServerSwift` will allow you to quickly add Vapor routes to your server.
+Adding `ParseServerSwift` will allow you to quickly add routes for Parse Cloud Hook Functions and Triggers.
 
 ## Configure ParseServerSwift to Connect to Your Parse Servers
 ### Environment Variables
-It is recommended to copy/modify [ParseServerSwift/Sources/ParseServerSwift/configure.swift](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/configure.swift) to your project. The following enviroment variables are available and can be configured directly or through `.env`, `.env.production`, etc. See the [Vapor Docs for more details](https://docs.vapor.codes/basics/environment/).
+The following enviroment variables are available and can be configured directly or through `.env`, `.env.production`, etc. See the [Vapor Docs for more details](https://docs.vapor.codes/basics/environment/).
 
 ```
 PARSE_SERVER_SWIFT_HOST_NAME: cloud-code # The name of your host. If you are running in Docker it should be same name as the docker service
@@ -62,8 +63,41 @@ The `webhookKey` should match the [webhookKey on the Parse Server](https://githu
 ### Parse-Swift<sup>OG</sup> SDK
 The aforementioned environment variables automatically configure [Parse-Swift<sup>OG</sup> SDK](https://github.com/netreconlab/Parse-Swift). If you need a more custom configuration, see the [documentation](https://netreconlab.github.io/Parse-Swift/release/documentation/parseswift/).
 
+### Initializing ParseSwiftServer
+To levergage the aforementioned environment variables, you should modify `configure.swift` in your project to look similar to below:
+
+```swift
+public func configure(_ app: Application) throws {
+    // Initialize ParseServerSwift
+    let configuration = try ParseServerConfiguration(app: app)
+    try ParseServerSwift.initialize(configuration, app: app)
+    
+    // register routes
+    try routes(app)
+}
+```
+
+If you want to pass the configuration parameters programitically, your `configure` method should look similar to below:
+
+```swift
+public func configure(_ app: Application) throws {
+    // Initialize ParseServerSwift
+    let configuration = try ParseServerConfiguration(app: app,
+                                                     hostName: "hostName",
+                                                     port: 8081,
+                                                     applicationId: "applicationId",
+                                                     primaryKey: "primaryKey",
+                                                     webhookKey: hookKey,
+                                                     parseServerURLString: "primaryKey")
+    try ParseServerSwift.initialize(configuration, app: app)
+    
+    // register routes
+    try routes(app)
+}
+```
+
 ## Starting the Server
-`ParseServerSwift` is optimized to run in Docker containers. A sample [docker-compose.yml] demonstrates how to quickly spin up one (1) `ParseServerSwift` server with two (2) [parse-hipaa](https://github.com/netreconlab/parse-hipaa) servers and (1) [hipaa-postgres](https://github.com/netreconlab/hipaa-postgres) server.
+`ParseServerSwift` is optimized to run in Docker containers. A sample [docker-compose.yml] demonstrates how to quickly spin up one (1) `ParseServerSwift` server with one (1) [parse-hipaa](https://github.com/netreconlab/parse-hipaa) servers and (1) [hipaa-postgres](https://github.com/netreconlab/hipaa-postgres) database.
 
 ### In Docker
 1. Fork this repo
@@ -71,9 +105,8 @@ The aforementioned environment variables automatically configure [Parse-Swift<su
 3. Type `docker-compose up`
 4. Accessing your containers:
   - The first parse-hipaa server can be accessed at: http://localhost:1337/parse with the respective dashboard at: http://localhost:1337/dashboard/apps/Parse%20HIPAA/webhooks
-  - The second parse-hipaa server can be accessed at: http://localhost:1338/parse with the respective dashboard at: http://localhost:1338/dashboard/apps/Parse%20HIPAA/webhooks
   - The default login for the dashboard is username: `parse` with password: `1234`
-  - If you login to any of the dashboards: Click the `Parse-Hipaa` app, click `Webhooks` to the left and you will see all of the example Cloud Code registered as webooks:
+  - To view all of your Cloud Code Functions and Hooks: click the `Parse-Hipaa` app, click `Webhooks` to the left and you will see all of the example Cloud Code registered as webooks:
   <img width="1311" alt="image" src="https://user-images.githubusercontent.com/8621344/214114654-a374dc04-f696-4a18-921b-612f19b07ede.png">
 
 ### On macOS
@@ -84,7 +117,7 @@ To start your server type, `swift run` in the terminal of the project root direc
 It is recommended to add all of your `ParseObject`'s in a folder called `Models` similar to [ParseServerSwift/Sources/ParseServerSwift/Models](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/Models). 
 
 #### The `ParseUser` Model
-Be mindful that the `ParseUser` in `ParseServerSwift` should conform to [ParseCloudUser](https://swiftpackageindex.com/netreconlab/parse-swift/4.16.2/documentation/parseswift/parseclouduser). In addition, make sure to add all of the additional properties you have in your `_User` class to the `User` model. An example `User` model is below:
+Be mindful that the `ParseUser` in `ParseServerSwift` should conform to [ParseCloudUser](https://swiftpackageindex.com/netreconlab/parse-swift/4.16.2/documentation/parseswift/parseclouduser). This is because the `ParseCloudUser` contains some additional properties on the server-side. On the client, you should always use `ParseUser` instead of `ParseCloudUser`. In addition, make sure to add all of the additional properties you have in your `_User` class to the `User` model. An example `User` model is below:
 
 ```swift
 /**
@@ -109,7 +142,7 @@ struct User: ParseCloudUser {
 }
 ```
 
-#### An example `ParseObject`
+#### An example `ParseObject` Model
 The `GameScore` model is below:
 
 ```swift
@@ -146,6 +179,23 @@ struct GameScore: ParseObject {
 ### Creating New Cloud Code Routes 
 Adding routes for `ParseHooks` are as simple as adding [routes in Vapor](https://docs.vapor.codes/basics/routing/). `ParseServerSwift` provides some additional methods to routes to easily create and register [Hook Functions](https://parseplatform.org/Parse-Swift/release/documentation/parseswift/parsehookfunctionable) and [Hook Triggers](https://parseplatform.org/Parse-Swift/release/documentation/parseswift/parsehooktriggerable/). All routes should be added to the `routes.swift` file in your project. Example `ParseServerSwift` routes can be found in [ParseServerSwift/Sources/ParseServerSwift/routes.swift](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/routes.swift).
 
+**Be sure to add `import ParseSwift` and `import ParseServerSwift` to the top of routes.swift**
+
+### Sending Errors From Cloud Code Routes
+There will be times you will need to respond by sending an error to the Node.js Parse Server to propagate to the client. Sending errors can be accomplished by sending a `ParseHookResponse`. Below are two examples of sending an error:
+
+```swift
+// Note: `T` is the type to be returned if there is no error thrown.
+
+// Standard Parse error with your own unique message
+let standardError = ParseError(code: .missingObjectId, message: "This object requires an objectId")
+return ParseHookResponse<T>(error: standardError) // Be sure to "return" the ParseHookResponse in your route, DO NOT "throw" the error.
+
+// Custom error with your own unique code and message
+let customError = ParseError(otherCode: 1001, message: "My custom error")
+return ParseHookResponse<T>(error: customError) // Be sure to "return" ParseHookResponse in your route, DO NOT "throw" the error.
+```
+
 ### Cloud Code Functions
 Cloud Code Functions can also take parameters. It's recommended to place all paramters in 
 [ParseServerSwift/Sources/ParseServerSwift/Models/Parameters](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/Models/Parameters)
@@ -153,9 +203,9 @@ Cloud Code Functions can also take parameters. It's recommended to place all par
 ```swift
 // A Parse Hook Function route.
 app.post("hello",
-         name: "hello",
-         parseServerURLStrings: parseServerURLStrings,
-         hooks: hooks) { req async throws -> ParseHookResponse<String> in
+         name: "hello") { req async throws -> ParseHookResponse<String> in
+    // Note that `ParseHookResponse<String>` means a "successfull"
+    // response will return a "String" type.
     if let error: ParseHookResponse<String> = checkHeaders(req) {
         return error
     }
@@ -164,14 +214,12 @@ app.post("hello",
     
     // If a User called the request, fetch the complete user.
     if parseRequest.user != nil {
-        parseRequest = try await parseRequest.hydrateUser(request: req,
-                                                          parseServerURLStrings: parseServerURLStrings)
+        parseRequest = try await parseRequest.hydrateUser(request: req)
     }
     
     // To query using the User's credentials who called this function,
     // use the options() method from the parseRequest
-    let options = try parseRequest.options(req,
-                                           parseServerURLStrings: parseServerURLStrings)
+    let options = try parseRequest.options(req)
     let scores = try await GameScore.query.findAll(options: options)
     req.logger.info("Scores this user can access: \(scores)")
     return ParseHookResponse(success: "Hello world!")
@@ -183,9 +231,9 @@ app.post("hello",
 // A Parse Hook Trigger route.
 app.post("score", "save", "before",
          className: GameScore.className,
-         triggerName: .beforeSave,
-         parseServerURLStrings: parseServerURLStrings,
-         hooks: hooks) { req async throws -> ParseHookResponse<GameScore> in
+         triggerName: .beforeSave) { req async throws -> ParseHookResponse<GameScore> in
+    // Note that `ParseHookResponse<GameScore>` means a "successfull"
+    // response will return a "GameScore" type.
     if let error: ParseHookResponse<GameScore> = checkHeaders(req) {
         return error
     }
@@ -194,8 +242,7 @@ app.post("score", "save", "before",
 
     // If a User called the request, fetch the complete user.
     if parseRequest.user != nil {
-        parseRequest = try await parseRequest.hydrateUser(request: req,
-                                                          parseServerURLStrings: parseServerURLStrings)
+        parseRequest = try await parseRequest.hydrateUser(request: req)
     }
 
     guard let object = parseRequest.object else {
@@ -212,9 +259,9 @@ app.post("score", "save", "before",
 // Another Parse Hook Trigger route.
 app.post("score", "find", "before",
          className: GameScore.className,
-         triggerName: .beforeFind,
-         parseServerURLStrings: parseServerURLStrings,
-         hooks: hooks) { req async throws -> ParseHookResponse<[GameScore]> in
+         triggerName: .beforeFind) { req async throws -> ParseHookResponse<[GameScore]> in
+    // Note that `ParseHookResponse<[GameScore]>` means a "successfull"
+    // response will return a "[GameScore]" type.
     if let error: ParseHookResponse<[GameScore]> = checkHeaders(req) {
         return error
     }
@@ -239,9 +286,10 @@ app.post("score", "find", "before",
 // Another Parse Hook Trigger route.
 app.post("user", "login", "after",
          className: User.className,
-         triggerName: .afterLogin,
-         parseServerURLStrings: parseServerURLStrings,
-         hooks: hooks) { req async throws -> ParseHookResponse<Bool> in
+         triggerName: .afterLogin) { req async throws -> ParseHookResponse<Bool> in
+    // Note that `ParseHookResponse<Bool>` means a "successfull"
+    // response will return a "Bool" type. Bool is the standard response with
+    // a "true" response meaning everything is okay or continue.
     if let error: ParseHookResponse<Bool> = checkHeaders(req) {
         return error
     }
@@ -254,9 +302,11 @@ app.post("user", "login", "after",
 
 // A Parse Hook Trigger route for `ParseFile`.
 app.on("file", "save", "before",
-       triggerName: .beforeSave,
-       parseServerURLStrings: parseServerURLStrings,
-       hooks: hooks) { req async throws -> ParseHookResponse<Bool> in
+       triggerName: .beforeSave) { req async throws -> ParseHookResponse<Bool> in
+    // Note that `ParseHookResponse<Bool>` means a "successfull"
+    // response will return a "Bool" type. Bool is the standard response with
+    // a "true" response meaning everything is okay or continue. Sending "false"
+    // in this case will reject saving the file.
     if let error: ParseHookResponse<Bool> = checkHeaders(req) {
         return error
     }
@@ -269,9 +319,10 @@ app.on("file", "save", "before",
 
 // Another Parse Hook Trigger route for `ParseFile`.
 app.post("file", "delete", "before",
-         triggerName: .beforeDelete,
-         parseServerURLStrings: parseServerURLStrings,
-         hooks: hooks) { req async throws -> ParseHookResponse<Bool> in
+         triggerName: .beforeDelete) { req async throws -> ParseHookResponse<Bool> in
+    // Note that `ParseHookResponse<Bool>` means a "successfull"
+    // response will return a "Bool" type. Bool is the standard response with
+    // a "true" response meaning everything is okay or continue.
     if let error: ParseHookResponse<Bool> = checkHeaders(req) {
         return error
     }
@@ -284,9 +335,10 @@ app.post("file", "delete", "before",
 
 // A Parse Hook Trigger route for `ParseLiveQuery`.
 app.post("connect", "before",
-         triggerName: .beforeConnect,
-         parseServerURLStrings: parseServerURLStrings,
-         hooks: hooks) { req async throws -> ParseHookResponse<Bool> in
+         triggerName: .beforeConnect) { req async throws -> ParseHookResponse<Bool> in
+    // Note that `ParseHookResponse<Bool>` means a "successfull"
+    // response will return a "Bool" type. Bool is the standard response with
+    // a "true" response meaning everything is okay or continue.
     if let error: ParseHookResponse<Bool> = checkHeaders(req) {
         return error
     }
@@ -300,9 +352,10 @@ app.post("connect", "before",
 // Another Parse Hook Trigger route for `ParseLiveQuery`.
 app.post("score", "subscribe", "before",
          className: GameScore.className,
-         triggerName: .beforeSubscribe,
-         parseServerURLStrings: parseServerURLStrings,
-         hooks: hooks) { req async throws -> ParseHookResponse<Bool> in
+         triggerName: .beforeSubscribe) { req async throws -> ParseHookResponse<Bool> in
+    // Note that `ParseHookResponse<Bool>` means a "successfull"
+    // response will return a "Bool" type. Bool is the standard response with
+    // a "true" response meaning everything is okay or continue.
     if let error: ParseHookResponse<Bool> = checkHeaders(req) {
         return error
     }
@@ -316,9 +369,10 @@ app.post("score", "subscribe", "before",
 // Another Parse Hook Trigger route for `ParseLiveQuery`.
 app.post("score", "event", "after",
          className: GameScore.className,
-         triggerName: .afterEvent,
-         parseServerURLStrings: parseServerURLStrings,
-         hooks: hooks) { req async throws -> ParseHookResponse<Bool> in
+         triggerName: .afterEvent) { req async throws -> ParseHookResponse<Bool> in
+    // Note that `ParseHookResponse<Bool>` means a "successfull"
+    // response will return a "Bool" type. Bool is the standard response with
+    // a "true" response meaning everything is okay or continue.
     if let error: ParseHookResponse<Bool> = checkHeaders(req) {
         return error
     }
@@ -327,6 +381,5 @@ app.post("score", "event", "after",
 
     req.logger.info("A LiveQuery event occured: \(parseRequest)")
     return ParseHookResponse(success: true)
-}
 }
 ```

@@ -54,8 +54,8 @@ services:
       <<: *shared_environment
       PARSE_SERVER_SWIFT_HOST_NAME: cloud-code # Should be same name as docker service
       PARSE_SERVER_SWIFT_PORT: 8081
-      PARSE_SERVER_SWIFT_DEFAULT_MAX_BODY_SIZE: 500kb
-      PARSE_SERVER_SWIFT_URLS: http://parse:1337/parse #,http://parse2:1337/parse # Only need to list one server when PARSE_SERVER_ENABLE_SCHEMA_HOOKS='true' 
+      PARSE_SERVER_SWIFT_DEFAULT_MAX_BODY_SIZE: 16kb
+      PARSE_SERVER_SWIFT_URLS: http://parse:1337/parse #,http://parse2:1337/parse # Only need to list one server.
       PARSE_SERVER_SWIFT_APPLICATION_ID: ${PARSE_SERVER_APPLICATION_ID}
       PARSE_SERVER_SWIFT_PRIMARY_KEY: ${PARSE_SERVER_PRIMARY_KEY}
       PARSE_SERVER_SWIFT_WEBHOOK_KEY: ${PARSE_SERVER_WEBHOOK_KEY}
@@ -68,7 +68,7 @@ services:
     #  - ./.env:/app/.env
     #  - ./.env.production:/app/.env.production # Mount production environment if you have one.
     depends_on:
-        - parse2
+        - parse
   parse:
     image: netreconlab/parse-hipaa:6.0.0-alpha-dashboard
     environment:
@@ -87,24 +87,6 @@ services:
     command: ["./wait-for-postgres.sh", "db", "node", "index.js"]
     depends_on:
       - db
-  parse2:
-    image: netreconlab/parse-hipaa:6.0.0-alpha-dashboard
-    environment:
-      <<: *shared_environment
-      PARSE_SERVER_URL: http://parse2:${PORT}${MOUNT_PATH}
-      PARSE_SERVER_PUBLIC_URL: http://localhost:1338${MOUNT_PATH}
-      PARSE_DASHBOARD_SERVER_URL: http://localhost:1338${MOUNT_PATH}
-    ports:
-      - 127.0.0.1:1338:${PORT}
-    volumes:
-      - ./parse/wait-for-postgres.sh:/parse-server/wait-for-postgres.sh
-      - ./parse/index.js:/parse-server/index.js
-      - ./parse/cloud:/parse-server/cloud
-      - ./parse/files:/parse-server/files # All files uploaded from users are stored to an ecrypted drive locally for HIPAA compliance
-    restart: always
-    command: ["./wait-for-postgres.sh", "db", "node", "index.js"]
-    depends_on:
-      - parse
   db:
     image: netreconlab/hipaa-postgres:latest
     environment:

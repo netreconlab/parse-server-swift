@@ -52,12 +52,12 @@ extension HookFunction {
                     throw ParseError(code: .otherCause,
                                      message: "Method \(method) is not supported for Hook Function: \"\(String(describing: hookFunction))\"")
                 }
-                logger.notice("Successful \(method); Hook Function: \"\(String(describing: hookFunction))\" on server: \(parseServerURLString)")
+                configuration.logger.notice("Successful \(method); Hook Function: \"\(String(describing: hookFunction))\" on server: \(parseServerURLString)")
             } catch {
                 if error.containedIn([.webhookError]) && method == .POST {
-                    logger.warning("Hook Function: \"\(String(describing: hookFunction))\"; warning: \(error); on server: \(parseServerURLString)")
+                    configuration.logger.warning("Hook Function: \"\(String(describing: hookFunction))\"; warning: \(error); on server: \(parseServerURLString)")
                 } else {
-                    logger.error("Could not \(method) Hook Function: \"\(String(describing: hookFunction))\"; error: \(error); on server: \(parseServerURLString)")
+                    configuration.logger.error("Could not \(method) Hook Function: \"\(String(describing: hookFunction))\"; error: \(error); on server: \(parseServerURLString)")
                 }
             }
         }
@@ -140,7 +140,7 @@ public extension HookFunction {
                 hookFunctions[parseServerURLString] = try await hookFunction
                     .fetchAll(options: [.serverURL(parseServerURLString)])
             } catch {
-                logger.error("Could not fetchAll function: \"\(String(describing: hookFunction))\"; error: \(error); on server: \(parseServerURLString)")
+                configuration.logger.error("Could not fetchAll function: \"\(String(describing: hookFunction))\"; error: \(error); on server: \(parseServerURLString)")
             }
         }
         return hookFunctions
@@ -155,6 +155,7 @@ public extension HookFunction {
      - parameter path: A variadic list of paths.
      - parameter name: The name of the function.
      - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for.
+     Defaults to the set of servers added during configuration.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookFunction`.
      - throws: An error of `ParseError` type.
      - note: WIll attempt to create functions on all `parseServerURLStrings`.
@@ -162,7 +163,7 @@ public extension HookFunction {
      */
     static func create(_ path: PathComponent...,
                        name: String,
-                       parseServerURLStrings: [String]) async throws -> [String: HookFunction] {
+                       parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> [String: HookFunction] {
         try await create(path, name: name, parseServerURLStrings: parseServerURLStrings)
     }
 
@@ -171,6 +172,7 @@ public extension HookFunction {
      - parameter path: An array of paths.
      - parameter name: The name of the function.
      - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for.
+     Defaults to the set of servers added during configuration.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookFunction`.
      - throws: An error of `ParseError` type.
      - note: WIll attempt to create functions on all `parseServerURLStrings`.
@@ -178,7 +180,7 @@ public extension HookFunction {
      */
     static func create(_ path: [PathComponent],
                        name: String,
-                       parseServerURLStrings: [String]) async throws -> [String: HookFunction] {
+                       parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> [String: HookFunction] {
         try await method(.POST, path, name: name, parseServerURLStrings: parseServerURLStrings)
     }
 }
@@ -191,6 +193,7 @@ public extension HookFunction {
      - parameter path: A variadic list of paths.
      - parameter name: The name of the function.
      - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for.
+     Defaults to the set of servers added during configuration.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookFunction`.
      - throws: An error of `ParseError` type.
      - note: WIll attempt to create functions on all `parseServerURLStrings`.
@@ -198,7 +201,7 @@ public extension HookFunction {
      */
     static func update(_ path: PathComponent...,
                        name: String,
-                       parseServerURLStrings: [String]) async throws -> [String: HookFunction] {
+                       parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> [String: HookFunction] {
         try await update(path, name: name, parseServerURLStrings: parseServerURLStrings)
     }
 
@@ -207,6 +210,7 @@ public extension HookFunction {
      - parameter path: An array of paths.
      - parameter name: The name of the function.
      - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for.
+     Defaults to the set of servers added during configuration.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookFunction`.
      - throws: An error of `ParseError` type.
      - note: WIll attempt to create functions on all `parseServerURLStrings`.
@@ -214,7 +218,7 @@ public extension HookFunction {
      */
     static func update(_ path: [PathComponent],
                        name: String,
-                       parseServerURLStrings: [String]) async throws -> [String: HookFunction] {
+                       parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> [String: HookFunction] {
         try await method(.PUT, path, name: name, parseServerURLStrings: parseServerURLStrings)
     }
 }
@@ -227,13 +231,14 @@ public extension HookFunction {
      - parameter path: A variadic list of paths.
      - parameter name: The name of the function.
      - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for.
+     Defaults to the set of servers added during configuration.
      - throws: An error of `ParseError` type.
      - note: WIll attempt to create functions on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func delete(_ path: PathComponent...,
                        name: String,
-                       parseServerURLStrings: [String]) async throws {
+                       parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws {
         try await delete(path, name: name, parseServerURLStrings: parseServerURLStrings)
     }
 
@@ -243,12 +248,13 @@ public extension HookFunction {
      - parameter name: The name of the function.
      - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for.
      - throws: An error of `ParseError` type.
+     Defaults to the set of servers added during configuration.
      - note: WIll attempt to create functions on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func delete(_ path: [PathComponent],
                        name: String,
-                       parseServerURLStrings: [String]) async throws {
+                       parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws {
         try await method(.DELETE, path, name: name, parseServerURLStrings: parseServerURLStrings)
     }
 }
@@ -268,16 +274,12 @@ public extension RoutesBuilder {
     func post<Response>(
         _ path: PathComponent...,
         name: String,
-        parseServerURLStrings: [String],
-        hooks: Hooks,
         use closure: @escaping (Request) async throws -> Response
     ) -> Route
         where Response: AsyncResponseEncodable
     {
         self.on(path,
                 name: name,
-                parseServerURLStrings: parseServerURLStrings,
-                hooks: hooks,
                 use: closure)
     }
 
@@ -294,16 +296,12 @@ public extension RoutesBuilder {
     func post<Response>(
         _ path: [PathComponent],
         name: String,
-        parseServerURLStrings: [String],
-        hooks: Hooks,
         use closure: @escaping (Request) async throws -> Response
     ) -> Route
         where Response: AsyncResponseEncodable
     {
         self.on(path,
                 name: name,
-                parseServerURLStrings: parseServerURLStrings,
-                hooks: hooks,
                 use: closure)
     }
 
@@ -322,8 +320,6 @@ public extension RoutesBuilder {
         _ path: PathComponent...,
         body: HTTPBodyStreamStrategy = .collect,
         name: String,
-        parseServerURLStrings: [String],
-        hooks: Hooks,
         use closure: @escaping (Request) async throws -> Response
     ) -> Route
         where Response: AsyncResponseEncodable
@@ -331,8 +327,6 @@ public extension RoutesBuilder {
         self.on(path,
                 body: body,
                 name: name,
-                parseServerURLStrings: parseServerURLStrings,
-                hooks: hooks,
                 use: closure)
     }
 
@@ -351,19 +345,16 @@ public extension RoutesBuilder {
         _ path: [PathComponent],
         body: HTTPBodyStreamStrategy = .collect,
         name: String,
-        parseServerURLStrings: [String],
-        hooks: Hooks,
         use closure: @escaping (Request) async throws -> Response
     ) -> Route
         where Response: AsyncResponseEncodable
     {
         Task {
             do {
-                await hooks.updateFunctions(try await HookFunction.create(path,
-                                                                          name: name,
-                                                                          parseServerURLStrings: parseServerURLStrings))
+                await configuration.hooks.updateFunctions(try await HookFunction.create(path,
+                                                                                        name: name))
             } catch {
-                logger.error("Could not create HookFunction route for path: \(path); name: \(name) on servers: \(parseServerURLStrings) because of error: \(error)")
+                configuration.logger.error("Could not create HookFunction route for path: \(path); name: \(name) on servers: \(configuration.parseServerURLStrings) because of error: \(error)")
             }
         }
         return self.on(.POST, path, body: body, use: closure)
