@@ -15,9 +15,9 @@ func routes(_ app: Application) throws {
 
     // A Parse Hook Function route.
     app.post("hello",
-             name: "hello",
-             parseServerURLStrings: parseServerURLStrings,
-             hooks: hooks) { req async throws -> ParseHookResponse<String> in
+             name: "hello") { req async throws -> ParseHookResponse<String> in
+        // Note that `ParseHookResponse<String>` means a "successfull"
+        // response will return a "String" type.
         if let error: ParseHookResponse<String> = checkHeaders(req) {
             return error
         }
@@ -26,14 +26,12 @@ func routes(_ app: Application) throws {
         
         // If a User called the request, fetch the complete user.
         if parseRequest.user != nil {
-            parseRequest = try await parseRequest.hydrateUser(request: req,
-                                                              parseServerURLStrings: parseServerURLStrings)
+            parseRequest = try await parseRequest.hydrateUser(request: req)
         }
         
         // To query using the User's credentials who called this function,
         // use the options() method from the parseRequest
-        let options = try parseRequest.options(req,
-                                               parseServerURLStrings: parseServerURLStrings)
+        let options = try parseRequest.options(req)
         let scores = try await GameScore.query.findAll(options: options)
         req.logger.info("Scores this user can access: \(scores)")
         return ParseHookResponse(success: "Hello world!")
@@ -42,9 +40,9 @@ func routes(_ app: Application) throws {
     // A Parse Hook Trigger route.
     app.post("score", "save", "before",
              className: GameScore.className,
-             triggerName: .beforeSave,
-             parseServerURLStrings: parseServerURLStrings,
-             hooks: hooks) { req async throws -> ParseHookResponse<GameScore> in
+             triggerName: .beforeSave) { req async throws -> ParseHookResponse<GameScore> in
+        // Note that `ParseHookResponse<GameScore>` means a "successfull"
+        // response will return a "GameScore" type.
         if let error: ParseHookResponse<GameScore> = checkHeaders(req) {
             return error
         }
@@ -53,8 +51,7 @@ func routes(_ app: Application) throws {
 
         // If a User called the request, fetch the complete user.
         if parseRequest.user != nil {
-            parseRequest = try await parseRequest.hydrateUser(request: req,
-                                                              parseServerURLStrings: parseServerURLStrings)
+            parseRequest = try await parseRequest.hydrateUser(request: req)
         }
 
         guard let object = parseRequest.object else {
@@ -71,9 +68,9 @@ func routes(_ app: Application) throws {
     // Another Parse Hook Trigger route.
     app.post("score", "find", "before",
              className: GameScore.className,
-             triggerName: .beforeFind,
-             parseServerURLStrings: parseServerURLStrings,
-             hooks: hooks) { req async throws -> ParseHookResponse<[GameScore]> in
+             triggerName: .beforeFind) { req async throws -> ParseHookResponse<[GameScore]> in
+        // Note that `ParseHookResponse<[GameScore]>` means a "successfull"
+        // response will return a "[GameScore]" type.
         if let error: ParseHookResponse<[GameScore]> = checkHeaders(req) {
             return error
         }
@@ -98,9 +95,10 @@ func routes(_ app: Application) throws {
     // Another Parse Hook Trigger route.
     app.post("user", "login", "after",
              className: User.className,
-             triggerName: .afterLogin,
-             parseServerURLStrings: parseServerURLStrings,
-             hooks: hooks) { req async throws -> ParseHookResponse<Bool> in
+             triggerName: .afterLogin) { req async throws -> ParseHookResponse<Bool> in
+        // Note that `ParseHookResponse<Bool>` means a "successfull"
+        // response will return a "Bool" type. Bool is the standard response with
+        // a "true" response meaning everything is okay or continue.
         if let error: ParseHookResponse<Bool> = checkHeaders(req) {
             return error
         }
@@ -113,9 +111,11 @@ func routes(_ app: Application) throws {
 
     // A Parse Hook Trigger route for `ParseFile`.
     app.on("file", "save", "before",
-           triggerName: .beforeSave,
-           parseServerURLStrings: parseServerURLStrings,
-           hooks: hooks) { req async throws -> ParseHookResponse<Bool> in
+           triggerName: .beforeSave) { req async throws -> ParseHookResponse<Bool> in
+        // Note that `ParseHookResponse<Bool>` means a "successfull"
+        // response will return a "Bool" type. Bool is the standard response with
+        // a "true" response meaning everything is okay or continue. Sending "false"
+        // in this case will reject saving the file.
         if let error: ParseHookResponse<Bool> = checkHeaders(req) {
             return error
         }
@@ -128,9 +128,10 @@ func routes(_ app: Application) throws {
 
     // Another Parse Hook Trigger route for `ParseFile`.
     app.post("file", "delete", "before",
-             triggerName: .beforeDelete,
-             parseServerURLStrings: parseServerURLStrings,
-             hooks: hooks) { req async throws -> ParseHookResponse<Bool> in
+             triggerName: .beforeDelete) { req async throws -> ParseHookResponse<Bool> in
+        // Note that `ParseHookResponse<Bool>` means a "successfull"
+        // response will return a "Bool" type. Bool is the standard response with
+        // a "true" response meaning everything is okay or continue.
         if let error: ParseHookResponse<Bool> = checkHeaders(req) {
             return error
         }
@@ -140,12 +141,13 @@ func routes(_ app: Application) throws {
         req.logger.info("A ParseFile is being deleted: \(parseRequest)")
         return ParseHookResponse(success: true)
     }
-    
+
     // A Parse Hook Trigger route for `ParseLiveQuery`.
     app.post("connect", "before",
-             triggerName: .beforeConnect,
-             parseServerURLStrings: parseServerURLStrings,
-             hooks: hooks) { req async throws -> ParseHookResponse<Bool> in
+             triggerName: .beforeConnect) { req async throws -> ParseHookResponse<Bool> in
+        // Note that `ParseHookResponse<Bool>` means a "successfull"
+        // response will return a "Bool" type. Bool is the standard response with
+        // a "true" response meaning everything is okay or continue.
         if let error: ParseHookResponse<Bool> = checkHeaders(req) {
             return error
         }
@@ -159,9 +161,10 @@ func routes(_ app: Application) throws {
     // Another Parse Hook Trigger route for `ParseLiveQuery`.
     app.post("score", "subscribe", "before",
              className: GameScore.className,
-             triggerName: .beforeSubscribe,
-             parseServerURLStrings: parseServerURLStrings,
-             hooks: hooks) { req async throws -> ParseHookResponse<Bool> in
+             triggerName: .beforeSubscribe) { req async throws -> ParseHookResponse<Bool> in
+        // Note that `ParseHookResponse<Bool>` means a "successfull"
+        // response will return a "Bool" type. Bool is the standard response with
+        // a "true" response meaning everything is okay or continue.
         if let error: ParseHookResponse<Bool> = checkHeaders(req) {
             return error
         }
@@ -175,9 +178,10 @@ func routes(_ app: Application) throws {
     // Another Parse Hook Trigger route for `ParseLiveQuery`.
     app.post("score", "event", "after",
              className: GameScore.className,
-             triggerName: .afterEvent,
-             parseServerURLStrings: parseServerURLStrings,
-             hooks: hooks) { req async throws -> ParseHookResponse<Bool> in
+             triggerName: .afterEvent) { req async throws -> ParseHookResponse<Bool> in
+        // Note that `ParseHookResponse<Bool>` means a "successfull"
+        // response will return a "Bool" type. Bool is the standard response with
+        // a "true" response meaning everything is okay or continue.
         if let error: ParseHookResponse<Bool> = checkHeaders(req) {
             return error
         }

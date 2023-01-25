@@ -9,13 +9,32 @@ import ParseSwift
 import Vapor
 
 /**
+ Sets the `ParseServerSwift` configuration if it has not already been set.
+ - parameter configuration: The ParseServer configuration.
+ - throws: An error of `ParseError` type.
+ - important: If you are using the default
+ `ParseServerSwift.initialize()` method, you do not need
+ call this method. This is only needed if you are writing a custom
+ `ParseServerSwift.initialize()`.
+ - warning: This should only be called once as it will throw an error
+ if the configuration is already set.
+ */
+public func setConfiguration(_ configuration: ParseServerConfiguration) throws {
+    guard ParseServer.configuration == nil else {
+        throw ParseError(code: .otherCause,
+                         message: "The configuration has already been initialized")
+    }
+    ParseServer.configuration = configuration
+}
+
+/**
  Checks headers for matching webhookKey to prove authenticity.
  - parameter req: The incoming request.
  - returns: **nil** if the webhookKeys match or a `ParseHookResponse`
  with an error that should be sent back to the Parse Server immediately.
  */
 public func checkHeaders<T>(_ req: Request) -> ParseHookResponse<T>? {
-    guard req.headers.first(name: Headers.webhook) == webhookKey else {
+    guard req.headers.first(name: Headers.webhook) == configuration.webhookKey else {
         let error = ParseError(code: .otherCause,
                                message: "Webhook keys don't match")
         return ParseHookResponse<T>(error: error)
@@ -47,8 +66,7 @@ public func serverURLString(_ uri: URI,
  */
 public func buildServerPathname(_ path: [PathComponent]) throws -> URL {
     let pathString = "/" + path.map { "\($0)" }.joined(separator: "/")
-    guard let serverPathname = serverPathname,
-          let url = URL(string: serverPathname)?.appendingPathComponent(pathString) else {
+    guard let url = URL(string: configuration.serverPathname)?.appendingPathComponent(pathString) else {
         throw ParseError(code: .otherCause,
                          message: "Cannot create a pathname for the server")
     }
@@ -58,13 +76,13 @@ public func buildServerPathname(_ path: [PathComponent]) throws -> URL {
 /// Check the Health of all Parse Servers.
 /// - parameter app: Core type representing a Vapor application.
 /// - throws: An error of `ParseError` type.
-public func checkServerHealth(_ app: Application) async throws {
-    for parseServerURLString in parseServerURLStrings {
+public func checkServerHealth() async throws {
+    for parseServerURLString in configuration.parseServerURLStrings {
         do {
             let serverHealth = try await ParseHealth.check(options: [.serverURL(parseServerURLString)])
-            app.logger.notice("Parse Server (\(parseServerURLString)) health is \"\(serverHealth)\"")
+            configuration.logger.notice("Parse Server (\(parseServerURLString)) health is \"\(serverHealth)\"")
         } catch {
-            app.logger.error("Could not connect to Parse Server (\(parseServerURLString)): \(error)")
+            configuration.logger.error("Could not connect to Parse Server (\(parseServerURLString)): \(error)")
             throw error
         }
     }
@@ -72,10 +90,9 @@ public func checkServerHealth(_ app: Application) async throws {
 
 /// Delete all Parse Hooks from all Parse Servers.
 /// - parameter app: Core type representing a Vapor application.
-/// - parameter hooks: An actor containing all of the current Hooks.
-public func deleteHooks(_ app: Application, hooks: Hooks) async {
-    let functions = await hooks.getFunctions()
-    let triggers = await hooks.getTriggers()
+public func deleteHooks(_ app: Application) async {
+    let functions = await configuration.hooks.getFunctions()
+    let triggers = await configuration.hooks.getTriggers()
     
     app.logger.notice("Deleting Hooks from all Parse Servers, please wait...")
     
@@ -86,7 +103,7 @@ public func deleteHooks(_ app: Application, hooks: Hooks) async {
         } catch {
             app.logger.error("Could not remove Hook Function: \(function); on Parse Server: (\(urlString)); due to error: \(error)")
         }
-        await hooks.removeFunctions([urlString])
+        await configuration.hooks.removeFunctions([urlString])
     }
 
     for (urlString, trigger) in triggers {
@@ -96,7 +113,7 @@ public func deleteHooks(_ app: Application, hooks: Hooks) async {
         } catch {
             app.logger.error("Could not remove Hook Trigger: \(trigger); on Parse Server: (\(urlString)); due to error: \(error)")
         }
-        await hooks.removeTriggers([urlString])
+        await configuration.hooks.removeTriggers([urlString])
     }
 }
 

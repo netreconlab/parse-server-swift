@@ -23,7 +23,7 @@ public extension ParseHookRequestable {
      In a single Parse Server environment, use options().
      */
     func options(_ request: Request,
-                 parseServerURLStrings: [String]) throws -> API.Options {
+                 parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) throws -> API.Options {
         var options = self.options()
         options.insert(.serverURL(try serverURLString(request.url,
                                                       parseServerURLStrings: parseServerURLStrings)))
@@ -35,6 +35,7 @@ public extension ParseHookRequestable {
      - parameter options: A set of header options sent to the server. Defaults to an empty set.
      - parameter request: The HTTP request of the application.
      - parameter parseServerURLStrings: A set of Parse Server `URL`'s.
+     Defaults to the set of servers added during configuration.
      - returns: Returns the `ParseHookRequestable` with the hydrated `ParseCloudUser`.
      - throws: An error of type `ParseError`.
      - note: The default cache policy for this method is `.reloadIgnoringLocalCacheData`. If a developer
@@ -42,7 +43,7 @@ public extension ParseHookRequestable {
      */
      func hydrateUser(options: API.Options = [],
                       request: Request,
-                      parseServerURLStrings: [String]) async throws -> Self {
+                      parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> Self {
          var updatedOptions = try self.options(request, parseServerURLStrings: parseServerURLStrings)
          updatedOptions = updatedOptions.union(options)
          return try await withCheckedThrowingContinuation { continuation in

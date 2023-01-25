@@ -63,7 +63,7 @@ The `webhookKey` should match the [webhookKey on the Parse Server](https://githu
 The aforementioned environment variables automatically configure [Parse-Swift<sup>OG</sup> SDK](https://github.com/netreconlab/Parse-Swift). If you need a more custom configuration, see the [documentation](https://netreconlab.github.io/Parse-Swift/release/documentation/parseswift/).
 
 ## Starting the Server
-`ParseServerSwift` is optimized to run in Docker containers. A sample [docker-compose.yml] demonstrates how to quickly spin up one (1) `ParseServerSwift` server with two (2) [parse-hipaa](https://github.com/netreconlab/parse-hipaa) servers and (1) [hipaa-postgres](https://github.com/netreconlab/hipaa-postgres) server.
+`ParseServerSwift` is optimized to run in Docker containers. A sample [docker-compose.yml] demonstrates how to quickly spin up one (1) `ParseServerSwift` server with one (1) [parse-hipaa](https://github.com/netreconlab/parse-hipaa) servers and (1) [hipaa-postgres](https://github.com/netreconlab/hipaa-postgres) database.
 
 ### In Docker
 1. Fork this repo
@@ -71,9 +71,8 @@ The aforementioned environment variables automatically configure [Parse-Swift<su
 3. Type `docker-compose up`
 4. Accessing your containers:
   - The first parse-hipaa server can be accessed at: http://localhost:1337/parse with the respective dashboard at: http://localhost:1337/dashboard/apps/Parse%20HIPAA/webhooks
-  - The second parse-hipaa server can be accessed at: http://localhost:1338/parse with the respective dashboard at: http://localhost:1338/dashboard/apps/Parse%20HIPAA/webhooks
   - The default login for the dashboard is username: `parse` with password: `1234`
-  - If you login to any of the dashboards: Click the `Parse-Hipaa` app, click `Webhooks` to the left and you will see all of the example Cloud Code registered as webooks:
+  - To view all of your Cloud Code Functions and Hooks: click the `Parse-Hipaa` app, click `Webhooks` to the left and you will see all of the example Cloud Code registered as webooks:
   <img width="1311" alt="image" src="https://user-images.githubusercontent.com/8621344/214114654-a374dc04-f696-4a18-921b-612f19b07ede.png">
 
 ### On macOS
@@ -146,6 +145,21 @@ struct GameScore: ParseObject {
 ### Creating New Cloud Code Routes 
 Adding routes for `ParseHooks` are as simple as adding [routes in Vapor](https://docs.vapor.codes/basics/routing/). `ParseServerSwift` provides some additional methods to routes to easily create and register [Hook Functions](https://parseplatform.org/Parse-Swift/release/documentation/parseswift/parsehookfunctionable) and [Hook Triggers](https://parseplatform.org/Parse-Swift/release/documentation/parseswift/parsehooktriggerable/). All routes should be added to the `routes.swift` file in your project. Example `ParseServerSwift` routes can be found in [ParseServerSwift/Sources/ParseServerSwift/routes.swift](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/routes.swift).
 
+### Sending Errors From Cloud Code Routes
+There will be times you will need to respond by sending an error to the Node.js Parse Server to propagate to the client. Sending errors can be accomplished by sending a `ParseHookResponse`. Below are two examples of sending an error:
+
+```swift
+// Note: `T` is the type to be returned if there is no error thrown.
+
+// Standard Parse error with your own unique message
+let standardError = ParseError(code: .missingObjectId, message: "This object requires an objectId")
+return ParseHookResponse<T>(error: standardError) // Be sure to "return" in route, DO NOT "throw" the error.
+
+// Custom error with your own unique code and message
+let customError = ParseError(otherCode: 1001, message: "My custom error")
+return ParseHookResponse<T>(error: customError) // Be sure to "return" in route, DO NOT "throw" the error.
+```
+
 ### Cloud Code Functions
 Cloud Code Functions can also take parameters. It's recommended to place all paramters in 
 [ParseServerSwift/Sources/ParseServerSwift/Models/Parameters](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/Models/Parameters)
@@ -153,9 +167,9 @@ Cloud Code Functions can also take parameters. It's recommended to place all par
 ```swift
 // A Parse Hook Function route.
 app.post("hello",
-         name: "hello",
-         parseServerURLStrings: parseServerURLStrings,
-         hooks: hooks) { req async throws -> ParseHookResponse<String> in
+         name: "hello") { req async throws -> ParseHookResponse<String> in
+    // Note that `ParseHookResponse<String>` means a "successfull"
+    // response will return a "String" type.
     if let error: ParseHookResponse<String> = checkHeaders(req) {
         return error
     }
@@ -164,14 +178,12 @@ app.post("hello",
     
     // If a User called the request, fetch the complete user.
     if parseRequest.user != nil {
-        parseRequest = try await parseRequest.hydrateUser(request: req,
-                                                          parseServerURLStrings: parseServerURLStrings)
+        parseRequest = try await parseRequest.hydrateUser(request: req)
     }
     
     // To query using the User's credentials who called this function,
     // use the options() method from the parseRequest
-    let options = try parseRequest.options(req,
-                                           parseServerURLStrings: parseServerURLStrings)
+    let options = try parseRequest.options(req)
     let scores = try await GameScore.query.findAll(options: options)
     req.logger.info("Scores this user can access: \(scores)")
     return ParseHookResponse(success: "Hello world!")
@@ -183,9 +195,9 @@ app.post("hello",
 // A Parse Hook Trigger route.
 app.post("score", "save", "before",
          className: GameScore.className,
-         triggerName: .beforeSave,
-         parseServerURLStrings: parseServerURLStrings,
-         hooks: hooks) { req async throws -> ParseHookResponse<GameScore> in
+         triggerName: .beforeSave) { req async throws -> ParseHookResponse<GameScore> in
+    // Note that `ParseHookResponse<GameScore>` means a "successfull"
+    // response will return a "GameScore" type.
     if let error: ParseHookResponse<GameScore> = checkHeaders(req) {
         return error
     }
@@ -194,8 +206,7 @@ app.post("score", "save", "before",
 
     // If a User called the request, fetch the complete user.
     if parseRequest.user != nil {
-        parseRequest = try await parseRequest.hydrateUser(request: req,
-                                                          parseServerURLStrings: parseServerURLStrings)
+        parseRequest = try await parseRequest.hydrateUser(request: req)
     }
 
     guard let object = parseRequest.object else {
@@ -212,9 +223,9 @@ app.post("score", "save", "before",
 // Another Parse Hook Trigger route.
 app.post("score", "find", "before",
          className: GameScore.className,
-         triggerName: .beforeFind,
-         parseServerURLStrings: parseServerURLStrings,
-         hooks: hooks) { req async throws -> ParseHookResponse<[GameScore]> in
+         triggerName: .beforeFind) { req async throws -> ParseHookResponse<[GameScore]> in
+    // Note that `ParseHookResponse<[GameScore]>` means a "successfull"
+    // response will return a "[GameScore]" type.
     if let error: ParseHookResponse<[GameScore]> = checkHeaders(req) {
         return error
     }
@@ -239,9 +250,10 @@ app.post("score", "find", "before",
 // Another Parse Hook Trigger route.
 app.post("user", "login", "after",
          className: User.className,
-         triggerName: .afterLogin,
-         parseServerURLStrings: parseServerURLStrings,
-         hooks: hooks) { req async throws -> ParseHookResponse<Bool> in
+         triggerName: .afterLogin) { req async throws -> ParseHookResponse<Bool> in
+    // Note that `ParseHookResponse<Bool>` means a "successfull"
+    // response will return a "Bool" type. Bool is the standard response with
+    // a "true" response meaning everything is okay or continue.
     if let error: ParseHookResponse<Bool> = checkHeaders(req) {
         return error
     }
@@ -254,9 +266,11 @@ app.post("user", "login", "after",
 
 // A Parse Hook Trigger route for `ParseFile`.
 app.on("file", "save", "before",
-       triggerName: .beforeSave,
-       parseServerURLStrings: parseServerURLStrings,
-       hooks: hooks) { req async throws -> ParseHookResponse<Bool> in
+       triggerName: .beforeSave) { req async throws -> ParseHookResponse<Bool> in
+    // Note that `ParseHookResponse<Bool>` means a "successfull"
+    // response will return a "Bool" type. Bool is the standard response with
+    // a "true" response meaning everything is okay or continue. Sending "false"
+    // in this case will reject saving the file.
     if let error: ParseHookResponse<Bool> = checkHeaders(req) {
         return error
     }
@@ -269,9 +283,10 @@ app.on("file", "save", "before",
 
 // Another Parse Hook Trigger route for `ParseFile`.
 app.post("file", "delete", "before",
-         triggerName: .beforeDelete,
-         parseServerURLStrings: parseServerURLStrings,
-         hooks: hooks) { req async throws -> ParseHookResponse<Bool> in
+         triggerName: .beforeDelete) { req async throws -> ParseHookResponse<Bool> in
+    // Note that `ParseHookResponse<Bool>` means a "successfull"
+    // response will return a "Bool" type. Bool is the standard response with
+    // a "true" response meaning everything is okay or continue.
     if let error: ParseHookResponse<Bool> = checkHeaders(req) {
         return error
     }
@@ -284,9 +299,10 @@ app.post("file", "delete", "before",
 
 // A Parse Hook Trigger route for `ParseLiveQuery`.
 app.post("connect", "before",
-         triggerName: .beforeConnect,
-         parseServerURLStrings: parseServerURLStrings,
-         hooks: hooks) { req async throws -> ParseHookResponse<Bool> in
+         triggerName: .beforeConnect) { req async throws -> ParseHookResponse<Bool> in
+    // Note that `ParseHookResponse<Bool>` means a "successfull"
+    // response will return a "Bool" type. Bool is the standard response with
+    // a "true" response meaning everything is okay or continue.
     if let error: ParseHookResponse<Bool> = checkHeaders(req) {
         return error
     }
@@ -300,9 +316,10 @@ app.post("connect", "before",
 // Another Parse Hook Trigger route for `ParseLiveQuery`.
 app.post("score", "subscribe", "before",
          className: GameScore.className,
-         triggerName: .beforeSubscribe,
-         parseServerURLStrings: parseServerURLStrings,
-         hooks: hooks) { req async throws -> ParseHookResponse<Bool> in
+         triggerName: .beforeSubscribe) { req async throws -> ParseHookResponse<Bool> in
+    // Note that `ParseHookResponse<Bool>` means a "successfull"
+    // response will return a "Bool" type. Bool is the standard response with
+    // a "true" response meaning everything is okay or continue.
     if let error: ParseHookResponse<Bool> = checkHeaders(req) {
         return error
     }
@@ -316,9 +333,10 @@ app.post("score", "subscribe", "before",
 // Another Parse Hook Trigger route for `ParseLiveQuery`.
 app.post("score", "event", "after",
          className: GameScore.className,
-         triggerName: .afterEvent,
-         parseServerURLStrings: parseServerURLStrings,
-         hooks: hooks) { req async throws -> ParseHookResponse<Bool> in
+         triggerName: .afterEvent) { req async throws -> ParseHookResponse<Bool> in
+    // Note that `ParseHookResponse<Bool>` means a "successfull"
+    // response will return a "Bool" type. Bool is the standard response with
+    // a "true" response meaning everything is okay or continue.
     if let error: ParseHookResponse<Bool> = checkHeaders(req) {
         return error
     }
@@ -327,6 +345,5 @@ app.post("score", "event", "after",
 
     req.logger.info("A LiveQuery event occured: \(parseRequest)")
     return ParseHookResponse(success: true)
-}
 }
 ```
