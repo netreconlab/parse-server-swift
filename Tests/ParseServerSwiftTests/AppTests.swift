@@ -1,5 +1,5 @@
 @testable import ParseServerSwift
-@testable import ParseSwift
+import ParseSwift
 import XCTVapor
 
 final class AppTests: XCTestCase {
@@ -13,7 +13,6 @@ final class AppTests: XCTestCase {
         let app = Application(.testing)
         try configure(app, testing: true)
         webhookKey = hookKey
-        Parse.configuration.isTestingSDK = true
         return app
     }
     
@@ -142,9 +141,9 @@ final class AppTests: XCTestCase {
         let urlString = "https://parse.com/parse"
         parseServerURLStrings.append(urlString)
         let dummyHookRequest = DummyRequest(installationId: installationId, params: .init())
-        let encoded = try ParseCoding.jsonEncoder().encode(dummyHookRequest)
-        let hookRequest = try ParseCoding.jsonDecoder().decode(ParseHookFunctionRequest<User, FooParameters>.self,
-                                                               from: encoded)
+        let encoded = try User.getJSONEncoder().encode(dummyHookRequest)
+        let hookRequest = try User.getDecoder().decode(ParseHookFunctionRequest<User, FooParameters>.self,
+                                                       from: encoded)
 
         let options = hookRequest.options()
         let installationOption = options.first(where: { $0 == .installationId("") })
