@@ -1,4 +1,3 @@
-import Leaf
 import ParseSwift
 import Vapor
 
@@ -29,7 +28,6 @@ func configure(_ app: Application, testing: Bool) throws {
     // uncomment to serve files from /Public folder
     // app.middleware.use(FileMiddleware(publicDirectory: app.directory.publicDirectory))
 
-    app.views.use(.leaf)
     // Setup current host
     app.http.server.configuration.hostname = Environment.process.PARSE_SERVER_SWIFT_HOST_NAME ?? "localhost"
     app.http.server.configuration.port = Int(Environment.process.PARSE_SERVER_SWIFT_PORT ?? 8081)
