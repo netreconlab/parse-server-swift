@@ -11,6 +11,7 @@ import Foundation
 public actor Hooks {
     var functions = [String: HookFunction]()
     var triggers = [String: HookTrigger]()
+    public init() { }
 }
 
 // MARK: Hook Functions

@@ -23,7 +23,7 @@ public extension ParseHookRequestable {
      In a single Parse Server environment, use options().
      */
     func options(_ request: Request,
-                 parseServerURLStrings: [String] = parseServerURLStrings) throws -> API.Options {
+                 parseServerURLStrings: [String]) throws -> API.Options {
         var options = self.options()
         options.insert(.serverURL(try serverURLString(request.url,
                                                       parseServerURLStrings: parseServerURLStrings)))
@@ -42,7 +42,7 @@ public extension ParseHookRequestable {
      */
      func hydrateUser(options: API.Options = [],
                       request: Request,
-                      parseServerURLStrings: [String] = parseServerURLStrings) async throws -> Self {
+                      parseServerURLStrings: [String]) async throws -> Self {
          var updatedOptions = try self.options(request, parseServerURLStrings: parseServerURLStrings)
          updatedOptions = updatedOptions.union(options)
          return try await withCheckedThrowingContinuation { continuation in

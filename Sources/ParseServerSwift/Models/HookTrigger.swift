@@ -29,7 +29,7 @@ extension HookTrigger {
                        _ path: [PathComponent],
                        className: String? = nil,
                        triggerName: ParseHookTriggerType,
-                       parseServerURLStrings: [String] = parseServerURLStrings) async throws -> [String: Self] {
+                       parseServerURLStrings: [String]) async throws -> [String: Self] {
         let url = try buildServerPathname(path)
         let hookTrigger: HookTrigger!
         var hookTriggers = [String: Self]()
@@ -81,8 +81,7 @@ public extension HookTrigger {
      - parameter path: A variadic list of paths.
      - parameter className: The name of the `ParseObject` the trigger should act on.
      - parameter triggerName: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for. Defaults to
-     the set of servers added during configuration.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
      - throws: An error of `ParseError` type.
      - important: `className` should only be **nil** when creating `ParseFile` and `.beforeConnect` triggers.
@@ -92,7 +91,7 @@ public extension HookTrigger {
     static func fetch(_ path: PathComponent...,
                       className: String? = nil,
                       triggerName: ParseHookTriggerType,
-                      parseServerURLStrings: [String] = parseServerURLStrings) async throws -> [String: Self] {
+                      parseServerURLStrings: [String]) async throws -> [String: Self] {
         try await fetch(path,
                         className: className,
                         triggerName: triggerName,
@@ -104,8 +103,7 @@ public extension HookTrigger {
      - parameter path: An array of paths.
      - parameter className: The name of the `ParseObject` the trigger should act on.
      - parameter triggerName: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for. Defaults to
-     the set of servers added during configuration.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
      - throws: An error of `ParseError` type.
      - important: `className` should only be **nil** when creating `ParseFile` and `.beforeConnect` triggers.
@@ -115,7 +113,7 @@ public extension HookTrigger {
     static func fetch(_ path: [PathComponent],
                       className: String? = nil,
                       triggerName: ParseHookTriggerType,
-                      parseServerURLStrings: [String] = parseServerURLStrings) async throws -> [String: Self] {
+                      parseServerURLStrings: [String]) async throws -> [String: Self] {
         try await method(.GET,
                          path,
                          className: className,
@@ -128,8 +126,7 @@ public extension HookTrigger {
      - parameter path: A variadic list of paths.
      - parameter className: The name of the `ParseObject` the trigger should act on.
      - parameter triggerName: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for. Defaults to
-     the set of servers added during configuration.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`'s.
      - throws: An error of `ParseError` type.
      - important: `className` should only be **nil** when creating `ParseFile` and `.beforeConnect` triggers.
@@ -139,7 +136,7 @@ public extension HookTrigger {
     static func fetchAll(_ path: PathComponent...,
                          className: String? = nil,
                          triggerName: ParseHookTriggerType,
-                         parseServerURLStrings: [String] = parseServerURLStrings) async throws -> [String: [Self]] {
+                         parseServerURLStrings: [String]) async throws -> [String: [Self]] {
         try await fetchAll(path,
                            className: className,
                            triggerName: triggerName,
@@ -151,8 +148,7 @@ public extension HookTrigger {
      - parameter path: An array of paths.
      - parameter className: The name of the `ParseObject` the trigger should act on.
      - parameter triggerName: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for. Defaults to
-     the set of servers added during configuration.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`'s.
      - throws: An error of `ParseError` type.
      - important: `className` should only be **nil** when creating `ParseFile` and `.beforeConnect` triggers.
@@ -162,7 +158,7 @@ public extension HookTrigger {
     static func fetchAll(_ path: [PathComponent],
                          className: String? = nil,
                          triggerName: ParseHookTriggerType,
-                         parseServerURLStrings: [String] = parseServerURLStrings) async throws -> [String: [Self]] {
+                         parseServerURLStrings: [String]) async throws -> [String: [Self]] {
         let url = try buildServerPathname(path)
         let hookTrigger: HookTrigger!
         var hookTriggers = [String: [Self]]()
@@ -195,8 +191,7 @@ public extension HookTrigger {
      - parameter path: A variadic list of paths.
      - parameter className: The name of the `ParseObject` the trigger should act on.
      - parameter triggerName: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for. Defaults to
-     the set of servers added during configuration.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
      - throws: An error of `ParseError` type.
      - important: `className` should only be **nil** when creating `ParseFile` and `.beforeConnect` triggers.
@@ -206,7 +201,7 @@ public extension HookTrigger {
     static func create(_ path: PathComponent...,
                        className: String? = nil,
                        triggerName: ParseHookTriggerType,
-                       parseServerURLStrings: [String] = parseServerURLStrings) async throws -> [String: Self] {
+                       parseServerURLStrings: [String]) async throws -> [String: Self] {
         try await create(path,
                          className: className,
                          triggerName: triggerName,
@@ -218,8 +213,7 @@ public extension HookTrigger {
      - parameter path: An array of paths.
      - parameter className: The name of the `ParseObject` the trigger should act on.
      - parameter triggerName: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for. Defaults to
-     the set of servers added during configuration.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
      - throws: An error of `ParseError` type.
      - important: `className` should only be **nil** when creating `ParseFile` and `.beforeConnect` triggers.
@@ -229,7 +223,7 @@ public extension HookTrigger {
     static func create(_ path: [PathComponent],
                        className: String? = nil,
                        triggerName: ParseHookTriggerType,
-                       parseServerURLStrings: [String] = parseServerURLStrings) async throws -> [String: Self] {
+                       parseServerURLStrings: [String]) async throws -> [String: Self] {
         try await method(.POST,
                          path,
                          className: className,
@@ -245,8 +239,7 @@ public extension HookTrigger {
      - parameter path: A variadic list of paths.
      - parameter className: The name of the `ParseObject` the trigger should act on.
      - parameter triggerName: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for. Defaults to
-     the set of servers added during configuration.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
      - throws: An error of `ParseError` type.
      - important: `className` should only be **nil** when creating `ParseFile` and `.beforeConnect` triggers.
@@ -256,7 +249,7 @@ public extension HookTrigger {
     static func update(_ path: PathComponent...,
                        className: String? = nil,
                        triggerName: ParseHookTriggerType,
-                       parseServerURLStrings: [String] = parseServerURLStrings) async throws -> [String: Self] {
+                       parseServerURLStrings: [String]) async throws -> [String: Self] {
         try await update(path,
                          className: className,
                          triggerName: triggerName,
@@ -268,8 +261,7 @@ public extension HookTrigger {
      - parameter path: An array of paths.
      - parameter className: The name of the `ParseObject` the trigger should act on.
      - parameter triggerName: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for. Defaults to
-     the set of servers added during configuration.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
      - throws: An error of `ParseError` type.
      - important: `className` should only be **nil** when creating `ParseFile` and `.beforeConnect` triggers.
@@ -279,7 +271,7 @@ public extension HookTrigger {
     static func update(_ path: [PathComponent],
                        className: String? = nil,
                        triggerName: ParseHookTriggerType,
-                       parseServerURLStrings: [String] = parseServerURLStrings) async throws -> [String: Self] {
+                       parseServerURLStrings: [String]) async throws -> [String: Self] {
         try await method(.PUT,
                          path,
                          className: className,
@@ -296,8 +288,7 @@ public extension HookTrigger {
      - parameter path: A variadic list of paths.
      - parameter className: The name of the `ParseObject` the trigger should act on.
      - parameter triggerName: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to delete triggers for. Defaults to
-     the set of servers added during configuration.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to delete triggers for.
      - throws: An error of `ParseError` type.
      - important: `className` should only be **nil** when creating `ParseFile` and `.beforeConnect` triggers.
      - note: WIll attempt to create triggers on all `parseServerURLStrings`.
@@ -306,7 +297,7 @@ public extension HookTrigger {
     static func delete(_ path: PathComponent...,
                        className: String? = nil,
                        triggerName: ParseHookTriggerType,
-                       parseServerURLStrings: [String] = parseServerURLStrings) async throws {
+                       parseServerURLStrings: [String]) async throws {
         try await delete(path,
                          className: className,
                          triggerName: triggerName,
@@ -318,8 +309,7 @@ public extension HookTrigger {
      - parameter path: An array of paths.
      - parameter className: The name of the `ParseObject` the trigger should act on.
      - parameter triggerName: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to delete triggers for. Defaults to
-     the set of servers added during configuration.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to delete triggers for.
      - throws: An error of `ParseError` type.
      - important: `className` should only be **nil** when creating `ParseFile` and `.beforeConnect` triggers.
      - note: WIll attempt to create triggers on all `parseServerURLStrings`.
@@ -328,7 +318,7 @@ public extension HookTrigger {
     static func delete(_ path: [PathComponent],
                        className: String? = nil,
                        triggerName: ParseHookTriggerType,
-                       parseServerURLStrings: [String] = parseServerURLStrings) async throws {
+                       parseServerURLStrings: [String]) async throws {
         try await method(.DELETE,
                          path,
                          className: className,
@@ -344,8 +334,8 @@ public extension RoutesBuilder {
      - parameter path: A variadic list of paths.
      - parameter className: The name of the `ParseObject` the trigger should act on.
      - parameter triggerName: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for. Defaults to
-     the set of servers added during configuration.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
+     - parameter hooks: An actor containing all of the current Hooks.
      - important: `className` should only be **nil** when creating `ParseFile` and `.beforeConnect` triggers.
      - note: WIll attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
@@ -355,7 +345,8 @@ public extension RoutesBuilder {
         _ path: PathComponent...,
         className: String? = nil,
         triggerName: ParseHookTriggerType,
-        parseServerURLStrings: [String] = parseServerURLStrings,
+        parseServerURLStrings: [String],
+        hooks: Hooks,
         use closure: @escaping (Request) async throws -> Response
     ) -> Route
         where Response: AsyncResponseEncodable
@@ -364,6 +355,7 @@ public extension RoutesBuilder {
                 className: className,
                 triggerName: triggerName,
                 parseServerURLStrings: parseServerURLStrings,
+                hooks: hooks,
                 use: closure)
     }
 
@@ -373,8 +365,8 @@ public extension RoutesBuilder {
      - parameter path: An array of paths.
      - parameter className: The name of the `ParseObject` the trigger should act on.
      - parameter triggerName: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for. Defaults to
-     the set of servers added during configuration.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
+     - parameter hooks: An actor containing all of the current Hooks.
      - important: `className` should only be **nil** when creating `ParseFile` and `.beforeConnect` triggers.
      - note: WIll attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
@@ -384,7 +376,8 @@ public extension RoutesBuilder {
         _ path: [PathComponent],
         className: String? = nil,
         triggerName: ParseHookTriggerType,
-        parseServerURLStrings: [String] = parseServerURLStrings,
+        parseServerURLStrings: [String],
+        hooks: Hooks,
         use closure: @escaping (Request) async throws -> Response
     ) -> Route
         where Response: AsyncResponseEncodable
@@ -393,6 +386,7 @@ public extension RoutesBuilder {
                 className: className,
                 triggerName: triggerName,
                 parseServerURLStrings: parseServerURLStrings,
+                hooks: hooks,
                 use: closure)
     }
 
@@ -402,8 +396,8 @@ public extension RoutesBuilder {
      - parameter body: Determines how an incoming HTTP request’s body is collected.
      - parameter className: The name of the `ParseObject` the trigger should act on.
      - parameter triggerName: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for. Defaults to
-     the set of servers added during configuration.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
+     - parameter hooks: An actor containing all of the current Hooks.
      - important: `className` should only be **nil** when creating `ParseFile` and `.beforeConnect` triggers.
      - note: WIll attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
@@ -414,7 +408,8 @@ public extension RoutesBuilder {
         body: HTTPBodyStreamStrategy = .collect,
         className: String? = nil,
         triggerName: ParseHookTriggerType,
-        parseServerURLStrings: [String] = parseServerURLStrings,
+        parseServerURLStrings: [String],
+        hooks: Hooks,
         use closure: @escaping (Request) async throws -> Response
     ) -> Route
         where Response: AsyncResponseEncodable
@@ -424,6 +419,7 @@ public extension RoutesBuilder {
                 className: className,
                 triggerName: triggerName,
                 parseServerURLStrings: parseServerURLStrings,
+                hooks: hooks,
                 use: closure)
     }
 
@@ -433,8 +429,8 @@ public extension RoutesBuilder {
      - parameter body: Determines how an incoming HTTP request’s body is collected.
      - parameter className: The name of the `ParseObject` the trigger should act on.
      - parameter triggerName: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for. Defaults to
-     the set of servers added during configuration.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
+     - parameter hooks: An actor containing all of the current Hooks.
      - important: `className` should only be **nil** when creating `ParseFile` and `.beforeConnect` triggers.
      - note: WIll attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
@@ -445,7 +441,8 @@ public extension RoutesBuilder {
         body: HTTPBodyStreamStrategy = .collect,
         className: String? = nil,
         triggerName: ParseHookTriggerType,
-        parseServerURLStrings: [String] = parseServerURLStrings,
+        parseServerURLStrings: [String],
+        hooks: Hooks,
         use closure: @escaping (Request) async throws -> Response
     ) -> Route
         where Response: AsyncResponseEncodable

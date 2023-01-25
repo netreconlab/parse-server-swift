@@ -1,15 +1,14 @@
-import Leaf
 import ParseSwift
 import Vapor
 
 /// The key used to authenticate incoming webhook calls from a Parse Server
-public var webhookKey: String?
+var webhookKey: String?
 
 /// The current Hook Functions and Triggers.
-public var hooks = Hooks()
+var hooks = Hooks()
 
 /// All Parse Server URL strings to connect to.
-public var parseServerURLStrings = [String]()
+var parseServerURLStrings = [String]()
 
 /// The current address of ParseServerSwift.
 var serverPathname: String!
@@ -29,12 +28,11 @@ func configure(_ app: Application, testing: Bool) throws {
     // uncomment to serve files from /Public folder
     // app.middleware.use(FileMiddleware(publicDirectory: app.directory.publicDirectory))
 
-    app.views.use(.leaf)
     // Setup current host
     app.http.server.configuration.hostname = Environment.process.PARSE_SERVER_SWIFT_HOST_NAME ?? "localhost"
     app.http.server.configuration.port = Int(Environment.process.PARSE_SERVER_SWIFT_PORT ?? 8081)
     app.http.server.configuration.tlsConfiguration = .none
-    serverPathname = app.http.server.configuration.buildServerURL()
+    serverPathname = buildServerURL(from: app.http.server.configuration)
     webhookKey = Environment.process.PARSE_SERVER_SWIFT_WEBHOOK_KEY
 
     // Increases the streaming body collection limit to 500kb

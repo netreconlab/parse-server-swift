@@ -1,5 +1,5 @@
 @testable import ParseServerSwift
-@testable import ParseSwift
+import ParseSwift
 import XCTVapor
 
 final class AppTests: XCTestCase {
@@ -13,7 +13,6 @@ final class AppTests: XCTestCase {
         let app = Application(.testing)
         try configure(app, testing: true)
         webhookKey = hookKey
-        Parse.configuration.isTestingSDK = true
         return app
     }
     
@@ -78,7 +77,7 @@ final class AppTests: XCTestCase {
         XCTAssertGreaterThan(currentFunctions.count, 0)
         XCTAssertGreaterThan(currentTriggers.count, 0)
 
-        await deleteHooks(app)
+        await deleteHooks(app, hooks: hooks)
 
         let currentFunctions2 = await hooks.getFunctions()
         let currentTriggers2 = await hooks.getTriggers()
@@ -120,7 +119,8 @@ final class AppTests: XCTestCase {
         XCTAssertEqual(serverString2, urlString)
         
         parseServerURLStrings = ["http://localhost:1337/parse"]
-        let serverString3 = try serverURLString(uri)
+        let serverString3 = try serverURLString(uri,
+                                                parseServerURLStrings: parseServerURLStrings)
         XCTAssertEqual(serverString3, parseServerURLStrings.first)
     }
 
@@ -130,7 +130,8 @@ final class AppTests: XCTestCase {
         defer { app.shutdown() }
         let urlString = "https://parse.com/parse"
         let uri = URI(stringLiteral: urlString)
-        XCTAssertThrowsError(try serverURLString(uri))
+        XCTAssertThrowsError(try serverURLString(uri,
+                                                 parseServerURLStrings: parseServerURLStrings))
     }
 
     func testParseHookOptions() async throws {
@@ -140,9 +141,9 @@ final class AppTests: XCTestCase {
         let urlString = "https://parse.com/parse"
         parseServerURLStrings.append(urlString)
         let dummyHookRequest = DummyRequest(installationId: installationId, params: .init())
-        let encoded = try ParseCoding.jsonEncoder().encode(dummyHookRequest)
-        let hookRequest = try ParseCoding.jsonDecoder().decode(ParseHookFunctionRequest<User, FooParameters>.self,
-                                                               from: encoded)
+        let encoded = try User.getJSONEncoder().encode(dummyHookRequest)
+        let hookRequest = try User.getDecoder().decode(ParseHookFunctionRequest<User, FooParameters>.self,
+                                                       from: encoded)
 
         let options = hookRequest.options()
         let installationOption = options.first(where: { $0 == .installationId("") })
@@ -151,7 +152,8 @@ final class AppTests: XCTestCase {
 
         let uri = URI(stringLiteral: urlString)
         let request = Request(application: app, url: uri, on: app.eventLoopGroup.any())
-        let options2 = try hookRequest.options(request)
+        let options2 = try hookRequest.options(request,
+                                               parseServerURLStrings: parseServerURLStrings)
         let installationOption2 = options2.first(where: { $0 == .installationId("") })
         let serverURLOption = options2.first(where: { $0 == .serverURL("") })
         XCTAssertEqual(options2.count, 2)
