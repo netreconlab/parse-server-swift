@@ -24,8 +24,8 @@ and [Vapor](https://github.com/vapor/vapor). `ParseServerSwift` provides many ad
 
 Technically, complete apps can be written with `ParseServerSwift`, the only difference is that this code runs in your `ParseServerSwift` rather than running on the user’s mobile device. When you update your Cloud Code, it becomes available to all mobile environments instantly. You don’t have to wait for a new release of your application. This lets you change app behavior on the fly and add new features faster.
 
-## Installing ParseServerSwift
-Setup your Vapor project by following the [directions](https://www.kodeco.com/11555468-getting-started-with-server-side-swift-with-vapor-4) for installing and setting up your project on macOS or linux.
+## Creating Your Cloud Code App with ParseServerSwift
+Setup a Vapor project by following the [directions](https://www.kodeco.com/11555468-getting-started-with-server-side-swift-with-vapor-4) for installing and setting up your project on macOS or linux.
 
 Then add `ParseServerSwift` to `dependencies` in your `Package.swift` file:
 
@@ -41,11 +41,11 @@ let package = Package(
 )
 ```
 
-Adding `ParseServerSwift` will allow you to quickly add Vapor routes to your server.
+Adding `ParseServerSwift` will allow you to quickly add routes for Parse Cloud Hook Functions and Triggers.
 
 ## Configure ParseServerSwift to Connect to Your Parse Servers
 ### Environment Variables
-It is recommended to copy/modify [ParseServerSwift/Sources/ParseServerSwift/configure.swift](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/configure.swift) to your project. The following enviroment variables are available and can be configured directly or through `.env`, `.env.production`, etc. See the [Vapor Docs for more details](https://docs.vapor.codes/basics/environment/).
+The following enviroment variables are available and can be configured directly or through `.env`, `.env.production`, etc. See the [Vapor Docs for more details](https://docs.vapor.codes/basics/environment/).
 
 ```
 PARSE_SERVER_SWIFT_HOST_NAME: cloud-code # The name of your host. If you are running in Docker it should be same name as the docker service
@@ -62,6 +62,39 @@ The `webhookKey` should match the [webhookKey on the Parse Server](https://githu
 
 ### Parse-Swift<sup>OG</sup> SDK
 The aforementioned environment variables automatically configure [Parse-Swift<sup>OG</sup> SDK](https://github.com/netreconlab/Parse-Swift). If you need a more custom configuration, see the [documentation](https://netreconlab.github.io/Parse-Swift/release/documentation/parseswift/).
+
+### Initializing ParseSwiftServer
+To levergage the aforementioned environment variables, you should modify `configure.swift` in your project to look similar to below:
+
+```swift
+public func configure(_ app: Application) throws {
+    // Initialize ParseServerSwift
+    let configuration = try ParseServerConfiguration(app: app)
+    try ParseServerSwift.initialize(configuration, app: app)
+    
+    // register routes
+    try routes(app)
+}
+```
+
+If you want to pass the configuration parameters programitically, your `configure` method should look similar to below:
+
+```swift
+public func configure(_ app: Application) throws {
+    // Initialize ParseServerSwift
+    let configuration = try ParseServerConfiguration(app: app,
+                                                     hostName: "hostName",
+                                                     port: 8081,
+                                                     applicationId: "applicationId",
+                                                     primaryKey: "primaryKey",
+                                                     webhookKey: hookKey,
+                                                     parseServerURLString: "primaryKey")
+    try ParseServerSwift.initialize(configuration, app: app)
+    
+    // register routes
+    try routes(app)
+}
+```
 
 ## Starting the Server
 `ParseServerSwift` is optimized to run in Docker containers. A sample [docker-compose.yml] demonstrates how to quickly spin up one (1) `ParseServerSwift` server with one (1) [parse-hipaa](https://github.com/netreconlab/parse-hipaa) servers and (1) [hipaa-postgres](https://github.com/netreconlab/hipaa-postgres) database.
@@ -84,7 +117,7 @@ To start your server type, `swift run` in the terminal of the project root direc
 It is recommended to add all of your `ParseObject`'s in a folder called `Models` similar to [ParseServerSwift/Sources/ParseServerSwift/Models](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/Models). 
 
 #### The `ParseUser` Model
-Be mindful that the `ParseUser` in `ParseServerSwift` should conform to [ParseCloudUser](https://swiftpackageindex.com/netreconlab/parse-swift/4.16.2/documentation/parseswift/parseclouduser). In addition, make sure to add all of the additional properties you have in your `_User` class to the `User` model. An example `User` model is below:
+Be mindful that the `ParseUser` in `ParseServerSwift` should conform to [ParseCloudUser](https://swiftpackageindex.com/netreconlab/parse-swift/4.16.2/documentation/parseswift/parseclouduser). This is because the `ParseCloudUser` contains some additional properties on the server-side. On the client, you should always use `ParseUser` instead of `ParseCloudUser`. In addition, make sure to add all of the additional properties you have in your `_User` class to the `User` model. An example `User` model is below:
 
 ```swift
 /**
