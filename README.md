@@ -142,7 +142,7 @@ struct User: ParseCloudUser {
 }
 ```
 
-#### An example `ParseObject`
+#### An example `ParseObject` Model
 The `GameScore` model is below:
 
 ```swift
