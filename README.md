@@ -3,6 +3,7 @@
 [![Documentation](http://img.shields.io/badge/read-docs-2196f3.svg)](https://swiftpackageindex.com/netreconlab/parse-server-swift/documentation)
 [![Tuturiol](http://img.shields.io/badge/read-tuturials-2196f3.svg)](https://netreconlab.github.io/parse-server-swift/release/tutorials/parseserverswift/)
 [![Build Status CI](https://github.com/netreconlab/parse-server-swift/workflows/ci/badge.svg?branch=main)](https://github.com/netreconlab/parse-server-swift/actions?query=workflow%3Aci+branch%3Amain)
+[![release](https://github.com/netreconlab/parse-server-swift/actions/workflows/release.yml/badge.svg)](https://github.com/netreconlab/parse-server-swift/actions/workflows/release.yml)
 [![codecov](https://codecov.io/gh/netreconlab/parse-server-swift/branch/main/graph/badge.svg?token=RC3FLU6BGW)](https://codecov.io/gh/netreconlab/parse-server-swift)
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fnetreconlab%2Fparse-server-swift%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/netreconlab/parse-server-swift)
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fnetreconlab%2Fparse-server-swift%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/netreconlab/parse-server-swift)
@@ -80,7 +81,36 @@ To start your server type, `swift run` in the terminal of the project root direc
 
 ## Writing Cloud Code
 ### Creating `ParseObject`'s
-It is recommended to add all of your `ParseObject`'s in a folder called `Models` similar to [ParseServerSwift/Sources/ParseServerSwift/Models](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/Models). For example, the `GameScore` model is below:
+It is recommended to add all of your `ParseObject`'s in a folder called `Models` similar to [ParseServerSwift/Sources/ParseServerSwift/Models](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/Models). 
+
+#### The `ParseUser` Model
+Be mindful that the `ParseUser` in `ParseServerSwift` should conform to [ParseCloudUser](https://swiftpackageindex.com/netreconlab/parse-swift/4.16.2/documentation/parseswift/parseclouduser). In addition, make sure to add all of the additional properties you have in your `_User` class to the `User` model. An example `User` model is below:
+
+```swift
+/**
+ An example `ParseUser`. You will want to add custom
+ properties to reflect the `ParseUser` on your Parse Server.
+ */
+struct User: ParseCloudUser {
+
+    var authData: [String: [String: String]?]?
+    var username: String?
+    var email: String?
+    var emailVerified: Bool?
+    var password: String?
+    var objectId: String?
+    var createdAt: Date?
+    var updatedAt: Date?
+    var ACL: ParseACL?
+    var originalData: Data?
+    var sessionToken: String?
+    var _failed_login_count: Int?
+    var _account_lockout_expires_at: Date?
+}
+```
+
+#### An example `ParseObject`
+The `GameScore` model is below:
 
 ```swift
 import Foundation
@@ -112,9 +142,6 @@ struct GameScore: ParseObject {
     }
 }
 ```
-
-#### The `ParseUser` Model
-Be sure to add all of the additional properties you have in your `_User` class to the `User` model. An example `User` model can be found at [ParseServerSwift/Sources/ParseServerSwift/Models/User.swift](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/Models/User.swift)
 
 ### Creating New Cloud Code Routes 
 Adding routes for `ParseHooks` are as simple as adding [routes in Vapor](https://docs.vapor.codes/basics/routing/). `ParseServerSwift` provides some additional methods to routes to easily create and register [Hook Functions](https://parseplatform.org/Parse-Swift/release/documentation/parseswift/parsehookfunctionable) and [Hook Triggers](https://parseplatform.org/Parse-Swift/release/documentation/parseswift/parsehooktriggerable/). All routes should be added to the `routes.swift` file in your project. Example `ParseServerSwift` routes can be found in [ParseServerSwift/Sources/ParseServerSwift/routes.swift](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/routes.swift).
