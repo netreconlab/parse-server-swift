@@ -179,6 +179,8 @@ struct GameScore: ParseObject {
 ### Creating New Cloud Code Routes 
 Adding routes for `ParseHooks` are as simple as adding [routes in Vapor](https://docs.vapor.codes/basics/routing/). `ParseServerSwift` provides some additional methods to routes to easily create and register [Hook Functions](https://parseplatform.org/Parse-Swift/release/documentation/parseswift/parsehookfunctionable) and [Hook Triggers](https://parseplatform.org/Parse-Swift/release/documentation/parseswift/parsehooktriggerable/). All routes should be added to the `routes.swift` file in your project. Example `ParseServerSwift` routes can be found in [ParseServerSwift/Sources/ParseServerSwift/routes.swift](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/routes.swift).
 
+**Be sure to add `import ParseSwift` and `import ParseServerSwift` to the top of routes.swift**
+
 ### Sending Errors From Cloud Code Routes
 There will be times you will need to respond by sending an error to the Node.js Parse Server to propagate to the client. Sending errors can be accomplished by sending a `ParseHookResponse`. Below are two examples of sending an error:
 
@@ -187,11 +189,11 @@ There will be times you will need to respond by sending an error to the Node.js 
 
 // Standard Parse error with your own unique message
 let standardError = ParseError(code: .missingObjectId, message: "This object requires an objectId")
-return ParseHookResponse<T>(error: standardError) // Be sure to "return" in route, DO NOT "throw" the error.
+return ParseHookResponse<T>(error: standardError) // Be sure to "return" the ParseHookResponse in your route, DO NOT "throw" the error.
 
 // Custom error with your own unique code and message
 let customError = ParseError(otherCode: 1001, message: "My custom error")
-return ParseHookResponse<T>(error: customError) // Be sure to "return" in route, DO NOT "throw" the error.
+return ParseHookResponse<T>(error: customError) // Be sure to "return" ParseHookResponse in your route, DO NOT "throw" the error.
 ```
 
 ### Cloud Code Functions
