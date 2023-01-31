@@ -36,7 +36,16 @@ import PackageDescription
 let package = Package(
     name: "YOUR_PROJECT_NAME",
     dependencies: [
-        .package(url: "https://github.com/netreconlab/ParseServerSwift", .upToNextMajor(from: "0.1.2")),
+        .package(url: "https://github.com/netreconlab/ParseServerSwift", .upToNextMajor(from: "0.2.0")),
+    ]
+    ...
+    targets: [
+        .target(
+            name: "YOUR_PROJECT_NAME",
+            dependencies: [
+                .product(name: "ParseServerSwift", package: "ParseServerSwift"),
+            ]
+        ),
     ]
 )
 ```
