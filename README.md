@@ -197,8 +197,16 @@ let customError = ParseError(otherCode: 1001, message: "My custom error")
 return ParseHookResponse<T>(error: customError) // Be sure to "return" ParseHookResponse in your route, DO NOT "throw" the error.
 ```
 
+### Cloud Code Examples
+[Parse-Swift has number of Swift Playgrounds](https://github.com/netreconlab/Parse-Swift/tree/main/ParseSwift.playground/Pages) to demonstrate how to use the SDK. Below are some notable Playgrounds specifically for Cloud Code that can be used directly in `ParseServerSwift`:
+
+- [Schema - Create/Update/Delete](https://github.com/netreconlab/Parse-Swift/blob/main/ParseSwift.playground/Pages/20%20-%20Cloud%20Schemas.xcplaygroundpage/Contents.swift)
+- [Push Notifications](https://github.com/netreconlab/Parse-Swift/blob/main/ParseSwift.playground/Pages/21%20-%20Cloud%20Push%20Notifications.xcplaygroundpage/Contents.swift)
+- [Calling Cloud Functions From Client Apps](https://github.com/netreconlab/Parse-Swift/blob/main/ParseSwift.playground/Pages/10%20-%20Cloud%20Code.xcplaygroundpage/Contents.swift)
+
+
 ### Cloud Code Functions
-Cloud Code Functions can also take parameters. It's recommended to place all paramters in 
+Cloud Code Functions can also take parameters. It's recommended to place all parameters in 
 [ParseServerSwift/Sources/ParseServerSwift/Models/Parameters](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/Models/Parameters)
 
 ```swift
