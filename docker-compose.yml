@@ -34,6 +34,10 @@ x-shared_environment: &shared_environment
   PARSE_SERVER_DIRECT_ACCESS: 'false' # WARNING: Setting to 'true' is known to cause crashes on parse-hipaa running postgres
   PARSE_SERVER_ENABLE_PRIVATE_USERS: 'true'
   PARSE_SERVER_USING_PARSECAREKIT: 'false' # If you are not using ParseCareKit, set this to 'false'
+  PARSE_SERVER_RATE_LIMIT: 'true'
+  PARSE_SERVER_RATE_LIMIT_REQUEST_COUNT: '1'
+  PARSE_SERVER_RATE_LIMIT_INCLUDE_PRIMARY_KEY: 'false'
+  PARSE_SERVER_RATE_LIMIT_INCLUDE_INTERNAL_REQUESTS: 'false'
   PARSE_DASHBOARD_START: 'true'
   PARSE_DASHBOARD_APP_NAME: Parse HIPAA
   PARSE_DASHBOARD_USERNAMES: parse, parseRead
@@ -70,7 +74,7 @@ services:
     depends_on:
         - parse
   parse:
-    image: netreconlab/parse-hipaa:6.0.0-alpha-dashboard
+    image: netreconlab/parse-hipaa:6.0.0-dashboard
     # Uncomment the image below to use Parse Server 5.4.0 instead. Be sure to comment out 6.0.0x
     #image: netreconlab/parse-hipaa:5.4.0-dashboard
     environment:
