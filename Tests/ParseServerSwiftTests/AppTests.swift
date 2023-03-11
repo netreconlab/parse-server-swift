@@ -9,7 +9,7 @@ final class AppTests: XCTestCase {
         var params: FooParameters
     }
 
-    func setupAppForTesting(hookKey: String? = nil) throws -> Application {
+    func setupAppForTesting(hookKey: String? = nil) async throws -> Application {
         let app = Application(.testing)
         let configuration = try ParseServerConfiguration(app: app,
                                                          hostName: "hostName",
@@ -19,6 +19,18 @@ final class AppTests: XCTestCase {
                                                          webhookKey: hookKey,
                                                          parseServerURLString: "primaryKey")
         try ParseServerSwift.initialize(configuration, app: app, testing: true)
+        guard let parseServerURL = URL(string: configuration.primaryParseServerURLString) else {
+            throw ParseError(code: .otherCause,
+                             message: "Could not make a URL from the Parse Server string")
+        }
+        try await ParseSwift.initialize(applicationId: configuration.applicationId,
+                                        primaryKey: configuration.primaryKey,
+                                        serverURL: parseServerURL,
+                                        usingPostForQuery: true,
+                                        requestCachePolicy: .reloadIgnoringLocalCacheData) { _, completionHandler in
+            // Setup to use default certificate pinning. See Parse-Swift docs for more info
+            completionHandler(.performDefaultHandling, nil)
+        }
         try routes(app)
         return app
     }
@@ -41,8 +53,8 @@ final class AppTests: XCTestCase {
         XCTAssertNoThrow(try setConfiguration(configuration))
     }
 
-    func testDoNotInitConfigTwice() throws {
-        let app = try setupAppForTesting()
+    func testDoNotInitConfigTwice() async throws {
+        let app = try await setupAppForTesting()
         defer { app.shutdown() }
         let configuration = try ParseServerConfiguration(app: app,
                                                          hostName: "hostName",
@@ -53,8 +65,8 @@ final class AppTests: XCTestCase {
         XCTAssertThrowsError(try setConfiguration(configuration))
     }
     
-    func testFooBar() throws {
-        let app = try setupAppForTesting()
+    func testFooBar() async throws {
+        let app = try await setupAppForTesting()
         defer { app.shutdown() }
 
         try app.test(.GET, "foo", afterResponse: { res in
@@ -64,7 +76,7 @@ final class AppTests: XCTestCase {
     }
 
     func testCheckServerHealth() async throws {
-        let app = try setupAppForTesting()
+        let app = try await setupAppForTesting()
         defer { app.shutdown() }
 
         XCTAssertGreaterThan(configuration.parseServerURLStrings.count, 0)
@@ -93,7 +105,7 @@ final class AppTests: XCTestCase {
     }
 
     func testDeleteHooks() async throws {
-        let app = try setupAppForTesting()
+        let app = try await setupAppForTesting()
         defer { app.shutdown() }
 
         let urlString = "https://parse.com/parse"
@@ -122,8 +134,8 @@ final class AppTests: XCTestCase {
         XCTAssertEqual(currentTriggers2.count, 0)
     }
 
-    func testFunctionWebhookKeyNotEqual() throws {
-        let app = try setupAppForTesting(hookKey: "wow")
+    func testFunctionWebhookKeyNotEqual() async throws {
+        let app = try await setupAppForTesting(hookKey: "wow")
         defer { app.shutdown() }
         
         try app.test(.POST, "hello", afterResponse: { res in
@@ -132,8 +144,8 @@ final class AppTests: XCTestCase {
         })
     }
 
-    func testTriggerWebhookKeyNotEqual() throws {
-        let app = try setupAppForTesting(hookKey: "wow")
+    func testTriggerWebhookKeyNotEqual() async throws {
+        let app = try await setupAppForTesting(hookKey: "wow")
         defer { app.shutdown() }
         
         try app.test(.POST, "score/save/before", afterResponse: { res in
@@ -143,7 +155,7 @@ final class AppTests: XCTestCase {
     }
 
     func testMatchServerURLString() async throws {
-        let app = try setupAppForTesting()
+        let app = try await setupAppForTesting()
         defer { app.shutdown() }
         let urlString = "https://parse.com/parse"
         let uri = URI(stringLiteral: urlString)
@@ -162,7 +174,7 @@ final class AppTests: XCTestCase {
     }
 
     func testMatchServerURLStringThrowsError() async throws {
-        let app = try setupAppForTesting()
+        let app = try await setupAppForTesting()
         ParseServer.configuration.parseServerURLStrings.removeAll()
         defer { app.shutdown() }
         let urlString = "https://parse.com/parse"
@@ -172,7 +184,7 @@ final class AppTests: XCTestCase {
     }
 
     func testParseHookOptions() async throws {
-        let app = try setupAppForTesting()
+        let app = try await setupAppForTesting()
         defer { app.shutdown() }
         let installationId = "naw"
         let urlString = "https://parse.com/parse"

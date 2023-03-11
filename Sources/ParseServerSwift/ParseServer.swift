@@ -54,23 +54,22 @@ func initializeServer(_ configuration: ParseServerConfiguration,
         throw ParseError(code: .otherCause,
                          message: "Could not make a URL from the Parse Server string")
     }
-
-    // Initialize the Parse-Swift SDK. Add any additional parameters you need
-    try ParseSwift.initialize(applicationId: configuration.applicationId,
-                              primaryKey: configuration.primaryKey,
-                              serverURL: parseServerURL,
-                              // POST all queries instead of using GET.
-                              usingPostForQuery: true,
-                              // Do not use cache for anything.
-                              requestCachePolicy: .reloadIgnoringLocalCacheData) { _, completionHandler in
-        // Setup to use default certificate pinning. See Parse-Swift docs for more info
-        completionHandler(.performDefaultHandling, nil)
-    }
     
     if !configuration.isTesting {
         try setConfiguration(configuration)
         Task {
             do {
+                // Initialize the Parse-Swift SDK. Add any additional parameters you need
+                try await ParseSwift.initialize(applicationId: configuration.applicationId,
+                                                primaryKey: configuration.primaryKey,
+                                                serverURL: parseServerURL,
+                                                // POST all queries instead of using GET.
+                                                usingPostForQuery: true,
+                                                // Do not use cache for anything.
+                                                requestCachePolicy: .reloadIgnoringLocalCacheData) { _, completionHandler in
+                    // Setup to use default certificate pinning. See Parse-Swift docs for more info
+                    completionHandler(.performDefaultHandling, nil)
+                }
                 // Check the health of all Parse-Server
                 try await checkServerHealth()
             } catch {
