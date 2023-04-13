@@ -1,4 +1,4 @@
-// swift-tools-version:5.5.2
+// swift-tools-version:5.6
 import PackageDescription
 
 let package = Package(
@@ -14,7 +14,7 @@ let package = Package(
             .library(name: "ParseServerSwift", targets: ["ParseServerSwift"])
     ],
     dependencies: [
-        .package(url: "https://github.com/vapor/vapor.git", .upToNextMajor(from: "4.75.0")),
+        .package(url: "https://github.com/vapor/vapor.git", .upToNextMajor(from: "4.76.0")),
         .package(url: "https://github.com/netreconlab/Parse-Swift.git",
                  .upToNextMajor(from: "5.4.1")),
     ],
