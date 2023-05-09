@@ -18,7 +18,7 @@ Cloud Code in `ParseServerSwift` is easy to use because it’s built using [Pars
 and [Vapor](https://github.com/vapor/vapor). `ParseServerSwift` provides many additional benefits over the traditional [JS based Cloud Code](https://docs.parseplatform.org/cloudcode/guide/) that runs on the [Node.js parse-server](https://github.com/parse-community/parse-server):
 
 * Write code with the [Parse-Swift<sup>OG</sup> SDK](https://github.com/netreconlab/Parse-Swift) vs the [Parse JS SDK](https://github.com/parse-community/Parse-SDK-JS) allowing you to take advantage of a modern SDK which is strongly typed
-* Runs on a dedicated server/container, allowing the [Node.js parse-server](https://github.com/parse-community/parse-server) to focus on request reducing the burden by offloading intensive tasks and providing a true [microservice](https://microservices.io)
+* Runs on a dedicated server/container, allowing the [Node.js parse-server](https://github.com/parse-community/parse-server) to focus on requests reducing the burden by offloading intensive tasks and providing a true [microservice](https://microservices.io)
 * All Cloud Code is in one place, but automatically connects and supports the [Node.js parse-server](https://github.com/parse-community/parse-server) at scale. This circumvents the issues faced when using [JS based Cloud Code](https://docs.parseplatform.org/cloudcode/guide/) with [PM2](https://pm2.keymetrics.io)
 * Leverage the capabilities of [server-side-swift](https://www.swift.org/server/) with [Vapor](https://github.com/vapor/vapor)
 
@@ -30,13 +30,13 @@ Setup a Vapor project by following the [directions](https://www.kodeco.com/11555
 Then add `ParseServerSwift` to `dependencies` in your `Package.swift` file:
 
 ```swift
-// swift-tools-version:5.5.2
+// swift-tools-version:5.6
 import PackageDescription
 
 let package = Package(
     name: "YOUR_PROJECT_NAME",
     dependencies: [
-        .package(url: "https://github.com/netreconlab/ParseServerSwift", .upToNextMajor(from: "0.2.0")),
+        .package(url: "https://github.com/netreconlab/ParseServerSwift", .upToNextMajor(from: "0.7.0")),
     ]
     ...
     targets: [
@@ -106,10 +106,10 @@ public func configure(_ app: Application) throws {
 ```
 
 ## Starting the Server
-`ParseServerSwift` is optimized to run in Docker containers. A sample [docker-compose.yml] demonstrates how to quickly spin up one (1) `ParseServerSwift` server with one (1) [parse-hipaa](https://github.com/netreconlab/parse-hipaa) servers and (1) [hipaa-postgres](https://github.com/netreconlab/hipaa-postgres) database.
+`ParseServerSwift` is optimized to run in Docker containers. A sample [docker-compose.yml](https://github.com/netreconlab/parse-server-swift/blob/main/docker-compose.yml) demonstrates how to quickly spin up one (1) `ParseServerSwift` server with one (1) [parse-hipaa](https://github.com/netreconlab/parse-hipaa) servers and (1) [hipaa-postgres](https://github.com/netreconlab/hipaa-postgres) database.
 
 ### In Docker
-`ParseSwift` depends on `FoundationNetworking` when not built on Apple Platforms. Be sure to add the [following lines](https://github.com/netreconlab/parse-server-swift/blob/e7dbb85e60a9d40d67425dd10d50235cf63f7bae/Dockerfile#L54) to your Dockerfile release stage when building your own projects with `ParseServerSwift`.
+`ParseSwift` depends on `FoundationNetworking` when it is not built on Apple Platforms. Be sure to add the [following lines](https://github.com/netreconlab/parse-server-swift/blob/e7dbb85e60a9d40d67425dd10d50235cf63f7bae/Dockerfile#L54) to your Dockerfile release stage when building your own projects with `ParseServerSwift`.
 1. Fork this repo
 2. In your terminal, change directories into `ParseServerSwift` folder
 3. Type `docker-compose up`
@@ -207,7 +207,7 @@ return ParseHookResponse<T>(error: customError) // Be sure to "return" ParseHook
 ```
 
 ### Cloud Code Examples
-[Parse-Swift has number of Swift Playgrounds](https://github.com/netreconlab/Parse-Swift/tree/main/ParseSwift.playground/Pages) to demonstrate how to use the SDK. Below are some notable Playgrounds specifically for Cloud Code that can be used directly in `ParseServerSwift`:
+[Parse-Swift has a number of Swift Playgrounds](https://github.com/netreconlab/Parse-Swift/tree/main/ParseSwift.playground/Pages) to demonstrate how to use the SDK. Below are some notable Playgrounds specifically for Cloud Code that can be used directly in `ParseServerSwift`:
 
 - [Schema - Create/Update/Delete](https://github.com/netreconlab/Parse-Swift/blob/main/ParseSwift.playground/Pages/20%20-%20Cloud%20Schemas.xcplaygroundpage/Contents.swift)
 - [Push Notifications](https://github.com/netreconlab/Parse-Swift/blob/main/ParseSwift.playground/Pages/21%20-%20Cloud%20Push%20Notifications.xcplaygroundpage/Contents.swift)
