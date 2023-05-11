@@ -35,6 +35,16 @@ import PackageDescription
 
 let package = Package(
     name: "YOUR_PROJECT_NAME",
+    platforms: [
+        .iOS(.v13),
+        .macCatalyst(.v13),
+        .macOS(.v10_15),
+        .tvOS(.v13),
+        .watchOS(.v6)
+    ],
+    products: [
+            .library(name: "YOUR_PROJECT_NAME", targets: ["YOUR_PROJECT_NAME"])
+    ],
     dependencies: [
         .package(url: "https://github.com/netreconlab/ParseServerSwift", .upToNextMajor(from: "0.7.0")),
     ]
@@ -43,9 +53,23 @@ let package = Package(
         .target(
             name: "YOUR_PROJECT_NAME",
             dependencies: [
+                .product(name: "Vapor", package: "vapor"),
+                .product(name: "ParseSwift", package: "Parse-Swift"),
                 .product(name: "ParseServerSwift", package: "ParseServerSwift"),
             ]
         ),
+        .executableTarget(name: "App",
+                          dependencies: [.target(name: "YOUR_PROJECT_NAME")],
+                          swiftSettings: [
+                              // Enable better optimizations when building in Release configuration. Despite the use of
+                              // the `.unsafeFlags` construct required by SwiftPM, this flag is recommended for Release
+                              // builds. See <https://github.com/swift-server/guides/blob/main/docs/building.md#building-for-production> for details.
+                              .unsafeFlags(["-cross-module-optimization"], .when(configuration: .release))
+                          ]),
+        .testTarget(name: "YOUR_PROJECT_NAMETests", dependencies: [
+            .target(name: "YOUR_PROJECT_NAME"),
+            .product(name: "XCTVapor", package: "vapor"),
+        ])
     ]
 )
 ```
