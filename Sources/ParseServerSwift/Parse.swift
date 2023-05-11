@@ -10,13 +10,13 @@ import ParseSwift
 
 // MARK: Internal
 
-internal struct ParseServer {
+internal struct Parse {
     static var configuration: ParseServerConfiguration!
 }
 
 /// The current `ParseServerConfiguration` for ParseServerSwift.
 public var configuration: ParseServerConfiguration {
-    ParseServer.configuration
+    Parse.configuration
 }
 
 /**
@@ -31,20 +31,20 @@ public var configuration: ParseServerConfiguration {
  - warning: Be sure to call this method before calling `try routes(app)`.
  */
 public func initialize(_ configuration: ParseServerConfiguration,
-                       app: Application) throws {
-    try initializeServer(configuration, app: app)
+                       app: Application) async throws {
+    try await initializeServer(configuration, app: app)
 }
 
 func initialize(_ configuration: ParseServerConfiguration,
                        app: Application,
-                       testing: Bool) throws {
+                       testing: Bool) async throws {
     var configuration = configuration
     configuration.isTesting = testing
-    try initialize(configuration, app: app)
+    try await initialize(configuration, app: app)
 }
 
 func initializeServer(_ configuration: ParseServerConfiguration,
-                      app: Application) throws {
+                      app: Application) async throws {
 
     // Parse uses tailored encoders/decoders. These can be retrieved from any ParseObject
     ContentConfiguration.global.use(encoder: User.getJSONEncoder(), for: .json)
@@ -57,26 +57,24 @@ func initializeServer(_ configuration: ParseServerConfiguration,
     
     if !configuration.isTesting {
         try setConfiguration(configuration)
-        Task {
-            do {
-                // Initialize the Parse-Swift SDK. Add any additional parameters you need
-                try await ParseSwift.initialize(applicationId: configuration.applicationId,
-                                                primaryKey: configuration.primaryKey,
-                                                serverURL: parseServerURL,
-                                                // POST all queries instead of using GET.
-                                                usingPostForQuery: true,
-                                                // Do not use cache for anything.
-                                                requestCachePolicy: .reloadIgnoringLocalCacheData) { _, completionHandler in
-                    // Setup to use default certificate pinning. See Parse-Swift docs for more info
-                    completionHandler(.performDefaultHandling, nil)
-                }
-                // Check the health of all Parse-Server
-                try await checkServerHealth()
-            } catch {
-                app.shutdown()
+        do {
+            // Initialize the Parse-Swift SDK. Add any additional parameters you need
+            try await ParseSwift.initialize(applicationId: configuration.applicationId,
+                                            primaryKey: configuration.primaryKey,
+                                            serverURL: parseServerURL,
+                                            // POST all queries instead of using GET.
+                                            usingPostForQuery: true,
+                                            // Do not use cache for anything.
+                                            requestCachePolicy: .reloadIgnoringLocalCacheData) { _, completionHandler in
+                // Setup to use default certificate pinning. See Parse-Swift docs for more info
+                completionHandler(.performDefaultHandling, nil)
             }
+            // Check the health of all Parse-Server
+            try await checkServerHealth()
+        } catch {
+            app.shutdown()
         }
     } else {
-        ParseServer.configuration = configuration
+        Parse.configuration = configuration
     }
 }

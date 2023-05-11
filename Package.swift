@@ -16,7 +16,7 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/vapor/vapor.git", .upToNextMajor(from: "4.76.0")),
         .package(url: "https://github.com/netreconlab/Parse-Swift.git",
-                 .upToNextMajor(from: "5.5.0")),
+                 .upToNextMajor(from: "5.5.1")),
     ],
     targets: [
         .target(
@@ -25,7 +25,7 @@ let package = Package(
                 .product(name: "Vapor", package: "vapor"),
                 .product(name: "ParseSwift", package: "Parse-Swift")
             ]),
-        .executableTarget(name: "Run",
+        .executableTarget(name: "App",
                           dependencies: [.target(name: "ParseServerSwift")],
                           swiftSettings: [
                               // Enable better optimizations when building in Release configuration. Despite the use of

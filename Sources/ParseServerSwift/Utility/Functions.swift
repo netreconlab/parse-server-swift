@@ -20,11 +20,11 @@ import Vapor
  if the configuration is already set.
  */
 public func setConfiguration(_ configuration: ParseServerConfiguration) throws {
-    guard ParseServer.configuration == nil else {
+    guard Parse.configuration == nil else {
         throw ParseError(code: .otherCause,
                          message: "The configuration has already been initialized")
     }
-    ParseServer.configuration = configuration
+    Parse.configuration = configuration
 }
 
 /**
@@ -79,7 +79,7 @@ public func buildServerPathname(_ path: [PathComponent]) throws -> URL {
 public func checkServerHealth() async throws {
     for parseServerURLString in configuration.parseServerURLStrings {
         do {
-            let serverHealth = try await ParseHealth.check(options: [.serverURL(parseServerURLString)])
+            let serverHealth = try await ParseServer.health(options: [.serverURL(parseServerURLString)])
             configuration.logger.notice("Parse Server (\(parseServerURLString)) health is \"\(serverHealth)\"")
         } catch {
             configuration.logger.error("Could not connect to Parse Server (\(parseServerURLString)): \(error)")

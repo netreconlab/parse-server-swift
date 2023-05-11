@@ -18,7 +18,7 @@ final class AppTests: XCTestCase {
                                                          primaryKey: "primaryKey",
                                                          webhookKey: hookKey,
                                                          parseServerURLString: "primaryKey")
-        try ParseServerSwift.initialize(configuration, app: app, testing: true)
+        try await ParseServerSwift.initialize(configuration, app: app, testing: true)
         guard let parseServerURL = URL(string: configuration.primaryParseServerURLString) else {
             throw ParseError(code: .otherCause,
                              message: "Could not make a URL from the Parse Server string")
@@ -167,7 +167,7 @@ final class AppTests: XCTestCase {
         let serverString2 = try serverURLString(uri2, parseServerURLStrings: [urlString])
         XCTAssertEqual(serverString2, urlString)
         
-        ParseServer.configuration.parseServerURLStrings = ["http://localhost:1337/parse"]
+        Parse.configuration.parseServerURLStrings = ["http://localhost:1337/parse"]
         let serverString3 = try serverURLString(uri,
                                                 parseServerURLStrings: configuration.parseServerURLStrings)
         XCTAssertEqual(serverString3, configuration.parseServerURLStrings.first)
@@ -175,7 +175,7 @@ final class AppTests: XCTestCase {
 
     func testMatchServerURLStringThrowsError() async throws {
         let app = try await setupAppForTesting()
-        ParseServer.configuration.parseServerURLStrings.removeAll()
+        Parse.configuration.parseServerURLStrings.removeAll()
         defer { app.shutdown() }
         let urlString = "https://parse.com/parse"
         let uri = URI(stringLiteral: urlString)
@@ -188,7 +188,7 @@ final class AppTests: XCTestCase {
         defer { app.shutdown() }
         let installationId = "naw"
         let urlString = "https://parse.com/parse"
-        ParseServer.configuration.parseServerURLStrings.append(urlString)
+        Parse.configuration.parseServerURLStrings.append(urlString)
         let dummyHookRequest = DummyRequest(installationId: installationId, params: .init())
         let encoded = try User.getJSONEncoder().encode(dummyHookRequest)
         let hookRequest = try User.getDecoder().decode(ParseHookFunctionRequest<User, FooParameters>.self,
