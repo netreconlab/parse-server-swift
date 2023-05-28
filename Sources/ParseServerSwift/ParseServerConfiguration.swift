@@ -15,11 +15,12 @@ public struct ParseServerConfiguration {
 
     /// The application id for your Node.js Parse Server application.
     public internal(set) var applicationId: String
-    
+
     /// The primary key for your Node.js Parse Server application.
-    /// - note: This has been renamed from `masterKey` to reflect [inclusive language](https://github.com/dialpad/inclusive-language#motivation).
+    /// - note: This has been renamed from `masterKey` to reflect
+    /// [inclusive language](https://github.com/dialpad/inclusive-language#motivation).
     public internal(set) var primaryKey: String
-    
+
     /// The key used to authenticate incoming webhook calls from a Parse Server.
     public internal(set) var webhookKey: String?
 
@@ -31,7 +32,7 @@ public struct ParseServerConfiguration {
 
     /// The current address of ParseServerSwift.
     public internal(set) var serverPathname: String
-    
+
     var hooks = Hooks()
     var isTesting = false
     var logger = Logger(label: "com.parseserverswift")
@@ -57,8 +58,9 @@ public struct ParseServerConfiguration {
         app.http.server.configuration.hostname = Environment.process.PARSE_SERVER_SWIFT_HOST_NAME ?? "localhost"
         app.http.server.configuration.port = Int(Environment.process.PARSE_SERVER_SWIFT_PORT ?? 8081)
         app.http.server.configuration.tlsConfiguration = tlsConfiguration
+        // swiftlint:disable:next line_length
         app.routes.defaultMaxBodySize = ByteCount(stringLiteral: Environment.process.PARSE_SERVER_SWIFT_DEFAULT_MAX_BODY_SIZE ?? "16kb")
-        
+
         serverPathname = buildServerURL(from: app.http.server.configuration)
         webhookKey = Environment.process.PARSE_SERVER_SWIFT_WEBHOOK_KEY
 
@@ -104,7 +106,7 @@ public struct ParseServerConfiguration {
         app.http.server.configuration.tlsConfiguration = tlsConfiguration
         app.routes.defaultMaxBodySize = maxBodySize
         serverPathname = buildServerURL(from: app.http.server.configuration)
-        
+
         let serverURLStrings = try getParseServerURLs(parseServerURLString)
         primaryParseServerURLString = serverURLStrings.0
         parseServerURLStrings.append(primaryParseServerURLString)
@@ -112,4 +114,3 @@ public struct ParseServerConfiguration {
     }
 
 }
-

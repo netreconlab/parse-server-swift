@@ -93,14 +93,15 @@ public func checkServerHealth() async throws {
 public func deleteHooks(_ app: Application) async {
     let functions = await configuration.hooks.getFunctions()
     let triggers = await configuration.hooks.getTriggers()
-    
+
     app.logger.notice("Deleting Hooks from all Parse Servers, please wait...")
-    
+
     for (urlString, function) in functions {
         do {
             try await function.delete(options: [.serverURL(urlString)])
             app.logger.notice("Successfully removed Hook Function: \(function); on Parse Server: (\(urlString))")
         } catch {
+            // swiftlint:disable:next line_length
             app.logger.error("Could not remove Hook Function: \(function); on Parse Server: (\(urlString)); due to error: \(error)")
         }
         await configuration.hooks.removeFunctions([urlString])
@@ -111,6 +112,7 @@ public func deleteHooks(_ app: Application) async {
             try await trigger.delete(options: [.serverURL(urlString)])
             app.logger.notice("Successfully removed Hook Trigger: \(trigger); on Parse Server: (\(urlString))")
         } catch {
+            // swiftlint:disable:next line_length
             app.logger.error("Could not remove Hook Trigger: \(trigger); on Parse Server: (\(urlString)); due to error: \(error)")
         }
         await configuration.hooks.removeTriggers([urlString])
