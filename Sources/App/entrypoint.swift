@@ -37,11 +37,6 @@ enum Entrypoint {
         let app = Application(env)
 
         defer {
-            Task {
-                // This may not delete all because it's async
-                // Be sure to delete manually in dashboard
-                await deleteHooks(app)
-            }
             app.shutdown()
         }
 
