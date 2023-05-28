@@ -46,7 +46,9 @@ let package = Package(
             .library(name: "YOUR_PROJECT_NAME", targets: ["YOUR_PROJECT_NAME"])
     ],
     dependencies: [
-        .package(url: "https://github.com/netreconlab/ParseServerSwift", .upToNextMajor(from: "0.7.0")),
+        .package(url: "https://github.com/netreconlab/ParseServerSwift", .upToNextMajor(from: "0.8.4")),
+        .package(url: "https://github.com/vapor/vapor.git", .upToNextMajor(from: "4.76.2")),
+        .package(url: "https://github.com/netreconlab/Parse-Swift.git", .upToNextMajor(from: "5.7.0"))
     ]
     ...
     targets: [
@@ -105,6 +107,8 @@ public func configure(_ app: Application) throws {
     let configuration = try ParseServerConfiguration(app: app)
     try ParseServerSwift.initialize(configuration, app: app)
     
+    // Add any additional code to configure your server here...
+    
     // register routes
     try routes(app)
 }
@@ -123,6 +127,8 @@ public func configure(_ app: Application) throws {
                                                      webhookKey: hookKey,
                                                      parseServerURLString: "primaryKey")
     try ParseServerSwift.initialize(configuration, app: app)
+    
+    // Add any additional code to configure your server here...
     
     // register routes
     try routes(app)
