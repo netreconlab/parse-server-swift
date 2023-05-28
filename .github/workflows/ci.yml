@@ -21,8 +21,10 @@ jobs:
     - uses: actions/checkout@v3
     - name: Use multiple cores
       run: defaults write com.apple.dt.XCBuild EnableSwiftBuildSystemIntegration 1
+    - name: Lint
+      run: set -o pipefail && env NSUnbufferedIO=YES swiftlint --strict
     - name: Build and Test
-      run: swift test --enable-code-coverage
+      run: set -o pipefail && env NSUnbufferedIO=YES swift test --enable-code-coverage | xcpretty -c
       env:
           DEVELOPER_DIR: ${{ env.CI_XCODE }}
     - name: Prepare codecov
@@ -51,7 +53,7 @@ jobs:
           release-version: "5.7"
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and Test
-        run: swift test --enable-test-discovery --enable-code-coverage
+        run: set -o pipefail && env NSUnbufferedIO=YES swift test --enable-test-discovery --enable-code-coverage
       - name: Update codecov config
         run: cat .codecov.yml | curl --data-binary @- https://codecov.io/validate
       - name: Prepare codecov

@@ -23,6 +23,7 @@ public extension ParseHookRequestable {
      In a single Parse Server environment, use options().
      */
     func options(_ request: Request,
+                 // swiftlint:disable:next line_length
                  parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) throws -> API.Options {
         var options = self.options()
         options.insert(.serverURL(try serverURLString(request.url,
@@ -43,6 +44,7 @@ public extension ParseHookRequestable {
      */
      func hydrateUser(options: API.Options = [],
                       request: Request,
+                      // swiftlint:disable:next line_length
                       parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> Self {
          var updatedOptions = try self.options(request, parseServerURLStrings: parseServerURLStrings)
          updatedOptions = updatedOptions.union(options)

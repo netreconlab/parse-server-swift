@@ -1,6 +1,8 @@
 // swift-tools-version:5.6
 import PackageDescription
 
+// swiftlint:disable line_length
+
 let package = Package(
     name: "ParseServerSwift",
     platforms: [
@@ -16,7 +18,7 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/vapor/vapor.git", .upToNextMajor(from: "4.76.2")),
         .package(url: "https://github.com/netreconlab/Parse-Swift.git",
-                 .upToNextMajor(from: "5.6.0")),
+                 .upToNextMajor(from: "5.7.0"))
     ],
     targets: [
         .target(
@@ -35,7 +37,7 @@ let package = Package(
                           ]),
         .testTarget(name: "ParseServerSwiftTests", dependencies: [
             .target(name: "ParseServerSwift"),
-            .product(name: "XCTVapor", package: "vapor"),
+            .product(name: "XCTVapor", package: "vapor")
         ])
     ]
 )

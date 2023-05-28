@@ -1,6 +1,7 @@
 import Vapor
 import ParseSwift
 
+// swiftlint:disable:next cyclomatic_complexity function_body_length
 func routes(_ app: Application) throws {
 
     // A typical route in Vapor.
@@ -9,7 +10,7 @@ func routes(_ app: Application) throws {
     }
 
     // Another typical route in Vapor.
-    app.get("foo") { req async throws -> String in
+    app.get("foo") { _ async throws -> String in
         return "foo bar"
     }
 
@@ -23,12 +24,12 @@ func routes(_ app: Application) throws {
         }
         var parseRequest = try req.content
             .decode(ParseHookFunctionRequest<User, FooParameters>.self)
-        
+
         // If a User called the request, fetch the complete user.
         if parseRequest.user != nil {
             parseRequest = try await parseRequest.hydrateUser(request: req)
         }
-        
+
         // To query using the User's credentials who called this function,
         // use the options() method from the parseRequest
         let options = try parseRequest.options(req)

@@ -36,8 +36,8 @@ public func initialize(_ configuration: ParseServerConfiguration,
 }
 
 func initialize(_ configuration: ParseServerConfiguration,
-                       app: Application,
-                       testing: Bool) async throws {
+                app: Application,
+                testing: Bool) async throws {
     var configuration = configuration
     configuration.isTesting = testing
     try await initialize(configuration, app: app)
@@ -49,12 +49,12 @@ func initializeServer(_ configuration: ParseServerConfiguration,
     // Parse uses tailored encoders/decoders. These can be retrieved from any ParseObject
     ContentConfiguration.global.use(encoder: User.getJSONEncoder(), for: .json)
     ContentConfiguration.global.use(decoder: User.getDecoder(), for: .json)
-    
+
     guard let parseServerURL = URL(string: configuration.primaryParseServerURLString) else {
         throw ParseError(code: .otherCause,
                          message: "Could not make a URL from the Parse Server string")
     }
-    
+
     if !configuration.isTesting {
         try setConfiguration(configuration)
         do {
@@ -72,6 +72,7 @@ func initializeServer(_ configuration: ParseServerConfiguration,
             // Check the health of all Parse-Server
             try await checkServerHealth()
         } catch {
+            await deleteHooks(app)
             app.shutdown()
         }
     } else {

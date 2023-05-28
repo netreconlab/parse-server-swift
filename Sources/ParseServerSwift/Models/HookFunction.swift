@@ -50,13 +50,17 @@ extension HookFunction {
                         .delete(options: [.serverURL(parseServerURLString)])
                 default:
                     throw ParseError(code: .otherCause,
+                                     // swiftlint:disable:next line_length
                                      message: "Method \(method) is not supported for Hook Function: \"\(String(describing: hookFunction))\"")
                 }
+                // swiftlint:disable:next line_length
                 configuration.logger.notice("Successful \(method); Hook Function: \"\(String(describing: hookFunction))\" on server: \(parseServerURLString)")
             } catch {
                 if error.containedIn([.webhookError]) && method == .POST {
+                    // swiftlint:disable:next line_length
                     configuration.logger.warning("Hook Function: \"\(String(describing: hookFunction))\"; warning: \(error); on server: \(parseServerURLString)")
                 } else {
+                    // swiftlint:disable:next line_length
                     configuration.logger.error("Could not \(method) Hook Function: \"\(String(describing: hookFunction))\"; error: \(error); on server: \(parseServerURLString)")
                 }
             }
@@ -68,7 +72,7 @@ extension HookFunction {
 
 // MARK: HookFunction - Fetch
 public extension HookFunction {
-    
+
     /**
      Fetches a Parse Cloud Code hook function.
      - parameter path: A variadic list of paths.
@@ -80,8 +84,8 @@ public extension HookFunction {
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func fetch(_ path: PathComponent...,
-                       name: String,
-                       parseServerURLStrings: [String]) async throws -> [String: HookFunction] {
+                      name: String,
+                      parseServerURLStrings: [String]) async throws -> [String: HookFunction] {
         try await fetch(path, name: name, parseServerURLStrings: parseServerURLStrings)
     }
 
@@ -96,11 +100,11 @@ public extension HookFunction {
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func fetch(_ path: [PathComponent],
-                       name: String,
-                       parseServerURLStrings: [String]) async throws -> [String: HookFunction] {
+                      name: String,
+                      parseServerURLStrings: [String]) async throws -> [String: HookFunction] {
         try await method(.PUT, path, name: name, parseServerURLStrings: parseServerURLStrings)
     }
-    
+
     /**
      Fetches all Parse Cloud Code hook function.
      - parameter path: A variadic list of paths.
@@ -140,6 +144,7 @@ public extension HookFunction {
                 hookFunctions[parseServerURLString] = try await hookFunction
                     .fetchAll(options: [.serverURL(parseServerURLString)])
             } catch {
+                // swiftlint:disable:next line_length
                 configuration.logger.error("Could not fetchAll function: \"\(String(describing: hookFunction))\"; error: \(error); on server: \(parseServerURLString)")
             }
         }
@@ -149,7 +154,7 @@ public extension HookFunction {
 
 // MARK: HookFunction - Create
 public extension HookFunction {
-    
+
     /**
      Creates a Parse Cloud Code hook function.
      - parameter path: A variadic list of paths.
@@ -163,6 +168,7 @@ public extension HookFunction {
      */
     static func create(_ path: PathComponent...,
                        name: String,
+                       // swiftlint:disable:next line_length
                        parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> [String: HookFunction] {
         try await create(path, name: name, parseServerURLStrings: parseServerURLStrings)
     }
@@ -180,6 +186,7 @@ public extension HookFunction {
      */
     static func create(_ path: [PathComponent],
                        name: String,
+                       // swiftlint:disable:next line_length
                        parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> [String: HookFunction] {
         try await method(.POST, path, name: name, parseServerURLStrings: parseServerURLStrings)
     }
@@ -187,7 +194,7 @@ public extension HookFunction {
 
 // MARK: HookFunction - Update
 public extension HookFunction {
-    
+
     /**
      Updates a Parse Cloud Code hook function.
      - parameter path: A variadic list of paths.
@@ -201,6 +208,7 @@ public extension HookFunction {
      */
     static func update(_ path: PathComponent...,
                        name: String,
+                       // swiftlint:disable:next line_length
                        parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> [String: HookFunction] {
         try await update(path, name: name, parseServerURLStrings: parseServerURLStrings)
     }
@@ -218,6 +226,7 @@ public extension HookFunction {
      */
     static func update(_ path: [PathComponent],
                        name: String,
+                       // swiftlint:disable:next line_length
                        parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> [String: HookFunction] {
         try await method(.PUT, path, name: name, parseServerURLStrings: parseServerURLStrings)
     }
@@ -225,7 +234,7 @@ public extension HookFunction {
 
 // MARK: HookFunction - Delete
 public extension HookFunction {
-    
+
     /**
      Removes a Parse Cloud Code hook function.
      - parameter path: A variadic list of paths.
@@ -238,6 +247,7 @@ public extension HookFunction {
      */
     static func delete(_ path: PathComponent...,
                        name: String,
+                       // swiftlint:disable:next line_length
                        parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws {
         try await delete(path, name: name, parseServerURLStrings: parseServerURLStrings)
     }
@@ -254,6 +264,7 @@ public extension HookFunction {
      */
     static func delete(_ path: [PathComponent],
                        name: String,
+                       // swiftlint:disable:next line_length
                        parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws {
         try await method(.DELETE, path, name: name, parseServerURLStrings: parseServerURLStrings)
     }
@@ -276,8 +287,7 @@ public extension RoutesBuilder {
         name: String,
         use closure: @escaping (Request) async throws -> Response
     ) -> Route
-        where Response: AsyncResponseEncodable
-    {
+        where Response: AsyncResponseEncodable {
         self.on(path,
                 name: name,
                 use: closure)
@@ -298,8 +308,7 @@ public extension RoutesBuilder {
         name: String,
         use closure: @escaping (Request) async throws -> Response
     ) -> Route
-        where Response: AsyncResponseEncodable
-    {
+        where Response: AsyncResponseEncodable {
         self.on(path,
                 name: name,
                 use: closure)
@@ -322,8 +331,7 @@ public extension RoutesBuilder {
         name: String,
         use closure: @escaping (Request) async throws -> Response
     ) -> Route
-        where Response: AsyncResponseEncodable
-    {
+        where Response: AsyncResponseEncodable {
         self.on(path,
                 body: body,
                 name: name,
@@ -347,13 +355,13 @@ public extension RoutesBuilder {
         name: String,
         use closure: @escaping (Request) async throws -> Response
     ) -> Route
-        where Response: AsyncResponseEncodable
-    {
+        where Response: AsyncResponseEncodable {
         Task {
             do {
                 await configuration.hooks.updateFunctions(try await HookFunction.create(path,
                                                                                         name: name))
             } catch {
+                // swiftlint:disable:next line_length
                 configuration.logger.error("Could not create HookFunction route for path: \(path); name: \(name) on servers: \(configuration.parseServerURLStrings) because of error: \(error)")
             }
         }

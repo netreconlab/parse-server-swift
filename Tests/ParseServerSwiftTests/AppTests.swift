@@ -3,7 +3,7 @@ import ParseSwift
 import XCTVapor
 
 final class AppTests: XCTestCase {
-    
+
     struct DummyRequest: Codable {
         var installationId: String?
         var params: FooParameters
@@ -34,13 +34,13 @@ final class AppTests: XCTestCase {
         try routes(app)
         return app
     }
-    
+
     func testConfigRequiresKeys() throws {
         let app = Application(.testing)
         defer { app.shutdown() }
         XCTAssertThrowsError(try ParseServerConfiguration(app: app))
     }
-    
+
     func testAllowInitConfigOnce() throws {
         let app = Application(.testing)
         defer { app.shutdown() }
@@ -64,7 +64,7 @@ final class AppTests: XCTestCase {
                                                          parseServerURLString: "primaryKey")
         XCTAssertThrowsError(try setConfiguration(configuration))
     }
-    
+
     func testFooBar() async throws {
         let app = try await setupAppForTesting()
         defer { app.shutdown() }
@@ -137,7 +137,7 @@ final class AppTests: XCTestCase {
     func testFunctionWebhookKeyNotEqual() async throws {
         let app = try await setupAppForTesting(hookKey: "wow")
         defer { app.shutdown() }
-        
+
         try app.test(.POST, "hello", afterResponse: { res in
             XCTAssertEqual(res.status, .ok)
             XCTAssertTrue(res.body.string.contains("Webhook keys"))
@@ -147,7 +147,7 @@ final class AppTests: XCTestCase {
     func testTriggerWebhookKeyNotEqual() async throws {
         let app = try await setupAppForTesting(hookKey: "wow")
         defer { app.shutdown() }
-        
+
         try app.test(.POST, "score/save/before", afterResponse: { res in
             XCTAssertEqual(res.status, .ok)
             XCTAssertTrue(res.body.string.contains("Webhook keys"))
@@ -161,12 +161,12 @@ final class AppTests: XCTestCase {
         let uri = URI(stringLiteral: urlString)
         let serverString = try serverURLString(uri, parseServerURLStrings: [urlString])
         XCTAssertEqual(serverString, urlString)
-        
+
         let urlString2 = urlString + "/helloWorld"
         let uri2 = URI(stringLiteral: urlString2)
         let serverString2 = try serverURLString(uri2, parseServerURLStrings: [urlString])
         XCTAssertEqual(serverString2, urlString)
-        
+
         Parse.configuration.parseServerURLStrings = ["http://localhost:1337/parse"]
         let serverString3 = try serverURLString(uri,
                                                 parseServerURLStrings: configuration.parseServerURLStrings)
@@ -213,13 +213,13 @@ final class AppTests: XCTestCase {
     func testHooksFunctions() async throws {
         let functions = await configuration.hooks.getFunctions()
         XCTAssertTrue(functions.isEmpty)
-        
+
         let dummyHooks = ["yo": HookFunction(name: "hello", url: nil),
                           "no": HookFunction(name: "hello", url: nil)]
         await configuration.hooks.updateFunctions(dummyHooks)
         let functions2 = await configuration.hooks.getFunctions()
         XCTAssertEqual(functions2.count, 2)
-        
+
         await configuration.hooks.removeFunctions(["yo"])
         let functions3 = await configuration.hooks.getFunctions()
         XCTAssertNil(functions3["yo"])
@@ -233,7 +233,7 @@ final class AppTests: XCTestCase {
     func testHooksTriggers() async throws {
         let triggers = await configuration.hooks.getTriggers()
         XCTAssertTrue(triggers.isEmpty)
-        
+
         guard let url = URL(string: "http://parse.com") else {
             XCTFail("Should have unwrapped")
             return
@@ -243,7 +243,7 @@ final class AppTests: XCTestCase {
         await configuration.hooks.updateTriggers(dummyHooks)
         let triggers2 = await configuration.hooks.getTriggers()
         XCTAssertEqual(triggers2.count, 2)
-        
+
         await configuration.hooks.removeTriggers(["yo"])
         let triggers3 = await configuration.hooks.getTriggers()
         XCTAssertNil(triggers3["yo"])
