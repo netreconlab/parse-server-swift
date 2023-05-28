@@ -63,7 +63,7 @@ extension HookFunction {
                                           path,
                                           name: name,
                                           parseServerURLStrings: parseServerURLStrings)
-                    return try await Self.method(.PUT,
+                    return try await Self.method(method,
                                                  path,
                                                  name: name,
                                                  parseServerURLStrings: parseServerURLStrings)

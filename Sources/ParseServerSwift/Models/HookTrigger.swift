@@ -74,7 +74,7 @@ extension HookTrigger {
                                           className: className,
                                           triggerName: triggerName,
                                           parseServerURLStrings: parseServerURLStrings)
-                    return try await Self.method(.PUT,
+                    return try await Self.method(method,
                                                  path,
                                                  className: className,
                                                  triggerName: triggerName,
