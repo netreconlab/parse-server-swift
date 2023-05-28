@@ -34,13 +34,13 @@ final class AppTests: XCTestCase {
         try routes(app)
         return app
     }
-    
+
     func testConfigRequiresKeys() throws {
         let app = Application(.testing)
         defer { app.shutdown() }
         XCTAssertThrowsError(try ParseServerConfiguration(app: app))
     }
-    
+
     func testAllowInitConfigOnce() throws {
         let app = Application(.testing)
         defer { app.shutdown() }

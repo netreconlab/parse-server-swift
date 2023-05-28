@@ -35,7 +35,12 @@ enum Entrypoint {
         try LoggingSystem.bootstrap(from: &env)
         
         let app = Application(env)
-        defer { app.shutdown() }
+        defer {
+            Task {
+                await deleteHooks(app)
+                app.shutdown()
+            }
+        }
         
         try await configure(app)
         try await app.runFromAsyncMainEntrypoint()
