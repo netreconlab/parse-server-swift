@@ -69,6 +69,10 @@ extension HookTrigger {
                 if error.containedIn([.webhookError]) && method == .POST {
                     // swiftlint:disable:next line_length
                     configuration.logger.warning("Hook Trigger: \"\(String(describing: hookTrigger))\"; warning: \(error); on server: \(parseServerURLString)")
+                    return try await Self.method(method, path,
+                                                 className: className,
+                                                 triggerName: triggerName,
+                                                 parseServerURLStrings: parseServerURLStrings)
                 } else {
                     // swiftlint:disable:next line_length
                     configuration.logger.error("Could not \(method) Hook Trigger: \"\(String(describing: hookTrigger))\"; error: \(error); on server: \(parseServerURLString)")
