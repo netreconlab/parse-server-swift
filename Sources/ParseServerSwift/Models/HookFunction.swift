@@ -59,7 +59,8 @@ extension HookFunction {
                 if error.containedIn([.webhookError]) && method == .POST {
                     // swiftlint:disable:next line_length
                     configuration.logger.warning("Hook Function: \"\(String(describing: hookFunction))\"; warning: \(error); on server: \(parseServerURLString)")
-                    return try await Self.method(method, path,
+                    return try await Self.method(.PUT,
+                                                 path,
                                                  name: name,
                                                  parseServerURLStrings: parseServerURLStrings)
                 } else {
