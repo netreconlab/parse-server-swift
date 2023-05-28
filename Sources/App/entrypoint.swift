@@ -42,7 +42,7 @@ enum Entrypoint {
             }
         }
 
-        try await configure(app)
+        try await parseServerSwiftConfigure(app)
         try await app.runFromAsyncMainEntrypoint()
     }
 }
