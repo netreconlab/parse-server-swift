@@ -39,6 +39,7 @@ final class AppTests: XCTestCase {
         let app = Application(.testing)
         defer { app.shutdown() }
         XCTAssertThrowsError(try ParseServerConfiguration(app: app))
+        XCTFail("Test CI")
     }
 
     func testAllowInitConfigOnce() throws {
