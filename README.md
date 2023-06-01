@@ -153,8 +153,17 @@ public func configure(_ app: Application) throws {
 To start your server type, `swift run` in the terminal of the project root directory.
 
 ## Writing Cloud Code
+### Sharing Server-Client Code
+[Apple's WWDC User Xcode for server-side development](https://developer.apple.com/videos/play/wwdc2022/110360/) recommends creating Swift packages (15:26 mark) to house your models and share them between server and clients apps to reduce code duplication. To maximize Parse-Swift, it is recommended to not only add your models to your shared package, but to also add all of your queries (server and client). The reasons for this are: 
+
+1. Parse-Swift queries on the client are cached by default; allowing Parse-Swift based apps to leverage cache to build zippier experiences
+2. When leveraging your shared queries in ParseServerSwift; they will never access local server cache as they always request the latest data from the Node.js Parse Server
+3. Calling Cloud-Code functions from clients do not ever access local cache as these are `POST` calls to the Node.js Parse Server
+
+Learn more about sharing models by reading the [SwiftLee Blog](https://www.avanderlee.com/swift/share-swift-code-swift-on-server-vapor/).
+
 ### Creating `ParseObject`'s
-It is recommended to add all of your `ParseObject`'s in a folder called `Models` similar to [ParseServerSwift/Sources/ParseServerSwift/Models](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/Models). Note that in the [Apple's WWDC User Xcode for server-side development](https://developer.apple.com/videos/play/wwdc2022/110360/), it is recommended to create packages (15:26 mark) to house your models to share between server and clients apps and reduce code repition. Learn more about sharing models by reading the [SwiftLee Blog](https://www.avanderlee.com/swift/share-swift-code-swift-on-server-vapor/).
+If you have not created a [shared package for your models](#sharing-server-client-code), it is recommended to add all of your `ParseObject`'s in a folder called `Models` similar to [ParseServerSwift/Sources/ParseServerSwift/Models](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/Models).
 
 #### The `ParseUser` Model
 Be mindful that the `ParseUser` in `ParseServerSwift` should conform to [ParseCloudUser](https://swiftpackageindex.com/netreconlab/parse-swift/4.16.2/documentation/parseswift/parseclouduser). This is because the `ParseCloudUser` contains some additional properties on the server-side. On the client, you should always use `ParseUser` instead of `ParseCloudUser`. In addition, make sure to add all of the additional properties you have in your `_User` class to the `User` model. An example `User` model is below:
