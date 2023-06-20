@@ -50,7 +50,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: sersoft-gmbh/SwiftyActions@v2
         with:
-          release-version: "5.7"
+          release-version: "5"
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and Test
         run: set -o pipefail && env NSUnbufferedIO=YES swift test --enable-test-discovery --enable-code-coverage

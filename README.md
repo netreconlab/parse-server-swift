@@ -258,7 +258,7 @@ Cloud Code Functions can also take parameters. It's recommended to place all par
 [ParseServerSwift/Sources/ParseServerSwift/Models/Parameters](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/Models/Parameters)
 
 ```swift
-// A Parse Hook Function route.
+// A simple Parse Hook Function route that returns "Hello World".
 app.post("hello",
          name: "hello") { req async throws -> ParseHookResponse<String> in
     // Note that `ParseHookResponse<String>` means a "successfull"
@@ -269,7 +269,7 @@ app.post("hello",
     var parseRequest = try req.content
         .decode(ParseHookFunctionRequest<User, FooParameters>.self)
     
-    // If a User called the request, fetch the complete user.
+    // If a User made the request, fetch the complete user.
     if parseRequest.user != nil {
         parseRequest = try await parseRequest.hydrateUser(request: req)
     }
@@ -297,7 +297,7 @@ app.post("score", "save", "before",
     var parseRequest = try req.content
         .decode(ParseHookTriggerObjectRequest<User, GameScore>.self)
 
-    // If a User called the request, fetch the complete user.
+    // If a User made the request, fetch the complete user.
     if parseRequest.user != nil {
         parseRequest = try await parseRequest.hydrateUser(request: req)
     }
