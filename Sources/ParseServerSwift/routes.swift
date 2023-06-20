@@ -55,7 +55,7 @@ func routes(_ app: Application) throws {
                                    message: "User must be signed in to access server version")
             return ParseHookResponse<String>(error: error)
         }
-        
+
         do {
             // If a User made the request, fetch the complete user to ensure
             // their sessionToken is valid.
@@ -68,7 +68,7 @@ func routes(_ app: Application) throws {
             }
             return ParseHookResponse<String>(error: parseError)
         }
-        
+
         do {
             // Attempt to get version of the server.
             guard let version = try await ParseServer.information().version else {
