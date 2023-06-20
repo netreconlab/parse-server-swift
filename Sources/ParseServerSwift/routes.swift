@@ -14,7 +14,7 @@ func routes(_ app: Application) throws {
         return "foo bar"
     }
 
-    // A Parse Hook Function route.
+    // A simple Parse Hook Function route that returns "Hello World".
     app.post("hello",
              name: "hello") { req async throws -> ParseHookResponse<String> in
         // Note that `ParseHookResponse<String>` means a "successfull"
@@ -25,7 +25,7 @@ func routes(_ app: Application) throws {
         var parseRequest = try req.content
             .decode(ParseHookFunctionRequest<User, FooParameters>.self)
 
-        // If a User called the request, fetch the complete user.
+        // If a User made the request, fetch the complete user.
         if parseRequest.user != nil {
             parseRequest = try await parseRequest.hydrateUser(request: req)
         }
@@ -36,6 +36,56 @@ func routes(_ app: Application) throws {
         let scores = try await GameScore.query.findAll(options: options)
         req.logger.info("Scores this user can access: \(scores)")
         return ParseHookResponse(success: "Hello world!")
+    }
+
+    // Another simple Parse Hook Function route that returns the version of the server.
+    app.post("version",
+             name: "version") { req async throws -> ParseHookResponse<String> in
+        // Note that `ParseHookResponse<String>` means a "successfull"
+        // response will return a "String" type.
+        if let error: ParseHookResponse<String> = checkHeaders(req) {
+            return error
+        }
+        var parseRequest = try req.content
+            .decode(ParseHookFunctionRequest<User, FooParameters>.self)
+
+        // If a non-User made the request, they cannot see the version.
+        guard parseRequest.user != nil else {
+            let error = ParseError(code: .invalidSessionToken,
+                                   message: "User must be signed in to access server version")
+            return ParseHookResponse<String>(error: error)
+        }
+        
+        do {
+            // If a User made the request, fetch the complete user to ensure
+            // their sessionToken is valid.
+            parseRequest = try await parseRequest.hydrateUser(request: req)
+        } catch {
+            guard let parseError = error as? ParseError else {
+                let error = ParseError(code: .otherCause,
+                                       swift: error)
+                return ParseHookResponse<String>(error: error)
+            }
+            return ParseHookResponse<String>(error: parseError)
+        }
+        
+        do {
+            // Attempt to get version of the server.
+            guard let version = try await ParseServer.information().version else {
+                let error = ParseError(code: .otherCause,
+                                       message: "Could not retrieve any information from the Server")
+                return ParseHookResponse<String>(error: error)
+            }
+            req.logger.info("Server version is: \(version)")
+            return ParseHookResponse(success: "\(version)")
+        } catch {
+            guard let parseError = error as? ParseError else {
+                let error = ParseError(code: .otherCause,
+                                       swift: error)
+                return ParseHookResponse<String>(error: error)
+            }
+            return ParseHookResponse<String>(error: parseError)
+        }
     }
 
     // A Parse Hook Trigger route.
@@ -50,7 +100,7 @@ func routes(_ app: Application) throws {
         var parseRequest = try req.content
             .decode(ParseHookTriggerObjectRequest<User, GameScore>.self)
 
-        // If a User called the request, fetch the complete user.
+        // If a User made the request, fetch the complete user.
         if parseRequest.user != nil {
             parseRequest = try await parseRequest.hydrateUser(request: req)
         }
