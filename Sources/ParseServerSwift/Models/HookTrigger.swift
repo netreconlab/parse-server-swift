@@ -28,7 +28,7 @@ extension HookTrigger {
     static func method(_ method: HTTPMethod,
                        _ path: [PathComponent],
                        className: String? = nil,
-                       triggerName: ParseHookTriggerType,
+                       trigger: ParseHookTriggerType,
                        parseServerURLStrings: [String]) async throws -> [String: Self] {
         let url = try buildServerPathname(path)
         let hookTrigger: HookTrigger!
@@ -36,10 +36,10 @@ extension HookTrigger {
 
         if let className = className {
             hookTrigger = HookTrigger(className: className,
-                                      triggerName: triggerName,
+                                      triggerName: trigger,
                                       url: url)
         } else {
-            hookTrigger = try HookTrigger(triggerName: triggerName,
+            hookTrigger = try HookTrigger(triggerName: trigger,
                                           url: url)
         }
 
@@ -72,12 +72,12 @@ extension HookTrigger {
                     try await Self.method(.DELETE,
                                           path,
                                           className: className,
-                                          triggerName: triggerName,
+                                          trigger: trigger,
                                           parseServerURLStrings: parseServerURLStrings)
                     return try await Self.method(method,
                                                  path,
                                                  className: className,
-                                                 triggerName: triggerName,
+                                                 trigger: trigger,
                                                  parseServerURLStrings: parseServerURLStrings)
                 } else {
                     // swiftlint:disable:next line_length
@@ -91,6 +91,32 @@ extension HookTrigger {
 
 // MARK: HookTrigger - Fetch
 public extension HookTrigger {
+
+    /**
+     Fetch a Parse Cloud Code hook trigger.
+     - parameter path: A variadic list of paths.
+     - parameter object: The type of `ParseObject` the trigger should act on.
+     - parameter trigger: The `ParseHookTriggerType` type.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
+     Defaults to the set of servers added during configuration.
+     - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
+     - throws: An error of `ParseError` type.
+     - important: `className` should only be **nil** when creating `ParseFile` and
+     `.beforeConnect` triggers.
+     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     Will log an error for each `parseServerURLString` that returns an error.
+     */
+    static func fetch<V: ParseObject>(_ path: PathComponent...,
+                                      object: V.Type,
+                                      trigger: ParseHookTriggerType,
+                                      // swiftlint:disable:next line_length
+                                      parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> [String: Self] {
+        try await fetch(path,
+                        object: object,
+                        trigger: trigger,
+                        parseServerURLStrings: parseServerURLStrings)
+    }
+
     /**
      Fetch a Parse Cloud Code hook trigger.
      - parameter path: A variadic list of paths.
@@ -119,6 +145,31 @@ public extension HookTrigger {
     /**
      Fetch a Parse Cloud Code hook trigger.
      - parameter path: An array of paths.
+     - parameter object: The type of `ParseObject` the trigger should act on.
+     - parameter trigger: The `ParseHookTriggerType` type.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
+     Defaults to the set of servers added during configuration.
+     - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
+     - throws: An error of `ParseError` type.
+     - important: `className` should only be **nil** when creating `ParseFile` and
+     `.beforeConnect` triggers.
+     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     Will log an error for each `parseServerURLString` that returns an error.
+     */
+    static func fetch<V: ParseObject>(_ path: [PathComponent],
+                                      object: V.Type,
+                                      trigger: ParseHookTriggerType,
+                                      // swiftlint:disable:next line_length
+                                      parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> [String: Self] {
+        try await fetch(path,
+                        className: object.className,
+                        triggerName: trigger,
+                        parseServerURLStrings: parseServerURLStrings)
+    }
+
+    /**
+     Fetch a Parse Cloud Code hook trigger.
+     - parameter path: An array of paths.
      - parameter className: The name of the `ParseObject` the trigger should act on.
      - parameter triggerName: The `ParseHookTriggerType` type.
      - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
@@ -138,10 +189,35 @@ public extension HookTrigger {
         try await method(.GET,
                          path,
                          className: className,
-                         triggerName: triggerName,
+                         trigger: triggerName,
                          parseServerURLStrings: parseServerURLStrings)
     }
 
+    /**
+     Fetch all Parse Cloud Code hook trigger.
+     - parameter path: A variadic list of paths.
+     - parameter className: The name of the `ParseObject` the trigger should act on.
+     - parameter trigger: The `ParseHookTriggerType` type.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
+     Defaults to the set of servers added during configuration.
+     - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`'s.
+     - throws: An error of `ParseError` type.
+     - important: `className` should only be **nil** when creating `ParseFile` and
+     `.beforeConnect` triggers.
+     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     Will log an error for each `parseServerURLString` that returns an error.
+     */
+    static func fetchAll<V: ParseObject>(_ path: PathComponent...,
+                                         object: V.Type,
+                                         trigger: ParseHookTriggerType,
+                                         // swiftlint:disable:next line_length
+                                         parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> [String: [Self]] {
+        try await fetchAll(path,
+                           object: object,
+                           trigger: trigger,
+                           parseServerURLStrings: parseServerURLStrings)
+    }
+    
     /**
      Fetch all Parse Cloud Code hook trigger.
      - parameter path: A variadic list of paths.
@@ -164,6 +240,31 @@ public extension HookTrigger {
         try await fetchAll(path,
                            className: className,
                            triggerName: triggerName,
+                           parseServerURLStrings: parseServerURLStrings)
+    }
+
+    /**
+     Fetch all Parse Cloud Code hook triggers.
+     - parameter path: An array of paths.
+     - parameter object: The type of `ParseObject` the trigger should act on.
+     - parameter trigger: The `ParseHookTriggerType` type.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
+     Defaults to the set of servers added during configuration.
+     - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`'s.
+     - throws: An error of `ParseError` type.
+     - important: `className` should only be **nil** when creating `ParseFile` and
+     `.beforeConnect` triggers.
+     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     Will log an error for each `parseServerURLString` that returns an error.
+     */
+    static func fetchAll<V: ParseObject>(_ path: [PathComponent],
+                                         object: V.Type,
+                                         trigger: ParseHookTriggerType,
+                                         // swiftlint:disable:next line_length
+                                         parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> [String: [Self]] {
+        try await fetchAll(path,
+                           className: object.className,
+                           triggerName: trigger,
                            parseServerURLStrings: parseServerURLStrings)
     }
 
@@ -217,6 +318,31 @@ public extension HookTrigger {
     /**
      Create a Parse Cloud Code hook trigger.
      - parameter path: A variadic list of paths.
+     - parameter object: The type of `ParseObject` the trigger should act on.
+     - parameter trigger: The `ParseHookTriggerType` type.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
+     Defaults to the set of servers added during configuration.
+     - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
+     - throws: An error of `ParseError` type.
+     - important: `className` should only be **nil** when creating `ParseFile` and
+     `.beforeConnect` triggers.
+     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     Will log an error for each `parseServerURLString` that returns an error.
+     */
+    static func create<V: ParseObject>(_ path: PathComponent...,
+                                       object: V.Type,
+                                       trigger: ParseHookTriggerType,
+                                       // swiftlint:disable:next line_length
+                                       parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> [String: Self] {
+        try await create(path,
+                         object: object,
+                         trigger: trigger,
+                         parseServerURLStrings: parseServerURLStrings)
+    }
+
+    /**
+     Create a Parse Cloud Code hook trigger.
+     - parameter path: A variadic list of paths.
      - parameter className: The name of the `ParseObject` the trigger should act on.
      - parameter triggerName: The `ParseHookTriggerType` type.
      - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
@@ -235,7 +361,32 @@ public extension HookTrigger {
                        parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> [String: Self] {
         try await create(path,
                          className: className,
-                         triggerName: triggerName,
+                         trigger: triggerName,
+                         parseServerURLStrings: parseServerURLStrings)
+    }
+
+    /**
+     Create a Parse Cloud Code hook trigger.
+     - parameter path: An array of paths.
+     - parameter object: The type of `ParseObject` the trigger should act on.
+     - parameter trigger: The `ParseHookTriggerType` type.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
+     Defaults to the set of servers added during configuration.
+     - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
+     - throws: An error of `ParseError` type.
+     - important: `className` should only be **nil** when creating `ParseFile` and
+     `.beforeConnect` triggers.
+     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     Will log an error for each `parseServerURLString` that returns an error.
+     */
+    static func create<V: ParseObject>(_ path: [PathComponent],
+                                       object: V.Type,
+                                       trigger: ParseHookTriggerType,
+                                       // swiftlint:disable:next line_length
+                                       parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> [String: Self] {
+        try await create(path,
+                         className: object.className,
+                         trigger: trigger,
                          parseServerURLStrings: parseServerURLStrings)
     }
 
@@ -253,21 +404,74 @@ public extension HookTrigger {
      - note: WIll attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
+    @available(*, deprecated, message: "Change \"triggerName\" to \"trigger\"")
     static func create(_ path: [PathComponent],
                        className: String? = nil,
                        triggerName: ParseHookTriggerType,
                        // swiftlint:disable:next line_length
                        parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> [String: Self] {
+        try await self.create(path,
+                              className: className,
+                              trigger: triggerName,
+                              parseServerURLStrings: parseServerURLStrings)
+    }
+
+    /**
+     Create a Parse Cloud Code hook trigger.
+     - parameter path: An array of paths.
+     - parameter className: The name of the `ParseObject` the trigger should act on.
+     - parameter trigger: The `ParseHookTriggerType` type.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
+     Defaults to the set of servers added during configuration.
+     - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
+     - throws: An error of `ParseError` type.
+     - important: `className` should only be **nil** when creating `ParseFile` and
+     `.beforeConnect` triggers.
+     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     Will log an error for each `parseServerURLString` that returns an error.
+     */
+    static func create(_ path: [PathComponent],
+                       className: String? = nil,
+                       trigger: ParseHookTriggerType,
+                       // swiftlint:disable:next line_length
+                       parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> [String: Self] {
         try await method(.POST,
                          path,
                          className: className,
-                         triggerName: triggerName,
+                         trigger: trigger,
                          parseServerURLStrings: parseServerURLStrings)
     }
+
 }
 
 // MARK: HookTrigger - Update
 public extension HookTrigger {
+
+    /**
+     Update a Parse Cloud Code hook trigger.
+     - parameter path: A variadic list of paths.
+     - parameter object: The type of `ParseObject` the trigger should act on.
+     - parameter trigger: The `ParseHookTriggerType` type.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
+     Defaults to the set of servers added during configuration.
+     - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
+     - throws: An error of `ParseError` type.
+     - important: `className` should only be **nil** when creating `ParseFile` and
+     `.beforeConnect` triggers.
+     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     Will log an error for each `parseServerURLString` that returns an error.
+     */
+    static func update<V: ParseObject>(_ path: PathComponent...,
+                                       object: V.Type,
+                                       trigger: ParseHookTriggerType,
+                                       // swiftlint:disable:next line_length
+                                       parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> [String: Self] {
+        try await update(path,
+                         object: object,
+                         trigger: trigger,
+                         parseServerURLStrings: parseServerURLStrings)
+    }
+
     /**
      Update a Parse Cloud Code hook trigger.
      - parameter path: A variadic list of paths.
@@ -296,6 +500,31 @@ public extension HookTrigger {
     /**
      Update a Parse Cloud Code hook trigger.
      - parameter path: An array of paths.
+     - parameter object: The type of `ParseObject` the trigger should act on.
+     - parameter trigger: The `ParseHookTriggerType` type.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
+     Defaults to the set of servers added during configuration.
+     - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
+     - throws: An error of `ParseError` type.
+     - important: `className` should only be **nil** when creating `ParseFile` and
+     `.beforeConnect` triggers.
+     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     Will log an error for each `parseServerURLString` that returns an error.
+     */
+    static func update<V: ParseObject>(_ path: [PathComponent],
+                                       object: V.Type,
+                                       trigger: ParseHookTriggerType,
+                                       // swiftlint:disable:next line_length
+                                       parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> [String: Self] {
+        try await update(path,
+                         className: object.className,
+                         triggerName: trigger,
+                         parseServerURLStrings: parseServerURLStrings)
+    }
+
+    /**
+     Update a Parse Cloud Code hook trigger.
+     - parameter path: An array of paths.
      - parameter className: The name of the `ParseObject` the trigger should act on.
      - parameter triggerName: The `ParseHookTriggerType` type.
      - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
@@ -315,13 +544,37 @@ public extension HookTrigger {
         try await method(.PUT,
                          path,
                          className: className,
-                         triggerName: triggerName,
+                         trigger: triggerName,
                          parseServerURLStrings: parseServerURLStrings)
     }
 }
 
 // MARK: HookTrigger - Delete
 public extension HookTrigger {
+
+    /**
+     Delete a Parse Cloud Code hook trigger.
+     - parameter path: A variadic list of paths.
+     - parameter object: The type of `ParseObject` the trigger should act on.
+     - parameter triggerName: The `ParseHookTriggerType` type.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to delete triggers for.
+     Defaults to the set of servers added during configuration.
+     - throws: An error of `ParseError` type.
+     - important: `className` should only be **nil** when creating `ParseFile` and
+     `.beforeConnect` triggers.
+     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     Will log an error for each `parseServerURLString` that returns an error.
+     */
+    static func delete<V: ParseObject>(_ path: PathComponent...,
+                                       object: V.Type,
+                                       trigger: ParseHookTriggerType,
+                                       // swiftlint:disable:next line_length
+                                       parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws {
+        try await delete(path,
+                         object: object,
+                         trigger: trigger,
+                         parseServerURLStrings: parseServerURLStrings)
+    }
 
     /**
      Delete a Parse Cloud Code hook trigger.
@@ -350,6 +603,30 @@ public extension HookTrigger {
     /**
      Delete a Parse Cloud Code hook trigger.
      - parameter path: An array of paths.
+     - parameter object: The type of `ParseObject` the trigger should act on.
+     - parameter trigger: The `ParseHookTriggerType` type.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to delete triggers for.
+     Defaults to the set of servers added during configuration.
+     - throws: An error of `ParseError` type.
+     - important: `className` should only be **nil** when creating `ParseFile` and
+     `.beforeConnect` triggers.
+     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     Will log an error for each `parseServerURLString` that returns an error.
+     */
+    static func delete<V: ParseObject>(_ path: [PathComponent],
+                                       object: V.Type,
+                                       trigger: ParseHookTriggerType,
+                                       // swiftlint:disable:next line_length
+                                       parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws {
+        try await delete(path,
+                         className: object.className,
+                         triggerName: trigger,
+                         parseServerURLStrings: parseServerURLStrings)
+    }
+
+    /**
+     Delete a Parse Cloud Code hook trigger.
+     - parameter path: An array of paths.
      - parameter className: The name of the `ParseObject` the trigger should act on.
      - parameter triggerName: The `ParseHookTriggerType` type.
      - parameter parseServerURLStrings: A set of Parse Server `URL`'s to delete triggers for.
@@ -368,13 +645,39 @@ public extension HookTrigger {
         try await method(.DELETE,
                          path,
                          className: className,
-                         triggerName: triggerName,
+                         trigger: triggerName,
                          parseServerURLStrings: parseServerURLStrings)
     }
+
 }
 
 // MARK: RoutesBuilder
 public extension RoutesBuilder {
+
+    /**
+     Creates a new route for a Parse Cloud Code hook trigger.
+     - parameter path: A variadic list of paths.
+     - parameter object: The type of `ParseObject` the trigger should act on.
+     - parameter trigger: The `ParseHookTriggerType` type.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
+     - parameter hooks: An actor containing all of the current Hooks.
+     - important: `className` should only be **nil** when creating `ParseFile` and
+     `.beforeConnect` triggers.
+     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     Will log an error for each `parseServerURLString` that returns an error.
+     */
+    @discardableResult
+    func post<Response, V>(_ path: PathComponent...,
+                           object: V.Type,
+                           trigger: ParseHookTriggerType,
+                           use closure: @escaping (Request) async throws -> Response) -> Route
+    where Response: AsyncResponseEncodable, V: ParseObject {
+        self.on(path,
+                object: object,
+                trigger: trigger,
+                use: closure)
+    }
+
     /**
      Creates a new route for a Parse Cloud Code hook trigger.
      - parameter path: A variadic list of paths.
@@ -388,16 +691,39 @@ public extension RoutesBuilder {
      Will log an error for each `parseServerURLString` that returns an error.
      */
     @discardableResult
-    func post<Response>(
-        _ path: PathComponent...,
-        className: String? = nil,
-        triggerName: ParseHookTriggerType,
-        use closure: @escaping (Request) async throws -> Response
-    ) -> Route
+    func post<Response>(_ path: PathComponent...,
+                        className: String? = nil,
+                        triggerName: ParseHookTriggerType,
+                        use closure: @escaping (Request) async throws -> Response) -> Route
         where Response: AsyncResponseEncodable {
         self.on(path,
                 className: className,
-                triggerName: triggerName,
+                trigger: triggerName,
+                use: closure)
+    }
+
+    /**
+     Creates a new route for a Parse Cloud Code hook trigger.
+     - parameter method: The method to use for the route.
+     - parameter path: An array of paths.
+     - parameter object: The type of `ParseObject` the trigger should act on.
+     - parameter trigger: The `ParseHookTriggerType` type.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
+     - parameter hooks: An actor containing all of the current Hooks.
+     - important: `className` should only be **nil** when creating `ParseFile` and
+     `.beforeConnect` triggers.
+     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     Will log an error for each `parseServerURLString` that returns an error.
+     */
+    @discardableResult
+    func post<Response, V>(_ path: [PathComponent],
+                           object: V.Type,
+                           trigger: ParseHookTriggerType,
+                           use closure: @escaping (Request) async throws -> Response) -> Route
+    where Response: AsyncResponseEncodable, V: ParseObject {
+        self.on(path,
+                object: object,
+                trigger: trigger,
                 use: closure)
     }
 
@@ -415,16 +741,41 @@ public extension RoutesBuilder {
      Will log an error for each `parseServerURLString` that returns an error.
      */
     @discardableResult
-    func post<Response>(
-        _ path: [PathComponent],
-        className: String? = nil,
-        triggerName: ParseHookTriggerType,
-        use closure: @escaping (Request) async throws -> Response
-    ) -> Route
+    func post<Response>(_ path: [PathComponent],
+                        className: String? = nil,
+                        triggerName: ParseHookTriggerType,
+                        use closure: @escaping (Request) async throws -> Response) -> Route
         where Response: AsyncResponseEncodable {
         self.on(path,
                 className: className,
-                triggerName: triggerName,
+                trigger: triggerName,
+                use: closure)
+    }
+
+    /**
+     Creates a new route for a Parse Cloud Code hook trigger.
+     - parameter path: A variadic list of paths.
+     - parameter body: Determines how an incoming HTTP request’s body is collected.
+     - parameter object: The type of `ParseObject` the trigger should act on.
+     - parameter trigger: The `ParseHookTriggerType` type.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
+     - parameter hooks: An actor containing all of the current Hooks.
+     - important: `className` should only be **nil** when creating `ParseFile` and
+     `.beforeConnect` triggers.
+     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     Will log an error for each `parseServerURLString` that returns an error.
+     */
+    @discardableResult
+    func on<Response, V>(_ path: PathComponent...,
+                         body: HTTPBodyStreamStrategy = .collect,
+                         object: V.Type,
+                         trigger: ParseHookTriggerType,
+                         use closure: @escaping (Request) async throws -> Response) -> Route
+    where Response: AsyncResponseEncodable, V: ParseObject {
+        self.on(path,
+                body: body,
+                object: object,
+                trigger: trigger,
                 use: closure)
     }
 
@@ -442,18 +793,71 @@ public extension RoutesBuilder {
      Will log an error for each `parseServerURLString` that returns an error.
      */
     @discardableResult
-    func on<Response>(
-        _ path: PathComponent...,
-        body: HTTPBodyStreamStrategy = .collect,
-        className: String? = nil,
-        triggerName: ParseHookTriggerType,
-        use closure: @escaping (Request) async throws -> Response
-    ) -> Route
+    func on<Response>(_ path: PathComponent...,
+                      body: HTTPBodyStreamStrategy = .collect,
+                      className: String? = nil,
+                      triggerName: ParseHookTriggerType,
+                      use closure: @escaping (Request) async throws -> Response) -> Route
         where Response: AsyncResponseEncodable {
         self.on(path,
                 body: body,
                 className: className,
-                triggerName: triggerName,
+                trigger: triggerName,
+                use: closure)
+    }
+
+    /**
+     Creates a new route for a Parse Cloud Code hook trigger.
+     - parameter path: An array of paths.
+     - parameter body: Determines how an incoming HTTP request’s body is collected.
+     - parameter object: The type of `ParseObject` the trigger should act on.
+     - parameter trigger: The `ParseHookTriggerType` type.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
+     - parameter hooks: An actor containing all of the current Hooks.
+     - important: `className` should only be **nil** when creating `ParseFile` and
+     `.beforeConnect` triggers.
+     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     Will log an error for each `parseServerURLString` that returns an error.
+     */
+    @discardableResult
+    func on<Response, V>(_ path: [PathComponent],
+                         body: HTTPBodyStreamStrategy = .collect,
+                         object: V.Type,
+                         trigger: ParseHookTriggerType,
+                         use closure: @escaping (Request) async throws -> Response) -> Route
+          where Response: AsyncResponseEncodable, V: ParseObject {
+              self.on(path,
+                      body: body,
+                      className: object.className,
+                      trigger: trigger,
+                      use: closure)
+    }
+
+    /**
+     Creates a new route for a Parse Cloud Code hook trigger.
+     - parameter path: An array of paths.
+     - parameter body: Determines how an incoming HTTP request’s body is collected.
+     - parameter className: The name of the `ParseObject` the trigger should act on.
+     - parameter triggerName: The `ParseHookTriggerType` type.
+     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
+     - parameter hooks: An actor containing all of the current Hooks.
+     - important: `className` should only be **nil** when creating `ParseFile` and
+     `.beforeConnect` triggers.
+     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     Will log an error for each `parseServerURLString` that returns an error.
+     */
+    @discardableResult
+    @available(*, deprecated, message: "Change \"triggerName\" to \"trigger\"")
+    func on<Response>(_ path: [PathComponent],
+                      body: HTTPBodyStreamStrategy = .collect,
+                      className: String? = nil,
+                      triggerName: ParseHookTriggerType,
+                      use closure: @escaping (Request) async throws -> Response) -> Route
+    where Response: AsyncResponseEncodable {
+        self.on(path,
+                body: body,
+                className: className,
+                trigger: triggerName,
                 use: closure)
     }
 
@@ -471,29 +875,28 @@ public extension RoutesBuilder {
      Will log an error for each `parseServerURLString` that returns an error.
      */
     @discardableResult
-    func on<Response>(
-        _ path: [PathComponent],
-        body: HTTPBodyStreamStrategy = .collect,
-        className: String? = nil,
-        triggerName: ParseHookTriggerType,
-        use closure: @escaping (Request) async throws -> Response
-    ) -> Route
+    func on<Response>(_ path: [PathComponent],
+                      body: HTTPBodyStreamStrategy = .collect,
+                      className: String? = nil,
+                      trigger: ParseHookTriggerType,
+                      use closure: @escaping (Request) async throws -> Response) -> Route
         where Response: AsyncResponseEncodable {
         Task {
             do {
                 await configuration.hooks.updateTriggers(try await HookTrigger.create(path,
                                                                                       className: className,
-                                                                                      triggerName: triggerName))
+                                                                                      trigger: trigger))
             } catch {
                 if let className = className {
                     // swiftlint:disable:next line_length
-                    configuration.logger.error("Could not create HookTrigger route for path: \(path); className: \(className); triggerName: \(triggerName) on servers: \(configuration.parseServerURLStrings) because of error: \(error)")
+                    configuration.logger.error("Could not create HookTrigger route for path: \(path); className: \(className); trigger: \(trigger) on servers: \(configuration.parseServerURLStrings) because of error: \(error)")
                 } else {
                     // swiftlint:disable:next line_length
-                    configuration.logger.error("Could not create HookTrigger route for path: \(path); triggerName: \(triggerName) on servers: \(configuration.parseServerURLStrings) because of error: \(error)")
+                    configuration.logger.error("Could not create HookTrigger route for path: \(path); trigger: \(trigger) on servers: \(configuration.parseServerURLStrings) because of error: \(error)")
                 }
             }
         }
         return self.on(.POST, path, body: body, use: closure)
     }
+
 }
