@@ -287,8 +287,8 @@ app.post("hello",
 ```swift
 // A Parse Hook Trigger route.
 app.post("score", "save", "before",
-         className: GameScore.className,
-         triggerName: .beforeSave) { req async throws -> ParseHookResponse<GameScore> in
+         object: GameScore.self,
+         trigger: .beforeSave) { req async throws -> ParseHookResponse<GameScore> in
     // Note that `ParseHookResponse<GameScore>` means a "successfull"
     // response will return a "GameScore" type.
     if let error: ParseHookResponse<GameScore> = checkHeaders(req) {
@@ -315,8 +315,8 @@ app.post("score", "save", "before",
 
 // Another Parse Hook Trigger route.
 app.post("score", "find", "before",
-         className: GameScore.className,
-         triggerName: .beforeFind) { req async throws -> ParseHookResponse<[GameScore]> in
+         object: GameScore.self,
+         trigger: .beforeFind) { req async throws -> ParseHookResponse<[GameScore]> in
     // Note that `ParseHookResponse<[GameScore]>` means a "successfull"
     // response will return a "[GameScore]" type.
     if let error: ParseHookResponse<[GameScore]> = checkHeaders(req) {
@@ -342,8 +342,8 @@ app.post("score", "find", "before",
 
 // Another Parse Hook Trigger route.
 app.post("user", "login", "after",
-         className: User.className,
-         triggerName: .afterLogin) { req async throws -> ParseHookResponse<Bool> in
+         object: User.self,
+         trigger: .afterLogin) { req async throws -> ParseHookResponse<Bool> in
     // Note that `ParseHookResponse<Bool>` means a "successfull"
     // response will return a "Bool" type. Bool is the standard response with
     // a "true" response meaning everything is okay or continue.
@@ -359,7 +359,7 @@ app.post("user", "login", "after",
 
 // A Parse Hook Trigger route for `ParseFile`.
 app.on("file", "save", "before",
-       triggerName: .beforeSave) { req async throws -> ParseHookResponse<Bool> in
+       trigger: .beforeSave) { req async throws -> ParseHookResponse<Bool> in
     // Note that `ParseHookResponse<Bool>` means a "successfull"
     // response will return a "Bool" type. Bool is the standard response with
     // a "true" response meaning everything is okay or continue. Sending "false"
@@ -376,7 +376,7 @@ app.on("file", "save", "before",
 
 // Another Parse Hook Trigger route for `ParseFile`.
 app.post("file", "delete", "before",
-         triggerName: .beforeDelete) { req async throws -> ParseHookResponse<Bool> in
+         trigger: .beforeDelete) { req async throws -> ParseHookResponse<Bool> in
     // Note that `ParseHookResponse<Bool>` means a "successfull"
     // response will return a "Bool" type. Bool is the standard response with
     // a "true" response meaning everything is okay or continue.
@@ -392,7 +392,7 @@ app.post("file", "delete", "before",
 
 // A Parse Hook Trigger route for `ParseLiveQuery`.
 app.post("connect", "before",
-         triggerName: .beforeConnect) { req async throws -> ParseHookResponse<Bool> in
+         trigger: .beforeConnect) { req async throws -> ParseHookResponse<Bool> in
     // Note that `ParseHookResponse<Bool>` means a "successfull"
     // response will return a "Bool" type. Bool is the standard response with
     // a "true" response meaning everything is okay or continue.
@@ -408,8 +408,8 @@ app.post("connect", "before",
 
 // Another Parse Hook Trigger route for `ParseLiveQuery`.
 app.post("score", "subscribe", "before",
-         className: GameScore.className,
-         triggerName: .beforeSubscribe) { req async throws -> ParseHookResponse<Bool> in
+         object: GameScore.self,
+         trigger: .beforeSubscribe) { req async throws -> ParseHookResponse<Bool> in
     // Note that `ParseHookResponse<Bool>` means a "successfull"
     // response will return a "Bool" type. Bool is the standard response with
     // a "true" response meaning everything is okay or continue.
@@ -425,8 +425,8 @@ app.post("score", "subscribe", "before",
 
 // Another Parse Hook Trigger route for `ParseLiveQuery`.
 app.post("score", "event", "after",
-         className: GameScore.className,
-         triggerName: .afterEvent) { req async throws -> ParseHookResponse<Bool> in
+         object: GameScore.self,
+         trigger: .afterEvent) { req async throws -> ParseHookResponse<Bool> in
     // Note that `ParseHookResponse<Bool>` means a "successfull"
     // response will return a "Bool" type. Bool is the standard response with
     // a "true" response meaning everything is okay or continue.

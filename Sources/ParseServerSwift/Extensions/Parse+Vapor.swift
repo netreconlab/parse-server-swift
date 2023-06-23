@@ -47,7 +47,7 @@ public extension ParseHookRequestable {
                       // swiftlint:disable:next line_length
                       parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> Self {
          var updatedOptions = try self.options(request, parseServerURLStrings: parseServerURLStrings)
-         updatedOptions = updatedOptions.union(options)
+         updatedOptions = options.union(updatedOptions)
          return try await withCheckedThrowingContinuation { continuation in
              self.hydrateUser(options: updatedOptions,
                               completion: continuation.resume)
