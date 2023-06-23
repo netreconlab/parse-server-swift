@@ -1083,12 +1083,12 @@ public extension RoutesBuilder {
                       className: String? = nil,
                       triggerName: ParseHookTriggerType,
                       use closure: @escaping (Request) async throws -> Response) -> Route
-        where Response: AsyncResponseEncodable {
-            self.on(path,
-                    body: body,
-                    className: className,
-                    trigger: triggerName,
-                    use: closure)
+    where Response: AsyncResponseEncodable {
+        self.on(path,
+                body: body,
+                className: className,
+                trigger: triggerName,
+                use: closure)
     }
 
     /**
@@ -1110,12 +1110,12 @@ public extension RoutesBuilder {
                       className: String? = nil,
                       trigger: ParseHookTriggerType,
                       use closure: @escaping (Request) async throws -> Response) -> Route
-        where Response: AsyncResponseEncodable {
-        self.on(path,
-                body: body,
-                className: className,
-                trigger: trigger,
-                use: closure)
+    where Response: AsyncResponseEncodable {
+    self.on(path,
+            body: body,
+            className: className,
+            trigger: trigger,
+            use: closure)
     }
 
     /**
@@ -1137,12 +1137,12 @@ public extension RoutesBuilder {
                          object: V.Type,
                          trigger: ParseHookTriggerType,
                          use closure: @escaping (Request) async throws -> Response) -> Route
-          where Response: AsyncResponseEncodable, V: ParseObject {
-              self.on(path,
-                      body: body,
-                      className: object.className,
-                      trigger: trigger,
-                      use: closure)
+    where Response: AsyncResponseEncodable, V: ParseObject {
+        self.on(path,
+                body: body,
+                className: object.className,
+                trigger: trigger,
+                use: closure)
     }
 
     /**
