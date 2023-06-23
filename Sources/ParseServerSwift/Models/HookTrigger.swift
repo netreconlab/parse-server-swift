@@ -739,7 +739,7 @@ public extension HookTrigger {
      Delete a Parse Cloud Code hook trigger.
      - parameter path: A variadic list of paths.
      - parameter object: The type of `ParseObject` the trigger should act on.
-     - parameter triggerName: The `ParseHookTriggerType` type.
+     - parameter trigger: The `ParseHookTriggerType` type.
      - parameter parseServerURLStrings: A set of Parse Server `URL`'s to delete triggers for.
      Defaults to the set of servers added during configuration.
      - throws: An error of `ParseError` type.
