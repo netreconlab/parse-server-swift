@@ -357,22 +357,21 @@ public extension RoutesBuilder {
      Will log an error for each `parseServerURLString` that returns an error.
      */
     @discardableResult
-    func on<Response>(
-        _ path: [PathComponent],
-        body: HTTPBodyStreamStrategy = .collect,
-        name: String,
-        use closure: @escaping (Request) async throws -> Response
-    ) -> Route
-        where Response: AsyncResponseEncodable {
+    func on<Response>(_ path: [PathComponent],
+                      body: HTTPBodyStreamStrategy = .collect,
+                      name: String,
+                      use closure: @escaping (Request) async throws -> Response) -> Route
+    where Response: AsyncResponseEncodable {
+        let route = self.on(.POST, path, body: body, use: closure)
         Task {
             do {
-                await configuration.hooks.updateFunctions(try await HookFunction.create(path,
+                await configuration.hooks.updateFunctions(try await HookFunction.create(route.path,
                                                                                         name: name))
             } catch {
                 // swiftlint:disable:next line_length
                 configuration.logger.error("Could not create HookFunction route for path: \(path); name: \(name) on servers: \(configuration.parseServerURLStrings) because of error: \(error)")
             }
         }
-        return self.on(.POST, path, body: body, use: closure)
+        return route
     }
 }

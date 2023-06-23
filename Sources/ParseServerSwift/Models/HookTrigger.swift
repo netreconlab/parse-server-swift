@@ -1192,7 +1192,8 @@ public extension RoutesBuilder {
                       className: String? = nil,
                       trigger: ParseHookTriggerType,
                       use closure: @escaping (Request) async throws -> Response) -> Route
-        where Response: AsyncResponseEncodable {
+    where Response: AsyncResponseEncodable {
+        let route = self.on(.POST, path, body: body, use: closure)
         Task {
             do {
                 await configuration.hooks.updateTriggers(try await HookTrigger.create(path,
@@ -1208,7 +1209,7 @@ public extension RoutesBuilder {
                 }
             }
         }
-        return self.on(.POST, path, body: body, use: closure)
+        return route
     }
 
 }

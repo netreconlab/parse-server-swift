@@ -228,6 +228,14 @@ struct GameScore: ParseObject {
 ### Creating New Cloud Code Routes 
 Adding routes for `ParseHooks` are as simple as adding [routes in Vapor](https://docs.vapor.codes/basics/routing/). `ParseServerSwift` provides some additional methods to routes to easily create and register [Hook Functions](https://parseplatform.org/Parse-Swift/release/documentation/parseswift/parsehookfunctionable) and [Hook Triggers](https://parseplatform.org/Parse-Swift/release/documentation/parseswift/parsehooktriggerable/). All routes should be added to the `routes.swift` file in your project. Example `ParseServerSwift` routes can be found in [ParseServerSwift/Sources/ParseServerSwift/routes.swift](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/routes.swift).
 
+#### Router Groups and Collections
+Since `ParseServerSwift` is a Vapor server, it can be configured a number of different ways to suite your needs. Be sure to read through the [vapor documentation](https://docs.vapor.codes). Some important features you may want to take advantage of are highlighed below:
+
+- Route [groups](https://docs.vapor.codes/basics/routing/#route-groups) allows you to create a set of routes with a path prefix or specific middleware
+- Route [collections](https://legacy.docs.vapor.codes/2.0/routing/collection/) allow multiple routes and route groups to be organized in different files or modules
+
+To learn more about creating groups and collections, checkout this [blog](https://alexandrecools.medium.com/vapor-routes-groups-and-collections-5ff920720317).
+
 **Be sure to add `import ParseSwift` and `import ParseServerSwift` to the top of routes.swift**
 
 ### Sending Errors From Cloud Code Routes
