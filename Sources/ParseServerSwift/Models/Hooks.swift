@@ -6,24 +6,25 @@
 //
 
 import Foundation
+import ParseSwift
 
 /// An actor containing all of the current Hooks.
 actor Hooks {
-    var functions = [String: HookFunction]()
-    var triggers = [String: HookTrigger]()
+    var functions = [String: ParseHookFunction]()
+    var triggers = [String: ParseHookTrigger]()
 }
 
 // MARK: Hook Functions
 extension Hooks {
     /// Get all of the current functions.
     /// - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookFunction`.
-    func getFunctions() -> [String: HookFunction] {
+    func getFunctions() -> [String: ParseHookFunction] {
         functions
     }
 
     /// Update curent functions.
     /// - parameter functions: A dictionary where the keys are Parse Server `URL`'s and the respective `HookFunction`.
-    func updateFunctions(_ functions: [String: HookFunction]) {
+    func updateFunctions(_ functions: [String: ParseHookFunction]) {
         for (url, function) in functions {
             self.functions[url] = function
         }
@@ -46,14 +47,15 @@ extension Hooks {
 // MARK: Hook Triggers
 extension Hooks {
     /// Get all of the current triggers.
-    /// - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
-    func getTriggers() -> [String: HookTrigger] {
+    /// - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `ParseHookTrigger`.
+    func getTriggers() -> [String: ParseHookTrigger] {
         triggers
     }
 
     /// Update curent triggers.
-    /// - parameter triggers: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
-    func updateTriggers(_ triggers: [String: HookTrigger]) {
+    /// - parameter triggers: A dictionary where the keys are Parse Server `URL`'s and the
+    /// respective `ParseHookTrigger`.
+    func updateTriggers(_ triggers: [String: ParseHookTrigger]) {
         for (url, trigger) in triggers {
             self.triggers[url] = trigger
         }

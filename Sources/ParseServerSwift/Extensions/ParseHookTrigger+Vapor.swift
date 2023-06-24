@@ -1,5 +1,5 @@
 //
-//  HookTrigger.swift
+//  ParseHookTrigger+Vapor.swift
 //  
 //
 //  Created by Corey Baker on 6/23/22.
@@ -9,20 +9,8 @@ import Foundation
 import ParseSwift
 import Vapor
 
-/**
- Parse Hook Triggers can be created by conforming to
- `ParseHookTriggerable`.
- */
-public struct HookTrigger: ParseHookTriggerable {
-    public var className: String?
-    public var triggerName: ParseHookTriggerType?
-    public var url: URL?
-
-    public init() {}
-}
-
 // MARK: HookTrigger - Internal
-extension HookTrigger {
+extension ParseHookTrigger {
 
     @discardableResult
     static func method(_ method: HTTPMethod,
@@ -31,16 +19,16 @@ extension HookTrigger {
                        trigger: ParseHookTriggerType,
                        parseServerURLStrings: [String]) async throws -> [String: Self] {
         let url = try buildServerPathname(path)
-        let hookTrigger: HookTrigger!
+        let hookTrigger: Self!
         var hookTriggers = [String: Self]()
 
         if let className = className {
-            hookTrigger = HookTrigger(className: className,
-                                      triggerName: trigger,
-                                      url: url)
+            hookTrigger = Self(className: className,
+                               trigger: trigger,
+                               url: url)
         } else {
-            hookTrigger = try HookTrigger(triggerName: trigger,
-                                          url: url)
+            hookTrigger = try Self(trigger: trigger,
+                                   url: url)
         }
 
         for parseServerURLString in parseServerURLStrings {
@@ -90,7 +78,7 @@ extension HookTrigger {
 }
 
 // MARK: HookTrigger - Fetch
-public extension HookTrigger {
+public extension ParseHookTrigger {
 
     /**
      Fetch a Parse Cloud Code hook trigger.
@@ -392,16 +380,16 @@ public extension HookTrigger {
                          // swiftlint:disable:next line_length
                          parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> [String: [Self]] {
         let url = try buildServerPathname(path)
-        let hookTrigger: HookTrigger!
+        let hookTrigger: Self!
         var hookTriggers = [String: [Self]]()
 
         if let className = className {
             hookTrigger = Self(className: className,
-                               triggerName: trigger,
+                               trigger: trigger,
                                url: url)
         } else {
-            hookTrigger = try HookTrigger(triggerName: trigger,
-                                          url: url)
+            hookTrigger = try Self(trigger: trigger,
+                                   url: url)
         }
         for parseServerURLString in parseServerURLStrings {
             do {
@@ -417,7 +405,7 @@ public extension HookTrigger {
 }
 
 // MARK: HookTrigger - Create
-public extension HookTrigger {
+public extension ParseHookTrigger {
 
     /**
      Create a Parse Cloud Code hook trigger.
@@ -575,7 +563,7 @@ public extension HookTrigger {
 }
 
 // MARK: HookTrigger - Update
-public extension HookTrigger {
+public extension ParseHookTrigger {
 
     /**
      Update a Parse Cloud Code hook trigger.
@@ -733,7 +721,7 @@ public extension HookTrigger {
 }
 
 // MARK: HookTrigger - Delete
-public extension HookTrigger {
+public extension ParseHookTrigger {
 
     /**
      Delete a Parse Cloud Code hook trigger.
@@ -1196,9 +1184,9 @@ public extension RoutesBuilder {
         let route = self.on(.POST, path, body: body, use: closure)
         Task {
             do {
-                await configuration.hooks.updateTriggers(try await HookTrigger.create(path,
-                                                                                      className: className,
-                                                                                      trigger: trigger))
+                await configuration.hooks.updateTriggers(try await ParseHookTrigger.create(path,
+                                                                                           className: className,
+                                                                                           trigger: trigger))
             } catch {
                 if let className = className {
                     // swiftlint:disable:next line_length

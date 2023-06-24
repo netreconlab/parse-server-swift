@@ -1,5 +1,5 @@
 //
-//  HookFunction.swift
+//  ParseHookFunction+Vapor.swift
 //  
 //
 //  Created by Corey Baker on 6/23/22.
@@ -9,29 +9,18 @@ import Foundation
 import ParseSwift
 import Vapor
 
-/**
- Parse Hook Functions can be created by conforming to
- `ParseHookFunctionable`.
- */
-public struct HookFunction: ParseHookFunctionable {
-    public var functionName: String?
-    public var url: URL?
-
-    public init() {}
-}
-
 // MARK: HookFunction - Internal
-extension HookFunction {
+extension ParseHookFunction {
 
     @discardableResult
     static func method(_ method: HTTPMethod,
                        _ path: [PathComponent],
                        name: String,
-                       parseServerURLStrings: [String]) async throws -> [String: HookFunction] {
+                       parseServerURLStrings: [String]) async throws -> [String: Self] {
         let url = try buildServerPathname(path)
-        let hookFunction = HookFunction(name: name,
-                                        url: url)
-        var hookFunctions = [String: HookFunction]()
+        let hookFunction = Self(name: name,
+                                url: url)
+        var hookFunctions = [String: Self]()
 
         for parseServerURLString in parseServerURLStrings {
             do {
@@ -79,7 +68,7 @@ extension HookFunction {
 }
 
 // MARK: HookFunction - Fetch
-public extension HookFunction {
+public extension ParseHookFunction {
 
     /**
      Fetches a Parse Cloud Code hook function.
@@ -93,7 +82,7 @@ public extension HookFunction {
      */
     static func fetch(_ path: PathComponent...,
                       name: String,
-                      parseServerURLStrings: [String]) async throws -> [String: HookFunction] {
+                      parseServerURLStrings: [String]) async throws -> [String: Self] {
         try await fetch(path, name: name, parseServerURLStrings: parseServerURLStrings)
     }
 
@@ -109,7 +98,7 @@ public extension HookFunction {
      */
     static func fetch(_ path: [PathComponent],
                       name: String,
-                      parseServerURLStrings: [String]) async throws -> [String: HookFunction] {
+                      parseServerURLStrings: [String]) async throws -> [String: Self] {
         try await method(.PUT, path, name: name, parseServerURLStrings: parseServerURLStrings)
     }
 
@@ -125,7 +114,7 @@ public extension HookFunction {
      */
     static func fetchAll(_ path: PathComponent...,
                          name: String,
-                         parseServerURLStrings: [String]) async throws -> [String: [HookFunction]] {
+                         parseServerURLStrings: [String]) async throws -> [String: [Self]] {
         try await fetchAll(path, name: name, parseServerURLStrings: parseServerURLStrings)
     }
 
@@ -141,11 +130,11 @@ public extension HookFunction {
      */
     static func fetchAll(_ path: [PathComponent],
                          name: String,
-                         parseServerURLStrings: [String]) async throws -> [String: [HookFunction]] {
+                         parseServerURLStrings: [String]) async throws -> [String: [Self]] {
         let url = try buildServerPathname(path)
-        let hookFunction = HookFunction(name: name,
+        let hookFunction = Self(name: name,
                                         url: url)
-        var hookFunctions = [String: [HookFunction]]()
+        var hookFunctions = [String: [Self]]()
 
         for parseServerURLString in parseServerURLStrings {
             do {
@@ -161,7 +150,7 @@ public extension HookFunction {
 }
 
 // MARK: HookFunction - Create
-public extension HookFunction {
+public extension ParseHookFunction {
 
     /**
      Creates a Parse Cloud Code hook function.
@@ -177,7 +166,7 @@ public extension HookFunction {
     static func create(_ path: PathComponent...,
                        name: String,
                        // swiftlint:disable:next line_length
-                       parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> [String: HookFunction] {
+                       parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> [String: Self] {
         try await create(path, name: name, parseServerURLStrings: parseServerURLStrings)
     }
 
@@ -195,13 +184,13 @@ public extension HookFunction {
     static func create(_ path: [PathComponent],
                        name: String,
                        // swiftlint:disable:next line_length
-                       parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> [String: HookFunction] {
+                       parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> [String: Self] {
         try await method(.POST, path, name: name, parseServerURLStrings: parseServerURLStrings)
     }
 }
 
 // MARK: HookFunction - Update
-public extension HookFunction {
+public extension ParseHookFunction {
 
     /**
      Updates a Parse Cloud Code hook function.
@@ -217,7 +206,7 @@ public extension HookFunction {
     static func update(_ path: PathComponent...,
                        name: String,
                        // swiftlint:disable:next line_length
-                       parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> [String: HookFunction] {
+                       parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> [String: Self] {
         try await update(path, name: name, parseServerURLStrings: parseServerURLStrings)
     }
 
@@ -235,13 +224,13 @@ public extension HookFunction {
     static func update(_ path: [PathComponent],
                        name: String,
                        // swiftlint:disable:next line_length
-                       parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> [String: HookFunction] {
+                       parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> [String: Self] {
         try await method(.PUT, path, name: name, parseServerURLStrings: parseServerURLStrings)
     }
 }
 
 // MARK: HookFunction - Delete
-public extension HookFunction {
+public extension ParseHookFunction {
 
     /**
      Removes a Parse Cloud Code hook function.
@@ -359,8 +348,8 @@ public extension RoutesBuilder {
         let route = self.on(.POST, path, body: body, use: closure)
         Task {
             do {
-                await configuration.hooks.updateFunctions(try await HookFunction.create(route.path,
-                                                                                        name: name))
+                await configuration.hooks.updateFunctions(try await ParseHookFunction.create(route.path,
+                                                                                             name: name))
             } catch {
                 // swiftlint:disable:next line_length
                 configuration.logger.error("Could not create HookFunction route for path: \(path); name: \(name) on servers: \(configuration.parseServerURLStrings) because of error: \(error)")
