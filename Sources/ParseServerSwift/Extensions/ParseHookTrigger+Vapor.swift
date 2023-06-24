@@ -9,7 +9,6 @@ import Foundation
 import ParseSwift
 import Vapor
 
-
 // MARK: HookTrigger - Internal
 extension ParseHookTrigger {
 

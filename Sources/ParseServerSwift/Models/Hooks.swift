@@ -53,7 +53,8 @@ extension Hooks {
     }
 
     /// Update curent triggers.
-    /// - parameter triggers: A dictionary where the keys are Parse Server `URL`'s and the respective `ParseHookTrigger`.
+    /// - parameter triggers: A dictionary where the keys are Parse Server `URL`'s and the
+    /// respective `ParseHookTrigger`.
     func updateTriggers(_ triggers: [String: ParseHookTrigger]) {
         for (url, trigger) in triggers {
             self.triggers[url] = trigger
