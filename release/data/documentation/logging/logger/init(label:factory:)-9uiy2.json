@@ -1,0 +1,539 @@
+{
+  "abstract" : [
+    {
+      "text" : "Construct a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Logger",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " given a ",
+      "type" : "text"
+    },
+    {
+      "code" : "label",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " identifying the creator of the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Logger",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " or a non-standard ",
+      "type" : "text"
+    },
+    {
+      "code" : "LogHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger\/init(label:factory:)-9uiy2"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "Logging",
+    "externalID" : "s:7Logging6LoggerV5label7factoryACSS_AA10LogHandler_pSSXEtcfc",
+    "fragments" : [
+      {
+        "kind" : "identifier",
+        "text" : "init"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "label"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:SS",
+        "text" : "String"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "factory"
+      },
+      {
+        "kind" : "text",
+        "text" : ": ("
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:SS",
+        "text" : "String"
+      },
+      {
+        "kind" : "text",
+        "text" : ") -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7Logging10LogHandlerP",
+        "text" : "LogHandler"
+      },
+      {
+        "kind" : "text",
+        "text" : ")"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Logging"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Initializer",
+    "symbolKind" : "init",
+    "title" : "init(label:factory:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "init"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "label"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:SS",
+              "text" : "String"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "factory"
+            },
+            {
+              "kind" : "text",
+              "text" : ": ("
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:SS",
+              "text" : "String"
+            },
+            {
+              "kind" : "text",
+              "text" : ") -> "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/LogHandler",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Logging10LogHandlerP",
+              "text" : "LogHandler"
+            },
+            {
+              "kind" : "text",
+              "text" : ")"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "An identifier for the creator of a ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "Logger",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ".",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "label"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "A closure creating non-standard ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "LogHandler",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : "s.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "factory"
+        }
+      ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "code" : "label",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " should identify the creator of the ",
+              "type" : "text"
+            },
+            {
+              "code" : "Logger",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". This can be an application, a sub-system, or even",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "a datatype.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This initializer provides an escape hatch in case the global default logging backend implementation (set up",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "using ",
+              "type" : "text"
+            },
+            {
+              "code" : "LoggingSystem.bootstrap",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is not appropriate for this particular logger.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/logging\/logger\/init(label:factory:)-9uiy2"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Logging",
+  "type" : "topic",
+  "url" : "\/documentation\/logging"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/LogHandler": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "LogHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is an implementation of a logging backend.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "LogHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/LogHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "LogHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "LogHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/logging\/loghandler"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/Logger": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "Logger",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is the central type in ",
+      "type" : "text"
+    },
+    {
+      "code" : "SwiftLog",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ". Its central function is to emit log messages using one of the methods",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "corresponding to a log level.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Logger"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Logger"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Logger",
+  "type" : "topic",
+  "url" : "\/documentation\/logging\/logger"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/Logger/init(label:factory:)-9uiy2": {
+  "abstract" : [
+    {
+      "text" : "Construct a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Logger",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " given a ",
+      "type" : "text"
+    },
+    {
+      "code" : "label",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " identifying the creator of the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Logger",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " or a non-standard ",
+      "type" : "text"
+    },
+    {
+      "code" : "LogHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "label"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "factory"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Logging10LogHandlerP",
+      "text" : "LogHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger\/init(label:factory:)-9uiy2",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(label:factory:)",
+  "type" : "topic",
+  "url" : "\/documentation\/logging\/logger\/init(label:factory:)-9uiy2"
+}
+}
+}

@@ -1,0 +1,275 @@
+{
+  "abstract" : [
+    {
+      "text" : "HTTP over Unix Domain Socket Paths. The socket path should be encoded as the host in the URI, making sure to encode any special characters:",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URI",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URI\/Scheme-swift.struct"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URI\/Scheme-swift.struct\/httpUnixDomainSocket"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:5Vapor3URIV6SchemeV20httpUnixDomainSocketAEvpZ",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "static"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "let"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "httpUnixDomainSocket"
+      },
+      {
+        "kind" : "text",
+        "text" : ": `Self`"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Vapor"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Type Property",
+    "symbolKind" : "property",
+    "title" : "httpUnixDomainSocket"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "static"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "let"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "httpUnixDomainSocket"
+            },
+            {
+              "kind" : "text",
+              "text" : ": `Self`"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "code" : [
+            "host.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Do note that URI’s initializer will encode the host in this way if you use ",
+              "type" : "text"
+            },
+            {
+              "code" : "init(scheme:host:port:path:query:fragment:)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/vapor\/uri\/scheme-swift.struct\/httpunixdomainsocket"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Vapor",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/URI": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "URI"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URI",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "URI"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "URI",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/uri"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/URI/Scheme-swift.struct": {
+  "abstract" : [
+    {
+      "text" : "A URI’s scheme.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Scheme"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URI\/Scheme-swift.struct",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Scheme"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "URI.Scheme",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/uri\/scheme-swift.struct"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/URI/Scheme-swift.struct/httpUnixDomainSocket": {
+  "abstract" : [
+    {
+      "text" : "HTTP over Unix Domain Socket Paths. The socket path should be encoded as the host in the URI, making sure to encode any special characters:",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "httpUnixDomainSocket"
+    },
+    {
+      "kind" : "text",
+      "text" : ": `Self`"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URI\/Scheme-swift.struct\/httpUnixDomainSocket",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "httpUnixDomainSocket",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/uri\/scheme-swift.struct\/httpunixdomainsocket"
+}
+}
+}

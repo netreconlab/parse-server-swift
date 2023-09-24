@@ -1,0 +1,839 @@
+{
+  "abstract" : [
+    {
+      "text" : "A server-side channel handler that receives HTTP requests and optionally performs a HTTP-upgrade.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Removes itself from the channel pipeline after the first inbound request on the connection, regardless of",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "whether the upgrade succeeded or not.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPServerUpgradeHandler"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:8NIOHTTP124HTTPServerUpgradeHandlerC",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "class"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "HTTPServerUpgradeHandler"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIOHTTP1"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "HTTPServerUpgradeHandler"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Class",
+    "symbolKind" : "class",
+    "title" : "HTTPServerUpgradeHandler"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "final"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "class"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "HTTPServerUpgradeHandler"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This handler behaves a bit differently from its Netty counterpart because it does not allow upgrade",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "on any request but the first on a connection. This is primarily to handle clients that pipeline: it’s",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "sufficiently difficult to ensure that the upgrade happens at a safe time while dealing with pipelined",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "requests that we choose to punt on it entirely and not allow it. As it happens this is mostly fine:",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the odds of someone needing to upgrade midway through the lifetime of a connection are very low.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelHandler",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelInboundHandler",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/RemovableChannelHandler",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPServerUpgradeHandler\/init(upgraders:httpEncoder:extraHTTPHandlers:upgradeCompletionHandler:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPServerUpgradeHandler\/channelRead(context:data:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPServerUpgradeHandler\/removeHandler(context:removalToken:)"
+      ],
+      "title" : "Instance Methods"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPServerUpgradeHandler\/InboundIn",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPServerUpgradeHandler\/InboundOut",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPServerUpgradeHandler\/OutboundOut"
+      ],
+      "title" : "Type Aliases"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPServerUpgradeHandler\/ChannelHandler-Implementations",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPServerUpgradeHandler\/ChannelInboundHandler-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/niohttp1\/httpserverupgradehandler"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelHandler": {
+  "abstract" : [
+    {
+      "text" : "Base protocol for handlers that handle I\/O events or intercept an I\/O operation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ChannelHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ChannelHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ChannelHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelhandler"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelInboundHandler": {
+  "abstract" : [
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " which handles inbound I\/O events for a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ChannelInboundHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelInboundHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ChannelInboundHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ChannelInboundHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelinboundhandler"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/RemovableChannelHandler": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "RemovableChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that can be dynamically removed from a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " whilst",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is operating normally.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "RemovableChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is required to remove itself from the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " (using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandlerContext.leavePipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ") as soon as possible.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "RemovableChannelHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/RemovableChannelHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "RemovableChannelHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "RemovableChannelHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/removablechannelhandler"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIOHTTP1",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/HTTPServerUpgradeHandler": {
+  "abstract" : [
+    {
+      "text" : "A server-side channel handler that receives HTTP requests and optionally performs a HTTP-upgrade.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Removes itself from the channel pipeline after the first inbound request on the connection, regardless of",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "whether the upgrade succeeded or not.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "HTTPServerUpgradeHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPServerUpgradeHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "HTTPServerUpgradeHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HTTPServerUpgradeHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/httpserverupgradehandler"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/HTTPServerUpgradeHandler/ChannelHandler-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPServerUpgradeHandler\/ChannelHandler-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "ChannelHandler Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/httpserverupgradehandler\/channelhandler-implementations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/HTTPServerUpgradeHandler/ChannelInboundHandler-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPServerUpgradeHandler\/ChannelInboundHandler-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "ChannelInboundHandler Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/httpserverupgradehandler\/channelinboundhandler-implementations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/HTTPServerUpgradeHandler/InboundIn": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "InboundIn"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPServerUpgradeHandler\/InboundIn",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "InboundIn"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HTTPServerUpgradeHandler.InboundIn",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/httpserverupgradehandler\/inboundin"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/HTTPServerUpgradeHandler/InboundOut": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "InboundOut"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPServerUpgradeHandler\/InboundOut",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "InboundOut"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HTTPServerUpgradeHandler.InboundOut",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/httpserverupgradehandler\/inboundout"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/HTTPServerUpgradeHandler/OutboundOut": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "OutboundOut"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPServerUpgradeHandler\/OutboundOut",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "OutboundOut"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HTTPServerUpgradeHandler.OutboundOut",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/httpserverupgradehandler\/outboundout"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/HTTPServerUpgradeHandler/channelRead(context:data:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "channelRead"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "context"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC",
+      "text" : "ChannelHandlerContext"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "data"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore6NIOAnyV",
+      "text" : "NIOAny"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPServerUpgradeHandler\/channelRead(context:data:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "channelRead(context:data:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/httpserverupgradehandler\/channelread(context:data:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/HTTPServerUpgradeHandler/init(upgraders:httpEncoder:extraHTTPHandlers:upgradeCompletionHandler:)": {
+  "abstract" : [
+    {
+      "text" : "Create a ",
+      "type" : "text"
+    },
+    {
+      "code" : "HTTPServerUpgradeHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "upgraders"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP126HTTPServerProtocolUpgraderP",
+      "text" : "HTTPServerProtocolUpgrader"
+    },
+    {
+      "kind" : "text",
+      "text" : "], "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "httpEncoder"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP119HTTPResponseEncoderC",
+      "text" : "HTTPResponseEncoder"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "extraHTTPHandlers"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore23RemovableChannelHandlerP",
+      "text" : "RemovableChannelHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : "], "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "upgradeCompletionHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC",
+      "text" : "ChannelHandlerContext"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPServerUpgradeHandler\/init(upgraders:httpEncoder:extraHTTPHandlers:upgradeCompletionHandler:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(upgraders:httpEncoder:extraHTTPHandlers:upgradeCompletionHandler:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/httpserverupgradehandler\/init(upgraders:httpencoder:extrahttphandlers:upgradecompletionhandler:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/HTTPServerUpgradeHandler/removeHandler(context:removalToken:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "removeHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "context"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC",
+      "text" : "ChannelHandlerContext"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "removalToken"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC",
+      "text" : "ChannelHandlerContext"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC12RemovalTokenV",
+      "text" : "RemovalToken"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPServerUpgradeHandler\/removeHandler(context:removalToken:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "removeHandler(context:removalToken:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/httpserverupgradehandler\/removehandler(context:removaltoken:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s8SendableP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

@@ -1,0 +1,361 @@
+{
+  "abstract" : [
+    {
+      "text" : "The masking key, if any.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/WebSocketFrame"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/WebSocketFrame\/maskKey"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:12NIOWebSocket03WebB5FrameV7maskKeyAA0cb7MaskingF0VSgvp",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "var"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "maskKey"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:12NIOWebSocket03WebB10MaskingKeyV",
+        "text" : "WebSocketMaskingKey"
+      },
+      {
+        "kind" : "text",
+        "text" : "?"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIOWebSocket"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Property",
+    "symbolKind" : "property",
+    "title" : "maskKey"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "var"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "maskKey"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/WebSocketMaskingKey",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:12NIOWebSocket03WebB10MaskingKeyV",
+              "text" : "WebSocketMaskingKey"
+            },
+            {
+              "kind" : "text",
+              "text" : "?"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A masking key is used to prevent specific byte sequences from appearing in the network",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "stream. This is primarily used by entities like browsers, but should be used any time it",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "is possible for a malicious user to control the data that appears in a websocket stream.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If this value is ",
+              "type" : "text"
+            },
+            {
+              "code" : "nil",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", and this frame was ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "received from",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " the network, the data in ",
+              "type" : "text"
+            },
+            {
+              "code" : "data",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "is not masked. If this value is ",
+              "type" : "text"
+            },
+            {
+              "code" : "nil",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", and this frame is being ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "sent to",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " the network, the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "data in ",
+              "type" : "text"
+            },
+            {
+              "code" : "data",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " will not be masked.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/niowebsocket\/websocketframe\/maskkey"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOWebSocket": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIOWebSocket",
+  "type" : "topic",
+  "url" : "\/documentation\/niowebsocket"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOWebSocket/WebSocketFrame": {
+  "abstract" : [
+    {
+      "text" : "A structured representation of a single WebSocket frame.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "WebSocketFrame"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/WebSocketFrame",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "WebSocketFrame"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "WebSocketFrame",
+  "type" : "topic",
+  "url" : "\/documentation\/niowebsocket\/websocketframe"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOWebSocket/WebSocketFrame/maskKey": {
+  "abstract" : [
+    {
+      "text" : "The masking key, if any.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "maskKey"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12NIOWebSocket03WebB10MaskingKeyV",
+      "text" : "WebSocketMaskingKey"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/WebSocketFrame\/maskKey",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "maskKey",
+  "type" : "topic",
+  "url" : "\/documentation\/niowebsocket\/websocketframe\/maskkey"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOWebSocket/WebSocketMaskingKey": {
+  "abstract" : [
+    {
+      "text" : "A single 4-byte websocket masking key.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "WebSocketMaskingKey"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/WebSocketMaskingKey",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "WebSocketMaskingKey"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "WebSocketMaskingKey",
+  "type" : "topic",
+  "url" : "\/documentation\/niowebsocket\/websocketmaskingkey"
+}
+}
+}

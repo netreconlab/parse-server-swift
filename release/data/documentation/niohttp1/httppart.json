@@ -1,0 +1,448 @@
+{
+  "abstract" : [
+    {
+      "text" : "The parts of a complete HTTP message, either request or response.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPPart"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:8NIOHTTP18HTTPPartO",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "enum"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "HTTPPart"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIOHTTP1"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "HTTPPart"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Enumeration",
+    "symbolKind" : "enum",
+    "title" : "HTTPPart"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "enum"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "HTTPPart"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
+            },
+            {
+              "kind" : "genericParameter",
+              "text" : "HeadT"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "genericParameter",
+              "text" : "BodyT"
+            },
+            {
+              "kind" : "text",
+              "text" : "> "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "where"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "HeadT"
+            },
+            {
+              "kind" : "text",
+              "text" : " : "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:SQ",
+              "text" : "Equatable"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "BodyT"
+            },
+            {
+              "kind" : "text",
+              "text" : " : "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:SQ",
+              "text" : "Equatable"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A HTTP message is made up of a request or status line with several headers,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "encoded by ",
+              "type" : "text"
+            },
+            {
+              "code" : ".head",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", zero or more body parts, and optionally some trailers. To",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "indicate that a complete HTTP message has been sent or received, we use ",
+              "type" : "text"
+            },
+            {
+              "code" : ".end",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ",",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "which may also contain any trailers that make up the message.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s23CustomStringConvertibleP",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/SQ",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPPart\/body(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPPart\/end(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPPart\/head(_:)"
+      ],
+      "title" : "Enumeration Cases"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPPart\/CustomStringConvertible-Implementations",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPPart\/Equatable-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/niohttp1\/httppart"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/SQ": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/SQ",
+  "title" : "Swift.Equatable",
+  "type" : "unresolvable"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIOHTTP1",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/HTTPPart": {
+  "abstract" : [
+    {
+      "text" : "The parts of a complete HTTP message, either request or response.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "HTTPPart"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPPart",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "HTTPPart"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HTTPPart",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/httppart"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/HTTPPart/CustomStringConvertible-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPPart\/CustomStringConvertible-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "CustomStringConvertible Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/httppart\/customstringconvertible-implementations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/HTTPPart/Equatable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPPart\/Equatable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Equatable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/httppart\/equatable-implementations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/HTTPPart/body(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "body"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP18HTTPPartO5BodyTq_mfp",
+      "text" : "BodyT"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPPart\/body(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "HTTPPart.body(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/httppart\/body(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/HTTPPart/end(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "end"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP111HTTPHeadersV",
+      "text" : "HTTPHeaders"
+    },
+    {
+      "kind" : "text",
+      "text" : "?)"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPPart\/end(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "HTTPPart.end(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/httppart\/end(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/HTTPPart/head(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "head"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP18HTTPPartO5HeadTxmfp",
+      "text" : "HeadT"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPPart\/head(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "HTTPPart.head(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/httppart\/head(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s23CustomStringConvertibleP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s23CustomStringConvertibleP",
+  "title" : "Swift.CustomStringConvertible",
+  "type" : "unresolvable"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s8SendableP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

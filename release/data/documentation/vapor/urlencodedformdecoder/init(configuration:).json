@@ -1,0 +1,347 @@
+{
+  "abstract" : [
+    {
+      "text" : "Create a new ",
+      "type" : "text"
+    },
+    {
+      "code" : "URLEncodedFormDecoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ". Can be configured by using the global ",
+      "type" : "text"
+    },
+    {
+      "code" : "ContentConfiguration",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " class",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URLEncodedFormDecoder"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URLEncodedFormDecoder\/init(configuration:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:5Vapor21URLEncodedFormDecoderV13configurationA2C13ConfigurationV_tcfc",
+    "fragments" : [
+      {
+        "kind" : "identifier",
+        "text" : "init"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "configuration"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:5Vapor21URLEncodedFormDecoderV13ConfigurationV",
+        "text" : "Configuration"
+      },
+      {
+        "kind" : "text",
+        "text" : ")"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Vapor"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Initializer",
+    "symbolKind" : "init",
+    "title" : "init(configuration:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "init"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "configuration"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URLEncodedFormDecoder\/Configuration",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:5Vapor21URLEncodedFormDecoderV13ConfigurationV",
+              "text" : "Configuration"
+            },
+            {
+              "kind" : "text",
+              "text" : " = .init())"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Defines how decoding is done see ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "URLEncodedFormCodingConfig",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " for more information",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "configuration"
+        }
+      ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "code" : [
+            "ContentConfiguration.global.use(urlDecoder: URLEncodedFormDecoder(bracketsAsArray: true, flagsAsBool: true, arraySeparator: nil))"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/vapor\/urlencodedformdecoder\/init(configuration:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Vapor",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/URLEncodedFormDecoder": {
+  "abstract" : [
+    {
+      "text" : "Decodes instances of ",
+      "type" : "text"
+    },
+    {
+      "code" : "Decodable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " types from ",
+      "type" : "text"
+    },
+    {
+      "code" : "application\/x-www-form-urlencoded",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "Data",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "URLEncodedFormDecoder"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URLEncodedFormDecoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "URLEncodedFormDecoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "URLEncodedFormDecoder",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/urlencodedformdecoder"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/URLEncodedFormDecoder/Configuration": {
+  "abstract" : [
+    {
+      "text" : "Used to capture URLForm Coding Configuration used for decoding",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Configuration"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URLEncodedFormDecoder\/Configuration",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Configuration"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "URLEncodedFormDecoder.Configuration",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/urlencodedformdecoder\/configuration"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/URLEncodedFormDecoder/init(configuration:)": {
+  "abstract" : [
+    {
+      "text" : "Create a new ",
+      "type" : "text"
+    },
+    {
+      "code" : "URLEncodedFormDecoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ". Can be configured by using the global ",
+      "type" : "text"
+    },
+    {
+      "code" : "ContentConfiguration",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " class",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "configuration"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Vapor21URLEncodedFormDecoderV13ConfigurationV",
+      "text" : "Configuration"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URLEncodedFormDecoder\/init(configuration:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(configuration:)",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/urlencodedformdecoder\/init(configuration:)"
+}
+}
+}

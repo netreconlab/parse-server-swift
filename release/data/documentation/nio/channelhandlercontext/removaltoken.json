@@ -1,0 +1,387 @@
+{
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "RemovalToken",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is handed to a ",
+      "type" : "text"
+    },
+    {
+      "code" : "RemovableChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " when its ",
+      "type" : "text"
+    },
+    {
+      "code" : "removeHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " function is invoked. A",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "RemovableChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is then required to remove itself from the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ". The removal process",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "is finalized by handing the ",
+      "type" : "text"
+    },
+    {
+      "code" : "RemovalToken",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " to the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandlerContext.leavePipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " function.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelHandlerContext"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelHandlerContext\/RemovalToken"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "NIOCore",
+    "externalID" : "s:7NIOCore21ChannelHandlerContextC12RemovalTokenV",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "struct"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "RemovalToken"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIO",
+        "relatedModules" : [
+          "NIOCore"
+        ]
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "RemovalToken"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Structure",
+    "symbolKind" : "struct",
+    "title" : "ChannelHandlerContext.RemovalToken"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "struct"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "RemovalToken"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/nio\/channelhandlercontext\/removaltoken"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIO",
+  "type" : "topic",
+  "url" : "\/documentation\/nio"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelHandlerContext": {
+  "abstract" : [
+    {
+      "text" : "Every ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " has – when added to a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " – a corresponding ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandlerContext",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " which is",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "the way ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s can interact with other ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s in the pipeline.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ChannelHandlerContext"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelHandlerContext",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ChannelHandlerContext"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ChannelHandlerContext",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelhandlercontext"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelHandlerContext/RemovalToken": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "RemovalToken",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is handed to a ",
+      "type" : "text"
+    },
+    {
+      "code" : "RemovableChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " when its ",
+      "type" : "text"
+    },
+    {
+      "code" : "removeHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " function is invoked. A",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "RemovableChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is then required to remove itself from the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ". The removal process",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "is finalized by handing the ",
+      "type" : "text"
+    },
+    {
+      "code" : "RemovalToken",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " to the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandlerContext.leavePipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " function.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "RemovalToken"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelHandlerContext\/RemovalToken",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "RemovalToken"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ChannelHandlerContext.RemovalToken",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelhandlercontext\/removaltoken"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s8SendableP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

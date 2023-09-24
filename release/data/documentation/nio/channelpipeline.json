@@ -1,0 +1,5470 @@
+{
+  "abstract" : [
+    {
+      "text" : "A list of ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s that handle or intercept inbound events and outbound operations of a",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ". ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " implements an advanced form of the Intercepting Filter pattern",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "to give a user full control over how an event is handled and how the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s in a pipeline",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "interact with each other.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:7NIOCore15ChannelPipelineC",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "class"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "ChannelPipeline"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIO"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "ChannelPipeline"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Class",
+    "symbolKind" : "class",
+    "title" : "ChannelPipeline"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "final"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "class"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "ChannelPipeline"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "Creation-of-a-pipeline",
+          "level" : 1,
+          "text" : "Creation of a pipeline",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Each ",
+              "type" : "text"
+            },
+            {
+              "code" : "Channel",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " has its own ",
+              "type" : "text"
+            },
+            {
+              "code" : "ChannelPipeline",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and it is created automatically when a new ",
+              "type" : "text"
+            },
+            {
+              "code" : "Channel",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is created.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "How-an-event-flows-in-a-pipeline",
+          "level" : 1,
+          "text" : "How an event flows in a pipeline",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The following diagram describes how I\/O events are typically processed by ",
+              "type" : "text"
+            },
+            {
+              "code" : "ChannelHandler",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "s in a ",
+              "type" : "text"
+            },
+            {
+              "code" : "ChannelPipeline",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "An I\/O event is handled by either a ",
+              "type" : "text"
+            },
+            {
+              "code" : "ChannelInboundHandler",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " or a ",
+              "type" : "text"
+            },
+            {
+              "code" : "ChannelOutboundHandler",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "and is forwarded to the next handler in the ",
+              "type" : "text"
+            },
+            {
+              "code" : "ChannelPipeline",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " by calling the event propagation methods defined in",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "ChannelHandlerContext",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", such as ",
+              "type" : "text"
+            },
+            {
+              "code" : "ChannelHandlerContext.fireChannelRead",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "ChannelHandlerContext.write",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "                                                   I\/O Request",
+            "                                                   via `Channel` or",
+            "                                                   `ChannelHandlerContext`",
+            "                                                     |",
+            " +---------------------------------------------------+---------------+",
+            " |                           ChannelPipeline         |               |",
+            " |                                TAIL              \\|\/              |",
+            " |    +---------------------+            +-----------+----------+    |",
+            " |    | Inbound Handler  N  |            | Outbound Handler  1  |    |",
+            " |    +----------+----------+            +-----------+----------+    |",
+            " |              \/|\\                                  |               |",
+            " |               |                                  \\|\/              |",
+            " |    +----------+----------+            +-----------+----------+    |",
+            " |    | Inbound Handler N-1 |            | Outbound Handler  2  |    |",
+            " |    +----------+----------+            +-----------+----------+    |",
+            " |              \/|\\                                  .               |",
+            " |               .                                   .               |",
+            " | ChannelHandlerContext.fireIN_EVT() ChannelHandlerContext.OUT_EVT()|",
+            " |        [ method call]                       [method call]         |",
+            " |               .                                   .               |",
+            " |               .                                  \\|\/              |",
+            " |    +----------+----------+            +-----------+----------+    |",
+            " |    | Inbound Handler  2  |            | Outbound Handler M-1 |    |",
+            " |    +----------+----------+            +-----------+----------+    |",
+            " |              \/|\\                                  |               |",
+            " |               |                                  \\|\/              |",
+            " |    +----------+----------+            +-----------+----------+    |",
+            " |    | Inbound Handler  1  |            | Outbound Handler  M  |    |",
+            " |    +----------+----------+            +-----------+----------+    |",
+            " |              \/|\\             HEAD                 |               |",
+            " +---------------+-----------------------------------+---------------+",
+            "                 |                                  \\|\/",
+            " +---------------+-----------------------------------+---------------+",
+            " |               |                                   |               |",
+            " |       [ Socket.read ]                    [ Socket.write ]         |",
+            " |                                                                   |",
+            " |  SwiftNIO Internal I\/O Threads (Transport Implementation)         |",
+            " +-------------------------------------------------------------------+"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "An inbound event is handled by the inbound handlers in the head-to-tail direction as shown on the left side of the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "diagram. An inbound handler usually handles the inbound data generated by the I\/O thread on the bottom of the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "diagram. The inbound data is often read from a remote peer via the actual input operation such as",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "Socket.read",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". If an inbound event goes beyond the tail inbound handler, it is discarded",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "silently, or logged if it needs your attention.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "An outbound event is handled by the outbound handlers in the tail-to-head direction as shown on the right side of the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "diagram. An outbound handler usually generates or transforms the outbound traffic such as write requests.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "If an outbound event goes beyond the head outbound handler, it is handled by an I\/O thread associated with the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "Channel",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". The I\/O thread often performs the actual output operation such as ",
+              "type" : "text"
+            },
+            {
+              "code" : "Socket.write",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For example, let us assume that we created the following pipeline:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "ChannelPipeline p = ...",
+            "let future = p.add(name: \"1\", handler: InboundHandlerA()).flatMap {",
+            "  p.add(name: \"2\", handler: InboundHandlerB())",
+            "}.flatMap {",
+            "  p.add(name: \"3\", handler: OutboundHandlerA())",
+            "}.flatMap {",
+            "  p.add(name: \"4\", handler: OutboundHandlerB())",
+            "}.flatMap {",
+            "  p.add(name: \"5\", handler: InboundOutboundHandlerX())",
+            "}",
+            "\/\/ Handle the future as well ...."
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "In the example above, a class whose name starts with ",
+              "type" : "text"
+            },
+            {
+              "code" : "Inbound",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is an inbound handler.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "A class whose name starts with ",
+              "type" : "text"
+            },
+            {
+              "code" : "Outbound",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is an outbound handler.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "In the given example configuration, the handler evaluation order is 1, 2, 3, 4, 5 when an event goes inbound.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "When an event goes outbound, the order is 5, 4, 3, 2, 1.  On top of this principle, ",
+              "type" : "text"
+            },
+            {
+              "code" : "ChannelPipeline",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " skips",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the evaluation of certain handlers to shorten the stack depth:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "3 and 4 don’t implement ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "ChannelInboundHandler",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", and therefore the actual evaluation order of an inbound event will be: 1, 2, and 5.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "1 and 2 don’t implement ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "ChannelOutboundHandler",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", and therefore the actual evaluation order of a outbound event will be: 5, 4, and 3.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "If 5 implements both ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "ChannelInboundHandler",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " and ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "ChannelOutboundHandler",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", the evaluation order of an inbound and a outbound event could be 125 and 543 respectively.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Handlers may choose not to propagate messages down the pipeline immediately.  For example a handler may need to wait",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "for additional data before sending a protocol event to the next handler in the pipeline.  Due to this you can’t assume that later handlers",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "in the pipeline will receive the same number of events as were sent, or that events of different types will arrive in the same order.",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "For example - a user event could overtake a data event if a handler is aggregating data events before propagating but immediately",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "propagating user events.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Forwarding-an-event-to-the-next-handler",
+          "level" : 1,
+          "text" : "Forwarding an event to the next handler",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "As you might noticed in the diagram above, a handler has to invoke the event propagation methods in",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "ChannelHandlerContext",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to forward an event to its next handler.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Those methods include:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Inbound event propagation methods defined in ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "ChannelInboundInvoker",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Outbound event propagation methods defined in ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "ChannelOutboundInvoker",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "anchor" : "Building-a-pipeline",
+          "level" : 1,
+          "text" : "Building a pipeline",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A user is supposed to have one or more ",
+              "type" : "text"
+            },
+            {
+              "code" : "ChannelHandler",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "s in a ",
+              "type" : "text"
+            },
+            {
+              "code" : "ChannelPipeline",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to receive I\/O events (e.g. read) and",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to request I\/O operations (e.g. write and close).  For example, a typical server will have the following handlers",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "in each channel’s pipeline, but your mileage may vary depending on the complexity and characteristics of the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "protocol and business logic:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Protocol Decoder - translates binary data (e.g. ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "ByteBuffer",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ") into a struct \/ class",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Protocol Encoder - translates a struct \/ class into binary data (e.g. ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "ByteBuffer",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ")",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Business Logic Handler - performs the actual business logic (e.g. database access)",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "anchor" : "Thread-safety",
+          "level" : 1,
+          "text" : "Thread safety",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A ",
+              "type" : "text"
+            },
+            {
+              "code" : "ChannelHandler",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " can be added or removed at any time because a ",
+              "type" : "text"
+            },
+            {
+              "code" : "ChannelPipeline",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is thread safe.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelInboundInvoker",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelInvoker",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelOutboundInvoker",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s28CustomDebugStringConvertibleP",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/SynchronousOperations"
+      ],
+      "title" : "Structures"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/init(channel:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/eventLoop",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/syncOperations"
+      ],
+      "title" : "Instance Properties"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/addHTTPClientHandlers(position:leftOverBytesStrategy:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/addHTTPClientHandlers(position:leftOverBytesStrategy:enableOutboundHeaderValidation:encoderConfiguration:withClientUpgrade:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/addHTTPClientHandlers(position:leftOverBytesStrategy:enableOutboundHeaderValidation:withClientUpgrade:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/addHTTPClientHandlers(position:leftOverBytesStrategy:withClientUpgrade:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/addHandler(_:name:position:)-352i2",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/addHandler(_:name:position:)-7wa0e",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/addHandlers(_:position:)-2fmmt",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/addHandlers(_:position:)-2s3d9",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/addHandlers(_:position:)-6qm2j",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/addHandlers(_:position:)-9cxep",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/bind(to:promise:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/close(mode:promise:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/configureHTTP2SecureUpgrade(h2PipelineConfigurator:http1PipelineConfigurator:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/configureHTTPServerPipeline(position:withPipeliningAssistance:withServerUpgrade:withErrorHandling:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/configureHTTPServerPipeline(position:withPipeliningAssistance:withServerUpgrade:withErrorHandling:withOutboundHeaderValidation:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/configureHTTPServerPipeline(position:withPipeliningAssistance:withServerUpgrade:withErrorHandling:withOutboundHeaderValidation:withEncoderConfiguration:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/connect(to:promise:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/context(handler:)-2u7u9",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/context(handler:)-9ow8y",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/context(handlerType:)-2zwp1",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/context(handlerType:)-7xmo",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/context(name:)-3lr76",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/context(name:)-5v7xj",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/fireChannelActive()",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/fireChannelInactive()",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/fireChannelRead(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/fireChannelReadComplete()",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/fireChannelRegistered()",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/fireChannelUnregistered()",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/fireChannelWritabilityChanged()",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/fireErrorCaught(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/fireUserInboundEventTriggered(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/flush()",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/handler(type:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/read()",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/register(promise:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/removeHandler(_:)-4alhd",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/removeHandler(_:)-8mrfs",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/removeHandler(_:promise:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/removeHandler(context:)-2dhfw",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/removeHandler(context:)-9c4qg",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/removeHandler(context:promise:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/removeHandler(name:)-1v5di",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/removeHandler(name:)-3n54r",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/removeHandler(name:promise:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/triggerUserOutboundEvent(_:promise:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/write(_:promise:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/writeAndFlush(_:promise:)"
+      ],
+      "title" : "Instance Methods"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/Position"
+      ],
+      "title" : "Enumerations"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/ChannelOutboundInvoker-Implementations",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/CustomDebugStringConvertible-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/nio\/channelpipeline"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIO",
+  "type" : "topic",
+  "url" : "\/documentation\/nio"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelInboundInvoker": {
+  "abstract" : [
+    {
+      "text" : "Fire inbound events related to a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " through the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " until its end is reached or it’s consumed by a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ChannelInboundInvoker"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelInboundInvoker",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ChannelInboundInvoker"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ChannelInboundInvoker",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelinboundinvoker"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelInvoker": {
+  "abstract" : [
+    {
+      "text" : "A protocol that signals that outbound and inbound events are triggered by this invoker.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ChannelInvoker"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelInvoker",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ChannelInvoker"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ChannelInvoker",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelinvoker"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelOutboundInvoker": {
+  "abstract" : [
+    {
+      "text" : "Allows users to invoke an “outbound” operation related to a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that will flow through the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " until",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "it will finally be executed by the the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelCore",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " implementation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ChannelOutboundInvoker"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelOutboundInvoker",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ChannelOutboundInvoker"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ChannelOutboundInvoker",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channeloutboundinvoker"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline": {
+  "abstract" : [
+    {
+      "text" : "A list of ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s that handle or intercept inbound events and outbound operations of a",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ". ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " implements an advanced form of the Intercepting Filter pattern",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "to give a user full control over how an event is handled and how the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s in a pipeline",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "interact with each other.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ChannelPipeline"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ChannelPipeline"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ChannelPipeline",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/ChannelOutboundInvoker-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/ChannelOutboundInvoker-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "ChannelOutboundInvoker Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/channeloutboundinvoker-implementations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/CustomDebugStringConvertible-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/CustomDebugStringConvertible-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "CustomDebugStringConvertible Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/customdebugstringconvertible-implementations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/Position": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "Position",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " within the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " used to insert handlers into the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Position"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/Position",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Position"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ChannelPipeline.Position",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/position"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/SynchronousOperations": {
+  "abstract" : [
+    {
+      "text" : "A view of a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " which may be used to invoke synchronous operations.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SynchronousOperations"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/SynchronousOperations",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SynchronousOperations"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ChannelPipeline.SynchronousOperations",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/synchronousoperations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/addHTTPClientHandlers(position:leftOverBytesStrategy:)": {
+  "abstract" : [
+    {
+      "text" : "Configure a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " for use as a HTTP client.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "addHTTPClientHandlers"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "position"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15ChannelPipelineC8PositionO",
+      "text" : "Position"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "leftOverBytesStrategy"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP126RemoveAfterUpgradeStrategyO",
+      "text" : "RemoveAfterUpgradeStrategy"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/addHTTPClientHandlers(position:leftOverBytesStrategy:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "addHTTPClientHandlers(position:leftOverBytesStrategy:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/addhttpclienthandlers(position:leftoverbytesstrategy:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/addHTTPClientHandlers(position:leftOverBytesStrategy:enableOutboundHeaderValidation:encoderConfiguration:withClientUpgrade:)": {
+  "abstract" : [
+    {
+      "text" : "Configure a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " for use as a HTTP client.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "addHTTPClientHandlers"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "position"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15ChannelPipelineC8PositionO",
+      "text" : "Position"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "leftOverBytesStrategy"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP126RemoveAfterUpgradeStrategyO",
+      "text" : "RemoveAfterUpgradeStrategy"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "enableOutboundHeaderValidation"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "encoderConfiguration"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP118HTTPRequestEncoderC",
+      "text" : "HTTPRequestEncoder"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP118HTTPRequestEncoderC13ConfigurationV",
+      "text" : "Configuration"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "withClientUpgrade"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP133NIOHTTPClientUpgradeConfigurationa",
+      "text" : "NIOHTTPClientUpgradeConfiguration"
+    },
+    {
+      "kind" : "text",
+      "text" : "?) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/addHTTPClientHandlers(position:leftOverBytesStrategy:enableOutboundHeaderValidation:encoderConfiguration:withClientUpgrade:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "addHTTPClientHandlers(position:leftOverBytesStrategy:enableOutboundHeaderValidation:encoderConfiguration:withClientUpgrade:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/addhttpclienthandlers(position:leftoverbytesstrategy:enableoutboundheadervalidation:encoderconfiguration:withclientupgrade:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/addHTTPClientHandlers(position:leftOverBytesStrategy:enableOutboundHeaderValidation:withClientUpgrade:)": {
+  "abstract" : [
+    {
+      "text" : "Configure a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " for use as a HTTP client.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "addHTTPClientHandlers"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "position"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15ChannelPipelineC8PositionO",
+      "text" : "Position"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "leftOverBytesStrategy"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP126RemoveAfterUpgradeStrategyO",
+      "text" : "RemoveAfterUpgradeStrategy"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "enableOutboundHeaderValidation"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "withClientUpgrade"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP133NIOHTTPClientUpgradeConfigurationa",
+      "text" : "NIOHTTPClientUpgradeConfiguration"
+    },
+    {
+      "kind" : "text",
+      "text" : "?) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/addHTTPClientHandlers(position:leftOverBytesStrategy:enableOutboundHeaderValidation:withClientUpgrade:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "addHTTPClientHandlers(position:leftOverBytesStrategy:enableOutboundHeaderValidation:withClientUpgrade:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/addhttpclienthandlers(position:leftoverbytesstrategy:enableoutboundheadervalidation:withclientupgrade:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/addHTTPClientHandlers(position:leftOverBytesStrategy:withClientUpgrade:)": {
+  "abstract" : [
+    {
+      "text" : "Configure a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " for use as a HTTP client with a client upgrader configuration.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "addHTTPClientHandlers"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "position"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15ChannelPipelineC8PositionO",
+      "text" : "Position"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "leftOverBytesStrategy"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP126RemoveAfterUpgradeStrategyO",
+      "text" : "RemoveAfterUpgradeStrategy"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "withClientUpgrade"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP133NIOHTTPClientUpgradeConfigurationa",
+      "text" : "NIOHTTPClientUpgradeConfiguration"
+    },
+    {
+      "kind" : "text",
+      "text" : "?) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/addHTTPClientHandlers(position:leftOverBytesStrategy:withClientUpgrade:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "addHTTPClientHandlers(position:leftOverBytesStrategy:withClientUpgrade:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/addhttpclienthandlers(position:leftoverbytesstrategy:withclientupgrade:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/addHandler(_:name:position:)-352i2": {
+  "abstract" : [
+    {
+      "text" : "Add a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " to the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "addHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore14ChannelHandlerP",
+      "text" : "ChannelHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "name"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "position"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15ChannelPipelineC",
+      "text" : "ChannelPipeline"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15ChannelPipelineC8PositionO",
+      "text" : "Position"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/addHandler(_:name:position:)-352i2",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "addHandler(_:name:position:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/addhandler(_:name:position:)-352i2"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/addHandler(_:name:position:)-7wa0e": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "addHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore14ChannelHandlerP",
+      "text" : "ChannelHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "name"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "position"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15ChannelPipelineC",
+      "text" : "ChannelPipeline"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15ChannelPipelineC8PositionO",
+      "text" : "Position"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/addHandler(_:name:position:)-7wa0e",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "addHandler(_:name:position:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/addhandler(_:name:position:)-7wa0e"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/addHandlers(_:position:)-2fmmt": {
+  "abstract" : [
+    {
+      "text" : "Adds the provided channel handlers to the pipeline in the order given, taking account",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "of the behaviour of ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler.add(first:)",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "addHandlers"
+    },
+    {
+      "kind" : "text",
+      "text" : "(["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore14ChannelHandlerP",
+      "text" : "ChannelHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : "], "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "position"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15ChannelPipelineC",
+      "text" : "ChannelPipeline"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15ChannelPipelineC8PositionO",
+      "text" : "Position"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/addHandlers(_:position:)-2fmmt",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "addHandlers(_:position:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/addhandlers(_:position:)-2fmmt"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/addHandlers(_:position:)-2s3d9": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "addHandlers"
+    },
+    {
+      "kind" : "text",
+      "text" : "(["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore14ChannelHandlerP",
+      "text" : "ChannelHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : "], "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "position"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15ChannelPipelineC",
+      "text" : "ChannelPipeline"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15ChannelPipelineC8PositionO",
+      "text" : "Position"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/addHandlers(_:position:)-2s3d9",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "addHandlers(_:position:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/addhandlers(_:position:)-2s3d9"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/addHandlers(_:position:)-6qm2j": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "addHandlers"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore14ChannelHandlerP",
+      "text" : "ChannelHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : "..., "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "position"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15ChannelPipelineC",
+      "text" : "ChannelPipeline"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15ChannelPipelineC8PositionO",
+      "text" : "Position"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/addHandlers(_:position:)-6qm2j",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "addHandlers(_:position:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/addhandlers(_:position:)-6qm2j"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/addHandlers(_:position:)-9cxep": {
+  "abstract" : [
+    {
+      "text" : "Adds the provided channel handlers to the pipeline in the order given, taking account",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "of the behaviour of ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler.add(first:)",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "addHandlers"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore14ChannelHandlerP",
+      "text" : "ChannelHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : "..., "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "position"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15ChannelPipelineC",
+      "text" : "ChannelPipeline"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15ChannelPipelineC8PositionO",
+      "text" : "Position"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/addHandlers(_:position:)-9cxep",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "addHandlers(_:position:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/addhandlers(_:position:)-9cxep"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/bind(to:promise:)": {
+  "abstract" : [
+    {
+      "text" : "Bind to a ",
+      "type" : "text"
+    },
+    {
+      "code" : "SocketAddress",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "bind"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "to"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore13SocketAddressO",
+      "text" : "SocketAddress"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "promise"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore16EventLoopPromiseV",
+      "text" : "EventLoopPromise"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">?)"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/bind(to:promise:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "bind(to:promise:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/bind(to:promise:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/close(mode:promise:)": {
+  "abstract" : [
+    {
+      "text" : "Close the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " and so the connection if one exists.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "close"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "mode"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore9CloseModeO",
+      "text" : "CloseMode"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "promise"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore16EventLoopPromiseV",
+      "text" : "EventLoopPromise"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">?)"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/close(mode:promise:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "close(mode:promise:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/close(mode:promise:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/configureHTTP2SecureUpgrade(h2PipelineConfigurator:http1PipelineConfigurator:)": {
+  "abstract" : [
+    {
+      "text" : "Configures a channel pipeline to perform a HTTP\/2 secure upgrade.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "configureHTTP2SecureUpgrade"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "h2PipelineConfigurator"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15ChannelPipelineC",
+      "text" : "ChannelPipeline"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "http1PipelineConfigurator"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15ChannelPipelineC",
+      "text" : "ChannelPipeline"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/configureHTTP2SecureUpgrade(h2PipelineConfigurator:http1PipelineConfigurator:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "configureHTTP2SecureUpgrade(h2PipelineConfigurator:http1PipelineConfigurator:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/configurehttp2secureupgrade(h2pipelineconfigurator:http1pipelineconfigurator:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/configureHTTPServerPipeline(position:withPipeliningAssistance:withServerUpgrade:withErrorHandling:)": {
+  "abstract" : [
+    {
+      "text" : "Configure a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " for use as a HTTP server.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "configureHTTPServerPipeline"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "position"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15ChannelPipelineC",
+      "text" : "ChannelPipeline"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15ChannelPipelineC8PositionO",
+      "text" : "Position"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "withPipeliningAssistance"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "withServerUpgrade"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP133NIOHTTPServerUpgradeConfigurationa",
+      "text" : "NIOHTTPServerUpgradeConfiguration"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "withErrorHandling"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/configureHTTPServerPipeline(position:withPipeliningAssistance:withServerUpgrade:withErrorHandling:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "configureHTTPServerPipeline(position:withPipeliningAssistance:withServerUpgrade:withErrorHandling:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/configurehttpserverpipeline(position:withpipeliningassistance:withserverupgrade:witherrorhandling:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/configureHTTPServerPipeline(position:withPipeliningAssistance:withServerUpgrade:withErrorHandling:withOutboundHeaderValidation:)": {
+  "abstract" : [
+    {
+      "text" : "Configure a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " for use as a HTTP server.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "configureHTTPServerPipeline"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "position"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15ChannelPipelineC",
+      "text" : "ChannelPipeline"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15ChannelPipelineC8PositionO",
+      "text" : "Position"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "withPipeliningAssistance"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "withServerUpgrade"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP133NIOHTTPServerUpgradeConfigurationa",
+      "text" : "NIOHTTPServerUpgradeConfiguration"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "withErrorHandling"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "withOutboundHeaderValidation"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/configureHTTPServerPipeline(position:withPipeliningAssistance:withServerUpgrade:withErrorHandling:withOutboundHeaderValidation:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "configureHTTPServerPipeline(position:withPipeliningAssistance:withServerUpgrade:withErrorHandling:withOutboundHeaderValidation:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/configurehttpserverpipeline(position:withpipeliningassistance:withserverupgrade:witherrorhandling:withoutboundheadervalidation:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/configureHTTPServerPipeline(position:withPipeliningAssistance:withServerUpgrade:withErrorHandling:withOutboundHeaderValidation:withEncoderConfiguration:)": {
+  "abstract" : [
+    {
+      "text" : "Configure a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " for use as a HTTP server.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "configureHTTPServerPipeline"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "position"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15ChannelPipelineC",
+      "text" : "ChannelPipeline"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15ChannelPipelineC8PositionO",
+      "text" : "Position"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "withPipeliningAssistance"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "withServerUpgrade"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP133NIOHTTPServerUpgradeConfigurationa",
+      "text" : "NIOHTTPServerUpgradeConfiguration"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "withErrorHandling"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "withOutboundHeaderValidation"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "withEncoderConfiguration"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP119HTTPResponseEncoderC",
+      "text" : "HTTPResponseEncoder"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP119HTTPResponseEncoderC13ConfigurationV",
+      "text" : "Configuration"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/configureHTTPServerPipeline(position:withPipeliningAssistance:withServerUpgrade:withErrorHandling:withOutboundHeaderValidation:withEncoderConfiguration:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "configureHTTPServerPipeline(position:withPipeliningAssistance:withServerUpgrade:withErrorHandling:withOutboundHeaderValidation:withEncoderConfiguration:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/configurehttpserverpipeline(position:withpipeliningassistance:withserverupgrade:witherrorhandling:withoutboundheadervalidation:withencoderconfiguration:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/connect(to:promise:)": {
+  "abstract" : [
+    {
+      "text" : "Connect to a ",
+      "type" : "text"
+    },
+    {
+      "code" : "SocketAddress",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "connect"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "to"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore13SocketAddressO",
+      "text" : "SocketAddress"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "promise"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore16EventLoopPromiseV",
+      "text" : "EventLoopPromise"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">?)"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/connect(to:promise:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "connect(to:promise:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/connect(to:promise:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/context(handler:)-2u7u9": {
+  "abstract" : [
+
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "context"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "handler"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore14ChannelHandlerP",
+      "text" : "ChannelHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC",
+      "text" : "ChannelHandlerContext"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/context(handler:)-2u7u9",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "context(handler:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/context(handler:)-2u7u9"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/context(handler:)-9ow8y": {
+  "abstract" : [
+    {
+      "text" : "Returns the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandlerContext",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that belongs to a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "context"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "handler"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore14ChannelHandlerP",
+      "text" : "ChannelHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC",
+      "text" : "ChannelHandlerContext"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/context(handler:)-9ow8y",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "context(handler:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/context(handler:)-9ow8y"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/context(handlerType:)-2zwp1": {
+  "abstract" : [
+
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "context"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Handler"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "handlerType"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Handler"
+    },
+    {
+      "kind" : "text",
+      "text" : ".Type) "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC",
+      "text" : "ChannelHandlerContext"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/context(handlerType:)-2zwp1",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "context(handlerType:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/context(handlertype:)-2zwp1"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/context(handlerType:)-7xmo": {
+  "abstract" : [
+    {
+      "text" : "Returns the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandlerContext",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that belongs to a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " of the given type.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "context"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Handler"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "handlerType"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Handler"
+    },
+    {
+      "kind" : "text",
+      "text" : ".Type) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC",
+      "text" : "ChannelHandlerContext"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/context(handlerType:)-7xmo",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "context(handlerType:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/context(handlertype:)-7xmo"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/context(name:)-3lr76": {
+  "abstract" : [
+
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "context"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "name"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC",
+      "text" : "ChannelHandlerContext"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/context(name:)-3lr76",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "context(name:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/context(name:)-3lr76"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/context(name:)-5v7xj": {
+  "abstract" : [
+    {
+      "text" : "Returns the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandlerContext",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that belongs to a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "context"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "name"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC",
+      "text" : "ChannelHandlerContext"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/context(name:)-5v7xj",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "context(name:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/context(name:)-5v7xj"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/eventLoop": {
+  "abstract" : [
+    {
+      "text" : "The ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that is used by the underlying ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "eventLoop"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore9EventLoopP",
+      "text" : "EventLoop"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/eventLoop",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "eventLoop",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/eventloop"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/fireChannelActive()": {
+  "abstract" : [
+    {
+      "text" : "Called once a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " becomes active.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "fireChannelActive"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/fireChannelActive()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "fireChannelActive()",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/firechannelactive()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/fireChannelInactive()": {
+  "abstract" : [
+    {
+      "text" : "Called once a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " becomes inactive.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "fireChannelInactive"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/fireChannelInactive()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "fireChannelInactive()",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/firechannelinactive()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/fireChannelRead(_:)": {
+  "abstract" : [
+    {
+      "text" : "Called once there is some data read for a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that needs processing.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "fireChannelRead"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore6NIOAnyV",
+      "text" : "NIOAny"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/fireChannelRead(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "fireChannelRead(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/firechannelread(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/fireChannelReadComplete()": {
+  "abstract" : [
+    {
+      "text" : "Called once there is no more data to read immediately on a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ". Any new data received will be handled later.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "fireChannelReadComplete"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/fireChannelReadComplete()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "fireChannelReadComplete()",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/firechannelreadcomplete()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/fireChannelRegistered()": {
+  "abstract" : [
+    {
+      "text" : "Called once a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " was registered to its ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " and so IO will be processed.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "fireChannelRegistered"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/fireChannelRegistered()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "fireChannelRegistered()",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/firechannelregistered()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/fireChannelUnregistered()": {
+  "abstract" : [
+    {
+      "text" : "Called once a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " was unregistered from its ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " which means no IO will be handled for a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " anymore.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "fireChannelUnregistered"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/fireChannelUnregistered()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "fireChannelUnregistered()",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/firechannelunregistered()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/fireChannelWritabilityChanged()": {
+  "abstract" : [
+    {
+      "text" : "Called when a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "’s writable state changes.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "fireChannelWritabilityChanged"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/fireChannelWritabilityChanged()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "fireChannelWritabilityChanged()",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/firechannelwritabilitychanged()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/fireErrorCaught(_:)": {
+  "abstract" : [
+    {
+      "text" : "Called when an inbound operation ",
+      "type" : "text"
+    },
+    {
+      "code" : "Error",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " was caught.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "fireErrorCaught"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s5ErrorP",
+      "text" : "Error"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/fireErrorCaught(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "fireErrorCaught(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/fireerrorcaught(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/fireUserInboundEventTriggered(_:)": {
+  "abstract" : [
+    {
+      "text" : "Trigger a custom user inbound event which will flow through the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "fireUserInboundEventTriggered"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "keyword",
+      "text" : "Any"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/fireUserInboundEventTriggered(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "fireUserInboundEventTriggered(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/fireuserinboundeventtriggered(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/flush()": {
+  "abstract" : [
+    {
+      "text" : "Flush data that was previously written via ",
+      "type" : "text"
+    },
+    {
+      "code" : "write",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " to the remote peer.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "flush"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/flush()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "flush()",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/flush()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/handler(type:)": {
+  "abstract" : [
+    {
+      "text" : "Returns the first ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " of the given type.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "handler"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Handler"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "type"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Handler"
+    },
+    {
+      "kind" : "text",
+      "text" : ".Type) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Handler"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/handler(type:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "handler(type:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/handler(type:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/init(channel:)": {
+  "abstract" : [
+    {
+      "text" : "Create ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " for a given ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ". This method should never be called by the end-user",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "directly: it is only intended for use with custom ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " implementations. Users should always use",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "channel.pipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " to access the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " for a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "channel"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore7ChannelP",
+      "text" : "Channel"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/init(channel:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(channel:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/init(channel:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/read()": {
+  "abstract" : [
+    {
+      "text" : "Signal that we want to read from the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " once there is data ready.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "read"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/read()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "read()",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/read()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/register(promise:)": {
+  "abstract" : [
+    {
+      "text" : "Register on an ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " and so have all its IO handled.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "register"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "promise"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore16EventLoopPromiseV",
+      "text" : "EventLoopPromise"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">?)"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/register(promise:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "register(promise:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/register(promise:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/removeHandler(_:)-4alhd": {
+  "abstract" : [
+    {
+      "text" : "Remove a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " from the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "removeHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore23RemovableChannelHandlerP",
+      "text" : "RemovableChannelHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/removeHandler(_:)-4alhd",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "removeHandler(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/removehandler(_:)-4alhd"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/removeHandler(_:)-8mrfs": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "removeHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore23RemovableChannelHandlerP",
+      "text" : "RemovableChannelHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/removeHandler(_:)-8mrfs",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "removeHandler(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/removehandler(_:)-8mrfs"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/removeHandler(_:promise:)": {
+  "abstract" : [
+    {
+      "text" : "Remove a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " from the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "removeHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore23RemovableChannelHandlerP",
+      "text" : "RemovableChannelHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "promise"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore16EventLoopPromiseV",
+      "text" : "EventLoopPromise"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">?)"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/removeHandler(_:promise:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "removeHandler(_:promise:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/removehandler(_:promise:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/removeHandler(context:)-2dhfw": {
+  "abstract" : [
+    {
+      "text" : "Remove a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " from the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "removeHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "context"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC",
+      "text" : "ChannelHandlerContext"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/removeHandler(context:)-2dhfw",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "removeHandler(context:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/removehandler(context:)-2dhfw"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/removeHandler(context:)-9c4qg": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "removeHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "context"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC",
+      "text" : "ChannelHandlerContext"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/removeHandler(context:)-9c4qg",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "removeHandler(context:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/removehandler(context:)-9c4qg"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/removeHandler(context:promise:)": {
+  "abstract" : [
+    {
+      "text" : "Remove a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " from the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "removeHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "context"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC",
+      "text" : "ChannelHandlerContext"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "promise"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore16EventLoopPromiseV",
+      "text" : "EventLoopPromise"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">?)"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/removeHandler(context:promise:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "removeHandler(context:promise:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/removehandler(context:promise:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/removeHandler(name:)-1v5di": {
+  "abstract" : [
+    {
+      "text" : "Remove a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " from the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "removeHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "name"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/removeHandler(name:)-1v5di",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "removeHandler(name:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/removehandler(name:)-1v5di"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/removeHandler(name:)-3n54r": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "removeHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "name"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/removeHandler(name:)-3n54r",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "removeHandler(name:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/removehandler(name:)-3n54r"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/removeHandler(name:promise:)": {
+  "abstract" : [
+    {
+      "text" : "Remove a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " from the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "removeHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "name"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "promise"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore16EventLoopPromiseV",
+      "text" : "EventLoopPromise"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">?)"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/removeHandler(name:promise:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "removeHandler(name:promise:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/removehandler(name:promise:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/syncOperations": {
+  "abstract" : [
+    {
+      "text" : "Returns a view of operations which can be performed synchronously on this pipeline. All",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "operations ",
+      "type" : "text"
+    },
+    {
+      "inlineContent" : [
+        {
+          "text" : "must",
+          "type" : "text"
+        }
+      ],
+      "type" : "strong"
+    },
+    {
+      "text" : " be called on the event loop.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "syncOperations"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15ChannelPipelineC",
+      "text" : "ChannelPipeline"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15ChannelPipelineC21SynchronousOperationsV",
+      "text" : "SynchronousOperations"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/syncOperations",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "syncOperations",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/syncoperations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/triggerUserOutboundEvent(_:promise:)": {
+  "abstract" : [
+    {
+      "text" : "Trigger a custom user outbound event which will flow through the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "triggerUserOutboundEvent"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "keyword",
+      "text" : "Any"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "promise"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore16EventLoopPromiseV",
+      "text" : "EventLoopPromise"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">?)"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/triggerUserOutboundEvent(_:promise:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "triggerUserOutboundEvent(_:promise:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/triggeruseroutboundevent(_:promise:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/write(_:promise:)": {
+  "abstract" : [
+    {
+      "text" : "Write data to the remote peer.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "write"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore6NIOAnyV",
+      "text" : "NIOAny"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "promise"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore16EventLoopPromiseV",
+      "text" : "EventLoopPromise"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">?)"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/write(_:promise:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "write(_:promise:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/write(_:promise:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelPipeline/writeAndFlush(_:promise:)": {
+  "abstract" : [
+    {
+      "text" : "Shortcut for calling ",
+      "type" : "text"
+    },
+    {
+      "code" : "write",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " and ",
+      "type" : "text"
+    },
+    {
+      "code" : "flush",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "writeAndFlush"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore6NIOAnyV",
+      "text" : "NIOAny"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "promise"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore16EventLoopPromiseV",
+      "text" : "EventLoopPromise"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">?)"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelPipeline\/writeAndFlush(_:promise:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "writeAndFlush(_:promise:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelpipeline\/writeandflush(_:promise:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s28CustomDebugStringConvertibleP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s28CustomDebugStringConvertibleP",
+  "title" : "Swift.CustomDebugStringConvertible",
+  "type" : "unresolvable"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s8SendableP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

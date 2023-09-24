@@ -1,0 +1,682 @@
+{
+  "abstract" : [
+    {
+      "text" : "Reads the dotenv files relevant to the environment and loads them into the process.",
+      "type" : "text"
+    }
+  ],
+  "deprecationSummary" : [
+    {
+      "inlineContent" : [
+        {
+          "text" : "use `load(for:on:fileio:logger)`",
+          "type" : "text"
+        }
+      ],
+      "type" : "paragraph"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/DotEnvFile"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/DotEnvFile\/load(for:on:logger:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "Vapor",
+    "externalID" : "s:5Vapor10DotEnvFileV4load3for2on6loggeryAA11EnvironmentV_AA11ApplicationC22EventLoopGroupProviderO7Logging6LoggerVtFZ",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "static"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "load"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "for"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:5Vapor11EnvironmentV",
+        "text" : "Environment"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "on"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:5Vapor11ApplicationC",
+        "text" : "Application"
+      },
+      {
+        "kind" : "text",
+        "text" : "."
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:5Vapor11ApplicationC22EventLoopGroupProviderO",
+        "text" : "EventLoopGroupProvider"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "logger"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7Logging6LoggerV",
+        "text" : "Logger"
+      },
+      {
+        "kind" : "text",
+        "text" : ")"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Vapor"
+      }
+    ],
+    "platforms" : [
+
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Type Method",
+    "symbolKind" : "method",
+    "title" : "load(for:on:logger:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "static"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "load"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "for"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "environment"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/Environment",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:5Vapor11EnvironmentV",
+              "text" : "Environment"
+            },
+            {
+              "kind" : "text",
+              "text" : " = .development, "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "on"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "eventLoopGroupProvider"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/Application",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:5Vapor11ApplicationC",
+              "text" : "Application"
+            },
+            {
+              "kind" : "text",
+              "text" : "."
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/Application\/EventLoopGroupProvider-swift.enum",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:5Vapor11ApplicationC22EventLoopGroupProviderO",
+              "text" : "EventLoopGroupProvider"
+            },
+            {
+              "kind" : "text",
+              "text" : " = .createNew, "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "logger"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Logging6LoggerV",
+              "text" : "Logger"
+            },
+            {
+              "kind" : "text",
+              "text" : " = Logger(label: \"dot-env-loggger\"))"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "current environment, selects which .env file to use.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "environment"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Either provides an EventLoopGroup or tells the function to create a new one.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "eventLoopGroupProvider"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Optionally provide an existing logger.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "logger"
+        }
+      ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "code" : [
+            "let environment: Environment",
+            "let elgp: EventLoopGroupProvider",
+            "let logger: Logger",
+            "try DotEnvFile.load(for: .development, on: elgp, logger: logger)",
+            "print(Environment.process.FOO) \/\/ BAR"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/vapor\/dotenvfile\/load(for:on:logger:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/Logger": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "Logger",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is the central type in ",
+      "type" : "text"
+    },
+    {
+      "code" : "SwiftLog",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ". Its central function is to emit log messages using one of the methods",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "corresponding to a log level.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Logger"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Logger"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Logger",
+  "type" : "topic",
+  "url" : "\/documentation\/logging\/logger"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Vapor",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/Application": {
+  "abstract" : [
+    {
+      "text" : "Core type representing a Vapor application.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Application"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/Application",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Application"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Application",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/application"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/Application/EventLoopGroupProvider-swift.enum": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "EventLoopGroupProvider"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/Application\/EventLoopGroupProvider-swift.enum",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "EventLoopGroupProvider"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Application.EventLoopGroupProvider",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/application\/eventloopgroupprovider-swift.enum"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/DotEnvFile": {
+  "abstract" : [
+    {
+      "text" : "Reads dotenv (",
+      "type" : "text"
+    },
+    {
+      "code" : ".env",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ") files and loads them into the current process.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "DotEnvFile"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/DotEnvFile",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "DotEnvFile"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "DotEnvFile",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/dotenvfile"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/DotEnvFile/load(for:on:logger:)": {
+  "abstract" : [
+    {
+      "text" : "Reads the dotenv files relevant to the environment and loads them into the process.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "load"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "for"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Vapor11EnvironmentV",
+      "text" : "Environment"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "on"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Vapor11ApplicationC",
+      "text" : "Application"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Vapor11ApplicationC22EventLoopGroupProviderO",
+      "text" : "EventLoopGroupProvider"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "logger"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Logging6LoggerV",
+      "text" : "Logger"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/DotEnvFile\/load(for:on:logger:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "load(for:on:logger:)",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/dotenvfile\/load(for:on:logger:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/Environment": {
+  "abstract" : [
+    {
+      "text" : "The environment the application is running in, i.e., production, dev, etc. All ",
+      "type" : "text"
+    },
+    {
+      "code" : "Container",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s will have",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "an ",
+      "type" : "text"
+    },
+    {
+      "code" : "Environment",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that can be used to dynamically register and configure services.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Environment"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/Environment",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Environment"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Environment",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/environment"
+}
+}
+}

@@ -1,0 +1,283 @@
+{
+  "abstract" : [
+    {
+      "text" : "Pops a previous ephemeral console state. All text outputted to the console immidiately after the last call",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "to ",
+      "type" : "text"
+    },
+    {
+      "code" : "pushEphemeral()",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " will be cleared.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit\/Terminal",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit\/Terminal\/Console-Implementations"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit\/Terminal\/popEphemeral()"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "ConsoleKit",
+    "externalID" : "s:10ConsoleKit0A0PAAE12popEphemeralyyF::SYNTHESIZED::s:10ConsoleKit8TerminalC",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "popEphemeral"
+      },
+      {
+        "kind" : "text",
+        "text" : "()"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "ConsoleKit"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "popEphemeral()"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "popEphemeral"
+            },
+            {
+              "kind" : "text",
+              "text" : "()"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This method can be called once for each call to ",
+              "type" : "text"
+            },
+            {
+              "code" : "pushEphemeral()",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "console.print(\"a\")",
+            "console.pushEphemeral()",
+            "console.print(\"b\")",
+            "console.print(\"c\")",
+            "console.pushEphemeral()",
+            "console.print(\"d\")",
+            "console.print(\"e\")",
+            "console.print(\"f\")",
+            "console.popEphemeral() \/\/ removes \"d\", \"e\", and \"f\" lines",
+            "console.print(\"g\")",
+            "console.popEphemeral() \/\/ removes \"b\", \"c\", and \"g\" lines",
+            "\/\/ just \"a\" has been printed now"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/consolekit\/terminal\/popephemeral()"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ConsoleKit": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "ConsoleKit",
+  "type" : "topic",
+  "url" : "\/documentation\/consolekit"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ConsoleKit/Terminal": {
+  "abstract" : [
+    {
+      "text" : "Generic console that uses a mixture of Swift standard",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "library and Foundation code to fulfill protocol requirements.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Terminal"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit\/Terminal",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Terminal"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Terminal",
+  "type" : "topic",
+  "url" : "\/documentation\/consolekit\/terminal"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ConsoleKit/Terminal/Console-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit\/Terminal\/Console-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Console Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/consolekit\/terminal\/console-implementations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ConsoleKit/Terminal/popEphemeral()": {
+  "abstract" : [
+    {
+      "text" : "Pops a previous ephemeral console state. All text outputted to the console immidiately after the last call",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "to ",
+      "type" : "text"
+    },
+    {
+      "code" : "pushEphemeral()",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " will be cleared.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "popEphemeral"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit\/Terminal\/popEphemeral()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "popEphemeral()",
+  "type" : "topic",
+  "url" : "\/documentation\/consolekit\/terminal\/popephemeral()"
+}
+}
+}

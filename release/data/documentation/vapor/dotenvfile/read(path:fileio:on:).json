@@ -1,0 +1,638 @@
+{
+  "abstract" : [
+    {
+      "text" : "Reads a dotenv file from the supplied path.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/DotEnvFile"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/DotEnvFile\/read(path:fileio:on:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:5Vapor10DotEnvFileV4read4path6fileio2on7NIOCore15EventLoopFutureCyACGSS_8NIOPosix011NonBlockingD2IOVAH0jK0_ptFZ",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "static"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "read"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "path"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:SS",
+        "text" : "String"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "fileio"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:8NIOPosix17NonBlockingFileIOV",
+        "text" : "NonBlockingFileIO"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "on"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7NIOCore9EventLoopP",
+        "text" : "EventLoop"
+      },
+      {
+        "kind" : "text",
+        "text" : ") -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+        "text" : "EventLoopFuture"
+      },
+      {
+        "kind" : "text",
+        "text" : "<"
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:5Vapor10DotEnvFileV",
+        "text" : "DotEnvFile"
+      },
+      {
+        "kind" : "text",
+        "text" : ">"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Vapor"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Type Method",
+    "symbolKind" : "method",
+    "title" : "read(path:fileio:on:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "static"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "read"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "path"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:SS",
+              "text" : "String"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "fileio"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/NonBlockingFileIO",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:8NIOPosix17NonBlockingFileIOV",
+              "text" : "NonBlockingFileIO"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "on"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "eventLoop"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/EventLoop",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7NIOCore9EventLoopP",
+              "text" : "EventLoop"
+            },
+            {
+              "kind" : "text",
+              "text" : ") -> "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/EventLoopFuture",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+              "text" : "EventLoopFuture"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/DotEnvFile",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:5Vapor10DotEnvFileV",
+              "text" : "DotEnvFile"
+            },
+            {
+              "kind" : "text",
+              "text" : ">"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Absolute or relative path of the dotenv file.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "path"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "File loader.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "fileio"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Eventloop to perform async work on.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "eventLoop"
+        }
+      ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "code" : [
+            "let fileio: NonBlockingFileIO",
+            "let elg: EventLoopGroup",
+            "let file = try DotEnvFile.read(path: \".env\", fileio: fileio, on: elg.next()).wait()",
+            "for line in file.lines {",
+            "    print(\"\\(line.key)=\\(line.value)\")",
+            "}",
+            "file.load(overwrite: true) \/\/ loads all lines into the process",
+            "print(Environment.process.FOO) \/\/ BAR"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Use ",
+              "type" : "text"
+            },
+            {
+              "code" : "DotEnvFile.load",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to read and load with one method.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/vapor\/dotenvfile\/read(path:fileio:on:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/EventLoop": {
+  "abstract" : [
+    {
+      "text" : "An EventLoop processes IO \/ tasks in an endless loop for ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s until it’s closed.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "EventLoop"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/EventLoop",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "EventLoop"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "EventLoop",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/eventloop"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/EventLoopFuture": {
+  "abstract" : [
+    {
+      "text" : "Holder for a result that will be provided later.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "EventLoopFuture"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/EventLoopFuture",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "EventLoopFuture"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "EventLoopFuture",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/eventloopfuture"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/NonBlockingFileIO": {
+  "abstract" : [
+    {
+      "code" : "NonBlockingFileIO",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is a helper that allows you to read files without blocking the calling thread.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NonBlockingFileIO"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/NonBlockingFileIO",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NonBlockingFileIO"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NonBlockingFileIO",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/nonblockingfileio"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Vapor",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/DotEnvFile": {
+  "abstract" : [
+    {
+      "text" : "Reads dotenv (",
+      "type" : "text"
+    },
+    {
+      "code" : ".env",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ") files and loads them into the current process.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "DotEnvFile"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/DotEnvFile",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "DotEnvFile"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "DotEnvFile",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/dotenvfile"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/DotEnvFile/read(path:fileio:on:)": {
+  "abstract" : [
+    {
+      "text" : "Reads a dotenv file from the supplied path.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "read"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "path"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "fileio"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOPosix17NonBlockingFileIOV",
+      "text" : "NonBlockingFileIO"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "on"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore9EventLoopP",
+      "text" : "EventLoop"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Vapor10DotEnvFileV",
+      "text" : "DotEnvFile"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/DotEnvFile\/read(path:fileio:on:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "read(path:fileio:on:)",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/dotenvfile\/read(path:fileio:on:)"
+}
+}
+}

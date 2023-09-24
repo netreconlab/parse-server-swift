@@ -1,0 +1,418 @@
+{
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "ByteToMessageDecoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " used to decode HTTP\/1.x responses. See the documentation",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "on ",
+      "type" : "text"
+    },
+    {
+      "code" : "HTTPDecoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " for more.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPResponseDecoder"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:8NIOHTTP119HTTPResponseDecodera",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "typealias"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "HTTPResponseDecoder"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIOHTTP1"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "HTTPResponseDecoder"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Type Alias",
+    "symbolKind" : "typealias",
+    "title" : "HTTPResponseDecoder"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "typealias"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "HTTPResponseDecoder"
+            },
+            {
+              "kind" : "text",
+              "text" : " = "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPDecoder",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:8NIOHTTP111HTTPDecoderC",
+              "text" : "HTTPDecoder"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPClientResponsePart",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:8NIOHTTP122HTTPClientResponseParta",
+              "text" : "HTTPClientResponsePart"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPClientRequestPart",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:8NIOHTTP121HTTPClientRequestParta",
+              "text" : "HTTPClientRequestPart"
+            },
+            {
+              "kind" : "text",
+              "text" : ">"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "code" : "HTTPResponseDecoder",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " must be placed later in the channel pipeline than the ",
+              "type" : "text"
+            },
+            {
+              "code" : "HTTPRequestEncoder",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ",",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "as it needs to see the outbound messages in order to keep track of what the HTTP request methods",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "were for accurate decoding.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Rather than set this up manually, consider using ",
+              "type" : "text"
+            },
+            {
+              "code" : "ChannelPipeline.addHTTPClientHandlers",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/niohttp1\/httpresponsedecoder"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIOHTTP1",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/HTTPClientRequestPart": {
+  "abstract" : [
+    {
+      "text" : "The components of a HTTP request from the view of a HTTP client.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "HTTPClientRequestPart"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPClientRequestPart",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "HTTPClientRequestPart"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HTTPClientRequestPart",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/httpclientrequestpart"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/HTTPClientResponsePart": {
+  "abstract" : [
+    {
+      "text" : "The components of a HTTP response from the view of a HTTP client.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "HTTPClientResponsePart"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPClientResponsePart",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "HTTPClientResponsePart"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HTTPClientResponsePart",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/httpclientresponsepart"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/HTTPDecoder": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelInboundHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that parses HTTP\/1-style messages, converting them from",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "unstructured bytes to a sequence of HTTP messages.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "HTTPDecoder"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPDecoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "HTTPDecoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HTTPDecoder",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/httpdecoder"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/HTTPResponseDecoder": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "ByteToMessageDecoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " used to decode HTTP\/1.x responses. See the documentation",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "on ",
+      "type" : "text"
+    },
+    {
+      "code" : "HTTPDecoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " for more.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "HTTPResponseDecoder"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPResponseDecoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "HTTPResponseDecoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HTTPResponseDecoder",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/httpresponsedecoder"
+}
+}
+}

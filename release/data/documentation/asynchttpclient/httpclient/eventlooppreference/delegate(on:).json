@@ -1,0 +1,433 @@
+{
+  "abstract" : [
+    {
+      "text" : "The delegate will be run on the specified EventLoop (and the Channel if possible).",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient\/HTTPClient",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient\/HTTPClient\/EventLoopPreference"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient\/HTTPClient\/EventLoopPreference\/delegate(on:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:15AsyncHTTPClient0B0C19EventLoopPreferenceV8delegate2onAE7NIOCore0cD0_p_tFZ",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "static"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "delegate"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "on"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7NIOCore9EventLoopP",
+        "text" : "EventLoop"
+      },
+      {
+        "kind" : "text",
+        "text" : ") -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:15AsyncHTTPClient0B0C19EventLoopPreferenceV",
+        "text" : "EventLoopPreference"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "AsyncHTTPClient"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Type Method",
+    "symbolKind" : "method",
+    "title" : "delegate(on:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "static"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "delegate"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "on"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "eventLoop"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/EventLoop",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7NIOCore9EventLoopP",
+              "text" : "EventLoop"
+            },
+            {
+              "kind" : "text",
+              "text" : ") -> "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient\/HTTPClient\/EventLoopPreference",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:15AsyncHTTPClient0B0C19EventLoopPreferenceV",
+              "text" : "EventLoopPreference"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This will call the configured delegate on ",
+              "type" : "text"
+            },
+            {
+              "code" : "eventLoop",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and will try to use a ",
+              "type" : "text"
+            },
+            {
+              "code" : "Channel",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " on the same",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "EventLoop",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " but will not establish a new network connection just to satisfy the ",
+              "type" : "text"
+            },
+            {
+              "code" : "EventLoop",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " preference if",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "another existing connection on a different ",
+              "type" : "text"
+            },
+            {
+              "code" : "EventLoop",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is readily available from a connection pool.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/asynchttpclient\/httpclient\/eventlooppreference\/delegate(on:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/AsyncHTTPClient": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "AsyncHTTPClient",
+  "type" : "topic",
+  "url" : "\/documentation\/asynchttpclient"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/AsyncHTTPClient/HTTPClient": {
+  "abstract" : [
+    {
+      "text" : "HTTPClient class provides API for request execution.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "HTTPClient"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient\/HTTPClient",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "HTTPClient"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HTTPClient",
+  "type" : "topic",
+  "url" : "\/documentation\/asynchttpclient\/httpclient"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/AsyncHTTPClient/HTTPClient/EventLoopPreference": {
+  "abstract" : [
+    {
+      "text" : "Specifies how the library will treat the event loop passed by the user.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "EventLoopPreference"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient\/HTTPClient\/EventLoopPreference",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "EventLoopPreference"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HTTPClient.EventLoopPreference",
+  "type" : "topic",
+  "url" : "\/documentation\/asynchttpclient\/httpclient\/eventlooppreference"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/AsyncHTTPClient/HTTPClient/EventLoopPreference/delegate(on:)": {
+  "abstract" : [
+    {
+      "text" : "The delegate will be run on the specified EventLoop (and the Channel if possible).",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "delegate"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "on"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore9EventLoopP",
+      "text" : "EventLoop"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:15AsyncHTTPClient0B0C19EventLoopPreferenceV",
+      "text" : "EventLoopPreference"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient\/HTTPClient\/EventLoopPreference\/delegate(on:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "delegate(on:)",
+  "type" : "topic",
+  "url" : "\/documentation\/asynchttpclient\/httpclient\/eventlooppreference\/delegate(on:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/EventLoop": {
+  "abstract" : [
+    {
+      "text" : "An EventLoop processes IO \/ tasks in an endless loop for ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s until it’s closed.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "EventLoop"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/EventLoop",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "EventLoop"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "EventLoop",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/eventloop"
+}
+}
+}

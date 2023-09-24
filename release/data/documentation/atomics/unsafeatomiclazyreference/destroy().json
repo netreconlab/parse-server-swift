@@ -1,0 +1,339 @@
+{
+  "abstract" : [
+    {
+      "text" : "Disposes of the current value of the storage location corresponding to",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "this unsafe atomic lazy reference, then deinitializes and deallocates the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "storage.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/UnsafeAtomicLazyReference"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/UnsafeAtomicLazyReference\/destroy()"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "Atomics",
+    "externalID" : "s:7Atomics25UnsafeAtomicLazyReferenceV7destroyxSgyF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "destroy"
+      },
+      {
+        "kind" : "text",
+        "text" : "() -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7Atomics25UnsafeAtomicLazyReferenceV5Valuea",
+        "text" : "Value"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Atomics"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "destroy()"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "attribute",
+              "text" : "@discardableResult"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "destroy"
+            },
+            {
+              "kind" : "text",
+              "text" : "() -> "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/UnsafeAtomicLazyReference\/Value",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Atomics25UnsafeAtomicLazyReferenceV5Valuea",
+              "text" : "Value"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "return-value",
+          "level" : 2,
+          "text" : "Return Value",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The last value stored in the storage representation before it",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "was destroyed.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Note: This is not an atomic operation.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/atomics\/unsafeatomiclazyreference\/destroy()"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Atomics": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Atomics",
+  "type" : "topic",
+  "url" : "\/documentation\/atomics"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Atomics/UnsafeAtomicLazyReference": {
+  "abstract" : [
+    {
+      "text" : "An unsafe reference type holding a lazily initializable atomic",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "strong reference, requiring manual memory management of the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "underlying storage representation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "UnsafeAtomicLazyReference"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/UnsafeAtomicLazyReference",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "UnsafeAtomicLazyReference"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "UnsafeAtomicLazyReference",
+  "type" : "topic",
+  "url" : "\/documentation\/atomics\/unsafeatomiclazyreference"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Atomics/UnsafeAtomicLazyReference/Value": {
+  "abstract" : [
+    {
+      "text" : "The value logically stored in an atomic lazy reference value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Value"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/UnsafeAtomicLazyReference\/Value",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Value"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "UnsafeAtomicLazyReference.Value",
+  "type" : "topic",
+  "url" : "\/documentation\/atomics\/unsafeatomiclazyreference\/value"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Atomics/UnsafeAtomicLazyReference/destroy()": {
+  "abstract" : [
+    {
+      "text" : "Disposes of the current value of the storage location corresponding to",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "this unsafe atomic lazy reference, then deinitializes and deallocates the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "storage.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "destroy"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics25UnsafeAtomicLazyReferenceV5Valuea",
+      "text" : "Value"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/UnsafeAtomicLazyReference\/destroy()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "destroy()",
+  "type" : "topic",
+  "url" : "\/documentation\/atomics\/unsafeatomiclazyreference\/destroy()"
+}
+}
+}

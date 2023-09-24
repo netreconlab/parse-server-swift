@@ -1,0 +1,460 @@
+{
+  "abstract" : [
+    {
+      "code" : "bootstrap",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is a one-time configuration function which globally selects the desired logging backend",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "implementation. ",
+      "type" : "text"
+    },
+    {
+      "code" : "bootstrap",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " can be called at maximum once in any given program, calling it more than once will",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "lead to undefined behavior, most likely a crash.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/LoggingSystem"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/LoggingSystem\/bootstrap(_:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:7Logging0A6SystemO9bootstrapyyAA10LogHandler_pSScFZ",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "static"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "bootstrap"
+      },
+      {
+        "kind" : "text",
+        "text" : "(("
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:SS",
+        "text" : "String"
+      },
+      {
+        "kind" : "text",
+        "text" : ") -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7Logging10LogHandlerP",
+        "text" : "LogHandler"
+      },
+      {
+        "kind" : "text",
+        "text" : ")"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Logging"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Type Method",
+    "symbolKind" : "method",
+    "title" : "bootstrap(_:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "static"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "bootstrap"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "_"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "factory"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "attribute",
+              "text" : "@escaping"
+            },
+            {
+              "kind" : "text",
+              "text" : " ("
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:SS",
+              "text" : "String"
+            },
+            {
+              "kind" : "text",
+              "text" : ") -> "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/LogHandler",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Logging10LogHandlerP",
+              "text" : "LogHandler"
+            },
+            {
+              "kind" : "text",
+              "text" : ")"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "A closure that given a ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "Logger",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " identifier, produces an instance of the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "LogHandler",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ".",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "factory"
+        }
+      ]
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/logging\/loggingsystem\/bootstrap(_:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Logging",
+  "type" : "topic",
+  "url" : "\/documentation\/logging"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/LogHandler": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "LogHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is an implementation of a logging backend.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "LogHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/LogHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "LogHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "LogHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/logging\/loghandler"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/LoggingSystem": {
+  "abstract" : [
+    {
+      "text" : "The ",
+      "type" : "text"
+    },
+    {
+      "code" : "LoggingSystem",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is a global facility where the default logging backend implementation (",
+      "type" : "text"
+    },
+    {
+      "code" : "LogHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ") can be",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "configured. ",
+      "type" : "text"
+    },
+    {
+      "code" : "LoggingSystem",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is set up just once in a given program to set up the desired logging backend",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "implementation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "LoggingSystem"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/LoggingSystem",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "LoggingSystem"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "LoggingSystem",
+  "type" : "topic",
+  "url" : "\/documentation\/logging\/loggingsystem"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/LoggingSystem/bootstrap(_:)": {
+  "abstract" : [
+    {
+      "code" : "bootstrap",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is a one-time configuration function which globally selects the desired logging backend",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "implementation. ",
+      "type" : "text"
+    },
+    {
+      "code" : "bootstrap",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " can be called at maximum once in any given program, calling it more than once will",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "lead to undefined behavior, most likely a crash.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "bootstrap"
+    },
+    {
+      "kind" : "text",
+      "text" : "(("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Logging10LogHandlerP",
+      "text" : "LogHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/LoggingSystem\/bootstrap(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "bootstrap(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/logging\/loggingsystem\/bootstrap(_:)"
+}
+}
+}

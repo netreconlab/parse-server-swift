@@ -1,0 +1,930 @@
+{
+  "abstract" : [
+    {
+      "text" : "Cipher suites to use in hybrid public key encryption.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/HPKE"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/HPKE\/Ciphersuite"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "CryptoKit",
+    "externalID" : "s:9CryptoKit4HPKEO11CiphersuiteV",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "struct"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "Ciphersuite"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Crypto",
+        "relatedModules" : [
+          "CryptoKit"
+        ]
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "Ciphersuite"
+      }
+    ],
+    "platforms" : [
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "17.0",
+        "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "14.0",
+        "name" : "macOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "17.0",
+        "name" : "Mac Catalyst",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "17.0",
+        "name" : "tvOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "10.0",
+        "name" : "watchOS",
+        "unavailable" : false
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Structure",
+    "symbolKind" : "struct",
+    "title" : "HPKE.Ciphersuite"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "struct"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "Ciphersuite"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "HPKE cipher suites identify the authenticated encryption with additional data (AEAD) algorithm for encrypting",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "and decrypting messages, the key derivation function (KDF) for deriving the shared key, and the key encapsulation",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "mechanism (KEM) for sharing the symmetric key. The sender and recipient of encrypted messages need to use the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "same cipher suite.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/HPKE\/AEAD",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/HPKE\/KDF",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/HPKE\/KEM",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/HPKE\/DHKEM"
+      ],
+      "title" : "Choosing cryptographic algorithms"
+    }
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/HPKE\/Ciphersuite\/init(kem:kdf:aead:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/HPKE\/Ciphersuite\/aead",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/HPKE\/Ciphersuite\/kdf",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/HPKE\/Ciphersuite\/kem"
+      ],
+      "title" : "Instance Properties"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/HPKE\/Ciphersuite\/Curve25519_SHA256_ChachaPoly",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/HPKE\/Ciphersuite\/P256_SHA256_AES_GCM_256",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/HPKE\/Ciphersuite\/P384_SHA384_AES_GCM_256",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/HPKE\/Ciphersuite\/P521_SHA512_AES_GCM_256"
+      ],
+      "title" : "Type Properties"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/crypto\/hpke\/ciphersuite"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Crypto": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Crypto",
+  "type" : "topic",
+  "url" : "\/documentation\/crypto"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Crypto/HPKE": {
+  "abstract" : [
+    {
+      "text" : "A container for hybrid public key encryption (HPKE) operations.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "HPKE"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/HPKE",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "HPKE"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HPKE",
+  "type" : "topic",
+  "url" : "\/documentation\/crypto\/hpke"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Crypto/HPKE/AEAD": {
+  "abstract" : [
+    {
+      "text" : "The authenticated encryption with associated data (AEAD) algorithms to use in HPKE.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AEAD"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/HPKE\/AEAD",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AEAD"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HPKE.AEAD",
+  "type" : "topic",
+  "url" : "\/documentation\/crypto\/hpke\/aead"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Crypto/HPKE/Ciphersuite": {
+  "abstract" : [
+    {
+      "text" : "Cipher suites to use in hybrid public key encryption.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Ciphersuite"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/HPKE\/Ciphersuite",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Ciphersuite"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HPKE.Ciphersuite",
+  "type" : "topic",
+  "url" : "\/documentation\/crypto\/hpke\/ciphersuite"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Crypto/HPKE/Ciphersuite/Curve25519_SHA256_ChachaPoly": {
+  "abstract" : [
+    {
+      "text" : "A cipher suite for HPKE that uses X25519 elliptic curve key agreement, SHA-2 key derivation",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "with a 256-bit digest, and the ChaCha20 stream cipher with the Poly1305 message authentication code.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Curve25519_SHA256_ChachaPoly"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9CryptoKit4HPKEO",
+      "text" : "HPKE"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9CryptoKit4HPKEO11CiphersuiteV",
+      "text" : "Ciphersuite"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/HPKE\/Ciphersuite\/Curve25519_SHA256_ChachaPoly",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Curve25519_SHA256_ChachaPoly",
+  "type" : "topic",
+  "url" : "\/documentation\/crypto\/hpke\/ciphersuite\/curve25519_sha256_chachapoly"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Crypto/HPKE/Ciphersuite/P256_SHA256_AES_GCM_256": {
+  "abstract" : [
+    {
+      "text" : "A cipher suite for HPKE that uses NIST P-256 elliptic curve key agreement, SHA-2 key derivation",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "with a 256-bit digest, and the Advanced Encryption Standard cipher in Galois\/Counter Mode with a key length of 256 bits.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "P256_SHA256_AES_GCM_256"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9CryptoKit4HPKEO",
+      "text" : "HPKE"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9CryptoKit4HPKEO11CiphersuiteV",
+      "text" : "Ciphersuite"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/HPKE\/Ciphersuite\/P256_SHA256_AES_GCM_256",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "P256_SHA256_AES_GCM_256",
+  "type" : "topic",
+  "url" : "\/documentation\/crypto\/hpke\/ciphersuite\/p256_sha256_aes_gcm_256"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Crypto/HPKE/Ciphersuite/P384_SHA384_AES_GCM_256": {
+  "abstract" : [
+    {
+      "text" : "A cipher suite that you use for HPKE using NIST P-384 elliptic curve key agreement, SHA-2 key derivation",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "with a 384-bit digest, and the Advanced Encryption Standard cipher in Galois\/Counter Mode with a key length of 256 bits.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "P384_SHA384_AES_GCM_256"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9CryptoKit4HPKEO",
+      "text" : "HPKE"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9CryptoKit4HPKEO11CiphersuiteV",
+      "text" : "Ciphersuite"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/HPKE\/Ciphersuite\/P384_SHA384_AES_GCM_256",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "P384_SHA384_AES_GCM_256",
+  "type" : "topic",
+  "url" : "\/documentation\/crypto\/hpke\/ciphersuite\/p384_sha384_aes_gcm_256"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Crypto/HPKE/Ciphersuite/P521_SHA512_AES_GCM_256": {
+  "abstract" : [
+    {
+      "text" : "A cipher suite for HPKE that uses NIST P-521 elliptic curve key agreement, SHA-2 key derivation",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "with a 512-bit digest, and the Advanced Encryption Standard cipher in Galois\/Counter Mode with a key length of 256 bits.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "P521_SHA512_AES_GCM_256"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9CryptoKit4HPKEO",
+      "text" : "HPKE"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9CryptoKit4HPKEO11CiphersuiteV",
+      "text" : "Ciphersuite"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/HPKE\/Ciphersuite\/P521_SHA512_AES_GCM_256",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "P521_SHA512_AES_GCM_256",
+  "type" : "topic",
+  "url" : "\/documentation\/crypto\/hpke\/ciphersuite\/p521_sha512_aes_gcm_256"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Crypto/HPKE/Ciphersuite/aead": {
+  "abstract" : [
+    {
+      "text" : "The authenticated encryption with additional data (AEAD) algorithm for encrypting and decrypting messages.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "aead"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9CryptoKit4HPKEO",
+      "text" : "HPKE"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9CryptoKit4HPKEO4AEADO",
+      "text" : "AEAD"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/HPKE\/Ciphersuite\/aead",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "aead",
+  "type" : "topic",
+  "url" : "\/documentation\/crypto\/hpke\/ciphersuite\/aead"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Crypto/HPKE/Ciphersuite/init(kem:kdf:aead:)": {
+  "abstract" : [
+    {
+      "text" : "Creates an HPKE cipher suite.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "kem"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9CryptoKit4HPKEO",
+      "text" : "HPKE"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9CryptoKit4HPKEO3KEMO",
+      "text" : "KEM"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "kdf"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9CryptoKit4HPKEO",
+      "text" : "HPKE"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9CryptoKit4HPKEO3KDFO",
+      "text" : "KDF"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "aead"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9CryptoKit4HPKEO",
+      "text" : "HPKE"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9CryptoKit4HPKEO4AEADO",
+      "text" : "AEAD"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/HPKE\/Ciphersuite\/init(kem:kdf:aead:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(kem:kdf:aead:)",
+  "type" : "topic",
+  "url" : "\/documentation\/crypto\/hpke\/ciphersuite\/init(kem:kdf:aead:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Crypto/HPKE/Ciphersuite/kdf": {
+  "abstract" : [
+    {
+      "text" : "The key derivation function (KDF) for deriving the symmetric key.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "kdf"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9CryptoKit4HPKEO",
+      "text" : "HPKE"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9CryptoKit4HPKEO3KDFO",
+      "text" : "KDF"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/HPKE\/Ciphersuite\/kdf",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "kdf",
+  "type" : "topic",
+  "url" : "\/documentation\/crypto\/hpke\/ciphersuite\/kdf"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Crypto/HPKE/Ciphersuite/kem": {
+  "abstract" : [
+    {
+      "text" : "The key encapsulation mechanism (KEM) for encapsulating the symmetric key.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "kem"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9CryptoKit4HPKEO",
+      "text" : "HPKE"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9CryptoKit4HPKEO3KEMO",
+      "text" : "KEM"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/HPKE\/Ciphersuite\/kem",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "kem",
+  "type" : "topic",
+  "url" : "\/documentation\/crypto\/hpke\/ciphersuite\/kem"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Crypto/HPKE/DHKEM": {
+  "abstract" : [
+    {
+      "text" : "A container for Diffie-Hellman key encapsulation mechanisms (KEMs).",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "DHKEM"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/HPKE\/DHKEM",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "DHKEM"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HPKE.DHKEM",
+  "type" : "topic",
+  "url" : "\/documentation\/crypto\/hpke\/dhkem"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Crypto/HPKE/KDF": {
+  "abstract" : [
+    {
+      "text" : "The key derivation functions to use in HPKE.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "KDF"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/HPKE\/KDF",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "KDF"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HPKE.KDF",
+  "type" : "topic",
+  "url" : "\/documentation\/crypto\/hpke\/kdf"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Crypto/HPKE/KEM": {
+  "abstract" : [
+    {
+      "text" : "The key encapsulation mechanisms to use in HPKE.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "KEM"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/HPKE\/KEM",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "KEM"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HPKE.KEM",
+  "type" : "topic",
+  "url" : "\/documentation\/crypto\/hpke\/kem"
+}
+}
+}

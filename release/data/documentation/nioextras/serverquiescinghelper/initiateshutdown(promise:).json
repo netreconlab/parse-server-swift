@@ -1,0 +1,448 @@
+{
+  "abstract" : [
+    {
+      "text" : "Initiate the shutdown.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/ServerQuiescingHelper"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/ServerQuiescingHelper\/initiateShutdown(promise:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:9NIOExtras21ServerQuiescingHelperC16initiateShutdown7promisey7NIOCore16EventLoopPromiseVyytGSg_tF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "initiateShutdown"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "promise"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7NIOCore16EventLoopPromiseV",
+        "text" : "EventLoopPromise"
+      },
+      {
+        "kind" : "text",
+        "text" : "<"
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:s4Voida",
+        "text" : "Void"
+      },
+      {
+        "kind" : "text",
+        "text" : ">?)"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIOExtras"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "initiateShutdown(promise:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "initiateShutdown"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "promise"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/EventLoopPromise",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7NIOCore16EventLoopPromiseV",
+              "text" : "EventLoopPromise"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s4Voida",
+              "text" : "Void"
+            },
+            {
+              "kind" : "text",
+              "text" : ">?)"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "EventLoopPromise",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " that will be fulfilled when the shutdown is complete.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "promise"
+        }
+      ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The following actions will be performed:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "close the server ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Channel",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " so no further connections get accepted",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "send a ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "ChannelShouldQuiesceEvent",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " user event to all currently still open child ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Channel",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : "s",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "after all previously open child ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Channel",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : "s have closed, notify ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "promise",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "orderedList"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/nioextras\/serverquiescinghelper\/initiateshutdown(promise:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/EventLoopPromise": {
+  "abstract" : [
+    {
+      "text" : "A promise to provide a result later.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "EventLoopPromise"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/EventLoopPromise",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "EventLoopPromise"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "EventLoopPromise",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/eventlooppromise"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIOExtras",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/ServerQuiescingHelper": {
+  "abstract" : [
+    {
+      "text" : "Helper that can be used to orchestrate the quiescing of a server ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " and all the child ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s that are",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "open at a given point in time.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ServerQuiescingHelper"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/ServerQuiescingHelper",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ServerQuiescingHelper"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ServerQuiescingHelper",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/serverquiescinghelper"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/ServerQuiescingHelper/initiateShutdown(promise:)": {
+  "abstract" : [
+    {
+      "text" : "Initiate the shutdown.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "initiateShutdown"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "promise"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore16EventLoopPromiseV",
+      "text" : "EventLoopPromise"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">?)"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/ServerQuiescingHelper\/initiateShutdown(promise:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "initiateShutdown(promise:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/serverquiescinghelper\/initiateshutdown(promise:)"
+}
+}
+}

@@ -1,0 +1,190 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/AcceptBackoffHandler"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/AcceptBackoffHandler\/ChannelOutboundHandler-Implementations"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "NIO"
+      }
+    ],
+    "role" : "collectionGroup",
+    "title" : "ChannelOutboundHandler Implementations"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/AcceptBackoffHandler\/unwrapOutboundIn(_:)"
+      ],
+      "title" : "Instance Methods"
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIO",
+  "type" : "topic",
+  "url" : "\/documentation\/nio"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/AcceptBackoffHandler": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that implements a backoff for a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ServerChannel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " when accept produces an ",
+      "type" : "text"
+    },
+    {
+      "code" : "IOError",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "These errors are often recoverable by reducing the rate at which we call accept.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AcceptBackoffHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/AcceptBackoffHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AcceptBackoffHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AcceptBackoffHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/acceptbackoffhandler"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/AcceptBackoffHandler/unwrapOutboundIn(_:)": {
+  "abstract" : [
+    {
+      "text" : "Unwrap the provided ",
+      "type" : "text"
+    },
+    {
+      "code" : "NIOAny",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that was passed to ",
+      "type" : "text"
+    },
+    {
+      "code" : "write",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "unwrapOutboundIn"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore6NIOAnyV",
+      "text" : "NIOAny"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "OutboundIn"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/AcceptBackoffHandler\/unwrapOutboundIn(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "unwrapOutboundIn(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/acceptbackoffhandler\/unwrapoutboundin(_:)"
+}
+}
+}

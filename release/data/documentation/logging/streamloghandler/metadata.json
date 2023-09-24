@@ -1,0 +1,443 @@
+{
+  "abstract" : [
+    {
+      "text" : "Get or set the entire metadata storage as a dictionary.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/StreamLogHandler"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/StreamLogHandler\/metadata"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:7Logging16StreamLogHandlerV8metadataSDySSAA6LoggerV13MetadataValueOGvp",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "var"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "metadata"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7Logging6LoggerV",
+        "text" : "Logger"
+      },
+      {
+        "kind" : "text",
+        "text" : "."
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7Logging6LoggerV8Metadataa",
+        "text" : "Metadata"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Logging"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Property",
+    "symbolKind" : "property",
+    "title" : "metadata"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "var"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "metadata"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Logging6LoggerV",
+              "text" : "Logger"
+            },
+            {
+              "kind" : "text",
+              "text" : "."
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger\/Metadata",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Logging6LoggerV8Metadataa",
+              "text" : "Metadata"
+            },
+            {
+              "kind" : "text",
+              "text" : " { "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "get"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "set"
+            },
+            {
+              "kind" : "text",
+              "text" : " }"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                },
+                {
+                  "code" : "LogHandler",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : "s must treat logging metadata as a value type. This means that the change in metadata must",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "only affect this very ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "LogHandler",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ".",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/logging\/streamloghandler\/metadata"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Logging",
+  "type" : "topic",
+  "url" : "\/documentation\/logging"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/Logger": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "Logger",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is the central type in ",
+      "type" : "text"
+    },
+    {
+      "code" : "SwiftLog",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ". Its central function is to emit log messages using one of the methods",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "corresponding to a log level.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Logger"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Logger"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Logger",
+  "type" : "topic",
+  "url" : "\/documentation\/logging\/logger"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/Logger/Metadata": {
+  "abstract" : [
+    {
+      "code" : "Metadata",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is a typealias for ",
+      "type" : "text"
+    },
+    {
+      "code" : "[String: Logger.MetadataValue]",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " the type of the metadata storage.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Metadata"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger\/Metadata",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Metadata"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Logger.Metadata",
+  "type" : "topic",
+  "url" : "\/documentation\/logging\/logger\/metadata"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/StreamLogHandler": {
+  "abstract" : [
+    {
+      "code" : "StreamLogHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is a simple implementation of ",
+      "type" : "text"
+    },
+    {
+      "code" : "LogHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " for directing",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "Logger",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " output to either ",
+      "type" : "text"
+    },
+    {
+      "code" : "stderr",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " or ",
+      "type" : "text"
+    },
+    {
+      "code" : "stdout",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " via the factory methods.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "StreamLogHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/StreamLogHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "StreamLogHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "StreamLogHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/logging\/streamloghandler"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/StreamLogHandler/metadata": {
+  "abstract" : [
+    {
+      "text" : "Get or set the entire metadata storage as a dictionary.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "metadata"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Logging6LoggerV",
+      "text" : "Logger"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Logging6LoggerV8Metadataa",
+      "text" : "Metadata"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/StreamLogHandler\/metadata",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "metadata",
+  "type" : "topic",
+  "url" : "\/documentation\/logging\/streamloghandler\/metadata"
+}
+}
+}

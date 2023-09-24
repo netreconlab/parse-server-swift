@@ -1,0 +1,294 @@
+{
+  "abstract" : [
+    {
+      "text" : "The decoded type this ",
+      "type" : "text"
+    },
+    {
+      "code" : "NIOSingleStepByteToMessageDecoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " decodes to. To conform to ",
+      "type" : "text"
+    },
+    {
+      "code" : "ByteToMessageDecoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " it must be called",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "InboundOut",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " - see https:\/\/bugs.swift.org\/browse\/SR-11868.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/NIOSingleStepByteToMessageDecoder"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/NIOSingleStepByteToMessageDecoder\/InboundOut"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:7NIOCore33NIOSingleStepByteToMessageDecoderP10InboundOutQa",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "associatedtype"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "InboundOut"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIO"
+      }
+    ],
+    "required" : true,
+    "role" : "symbol",
+    "roleHeading" : "Associated Type",
+    "symbolKind" : "associatedtype",
+    "title" : "InboundOut"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "associatedtype"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "InboundOut"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/nio\/niosinglestepbytetomessagedecoder\/inboundout"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIO",
+  "type" : "topic",
+  "url" : "\/documentation\/nio"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/NIOSingleStepByteToMessageDecoder": {
+  "abstract" : [
+    {
+      "text" : "A simplified version of ",
+      "type" : "text"
+    },
+    {
+      "code" : "ByteToMessageDecoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that can generate zero or one messages for each invocation of ",
+      "type" : "text"
+    },
+    {
+      "code" : "decode",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " or ",
+      "type" : "text"
+    },
+    {
+      "code" : "decodeLast",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Having ",
+      "type" : "text"
+    },
+    {
+      "code" : "decode",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " and ",
+      "type" : "text"
+    },
+    {
+      "code" : "decodeLast",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " return an optional message avoids re-entrancy problems, since the functions relinquish exclusive access",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "to the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ByteBuffer",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " when returning. This allows for greatly simplified processing.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NIOSingleStepByteToMessageDecoder"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/NIOSingleStepByteToMessageDecoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NIOSingleStepByteToMessageDecoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOSingleStepByteToMessageDecoder",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/niosinglestepbytetomessagedecoder"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/NIOSingleStepByteToMessageDecoder/InboundOut": {
+  "abstract" : [
+    {
+      "text" : "The decoded type this ",
+      "type" : "text"
+    },
+    {
+      "code" : "NIOSingleStepByteToMessageDecoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " decodes to. To conform to ",
+      "type" : "text"
+    },
+    {
+      "code" : "ByteToMessageDecoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " it must be called",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "InboundOut",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " - see https:\/\/bugs.swift.org\/browse\/SR-11868.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "associatedtype"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "InboundOut"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/NIOSingleStepByteToMessageDecoder\/InboundOut",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "InboundOut",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/niosinglestepbytetomessagedecoder\/inboundout"
+}
+}
+}

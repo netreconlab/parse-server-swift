@@ -1,0 +1,390 @@
+{
+  "abstract" : [
+    {
+      "code" : "true",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " if the ",
+      "type" : "text"
+    },
+    {
+      "code" : "EmbeddedChannel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " if there was unconsumed inbound, outbound, or pending outbound data left",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "on the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " when it was ",
+      "type" : "text"
+    },
+    {
+      "code" : "finish",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "ed.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedChannel",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedChannel\/LeftOverState"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedChannel\/LeftOverState\/hasLeftOvers"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:11NIOEmbedded15EmbeddedChannelC13LeftOverStateO03hasD5OversSbvp",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "var"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "hasLeftOvers"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Sb",
+        "text" : "Bool"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIO"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Property",
+    "symbolKind" : "property",
+    "title" : "hasLeftOvers"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "var"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "hasLeftOvers"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:Sb",
+              "text" : "Bool"
+            },
+            {
+              "kind" : "text",
+              "text" : " { "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "get"
+            },
+            {
+              "kind" : "text",
+              "text" : " }"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/nioembedded\/embeddedchannel\/leftoverstate\/hasleftovers"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIO",
+  "type" : "topic",
+  "url" : "\/documentation\/nio"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedChannel": {
+  "abstract" : [
+    {
+      "code" : "EmbeddedChannel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " implementation that does neither any",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "actual IO nor has a proper eventing mechanism. The prime use-case for",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "EmbeddedChannel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is in unit tests when you want to feed the inbound events",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "and check the outbound events manually.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "EmbeddedChannel"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedChannel",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "EmbeddedChannel"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "EmbeddedChannel",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedchannel"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedChannel/LeftOverState": {
+  "abstract" : [
+    {
+      "code" : "LeftOverState",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " represents any left-over inbound, outbound, and pending outbound events that hit the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "EmbeddedChannel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " and were not consumed when ",
+      "type" : "text"
+    },
+    {
+      "code" : "finish",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " was called on the ",
+      "type" : "text"
+    },
+    {
+      "code" : "EmbeddedChannel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "LeftOverState"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedChannel\/LeftOverState",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "LeftOverState"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "EmbeddedChannel.LeftOverState",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedchannel\/leftoverstate"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedChannel/LeftOverState/hasLeftOvers": {
+  "abstract" : [
+    {
+      "code" : "true",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " if the ",
+      "type" : "text"
+    },
+    {
+      "code" : "EmbeddedChannel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " if there was unconsumed inbound, outbound, or pending outbound data left",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "on the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " when it was ",
+      "type" : "text"
+    },
+    {
+      "code" : "finish",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "ed.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "hasLeftOvers"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedChannel\/LeftOverState\/hasLeftOvers",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "hasLeftOvers",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedchannel\/leftoverstate\/hasleftovers"
+}
+}
+}

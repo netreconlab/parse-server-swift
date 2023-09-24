@@ -1,0 +1,664 @@
+{
+  "abstract" : [
+    {
+      "text" : "Legacy “decode object” method. The provided ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ByteBuffer",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " should be decoded as a vaule of the given",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "type, optionally guided by the provided ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPHeaders",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/ContentDecoder"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/ContentDecoder\/decode(_:from:headers:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:5Vapor14ContentDecoderP6decode_4from7headersqd__qd__m_7NIOCore10ByteBufferV8NIOHTTP111HTTPHeadersVtKSeRd__lF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "decode"
+      },
+      {
+        "kind" : "text",
+        "text" : "<"
+      },
+      {
+        "kind" : "genericParameter",
+        "text" : "D"
+      },
+      {
+        "kind" : "text",
+        "text" : ">("
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:5Vapor14ContentDecoderP6decode_4from7headersqd__qd__m_7NIOCore10ByteBufferV8NIOHTTP111HTTPHeadersVtKSeRd__lF1DL_qd__mfp",
+        "text" : "D"
+      },
+      {
+        "kind" : "text",
+        "text" : ".Type, "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "from"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7NIOCore10ByteBufferV",
+        "text" : "ByteBuffer"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "headers"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:8NIOHTTP111HTTPHeadersV",
+        "text" : "HTTPHeaders"
+      },
+      {
+        "kind" : "text",
+        "text" : ") "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "throws"
+      },
+      {
+        "kind" : "text",
+        "text" : " -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:5Vapor14ContentDecoderP6decode_4from7headersqd__qd__m_7NIOCore10ByteBufferV8NIOHTTP111HTTPHeadersVtKSeRd__lF1DL_qd__mfp",
+        "text" : "D"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Vapor"
+      }
+    ],
+    "required" : true,
+    "role" : "symbol",
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "decode(_:from:headers:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "decode"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
+            },
+            {
+              "kind" : "genericParameter",
+              "text" : "D"
+            },
+            {
+              "kind" : "text",
+              "text" : ">("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "_"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "decodable"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:5Vapor14ContentDecoderP6decode_4from7headersqd__qd__m_7NIOCore10ByteBufferV8NIOHTTP111HTTPHeadersVtKSeRd__lF1DL_qd__mfp",
+              "text" : "D"
+            },
+            {
+              "kind" : "text",
+              "text" : ".Type, "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "from"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "body"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ByteBuffer",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7NIOCore10ByteBufferV",
+              "text" : "ByteBuffer"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "headers"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPHeaders",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:8NIOHTTP111HTTPHeadersV",
+              "text" : "HTTPHeaders"
+            },
+            {
+              "kind" : "text",
+              "text" : ") "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "throws"
+            },
+            {
+              "kind" : "text",
+              "text" : " -> "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:5Vapor14ContentDecoderP6decode_4from7headersqd__qd__m_7NIOCore10ByteBufferV8NIOHTTP111HTTPHeadersVtKSeRd__lF1DL_qd__mfp",
+              "text" : "D"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "where"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "D"
+            },
+            {
+              "kind" : "text",
+              "text" : " : "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:Se",
+              "text" : "Decodable"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Most decoders should implement this method by simply forwarding it to the decoder userInfo-aware version below,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "e.g. ",
+              "type" : "text"
+            },
+            {
+              "code" : "try self.decode(D.self, from: body, headers: headers, userInfo: [:])",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". For legacy API compatibility",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "reasons, the default protocol conformance will do the exact opposite.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/vapor\/contentdecoder\/decode(_:from:headers:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ByteBuffer": {
+  "abstract" : [
+    {
+      "code" : "ByteBuffer",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " stores contiguously allocated raw bytes. It is a random and sequential accessible sequence of zero or",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "more bytes (octets).",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ByteBuffer"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ByteBuffer",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ByteBuffer"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ByteBuffer",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/bytebuffer"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/HTTPHeaders": {
+  "abstract" : [
+    {
+      "text" : "A representation of a block of HTTP header fields.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "HTTPHeaders"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPHeaders",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "HTTPHeaders"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HTTPHeaders",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/httpheaders"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Vapor",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/ContentConfiguration": {
+  "abstract" : [
+    {
+      "text" : "Configures which ",
+      "type" : "text"
+    },
+    {
+      "code" : "Encoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s and ",
+      "type" : "text"
+    },
+    {
+      "code" : "Decoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s to use when interacting with data in HTTP messages.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ContentConfiguration"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/ContentConfiguration",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ContentConfiguration"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ContentConfiguration",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/contentconfiguration"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/ContentDecoder": {
+  "abstract" : [
+    {
+      "text" : "Conform a type to this protocol to make it usable for decoding data via Vapor’s ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/ContentConfiguration",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " system.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ContentDecoder"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/ContentDecoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ContentDecoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ContentDecoder",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/contentdecoder"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/ContentDecoder/decode(_:from:headers:)": {
+  "abstract" : [
+    {
+      "text" : "Legacy “decode object” method. The provided ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ByteBuffer",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " should be decoded as a vaule of the given",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "type, optionally guided by the provided ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPHeaders",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "decode"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "D"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Vapor14ContentDecoderP6decode_4from7headersqd__qd__m_7NIOCore10ByteBufferV8NIOHTTP111HTTPHeadersVtKSeRd__lF1DL_qd__mfp",
+      "text" : "D"
+    },
+    {
+      "kind" : "text",
+      "text" : ".Type, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "from"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore10ByteBufferV",
+      "text" : "ByteBuffer"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "headers"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP111HTTPHeadersV",
+      "text" : "HTTPHeaders"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Vapor14ContentDecoderP6decode_4from7headersqd__qd__m_7NIOCore10ByteBufferV8NIOHTTP111HTTPHeadersVtKSeRd__lF1DL_qd__mfp",
+      "text" : "D"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/ContentDecoder\/decode(_:from:headers:)",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "decode(_:from:headers:)",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/contentdecoder\/decode(_:from:headers:)"
+}
+}
+}

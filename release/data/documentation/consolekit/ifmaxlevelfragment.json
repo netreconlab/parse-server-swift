@@ -1,0 +1,659 @@
+{
+  "abstract" : [
+    {
+      "text" : "Make the current fragment conditional, only calling its ",
+      "type" : "text"
+    },
+    {
+      "code" : "output",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " method if the record’s ",
+      "type" : "text"
+    },
+    {
+      "code" : "loggerLevel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is ",
+      "type" : "text"
+    },
+    {
+      "code" : "maxLevel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " or lower",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit\/IfMaxLevelFragment"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:10ConsoleKit18IfMaxLevelFragmentV",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "struct"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "IfMaxLevelFragment"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "ConsoleKit"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "IfMaxLevelFragment"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Structure",
+    "symbolKind" : "struct",
+    "title" : "IfMaxLevelFragment"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "struct"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "IfMaxLevelFragment"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
+            },
+            {
+              "kind" : "genericParameter",
+              "text" : "T"
+            },
+            {
+              "kind" : "text",
+              "text" : "> "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "where"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "T"
+            },
+            {
+              "kind" : "text",
+              "text" : " : "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit\/LoggerFragment",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10ConsoleKit14LoggerFragmentP",
+              "text" : "LoggerFragment"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The sequence",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "Literal(\"IsDebugOrTrace\").maxLevel(.debug)"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "will only include “IsDebugOrTrace” in the output when the log level is debug or lower.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This fragment is considered to not have content if the logging level is higher than than ",
+              "type" : "text"
+            },
+            {
+              "code" : "maxLevel",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit\/LoggerFragment",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit\/IfMaxLevelFragment\/init(_:maxLevel:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit\/IfMaxLevelFragment\/fragment",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit\/IfMaxLevelFragment\/maxLevel"
+      ],
+      "title" : "Instance Properties"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit\/IfMaxLevelFragment\/hasContent(record:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit\/IfMaxLevelFragment\/write(_:to:)"
+      ],
+      "title" : "Instance Methods"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit\/IfMaxLevelFragment\/LoggerFragment-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/consolekit\/ifmaxlevelfragment"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ConsoleKit": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "ConsoleKit",
+  "type" : "topic",
+  "url" : "\/documentation\/consolekit"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ConsoleKit/IfMaxLevelFragment": {
+  "abstract" : [
+    {
+      "text" : "Make the current fragment conditional, only calling its ",
+      "type" : "text"
+    },
+    {
+      "code" : "output",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " method if the record’s ",
+      "type" : "text"
+    },
+    {
+      "code" : "loggerLevel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is ",
+      "type" : "text"
+    },
+    {
+      "code" : "maxLevel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " or lower",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "IfMaxLevelFragment"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit\/IfMaxLevelFragment",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "IfMaxLevelFragment"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "IfMaxLevelFragment",
+  "type" : "topic",
+  "url" : "\/documentation\/consolekit\/ifmaxlevelfragment"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ConsoleKit/IfMaxLevelFragment/LoggerFragment-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit\/IfMaxLevelFragment\/LoggerFragment-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "LoggerFragment Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/consolekit\/ifmaxlevelfragment\/loggerfragment-implementations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ConsoleKit/IfMaxLevelFragment/fragment": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "fragment"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10ConsoleKit18IfMaxLevelFragmentV1Txmfp",
+      "text" : "T"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit\/IfMaxLevelFragment\/fragment",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "fragment",
+  "type" : "topic",
+  "url" : "\/documentation\/consolekit\/ifmaxlevelfragment\/fragment"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ConsoleKit/IfMaxLevelFragment/hasContent(record:)": {
+  "abstract" : [
+    {
+      "text" : "Indicates whether the fragment will write anything to ",
+      "type" : "text"
+    },
+    {
+      "code" : "output",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " when ",
+      "type" : "text"
+    },
+    {
+      "code" : "write",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is called. This is used to determine whether writing a separator should be skipped.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "hasContent"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "record"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "inout"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10ConsoleKit9LogRecordV",
+      "text" : "LogRecord"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit\/IfMaxLevelFragment\/hasContent(record:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "hasContent(record:)",
+  "type" : "topic",
+  "url" : "\/documentation\/consolekit\/ifmaxlevelfragment\/hascontent(record:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ConsoleKit/IfMaxLevelFragment/init(_:maxLevel:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10ConsoleKit18IfMaxLevelFragmentV1Txmfp",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "maxLevel"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Logging6LoggerV",
+      "text" : "Logger"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Logging6LoggerV5LevelO",
+      "text" : "Level"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit\/IfMaxLevelFragment\/init(_:maxLevel:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(_:maxLevel:)",
+  "type" : "topic",
+  "url" : "\/documentation\/consolekit\/ifmaxlevelfragment\/init(_:maxlevel:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ConsoleKit/IfMaxLevelFragment/maxLevel": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "maxLevel"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Logging6LoggerV",
+      "text" : "Logger"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Logging6LoggerV5LevelO",
+      "text" : "Level"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit\/IfMaxLevelFragment\/maxLevel",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "maxLevel",
+  "type" : "topic",
+  "url" : "\/documentation\/consolekit\/ifmaxlevelfragment\/maxlevel"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ConsoleKit/IfMaxLevelFragment/write(_:to:)": {
+  "abstract" : [
+    {
+      "text" : "Add this fragment’s output to the console text.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "write"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "keyword",
+      "text" : "inout"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10ConsoleKit9LogRecordV",
+      "text" : "LogRecord"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "to"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "inout"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10ConsoleKit14FragmentOutputV",
+      "text" : "FragmentOutput"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit\/IfMaxLevelFragment\/write(_:to:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "write(_:to:)",
+  "type" : "topic",
+  "url" : "\/documentation\/consolekit\/ifmaxlevelfragment\/write(_:to:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ConsoleKit/LoggerFragment": {
+  "abstract" : [
+    {
+      "text" : "A fragment of a log message.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "LoggerFragment"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit\/LoggerFragment",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "LoggerFragment"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "LoggerFragment",
+  "type" : "topic",
+  "url" : "\/documentation\/consolekit\/loggerfragment"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s8SendableP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

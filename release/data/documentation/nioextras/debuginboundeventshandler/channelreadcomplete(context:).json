@@ -1,0 +1,575 @@
+{
+  "abstract" : [
+    {
+      "text" : "Logs ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugInboundEventsHandler\/Event\/readComplete",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " to ",
+      "type" : "text"
+    },
+    {
+      "code" : "logger",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Called when the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " has completed its current read loop, either because no more data is available",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "to read from the transport at this time, or because the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " needs to yield to the event loop to process",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "other I\/O events for other ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugInboundEventsHandler"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugInboundEventsHandler\/channelReadComplete(context:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:9NIOExtras25DebugInboundEventsHandlerC19channelReadComplete7contexty7NIOCore07ChannelE7ContextC_tF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "channelReadComplete"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "context"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC",
+        "text" : "ChannelHandlerContext"
+      },
+      {
+        "kind" : "text",
+        "text" : ")"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIOExtras"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "channelReadComplete(context:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "channelReadComplete"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "context"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelHandlerContext",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC",
+              "text" : "ChannelHandlerContext"
+            },
+            {
+              "kind" : "text",
+              "text" : ")"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "ChannelHandlerContext",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " which this ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "ChannelHandler",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " belongs to.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "context"
+        }
+      ]
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/nioextras\/debuginboundeventshandler\/channelreadcomplete(context:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelHandlerContext": {
+  "abstract" : [
+    {
+      "text" : "Every ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " has – when added to a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " – a corresponding ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandlerContext",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " which is",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "the way ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s can interact with other ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s in the pipeline.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ChannelHandlerContext"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelHandlerContext",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ChannelHandlerContext"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ChannelHandlerContext",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelhandlercontext"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIOExtras",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/DebugInboundEventsHandler": {
+  "abstract" : [
+    {
+      "code" : "ChannelInboundHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that prints all inbound events that pass through the pipeline by default,",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "overridable by providing your own closure for custom logging. See ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugOutboundEventsHandler",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " for outbound events.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "DebugInboundEventsHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugInboundEventsHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "DebugInboundEventsHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "DebugInboundEventsHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/debuginboundeventshandler"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/DebugInboundEventsHandler/Event/readComplete": {
+  "abstract" : [
+    {
+      "text" : "Current read loop finished.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "readComplete"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugInboundEventsHandler\/Event\/readComplete",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "DebugInboundEventsHandler.Event.readComplete",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/debuginboundeventshandler\/event\/readcomplete"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/DebugInboundEventsHandler/channelReadComplete(context:)": {
+  "abstract" : [
+    {
+      "text" : "Logs ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugInboundEventsHandler\/Event\/readComplete",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " to ",
+      "type" : "text"
+    },
+    {
+      "code" : "logger",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Called when the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " has completed its current read loop, either because no more data is available",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "to read from the transport at this time, or because the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " needs to yield to the event loop to process",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "other I\/O events for other ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "channelReadComplete"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "context"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC",
+      "text" : "ChannelHandlerContext"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugInboundEventsHandler\/channelReadComplete(context:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "channelReadComplete(context:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/debuginboundeventshandler\/channelreadcomplete(context:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/DebugOutboundEventsHandler": {
+  "abstract" : [
+    {
+      "text" : "ChannelOutboundHandler that prints all outbound events that pass through the pipeline by default,",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "overridable by providing your own closure for custom logging. See ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugInboundEventsHandler",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " for inbound events.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "DebugOutboundEventsHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugOutboundEventsHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "DebugOutboundEventsHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "DebugOutboundEventsHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/debugoutboundeventshandler"
+}
+}
+}

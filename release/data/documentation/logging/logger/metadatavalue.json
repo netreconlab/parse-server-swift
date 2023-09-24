@@ -1,0 +1,789 @@
+{
+  "abstract" : [
+    {
+      "text" : "A logging metadata value. ",
+      "type" : "text"
+    },
+    {
+      "code" : "Logger.MetadataValue",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is string, array, and dictionary literal convertible.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger\/MetadataValue"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "Logging",
+    "externalID" : "s:7Logging6LoggerV13MetadataValueO",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "enum"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "MetadataValue"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Logging"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "MetadataValue"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Enumeration",
+    "symbolKind" : "enum",
+    "title" : "Logger.MetadataValue"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "enum"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "MetadataValue"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "code" : "MetadataValue",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " provides convenient conformances to ",
+              "type" : "text"
+            },
+            {
+              "code" : "ExpressibleByStringInterpolation",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ",",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "ExpressibleByStringLiteral",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", ",
+              "type" : "text"
+            },
+            {
+              "code" : "ExpressibleByArrayLiteral",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", and ",
+              "type" : "text"
+            },
+            {
+              "code" : "ExpressibleByDictionaryLiteral",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " which means",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "that when constructing ",
+              "type" : "text"
+            },
+            {
+              "code" : "MetadataValue",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "s you should default to using Swift’s usual literals.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Examples:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "prefer ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "logger.info(\"user logged in\", metadata: [\"user-id\": \"\\(user.id)\"])",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " over",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "..., metadata: [\"user-id\": .string(user.id.description)])",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "prefer ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "logger.info(\"user selected colors\", metadata: [\"colors\": [\"\\(user.topColor)\", \"\\(user.secondColor)\"]])",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "over ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "..., metadata: [\"colors\": .array([.string(\"\\(user.topColor)\"), .string(\"\\(user.secondColor)\")])",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "prefer ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "logger.info(\"nested info\", metadata: [\"nested\": [\"fave-numbers\": [\"\\(1)\", \"\\(2)\", \"\\(3)\"], \"foo\": \"bar\"]])",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "over ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "..., metadata: [\"nested\": .dictionary([\"fave-numbers\": ...])])",
+                      "type" : "codeVoice"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s23CustomStringConvertibleP",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/SQ",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s25ExpressibleByArrayLiteralP",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s30ExpressibleByDictionaryLiteralP",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s43ExpressibleByExtendedGraphemeClusterLiteralP",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s32ExpressibleByStringInterpolationP",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s26ExpressibleByStringLiteralP",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s33ExpressibleByUnicodeScalarLiteralP",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger\/MetadataValue\/array(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger\/MetadataValue\/dictionary(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger\/MetadataValue\/string(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger\/MetadataValue\/stringConvertible(_:)"
+      ],
+      "title" : "Enumeration Cases"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger\/MetadataValue\/CustomStringConvertible-Implementations",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger\/MetadataValue\/Equatable-Implementations",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger\/MetadataValue\/ExpressibleByArrayLiteral-Implementations",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger\/MetadataValue\/ExpressibleByDictionaryLiteral-Implementations",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger\/MetadataValue\/ExpressibleByExtendedGraphemeClusterLiteral-Implementations",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger\/MetadataValue\/ExpressibleByStringInterpolation-Implementations",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger\/MetadataValue\/ExpressibleByStringLiteral-Implementations",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger\/MetadataValue\/ExpressibleByUnicodeScalarLiteral-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/logging\/logger\/metadatavalue"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/SQ": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/SQ",
+  "title" : "Swift.Equatable",
+  "type" : "unresolvable"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Logging",
+  "type" : "topic",
+  "url" : "\/documentation\/logging"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/Logger": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "Logger",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is the central type in ",
+      "type" : "text"
+    },
+    {
+      "code" : "SwiftLog",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ". Its central function is to emit log messages using one of the methods",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "corresponding to a log level.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Logger"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Logger"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Logger",
+  "type" : "topic",
+  "url" : "\/documentation\/logging\/logger"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/Logger/MetadataValue": {
+  "abstract" : [
+    {
+      "text" : "A logging metadata value. ",
+      "type" : "text"
+    },
+    {
+      "code" : "Logger.MetadataValue",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is string, array, and dictionary literal convertible.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "MetadataValue"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger\/MetadataValue",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "MetadataValue"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Logger.MetadataValue",
+  "type" : "topic",
+  "url" : "\/documentation\/logging\/logger\/metadatavalue"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/Logger/MetadataValue/CustomStringConvertible-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger\/MetadataValue\/CustomStringConvertible-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "CustomStringConvertible Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/logging\/logger\/metadatavalue\/customstringconvertible-implementations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/Logger/MetadataValue/Equatable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger\/MetadataValue\/Equatable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Equatable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/logging\/logger\/metadatavalue\/equatable-implementations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/Logger/MetadataValue/ExpressibleByArrayLiteral-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger\/MetadataValue\/ExpressibleByArrayLiteral-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "ExpressibleByArrayLiteral Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/logging\/logger\/metadatavalue\/expressiblebyarrayliteral-implementations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/Logger/MetadataValue/ExpressibleByDictionaryLiteral-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger\/MetadataValue\/ExpressibleByDictionaryLiteral-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "ExpressibleByDictionaryLiteral Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/logging\/logger\/metadatavalue\/expressiblebydictionaryliteral-implementations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/Logger/MetadataValue/ExpressibleByExtendedGraphemeClusterLiteral-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger\/MetadataValue\/ExpressibleByExtendedGraphemeClusterLiteral-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "ExpressibleByExtendedGraphemeClusterLiteral Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/logging\/logger\/metadatavalue\/expressiblebyextendedgraphemeclusterliteral-implementations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/Logger/MetadataValue/ExpressibleByStringInterpolation-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger\/MetadataValue\/ExpressibleByStringInterpolation-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "ExpressibleByStringInterpolation Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/logging\/logger\/metadatavalue\/expressiblebystringinterpolation-implementations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/Logger/MetadataValue/ExpressibleByStringLiteral-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger\/MetadataValue\/ExpressibleByStringLiteral-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "ExpressibleByStringLiteral Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/logging\/logger\/metadatavalue\/expressiblebystringliteral-implementations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/Logger/MetadataValue/ExpressibleByUnicodeScalarLiteral-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger\/MetadataValue\/ExpressibleByUnicodeScalarLiteral-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "ExpressibleByUnicodeScalarLiteral Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/logging\/logger\/metadatavalue\/expressiblebyunicodescalarliteral-implementations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/Logger/MetadataValue/array(_:)": {
+  "abstract" : [
+    {
+      "text" : "A metadata value which is an array of ",
+      "type" : "text"
+    },
+    {
+      "code" : "Logger.MetadataValue",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "array"
+    },
+    {
+      "kind" : "text",
+      "text" : "(["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Logging6LoggerV8Metadataa",
+      "text" : "Metadata"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SD5Valuea",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : "])"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger\/MetadataValue\/array(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Logger.MetadataValue.array(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/logging\/logger\/metadatavalue\/array(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/Logger/MetadataValue/dictionary(_:)": {
+  "abstract" : [
+    {
+      "text" : "A metadata value which is a dictionary from ",
+      "type" : "text"
+    },
+    {
+      "code" : "String",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " to ",
+      "type" : "text"
+    },
+    {
+      "code" : "Logger.MetadataValue",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "dictionary"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Logging6LoggerV8Metadataa",
+      "text" : "Metadata"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger\/MetadataValue\/dictionary(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Logger.MetadataValue.dictionary(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/logging\/logger\/metadatavalue\/dictionary(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/Logger/MetadataValue/string(_:)": {
+  "abstract" : [
+    {
+      "text" : "A metadata value which is a ",
+      "type" : "text"
+    },
+    {
+      "code" : "String",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "string"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger\/MetadataValue\/string(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Logger.MetadataValue.string(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/logging\/logger\/metadatavalue\/string(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/Logger/MetadataValue/stringConvertible(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "stringConvertible"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s23CustomStringConvertibleP",
+      "text" : "CustomStringConvertible"
+    },
+    {
+      "kind" : "text",
+      "text" : " & "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s8SendableP",
+      "text" : "Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/Logger\/MetadataValue\/stringConvertible(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Logger.MetadataValue.stringConvertible(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/logging\/logger\/metadatavalue\/stringconvertible(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s23CustomStringConvertibleP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s23CustomStringConvertibleP",
+  "title" : "Swift.CustomStringConvertible",
+  "type" : "unresolvable"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s25ExpressibleByArrayLiteralP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s25ExpressibleByArrayLiteralP",
+  "title" : "Swift.ExpressibleByArrayLiteral",
+  "type" : "unresolvable"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s26ExpressibleByStringLiteralP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s26ExpressibleByStringLiteralP",
+  "title" : "Swift.ExpressibleByStringLiteral",
+  "type" : "unresolvable"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s30ExpressibleByDictionaryLiteralP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s30ExpressibleByDictionaryLiteralP",
+  "title" : "Swift.ExpressibleByDictionaryLiteral",
+  "type" : "unresolvable"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s32ExpressibleByStringInterpolationP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s32ExpressibleByStringInterpolationP",
+  "title" : "Swift.ExpressibleByStringInterpolation",
+  "type" : "unresolvable"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s33ExpressibleByUnicodeScalarLiteralP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s33ExpressibleByUnicodeScalarLiteralP",
+  "title" : "Swift.ExpressibleByUnicodeScalarLiteral",
+  "type" : "unresolvable"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s43ExpressibleByExtendedGraphemeClusterLiteralP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s43ExpressibleByExtendedGraphemeClusterLiteralP",
+  "title" : "Swift.ExpressibleByExtendedGraphemeClusterLiteral",
+  "type" : "unresolvable"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s8SendableP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

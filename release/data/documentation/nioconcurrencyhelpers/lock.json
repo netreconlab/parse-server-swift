@@ -1,0 +1,502 @@
+{
+  "abstract" : [
+    {
+      "text" : "A threading lock based on ",
+      "type" : "text"
+    },
+    {
+      "code" : "libpthread",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " instead of ",
+      "type" : "text"
+    },
+    {
+      "code" : "libdispatch",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/Lock"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:21NIOConcurrencyHelpers4LockC",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "class"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "Lock"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIOConcurrencyHelpers"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "Lock"
+      }
+    ],
+    "platforms" : [
+
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Class",
+    "symbolKind" : "class",
+    "title" : "Lock"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "final"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "class"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "Lock"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This object provides a lock on top of a single ",
+              "type" : "text"
+            },
+            {
+              "code" : "pthread_mutex_t",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". This kind",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "of lock is safe to use with ",
+              "type" : "text"
+            },
+            {
+              "code" : "libpthread",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "-based threading models, such as the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "one used by NIO. On Windows, the lock is based on the substantially similar",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "SRWLOCK",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " type.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/Lock\/init()"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/Lock\/lock()",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/Lock\/unlock()",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/Lock\/withLock(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/Lock\/withLockVoid(_:)"
+      ],
+      "title" : "Instance Methods"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/nioconcurrencyhelpers\/lock"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOConcurrencyHelpers": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIOConcurrencyHelpers",
+  "type" : "topic",
+  "url" : "\/documentation\/nioconcurrencyhelpers"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOConcurrencyHelpers/Lock": {
+  "abstract" : [
+    {
+      "text" : "A threading lock based on ",
+      "type" : "text"
+    },
+    {
+      "code" : "libpthread",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " instead of ",
+      "type" : "text"
+    },
+    {
+      "code" : "libdispatch",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Lock"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/Lock",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Lock"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Lock",
+  "type" : "topic",
+  "url" : "\/documentation\/nioconcurrencyhelpers\/lock"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOConcurrencyHelpers/Lock/init()": {
+  "abstract" : [
+    {
+      "text" : "Create a new lock.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/Lock\/init()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init()",
+  "type" : "topic",
+  "url" : "\/documentation\/nioconcurrencyhelpers\/lock\/init()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOConcurrencyHelpers/Lock/lock()": {
+  "abstract" : [
+    {
+      "text" : "Acquire the lock.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "lock"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/Lock\/lock()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "lock()",
+  "type" : "topic",
+  "url" : "\/documentation\/nioconcurrencyhelpers\/lock\/lock()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOConcurrencyHelpers/Lock/unlock()": {
+  "abstract" : [
+    {
+      "text" : "Release the lock.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "unlock"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/Lock\/unlock()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "unlock()",
+  "type" : "topic",
+  "url" : "\/documentation\/nioconcurrencyhelpers\/lock\/unlock()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOConcurrencyHelpers/Lock/withLock(_:)": {
+  "abstract" : [
+    {
+      "text" : "Acquire the lock for the duration of the given block.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "withLock"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">(() "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:21NIOConcurrencyHelpers4LockC04withC0yxxyKXEKlF1TL_xmfp",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "rethrows"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:21NIOConcurrencyHelpers4LockC04withC0yxxyKXEKlF1TL_xmfp",
+      "text" : "T"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/Lock\/withLock(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "withLock(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioconcurrencyhelpers\/lock\/withlock(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOConcurrencyHelpers/Lock/withLockVoid(_:)": {
+  "abstract" : [
+
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "withLockVoid"
+    },
+    {
+      "kind" : "text",
+      "text" : "(() "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "rethrows"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/Lock\/withLockVoid(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "withLockVoid(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioconcurrencyhelpers\/lock\/withlockvoid(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s8SendableP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

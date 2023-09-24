@@ -1,0 +1,827 @@
+{
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelInboundHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that handles HTTP chunked ",
+      "type" : "text"
+    },
+    {
+      "code" : "HTTPClientResponsePart",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "messages by aggregating individual message chunks into a single",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "NIOHTTPClientResponseFull",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/NIOHTTPClientResponseAggregator"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:8NIOHTTP131NIOHTTPClientResponseAggregatorC",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "class"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "NIOHTTPClientResponseAggregator"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIOHTTP1"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "NIOHTTPClientResponseAggregator"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Class",
+    "symbolKind" : "class",
+    "title" : "NIOHTTPClientResponseAggregator"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "final"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "class"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "NIOHTTPClientResponseAggregator"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This is achieved by buffering the contents of all received ",
+              "type" : "text"
+            },
+            {
+              "code" : "HTTPClientResponsePart",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "messages until ",
+              "type" : "text"
+            },
+            {
+              "code" : "HTTPClientResponsePart.end",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is received, then assembling the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "full message and firing a channel read upstream with it. Useful when you do not",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "want to deal with chunked messages and just want to receive everything at once, and",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "are happy with the additional memory used and delay handling of the message until",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "everything has been received.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If ",
+              "type" : "text"
+            },
+            {
+              "code" : "NIOHTTPClientResponseAggregator",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " encounters a message larger than",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "maxContentLength",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", it discards the aggregated contents until the next",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "HTTPClientResponsePart.end",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and signals that via",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "fireUserInboundEventTriggered",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelHandler",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelInboundHandler",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/RemovableChannelHandler",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/NIOHTTPClientResponseAggregator\/init(maxContentLength:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/NIOHTTPClientResponseAggregator\/channelRead(context:data:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/NIOHTTPClientResponseAggregator\/handlerAdded(context:)"
+      ],
+      "title" : "Instance Methods"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/NIOHTTPClientResponseAggregator\/InboundIn",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/NIOHTTPClientResponseAggregator\/InboundOut"
+      ],
+      "title" : "Type Aliases"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/NIOHTTPClientResponseAggregator\/ChannelHandler-Implementations",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/NIOHTTPClientResponseAggregator\/ChannelInboundHandler-Implementations",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/NIOHTTPClientResponseAggregator\/RemovableChannelHandler-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/niohttp1\/niohttpclientresponseaggregator"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelHandler": {
+  "abstract" : [
+    {
+      "text" : "Base protocol for handlers that handle I\/O events or intercept an I\/O operation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ChannelHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ChannelHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ChannelHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelhandler"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelInboundHandler": {
+  "abstract" : [
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " which handles inbound I\/O events for a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ChannelInboundHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelInboundHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ChannelInboundHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ChannelInboundHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelinboundhandler"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/RemovableChannelHandler": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "RemovableChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that can be dynamically removed from a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " whilst",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is operating normally.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "RemovableChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is required to remove itself from the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " (using",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandlerContext.leavePipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ") as soon as possible.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "RemovableChannelHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/RemovableChannelHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "RemovableChannelHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "RemovableChannelHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/removablechannelhandler"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIOHTTP1",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/NIOHTTPClientResponseAggregator": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelInboundHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that handles HTTP chunked ",
+      "type" : "text"
+    },
+    {
+      "code" : "HTTPClientResponsePart",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "messages by aggregating individual message chunks into a single",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "NIOHTTPClientResponseFull",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NIOHTTPClientResponseAggregator"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/NIOHTTPClientResponseAggregator",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NIOHTTPClientResponseAggregator"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOHTTPClientResponseAggregator",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/niohttpclientresponseaggregator"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/NIOHTTPClientResponseAggregator/ChannelHandler-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/NIOHTTPClientResponseAggregator\/ChannelHandler-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "ChannelHandler Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/niohttpclientresponseaggregator\/channelhandler-implementations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/NIOHTTPClientResponseAggregator/ChannelInboundHandler-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/NIOHTTPClientResponseAggregator\/ChannelInboundHandler-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "ChannelInboundHandler Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/niohttpclientresponseaggregator\/channelinboundhandler-implementations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/NIOHTTPClientResponseAggregator/InboundIn": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "InboundIn"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/NIOHTTPClientResponseAggregator\/InboundIn",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "InboundIn"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOHTTPClientResponseAggregator.InboundIn",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/niohttpclientresponseaggregator\/inboundin"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/NIOHTTPClientResponseAggregator/InboundOut": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "InboundOut"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/NIOHTTPClientResponseAggregator\/InboundOut",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "InboundOut"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOHTTPClientResponseAggregator.InboundOut",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/niohttpclientresponseaggregator\/inboundout"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/NIOHTTPClientResponseAggregator/RemovableChannelHandler-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/NIOHTTPClientResponseAggregator\/RemovableChannelHandler-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "RemovableChannelHandler Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/niohttpclientresponseaggregator\/removablechannelhandler-implementations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/NIOHTTPClientResponseAggregator/channelRead(context:data:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "channelRead"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "context"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC",
+      "text" : "ChannelHandlerContext"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "data"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore6NIOAnyV",
+      "text" : "NIOAny"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/NIOHTTPClientResponseAggregator\/channelRead(context:data:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "channelRead(context:data:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/niohttpclientresponseaggregator\/channelread(context:data:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/NIOHTTPClientResponseAggregator/handlerAdded(context:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "handlerAdded"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "context"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC",
+      "text" : "ChannelHandlerContext"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/NIOHTTPClientResponseAggregator\/handlerAdded(context:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "handlerAdded(context:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/niohttpclientresponseaggregator\/handleradded(context:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/NIOHTTPClientResponseAggregator/init(maxContentLength:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "maxContentLength"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/NIOHTTPClientResponseAggregator\/init(maxContentLength:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(maxContentLength:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/niohttpclientresponseaggregator\/init(maxcontentlength:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s8SendableP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

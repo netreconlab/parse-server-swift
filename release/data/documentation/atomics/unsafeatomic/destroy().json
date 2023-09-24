@@ -1,0 +1,279 @@
+{
+  "abstract" : [
+    {
+      "text" : "Disposes of the current value of the storage location corresponding to",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "this unsafe atomic value, then deinitializes and deallocates the storage.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/UnsafeAtomic"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/UnsafeAtomic\/destroy()"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:7Atomics12UnsafeAtomicV7destroyxyF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "destroy"
+      },
+      {
+        "kind" : "text",
+        "text" : "() -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7Atomics12UnsafeAtomicV5Valuexmfp",
+        "text" : "Value"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Atomics"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "destroy()"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "attribute",
+              "text" : "@discardableResult"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "destroy"
+            },
+            {
+              "kind" : "text",
+              "text" : "() -> "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Atomics12UnsafeAtomicV5Valuexmfp",
+              "text" : "Value"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "return-value",
+          "level" : 2,
+          "text" : "Return Value",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The last value stored in the storage representation before it",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "was destroyed.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Note: This is not an atomic operation.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/atomics\/unsafeatomic\/destroy()"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Atomics": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Atomics",
+  "type" : "topic",
+  "url" : "\/documentation\/atomics"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Atomics/UnsafeAtomic": {
+  "abstract" : [
+    {
+      "text" : "An unsafe reference type holding an atomic value, requiring manual memory",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "management of the underlying storage representation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "UnsafeAtomic"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/UnsafeAtomic",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "UnsafeAtomic"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "UnsafeAtomic",
+  "type" : "topic",
+  "url" : "\/documentation\/atomics\/unsafeatomic"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Atomics/UnsafeAtomic/destroy()": {
+  "abstract" : [
+    {
+      "text" : "Disposes of the current value of the storage location corresponding to",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "this unsafe atomic value, then deinitializes and deallocates the storage.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "destroy"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics12UnsafeAtomicV5Valuexmfp",
+      "text" : "Value"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/UnsafeAtomic\/destroy()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "destroy()",
+  "type" : "topic",
+  "url" : "\/documentation\/atomics\/unsafeatomic\/destroy()"
+}
+}
+}

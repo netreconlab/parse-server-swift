@@ -1,0 +1,266 @@
+{
+  "abstract" : [
+    {
+      "text" : "Inherited from ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelInboundHandler.InboundIn",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIORequestResponseWithIDHandler"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIORequestResponseWithIDHandler\/InboundIn"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:9NIOExtras31NIORequestResponseWithIDHandlerC9InboundIna",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "typealias"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "InboundIn"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIOExtras"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "InboundIn"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Type Alias",
+    "symbolKind" : "typealias",
+    "title" : "NIORequestResponseWithIDHandler.InboundIn"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "typealias"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "InboundIn"
+            },
+            {
+              "kind" : "text",
+              "text" : " = "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:9NIOExtras31NIORequestResponseWithIDHandlerC0C0q_mfp",
+              "text" : "Response"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/nioextras\/niorequestresponsewithidhandler\/inboundin"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIOExtras",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/NIORequestResponseWithIDHandler": {
+  "abstract" : [
+    {
+      "code" : "NIORequestResponseWithIDHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " receives a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Request",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " alongside an ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoopPromise<Response>",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " from the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "‘s outbound side. It will fulfill the promise with the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Response",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " once it’s received from the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "’s",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "inbound side. Requests and responses can arrive out-of-order and are matched by the virtue of being",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "NIORequestIdentifiable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NIORequestResponseWithIDHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIORequestResponseWithIDHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NIORequestResponseWithIDHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIORequestResponseWithIDHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/niorequestresponsewithidhandler"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/NIORequestResponseWithIDHandler/InboundIn": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "InboundIn"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIORequestResponseWithIDHandler\/InboundIn",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "InboundIn"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIORequestResponseWithIDHandler.InboundIn",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/niorequestresponsewithidhandler\/inboundin"
+}
+}
+}

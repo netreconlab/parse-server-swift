@@ -1,0 +1,1100 @@
+{
+  "abstract" : [
+    {
+      "text" : "Holds a collection of active connections that can be requested and later released",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "back into the pool.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncKit"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncKit\/EventLoopConnectionPool"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:8AsyncKit23EventLoopConnectionPoolC",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "class"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "EventLoopConnectionPool"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "AsyncKit"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "EventLoopConnectionPool"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Class",
+    "symbolKind" : "class",
+    "title" : "EventLoopConnectionPool"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "final"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "class"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "EventLoopConnectionPool"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
+            },
+            {
+              "kind" : "genericParameter",
+              "text" : "Source"
+            },
+            {
+              "kind" : "text",
+              "text" : "> "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "where"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Source"
+            },
+            {
+              "kind" : "text",
+              "text" : " : "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncKit\/ConnectionPoolSource",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:8AsyncKit20ConnectionPoolSourceP",
+              "text" : "ConnectionPoolSource"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Connection pools are used to offset the overhead of creating new connections. Newly",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "opened connections are returned back to the pool and can be re-used until they",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "close.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "New connections are created as needed until the maximum configured connection limit",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "is reached. After the maximum is reached, no new connections will be created unless",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "existing connections are closed.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "let pool = EventLoopConnectionPool(...)",
+            "pool.withConnection(...) { conn in",
+            "    \/\/ use conn",
+            "}"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncKit\/EventLoopConnectionPool\/init(source:maxConnections:requestTimeout:logger:on:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncKit\/EventLoopConnectionPool\/eventLoop",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncKit\/EventLoopConnectionPool\/logger",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncKit\/EventLoopConnectionPool\/source"
+      ],
+      "title" : "Instance Properties"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncKit\/EventLoopConnectionPool\/close()",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncKit\/EventLoopConnectionPool\/releaseConnection(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncKit\/EventLoopConnectionPool\/releaseConnection(_:logger:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncKit\/EventLoopConnectionPool\/requestConnection()",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncKit\/EventLoopConnectionPool\/requestConnection(logger:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncKit\/EventLoopConnectionPool\/withConnection(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncKit\/EventLoopConnectionPool\/withConnection(logger:_:)"
+      ],
+      "title" : "Instance Methods"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/asynckit\/eventloopconnectionpool"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/AsyncKit": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncKit",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "AsyncKit",
+  "type" : "topic",
+  "url" : "\/documentation\/asynckit"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/AsyncKit/ConnectionPoolSource": {
+  "abstract" : [
+    {
+      "text" : "Source of new connections for ",
+      "type" : "text"
+    },
+    {
+      "code" : "ConnectionPool",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ConnectionPoolSource"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncKit\/ConnectionPoolSource",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ConnectionPoolSource"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ConnectionPoolSource",
+  "type" : "topic",
+  "url" : "\/documentation\/asynckit\/connectionpoolsource"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/AsyncKit/EventLoopConnectionPool": {
+  "abstract" : [
+    {
+      "text" : "Holds a collection of active connections that can be requested and later released",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "back into the pool.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "EventLoopConnectionPool"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncKit\/EventLoopConnectionPool",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "EventLoopConnectionPool"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "EventLoopConnectionPool",
+  "type" : "topic",
+  "url" : "\/documentation\/asynckit\/eventloopconnectionpool"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/AsyncKit/EventLoopConnectionPool/close()": {
+  "abstract" : [
+    {
+      "text" : "Closes the connection pool.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "close"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncKit\/EventLoopConnectionPool\/close()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "close()",
+  "type" : "topic",
+  "url" : "\/documentation\/asynckit\/eventloopconnectionpool\/close()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/AsyncKit/EventLoopConnectionPool/eventLoop": {
+  "abstract" : [
+    {
+      "text" : "This pool’s event loop.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "eventLoop"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore9EventLoopP",
+      "text" : "EventLoop"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncKit\/EventLoopConnectionPool\/eventLoop",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "eventLoop",
+  "type" : "topic",
+  "url" : "\/documentation\/asynckit\/eventloopconnectionpool\/eventloop"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/AsyncKit/EventLoopConnectionPool/init(source:maxConnections:requestTimeout:logger:on:)": {
+  "abstract" : [
+    {
+      "text" : "Creates a new ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncKit\/EventLoopConnectionPool",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "source"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8AsyncKit23EventLoopConnectionPoolC6Sourcexmfp",
+      "text" : "Source"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "maxConnections"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "requestTimeout"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore10TimeAmountV",
+      "text" : "TimeAmount"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "logger"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Logging6LoggerV",
+      "text" : "Logger"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "on"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore9EventLoopP",
+      "text" : "EventLoop"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncKit\/EventLoopConnectionPool\/init(source:maxConnections:requestTimeout:logger:on:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(source:maxConnections:requestTimeout:logger:on:)",
+  "type" : "topic",
+  "url" : "\/documentation\/asynckit\/eventloopconnectionpool\/init(source:maxconnections:requesttimeout:logger:on:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/AsyncKit/EventLoopConnectionPool/logger": {
+  "abstract" : [
+    {
+      "text" : "For lifecycle logs.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "logger"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Logging6LoggerV",
+      "text" : "Logger"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncKit\/EventLoopConnectionPool\/logger",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "logger",
+  "type" : "topic",
+  "url" : "\/documentation\/asynckit\/eventloopconnectionpool\/logger"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/AsyncKit/EventLoopConnectionPool/releaseConnection(_:)": {
+  "abstract" : [
+    {
+      "text" : "Releases a connection back to the pool. Use with ",
+      "type" : "text"
+    },
+    {
+      "code" : "requestConnection()",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "releaseConnection"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8AsyncKit23EventLoopConnectionPoolC6Sourcexmfp",
+      "text" : "Source"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8AsyncKit20ConnectionPoolSourceP0C0Qa",
+      "text" : "Connection"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncKit\/EventLoopConnectionPool\/releaseConnection(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "releaseConnection(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/asynckit\/eventloopconnectionpool\/releaseconnection(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/AsyncKit/EventLoopConnectionPool/releaseConnection(_:logger:)": {
+  "abstract" : [
+    {
+      "text" : "Releases a connection back to the pool. Use with ",
+      "type" : "text"
+    },
+    {
+      "code" : "requestConnection()",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "releaseConnection"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8AsyncKit23EventLoopConnectionPoolC6Sourcexmfp",
+      "text" : "Source"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8AsyncKit20ConnectionPoolSourceP0C0Qa",
+      "text" : "Connection"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "logger"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Logging6LoggerV",
+      "text" : "Logger"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncKit\/EventLoopConnectionPool\/releaseConnection(_:logger:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "releaseConnection(_:logger:)",
+  "type" : "topic",
+  "url" : "\/documentation\/asynckit\/eventloopconnectionpool\/releaseconnection(_:logger:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/AsyncKit/EventLoopConnectionPool/requestConnection()": {
+  "abstract" : [
+    {
+      "text" : "Requests a pooled connection.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "requestConnection"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8AsyncKit23EventLoopConnectionPoolC6Sourcexmfp",
+      "text" : "Source"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8AsyncKit20ConnectionPoolSourceP0C0Qa",
+      "text" : "Connection"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncKit\/EventLoopConnectionPool\/requestConnection()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "requestConnection()",
+  "type" : "topic",
+  "url" : "\/documentation\/asynckit\/eventloopconnectionpool\/requestconnection()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/AsyncKit/EventLoopConnectionPool/requestConnection(logger:)": {
+  "abstract" : [
+    {
+      "text" : "Requests a pooled connection.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "requestConnection"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "logger"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Logging6LoggerV",
+      "text" : "Logger"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8AsyncKit23EventLoopConnectionPoolC6Sourcexmfp",
+      "text" : "Source"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8AsyncKit20ConnectionPoolSourceP0C0Qa",
+      "text" : "Connection"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncKit\/EventLoopConnectionPool\/requestConnection(logger:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "requestConnection(logger:)",
+  "type" : "topic",
+  "url" : "\/documentation\/asynckit\/eventloopconnectionpool\/requestconnection(logger:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/AsyncKit/EventLoopConnectionPool/source": {
+  "abstract" : [
+    {
+      "text" : "Connection source.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "source"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8AsyncKit23EventLoopConnectionPoolC6Sourcexmfp",
+      "text" : "Source"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncKit\/EventLoopConnectionPool\/source",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "source",
+  "type" : "topic",
+  "url" : "\/documentation\/asynckit\/eventloopconnectionpool\/source"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/AsyncKit/EventLoopConnectionPool/withConnection(_:)": {
+  "abstract" : [
+    {
+      "text" : "Fetches a pooled connection for the lifetime of the closure.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "withConnection"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Result"
+    },
+    {
+      "kind" : "text",
+      "text" : ">(("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8AsyncKit23EventLoopConnectionPoolC6Sourcexmfp",
+      "text" : "Source"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8AsyncKit20ConnectionPoolSourceP0C0Qa",
+      "text" : "Connection"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8AsyncKit23EventLoopConnectionPoolC04withE0y7NIOCore0cD6FutureCyqd__GAH0E0QzclF6ResultL_qd__mfp",
+      "text" : "Result"
+    },
+    {
+      "kind" : "text",
+      "text" : ">) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8AsyncKit23EventLoopConnectionPoolC04withE0y7NIOCore0cD6FutureCyqd__GAH0E0QzclF6ResultL_qd__mfp",
+      "text" : "Result"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncKit\/EventLoopConnectionPool\/withConnection(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "withConnection(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/asynckit\/eventloopconnectionpool\/withconnection(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/AsyncKit/EventLoopConnectionPool/withConnection(logger:_:)": {
+  "abstract" : [
+    {
+      "text" : "Fetches a pooled connection for the lifetime of the closure.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "withConnection"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Result"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "logger"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Logging6LoggerV",
+      "text" : "Logger"
+    },
+    {
+      "kind" : "text",
+      "text" : ", ("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8AsyncKit23EventLoopConnectionPoolC6Sourcexmfp",
+      "text" : "Source"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8AsyncKit20ConnectionPoolSourceP0C0Qa",
+      "text" : "Connection"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8AsyncKit23EventLoopConnectionPoolC04withE06logger_7NIOCore0cD6FutureCyqd__G7Logging6LoggerV_AI0E0QzctlF6ResultL_qd__mfp",
+      "text" : "Result"
+    },
+    {
+      "kind" : "text",
+      "text" : ">) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8AsyncKit23EventLoopConnectionPoolC04withE06logger_7NIOCore0cD6FutureCyqd__G7Logging6LoggerV_AI0E0QzctlF6ResultL_qd__mfp",
+      "text" : "Result"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncKit\/EventLoopConnectionPool\/withConnection(logger:_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "withConnection(logger:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/asynckit\/eventloopconnectionpool\/withconnection(logger:_:)"
+}
+}
+}

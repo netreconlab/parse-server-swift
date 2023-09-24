@@ -1,0 +1,585 @@
+{
+  "abstract" : [
+    {
+      "text" : "Some ",
+      "type" : "text"
+    },
+    {
+      "code" : "ByteToMessageDecoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s need to observe ",
+      "type" : "text"
+    },
+    {
+      "code" : "write",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s (which are outbound events). ",
+      "type" : "text"
+    },
+    {
+      "code" : "ByteToMessageDecoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s which",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "implement the ",
+      "type" : "text"
+    },
+    {
+      "code" : "WriteObservingByteToMessageDecoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " protocol will be notified about every outbound write.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/WriteObservingByteToMessageDecoder"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:7NIOCore34WriteObservingByteToMessageDecoderP",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "protocol"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "WriteObservingByteToMessageDecoder"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIO"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "WriteObservingByteToMessageDecoder"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Protocol",
+    "symbolKind" : "protocol",
+    "title" : "WriteObservingByteToMessageDecoder"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "protocol"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "WriteObservingByteToMessageDecoder"
+            },
+            {
+              "kind" : "text",
+              "text" : " : "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ByteToMessageDecoder",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7NIOCore20ByteToMessageDecoderP",
+              "text" : "ByteToMessageDecoder"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "code" : "WriteObservingByteToMessageDecoder",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " may only observe a ",
+              "type" : "text"
+            },
+            {
+              "code" : "write",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and must not try to transform or block it in any",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "way. After the ",
+              "type" : "text"
+            },
+            {
+              "code" : "write",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " method returns the ",
+              "type" : "text"
+            },
+            {
+              "code" : "write",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " will be forwarded to the next outbound handler.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ByteToMessageDecoder"
+      ],
+      "kind" : "relationships",
+      "title" : "Inherits From",
+      "type" : "inheritsFrom"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPDecoder"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforming Types",
+      "type" : "conformingTypes"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/WriteObservingByteToMessageDecoder\/OutboundIn"
+      ],
+      "title" : "Associated Types"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/WriteObservingByteToMessageDecoder\/write(data:)"
+      ],
+      "title" : "Instance Methods"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/nio\/writeobservingbytetomessagedecoder"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIO",
+  "type" : "topic",
+  "url" : "\/documentation\/nio"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ByteToMessageDecoder": {
+  "abstract" : [
+    {
+      "code" : "ByteToMessageDecoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s decode bytes in a stream-like fashion from ",
+      "type" : "text"
+    },
+    {
+      "code" : "ByteBuffer",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " to another message type.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ByteToMessageDecoder"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ByteToMessageDecoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ByteToMessageDecoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ByteToMessageDecoder",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/bytetomessagedecoder"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/WriteObservingByteToMessageDecoder": {
+  "abstract" : [
+    {
+      "text" : "Some ",
+      "type" : "text"
+    },
+    {
+      "code" : "ByteToMessageDecoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s need to observe ",
+      "type" : "text"
+    },
+    {
+      "code" : "write",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s (which are outbound events). ",
+      "type" : "text"
+    },
+    {
+      "code" : "ByteToMessageDecoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s which",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "implement the ",
+      "type" : "text"
+    },
+    {
+      "code" : "WriteObservingByteToMessageDecoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " protocol will be notified about every outbound write.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "WriteObservingByteToMessageDecoder"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/WriteObservingByteToMessageDecoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "WriteObservingByteToMessageDecoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "WriteObservingByteToMessageDecoder",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/writeobservingbytetomessagedecoder"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/WriteObservingByteToMessageDecoder/OutboundIn": {
+  "abstract" : [
+    {
+      "text" : "The type of ",
+      "type" : "text"
+    },
+    {
+      "code" : "write",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "associatedtype"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "OutboundIn"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/WriteObservingByteToMessageDecoder\/OutboundIn",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "OutboundIn",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/writeobservingbytetomessagedecoder\/outboundin"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/WriteObservingByteToMessageDecoder/write(data:)": {
+  "abstract" : [
+    {
+      "code" : "write",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is called for every incoming ",
+      "type" : "text"
+    },
+    {
+      "code" : "write",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " incoming to the corresponding ",
+      "type" : "text"
+    },
+    {
+      "code" : "ByteToMessageHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "write"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "data"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "OutboundIn"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/WriteObservingByteToMessageDecoder\/write(data:)",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "write(data:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/writeobservingbytetomessagedecoder\/write(data:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/HTTPDecoder": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelInboundHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that parses HTTP\/1-style messages, converting them from",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "unstructured bytes to a sequence of HTTP messages.",
+      "type" : "text"
+    }
+  ],
+  "conformance" : {
+    "availabilityPrefix" : [
+      {
+        "text" : "Available when",
+        "type" : "text"
+      }
+    ],
+    "conformancePrefix" : [
+      {
+        "text" : "Conforms when",
+        "type" : "text"
+      }
+    ],
+    "constraints" : [
+      {
+        "code" : "In",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : " is ",
+        "type" : "text"
+      },
+      {
+        "code" : "HTTPPart<HTTPResponseHead, ByteBuffer>",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : " and ",
+        "type" : "text"
+      },
+      {
+        "code" : "Out",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : " is ",
+        "type" : "text"
+      },
+      {
+        "code" : "HTTPPart<HTTPRequestHead, IOData>",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : ".",
+        "type" : "text"
+      }
+    ]
+  },
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "HTTPDecoder"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPDecoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "HTTPDecoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HTTPDecoder",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/httpdecoder"
+}
+}
+}

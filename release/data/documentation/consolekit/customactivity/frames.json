@@ -1,0 +1,314 @@
+{
+  "abstract" : [
+    {
+      "text" : "The text that will be output on the indicator ticks, each frame corresponding to a single tick in a range of ",
+      "type" : "text"
+    },
+    {
+      "code" : "0...(frames.count - 1)",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit\/CustomActivity"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit\/CustomActivity\/frames"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:10ConsoleKit14CustomActivityV6framesSayAA0A4TextVGvp",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "let"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "frames"
+      },
+      {
+        "kind" : "text",
+        "text" : ": ["
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10ConsoleKit0A4TextV",
+        "text" : "ConsoleText"
+      },
+      {
+        "kind" : "text",
+        "text" : "]"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "ConsoleKit"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Property",
+    "symbolKind" : "property",
+    "title" : "frames"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "let"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "frames"
+            },
+            {
+              "kind" : "text",
+              "text" : ": ["
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit\/ConsoleText",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10ConsoleKit0A4TextV",
+              "text" : "ConsoleText"
+            },
+            {
+              "kind" : "text",
+              "text" : "]"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The index of the current frame is figured using the equation ",
+              "type" : "text"
+            },
+            {
+              "code" : "tick % frames.count",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", allowing the indicator to run indefinitely.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/consolekit\/customactivity\/frames"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ConsoleKit": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "ConsoleKit",
+  "type" : "topic",
+  "url" : "\/documentation\/consolekit"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ConsoleKit/ConsoleText": {
+  "abstract" : [
+    {
+      "text" : "A collection of ",
+      "type" : "text"
+    },
+    {
+      "code" : "ConsoleTextFragment",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s. Represents stylized text that can be outputted",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "to a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Console",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ConsoleText"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit\/ConsoleText",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ConsoleText"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ConsoleText",
+  "type" : "topic",
+  "url" : "\/documentation\/consolekit\/consoletext"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ConsoleKit/CustomActivity": {
+  "abstract" : [
+    {
+      "text" : "An activity indicator with customizable frames and success and failure messages.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CustomActivity"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit\/CustomActivity",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CustomActivity"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CustomActivity",
+  "type" : "topic",
+  "url" : "\/documentation\/consolekit\/customactivity"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ConsoleKit/CustomActivity/frames": {
+  "abstract" : [
+    {
+      "text" : "The text that will be output on the indicator ticks, each frame corresponding to a single tick in a range of ",
+      "type" : "text"
+    },
+    {
+      "code" : "0...(frames.count - 1)",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "frames"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10ConsoleKit0A4TextV",
+      "text" : "ConsoleText"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ConsoleKit\/CustomActivity\/frames",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "frames",
+  "type" : "topic",
+  "url" : "\/documentation\/consolekit\/customactivity\/frames"
+}
+}
+}

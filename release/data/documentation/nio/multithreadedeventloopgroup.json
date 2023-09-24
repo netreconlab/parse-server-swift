@@ -1,0 +1,1045 @@
+{
+  "abstract" : [
+    {
+      "text" : "An ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoopGroup",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " which will create multiple ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s, each tied to its own ",
+      "type" : "text"
+    },
+    {
+      "code" : "NIOThread",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/MultiThreadedEventLoopGroup"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:8NIOPosix27MultiThreadedEventLoopGroupC",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "class"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "MultiThreadedEventLoopGroup"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIO"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "MultiThreadedEventLoopGroup"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Class",
+    "symbolKind" : "class",
+    "title" : "MultiThreadedEventLoopGroup"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "final"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "class"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "MultiThreadedEventLoopGroup"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The effect of initializing a ",
+              "type" : "text"
+            },
+            {
+              "code" : "MultiThreadedEventLoopGroup",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is to spawn ",
+              "type" : "text"
+            },
+            {
+              "code" : "numberOfThreads",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " fresh threads which will",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "all run their own ",
+              "type" : "text"
+            },
+            {
+              "code" : "EventLoop",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". Those threads will not be shut down until ",
+              "type" : "text"
+            },
+            {
+              "code" : "shutdownGracefully",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " or",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "syncShutdownGracefully",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is called.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "It’s good style to call ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "MultiThreadedEventLoopGroup.shutdownGracefully",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " or",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "MultiThreadedEventLoopGroup.syncShutdownGracefully",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " when you no longer need this ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "EventLoopGroup",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ". In",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "many cases that is just before your program exits.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Unit tests often spawn one ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "MultiThreadedEventLoopGroup",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " per unit test to force isolation between the",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "tests. In those cases it’s important to shut the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "MultiThreadedEventLoopGroup",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " down at the end of the",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "test. A good place to start a ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "MultiThreadedEventLoopGroup",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " is the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "setUp",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " method of your ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "XCTestCase",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "subclass, a good place to shut it down is the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "tearDown",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " method.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Warning",
+          "style" : "warning",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/EventLoopGroup",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s23CustomStringConvertibleP",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/MultiThreadedEventLoopGroup\/init(numberOfThreads:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/MultiThreadedEventLoopGroup\/any()",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/MultiThreadedEventLoopGroup\/makeIterator()",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/MultiThreadedEventLoopGroup\/next()",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/MultiThreadedEventLoopGroup\/shutdownGracefully(queue:_:)"
+      ],
+      "title" : "Instance Methods"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/MultiThreadedEventLoopGroup\/currentEventLoop",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/MultiThreadedEventLoopGroup\/singleton"
+      ],
+      "title" : "Type Properties"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/MultiThreadedEventLoopGroup\/withCurrentThreadAsEventLoop(_:)"
+      ],
+      "title" : "Type Methods"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/MultiThreadedEventLoopGroup\/CustomStringConvertible-Implementations",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/MultiThreadedEventLoopGroup\/EventLoopGroup-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/nio\/multithreadedeventloopgroup"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIO",
+  "type" : "topic",
+  "url" : "\/documentation\/nio"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/EventLoopGroup": {
+  "abstract" : [
+    {
+      "text" : "Provides an endless stream of ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s to use.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "EventLoopGroup"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/EventLoopGroup",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "EventLoopGroup"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "EventLoopGroup",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/eventloopgroup"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/MultiThreadedEventLoopGroup": {
+  "abstract" : [
+    {
+      "text" : "An ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoopGroup",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " which will create multiple ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s, each tied to its own ",
+      "type" : "text"
+    },
+    {
+      "code" : "NIOThread",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "MultiThreadedEventLoopGroup"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/MultiThreadedEventLoopGroup",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "MultiThreadedEventLoopGroup"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "MultiThreadedEventLoopGroup",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/multithreadedeventloopgroup"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/MultiThreadedEventLoopGroup/CustomStringConvertible-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/MultiThreadedEventLoopGroup\/CustomStringConvertible-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "CustomStringConvertible Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/multithreadedeventloopgroup\/customstringconvertible-implementations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/MultiThreadedEventLoopGroup/EventLoopGroup-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/MultiThreadedEventLoopGroup\/EventLoopGroup-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "EventLoopGroup Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/multithreadedeventloopgroup\/eventloopgroup-implementations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/MultiThreadedEventLoopGroup/any()": {
+  "abstract" : [
+    {
+      "text" : "Returns the current ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " if we are on an ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " of this ",
+      "type" : "text"
+    },
+    {
+      "code" : "MultiThreadedEventLoopGroup",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " instance.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore9EventLoopP",
+      "text" : "EventLoop"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/MultiThreadedEventLoopGroup\/any()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "any()",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/multithreadedeventloopgroup\/any()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/MultiThreadedEventLoopGroup/currentEventLoop": {
+  "abstract" : [
+    {
+      "text" : "Returns the ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " for the calling thread.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "currentEventLoop"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore9EventLoopP",
+      "text" : "EventLoop"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/MultiThreadedEventLoopGroup\/currentEventLoop",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "currentEventLoop",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/multithreadedeventloopgroup\/currenteventloop"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/MultiThreadedEventLoopGroup/init(numberOfThreads:)": {
+  "abstract" : [
+    {
+      "text" : "Creates a ",
+      "type" : "text"
+    },
+    {
+      "code" : "MultiThreadedEventLoopGroup",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " instance which uses ",
+      "type" : "text"
+    },
+    {
+      "code" : "numberOfThreads",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "convenience"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "numberOfThreads"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/MultiThreadedEventLoopGroup\/init(numberOfThreads:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(numberOfThreads:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/multithreadedeventloopgroup\/init(numberofthreads:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/MultiThreadedEventLoopGroup/makeIterator()": {
+  "abstract" : [
+    {
+      "text" : "Returns an ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoopIterator",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " over the ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s in this ",
+      "type" : "text"
+    },
+    {
+      "code" : "MultiThreadedEventLoopGroup",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "makeIterator"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore17EventLoopIteratorV",
+      "text" : "EventLoopIterator"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/MultiThreadedEventLoopGroup\/makeIterator()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "makeIterator()",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/multithreadedeventloopgroup\/makeiterator()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/MultiThreadedEventLoopGroup/next()": {
+  "abstract" : [
+    {
+      "text" : "Returns the next ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " from this ",
+      "type" : "text"
+    },
+    {
+      "code" : "MultiThreadedEventLoopGroup",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "next"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore9EventLoopP",
+      "text" : "EventLoop"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/MultiThreadedEventLoopGroup\/next()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "next()",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/multithreadedeventloopgroup\/next()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/MultiThreadedEventLoopGroup/shutdownGracefully(queue:_:)": {
+  "abstract" : [
+    {
+      "text" : "Shut this ",
+      "type" : "text"
+    },
+    {
+      "code" : "MultiThreadedEventLoopGroup",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " down which causes the ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s and their associated threads to be",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "shut down and release their resources.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "shutdownGracefully"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "queue"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:objc(cs)OS_dispatch_queue",
+      "text" : "DispatchQueue"
+    },
+    {
+      "kind" : "text",
+      "text" : ", ("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s5ErrorP",
+      "text" : "Error"
+    },
+    {
+      "kind" : "text",
+      "text" : "?) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/MultiThreadedEventLoopGroup\/shutdownGracefully(queue:_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "shutdownGracefully(queue:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/multithreadedeventloopgroup\/shutdowngracefully(queue:_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/MultiThreadedEventLoopGroup/singleton": {
+  "abstract" : [
+    {
+      "text" : "A globally shared, singleton ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/MultiThreadedEventLoopGroup",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "singleton"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOPosix27MultiThreadedEventLoopGroupC",
+      "text" : "MultiThreadedEventLoopGroup"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/MultiThreadedEventLoopGroup\/singleton",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "singleton",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/multithreadedeventloopgroup\/singleton"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/MultiThreadedEventLoopGroup/withCurrentThreadAsEventLoop(_:)": {
+  "abstract" : [
+    {
+      "text" : "Convert the calling thread into an ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "withCurrentThreadAsEventLoop"
+    },
+    {
+      "kind" : "text",
+      "text" : "(("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore9EventLoopP",
+      "text" : "EventLoop"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/MultiThreadedEventLoopGroup\/withCurrentThreadAsEventLoop(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "withCurrentThreadAsEventLoop(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/multithreadedeventloopgroup\/withcurrentthreadaseventloop(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s23CustomStringConvertibleP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s23CustomStringConvertibleP",
+  "title" : "Swift.CustomStringConvertible",
+  "type" : "unresolvable"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s8SendableP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

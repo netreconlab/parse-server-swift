@@ -1,0 +1,392 @@
+{
+  "abstract" : [
+    {
+      "text" : "Wraps a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Responder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " in a single ",
+      "type" : "text"
+    },
+    {
+      "code" : "Middleware",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " creating a new ",
+      "type" : "text"
+    },
+    {
+      "code" : "Responder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/Middleware"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/Middleware\/makeResponder(chainingTo:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "Vapor",
+    "externalID" : "s:5Vapor10MiddlewarePAAE13makeResponder10chainingToAA0D0_pAaF_p_tF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "makeResponder"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "chainingTo"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:5Vapor9ResponderP",
+        "text" : "Responder"
+      },
+      {
+        "kind" : "text",
+        "text" : ") -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:5Vapor9ResponderP",
+        "text" : "Responder"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Vapor"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "makeResponder(chainingTo:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "makeResponder"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "chainingTo"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "responder"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/Responder",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:5Vapor9ResponderP",
+              "text" : "Responder"
+            },
+            {
+              "kind" : "text",
+              "text" : ") -> "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/Responder",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:5Vapor9ResponderP",
+              "text" : "Responder"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/vapor\/middleware\/makeresponder(chainingto:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Vapor",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/Middleware": {
+  "abstract" : [
+    {
+      "code" : "Middleware",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is placed between the server and your router. It is capable of",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "mutating both incoming requests and outgoing responses. ",
+      "type" : "text"
+    },
+    {
+      "code" : "Middleware",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " can choose",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "to pass requests on to the next ",
+      "type" : "text"
+    },
+    {
+      "code" : "Middleware",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " in a chain, or they can short circuit and",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "return a custom ",
+      "type" : "text"
+    },
+    {
+      "code" : "Response",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " if desired.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Middleware"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/Middleware",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Middleware"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Middleware",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/middleware"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/Middleware/makeResponder(chainingTo:)": {
+  "abstract" : [
+    {
+      "text" : "Wraps a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Responder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " in a single ",
+      "type" : "text"
+    },
+    {
+      "code" : "Middleware",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " creating a new ",
+      "type" : "text"
+    },
+    {
+      "code" : "Responder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "makeResponder"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "chainingTo"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Vapor9ResponderP",
+      "text" : "Responder"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Vapor9ResponderP",
+      "text" : "Responder"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/Middleware\/makeResponder(chainingTo:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "makeResponder(chainingTo:)",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/middleware\/makeresponder(chainingto:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/Responder": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Responder"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/Responder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Responder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Responder",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/responder"
+}
+}
+}

@@ -1,0 +1,767 @@
+{
+  "abstract" : [
+    {
+      "text" : "A decoder that splits incoming ",
+      "type" : "text"
+    },
+    {
+      "code" : "ByteBuffer",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s around line end",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "character(s) (",
+      "type" : "text"
+    },
+    {
+      "code" : "'\\n'",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " or ",
+      "type" : "text"
+    },
+    {
+      "code" : "'\\r\\n'",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ").",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/LineBasedFrameDecoder"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:9NIOExtras21LineBasedFrameDecoderC",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "class"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "LineBasedFrameDecoder"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIOExtras"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "LineBasedFrameDecoder"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Class",
+    "symbolKind" : "class",
+    "title" : "LineBasedFrameDecoder"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "class"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "LineBasedFrameDecoder"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Let’s, for example, consider the following received buffer:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "+----+-------+------------+",
+            "| AB | C\\nDE | F\\r\\nGHI\\n |",
+            "+----+-------+------------+"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A instance of ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/LineBasedFrameDecoder",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " will split this buffer",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "as follows:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "+-----+-----+-----+",
+            "| ABC | DEF | GHI |",
+            "+-----+-----+-----+"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ByteToMessageDecoder",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/LineBasedFrameDecoder\/init()"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/LineBasedFrameDecoder\/cumulationBuffer"
+      ],
+      "title" : "Instance Properties"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/LineBasedFrameDecoder\/decode(context:buffer:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/LineBasedFrameDecoder\/decodeLast(context:buffer:seenEOF:)"
+      ],
+      "title" : "Instance Methods"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/LineBasedFrameDecoder\/InboundIn",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/LineBasedFrameDecoder\/InboundOut"
+      ],
+      "title" : "Type Aliases"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/LineBasedFrameDecoder\/ByteToMessageDecoder-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/nioextras\/linebasedframedecoder"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ByteToMessageDecoder": {
+  "abstract" : [
+    {
+      "code" : "ByteToMessageDecoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s decode bytes in a stream-like fashion from ",
+      "type" : "text"
+    },
+    {
+      "code" : "ByteBuffer",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " to another message type.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ByteToMessageDecoder"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ByteToMessageDecoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ByteToMessageDecoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ByteToMessageDecoder",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/bytetomessagedecoder"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIOExtras",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/LineBasedFrameDecoder": {
+  "abstract" : [
+    {
+      "text" : "A decoder that splits incoming ",
+      "type" : "text"
+    },
+    {
+      "code" : "ByteBuffer",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s around line end",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "character(s) (",
+      "type" : "text"
+    },
+    {
+      "code" : "'\\n'",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " or ",
+      "type" : "text"
+    },
+    {
+      "code" : "'\\r\\n'",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ").",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "LineBasedFrameDecoder"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/LineBasedFrameDecoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "LineBasedFrameDecoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "LineBasedFrameDecoder",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/linebasedframedecoder"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/LineBasedFrameDecoder/ByteToMessageDecoder-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/LineBasedFrameDecoder\/ByteToMessageDecoder-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "ByteToMessageDecoder Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/linebasedframedecoder\/bytetomessagedecoder-implementations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/LineBasedFrameDecoder/InboundIn": {
+  "abstract" : [
+    {
+      "code" : "ByteBuffer",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is the expected type passed in.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "InboundIn"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/LineBasedFrameDecoder\/InboundIn",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "InboundIn"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "LineBasedFrameDecoder.InboundIn",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/linebasedframedecoder\/inboundin"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/LineBasedFrameDecoder/InboundOut": {
+  "abstract" : [
+    {
+      "code" : "ByteBuffer",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s will be passed to the next stage.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "InboundOut"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/LineBasedFrameDecoder\/InboundOut",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "InboundOut"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "LineBasedFrameDecoder.InboundOut",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/linebasedframedecoder\/inboundout"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/LineBasedFrameDecoder/cumulationBuffer": {
+  "abstract" : [
+
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "cumulationBuffer"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore10ByteBufferV",
+      "text" : "ByteBuffer"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/LineBasedFrameDecoder\/cumulationBuffer",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "cumulationBuffer",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/linebasedframedecoder\/cumulationbuffer"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/LineBasedFrameDecoder/decode(context:buffer:)": {
+  "abstract" : [
+    {
+      "text" : "Decode data in the supplied buffer.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "decode"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "context"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC",
+      "text" : "ChannelHandlerContext"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "buffer"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "inout"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore10ByteBufferV",
+      "text" : "ByteBuffer"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore13DecodingStateO",
+      "text" : "DecodingState"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/LineBasedFrameDecoder\/decode(context:buffer:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "decode(context:buffer:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/linebasedframedecoder\/decode(context:buffer:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/LineBasedFrameDecoder/decodeLast(context:buffer:seenEOF:)": {
+  "abstract" : [
+    {
+      "text" : "Decode all remaining data.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "If it is not possible to consume all the data then ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIOExtrasErrors\/LeftOverBytesError",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " is reported via ",
+      "type" : "text"
+    },
+    {
+      "code" : "context.fireErrorCaught",
+      "type" : "codeVoice"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "decodeLast"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "context"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC",
+      "text" : "ChannelHandlerContext"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "buffer"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "inout"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore10ByteBufferV",
+      "text" : "ByteBuffer"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "seenEOF"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore13DecodingStateO",
+      "text" : "DecodingState"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/LineBasedFrameDecoder\/decodeLast(context:buffer:seenEOF:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "decodeLast(context:buffer:seenEOF:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/linebasedframedecoder\/decodelast(context:buffer:seeneof:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/LineBasedFrameDecoder/init()": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/LineBasedFrameDecoder\/init()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init()",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/linebasedframedecoder\/init()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/NIOExtrasErrors/LeftOverBytesError": {
+  "abstract" : [
+    {
+      "text" : "Error indicating that after an operation some unused bytes are left.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "LeftOverBytesError"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIOExtrasErrors\/LeftOverBytesError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "LeftOverBytesError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOExtrasErrors.LeftOverBytesError",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/nioextraserrors\/leftoverbyteserror"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s8SendableP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

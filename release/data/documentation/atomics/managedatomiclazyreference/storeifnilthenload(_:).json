@@ -1,0 +1,370 @@
+{
+  "abstract" : [
+    {
+      "text" : "Atomically initializes this reference if its current value is nil, then",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "returns the initialized value. If this reference is already initialized,",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "then ",
+      "type" : "text"
+    },
+    {
+      "code" : "storeIfNilThenLoad(_:)",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " discards its supplied argument and returns",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "the current value without updating it.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/ManagedAtomicLazyReference"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/ManagedAtomicLazyReference\/storeIfNilThenLoad(_:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "Atomics",
+    "externalID" : "s:7Atomics26ManagedAtomicLazyReferenceC18storeIfNilThenLoadyxxnF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "storeIfNilThenLoad"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7Atomics26ManagedAtomicLazyReferenceC8Instancexmfp",
+        "text" : "Instance"
+      },
+      {
+        "kind" : "text",
+        "text" : ") -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7Atomics26ManagedAtomicLazyReferenceC8Instancexmfp",
+        "text" : "Instance"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Atomics"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "storeIfNilThenLoad(_:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "storeIfNilThenLoad"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "_"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "desired"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Atomics26ManagedAtomicLazyReferenceC8Instancexmfp",
+              "text" : "Instance"
+            },
+            {
+              "kind" : "text",
+              "text" : ") -> "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Atomics26ManagedAtomicLazyReferenceC8Instancexmfp",
+              "text" : "Instance"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The following example demonstrates how this can be used to implement a",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "thread-safe lazily initialized reference:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "class Image {",
+            "  var _histogram: UnsafeAtomicLazyReference<Histogram> = ...",
+            "",
+            "  \/\/ This is safe to call concurrently from multiple threads.",
+            "  var atomicLazyHistogram: Histogram {",
+            "    if let histogram = _histogram.load() { return foo }",
+            "    \/\/ Note that code here may run concurrently on",
+            "    \/\/ multiple threads, but only one of them will get to",
+            "    \/\/ succeed setting the reference.",
+            "    let histogram = ...",
+            "    return _histogram.storeIfNilThenLoad(foo)",
+            "}"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This operation uses acquiring-and-releasing memory ordering.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/atomics\/managedatomiclazyreference\/storeifnilthenload(_:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Atomics": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Atomics",
+  "type" : "topic",
+  "url" : "\/documentation\/atomics"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Atomics/ManagedAtomicLazyReference": {
+  "abstract" : [
+    {
+      "text" : "A reference type holding a lazily initializable atomic",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "strong reference, with automatic memory management.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ManagedAtomicLazyReference"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/ManagedAtomicLazyReference",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ManagedAtomicLazyReference"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ManagedAtomicLazyReference",
+  "type" : "topic",
+  "url" : "\/documentation\/atomics\/managedatomiclazyreference"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Atomics/ManagedAtomicLazyReference/storeIfNilThenLoad(_:)": {
+  "abstract" : [
+    {
+      "text" : "Atomically initializes this reference if its current value is nil, then",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "returns the initialized value. If this reference is already initialized,",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "then ",
+      "type" : "text"
+    },
+    {
+      "code" : "storeIfNilThenLoad(_:)",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " discards its supplied argument and returns",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "the current value without updating it.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "storeIfNilThenLoad"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics26ManagedAtomicLazyReferenceC8Instancexmfp",
+      "text" : "Instance"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics26ManagedAtomicLazyReferenceC8Instancexmfp",
+      "text" : "Instance"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/ManagedAtomicLazyReference\/storeIfNilThenLoad(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "storeIfNilThenLoad(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/atomics\/managedatomiclazyreference\/storeifnilthenload(_:)"
+}
+}
+}

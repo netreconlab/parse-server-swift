@@ -1,0 +1,317 @@
+{
+  "abstract" : [
+    {
+      "text" : "Initialize a ",
+      "type" : "text"
+    },
+    {
+      "code" : "NonBlockingFileIO",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " which uses the ",
+      "type" : "text"
+    },
+    {
+      "code" : "NIOThreadPool",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/NonBlockingFileIO"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/NonBlockingFileIO\/init(threadPool:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:8NIOPosix17NonBlockingFileIOV10threadPoolAcA09NIOThreadG0C_tcfc",
+    "fragments" : [
+      {
+        "kind" : "identifier",
+        "text" : "init"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "threadPool"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:8NIOPosix13NIOThreadPoolC",
+        "text" : "NIOThreadPool"
+      },
+      {
+        "kind" : "text",
+        "text" : ")"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIO"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Initializer",
+    "symbolKind" : "init",
+    "title" : "init(threadPool:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "init"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "threadPool"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/NIOThreadPool",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:8NIOPosix13NIOThreadPoolC",
+              "text" : "NIOThreadPool"
+            },
+            {
+              "kind" : "text",
+              "text" : ")"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "NIOThreadPool",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " that will be used for all the IO.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "threadPool"
+        }
+      ]
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/nio\/nonblockingfileio\/init(threadpool:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIO",
+  "type" : "topic",
+  "url" : "\/documentation\/nio"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/NIOThreadPool": {
+  "abstract" : [
+    {
+      "text" : "A thread pool that should be used if some (kernel thread) blocking work",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "needs to be performed for which no non-blocking API exists.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NIOThreadPool"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/NIOThreadPool",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NIOThreadPool"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOThreadPool",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/niothreadpool"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/NonBlockingFileIO": {
+  "abstract" : [
+    {
+      "code" : "NonBlockingFileIO",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is a helper that allows you to read files without blocking the calling thread.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NonBlockingFileIO"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/NonBlockingFileIO",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NonBlockingFileIO"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NonBlockingFileIO",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/nonblockingfileio"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/NonBlockingFileIO/init(threadPool:)": {
+  "abstract" : [
+    {
+      "text" : "Initialize a ",
+      "type" : "text"
+    },
+    {
+      "code" : "NonBlockingFileIO",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " which uses the ",
+      "type" : "text"
+    },
+    {
+      "code" : "NIOThreadPool",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "threadPool"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOPosix13NIOThreadPoolC",
+      "text" : "NIOThreadPool"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/NonBlockingFileIO\/init(threadPool:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(threadPool:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/nonblockingfileio\/init(threadpool:)"
+}
+}
+}

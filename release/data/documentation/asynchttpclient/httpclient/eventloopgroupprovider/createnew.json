@@ -1,0 +1,362 @@
+{
+  "abstract" : [
+    {
+      "text" : "The original intention of this was that ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient\/HTTPClient",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " would create and own its own ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoopGroup",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " to",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "facilitate use in programs that are not already using SwiftNIO.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Since https:\/\/github.com\/apple\/swift-nio\/pull\/2471 however, SwiftNIO does provide a global, shared singleton",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoopGroup",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s that we can use. ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient\/HTTPClient",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " is no longer able to create & own its own",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoopGroup",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " which solves a whole host of issues around shutdown.",
+      "type" : "text"
+    }
+  ],
+  "deprecationSummary" : [
+    {
+      "inlineContent" : [
+        {
+          "text" : "Please use the singleton EventLoopGroup explicitly",
+          "type" : "text"
+        }
+      ],
+      "type" : "paragraph"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient\/HTTPClient",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient\/HTTPClient\/EventLoopGroupProvider"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient\/HTTPClient\/EventLoopGroupProvider\/createNew"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:15AsyncHTTPClient0B0C22EventLoopGroupProviderO9createNewyA2EmF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "case"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "createNew"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "AsyncHTTPClient"
+      }
+    ],
+    "platforms" : [
+
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Case",
+    "symbolKind" : "case",
+    "title" : "HTTPClient.EventLoopGroupProvider.createNew"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "case"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "createNew"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/asynchttpclient\/httpclient\/eventloopgroupprovider\/createnew"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/AsyncHTTPClient": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "AsyncHTTPClient",
+  "type" : "topic",
+  "url" : "\/documentation\/asynchttpclient"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/AsyncHTTPClient/HTTPClient": {
+  "abstract" : [
+    {
+      "text" : "HTTPClient class provides API for request execution.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "HTTPClient"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient\/HTTPClient",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "HTTPClient"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HTTPClient",
+  "type" : "topic",
+  "url" : "\/documentation\/asynchttpclient\/httpclient"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/AsyncHTTPClient/HTTPClient/EventLoopGroupProvider": {
+  "abstract" : [
+    {
+      "text" : "Specifies how ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoopGroup",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " will be created and establishes lifecycle ownership.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "EventLoopGroupProvider"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient\/HTTPClient\/EventLoopGroupProvider",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "EventLoopGroupProvider"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HTTPClient.EventLoopGroupProvider",
+  "type" : "topic",
+  "url" : "\/documentation\/asynchttpclient\/httpclient\/eventloopgroupprovider"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/AsyncHTTPClient/HTTPClient/EventLoopGroupProvider/createNew": {
+  "abstract" : [
+    {
+      "text" : "The original intention of this was that ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient\/HTTPClient",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " would create and own its own ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoopGroup",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " to",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "facilitate use in programs that are not already using SwiftNIO.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Since https:\/\/github.com\/apple\/swift-nio\/pull\/2471 however, SwiftNIO does provide a global, shared singleton",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoopGroup",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s that we can use. ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient\/HTTPClient",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " is no longer able to create & own its own",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoopGroup",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " which solves a whole host of issues around shutdown.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "createNew"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient\/HTTPClient\/EventLoopGroupProvider\/createNew",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "HTTPClient.EventLoopGroupProvider.createNew",
+  "type" : "topic",
+  "url" : "\/documentation\/asynchttpclient\/httpclient\/eventloopgroupprovider\/createnew"
+}
+}
+}

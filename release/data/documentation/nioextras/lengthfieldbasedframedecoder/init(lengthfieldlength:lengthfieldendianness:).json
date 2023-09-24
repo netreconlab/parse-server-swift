@@ -1,0 +1,413 @@
+{
+  "abstract" : [
+    {
+      "text" : "Create ",
+      "type" : "text"
+    },
+    {
+      "code" : "LengthFieldBasedFrameDecoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " with a given frame length.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/LengthFieldBasedFrameDecoder"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/LengthFieldBasedFrameDecoder\/init(lengthFieldLength:lengthFieldEndianness:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:9NIOExtras28LengthFieldBasedFrameDecoderC06lengthcB00gC10EndiannessA2C04ByteB0O_7NIOCore0H0Otcfc",
+    "fragments" : [
+      {
+        "kind" : "identifier",
+        "text" : "init"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "lengthFieldLength"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:9NIOExtras28LengthFieldBasedFrameDecoderC04ByteB0O",
+        "text" : "ByteLength"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "lengthFieldEndianness"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7NIOCore10EndiannessO",
+        "text" : "Endianness"
+      },
+      {
+        "kind" : "text",
+        "text" : ")"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIOExtras"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Initializer",
+    "symbolKind" : "init",
+    "title" : "init(lengthFieldLength:lengthFieldEndianness:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "convenience"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "init"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "lengthFieldLength"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/LengthFieldBasedFrameDecoder\/ByteLength",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:9NIOExtras28LengthFieldBasedFrameDecoderC04ByteB0O",
+              "text" : "ByteLength"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "lengthFieldEndianness"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/Endianness",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7NIOCore10EndiannessO",
+              "text" : "Endianness"
+            },
+            {
+              "kind" : "text",
+              "text" : " = .big)"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The length of the field specifying the remaining length of the frame.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "lengthFieldLength"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The endianness of the field specifying the remaining length of the frame.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "lengthFieldEndianness"
+        }
+      ]
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/nioextras\/lengthfieldbasedframedecoder\/init(lengthfieldlength:lengthfieldendianness:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/Endianness": {
+  "abstract" : [
+    {
+      "text" : "Endianness refers to the sequential order in which bytes are arranged into larger numerical values when stored in",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "memory or when transmitted over digital links.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Endianness"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/Endianness",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Endianness"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Endianness",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/endianness"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIOExtras",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/LengthFieldBasedFrameDecoder": {
+  "abstract" : [
+    {
+      "text" : "A decoder that splits the received ",
+      "type" : "text"
+    },
+    {
+      "code" : "ByteBuffer",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " by the number of bytes specified in a fixed length header",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "contained within the buffer.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "LengthFieldBasedFrameDecoder"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/LengthFieldBasedFrameDecoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "LengthFieldBasedFrameDecoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "LengthFieldBasedFrameDecoder",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/lengthfieldbasedframedecoder"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/LengthFieldBasedFrameDecoder/ByteLength": {
+  "abstract" : [
+    {
+      "text" : "An enumeration to describe the length of a piece of data in bytes.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ByteLength"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/LengthFieldBasedFrameDecoder\/ByteLength",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ByteLength"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "LengthFieldBasedFrameDecoder.ByteLength",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/lengthfieldbasedframedecoder\/bytelength"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/LengthFieldBasedFrameDecoder/init(lengthFieldLength:lengthFieldEndianness:)": {
+  "abstract" : [
+    {
+      "text" : "Create ",
+      "type" : "text"
+    },
+    {
+      "code" : "LengthFieldBasedFrameDecoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " with a given frame length.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "lengthFieldLength"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9NIOExtras28LengthFieldBasedFrameDecoderC04ByteB0O",
+      "text" : "ByteLength"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "lengthFieldEndianness"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore10EndiannessO",
+      "text" : "Endianness"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/LengthFieldBasedFrameDecoder\/init(lengthFieldLength:lengthFieldEndianness:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(lengthFieldLength:lengthFieldEndianness:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/lengthfieldbasedframedecoder\/init(lengthfieldlength:lengthfieldendianness:)"
+}
+}
+}

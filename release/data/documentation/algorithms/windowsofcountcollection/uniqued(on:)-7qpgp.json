@@ -1,0 +1,519 @@
+{
+  "abstract" : [
+    {
+      "text" : "Returns a lazy sequence with the unique elements of this sequence (as",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "determined by the given projection), in the order of the first occurrence",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "of each unique element.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Algorithms",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Algorithms\/WindowsOfCountCollection",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Algorithms\/WindowsOfCountCollection\/LazySequenceProtocol-Implementations"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Algorithms\/WindowsOfCountCollection\/uniqued(on:)-7qpgp"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "Swift",
+    "externalID" : "s:s20LazySequenceProtocolP10AlgorithmsE7uniqued2onAC07UniquedB0Vyxqd__Gqd__7ElementQzc_tSHRd__lF::SYNTHESIZED::s:10Algorithms24WindowsOfCountCollectionV",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "uniqued"
+      },
+      {
+        "kind" : "text",
+        "text" : "<"
+      },
+      {
+        "kind" : "genericParameter",
+        "text" : "Subject"
+      },
+      {
+        "kind" : "text",
+        "text" : ">("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "on"
+      },
+      {
+        "kind" : "text",
+        "text" : ": ("
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:ST7ElementQa",
+        "text" : "Element"
+      },
+      {
+        "kind" : "text",
+        "text" : ") -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:s20LazySequenceProtocolP10AlgorithmsE7uniqued2onAC07UniquedB0Vyxqd__Gqd__7ElementQzc_tSHRd__lF7SubjectL_qd__mfp",
+        "text" : "Subject"
+      },
+      {
+        "kind" : "text",
+        "text" : ") -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10Algorithms15UniquedSequenceV",
+        "text" : "UniquedSequence"
+      },
+      {
+        "kind" : "text",
+        "text" : "<"
+      },
+      {
+        "kind" : "typeIdentifier",
+        "text" : "Self"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:s20LazySequenceProtocolP10AlgorithmsE7uniqued2onAC07UniquedB0Vyxqd__Gqd__7ElementQzc_tSHRd__lF7SubjectL_qd__mfp",
+        "text" : "Subject"
+      },
+      {
+        "kind" : "text",
+        "text" : ">"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Algorithms",
+        "relatedModules" : [
+          "Swift"
+        ]
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "uniqued(on:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "uniqued"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
+            },
+            {
+              "kind" : "genericParameter",
+              "text" : "Subject"
+            },
+            {
+              "kind" : "text",
+              "text" : ">("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "on"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "projection"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "attribute",
+              "text" : "@escaping"
+            },
+            {
+              "kind" : "text",
+              "text" : " ("
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:ST7ElementQa",
+              "text" : "Element"
+            },
+            {
+              "kind" : "text",
+              "text" : ") -> "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s20LazySequenceProtocolP10AlgorithmsE7uniqued2onAC07UniquedB0Vyxqd__Gqd__7ElementQzc_tSHRd__lF7SubjectL_qd__mfp",
+              "text" : "Subject"
+            },
+            {
+              "kind" : "text",
+              "text" : ") -> "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Algorithms\/UniquedSequence",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10Algorithms15UniquedSequenceV",
+              "text" : "UniquedSequence"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Self"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s20LazySequenceProtocolP10AlgorithmsE7uniqued2onAC07UniquedB0Vyxqd__Gqd__7ElementQzc_tSHRd__lF7SubjectL_qd__mfp",
+              "text" : "Subject"
+            },
+            {
+              "kind" : "text",
+              "text" : "> "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "where"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Subject"
+            },
+            {
+              "kind" : "text",
+              "text" : " : "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:SH",
+              "text" : "Hashable"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "O(1).",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Complexity",
+          "style" : "note",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/algorithms\/windowsofcountcollection\/uniqued(on:)-7qpgp"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Algorithms": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Algorithms",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Algorithms",
+  "type" : "topic",
+  "url" : "\/documentation\/algorithms"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Algorithms/UniquedSequence": {
+  "abstract" : [
+    {
+      "text" : "A sequence wrapper that leaves out duplicate elements of a base sequence.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "UniquedSequence"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Algorithms\/UniquedSequence",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "UniquedSequence"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "UniquedSequence",
+  "type" : "topic",
+  "url" : "\/documentation\/algorithms\/uniquedsequence"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Algorithms/WindowsOfCountCollection": {
+  "abstract" : [
+    {
+      "text" : "A collection wrapper that presents a sliding window over the elements of",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "a collection.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "WindowsOfCountCollection"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Algorithms\/WindowsOfCountCollection",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "WindowsOfCountCollection"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "WindowsOfCountCollection",
+  "type" : "topic",
+  "url" : "\/documentation\/algorithms\/windowsofcountcollection"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Algorithms/WindowsOfCountCollection/LazySequenceProtocol-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Algorithms\/WindowsOfCountCollection\/LazySequenceProtocol-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "LazySequenceProtocol Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/algorithms\/windowsofcountcollection\/lazysequenceprotocol-implementations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Algorithms/WindowsOfCountCollection/uniqued(on:)-7qpgp": {
+  "abstract" : [
+    {
+      "text" : "Returns a lazy sequence with the unique elements of this sequence (as",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "determined by the given projection), in the order of the first occurrence",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "of each unique element.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "uniqued"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Subject"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "on"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:ST7ElementQa",
+      "text" : "Element"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s20LazySequenceProtocolP10AlgorithmsE7uniqued2onAC07UniquedB0Vyxqd__Gqd__7ElementQzc_tSHRd__lF7SubjectL_qd__mfp",
+      "text" : "Subject"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Algorithms15UniquedSequenceV",
+      "text" : "UniquedSequence"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s20LazySequenceProtocolP10AlgorithmsE7uniqued2onAC07UniquedB0Vyxqd__Gqd__7ElementQzc_tSHRd__lF7SubjectL_qd__mfp",
+      "text" : "Subject"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Algorithms\/WindowsOfCountCollection\/uniqued(on:)-7qpgp",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "uniqued(on:)",
+  "type" : "topic",
+  "url" : "\/documentation\/algorithms\/windowsofcountcollection\/uniqued(on:)-7qpgp"
+}
+}
+}

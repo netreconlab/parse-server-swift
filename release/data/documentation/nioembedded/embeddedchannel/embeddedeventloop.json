@@ -1,0 +1,378 @@
+{
+  "abstract" : [
+    {
+      "text" : "Returns the ",
+      "type" : "text"
+    },
+    {
+      "code" : "EmbeddedEventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that this ",
+      "type" : "text"
+    },
+    {
+      "code" : "EmbeddedChannel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " uses. This will return the same instance as",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "EmbeddedChannel.eventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " but as the concrete ",
+      "type" : "text"
+    },
+    {
+      "code" : "EmbeddedEventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " rather than as ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " existential.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedChannel"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedChannel\/embeddedEventLoop"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:11NIOEmbedded15EmbeddedChannelC17embeddedEventLoopAA0beF0Cvp",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "var"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "embeddedEventLoop"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:11NIOEmbedded17EmbeddedEventLoopC",
+        "text" : "EmbeddedEventLoop"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIO"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Property",
+    "symbolKind" : "property",
+    "title" : "embeddedEventLoop"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "var"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "embeddedEventLoop"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:11NIOEmbedded17EmbeddedEventLoopC",
+              "text" : "EmbeddedEventLoop"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/nioembedded\/embeddedchannel\/embeddedeventloop"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIO",
+  "type" : "topic",
+  "url" : "\/documentation\/nio"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedChannel": {
+  "abstract" : [
+    {
+      "code" : "EmbeddedChannel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " implementation that does neither any",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "actual IO nor has a proper eventing mechanism. The prime use-case for",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "EmbeddedChannel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is in unit tests when you want to feed the inbound events",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "and check the outbound events manually.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "EmbeddedChannel"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedChannel",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "EmbeddedChannel"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "EmbeddedChannel",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedchannel"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedChannel/embeddedEventLoop": {
+  "abstract" : [
+    {
+      "text" : "Returns the ",
+      "type" : "text"
+    },
+    {
+      "code" : "EmbeddedEventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that this ",
+      "type" : "text"
+    },
+    {
+      "code" : "EmbeddedChannel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " uses. This will return the same instance as",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "EmbeddedChannel.eventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " but as the concrete ",
+      "type" : "text"
+    },
+    {
+      "code" : "EmbeddedEventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " rather than as ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " existential.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "embeddedEventLoop"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11NIOEmbedded17EmbeddedEventLoopC",
+      "text" : "EmbeddedEventLoop"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedChannel\/embeddedEventLoop",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "embeddedEventLoop",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedchannel\/embeddedeventloop"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedEventLoop": {
+  "abstract" : [
+    {
+      "text" : "An ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that is embedded in the current running context with no external",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "control.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "EmbeddedEventLoop"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "EmbeddedEventLoop"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "EmbeddedEventLoop",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedeventloop"
+}
+}
+}

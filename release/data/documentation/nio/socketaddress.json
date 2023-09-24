@@ -1,0 +1,1602 @@
+{
+  "abstract" : [
+    {
+      "text" : "Represent a socket address to which we may want to connect or bind.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:7NIOCore13SocketAddressO",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "enum"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "SocketAddress"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIO"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "SocketAddress"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Enumeration",
+    "symbolKind" : "enum",
+    "title" : "SocketAddress"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "enum"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "SocketAddress"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s23CustomStringConvertibleP",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/SQ",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/SH",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/IPv4Address",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/IPv6Address",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/UnixSocketAddress"
+      ],
+      "title" : "Structures"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/unixDomainSocket(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/v4(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/v6(_:)"
+      ],
+      "title" : "Enumeration Cases"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/init(_:)-1d86g",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/init(_:)-6pvmq",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/init(_:)-84c6x",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/init(_:host:)-1uaed",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/init(_:host:)-1z4io",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/init(ipAddress:port:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/init(packedIPAddress:port:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/init(unixDomainSocketPath:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/description",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/hostname",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/ipAddress",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/isMulticast",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/pathname",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/port",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/protocol",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/protocolFamily"
+      ],
+      "title" : "Instance Properties"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/withSockAddr(_:)"
+      ],
+      "title" : "Instance Methods"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/makeAddressResolvingHost(_:port:)"
+      ],
+      "title" : "Type Methods"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/Equatable-Implementations",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/Hashable-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/nio\/socketaddress"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/SH": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/SH",
+  "title" : "Swift.Hashable",
+  "type" : "unresolvable"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/SQ": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/SQ",
+  "title" : "Swift.Equatable",
+  "type" : "unresolvable"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIO",
+  "type" : "topic",
+  "url" : "\/documentation\/nio"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketAddress": {
+  "abstract" : [
+    {
+      "text" : "Represent a socket address to which we may want to connect or bind.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SocketAddress"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SocketAddress"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SocketAddress",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketaddress"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketAddress/Equatable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/Equatable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Equatable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketaddress\/equatable-implementations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketAddress/Hashable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/Hashable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Hashable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketaddress\/hashable-implementations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketAddress/IPv4Address": {
+  "abstract" : [
+    {
+      "text" : "A single IPv4 address for ",
+      "type" : "text"
+    },
+    {
+      "code" : "SocketAddress",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "IPv4Address"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/IPv4Address",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "IPv4Address"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SocketAddress.IPv4Address",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketaddress\/ipv4address"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketAddress/IPv6Address": {
+  "abstract" : [
+    {
+      "text" : "A single IPv6 address for ",
+      "type" : "text"
+    },
+    {
+      "code" : "SocketAddress",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "IPv6Address"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/IPv6Address",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "IPv6Address"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SocketAddress.IPv6Address",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketaddress\/ipv6address"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketAddress/UnixSocketAddress": {
+  "abstract" : [
+    {
+      "text" : "A single Unix socket address for ",
+      "type" : "text"
+    },
+    {
+      "code" : "SocketAddress",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "UnixSocketAddress"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/UnixSocketAddress",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "UnixSocketAddress"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SocketAddress.UnixSocketAddress",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketaddress\/unixsocketaddress"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketAddress/description": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "description"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/description",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "description",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketaddress\/description"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketAddress/hostname": {
+  "abstract" : [
+    {
+      "text" : "Returns the hostname for this ",
+      "type" : "text"
+    },
+    {
+      "code" : "SocketAddress",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " if one exists.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "hostname"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/hostname",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "hostname",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketaddress\/hostname"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketAddress/init(_:)-1d86g": {
+  "abstract" : [
+    {
+      "text" : "Creates a new Unix Domain Socket ",
+      "type" : "text"
+    },
+    {
+      "code" : "SocketAddress",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:@S@sockaddr_un",
+      "text" : "sockaddr_un"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/init(_:)-1d86g",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketaddress\/init(_:)-1d86g"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketAddress/init(_:)-6pvmq": {
+  "abstract" : [
+    {
+      "text" : "Creates a new IPv6 ",
+      "type" : "text"
+    },
+    {
+      "code" : "SocketAddress",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:@S@sockaddr_in6",
+      "text" : "sockaddr_in6"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/init(_:)-6pvmq",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketaddress\/init(_:)-6pvmq"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketAddress/init(_:)-84c6x": {
+  "abstract" : [
+    {
+      "text" : "Creates a new IPv4 ",
+      "type" : "text"
+    },
+    {
+      "code" : "SocketAddress",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:@S@sockaddr_in",
+      "text" : "sockaddr_in"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/init(_:)-84c6x",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketaddress\/init(_:)-84c6x"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketAddress/init(_:host:)-1uaed": {
+  "abstract" : [
+    {
+      "text" : "Creates a new IPv6 ",
+      "type" : "text"
+    },
+    {
+      "code" : "SocketAddress",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:@S@sockaddr_in6",
+      "text" : "sockaddr_in6"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "host"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/init(_:host:)-1uaed",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(_:host:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketaddress\/init(_:host:)-1uaed"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketAddress/init(_:host:)-1z4io": {
+  "abstract" : [
+    {
+      "text" : "Creates a new IPv4 ",
+      "type" : "text"
+    },
+    {
+      "code" : "SocketAddress",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:@S@sockaddr_in",
+      "text" : "sockaddr_in"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "host"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/init(_:host:)-1z4io",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(_:host:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketaddress\/init(_:host:)-1z4io"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketAddress/init(ipAddress:port:)": {
+  "abstract" : [
+    {
+      "text" : "Create a new ",
+      "type" : "text"
+    },
+    {
+      "code" : "SocketAddress",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " for an IP address in string form.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "ipAddress"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "port"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/init(ipAddress:port:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(ipAddress:port:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketaddress\/init(ipaddress:port:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketAddress/init(packedIPAddress:port:)": {
+  "abstract" : [
+    {
+      "text" : "Create a new ",
+      "type" : "text"
+    },
+    {
+      "code" : "SocketAddress",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " for an IP address in ByteBuffer form.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "packedIPAddress"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore10ByteBufferV",
+      "text" : "ByteBuffer"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "port"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/init(packedIPAddress:port:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(packedIPAddress:port:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketaddress\/init(packedipaddress:port:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketAddress/init(unixDomainSocketPath:)": {
+  "abstract" : [
+    {
+      "text" : "Creates a new UDS ",
+      "type" : "text"
+    },
+    {
+      "code" : "SocketAddress",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "unixDomainSocketPath"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/init(unixDomainSocketPath:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(unixDomainSocketPath:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketaddress\/init(unixdomainsocketpath:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketAddress/ipAddress": {
+  "abstract" : [
+    {
+      "text" : "Get the IP address as a string",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ipAddress"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/ipAddress",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ipAddress",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketaddress\/ipaddress"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketAddress/isMulticast": {
+  "abstract" : [
+    {
+      "text" : "Whether this ",
+      "type" : "text"
+    },
+    {
+      "code" : "SocketAddress",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " corresponds to a multicast address.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "isMulticast"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/isMulticast",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "isMulticast",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketaddress\/ismulticast"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketAddress/makeAddressResolvingHost(_:port:)": {
+  "abstract" : [
+    {
+      "text" : "Creates a new ",
+      "type" : "text"
+    },
+    {
+      "code" : "SocketAddress",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " for the given host (which will be resolved) and port.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "makeAddressResolvingHost"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "port"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore13SocketAddressO",
+      "text" : "SocketAddress"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/makeAddressResolvingHost(_:port:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "makeAddressResolvingHost(_:port:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketaddress\/makeaddressresolvinghost(_:port:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketAddress/pathname": {
+  "abstract" : [
+    {
+      "text" : "Get the pathname of a UNIX domain socket as a string",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "pathname"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/pathname",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "pathname",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketaddress\/pathname"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketAddress/port": {
+  "abstract" : [
+    {
+      "text" : "Get and set the port associated with the address, if defined.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "When setting to ",
+      "type" : "text"
+    },
+    {
+      "code" : "nil",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " the port will default to ",
+      "type" : "text"
+    },
+    {
+      "code" : "0",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " for compatible sockets. The rationale for this is that both ",
+      "type" : "text"
+    },
+    {
+      "code" : "nil",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " and ",
+      "type" : "text"
+    },
+    {
+      "code" : "0",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " can",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "be interpreted as “no preference”.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Setting a non-nil value for a unix domain socket is invalid and will result in a fatal error.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "port"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/port",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "port",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketaddress\/port"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketAddress/protocol": {
+  "abstract" : [
+    {
+      "text" : "Returns the protocol family as defined in ",
+      "type" : "text"
+    },
+    {
+      "code" : "man 2 socket",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " of this ",
+      "type" : "text"
+    },
+    {
+      "code" : "SocketAddress",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "`protocol`"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore12NIOBSDSocketO",
+      "text" : "NIOBSDSocket"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore12NIOBSDSocketO14ProtocolFamilyV",
+      "text" : "ProtocolFamily"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/protocol",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "protocol",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketaddress\/protocol"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketAddress/protocolFamily": {
+  "abstract" : [
+
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "protocolFamily"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s5Int32V",
+      "text" : "Int32"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/protocolFamily",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "protocolFamily",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketaddress\/protocolfamily"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketAddress/unixDomainSocket(_:)": {
+  "abstract" : [
+    {
+      "text" : "An UNIX Domain ",
+      "type" : "text"
+    },
+    {
+      "code" : "SocketAddress",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "unixDomainSocket"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore13SocketAddressO",
+      "text" : "SocketAddress"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore13SocketAddressO04UnixbC0V",
+      "text" : "UnixSocketAddress"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/unixDomainSocket(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "SocketAddress.unixDomainSocket(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketaddress\/unixdomainsocket(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketAddress/v4(_:)": {
+  "abstract" : [
+    {
+      "text" : "An IPv4 ",
+      "type" : "text"
+    },
+    {
+      "code" : "SocketAddress",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "v4"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore13SocketAddressO",
+      "text" : "SocketAddress"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore13SocketAddressO04IPv4C0V",
+      "text" : "IPv4Address"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/v4(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "SocketAddress.v4(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketaddress\/v4(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketAddress/v6(_:)": {
+  "abstract" : [
+    {
+      "text" : "An IPv6 ",
+      "type" : "text"
+    },
+    {
+      "code" : "SocketAddress",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "v6"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore13SocketAddressO",
+      "text" : "SocketAddress"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore13SocketAddressO04IPv6C0V",
+      "text" : "IPv6Address"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/v6(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "SocketAddress.v6(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketaddress\/v6(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketAddress/withSockAddr(_:)": {
+  "abstract" : [
+    {
+      "text" : "Calls the given function with a pointer to a ",
+      "type" : "text"
+    },
+    {
+      "code" : "sockaddr",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " structure and the associated size",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "of that structure.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "withSockAddr"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">(("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SP",
+      "text" : "UnsafePointer"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:@S@sockaddr",
+      "text" : "sockaddr"
+    },
+    {
+      "kind" : "text",
+      "text" : ">, "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "rethrows"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketAddress\/withSockAddr(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "withSockAddr(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketaddress\/withsockaddr(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s23CustomStringConvertibleP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s23CustomStringConvertibleP",
+  "title" : "Swift.CustomStringConvertible",
+  "type" : "unresolvable"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s8SendableP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

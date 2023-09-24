@@ -1,0 +1,1267 @@
+{
+  "abstract" : [
+    {
+      "text" : "An ",
+      "type" : "text"
+    },
+    {
+      "code" : "HPACKEncoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " maintains its own dynamic header table and uses that to",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "encode HTTP headers to an internal byte buffer.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:8NIOHPACK12HPACKEncoderV",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "struct"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "HPACKEncoder"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIOHPACK"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "HPACKEncoder"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Structure",
+    "symbolKind" : "struct",
+    "title" : "HPACKEncoder"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "struct"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "HPACKEncoder"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This encoder functions as an accumulator: each encode operation will append",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "bytes to a buffer maintained by the encoder, which must be cleared using",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "reset()",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " before the encode can be re-used. It maintains a header table for",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "outbound header indexing, and will update the header table as described in",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "RFC 7541, appending and evicting items as described there.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/HeaderDefinition"
+      ],
+      "title" : "Structures"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/init(allocator:useHuffmanEncoding:maxDynamicTableSize:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/allowedDynamicTableSize",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/dynamicTableSize",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/maximumDynamicTableSize",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/useHuffmanEncoding"
+      ],
+      "title" : "Instance Properties"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/append(header:value:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/append(headers:)-10j99",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/append(headers:)-4nua9",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/append(headers:)-9ojkj",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/appendNeverIndexed(header:value:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/appendNonIndexed(header:value:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/beginEncoding(allocator:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/encode(headers:to:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/endEncoding()",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/setDynamicTableSize(_:)"
+      ],
+      "title" : "Instance Methods"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/defaultDynamicTableSize"
+      ],
+      "title" : "Type Properties"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/niohpack\/hpackencoder"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHPACK": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIOHPACK",
+  "type" : "topic",
+  "url" : "\/documentation\/niohpack"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHPACK/HPACKEncoder": {
+  "abstract" : [
+    {
+      "text" : "An ",
+      "type" : "text"
+    },
+    {
+      "code" : "HPACKEncoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " maintains its own dynamic header table and uses that to",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "encode HTTP headers to an internal byte buffer.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "HPACKEncoder"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "HPACKEncoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HPACKEncoder",
+  "type" : "topic",
+  "url" : "\/documentation\/niohpack\/hpackencoder"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHPACK/HPACKEncoder/HeaderDefinition": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "HeaderDefinition"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/HeaderDefinition",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "HeaderDefinition"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HPACKEncoder.HeaderDefinition",
+  "type" : "topic",
+  "url" : "\/documentation\/niohpack\/hpackencoder\/headerdefinition"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHPACK/HPACKEncoder/allowedDynamicTableSize": {
+  "abstract" : [
+    {
+      "text" : "The current maximum size to which the dynamic header table may grow.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "allowedDynamicTableSize"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/allowedDynamicTableSize",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "allowedDynamicTableSize",
+  "type" : "topic",
+  "url" : "\/documentation\/niohpack\/hpackencoder\/alloweddynamictablesize"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHPACK/HPACKEncoder/append(header:value:)": {
+  "abstract" : [
+    {
+      "text" : "Appends a header\/value pair, using indexed names\/values if possible. If no indexed pair is available,",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "it will use an indexed header and literal value, or a literal header and value. The name\/value pair",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "will be indexed for future use.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "append"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "header"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "value"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/append(header:value:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "append(header:value:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niohpack\/hpackencoder\/append(header:value:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHPACK/HPACKEncoder/append(headers:)-10j99": {
+  "abstract" : [
+    {
+      "text" : "Appends a set of headers with their associated indexability.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "append"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "headers"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHPACK12HPACKHeadersV",
+      "text" : "HPACKHeaders"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/append(headers:)-10j99",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "append(headers:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niohpack\/hpackencoder\/append(headers:)-10j99"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHPACK/HPACKEncoder/append(headers:)-4nua9": {
+  "abstract" : [
+    {
+      "text" : "Appends() headers in the default fashion: indexed if possible, literal+indexable if not.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "append"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "S"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "headers"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHPACK12HPACKEncoderV6append7headersyx_tKSTRzSS4name_SS5valuet7ElementRtzlF1SL_xmfp",
+      "text" : "S"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/append(headers:)-4nua9",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "append(headers:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niohpack\/hpackencoder\/append(headers:)-4nua9"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHPACK/HPACKEncoder/append(headers:)-9ojkj": {
+  "abstract" : [
+    {
+      "text" : "Appends headers with their specified indexability.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "append"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "S"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "headers"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHPACK12HPACKEncoderV6append7headersyx_tKSTRzAC16HeaderDefinitionV7ElementRtzlF1SL_xmfp",
+      "text" : "S"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/append(headers:)-9ojkj",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "append(headers:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niohpack\/hpackencoder\/append(headers:)-9ojkj"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHPACK/HPACKEncoder/appendNeverIndexed(header:value:)": {
+  "abstract" : [
+    {
+      "text" : "Appends a header that is ",
+      "type" : "text"
+    },
+    {
+      "inlineContent" : [
+        {
+          "text" : "never",
+          "type" : "text"
+        }
+      ],
+      "type" : "emphasis"
+    },
+    {
+      "text" : " indexed, preventing even rewriting proxies from doing so.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "appendNeverIndexed"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "header"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "value"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/appendNeverIndexed(header:value:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "appendNeverIndexed(header:value:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niohpack\/hpackencoder\/appendneverindexed(header:value:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHPACK/HPACKEncoder/appendNonIndexed(header:value:)": {
+  "abstract" : [
+    {
+      "text" : "Appends a header that is ",
+      "type" : "text"
+    },
+    {
+      "inlineContent" : [
+        {
+          "text" : "not",
+          "type" : "text"
+        }
+      ],
+      "type" : "emphasis"
+    },
+    {
+      "text" : " to be entered into the dynamic header table, but allows that",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "stipulation to be overriden by a proxy server\/rewriter.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "appendNonIndexed"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "header"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "value"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/appendNonIndexed(header:value:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "appendNonIndexed(header:value:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niohpack\/hpackencoder\/appendnonindexed(header:value:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHPACK/HPACKEncoder/beginEncoding(allocator:)": {
+  "abstract" : [
+    {
+      "text" : "Sets up the encoder to begin encoding a new header block.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "beginEncoding"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "allocator"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore19ByteBufferAllocatorV",
+      "text" : "ByteBufferAllocator"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/beginEncoding(allocator:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "beginEncoding(allocator:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niohpack\/hpackencoder\/beginencoding(allocator:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHPACK/HPACKEncoder/defaultDynamicTableSize": {
+  "abstract" : [
+    {
+      "text" : "The default size of the encoder’s dynamic header table.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "defaultDynamicTableSize"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/defaultDynamicTableSize",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "defaultDynamicTableSize",
+  "type" : "topic",
+  "url" : "\/documentation\/niohpack\/hpackencoder\/defaultdynamictablesize"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHPACK/HPACKEncoder/dynamicTableSize": {
+  "abstract" : [
+    {
+      "text" : "The current size of the dynamic table.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "dynamicTableSize"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/dynamicTableSize",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "dynamicTableSize",
+  "type" : "topic",
+  "url" : "\/documentation\/niohpack\/hpackencoder\/dynamictablesize"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHPACK/HPACKEncoder/encode(headers:to:)": {
+  "abstract" : [
+    {
+      "text" : "A one-shot encoder that writes to a provided buffer.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "encode"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "headers"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHPACK12HPACKHeadersV",
+      "text" : "HPACKHeaders"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "to"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "inout"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore10ByteBufferV",
+      "text" : "ByteBuffer"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/encode(headers:to:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "encode(headers:to:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niohpack\/hpackencoder\/encode(headers:to:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHPACK/HPACKEncoder/endEncoding()": {
+  "abstract" : [
+    {
+      "text" : "Finishes encoding the current header block and returns the resulting buffer.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "endEncoding"
+    },
+    {
+      "kind" : "text",
+      "text" : "() "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore10ByteBufferV",
+      "text" : "ByteBuffer"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/endEncoding()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "endEncoding()",
+  "type" : "topic",
+  "url" : "\/documentation\/niohpack\/hpackencoder\/endencoding()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHPACK/HPACKEncoder/init(allocator:useHuffmanEncoding:maxDynamicTableSize:)": {
+  "abstract" : [
+    {
+      "text" : "Initializer and returns a new HPACK encoder.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "allocator"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore19ByteBufferAllocatorV",
+      "text" : "ByteBufferAllocator"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "useHuffmanEncoding"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "maxDynamicTableSize"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/init(allocator:useHuffmanEncoding:maxDynamicTableSize:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(allocator:useHuffmanEncoding:maxDynamicTableSize:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niohpack\/hpackencoder\/init(allocator:usehuffmanencoding:maxdynamictablesize:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHPACK/HPACKEncoder/maximumDynamicTableSize": {
+  "abstract" : [
+    {
+      "text" : "The hard maximum size of the dynamic header table, set via an HTTP\/2",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "SETTINGS frame.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "maximumDynamicTableSize"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/maximumDynamicTableSize",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "maximumDynamicTableSize",
+  "type" : "topic",
+  "url" : "\/documentation\/niohpack\/hpackencoder\/maximumdynamictablesize"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHPACK/HPACKEncoder/setDynamicTableSize(_:)": {
+  "abstract" : [
+    {
+      "text" : "Sets the maximum size for the dynamic table and encodes the new value",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "at the start of the current packed header block to send to the peer.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "setDynamicTableSize"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/setDynamicTableSize(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "setDynamicTableSize(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niohpack\/hpackencoder\/setdynamictablesize(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHPACK/HPACKEncoder/useHuffmanEncoding": {
+  "abstract" : [
+    {
+      "text" : "Whether to use Huffman encoding.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "useHuffmanEncoding"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder\/useHuffmanEncoding",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "useHuffmanEncoding",
+  "type" : "topic",
+  "url" : "\/documentation\/niohpack\/hpackencoder\/usehuffmanencoding"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s8SendableP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

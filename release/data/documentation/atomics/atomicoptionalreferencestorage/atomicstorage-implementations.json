@@ -1,0 +1,1320 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/AtomicOptionalReferenceStorage"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/AtomicOptionalReferenceStorage\/AtomicStorage-Implementations"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "Atomics"
+      }
+    ],
+    "role" : "collectionGroup",
+    "title" : "AtomicStorage Implementations"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/AtomicOptionalReferenceStorage\/Value"
+      ],
+      "title" : "Type Aliases"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/AtomicOptionalReferenceStorage\/atomicCompareExchange(expected:desired:at:ordering:)-6g995",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/AtomicOptionalReferenceStorage\/atomicCompareExchange(expected:desired:at:ordering:)-8i63k",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/AtomicOptionalReferenceStorage\/atomicCompareExchange(expected:desired:at:successOrdering:failureOrdering:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/AtomicOptionalReferenceStorage\/atomicExchange(_:at:ordering:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/AtomicOptionalReferenceStorage\/atomicLoad(at:ordering:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/AtomicOptionalReferenceStorage\/atomicStore(_:at:ordering:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/AtomicOptionalReferenceStorage\/atomicWeakCompareExchange(expected:desired:at:ordering:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/AtomicOptionalReferenceStorage\/atomicWeakCompareExchange(expected:desired:at:successOrdering:failureOrdering:)"
+      ],
+      "title" : "Type Methods"
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Atomics": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Atomics",
+  "type" : "topic",
+  "url" : "\/documentation\/atomics"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Atomics/AtomicOptionalReferenceStorage": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AtomicOptionalReferenceStorage"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/AtomicOptionalReferenceStorage",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AtomicOptionalReferenceStorage"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AtomicOptionalReferenceStorage",
+  "type" : "topic",
+  "url" : "\/documentation\/atomics\/atomicoptionalreferencestorage"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Atomics/AtomicOptionalReferenceStorage/Value": {
+  "abstract" : [
+    {
+      "text" : "The type whose values this storage representation is representing.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Value"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/AtomicOptionalReferenceStorage\/Value",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Value"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AtomicOptionalReferenceStorage.Value",
+  "type" : "topic",
+  "url" : "\/documentation\/atomics\/atomicoptionalreferencestorage\/value"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Atomics/AtomicOptionalReferenceStorage/atomicCompareExchange(expected:desired:at:ordering:)-6g995": {
+  "abstract" : [
+    {
+      "text" : "Perform an atomic compare and exchange operation on the value referenced",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "by ",
+      "type" : "text"
+    },
+    {
+      "code" : "pointer",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", applying the specified memory ordering.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "atomicCompareExchange"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "expected"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics13AtomicStorageP5ValueQa",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "desired"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics13AtomicStorageP5ValueQa",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "at"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sp",
+      "text" : "UnsafeMutablePointer"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ">, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "ordering"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics20AtomicUpdateOrderingV",
+      "text" : "AtomicUpdateOrdering"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> (exchanged"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", original"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics13AtomicStorageP5ValueQa",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/AtomicOptionalReferenceStorage\/atomicCompareExchange(expected:desired:at:ordering:)-6g995",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "atomicCompareExchange(expected:desired:at:ordering:)",
+  "type" : "topic",
+  "url" : "\/documentation\/atomics\/atomicoptionalreferencestorage\/atomiccompareexchange(expected:desired:at:ordering:)-6g995"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Atomics/AtomicOptionalReferenceStorage/atomicCompareExchange(expected:desired:at:ordering:)-8i63k": {
+  "abstract" : [
+    {
+      "text" : "Perform an atomic compare and exchange operation on the value referenced",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "by ",
+      "type" : "text"
+    },
+    {
+      "code" : "pointer",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", applying the specified memory ordering.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "atomicCompareExchange"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "expected"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics30AtomicOptionalReferenceStorageV8Instancexmfp",
+      "text" : "Instance"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "desired"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics30AtomicOptionalReferenceStorageV8Instancexmfp",
+      "text" : "Instance"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "at"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sp",
+      "text" : "UnsafeMutablePointer"
+    },
+    {
+      "kind" : "text",
+      "text" : "<`Self`"
+    },
+    {
+      "kind" : "text",
+      "text" : ">, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "ordering"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics20AtomicUpdateOrderingV",
+      "text" : "AtomicUpdateOrdering"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> (exchanged"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", original"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics30AtomicOptionalReferenceStorageV8Instancexmfp",
+      "text" : "Instance"
+    },
+    {
+      "kind" : "text",
+      "text" : "?)"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/AtomicOptionalReferenceStorage\/atomicCompareExchange(expected:desired:at:ordering:)-8i63k",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "atomicCompareExchange(expected:desired:at:ordering:)",
+  "type" : "topic",
+  "url" : "\/documentation\/atomics\/atomicoptionalreferencestorage\/atomiccompareexchange(expected:desired:at:ordering:)-8i63k"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Atomics/AtomicOptionalReferenceStorage/atomicCompareExchange(expected:desired:at:successOrdering:failureOrdering:)": {
+  "abstract" : [
+    {
+      "text" : "Perform an atomic compare and exchange operation on the value referenced",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "by ",
+      "type" : "text"
+    },
+    {
+      "code" : "pointer",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", applying the specified success\/failure memory orderings.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "atomicCompareExchange"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "expected"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics30AtomicOptionalReferenceStorageV8Instancexmfp",
+      "text" : "Instance"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "desired"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics30AtomicOptionalReferenceStorageV8Instancexmfp",
+      "text" : "Instance"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "at"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sp",
+      "text" : "UnsafeMutablePointer"
+    },
+    {
+      "kind" : "text",
+      "text" : "<`Self`"
+    },
+    {
+      "kind" : "text",
+      "text" : ">, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "successOrdering"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics20AtomicUpdateOrderingV",
+      "text" : "AtomicUpdateOrdering"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "failureOrdering"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics18AtomicLoadOrderingV",
+      "text" : "AtomicLoadOrdering"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> (exchanged"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", original"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics30AtomicOptionalReferenceStorageV8Instancexmfp",
+      "text" : "Instance"
+    },
+    {
+      "kind" : "text",
+      "text" : "?)"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/AtomicOptionalReferenceStorage\/atomicCompareExchange(expected:desired:at:successOrdering:failureOrdering:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "atomicCompareExchange(expected:desired:at:successOrdering:failureOrdering:)",
+  "type" : "topic",
+  "url" : "\/documentation\/atomics\/atomicoptionalreferencestorage\/atomiccompareexchange(expected:desired:at:successordering:failureordering:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Atomics/AtomicOptionalReferenceStorage/atomicExchange(_:at:ordering:)": {
+  "abstract" : [
+    {
+      "text" : "Atomically sets the value referenced by ",
+      "type" : "text"
+    },
+    {
+      "code" : "pointer",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " to ",
+      "type" : "text"
+    },
+    {
+      "code" : "desired",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " and returns",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "the original value, applying the specified memory ordering.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "atomicExchange"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics30AtomicOptionalReferenceStorageV8Instancexmfp",
+      "text" : "Instance"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "at"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sp",
+      "text" : "UnsafeMutablePointer"
+    },
+    {
+      "kind" : "text",
+      "text" : "<`Self`"
+    },
+    {
+      "kind" : "text",
+      "text" : ">, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "ordering"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics20AtomicUpdateOrderingV",
+      "text" : "AtomicUpdateOrdering"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics30AtomicOptionalReferenceStorageV8Instancexmfp",
+      "text" : "Instance"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/AtomicOptionalReferenceStorage\/atomicExchange(_:at:ordering:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "atomicExchange(_:at:ordering:)",
+  "type" : "topic",
+  "url" : "\/documentation\/atomics\/atomicoptionalreferencestorage\/atomicexchange(_:at:ordering:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Atomics/AtomicOptionalReferenceStorage/atomicLoad(at:ordering:)": {
+  "abstract" : [
+    {
+      "text" : "Atomically loads and returns the value referenced by the given pointer,",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "applying the specified memory ordering.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "atomicLoad"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "at"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sp",
+      "text" : "UnsafeMutablePointer"
+    },
+    {
+      "kind" : "text",
+      "text" : "<`Self`"
+    },
+    {
+      "kind" : "text",
+      "text" : ">, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "ordering"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics18AtomicLoadOrderingV",
+      "text" : "AtomicLoadOrdering"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics30AtomicOptionalReferenceStorageV8Instancexmfp",
+      "text" : "Instance"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/AtomicOptionalReferenceStorage\/atomicLoad(at:ordering:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "atomicLoad(at:ordering:)",
+  "type" : "topic",
+  "url" : "\/documentation\/atomics\/atomicoptionalreferencestorage\/atomicload(at:ordering:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Atomics/AtomicOptionalReferenceStorage/atomicStore(_:at:ordering:)": {
+  "abstract" : [
+    {
+      "text" : "Atomically sets the value referenced by ",
+      "type" : "text"
+    },
+    {
+      "code" : "pointer",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " to ",
+      "type" : "text"
+    },
+    {
+      "code" : "desired",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ",",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "applying the specified memory ordering.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "atomicStore"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics30AtomicOptionalReferenceStorageV8Instancexmfp",
+      "text" : "Instance"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "at"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sp",
+      "text" : "UnsafeMutablePointer"
+    },
+    {
+      "kind" : "text",
+      "text" : "<`Self`"
+    },
+    {
+      "kind" : "text",
+      "text" : ">, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "ordering"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics19AtomicStoreOrderingV",
+      "text" : "AtomicStoreOrdering"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/AtomicOptionalReferenceStorage\/atomicStore(_:at:ordering:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "atomicStore(_:at:ordering:)",
+  "type" : "topic",
+  "url" : "\/documentation\/atomics\/atomicoptionalreferencestorage\/atomicstore(_:at:ordering:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Atomics/AtomicOptionalReferenceStorage/atomicWeakCompareExchange(expected:desired:at:ordering:)": {
+  "abstract" : [
+    {
+      "text" : "Perform an atomic weak compare and exchange operation on the value",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "referenced by ",
+      "type" : "text"
+    },
+    {
+      "code" : "pointer",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", applying the specified memory orderings.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "This compare-exchange variant is allowed to spuriously fail; it",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "is designed to be called in a loop until it indicates a successful",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "exchange has happened.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "atomicWeakCompareExchange"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "expected"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics13AtomicStorageP5ValueQa",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "desired"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics13AtomicStorageP5ValueQa",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "at"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sp",
+      "text" : "UnsafeMutablePointer"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ">, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "ordering"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics20AtomicUpdateOrderingV",
+      "text" : "AtomicUpdateOrdering"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> (exchanged"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", original"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics13AtomicStorageP5ValueQa",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/AtomicOptionalReferenceStorage\/atomicWeakCompareExchange(expected:desired:at:ordering:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "atomicWeakCompareExchange(expected:desired:at:ordering:)",
+  "type" : "topic",
+  "url" : "\/documentation\/atomics\/atomicoptionalreferencestorage\/atomicweakcompareexchange(expected:desired:at:ordering:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Atomics/AtomicOptionalReferenceStorage/atomicWeakCompareExchange(expected:desired:at:successOrdering:failureOrdering:)": {
+  "abstract" : [
+    {
+      "text" : "Perform an atomic weak compare and exchange operation on the value",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "referenced by ",
+      "type" : "text"
+    },
+    {
+      "code" : "pointer",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", applying the specified success\/failure memory",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "orderings. This compare-exchange variant is allowed to spuriously fail; it",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "is designed to be called in a loop until it indicates a successful",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "exchange has happened.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "atomicWeakCompareExchange"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "expected"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics30AtomicOptionalReferenceStorageV8Instancexmfp",
+      "text" : "Instance"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "desired"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics30AtomicOptionalReferenceStorageV8Instancexmfp",
+      "text" : "Instance"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "at"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sp",
+      "text" : "UnsafeMutablePointer"
+    },
+    {
+      "kind" : "text",
+      "text" : "<`Self`"
+    },
+    {
+      "kind" : "text",
+      "text" : ">, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "successOrdering"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics20AtomicUpdateOrderingV",
+      "text" : "AtomicUpdateOrdering"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "failureOrdering"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics18AtomicLoadOrderingV",
+      "text" : "AtomicLoadOrdering"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> (exchanged"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", original"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Atomics30AtomicOptionalReferenceStorageV8Instancexmfp",
+      "text" : "Instance"
+    },
+    {
+      "kind" : "text",
+      "text" : "?)"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Atomics\/AtomicOptionalReferenceStorage\/atomicWeakCompareExchange(expected:desired:at:successOrdering:failureOrdering:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "atomicWeakCompareExchange(expected:desired:at:successOrdering:failureOrdering:)",
+  "type" : "topic",
+  "url" : "\/documentation\/atomics\/atomicoptionalreferencestorage\/atomicweakcompareexchange(expected:desired:at:successordering:failureordering:)"
+}
+}
+}

@@ -1,0 +1,374 @@
+{
+  "abstract" : [
+    {
+      "text" : "Maximum size in bytes of the HTTP response body that ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient\/ResponseAccumulator",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " will accept",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "until it will abort the request and throw an ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient\/ResponseAccumulator\/ResponseTooBigError",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient\/ResponseAccumulator"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient\/ResponseAccumulator\/maxBodySize"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:15AsyncHTTPClient19ResponseAccumulatorC11maxBodySizeSivp",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "let"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "maxBodySize"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Si",
+        "text" : "Int"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "AsyncHTTPClient"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Property",
+    "symbolKind" : "property",
+    "title" : "maxBodySize"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "let"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "maxBodySize"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:Si",
+              "text" : "Int"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Default is 2^32.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "not allowed to exceed 2^32 because ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "ByteBuffer",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " can not store more bytes",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Precondition",
+          "style" : "note",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/asynchttpclient\/responseaccumulator\/maxbodysize"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/AsyncHTTPClient": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "AsyncHTTPClient",
+  "type" : "topic",
+  "url" : "\/documentation\/asynchttpclient"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/AsyncHTTPClient/HTTPClientResponseDelegate": {
+  "abstract" : [
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient\/HTTPClientResponseDelegate",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " allows an implementation to receive notifications about request processing and to control how response parts are processed.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "HTTPClientResponseDelegate"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient\/HTTPClientResponseDelegate",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "HTTPClientResponseDelegate"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HTTPClientResponseDelegate",
+  "type" : "topic",
+  "url" : "\/documentation\/asynchttpclient\/httpclientresponsedelegate"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/AsyncHTTPClient/ResponseAccumulator": {
+  "abstract" : [
+    {
+      "text" : "The default ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient\/HTTPClientResponseDelegate",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ResponseAccumulator"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient\/ResponseAccumulator",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ResponseAccumulator"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ResponseAccumulator",
+  "type" : "topic",
+  "url" : "\/documentation\/asynchttpclient\/responseaccumulator"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/AsyncHTTPClient/ResponseAccumulator/ResponseTooBigError": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ResponseTooBigError"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient\/ResponseAccumulator\/ResponseTooBigError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ResponseTooBigError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ResponseAccumulator.ResponseTooBigError",
+  "type" : "topic",
+  "url" : "\/documentation\/asynchttpclient\/responseaccumulator\/responsetoobigerror"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/AsyncHTTPClient/ResponseAccumulator/maxBodySize": {
+  "abstract" : [
+    {
+      "text" : "Maximum size in bytes of the HTTP response body that ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient\/ResponseAccumulator",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " will accept",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "until it will abort the request and throw an ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient\/ResponseAccumulator\/ResponseTooBigError",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "maxBodySize"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/AsyncHTTPClient\/ResponseAccumulator\/maxBodySize",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "maxBodySize",
+  "type" : "topic",
+  "url" : "\/documentation\/asynchttpclient\/responseaccumulator\/maxbodysize"
+}
+}
+}

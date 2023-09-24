@@ -1,0 +1,2297 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/EventLoop-Implementations"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "NIO"
+      }
+    ],
+    "role" : "collectionGroup",
+    "title" : "EventLoop Implementations"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/executor-8rv1o"
+      ],
+      "title" : "Instance Properties"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/any()",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/assertInEventLoop(file:line:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/assertNotInEventLoop(file:line:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/flatScheduleTask(deadline:file:line:_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/flatScheduleTask(in:file:line:_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/flatSubmit(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/makeCompletedFuture(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/makeCompletedFuture(withResultOf:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/makeFailedFuture(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/makeFailedFuture(_:file:line:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/makeFutureWithTask(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/makeIterator()",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/makePromise(of:file:line:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/makeSucceededFuture(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/makeSucceededFuture(_:file:line:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/makeSucceededVoidFuture()",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/next()",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/preconditionInEventLoop(file:line:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/preconditionNotInEventLoop(file:line:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/scheduleRepeatedAsyncTask(initialDelay:delay:notifying:_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/scheduleRepeatedTask(initialDelay:delay:notifying:_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/submit(_:)"
+      ],
+      "title" : "Instance Methods"
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIO",
+  "type" : "topic",
+  "url" : "\/documentation\/nio"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedEventLoop": {
+  "abstract" : [
+    {
+      "text" : "An ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that is embedded in the current running context with no external",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "control.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "EmbeddedEventLoop"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "EmbeddedEventLoop"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "EmbeddedEventLoop",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedeventloop"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedEventLoop/any()": {
+  "abstract" : [
+    {
+      "text" : "An ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " forms a singular ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoopGroup",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", returning itself as ‘any’ ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore9EventLoopP",
+      "text" : "EventLoop"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/any()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "any()",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedeventloop\/any()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedEventLoop/assertInEventLoop(file:line:)": {
+  "abstract" : [
+    {
+      "text" : "Asserts that the current thread is the one tied to this ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Otherwise, if running in debug mode, the process will be abnormally terminated as per the semantics of",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "preconditionFailure(_:file:line:)",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ". Never has any effect in release mode.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "assertInEventLoop"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "file"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s12StaticStringV",
+      "text" : "StaticString"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "line"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Su",
+      "text" : "UInt"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/assertInEventLoop(file:line:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "assertInEventLoop(file:line:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedeventloop\/assertineventloop(file:line:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedEventLoop/assertNotInEventLoop(file:line:)": {
+  "abstract" : [
+    {
+      "text" : "Asserts that the current thread is ",
+      "type" : "text"
+    },
+    {
+      "inlineContent" : [
+        {
+          "text" : "not",
+          "type" : "text"
+        }
+      ],
+      "type" : "emphasis"
+    },
+    {
+      "text" : " the one tied to this ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Otherwise, if running in debug mode, the process will be abnormally terminated as per the semantics of",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "preconditionFailure(_:file:line:)",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ". Never has any effect in release mode.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "assertNotInEventLoop"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "file"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s12StaticStringV",
+      "text" : "StaticString"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "line"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Su",
+      "text" : "UInt"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/assertNotInEventLoop(file:line:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "assertNotInEventLoop(file:line:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedeventloop\/assertnotineventloop(file:line:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedEventLoop/executor-8rv1o": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "executor"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Scf",
+      "text" : "SerialExecutor"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/executor-8rv1o",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "executor",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedeventloop\/executor-8rv1o"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedEventLoop/flatScheduleTask(deadline:file:line:_:)": {
+  "abstract" : [
+    {
+      "text" : "Schedule a ",
+      "type" : "text"
+    },
+    {
+      "code" : "task",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that is executed by this ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " at the given time.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "flatScheduleTask"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "deadline"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore11NIODeadlineV",
+      "text" : "NIODeadline"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "file"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s12StaticStringV",
+      "text" : "StaticString"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "line"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Su",
+      "text" : "UInt"
+    },
+    {
+      "kind" : "text",
+      "text" : ", () "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore9ScheduledV",
+      "text" : "Scheduled"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/flatScheduleTask(deadline:file:line:_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "flatScheduleTask(deadline:file:line:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedeventloop\/flatscheduletask(deadline:file:line:_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedEventLoop/flatScheduleTask(in:file:line:_:)": {
+  "abstract" : [
+    {
+      "text" : "Schedule a ",
+      "type" : "text"
+    },
+    {
+      "code" : "task",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that is executed by this ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " after the given amount of time.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "flatScheduleTask"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "in"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore10TimeAmountV",
+      "text" : "TimeAmount"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "file"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s12StaticStringV",
+      "text" : "StaticString"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "line"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Su",
+      "text" : "UInt"
+    },
+    {
+      "kind" : "text",
+      "text" : ", () "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore9ScheduledV",
+      "text" : "Scheduled"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/flatScheduleTask(in:file:line:_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "flatScheduleTask(in:file:line:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedeventloop\/flatscheduletask(in:file:line:_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedEventLoop/flatSubmit(_:)": {
+  "abstract" : [
+    {
+      "text" : "Submit ",
+      "type" : "text"
+    },
+    {
+      "code" : "task",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " to be run on this ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "flatSubmit"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">(() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/flatSubmit(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "flatSubmit(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedeventloop\/flatsubmit(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedEventLoop/makeCompletedFuture(_:)": {
+  "abstract" : [
+    {
+      "text" : "Creates and returns a new ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoopFuture",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that is marked as succeeded or failed with the value held by ",
+      "type" : "text"
+    },
+    {
+      "code" : "result",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "makeCompletedFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Success"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s6ResultO",
+      "text" : "Result"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Success"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s5ErrorP",
+      "text" : "Error"
+    },
+    {
+      "kind" : "text",
+      "text" : ">) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Success"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/makeCompletedFuture(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "makeCompletedFuture(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedeventloop\/makecompletedfuture(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedEventLoop/makeCompletedFuture(withResultOf:)": {
+  "abstract" : [
+    {
+      "text" : "Creates and returns a new ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoopFuture",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that is marked as succeeded or failed with the value returned by ",
+      "type" : "text"
+    },
+    {
+      "code" : "body",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "makeCompletedFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Success"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "withResultOf"
+    },
+    {
+      "kind" : "text",
+      "text" : ": () "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Success"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Success"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/makeCompletedFuture(withResultOf:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "makeCompletedFuture(withResultOf:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedeventloop\/makecompletedfuture(withresultof:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedEventLoop/makeFailedFuture(_:)": {
+  "abstract" : [
+    {
+      "text" : "Creates and returns a new ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoopFuture",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that is already marked as failed. Notifications will be done using this ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " as execution ",
+      "type" : "text"
+    },
+    {
+      "code" : "NIOThread",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "makeFailedFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s5ErrorP",
+      "text" : "Error"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/makeFailedFuture(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "makeFailedFuture(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedeventloop\/makefailedfuture(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedEventLoop/makeFailedFuture(_:file:line:)": {
+  "abstract" : [
+
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "makeFailedFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s5ErrorP",
+      "text" : "Error"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "file"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s12StaticStringV",
+      "text" : "StaticString"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "line"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Su",
+      "text" : "UInt"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/makeFailedFuture(_:file:line:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "makeFailedFuture(_:file:line:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedeventloop\/makefailedfuture(_:file:line:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedEventLoop/makeFutureWithTask(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "makeFutureWithTask"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Return"
+    },
+    {
+      "kind" : "text",
+      "text" : ">(() "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Return"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Return"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/makeFutureWithTask(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "makeFutureWithTask(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedeventloop\/makefuturewithtask(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedEventLoop/makeIterator()": {
+  "abstract" : [
+    {
+      "text" : "Returns an ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoopIterator",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " over this ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "makeIterator"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore17EventLoopIteratorV",
+      "text" : "EventLoopIterator"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/makeIterator()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "makeIterator()",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedeventloop\/makeiterator()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedEventLoop/makePromise(of:file:line:)": {
+  "abstract" : [
+    {
+      "text" : "Creates and returns a new ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoopPromise",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that will be notified using this ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " as execution ",
+      "type" : "text"
+    },
+    {
+      "code" : "NIOThread",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "makePromise"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "of"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ".Type, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "file"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s12StaticStringV",
+      "text" : "StaticString"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "line"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Su",
+      "text" : "UInt"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore16EventLoopPromiseV",
+      "text" : "EventLoopPromise"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/makePromise(of:file:line:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "makePromise(of:file:line:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedeventloop\/makepromise(of:file:line:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedEventLoop/makeSucceededFuture(_:)": {
+  "abstract" : [
+    {
+      "text" : "Creates and returns a new ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoopFuture",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that is already marked as success. Notifications will be done using this ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " as execution ",
+      "type" : "text"
+    },
+    {
+      "code" : "NIOThread",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "makeSucceededFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Success"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Success"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Success"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/makeSucceededFuture(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "makeSucceededFuture(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedeventloop\/makesucceededfuture(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedEventLoop/makeSucceededFuture(_:file:line:)": {
+  "abstract" : [
+
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "makeSucceededFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Success"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Success"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "file"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s12StaticStringV",
+      "text" : "StaticString"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "line"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Su",
+      "text" : "UInt"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Success"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/makeSucceededFuture(_:file:line:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "makeSucceededFuture(_:file:line:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedeventloop\/makesucceededfuture(_:file:line:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedEventLoop/makeSucceededVoidFuture()": {
+  "abstract" : [
+    {
+      "text" : "Default implementation of ",
+      "type" : "text"
+    },
+    {
+      "code" : "makeSucceededVoidFuture",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ": Return a fresh future (which will allocate).",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "makeSucceededVoidFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/makeSucceededVoidFuture()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "makeSucceededVoidFuture()",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedeventloop\/makesucceededvoidfuture()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedEventLoop/next()": {
+  "abstract" : [
+    {
+      "text" : "An ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " forms a singular ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoopGroup",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", returning itself as the ‘next’ ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "next"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore9EventLoopP",
+      "text" : "EventLoop"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/next()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "next()",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedeventloop\/next()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedEventLoop/preconditionInEventLoop(file:line:)": {
+  "abstract" : [
+    {
+      "text" : "Checks the necessary condition of currently running on the called ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " for making forward progress.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "preconditionInEventLoop"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "file"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s12StaticStringV",
+      "text" : "StaticString"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "line"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Su",
+      "text" : "UInt"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/preconditionInEventLoop(file:line:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "preconditionInEventLoop(file:line:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedeventloop\/preconditionineventloop(file:line:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedEventLoop/preconditionNotInEventLoop(file:line:)": {
+  "abstract" : [
+    {
+      "text" : "Checks the necessary condition of currently ",
+      "type" : "text"
+    },
+    {
+      "inlineContent" : [
+        {
+          "text" : "not",
+          "type" : "text"
+        }
+      ],
+      "type" : "emphasis"
+    },
+    {
+      "text" : " running on the called ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " for making forward progress.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "preconditionNotInEventLoop"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "file"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s12StaticStringV",
+      "text" : "StaticString"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "line"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Su",
+      "text" : "UInt"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/preconditionNotInEventLoop(file:line:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "preconditionNotInEventLoop(file:line:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedeventloop\/preconditionnotineventloop(file:line:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedEventLoop/scheduleRepeatedAsyncTask(initialDelay:delay:notifying:_:)": {
+  "abstract" : [
+    {
+      "text" : "Schedule a repeated asynchronous task to be executed by the ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " with a fixed delay between the end and",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "start of each task.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "scheduleRepeatedAsyncTask"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "initialDelay"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore10TimeAmountV",
+      "text" : "TimeAmount"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "delay"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore10TimeAmountV",
+      "text" : "TimeAmount"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "notifying"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore16EventLoopPromiseV",
+      "text" : "EventLoopPromise"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">?, ("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore12RepeatedTaskC",
+      "text" : "RepeatedTask"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore12RepeatedTaskC",
+      "text" : "RepeatedTask"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/scheduleRepeatedAsyncTask(initialDelay:delay:notifying:_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "scheduleRepeatedAsyncTask(initialDelay:delay:notifying:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedeventloop\/schedulerepeatedasynctask(initialdelay:delay:notifying:_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedEventLoop/scheduleRepeatedTask(initialDelay:delay:notifying:_:)": {
+  "abstract" : [
+    {
+      "text" : "Schedule a repeated task to be executed by the ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " with a fixed delay between the end and start of each",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "task.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "scheduleRepeatedTask"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "initialDelay"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore10TimeAmountV",
+      "text" : "TimeAmount"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "delay"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore10TimeAmountV",
+      "text" : "TimeAmount"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "notifying"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore16EventLoopPromiseV",
+      "text" : "EventLoopPromise"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">?, ("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore12RepeatedTaskC",
+      "text" : "RepeatedTask"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore12RepeatedTaskC",
+      "text" : "RepeatedTask"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/scheduleRepeatedTask(initialDelay:delay:notifying:_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "scheduleRepeatedTask(initialDelay:delay:notifying:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedeventloop\/schedulerepeatedtask(initialdelay:delay:notifying:_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedEventLoop/submit(_:)": {
+  "abstract" : [
+    {
+      "text" : "Submit ",
+      "type" : "text"
+    },
+    {
+      "code" : "task",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " to be run on this ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "submit"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">(() "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedEventLoop\/submit(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "submit(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedeventloop\/submit(_:)"
+}
+}
+}

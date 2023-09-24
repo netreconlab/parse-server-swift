@@ -1,0 +1,244 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/BackPressureHandler"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/BackPressureHandler\/ChannelInboundHandler-Implementations"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "NIO"
+      }
+    ],
+    "role" : "collectionGroup",
+    "title" : "ChannelInboundHandler Implementations"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/BackPressureHandler\/unwrapInboundIn(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/BackPressureHandler\/wrapInboundOut(_:)"
+      ],
+      "title" : "Instance Methods"
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIO",
+  "type" : "topic",
+  "url" : "\/documentation\/nio"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/BackPressureHandler": {
+  "abstract" : [
+    {
+      "text" : "ChannelHandler implementation which enforces back-pressure by stopping to read from the remote peer when it cannot write back fast enough.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "It will start reading again once pending data was written.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "BackPressureHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/BackPressureHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "BackPressureHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "BackPressureHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/backpressurehandler"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/BackPressureHandler/unwrapInboundIn(_:)": {
+  "abstract" : [
+    {
+      "text" : "Unwrap the provided ",
+      "type" : "text"
+    },
+    {
+      "code" : "NIOAny",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that was passed to ",
+      "type" : "text"
+    },
+    {
+      "code" : "channelRead",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "unwrapInboundIn"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore6NIOAnyV",
+      "text" : "NIOAny"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "InboundIn"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/BackPressureHandler\/unwrapInboundIn(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "unwrapInboundIn(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/backpressurehandler\/unwrapinboundin(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/BackPressureHandler/wrapInboundOut(_:)": {
+  "abstract" : [
+    {
+      "text" : "Wrap the provided ",
+      "type" : "text"
+    },
+    {
+      "code" : "InboundOut",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that will be passed to the next ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelInboundHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " by calling ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandlerContext.fireChannelRead",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "wrapInboundOut"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "InboundOut"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore6NIOAnyV",
+      "text" : "NIOAny"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/BackPressureHandler\/wrapInboundOut(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "wrapInboundOut(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/backpressurehandler\/wrapinboundout(_:)"
+}
+}
+}

@@ -1,0 +1,1885 @@
+{
+  "abstract" : [
+    {
+      "text" : "This protocol defines an object, most commonly a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", that supports",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "setting and getting socket options (via ",
+      "type" : "text"
+    },
+    {
+      "code" : "setsockopt",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "\/",
+      "type" : "text"
+    },
+    {
+      "code" : "getsockopt",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " or similar).",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "It provides a strongly typed API that makes working with larger, less-common",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "socket options easier than the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelOption",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " API allows.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:7NIOCore20SocketOptionProviderP",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "protocol"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "SocketOptionProvider"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIO"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "SocketOptionProvider"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Protocol",
+    "symbolKind" : "protocol",
+    "title" : "SocketOptionProvider"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "protocol"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "SocketOptionProvider"
+            },
+            {
+              "kind" : "text",
+              "text" : " : "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "_NIOPreconcurrencySendable"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The API is divided into two portions. For socket options that NIO has prior",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "knowledge about, the API has strongly and safely typed APIs that only allow",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "users to use the exact correct type for the socket option. This will ensure",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "that the API is safe to use, and these are encouraged where possible.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "These safe APIs are built on top of an “unsafe” API that is also exposed to",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "users as part of this protocol. The “unsafe” API is unsafe in the same way",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "that ",
+              "type" : "text"
+            },
+            {
+              "code" : "UnsafePointer",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is: incorrect use of the API allows all kinds of",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "memory-unsafe behaviour. This API is necessary for socket options that NIO",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "does not have prior knowledge of, but wherever possible users are discouraged",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "from using it.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Relationship-to-SocketOption",
+          "level" : 3,
+          "text" : "Relationship to SocketOption",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "All ",
+              "type" : "text"
+            },
+            {
+              "code" : "Channel",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " objects that implement this protocol should also support the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "SocketOption",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "ChannelOption",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " for simple socket options (those with C ",
+              "type" : "text"
+            },
+            {
+              "code" : "int",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "values). These are the most common socket option types, and so this ",
+              "type" : "text"
+            },
+            {
+              "code" : "ChannelOption",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "represents a convenient shorthand for using this protocol where the type allows,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "as well as avoiding the need to cast to this protocol.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Like the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "Channel",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " protocol, all methods in this protocol are",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "thread-safe.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Inherits From",
+      "type" : "inheritsFrom"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/eventLoop"
+      ],
+      "title" : "Instance Properties"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/getIPMulticastIF()",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/getIPMulticastLoop()",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/getIPMulticastTTL()",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/getIPv6MulticastHops()",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/getIPv6MulticastIF()",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/getIPv6MulticastLoop()",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/getSoLinger()",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/getTCPConnectionInfo()",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/setIPMulticastIF(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/setIPMulticastLoop(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/setIPMulticastTTL(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/setIPv6MulticastHops(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/setIPv6MulticastIF(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/setIPv6MulticastLoop(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/setSoLinger(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/unsafeGetSocketOption(level:name:)-1wkyx",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/unsafeGetSocketOption(level:name:)-5hoyn",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/unsafeSetSocketOption(level:name:value:)-72342",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/unsafeSetSocketOption(level:name:value:)-7sqva"
+      ],
+      "title" : "Instance Methods"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/nio\/socketoptionprovider"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIO",
+  "type" : "topic",
+  "url" : "\/documentation\/nio"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketOptionProvider": {
+  "abstract" : [
+    {
+      "text" : "This protocol defines an object, most commonly a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", that supports",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "setting and getting socket options (via ",
+      "type" : "text"
+    },
+    {
+      "code" : "setsockopt",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "\/",
+      "type" : "text"
+    },
+    {
+      "code" : "getsockopt",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " or similar).",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "It provides a strongly typed API that makes working with larger, less-common",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "socket options easier than the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelOption",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " API allows.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SocketOptionProvider"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SocketOptionProvider"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SocketOptionProvider",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketoptionprovider"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketOptionProvider/eventLoop": {
+  "abstract" : [
+    {
+      "text" : "The ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " which is used by this ",
+      "type" : "text"
+    },
+    {
+      "code" : "SocketOptionProvider",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " for execution.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "eventLoop"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore9EventLoopP",
+      "text" : "EventLoop"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/eventLoop",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "eventLoop",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketoptionprovider\/eventloop"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketOptionProvider/getIPMulticastIF()": {
+  "abstract" : [
+    {
+      "text" : "Gets the value of the socket option IP_MULTICAST_IF.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "getIPMulticastIF"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:@S@in_addr",
+      "text" : "in_addr"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/getIPMulticastIF()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "getIPMulticastIF()",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketoptionprovider\/getipmulticastif()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketOptionProvider/getIPMulticastLoop()": {
+  "abstract" : [
+    {
+      "text" : "Gets the value of the socket option IP_MULTICAST_LOOP.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "getIPMulticastLoop"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s13CUnsignedChara",
+      "text" : "CUnsignedChar"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/getIPMulticastLoop()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "getIPMulticastLoop()",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketoptionprovider\/getipmulticastloop()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketOptionProvider/getIPMulticastTTL()": {
+  "abstract" : [
+    {
+      "text" : "Gets the value of the socket option IP_MULTICAST_TTL.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "getIPMulticastTTL"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s13CUnsignedChara",
+      "text" : "CUnsignedChar"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/getIPMulticastTTL()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "getIPMulticastTTL()",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketoptionprovider\/getipmulticastttl()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketOptionProvider/getIPv6MulticastHops()": {
+  "abstract" : [
+    {
+      "text" : "Gets the value of the socket option IPV6_MULTICAST_HOPS.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "getIPv6MulticastHops"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4CInta",
+      "text" : "CInt"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/getIPv6MulticastHops()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "getIPv6MulticastHops()",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketoptionprovider\/getipv6multicasthops()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketOptionProvider/getIPv6MulticastIF()": {
+  "abstract" : [
+    {
+      "text" : "Gets the value of the socket option IPV6_MULTICAST_IF.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "getIPv6MulticastIF"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s12CUnsignedInta",
+      "text" : "CUnsignedInt"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/getIPv6MulticastIF()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "getIPv6MulticastIF()",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketoptionprovider\/getipv6multicastif()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketOptionProvider/getIPv6MulticastLoop()": {
+  "abstract" : [
+    {
+      "text" : "Gets the value of the socket option IPV6_MULTICAST_LOOP.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "getIPv6MulticastLoop"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s12CUnsignedInta",
+      "text" : "CUnsignedInt"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/getIPv6MulticastLoop()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "getIPv6MulticastLoop()",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketoptionprovider\/getipv6multicastloop()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketOptionProvider/getSoLinger()": {
+  "abstract" : [
+    {
+      "text" : "Gets the value of the socket option SO_LINGER.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "getSoLinger"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:@S@linger",
+      "text" : "linger"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/getSoLinger()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "getSoLinger()",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketoptionprovider\/getsolinger()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketOptionProvider/getTCPConnectionInfo()": {
+  "abstract" : [
+    {
+      "text" : "Gets the value of the socket option TCP_CONNECTION_INFO.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "getTCPConnectionInfo"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:@S@tcp_connection_info",
+      "text" : "tcp_connection_info"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/getTCPConnectionInfo()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "getTCPConnectionInfo()",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketoptionprovider\/gettcpconnectioninfo()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketOptionProvider/setIPMulticastIF(_:)": {
+  "abstract" : [
+    {
+      "text" : "Sets the socket option IP_MULTICAST_IF to ",
+      "type" : "text"
+    },
+    {
+      "code" : "value",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "setIPMulticastIF"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:@S@in_addr",
+      "text" : "in_addr"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/setIPMulticastIF(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "setIPMulticastIF(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketoptionprovider\/setipmulticastif(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketOptionProvider/setIPMulticastLoop(_:)": {
+  "abstract" : [
+    {
+      "text" : "Sets the socket option IP_MULTICAST_LOOP to ",
+      "type" : "text"
+    },
+    {
+      "code" : "value",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "setIPMulticastLoop"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s13CUnsignedChara",
+      "text" : "CUnsignedChar"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/setIPMulticastLoop(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "setIPMulticastLoop(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketoptionprovider\/setipmulticastloop(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketOptionProvider/setIPMulticastTTL(_:)": {
+  "abstract" : [
+    {
+      "text" : "Sets the socket option IP_MULTICAST_TTL to ",
+      "type" : "text"
+    },
+    {
+      "code" : "value",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "setIPMulticastTTL"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s13CUnsignedChara",
+      "text" : "CUnsignedChar"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/setIPMulticastTTL(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "setIPMulticastTTL(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketoptionprovider\/setipmulticastttl(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketOptionProvider/setIPv6MulticastHops(_:)": {
+  "abstract" : [
+    {
+      "text" : "Sets the socket option IPV6_MULTICAST_HOPS to ",
+      "type" : "text"
+    },
+    {
+      "code" : "value",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "setIPv6MulticastHops"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4CInta",
+      "text" : "CInt"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/setIPv6MulticastHops(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "setIPv6MulticastHops(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketoptionprovider\/setipv6multicasthops(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketOptionProvider/setIPv6MulticastIF(_:)": {
+  "abstract" : [
+    {
+      "text" : "Sets the socket option IPV6_MULTICAST_IF to ",
+      "type" : "text"
+    },
+    {
+      "code" : "value",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "setIPv6MulticastIF"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s12CUnsignedInta",
+      "text" : "CUnsignedInt"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/setIPv6MulticastIF(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "setIPv6MulticastIF(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketoptionprovider\/setipv6multicastif(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketOptionProvider/setIPv6MulticastLoop(_:)": {
+  "abstract" : [
+    {
+      "text" : "Sets the socket option IPV6_MULTICAST_LOOP to ",
+      "type" : "text"
+    },
+    {
+      "code" : "value",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "setIPv6MulticastLoop"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s12CUnsignedInta",
+      "text" : "CUnsignedInt"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/setIPv6MulticastLoop(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "setIPv6MulticastLoop(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketoptionprovider\/setipv6multicastloop(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketOptionProvider/setSoLinger(_:)": {
+  "abstract" : [
+    {
+      "text" : "Sets the socket option SO_LINGER to ",
+      "type" : "text"
+    },
+    {
+      "code" : "value",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "setSoLinger"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:@S@linger",
+      "text" : "linger"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/setSoLinger(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "setSoLinger(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketoptionprovider\/setsolinger(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketOptionProvider/unsafeGetSocketOption(level:name:)-1wkyx": {
+  "abstract" : [
+    {
+      "text" : "Obtain the value of the socket option for the given level and name.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "unsafeGetSocketOption"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "level"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore17SocketOptionLevela",
+      "text" : "SocketOptionLevel"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "name"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore16SocketOptionNamea",
+      "text" : "SocketOptionName"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/unsafeGetSocketOption(level:name:)-1wkyx",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "unsafeGetSocketOption(level:name:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketoptionprovider\/unsafegetsocketoption(level:name:)-1wkyx"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketOptionProvider/unsafeGetSocketOption(level:name:)-5hoyn": {
+  "abstract" : [
+    {
+      "text" : "Obtain the value of the socket option for the given level and name.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "unsafeGetSocketOption"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "level"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore12NIOBSDSocketO",
+      "text" : "NIOBSDSocket"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore12NIOBSDSocketO11OptionLevelV",
+      "text" : "OptionLevel"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "name"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore12NIOBSDSocketO",
+      "text" : "NIOBSDSocket"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore12NIOBSDSocketO6OptionV",
+      "text" : "Option"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/unsafeGetSocketOption(level:name:)-5hoyn",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "unsafeGetSocketOption(level:name:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketoptionprovider\/unsafegetsocketoption(level:name:)-5hoyn"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketOptionProvider/unsafeSetSocketOption(level:name:value:)-72342": {
+  "abstract" : [
+    {
+      "text" : "Set a socket option for a given level and name to the specified value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "unsafeSetSocketOption"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "level"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore12NIOBSDSocketO",
+      "text" : "NIOBSDSocket"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore12NIOBSDSocketO11OptionLevelV",
+      "text" : "OptionLevel"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "name"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore12NIOBSDSocketO",
+      "text" : "NIOBSDSocket"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore12NIOBSDSocketO6OptionV",
+      "text" : "Option"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "value"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/unsafeSetSocketOption(level:name:value:)-72342",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "unsafeSetSocketOption(level:name:value:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketoptionprovider\/unsafesetsocketoption(level:name:value:)-72342"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/SocketOptionProvider/unsafeSetSocketOption(level:name:value:)-7sqva": {
+  "abstract" : [
+    {
+      "text" : "Set a socket option for a given level and name to the specified value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "unsafeSetSocketOption"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "level"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore17SocketOptionLevela",
+      "text" : "SocketOptionLevel"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "name"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore16SocketOptionNamea",
+      "text" : "SocketOptionName"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "value"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/SocketOptionProvider\/unsafeSetSocketOption(level:name:value:)-7sqva",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "unsafeSetSocketOption(level:name:value:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/socketoptionprovider\/unsafesetsocketoption(level:name:value:)-7sqva"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s8SendableP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

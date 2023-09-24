@@ -1,0 +1,183 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOTransportServices",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOTransportServices\/NIOFilterEmptyWritesHandler"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOTransportServices\/NIOFilterEmptyWritesHandler\/init()"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:20NIOTransportServices27NIOFilterEmptyWritesHandlerCACycfc",
+    "fragments" : [
+      {
+        "kind" : "identifier",
+        "text" : "init"
+      },
+      {
+        "kind" : "text",
+        "text" : "()"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIOTransportServices"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Initializer",
+    "symbolKind" : "init",
+    "title" : "init()"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "init"
+            },
+            {
+              "kind" : "text",
+              "text" : "()"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/niotransportservices\/niofilteremptywriteshandler\/init()"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOTransportServices": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOTransportServices",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIOTransportServices",
+  "type" : "topic",
+  "url" : "\/documentation\/niotransportservices"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOTransportServices/NIOFilterEmptyWritesHandler": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that checks for outbound writes of zero length, which are then dropped. This is",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "due to a bug in ",
+      "type" : "text"
+    },
+    {
+      "code" : "Network Framework",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", where zero byte TCP writes lead to stalled connections.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Write promises are confirmed in the correct order.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NIOFilterEmptyWritesHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOTransportServices\/NIOFilterEmptyWritesHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NIOFilterEmptyWritesHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOFilterEmptyWritesHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/niotransportservices\/niofilteremptywriteshandler"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOTransportServices/NIOFilterEmptyWritesHandler/init()": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOTransportServices\/NIOFilterEmptyWritesHandler\/init()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init()",
+  "type" : "topic",
+  "url" : "\/documentation\/niotransportservices\/niofilteremptywriteshandler\/init()"
+}
+}
+}

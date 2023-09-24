@@ -1,0 +1,418 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "NIOHPACK",
+    "modules" : [
+      {
+        "name" : "NIOHPACK"
+      }
+    ],
+    "role" : "collection",
+    "roleHeading" : "Framework",
+    "symbolKind" : "module",
+    "title" : "NIOHPACK"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/NIOHPACKError"
+      ],
+      "title" : "Protocols"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKDecoder",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKHeaders",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/IndexedHeaderTable"
+      ],
+      "title" : "Structures"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKIndexing",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HuffmanDecodeError",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/NIOHPACKErrors"
+      ],
+      "title" : "Enumerations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/niohpack"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHPACK": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIOHPACK",
+  "type" : "topic",
+  "url" : "\/documentation\/niohpack"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHPACK/HPACKDecoder": {
+  "abstract" : [
+    {
+      "text" : "An ",
+      "type" : "text"
+    },
+    {
+      "code" : "HPACKDecoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " maintains its own dynamic header table and uses that to",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "decode indexed HTTP headers, along with Huffman-encoded strings and",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "HPACK-encoded integers.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "HPACKDecoder"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKDecoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "HPACKDecoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HPACKDecoder",
+  "type" : "topic",
+  "url" : "\/documentation\/niohpack\/hpackdecoder"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHPACK/HPACKEncoder": {
+  "abstract" : [
+    {
+      "text" : "An ",
+      "type" : "text"
+    },
+    {
+      "code" : "HPACKEncoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " maintains its own dynamic header table and uses that to",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "encode HTTP headers to an internal byte buffer.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "HPACKEncoder"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKEncoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "HPACKEncoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HPACKEncoder",
+  "type" : "topic",
+  "url" : "\/documentation\/niohpack\/hpackencoder"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHPACK/HPACKHeaders": {
+  "abstract" : [
+    {
+      "text" : "Very similar to ",
+      "type" : "text"
+    },
+    {
+      "code" : "NIOHTTP1.HTTPHeaders",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", but with extra data for storing indexing",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "information.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "HPACKHeaders"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKHeaders",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "HPACKHeaders"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HPACKHeaders",
+  "type" : "topic",
+  "url" : "\/documentation\/niohpack\/hpackheaders"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHPACK/HPACKIndexing": {
+  "abstract" : [
+    {
+      "text" : "Defines the types of indexing and rewriting operations a decoder may take with",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "regard to this header.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "HPACKIndexing"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HPACKIndexing",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "HPACKIndexing"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HPACKIndexing",
+  "type" : "topic",
+  "url" : "\/documentation\/niohpack\/hpackindexing"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHPACK/HuffmanDecodeError": {
+  "abstract" : [
+    {
+      "text" : "Errors that may be encountered by the Huffman decoder.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "HuffmanDecodeError"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/HuffmanDecodeError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "HuffmanDecodeError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HuffmanDecodeError",
+  "type" : "topic",
+  "url" : "\/documentation\/niohpack\/huffmandecodeerror"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHPACK/IndexedHeaderTable": {
+  "abstract" : [
+    {
+      "text" : "The unified header table used by HTTP\/2, encompassing both static and dynamic tables.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "IndexedHeaderTable"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/IndexedHeaderTable",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "IndexedHeaderTable"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "IndexedHeaderTable",
+  "type" : "topic",
+  "url" : "\/documentation\/niohpack\/indexedheadertable"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHPACK/NIOHPACKError": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NIOHPACKError"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/NIOHPACKError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NIOHPACKError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOHPACKError",
+  "type" : "topic",
+  "url" : "\/documentation\/niohpack\/niohpackerror"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHPACK/NIOHPACKErrors": {
+  "abstract" : [
+    {
+      "text" : "Errors raised by NIOHPACK while encoding\/decoding data.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NIOHPACKErrors"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHPACK\/NIOHPACKErrors",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NIOHPACKErrors"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOHPACKErrors",
+  "type" : "topic",
+  "url" : "\/documentation\/niohpack\/niohpackerrors"
+}
+}
+}

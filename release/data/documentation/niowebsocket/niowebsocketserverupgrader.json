@@ -1,0 +1,919 @@
+{
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "HTTPServerProtocolUpgrader",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that knows how to do the WebSocket upgrade dance.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/NIOWebSocketServerUpgrader"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:12NIOWebSocket0aB14ServerUpgraderC",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "class"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "NIOWebSocketServerUpgrader"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIOWebSocket"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "NIOWebSocketServerUpgrader"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Class",
+    "symbolKind" : "class",
+    "title" : "NIOWebSocketServerUpgrader"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "final"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "class"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "NIOWebSocketServerUpgrader"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Users may frequently want to offer multiple websocket endpoints on the same port. For this",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "reason, this ",
+              "type" : "text"
+            },
+            {
+              "code" : "WebServerSocketUpgrader",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " only knows how to do the required parts of the upgrade and to",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "complete the handshake. Users are expected to provide a callback that examines the HTTP headers",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "(including the path) and determines whether this is a websocket upgrade request that is acceptable",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to them.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This upgrader assumes that the ",
+              "type" : "text"
+            },
+            {
+              "code" : "HTTPServerUpgradeHandler",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " will appropriately mutate the pipeline to",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "remove the HTTP ",
+              "type" : "text"
+            },
+            {
+              "code" : "ChannelHandler",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "s.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPServerProtocolUpgrader",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/NIOWebSocketServerUpgrader\/init(automaticErrorHandling:shouldUpgrade:upgradePipelineHandler:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/NIOWebSocketServerUpgrader\/init(maxFrameSize:automaticErrorHandling:shouldUpgrade:upgradePipelineHandler:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/NIOWebSocketServerUpgrader\/requiredUpgradeHeaders",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/NIOWebSocketServerUpgrader\/supportedProtocol"
+      ],
+      "title" : "Instance Properties"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/NIOWebSocketServerUpgrader\/buildUpgradeResponse(channel:upgradeRequest:initialResponseHeaders:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/NIOWebSocketServerUpgrader\/upgrade(context:upgradeRequest:)"
+      ],
+      "title" : "Instance Methods"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/niowebsocket\/niowebsocketserverupgrader"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/HTTPServerProtocolUpgrader": {
+  "abstract" : [
+    {
+      "text" : "An object that implements ",
+      "type" : "text"
+    },
+    {
+      "code" : "HTTPServerProtocolUpgrader",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " knows how to handle HTTP upgrade to",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "a protocol on a server-side channel.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "HTTPServerProtocolUpgrader"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPServerProtocolUpgrader",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "HTTPServerProtocolUpgrader"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HTTPServerProtocolUpgrader",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/httpserverprotocolupgrader"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOWebSocket": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIOWebSocket",
+  "type" : "topic",
+  "url" : "\/documentation\/niowebsocket"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOWebSocket/NIOWebSocketServerUpgrader": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "HTTPServerProtocolUpgrader",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that knows how to do the WebSocket upgrade dance.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NIOWebSocketServerUpgrader"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/NIOWebSocketServerUpgrader",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NIOWebSocketServerUpgrader"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOWebSocketServerUpgrader",
+  "type" : "topic",
+  "url" : "\/documentation\/niowebsocket\/niowebsocketserverupgrader"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOWebSocket/NIOWebSocketServerUpgrader/buildUpgradeResponse(channel:upgradeRequest:initialResponseHeaders:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "buildUpgradeResponse"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "channel"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore7ChannelP",
+      "text" : "Channel"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "upgradeRequest"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP115HTTPRequestHeadV",
+      "text" : "HTTPRequestHead"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "initialResponseHeaders"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP111HTTPHeadersV",
+      "text" : "HTTPHeaders"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP111HTTPHeadersV",
+      "text" : "HTTPHeaders"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/NIOWebSocketServerUpgrader\/buildUpgradeResponse(channel:upgradeRequest:initialResponseHeaders:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "buildUpgradeResponse(channel:upgradeRequest:initialResponseHeaders:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niowebsocket\/niowebsocketserverupgrader\/buildupgraderesponse(channel:upgraderequest:initialresponseheaders:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOWebSocket/NIOWebSocketServerUpgrader/init(automaticErrorHandling:shouldUpgrade:upgradePipelineHandler:)": {
+  "abstract" : [
+    {
+      "text" : "Create a new ",
+      "type" : "text"
+    },
+    {
+      "code" : "NIOWebSocketServerUpgrader",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "automaticErrorHandling"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "shouldUpgrade"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore7ChannelP",
+      "text" : "Channel"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP115HTTPRequestHeadV",
+      "text" : "HTTPRequestHead"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP111HTTPHeadersV",
+      "text" : "HTTPHeaders"
+    },
+    {
+      "kind" : "text",
+      "text" : "?>, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "upgradePipelineHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore7ChannelP",
+      "text" : "Channel"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP115HTTPRequestHeadV",
+      "text" : "HTTPRequestHead"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">)"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/NIOWebSocketServerUpgrader\/init(automaticErrorHandling:shouldUpgrade:upgradePipelineHandler:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(automaticErrorHandling:shouldUpgrade:upgradePipelineHandler:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niowebsocket\/niowebsocketserverupgrader\/init(automaticerrorhandling:shouldupgrade:upgradepipelinehandler:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOWebSocket/NIOWebSocketServerUpgrader/init(maxFrameSize:automaticErrorHandling:shouldUpgrade:upgradePipelineHandler:)": {
+  "abstract" : [
+    {
+      "text" : "Create a new ",
+      "type" : "text"
+    },
+    {
+      "code" : "NIOWebSocketServerUpgrader",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "maxFrameSize"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "automaticErrorHandling"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "shouldUpgrade"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore7ChannelP",
+      "text" : "Channel"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP115HTTPRequestHeadV",
+      "text" : "HTTPRequestHead"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP111HTTPHeadersV",
+      "text" : "HTTPHeaders"
+    },
+    {
+      "kind" : "text",
+      "text" : "?>, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "upgradePipelineHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore7ChannelP",
+      "text" : "Channel"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP115HTTPRequestHeadV",
+      "text" : "HTTPRequestHead"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">)"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/NIOWebSocketServerUpgrader\/init(maxFrameSize:automaticErrorHandling:shouldUpgrade:upgradePipelineHandler:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(maxFrameSize:automaticErrorHandling:shouldUpgrade:upgradePipelineHandler:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niowebsocket\/niowebsocketserverupgrader\/init(maxframesize:automaticerrorhandling:shouldupgrade:upgradepipelinehandler:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOWebSocket/NIOWebSocketServerUpgrader/requiredUpgradeHeaders": {
+  "abstract" : [
+    {
+      "text" : "We deliberately do not actually set any required headers here, because the websocket",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "spec annoyingly does not actually force the client to send these in the Upgrade header,",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "which NIO requires. We check for these manually.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "requiredUpgradeHeaders"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/NIOWebSocketServerUpgrader\/requiredUpgradeHeaders",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "requiredUpgradeHeaders",
+  "type" : "topic",
+  "url" : "\/documentation\/niowebsocket\/niowebsocketserverupgrader\/requiredupgradeheaders"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOWebSocket/NIOWebSocketServerUpgrader/supportedProtocol": {
+  "abstract" : [
+    {
+      "text" : "RFC 6455 specs this as the required entry in the Upgrade header.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "supportedProtocol"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/NIOWebSocketServerUpgrader\/supportedProtocol",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "supportedProtocol",
+  "type" : "topic",
+  "url" : "\/documentation\/niowebsocket\/niowebsocketserverupgrader\/supportedprotocol"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOWebSocket/NIOWebSocketServerUpgrader/upgrade(context:upgradeRequest:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "upgrade"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "context"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC",
+      "text" : "ChannelHandlerContext"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "upgradeRequest"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP115HTTPRequestHeadV",
+      "text" : "HTTPRequestHead"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/NIOWebSocketServerUpgrader\/upgrade(context:upgradeRequest:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "upgrade(context:upgradeRequest:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niowebsocket\/niowebsocketserverupgrader\/upgrade(context:upgraderequest:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s8SendableP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

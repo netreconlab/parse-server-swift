@@ -1,0 +1,258 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIORequestResponseWithIDHandler"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIORequestResponseWithIDHandler\/ChannelInboundHandler-Implementations"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "NIOExtras"
+      }
+    ],
+    "role" : "collectionGroup",
+    "title" : "ChannelInboundHandler Implementations"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIORequestResponseWithIDHandler\/unwrapInboundIn(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIORequestResponseWithIDHandler\/wrapInboundOut(_:)"
+      ],
+      "title" : "Instance Methods"
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIOExtras",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/NIORequestResponseWithIDHandler": {
+  "abstract" : [
+    {
+      "code" : "NIORequestResponseWithIDHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " receives a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Request",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " alongside an ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoopPromise<Response>",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " from the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "‘s outbound side. It will fulfill the promise with the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Response",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " once it’s received from the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "’s",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "inbound side. Requests and responses can arrive out-of-order and are matched by the virtue of being",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "NIORequestIdentifiable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NIORequestResponseWithIDHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIORequestResponseWithIDHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NIORequestResponseWithIDHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIORequestResponseWithIDHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/niorequestresponsewithidhandler"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/NIORequestResponseWithIDHandler/unwrapInboundIn(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "unwrapInboundIn"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore6NIOAnyV",
+      "text" : "NIOAny"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "InboundIn"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIORequestResponseWithIDHandler\/unwrapInboundIn(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "unwrapInboundIn(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/niorequestresponsewithidhandler\/unwrapinboundin(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/NIORequestResponseWithIDHandler/wrapInboundOut(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "wrapInboundOut"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "InboundOut"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore6NIOAnyV",
+      "text" : "NIOAny"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIORequestResponseWithIDHandler\/wrapInboundOut(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "wrapInboundOut(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/niorequestresponsewithidhandler\/wrapinboundout(_:)"
+}
+}
+}

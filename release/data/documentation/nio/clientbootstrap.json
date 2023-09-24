@@ -1,0 +1,1509 @@
+{
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "ClientBootstrap",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is an easy way to bootstrap a ",
+      "type" : "text"
+    },
+    {
+      "code" : "SocketChannel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " when creating network clients.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:8NIOPosix15ClientBootstrapC",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "class"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "ClientBootstrap"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIO"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "ClientBootstrap"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Class",
+    "symbolKind" : "class",
+    "title" : "ClientBootstrap"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "final"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "class"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "ClientBootstrap"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Usually you re-use a ",
+              "type" : "text"
+            },
+            {
+              "code" : "ClientBootstrap",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " once you set it up and called ",
+              "type" : "text"
+            },
+            {
+              "code" : "connect",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " multiple times on it.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This way you ensure that the same ",
+              "type" : "text"
+            },
+            {
+              "code" : "EventLoop",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "s will be shared across all your connections.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Example:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "    let group = MultiThreadedEventLoopGroup(numberOfThreads: 1)",
+            "    defer {",
+            "        try! group.syncShutdownGracefully()",
+            "    }",
+            "    let bootstrap = ClientBootstrap(group: group)",
+            "        \/\/ Enable SO_REUSEADDR.",
+            "        .channelOption(ChannelOptions.socketOption(.so_reuseaddr), value: 1)",
+            "        .channelInitializer { channel in",
+            "            \/\/ always instantiate the handler _within_ the closure as",
+            "            \/\/ it may be called multiple times (for example if the hostname",
+            "            \/\/ resolves to both IPv4 and IPv6 addresses, cf. Happy Eyeballs).",
+            "            channel.pipeline.addHandler(MyChannelHandler())",
+            "        }",
+            "    try! bootstrap.connect(host: \"example.org\", port: 12345).wait()",
+            "    \/* the Channel is now connected *\/"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The connected ",
+              "type" : "text"
+            },
+            {
+              "code" : "SocketChannel",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " will operate on ",
+              "type" : "text"
+            },
+            {
+              "code" : "ByteBuffer",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " as inbound and on ",
+              "type" : "text"
+            },
+            {
+              "code" : "IOData",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " as outbound messages.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/NIOClientTCPBootstrapProtocol",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap\/init(group:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap\/init(validatingGroup:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap\/bind(to:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap\/channelInitializer(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap\/channelOption(_:value:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap\/connect(host:port:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap\/connect(to:)-6ep4g",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap\/connect(to:)-8orvp",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap\/connect(unixDomainSocketPath:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap\/connectTimeout(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap\/enableMPTCP(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap\/protocolHandlers(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap\/resolver(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap\/withConnectedSocket(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap\/withConnectedSocket(descriptor:)"
+      ],
+      "title" : "Instance Methods"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/nio\/clientbootstrap"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIO",
+  "type" : "topic",
+  "url" : "\/documentation\/nio"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ClientBootstrap": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "ClientBootstrap",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is an easy way to bootstrap a ",
+      "type" : "text"
+    },
+    {
+      "code" : "SocketChannel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " when creating network clients.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ClientBootstrap"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ClientBootstrap"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ClientBootstrap",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/clientbootstrap"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ClientBootstrap/bind(to:)": {
+  "abstract" : [
+    {
+      "text" : "Bind the ",
+      "type" : "text"
+    },
+    {
+      "code" : "SocketChannel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " to ",
+      "type" : "text"
+    },
+    {
+      "code" : "address",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "bind"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "to"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore13SocketAddressO",
+      "text" : "SocketAddress"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOPosix15ClientBootstrapC",
+      "text" : "ClientBootstrap"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap\/bind(to:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "bind(to:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/clientbootstrap\/bind(to:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ClientBootstrap/channelInitializer(_:)": {
+  "abstract" : [
+    {
+      "text" : "Initialize the connected ",
+      "type" : "text"
+    },
+    {
+      "code" : "SocketChannel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " with ",
+      "type" : "text"
+    },
+    {
+      "code" : "initializer",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ". The most common task in initializer is to add",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s to the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "channelInitializer"
+    },
+    {
+      "kind" : "text",
+      "text" : "(("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore7ChannelP",
+      "text" : "Channel"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4Voida",
+      "text" : "Void"
+    },
+    {
+      "kind" : "text",
+      "text" : ">) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap\/channelInitializer(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "channelInitializer(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/clientbootstrap\/channelinitializer(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ClientBootstrap/channelOption(_:value:)": {
+  "abstract" : [
+    {
+      "text" : "Specifies a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelOption",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " to be applied to the ",
+      "type" : "text"
+    },
+    {
+      "code" : "SocketChannel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "channelOption"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Option"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Option"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "value"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Option"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap\/channelOption(_:value:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "channelOption(_:value:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/clientbootstrap\/channeloption(_:value:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ClientBootstrap/connect(host:port:)": {
+  "abstract" : [
+    {
+      "text" : "Specify the ",
+      "type" : "text"
+    },
+    {
+      "code" : "host",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " and ",
+      "type" : "text"
+    },
+    {
+      "code" : "port",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " to connect to for the TCP ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that will be established.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "connect"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "host"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "port"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore7ChannelP",
+      "text" : "Channel"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap\/connect(host:port:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "connect(host:port:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/clientbootstrap\/connect(host:port:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ClientBootstrap/connect(to:)-6ep4g": {
+  "abstract" : [
+    {
+      "text" : "Specify the ",
+      "type" : "text"
+    },
+    {
+      "code" : "address",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " to connect to for the TCP ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that will be established.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "connect"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "to"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore13SocketAddressO",
+      "text" : "SocketAddress"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore7ChannelP",
+      "text" : "Channel"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap\/connect(to:)-6ep4g",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "connect(to:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/clientbootstrap\/connect(to:)-6ep4g"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ClientBootstrap/connect(to:)-8orvp": {
+  "abstract" : [
+    {
+      "text" : "Specify the VSOCK address to connect to for the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "connect"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "to"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOPosix12VsockAddressV",
+      "text" : "VsockAddress"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore7ChannelP",
+      "text" : "Channel"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap\/connect(to:)-8orvp",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "connect(to:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/clientbootstrap\/connect(to:)-8orvp"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ClientBootstrap/connect(unixDomainSocketPath:)": {
+  "abstract" : [
+    {
+      "text" : "Specify the ",
+      "type" : "text"
+    },
+    {
+      "code" : "unixDomainSocket",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " path to connect to for the UDS ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that will be established.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "connect"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "unixDomainSocketPath"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore7ChannelP",
+      "text" : "Channel"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap\/connect(unixDomainSocketPath:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "connect(unixDomainSocketPath:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/clientbootstrap\/connect(unixdomainsocketpath:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ClientBootstrap/connectTimeout(_:)": {
+  "abstract" : [
+    {
+      "text" : "Specifies a timeout to apply to a connection attempt.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "connectTimeout"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore10TimeAmountV",
+      "text" : "TimeAmount"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap\/connectTimeout(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "connectTimeout(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/clientbootstrap\/connecttimeout(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ClientBootstrap/enableMPTCP(_:)": {
+  "abstract" : [
+    {
+      "text" : "Enables multi-path TCP support.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "enableMPTCP"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap\/enableMPTCP(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "enableMPTCP(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/clientbootstrap\/enablemptcp(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ClientBootstrap/init(group:)": {
+  "abstract" : [
+    {
+      "text" : "Create a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ClientBootstrap",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " on the ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoopGroup",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "group",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "convenience"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "group"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore14EventLoopGroupP",
+      "text" : "EventLoopGroup"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap\/init(group:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(group:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/clientbootstrap\/init(group:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ClientBootstrap/init(validatingGroup:)": {
+  "abstract" : [
+    {
+      "text" : "Create a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ClientBootstrap",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " on the ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoopGroup",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "group",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", validating that ",
+      "type" : "text"
+    },
+    {
+      "code" : "group",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is compatible.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "?("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "validatingGroup"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore14EventLoopGroupP",
+      "text" : "EventLoopGroup"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap\/init(validatingGroup:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(validatingGroup:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/clientbootstrap\/init(validatinggroup:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ClientBootstrap/protocolHandlers(_:)": {
+  "abstract" : [
+    {
+      "text" : "Sets the protocol handlers that will be added to the front of the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " right after the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "channelInitializer",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " has been called.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "protocolHandlers"
+    },
+    {
+      "kind" : "text",
+      "text" : "(() -> ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore14ChannelHandlerP",
+      "text" : "ChannelHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : "]) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap\/protocolHandlers(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "protocolHandlers(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/clientbootstrap\/protocolhandlers(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ClientBootstrap/resolver(_:)": {
+  "abstract" : [
+    {
+      "text" : "Specifies the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Resolver",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " to use or ",
+      "type" : "text"
+    },
+    {
+      "code" : "nil",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " if the default should be used.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "resolver"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOPosix8ResolverP",
+      "text" : "Resolver"
+    },
+    {
+      "kind" : "text",
+      "text" : "?) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap\/resolver(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "resolver(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/clientbootstrap\/resolver(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ClientBootstrap/withConnectedSocket(_:)": {
+  "abstract" : [
+    {
+      "text" : "Use the existing connected socket file descriptor.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "withConnectedSocket"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore12NIOBSDSocketO",
+      "text" : "NIOBSDSocket"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore12NIOBSDSocketO6Handlea",
+      "text" : "Handle"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore7ChannelP",
+      "text" : "Channel"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap\/withConnectedSocket(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "withConnectedSocket(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/clientbootstrap\/withconnectedsocket(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ClientBootstrap/withConnectedSocket(descriptor:)": {
+  "abstract" : [
+    {
+      "text" : "Use the existing connected socket file descriptor.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "withConnectedSocket"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "descriptor"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s4CInta",
+      "text" : "CInt"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore15EventLoopFutureC",
+      "text" : "EventLoopFuture"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore7ChannelP",
+      "text" : "Channel"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ClientBootstrap\/withConnectedSocket(descriptor:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "withConnectedSocket(descriptor:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/clientbootstrap\/withconnectedsocket(descriptor:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/NIOClientTCPBootstrapProtocol": {
+  "abstract" : [
+    {
+      "code" : "NIOClientTCPBootstrapProtocol",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is implemented by various underlying transport mechanisms. Typically,",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "this will be the BSD Sockets API implemented by ",
+      "type" : "text"
+    },
+    {
+      "code" : "ClientBootstrap",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NIOClientTCPBootstrapProtocol"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/NIOClientTCPBootstrapProtocol",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NIOClientTCPBootstrapProtocol"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOClientTCPBootstrapProtocol",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/nioclienttcpbootstrapprotocol"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s8SendableP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

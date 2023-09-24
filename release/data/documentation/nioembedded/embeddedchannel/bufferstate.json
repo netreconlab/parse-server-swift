@@ -1,0 +1,563 @@
+{
+  "abstract" : [
+    {
+      "code" : "BufferState",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " represents the state of either the inbound, or the outbound ",
+      "type" : "text"
+    },
+    {
+      "code" : "EmbeddedChannel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " buffer. These",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "buffers contain data that travelled the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " all the way.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedChannel"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedChannel\/BufferState"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:11NIOEmbedded15EmbeddedChannelC11BufferStateO",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "enum"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "BufferState"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIO"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "BufferState"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Enumeration",
+    "symbolKind" : "enum",
+    "title" : "EmbeddedChannel.BufferState"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "enum"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "BufferState"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If the last ",
+              "type" : "text"
+            },
+            {
+              "code" : "ChannelHandler",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " explicitly (by calling ",
+              "type" : "text"
+            },
+            {
+              "code" : "fireChannelRead",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ") or implicitly (by not implementing",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "channelRead",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ") sends inbound data into the end of the ",
+              "type" : "text"
+            },
+            {
+              "code" : "EmbeddedChannel",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", it will be held in the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "EmbeddedChannel",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "’s inbound buffer. Similarly for ",
+              "type" : "text"
+            },
+            {
+              "code" : "write",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " on the outbound side. The state of the respective",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "buffer will be returned from ",
+              "type" : "text"
+            },
+            {
+              "code" : "writeInbound",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "\/",
+              "type" : "text"
+            },
+            {
+              "code" : "writeOutbound",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " as a ",
+              "type" : "text"
+            },
+            {
+              "code" : "BufferState",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedChannel\/BufferState\/empty",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedChannel\/BufferState\/full(_:)"
+      ],
+      "title" : "Enumeration Cases"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedChannel\/BufferState\/isEmpty",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedChannel\/BufferState\/isFull"
+      ],
+      "title" : "Instance Properties"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/nioembedded\/embeddedchannel\/bufferstate"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIO",
+  "type" : "topic",
+  "url" : "\/documentation\/nio"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedChannel": {
+  "abstract" : [
+    {
+      "code" : "EmbeddedChannel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " implementation that does neither any",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "actual IO nor has a proper eventing mechanism. The prime use-case for",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "EmbeddedChannel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is in unit tests when you want to feed the inbound events",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "and check the outbound events manually.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "EmbeddedChannel"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedChannel",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "EmbeddedChannel"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "EmbeddedChannel",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedchannel"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedChannel/BufferState": {
+  "abstract" : [
+    {
+      "code" : "BufferState",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " represents the state of either the inbound, or the outbound ",
+      "type" : "text"
+    },
+    {
+      "code" : "EmbeddedChannel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " buffer. These",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "buffers contain data that travelled the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " all the way.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "BufferState"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedChannel\/BufferState",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "BufferState"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "EmbeddedChannel.BufferState",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedchannel\/bufferstate"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedChannel/BufferState/empty": {
+  "abstract" : [
+    {
+      "text" : "The buffer is empty.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "empty"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedChannel\/BufferState\/empty",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "EmbeddedChannel.BufferState.empty",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedchannel\/bufferstate\/empty"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedChannel/BufferState/full(_:)": {
+  "abstract" : [
+    {
+      "text" : "The buffer is non-empty.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "full"
+    },
+    {
+      "kind" : "text",
+      "text" : "(["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore6NIOAnyV",
+      "text" : "NIOAny"
+    },
+    {
+      "kind" : "text",
+      "text" : "])"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedChannel\/BufferState\/full(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "EmbeddedChannel.BufferState.full(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedchannel\/bufferstate\/full(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedChannel/BufferState/isEmpty": {
+  "abstract" : [
+    {
+      "text" : "Returns ",
+      "type" : "text"
+    },
+    {
+      "code" : "true",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is the buffer was empty.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "isEmpty"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedChannel\/BufferState\/isEmpty",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "isEmpty",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedchannel\/bufferstate\/isempty"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOEmbedded/EmbeddedChannel/BufferState/isFull": {
+  "abstract" : [
+    {
+      "text" : "Returns ",
+      "type" : "text"
+    },
+    {
+      "code" : "true",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " if the buffer was non-empty.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "isFull"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOEmbedded\/EmbeddedChannel\/BufferState\/isFull",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "isFull",
+  "type" : "topic",
+  "url" : "\/documentation\/nioembedded\/embeddedchannel\/bufferstate\/isfull"
+}
+}
+}

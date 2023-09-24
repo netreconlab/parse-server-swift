@@ -1,0 +1,1432 @@
+{
+  "abstract" : [
+    {
+      "text" : "Creates a TLS configuration for use with client-side contexts.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/TLSConfiguration"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/TLSConfiguration\/forClient(cipherSuites:verifySignatureAlgorithms:signingSignatureAlgorithms:minimumTLSVersion:maximumTLSVersion:certificateVerification:trustRoots:certificateChain:privateKey:applicationProtocols:shutdownTimeout:keyLogCallback:renegotiationSupport:additionalTrustRoots:)-8ne6o"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "NIOSSL",
+    "externalID" : "s:6NIOSSL16TLSConfigurationV9forClient12cipherSuites25verifySignatureAlgorithms07signinghI017minimumTLSVersion07maximumL023certificateVerification10trustRoots0N5Chain10privateKey20applicationProtocols15shutdownTimeout14keyLogCallback20renegotiationSupport015additionalTrustQ0ACSS_SayAA0H9AlgorithmVGSgAvA0L0OAXSgAA011CertificateO0OAA011NIOSSLTrustQ0OSayAA23NIOSSLCertificateSourceOGAA013NIOSSLPrivateT6SourceOSgSaySSG7NIOCore10TimeAmountVyA9_10ByteBufferVYbcSgAA23NIORenegotiationSupportOSayAA021NIOSSLAdditionalTrustQ0OGtFZ",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "static"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "forClient"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "cipherSuites"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:SS",
+        "text" : "String"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "verifySignatureAlgorithms"
+      },
+      {
+        "kind" : "text",
+        "text" : ": ["
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:6NIOSSL18SignatureAlgorithmV",
+        "text" : "SignatureAlgorithm"
+      },
+      {
+        "kind" : "text",
+        "text" : "]?, "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "signingSignatureAlgorithms"
+      },
+      {
+        "kind" : "text",
+        "text" : ": ["
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:6NIOSSL18SignatureAlgorithmV",
+        "text" : "SignatureAlgorithm"
+      },
+      {
+        "kind" : "text",
+        "text" : "]?, "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "minimumTLSVersion"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:6NIOSSL10TLSVersionO",
+        "text" : "TLSVersion"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "maximumTLSVersion"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:6NIOSSL10TLSVersionO",
+        "text" : "TLSVersion"
+      },
+      {
+        "kind" : "text",
+        "text" : "?, "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "certificateVerification"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:6NIOSSL23CertificateVerificationO",
+        "text" : "CertificateVerification"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "trustRoots"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:6NIOSSL16NIOSSLTrustRootsO",
+        "text" : "NIOSSLTrustRoots"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "certificateChain"
+      },
+      {
+        "kind" : "text",
+        "text" : ": ["
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:6NIOSSL23NIOSSLCertificateSourceO",
+        "text" : "NIOSSLCertificateSource"
+      },
+      {
+        "kind" : "text",
+        "text" : "], "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "privateKey"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:6NIOSSL22NIOSSLPrivateKeySourceO",
+        "text" : "NIOSSLPrivateKeySource"
+      },
+      {
+        "kind" : "text",
+        "text" : "?, "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "applicationProtocols"
+      },
+      {
+        "kind" : "text",
+        "text" : ": ["
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:SS",
+        "text" : "String"
+      },
+      {
+        "kind" : "text",
+        "text" : "], "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "shutdownTimeout"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7NIOCore10TimeAmountV",
+        "text" : "TimeAmount"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "keyLogCallback"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:6NIOSSL20NIOSSLKeyLogCallbacka",
+        "text" : "NIOSSLKeyLogCallback"
+      },
+      {
+        "kind" : "text",
+        "text" : "?, "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "renegotiationSupport"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:6NIOSSL23NIORenegotiationSupportO",
+        "text" : "NIORenegotiationSupport"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "additionalTrustRoots"
+      },
+      {
+        "kind" : "text",
+        "text" : ": ["
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:6NIOSSL26NIOSSLAdditionalTrustRootsO",
+        "text" : "NIOSSLAdditionalTrustRoots"
+      },
+      {
+        "kind" : "text",
+        "text" : "]) -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:6NIOSSL16TLSConfigurationV",
+        "text" : "TLSConfiguration"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIOSSL"
+      }
+    ],
+    "platforms" : [
+
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Type Method",
+    "symbolKind" : "method",
+    "title" : "forClient(cipherSuites:verifySignatureAlgorithms:signingSignatureAlgorithms:minimumTLSVersion:maximumTLSVersion:certificateVerification:trustRoots:certificateChain:privateKey:applicationProtocols:shutdownTimeout:keyLogCallback:renegotiationSupport:additionalTrustRoots:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "static"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "forClient"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "cipherSuites"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:SS",
+              "text" : "String"
+            },
+            {
+              "kind" : "text",
+              "text" : " = defaultCipherSuites, "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "verifySignatureAlgorithms"
+            },
+            {
+              "kind" : "text",
+              "text" : ": ["
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/SignatureAlgorithm",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:6NIOSSL18SignatureAlgorithmV",
+              "text" : "SignatureAlgorithm"
+            },
+            {
+              "kind" : "text",
+              "text" : "]? = nil, "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "signingSignatureAlgorithms"
+            },
+            {
+              "kind" : "text",
+              "text" : ": ["
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/SignatureAlgorithm",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:6NIOSSL18SignatureAlgorithmV",
+              "text" : "SignatureAlgorithm"
+            },
+            {
+              "kind" : "text",
+              "text" : "]? = nil, "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "minimumTLSVersion"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/TLSVersion",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:6NIOSSL10TLSVersionO",
+              "text" : "TLSVersion"
+            },
+            {
+              "kind" : "text",
+              "text" : " = .tlsv1, "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "maximumTLSVersion"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/TLSVersion",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:6NIOSSL10TLSVersionO",
+              "text" : "TLSVersion"
+            },
+            {
+              "kind" : "text",
+              "text" : "? = nil, "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "certificateVerification"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/CertificateVerification",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:6NIOSSL23CertificateVerificationO",
+              "text" : "CertificateVerification"
+            },
+            {
+              "kind" : "text",
+              "text" : " = .fullVerification, "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "trustRoots"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLTrustRoots",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:6NIOSSL16NIOSSLTrustRootsO",
+              "text" : "NIOSSLTrustRoots"
+            },
+            {
+              "kind" : "text",
+              "text" : " = .default, "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "certificateChain"
+            },
+            {
+              "kind" : "text",
+              "text" : ": ["
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLCertificateSource",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:6NIOSSL23NIOSSLCertificateSourceO",
+              "text" : "NIOSSLCertificateSource"
+            },
+            {
+              "kind" : "text",
+              "text" : "] = [], "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "privateKey"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLPrivateKeySource",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:6NIOSSL22NIOSSLPrivateKeySourceO",
+              "text" : "NIOSSLPrivateKeySource"
+            },
+            {
+              "kind" : "text",
+              "text" : "? = nil, "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "applicationProtocols"
+            },
+            {
+              "kind" : "text",
+              "text" : ": ["
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:SS",
+              "text" : "String"
+            },
+            {
+              "kind" : "text",
+              "text" : "] = [], "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "shutdownTimeout"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/TimeAmount",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7NIOCore10TimeAmountV",
+              "text" : "TimeAmount"
+            },
+            {
+              "kind" : "text",
+              "text" : " = .seconds(5), "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "keyLogCallback"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLKeyLogCallback",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:6NIOSSL20NIOSSLKeyLogCallbacka",
+              "text" : "NIOSSLKeyLogCallback"
+            },
+            {
+              "kind" : "text",
+              "text" : "? = nil, "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "renegotiationSupport"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIORenegotiationSupport",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:6NIOSSL23NIORenegotiationSupportO",
+              "text" : "NIORenegotiationSupport"
+            },
+            {
+              "kind" : "text",
+              "text" : " = .none, "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "additionalTrustRoots"
+            },
+            {
+              "kind" : "text",
+              "text" : ": ["
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLAdditionalTrustRoots",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:6NIOSSL26NIOSSLAdditionalTrustRootsO",
+              "text" : "NIOSSLAdditionalTrustRoots"
+            },
+            {
+              "kind" : "text",
+              "text" : "]) -> "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/TLSConfiguration",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:6NIOSSL16TLSConfigurationV",
+              "text" : "TLSConfiguration"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This provides sensible defaults, and can be used without customisation. For server-side",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "contexts, you should use ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/TLSConfiguration\/makeServerConfiguration(certificateChain:privateKey:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " instead.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/niossl\/tlsconfiguration\/forclient(ciphersuites:verifysignaturealgorithms:signingsignaturealgorithms:minimumtlsversion:maximumtlsversion:certificateverification:trustroots:certificatechain:privatekey:applicationprotocols:shutdowntimeout:keylogcallback:renegotiation-9of4w"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/TimeAmount": {
+  "abstract" : [
+    {
+      "text" : "Represents a time ",
+      "type" : "text"
+    },
+    {
+      "inlineContent" : [
+        {
+          "text" : "interval",
+          "type" : "text"
+        }
+      ],
+      "type" : "emphasis"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TimeAmount"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/TimeAmount",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TimeAmount"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TimeAmount",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/timeamount"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSSL": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIOSSL",
+  "type" : "topic",
+  "url" : "\/documentation\/niossl"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSSL/CertificateVerification": {
+  "abstract" : [
+    {
+      "text" : "Certificate verification modes.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CertificateVerification"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/CertificateVerification",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CertificateVerification"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CertificateVerification",
+  "type" : "topic",
+  "url" : "\/documentation\/niossl\/certificateverification"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSSL/NIORenegotiationSupport": {
+  "abstract" : [
+    {
+      "text" : "Support for TLS renegotiation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NIORenegotiationSupport"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIORenegotiationSupport",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NIORenegotiationSupport"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIORenegotiationSupport",
+  "type" : "topic",
+  "url" : "\/documentation\/niossl\/niorenegotiationsupport"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSSL/NIOSSLAdditionalTrustRoots": {
+  "abstract" : [
+    {
+      "text" : "Places NIOSSL can obtain additional trust roots from.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NIOSSLAdditionalTrustRoots"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLAdditionalTrustRoots",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NIOSSLAdditionalTrustRoots"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOSSLAdditionalTrustRoots",
+  "type" : "topic",
+  "url" : "\/documentation\/niossl\/niossladditionaltrustroots"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSSL/NIOSSLCertificateSource": {
+  "abstract" : [
+    {
+      "text" : "Places NIOSSL can obtain certificates from.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NIOSSLCertificateSource"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLCertificateSource",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NIOSSLCertificateSource"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOSSLCertificateSource",
+  "type" : "topic",
+  "url" : "\/documentation\/niossl\/niosslcertificatesource"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSSL/NIOSSLKeyLogCallback": {
+  "abstract" : [
+    {
+      "text" : "A callback that can be used to implement ",
+      "type" : "text"
+    },
+    {
+      "code" : "SSLKEYLOGFILE",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " support.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NIOSSLKeyLogCallback"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLKeyLogCallback",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NIOSSLKeyLogCallback"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOSSLKeyLogCallback",
+  "type" : "topic",
+  "url" : "\/documentation\/niossl\/niosslkeylogcallback"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSSL/NIOSSLPrivateKeySource": {
+  "abstract" : [
+    {
+      "text" : "Places NIOSSL can obtain private keys from.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NIOSSLPrivateKeySource"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLPrivateKeySource",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NIOSSLPrivateKeySource"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOSSLPrivateKeySource",
+  "type" : "topic",
+  "url" : "\/documentation\/niossl\/niosslprivatekeysource"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSSL/NIOSSLTrustRoots": {
+  "abstract" : [
+    {
+      "text" : "Places NIOSSL can obtain a trust store from.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NIOSSLTrustRoots"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLTrustRoots",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NIOSSLTrustRoots"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOSSLTrustRoots",
+  "type" : "topic",
+  "url" : "\/documentation\/niossl\/niossltrustroots"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSSL/SignatureAlgorithm": {
+  "abstract" : [
+    {
+      "text" : "Signature algorithms. The values are defined as in TLS 1.3",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SignatureAlgorithm"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/SignatureAlgorithm",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SignatureAlgorithm"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SignatureAlgorithm",
+  "type" : "topic",
+  "url" : "\/documentation\/niossl\/signaturealgorithm"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSSL/TLSConfiguration": {
+  "abstract" : [
+    {
+      "text" : "Manages configuration of TLS for SwiftNIO programs.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TLSConfiguration"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/TLSConfiguration",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TLSConfiguration"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TLSConfiguration",
+  "type" : "topic",
+  "url" : "\/documentation\/niossl\/tlsconfiguration"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSSL/TLSConfiguration/forClient(cipherSuites:verifySignatureAlgorithms:signingSignatureAlgorithms:minimumTLSVersion:maximumTLSVersion:certificateVerification:trustRoots:certificateChain:privateKey:applicationProtocols:shutdownTimeout:keyLogCallback:renegotiationSupport:additionalTrustRoots:)-8ne6o": {
+  "abstract" : [
+    {
+      "text" : "Creates a TLS configuration for use with client-side contexts.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "forClient"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "cipherSuites"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "verifySignatureAlgorithms"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6NIOSSL18SignatureAlgorithmV",
+      "text" : "SignatureAlgorithm"
+    },
+    {
+      "kind" : "text",
+      "text" : "]?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "signingSignatureAlgorithms"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6NIOSSL18SignatureAlgorithmV",
+      "text" : "SignatureAlgorithm"
+    },
+    {
+      "kind" : "text",
+      "text" : "]?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "minimumTLSVersion"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6NIOSSL10TLSVersionO",
+      "text" : "TLSVersion"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "maximumTLSVersion"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6NIOSSL10TLSVersionO",
+      "text" : "TLSVersion"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "certificateVerification"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6NIOSSL23CertificateVerificationO",
+      "text" : "CertificateVerification"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "trustRoots"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6NIOSSL16NIOSSLTrustRootsO",
+      "text" : "NIOSSLTrustRoots"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "certificateChain"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6NIOSSL23NIOSSLCertificateSourceO",
+      "text" : "NIOSSLCertificateSource"
+    },
+    {
+      "kind" : "text",
+      "text" : "], "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "privateKey"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6NIOSSL22NIOSSLPrivateKeySourceO",
+      "text" : "NIOSSLPrivateKeySource"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "applicationProtocols"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "], "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "shutdownTimeout"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore10TimeAmountV",
+      "text" : "TimeAmount"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "keyLogCallback"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6NIOSSL20NIOSSLKeyLogCallbacka",
+      "text" : "NIOSSLKeyLogCallback"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "renegotiationSupport"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6NIOSSL23NIORenegotiationSupportO",
+      "text" : "NIORenegotiationSupport"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "additionalTrustRoots"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6NIOSSL26NIOSSLAdditionalTrustRootsO",
+      "text" : "NIOSSLAdditionalTrustRoots"
+    },
+    {
+      "kind" : "text",
+      "text" : "]) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6NIOSSL16TLSConfigurationV",
+      "text" : "TLSConfiguration"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/TLSConfiguration\/forClient(cipherSuites:verifySignatureAlgorithms:signingSignatureAlgorithms:minimumTLSVersion:maximumTLSVersion:certificateVerification:trustRoots:certificateChain:privateKey:applicationProtocols:shutdownTimeout:keyLogCallback:renegotiationSupport:additionalTrustRoots:)-8ne6o",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "forClient(cipherSuites:verifySignatureAlgorithms:signingSignatureAlgorithms:minimumTLSVersion:maximumTLSVersion:certificateVerification:trustRoots:certificateChain:privateKey:applicationProtocols:shutdownTimeout:keyLogCallback:renegotiationSupport:additionalTrustRoots:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niossl\/tlsconfiguration\/forclient(ciphersuites:verifysignaturealgorithms:signingsignaturealgorithms:minimumtlsversion:maximumtlsversion:certificateverification:trustroots:certificatechain:privatekey:applicationprotocols:shutdowntimeout:keylogcallback:renegotiation-9of4w"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSSL/TLSConfiguration/makeServerConfiguration(certificateChain:privateKey:)": {
+  "abstract" : [
+    {
+      "text" : "Create a TLS configuration for use with server-side contexts.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "makeServerConfiguration"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "certificateChain"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6NIOSSL23NIOSSLCertificateSourceO",
+      "text" : "NIOSSLCertificateSource"
+    },
+    {
+      "kind" : "text",
+      "text" : "], "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "privateKey"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6NIOSSL22NIOSSLPrivateKeySourceO",
+      "text" : "NIOSSLPrivateKeySource"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6NIOSSL16TLSConfigurationV",
+      "text" : "TLSConfiguration"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/TLSConfiguration\/makeServerConfiguration(certificateChain:privateKey:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "makeServerConfiguration(certificateChain:privateKey:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niossl\/tlsconfiguration\/makeserverconfiguration(certificatechain:privatekey:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSSL/TLSVersion": {
+  "abstract" : [
+    {
+      "text" : "Known and supported TLS versions.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TLSVersion"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/TLSVersion",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TLSVersion"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TLSVersion",
+  "type" : "topic",
+  "url" : "\/documentation\/niossl\/tlsversion"
+}
+}
+}

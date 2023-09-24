@@ -1,0 +1,429 @@
+{
+  "abstract" : [
+    {
+      "text" : "A TLS provider to bootstrap TLS-enabled connections with ",
+      "type" : "text"
+    },
+    {
+      "code" : "NIOClientTCPBootstrap",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOTransportServices"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOTransportServices\/NIOTSClientTLSProvider"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:20NIOTransportServices22NIOTSClientTLSProviderV",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "struct"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "NIOTSClientTLSProvider"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIOTransportServices"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "NIOTSClientTLSProvider"
+      }
+    ],
+    "platforms" : [
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "12.0",
+        "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "10.14",
+        "name" : "macOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "12.0",
+        "name" : "tvOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "6.0",
+        "name" : "watchOS",
+        "unavailable" : false
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Structure",
+    "symbolKind" : "struct",
+    "title" : "NIOTSClientTLSProvider"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "struct"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "NIOTSClientTLSProvider"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Example:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/ Creating the \"universal bootstrap\" with the `NIOTSClientTLSProvider`.",
+            "let tlsProvider = NIOTSClientTLSProvider()",
+            "let bootstrap = NIOClientTCPBootstrap(NIOTSConnectionBootstrap(group: group), tls: tlsProvider)",
+            "",
+            "\/\/ Bootstrapping a connection using the \"universal bootstrapping mechanism\"",
+            "let connection = bootstrap.enableTLS()",
+            "                     .connect(host: \"example.com\", port: 443)",
+            "                     .wait()"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/NIOClientTLSProvider"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOTransportServices\/NIOTSClientTLSProvider\/init(tlsOptions:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOTransportServices\/NIOTSClientTLSProvider\/enableTLS(_:)"
+      ],
+      "title" : "Instance Methods"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOTransportServices\/NIOTSClientTLSProvider\/Bootstrap"
+      ],
+      "title" : "Type Aliases"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/niotransportservices\/niotsclienttlsprovider"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/NIOClientTLSProvider": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NIOClientTLSProvider"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/NIOClientTLSProvider",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NIOClientTLSProvider"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOClientTLSProvider",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/nioclienttlsprovider"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOTransportServices": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOTransportServices",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIOTransportServices",
+  "type" : "topic",
+  "url" : "\/documentation\/niotransportservices"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOTransportServices/NIOTSClientTLSProvider": {
+  "abstract" : [
+    {
+      "text" : "A TLS provider to bootstrap TLS-enabled connections with ",
+      "type" : "text"
+    },
+    {
+      "code" : "NIOClientTCPBootstrap",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NIOTSClientTLSProvider"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOTransportServices\/NIOTSClientTLSProvider",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NIOTSClientTLSProvider"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOTSClientTLSProvider",
+  "type" : "topic",
+  "url" : "\/documentation\/niotransportservices\/niotsclienttlsprovider"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOTransportServices/NIOTSClientTLSProvider/Bootstrap": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Bootstrap"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOTransportServices\/NIOTSClientTLSProvider\/Bootstrap",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Bootstrap"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOTSClientTLSProvider.Bootstrap",
+  "type" : "topic",
+  "url" : "\/documentation\/niotransportservices\/niotsclienttlsprovider\/bootstrap"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOTransportServices/NIOTSClientTLSProvider/enableTLS(_:)": {
+  "abstract" : [
+    {
+      "text" : "Enable TLS on the bootstrap. This is not a function you will typically call as a user, it is called by",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "NIOClientTCPBootstrap",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "enableTLS"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:20NIOTransportServices24NIOTSConnectionBootstrapC",
+      "text" : "NIOTSConnectionBootstrap"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:20NIOTransportServices24NIOTSConnectionBootstrapC",
+      "text" : "NIOTSConnectionBootstrap"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOTransportServices\/NIOTSClientTLSProvider\/enableTLS(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "enableTLS(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niotransportservices\/niotsclienttlsprovider\/enabletls(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOTransportServices/NIOTSClientTLSProvider/init(tlsOptions:)": {
+  "abstract" : [
+    {
+      "text" : "Construct the TLS provider.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "tlsOptions"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Network13NWProtocolTLSC",
+      "text" : "NWProtocolTLS"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Network13NWProtocolTLSC7OptionsC",
+      "text" : "Options"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOTransportServices\/NIOTSClientTLSProvider\/init(tlsOptions:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(tlsOptions:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niotransportservices\/niotsclienttlsprovider\/init(tlsoptions:)"
+}
+}
+}

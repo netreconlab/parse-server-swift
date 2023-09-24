@@ -1,0 +1,434 @@
+{
+  "abstract" : [
+    {
+      "text" : "The SNI hostname requirements have not been met.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLExtraError"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLExtraError\/invalidSNIHostname"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "NIOSSL",
+    "externalID" : "s:6NIOSSL16NIOSSLExtraErrorV18invalidSNIHostnameACvpZ",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "static"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "let"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "invalidSNIHostname"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:6NIOSSL16NIOSSLExtraErrorV",
+        "text" : "NIOSSLExtraError"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIOSSL"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Type Property",
+    "symbolKind" : "property",
+    "title" : "invalidSNIHostname"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "static"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "let"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "invalidSNIHostname"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLExtraError",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:6NIOSSL16NIOSSLExtraErrorV",
+              "text" : "NIOSSLExtraError"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Should the provided SNI hostname be an IP address instead, ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLExtraError\/cannotUseIPAddressInSNI",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : " is thrown instead",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "of this error.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Reasons a hostname might not meet the requirements:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "hostname in UTF8 is more than 255 bytes",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "hostname is the empty string",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "hostname contains the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "0",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " unicode scalar (which would be encoded as the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "0",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " byte which is unsupported).",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/niossl\/niosslextraerror\/invalidsnihostname"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSSL": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIOSSL",
+  "type" : "topic",
+  "url" : "\/documentation\/niossl"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSSL/NIOSSLError": {
+  "abstract" : [
+    {
+      "text" : "Errors that can be raised by NIO’s BoringSSL wrapper.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NIOSSLError"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NIOSSLError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOSSLError",
+  "type" : "topic",
+  "url" : "\/documentation\/niossl\/niosslerror"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSSL/NIOSSLExtraError": {
+  "abstract" : [
+    {
+      "text" : "This structure contains errors added to NIOSSL after the original ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLError",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " enum was",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "shipped. This is an extensible error object that allows us to evolve it going forward.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NIOSSLExtraError"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLExtraError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NIOSSLExtraError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOSSLExtraError",
+  "type" : "topic",
+  "url" : "\/documentation\/niossl\/niosslextraerror"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSSL/NIOSSLExtraError/cannotUseIPAddressInSNI": {
+  "abstract" : [
+    {
+      "text" : "IP addresses may not be used in SNI.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "cannotUseIPAddressInSNI"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6NIOSSL16NIOSSLExtraErrorV",
+      "text" : "NIOSSLExtraError"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLExtraError\/cannotUseIPAddressInSNI",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "cannotUseIPAddressInSNI",
+  "type" : "topic",
+  "url" : "\/documentation\/niossl\/niosslextraerror\/cannotuseipaddressinsni"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSSL/NIOSSLExtraError/invalidSNIHostname": {
+  "abstract" : [
+    {
+      "text" : "The SNI hostname requirements have not been met.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "invalidSNIHostname"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6NIOSSL16NIOSSLExtraErrorV",
+      "text" : "NIOSSLExtraError"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLExtraError\/invalidSNIHostname",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "invalidSNIHostname",
+  "type" : "topic",
+  "url" : "\/documentation\/niossl\/niosslextraerror\/invalidsnihostname"
+}
+}
+}

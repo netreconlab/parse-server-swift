@@ -1,0 +1,615 @@
+{
+  "abstract" : [
+    {
+      "text" : "Enumeration of possible ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " events which can occur.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugInboundEventsHandler"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugInboundEventsHandler\/Event"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:9NIOExtras25DebugInboundEventsHandlerC5EventO",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "enum"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "Event"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIOExtras"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "Event"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Enumeration",
+    "symbolKind" : "enum",
+    "title" : "DebugInboundEventsHandler.Event"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "enum"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "Event"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugInboundEventsHandler\/Event\/active",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugInboundEventsHandler\/Event\/errorCaught(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugInboundEventsHandler\/Event\/inactive",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugInboundEventsHandler\/Event\/read(data:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugInboundEventsHandler\/Event\/readComplete",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugInboundEventsHandler\/Event\/registered",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugInboundEventsHandler\/Event\/unregistered",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugInboundEventsHandler\/Event\/userInboundEventTriggered(event:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugInboundEventsHandler\/Event\/writabilityChanged(isWritable:)"
+      ],
+      "title" : "Enumeration Cases"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/nioextras\/debuginboundeventshandler\/event"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIOExtras",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/DebugInboundEventsHandler": {
+  "abstract" : [
+    {
+      "code" : "ChannelInboundHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that prints all inbound events that pass through the pipeline by default,",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "overridable by providing your own closure for custom logging. See ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugOutboundEventsHandler",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " for outbound events.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "DebugInboundEventsHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugInboundEventsHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "DebugInboundEventsHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "DebugInboundEventsHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/debuginboundeventshandler"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/DebugInboundEventsHandler/Event": {
+  "abstract" : [
+    {
+      "text" : "Enumeration of possible ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " events which can occur.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Event"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugInboundEventsHandler\/Event",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Event"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "DebugInboundEventsHandler.Event",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/debuginboundeventshandler\/event"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/DebugInboundEventsHandler/Event/active": {
+  "abstract" : [
+    {
+      "text" : "Channel became active.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "active"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugInboundEventsHandler\/Event\/active",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "DebugInboundEventsHandler.Event.active",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/debuginboundeventshandler\/event\/active"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/DebugInboundEventsHandler/Event/errorCaught(_:)": {
+  "abstract" : [
+    {
+      "text" : "An error was caught.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "errorCaught"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s5ErrorP",
+      "text" : "Error"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugInboundEventsHandler\/Event\/errorCaught(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "DebugInboundEventsHandler.Event.errorCaught(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/debuginboundeventshandler\/event\/errorcaught(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/DebugInboundEventsHandler/Event/inactive": {
+  "abstract" : [
+    {
+      "text" : "Channel became inactive.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "inactive"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugInboundEventsHandler\/Event\/inactive",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "DebugInboundEventsHandler.Event.inactive",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/debuginboundeventshandler\/event\/inactive"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/DebugInboundEventsHandler/Event/read(data:)": {
+  "abstract" : [
+    {
+      "text" : "Data was received.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "read"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "data"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore6NIOAnyV",
+      "text" : "NIOAny"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugInboundEventsHandler\/Event\/read(data:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "DebugInboundEventsHandler.Event.read(data:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/debuginboundeventshandler\/event\/read(data:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/DebugInboundEventsHandler/Event/readComplete": {
+  "abstract" : [
+    {
+      "text" : "Current read loop finished.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "readComplete"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugInboundEventsHandler\/Event\/readComplete",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "DebugInboundEventsHandler.Event.readComplete",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/debuginboundeventshandler\/event\/readcomplete"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/DebugInboundEventsHandler/Event/registered": {
+  "abstract" : [
+    {
+      "text" : "Channel was registered.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "registered"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugInboundEventsHandler\/Event\/registered",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "DebugInboundEventsHandler.Event.registered",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/debuginboundeventshandler\/event\/registered"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/DebugInboundEventsHandler/Event/unregistered": {
+  "abstract" : [
+    {
+      "text" : "Channel was unregistered.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "unregistered"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugInboundEventsHandler\/Event\/unregistered",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "DebugInboundEventsHandler.Event.unregistered",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/debuginboundeventshandler\/event\/unregistered"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/DebugInboundEventsHandler/Event/userInboundEventTriggered(event:)": {
+  "abstract" : [
+    {
+      "text" : "A user inbound event was received.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "userInboundEventTriggered"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "event"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "Any"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugInboundEventsHandler\/Event\/userInboundEventTriggered(event:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "DebugInboundEventsHandler.Event.userInboundEventTriggered(event:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/debuginboundeventshandler\/event\/userinboundeventtriggered(event:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/DebugInboundEventsHandler/Event/writabilityChanged(isWritable:)": {
+  "abstract" : [
+    {
+      "text" : "Writability state of the channel changed.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "writabilityChanged"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "isWritable"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugInboundEventsHandler\/Event\/writabilityChanged(isWritable:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "DebugInboundEventsHandler.Event.writabilityChanged(isWritable:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/debuginboundeventshandler\/event\/writabilitychanged(iswritable:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/DebugOutboundEventsHandler": {
+  "abstract" : [
+    {
+      "text" : "ChannelOutboundHandler that prints all outbound events that pass through the pipeline by default,",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "overridable by providing your own closure for custom logging. See ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugInboundEventsHandler",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " for inbound events.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "DebugOutboundEventsHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/DebugOutboundEventsHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "DebugOutboundEventsHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "DebugOutboundEventsHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/debugoutboundeventshandler"
+}
+}
+}

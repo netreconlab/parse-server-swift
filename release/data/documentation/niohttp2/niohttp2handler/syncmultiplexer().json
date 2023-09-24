@@ -1,0 +1,357 @@
+{
+  "abstract" : [
+    {
+      "text" : "Synchronously return a ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP2\/NIOHTTP2Handler\/StreamMultiplexer",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " which can be used to create new outbound HTTP\/2 streams.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP2",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP2\/NIOHTTP2Handler"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP2\/NIOHTTP2Handler\/syncMultiplexer()"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "NIOHTTP2",
+    "externalID" : "s:8NIOHTTP20A7HandlerC15syncMultiplexerAC06StreamD0VyKF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "syncMultiplexer"
+      },
+      {
+        "kind" : "text",
+        "text" : "() "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "throws"
+      },
+      {
+        "kind" : "text",
+        "text" : " -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:8NIOHTTP20A7HandlerC17StreamMultiplexerV",
+        "text" : "StreamMultiplexer"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIOHTTP2"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "syncMultiplexer()"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "syncMultiplexer"
+            },
+            {
+              "kind" : "text",
+              "text" : "() "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "throws"
+            },
+            {
+              "kind" : "text",
+              "text" : " -> "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP2\/NIOHTTP2Handler\/StreamMultiplexer",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:8NIOHTTP20A7HandlerC17StreamMultiplexerV",
+              "text" : "StreamMultiplexer"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "This is only safe to call if both:",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            },
+            {
+              "items" : [
+                {
+                  "content" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "The ",
+                          "type" : "text"
+                        },
+                        {
+                          "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP2\/NIOHTTP2Handler",
+                          "isActive" : true,
+                          "type" : "reference"
+                        },
+                        {
+                          "text" : " uses a local multiplexer, i.e. it was initialized with an ",
+                          "type" : "text"
+                        },
+                        {
+                          "code" : "inboundStreamInitializer",
+                          "type" : "codeVoice"
+                        },
+                        {
+                          "text" : ".",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "paragraph"
+                    }
+                  ]
+                },
+                {
+                  "content" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "The caller is already on the correct event loop.",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "paragraph"
+                    }
+                  ]
+                }
+              ],
+              "type" : "unorderedList"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/niohttp2\/niohttp2handler\/syncmultiplexer()"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP2": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP2",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIOHTTP2",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp2"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP2/NIOHTTP2Handler": {
+  "abstract" : [
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP2\/NIOHTTP2Handler",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " implements the HTTP\/2 protocol for a single connection.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NIOHTTP2Handler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP2\/NIOHTTP2Handler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NIOHTTP2Handler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOHTTP2Handler",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp2\/niohttp2handler"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP2/NIOHTTP2Handler/StreamMultiplexer": {
+  "abstract" : [
+    {
+      "text" : "A multiplexer that creates a child channel for each HTTP\/2 stream.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "StreamMultiplexer"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP2\/NIOHTTP2Handler\/StreamMultiplexer",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "StreamMultiplexer"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOHTTP2Handler.StreamMultiplexer",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp2\/niohttp2handler\/streammultiplexer"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP2/NIOHTTP2Handler/syncMultiplexer()": {
+  "abstract" : [
+    {
+      "text" : "Synchronously return a ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP2\/NIOHTTP2Handler\/StreamMultiplexer",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " which can be used to create new outbound HTTP\/2 streams.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "syncMultiplexer"
+    },
+    {
+      "kind" : "text",
+      "text" : "() "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP20A7HandlerC17StreamMultiplexerV",
+      "text" : "StreamMultiplexer"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP2\/NIOHTTP2Handler\/syncMultiplexer()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "syncMultiplexer()",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp2\/niohttp2handler\/syncmultiplexer()"
+}
+}
+}

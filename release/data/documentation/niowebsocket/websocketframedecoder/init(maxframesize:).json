@@ -1,0 +1,393 @@
+{
+  "abstract" : [
+    {
+      "text" : "Construct a new ",
+      "type" : "text"
+    },
+    {
+      "code" : "WebSocketFrameDecoder",
+      "type" : "codeVoice"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/WebSocketFrameDecoder"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/WebSocketFrameDecoder\/init(maxFrameSize:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:12NIOWebSocket03WebB12FrameDecoderC03maxD4SizeACSi_tcfc",
+    "fragments" : [
+      {
+        "kind" : "identifier",
+        "text" : "init"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "maxFrameSize"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Si",
+        "text" : "Int"
+      },
+      {
+        "kind" : "text",
+        "text" : ")"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIOWebSocket"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Initializer",
+    "symbolKind" : "init",
+    "title" : "init(maxFrameSize:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "init"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "maxFrameSize"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:Si",
+              "text" : "Int"
+            },
+            {
+              "kind" : "text",
+              "text" : " = 1 << 14)"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The maximum frame size the decoder is willing to tolerate from the",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "remote peer. WebSockets in principle allows frame sizes up to ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "2**64",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " bytes, but",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "this is an objectively unreasonable maximum value (on AMD64 systems it is not",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "possible to even allocate a buffer large enough to handle this size), so we",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "set a lower one. The default value is the same as the default HTTP\/2 max frame",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "size, ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "2**14",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " bytes. Users may override this to any value up to ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "UInt32.max",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ".",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "Users are strongly encouraged not to increase this value unless they absolutely",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "must, as the decoder will not produce partial frames, meaning that it will hold",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "on to data until the ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "entire",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "emphasis"
+                },
+                {
+                  "text" : " body is received.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "maxFrameSize"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Whether this ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "ChannelHandler",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " should automatically handle",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "protocol errors in frame serialization, or whether it should allow the pipeline",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "to handle them.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "automaticErrorHandling"
+        }
+      ]
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/niowebsocket\/websocketframedecoder\/init(maxframesize:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOWebSocket": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIOWebSocket",
+  "type" : "topic",
+  "url" : "\/documentation\/niowebsocket"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOWebSocket/WebSocketFrameDecoder": {
+  "abstract" : [
+    {
+      "text" : "An inbound ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that deserializes websocket frames into a structured",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "format for further processing.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "WebSocketFrameDecoder"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/WebSocketFrameDecoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "WebSocketFrameDecoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "WebSocketFrameDecoder",
+  "type" : "topic",
+  "url" : "\/documentation\/niowebsocket\/websocketframedecoder"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOWebSocket/WebSocketFrameDecoder/init(maxFrameSize:)": {
+  "abstract" : [
+    {
+      "text" : "Construct a new ",
+      "type" : "text"
+    },
+    {
+      "code" : "WebSocketFrameDecoder",
+      "type" : "codeVoice"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "maxFrameSize"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/WebSocketFrameDecoder\/init(maxFrameSize:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(maxFrameSize:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niowebsocket\/websocketframedecoder\/init(maxframesize:)"
+}
+}
+}

@@ -1,0 +1,615 @@
+{
+  "abstract" : [
+    {
+      "text" : "Create a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ServerBootstrap",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " on the ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoopGroup",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "group",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " which accepts ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s on ",
+      "type" : "text"
+    },
+    {
+      "code" : "childGroup",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ServerBootstrap"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ServerBootstrap\/init(group:childGroup:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:8NIOPosix15ServerBootstrapC5group10childGroupAC7NIOCore09EventLoopF0_p_AfG_ptcfc",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "convenience"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "init"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "group"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7NIOCore14EventLoopGroupP",
+        "text" : "EventLoopGroup"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "childGroup"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7NIOCore14EventLoopGroupP",
+        "text" : "EventLoopGroup"
+      },
+      {
+        "kind" : "text",
+        "text" : ")"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIO"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Initializer",
+    "symbolKind" : "init",
+    "title" : "init(group:childGroup:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "convenience"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "init"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "group"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/EventLoopGroup",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7NIOCore14EventLoopGroupP",
+              "text" : "EventLoopGroup"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "childGroup"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/EventLoopGroup",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7NIOCore14EventLoopGroupP",
+              "text" : "EventLoopGroup"
+            },
+            {
+              "kind" : "text",
+              "text" : ")"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "EventLoopGroup",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " to use for the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "bind",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " of the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "ServerSocketChannel",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " and to accept new ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "SocketChannel",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : "s with.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "group"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "EventLoopGroup",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " to run the accepted ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "SocketChannel",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : "s on.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "childGroup"
+        }
+      ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "code" : "EventLoopGroup",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "s ",
+              "type" : "text"
+            },
+            {
+              "code" : "group",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "childGroup",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " must be compatible, otherwise the program will crash.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "ServerBootstrap",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is compatible only with ",
+              "type" : "text"
+            },
+            {
+              "code" : "MultiThreadedEventLoopGroup",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " as well as the ",
+              "type" : "text"
+            },
+            {
+              "code" : "EventLoop",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "s returned by",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "MultiThreadedEventLoopGroup.next",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". See ",
+              "type" : "text"
+            },
+            {
+              "code" : "init(validatingGroup:childGroup:)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " for a fallible initializer for",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "situations where it’s impossible to tell ahead of time if the ",
+              "type" : "text"
+            },
+            {
+              "code" : "EventLoopGroup",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "s are compatible or not.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/nio\/serverbootstrap\/init(group:childgroup:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIO",
+  "type" : "topic",
+  "url" : "\/documentation\/nio"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/EventLoopGroup": {
+  "abstract" : [
+    {
+      "text" : "Provides an endless stream of ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoop",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s to use.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "EventLoopGroup"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/EventLoopGroup",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "EventLoopGroup"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "EventLoopGroup",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/eventloopgroup"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ServerBootstrap": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "ServerBootstrap",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is an easy way to bootstrap a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ServerSocketChannel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " when creating network servers.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ServerBootstrap"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ServerBootstrap",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ServerBootstrap"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ServerBootstrap",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/serverbootstrap"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ServerBootstrap/init(group:childGroup:)": {
+  "abstract" : [
+    {
+      "text" : "Create a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ServerBootstrap",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " on the ",
+      "type" : "text"
+    },
+    {
+      "code" : "EventLoopGroup",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "group",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " which accepts ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s on ",
+      "type" : "text"
+    },
+    {
+      "code" : "childGroup",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "convenience"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "group"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore14EventLoopGroupP",
+      "text" : "EventLoopGroup"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "childGroup"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore14EventLoopGroupP",
+      "text" : "EventLoopGroup"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ServerBootstrap\/init(group:childGroup:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(group:childGroup:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/serverbootstrap\/init(group:childgroup:)"
+}
+}
+}

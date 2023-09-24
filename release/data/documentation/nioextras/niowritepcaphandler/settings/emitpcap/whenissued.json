@@ -1,0 +1,424 @@
+{
+  "abstract" : [
+    {
+      "text" : "Write the data immediately when ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIOWritePCAPHandler",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " saw the event on the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIOWritePCAPHandler",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIOWritePCAPHandler\/Settings",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIOWritePCAPHandler\/Settings\/EmitPCAP"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIOWritePCAPHandler\/Settings\/EmitPCAP\/whenIssued"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:9NIOExtras19NIOWritePCAPHandlerC8SettingsV8EmitPCAPO10whenIssuedyA2GmF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "case"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "whenIssued"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIOExtras"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Case",
+    "symbolKind" : "case",
+    "title" : "NIOWritePCAPHandler.Settings.EmitPCAP.whenIssued"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "case"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "whenIssued"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For writes this means when the ",
+              "type" : "text"
+            },
+            {
+              "code" : "write",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " event is triggered. Please note that this will write potentially",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "unflushed data into the ",
+              "type" : "text"
+            },
+            {
+              "code" : ".pcap",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " file.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If in doubt, prefer ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIOWritePCAPHandler\/Settings\/EmitPCAP\/whenCompleted",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/nioextras\/niowritepcaphandler\/settings\/emitpcap\/whenissued"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIOExtras",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/NIOWritePCAPHandler": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that can write a ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Pcap",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " containing the send\/received",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "data as synthesized TCP packet captures.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NIOWritePCAPHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIOWritePCAPHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NIOWritePCAPHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOWritePCAPHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/niowritepcaphandler"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/NIOWritePCAPHandler/Settings": {
+  "abstract" : [
+    {
+      "text" : "Settings for ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIOWritePCAPHandler",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Settings"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIOWritePCAPHandler\/Settings",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Settings"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOWritePCAPHandler.Settings",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/niowritepcaphandler\/settings"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/NIOWritePCAPHandler/Settings/EmitPCAP": {
+  "abstract" : [
+    {
+      "text" : "When to issue data into the ",
+      "type" : "text"
+    },
+    {
+      "code" : ".pcap",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " file.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "EmitPCAP"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIOWritePCAPHandler\/Settings\/EmitPCAP",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "EmitPCAP"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOWritePCAPHandler.Settings.EmitPCAP",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/niowritepcaphandler\/settings\/emitpcap"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/NIOWritePCAPHandler/Settings/EmitPCAP/whenCompleted": {
+  "abstract" : [
+    {
+      "text" : "Write the data when the event completed.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "whenCompleted"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIOWritePCAPHandler\/Settings\/EmitPCAP\/whenCompleted",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "NIOWritePCAPHandler.Settings.EmitPCAP.whenCompleted",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/niowritepcaphandler\/settings\/emitpcap\/whencompleted"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/NIOWritePCAPHandler/Settings/EmitPCAP/whenIssued": {
+  "abstract" : [
+    {
+      "text" : "Write the data immediately when ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIOWritePCAPHandler",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " saw the event on the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "whenIssued"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIOWritePCAPHandler\/Settings\/EmitPCAP\/whenIssued",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "NIOWritePCAPHandler.Settings.EmitPCAP.whenIssued",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/niowritepcaphandler\/settings\/emitpcap\/whenissued"
+},
+"https://en.wikipedia.org/wiki/Pcap": {
+  "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Pcap",
+  "title" : ".pcap file",
+  "titleInlineContent" : [
+    {
+      "code" : ".pcap",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " file",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/en.wikipedia.org\/wiki\/Pcap"
+}
+}
+}

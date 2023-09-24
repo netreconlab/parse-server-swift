@@ -1,0 +1,348 @@
+{
+  "abstract" : [
+    {
+      "text" : "Synchronously close this ",
+      "type" : "text"
+    },
+    {
+      "code" : "SynchronizedFileSink",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " and any associated resources.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIOWritePCAPHandler",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIOWritePCAPHandler\/SynchronizedFileSink"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIOWritePCAPHandler\/SynchronizedFileSink\/syncClose()"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:9NIOExtras19NIOWritePCAPHandlerC20SynchronizedFileSinkC9syncCloseyyKF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "syncClose"
+      },
+      {
+        "kind" : "text",
+        "text" : "() "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "throws"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIOExtras"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "syncClose()"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "syncClose"
+            },
+            {
+              "kind" : "text",
+              "text" : "() "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "throws"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "After use, it is mandatory to close a ",
+              "type" : "text"
+            },
+            {
+              "code" : "SynchronizedFileSink",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " exactly once. ",
+              "type" : "text"
+            },
+            {
+              "code" : "syncClose",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " may be called from",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "any thread but not from an ",
+              "type" : "text"
+            },
+            {
+              "code" : "EventLoop",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " as it will block, and may not be called from an async context.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/nioextras\/niowritepcaphandler\/synchronizedfilesink\/syncclose()"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIOExtras",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/NIOWritePCAPHandler": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that can write a ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Pcap",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " containing the send\/received",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "data as synthesized TCP packet captures.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NIOWritePCAPHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIOWritePCAPHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NIOWritePCAPHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOWritePCAPHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/niowritepcaphandler"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/NIOWritePCAPHandler/SynchronizedFileSink": {
+  "abstract" : [
+    {
+      "text" : "A synchronised file sink that uses a ",
+      "type" : "text"
+    },
+    {
+      "code" : "DispatchQueue",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " to do all the necessary write synchronously.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SynchronizedFileSink"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIOWritePCAPHandler\/SynchronizedFileSink",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SynchronizedFileSink"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOWritePCAPHandler.SynchronizedFileSink",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/niowritepcaphandler\/synchronizedfilesink"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOExtras/NIOWritePCAPHandler/SynchronizedFileSink/syncClose()": {
+  "abstract" : [
+    {
+      "text" : "Synchronously close this ",
+      "type" : "text"
+    },
+    {
+      "code" : "SynchronizedFileSink",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " and any associated resources.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "syncClose"
+    },
+    {
+      "kind" : "text",
+      "text" : "() "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOExtras\/NIOWritePCAPHandler\/SynchronizedFileSink\/syncClose()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "syncClose()",
+  "type" : "topic",
+  "url" : "\/documentation\/nioextras\/niowritepcaphandler\/synchronizedfilesink\/syncclose()"
+},
+"https://en.wikipedia.org/wiki/Pcap": {
+  "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Pcap",
+  "title" : ".pcap file",
+  "titleInlineContent" : [
+    {
+      "code" : ".pcap",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " file",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/en.wikipedia.org\/wiki\/Pcap"
+}
+}
+}

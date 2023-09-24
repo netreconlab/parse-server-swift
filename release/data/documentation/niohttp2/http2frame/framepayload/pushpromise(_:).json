@@ -1,0 +1,510 @@
+{
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "PUSH_PROMISE",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " frame, used to notify a peer in advance of streams that a sender",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "intends to initiate. It performs much like a request’s ",
+      "type" : "text"
+    },
+    {
+      "code" : "HEADERS",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " frame, informing",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "a peer that the response for a theoretical request like the one in the promise",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "will arrive on a new stream.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP2",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP2\/HTTP2Frame",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP2\/HTTP2Frame\/FramePayload"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP2\/HTTP2Frame\/FramePayload\/pushPromise(_:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:8NIOHTTP210HTTP2FrameV0C7PayloadO11pushPromiseyA2E04PushF0VcAEmF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "case"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "pushPromise"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:8NIOHTTP210HTTP2FrameV0C7PayloadO11PushPromiseV",
+        "text" : "PushPromise"
+      },
+      {
+        "kind" : "text",
+        "text" : ")"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIOHTTP2"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Case",
+    "symbolKind" : "case",
+    "title" : "HTTP2Frame.FramePayload.pushPromise(_:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "indirect"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "case"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "pushPromise"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP2\/HTTP2Frame\/FramePayload\/PushPromise",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:8NIOHTTP210HTTP2FrameV0C7PayloadO11PushPromiseV",
+              "text" : "PushPromise"
+            },
+            {
+              "kind" : "text",
+              "text" : ")"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "As with the ",
+              "type" : "text"
+            },
+            {
+              "code" : "HEADERS",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " frame, ",
+              "type" : "text"
+            },
+            {
+              "code" : "swift-nio-http2",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " will coalesce an initial ",
+              "type" : "text"
+            },
+            {
+              "code" : "PUSH_PROMISE",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "frame with any ",
+              "type" : "text"
+            },
+            {
+              "code" : "CONTINUATION",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " frames that follow, emitting a single",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP2\/HTTP2Frame\/FramePayload\/pushPromise(_:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " instance for the complete set.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "See ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/httpwg.org\/specs\/rfc7540.html#rfc.section.6.6",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For more information on server push in HTTP\/2, see",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/httpwg.org\/specs\/rfc7540.html#rfc.section.8.2",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/niohttp2\/http2frame\/framepayload\/pushpromise(_:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP2": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP2",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIOHTTP2",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp2"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP2/HTTP2Frame": {
+  "abstract" : [
+    {
+      "text" : "A representation of a single HTTP\/2 frame.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "HTTP2Frame"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP2\/HTTP2Frame",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "HTTP2Frame"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HTTP2Frame",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp2\/http2frame"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP2/HTTP2Frame/FramePayload": {
+  "abstract" : [
+    {
+      "text" : "Frame-type-specific payload data.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "FramePayload"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP2\/HTTP2Frame\/FramePayload",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "FramePayload"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HTTP2Frame.FramePayload",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp2\/http2frame\/framepayload"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP2/HTTP2Frame/FramePayload/PushPromise": {
+  "abstract" : [
+    {
+      "text" : "The payload of a ",
+      "type" : "text"
+    },
+    {
+      "code" : "PUSH_PROMISE",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " frame.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PushPromise"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP2\/HTTP2Frame\/FramePayload\/PushPromise",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PushPromise"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HTTP2Frame.FramePayload.PushPromise",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp2\/http2frame\/framepayload\/pushpromise"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP2/HTTP2Frame/FramePayload/pushPromise(_:)": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "PUSH_PROMISE",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " frame, used to notify a peer in advance of streams that a sender",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "intends to initiate. It performs much like a request’s ",
+      "type" : "text"
+    },
+    {
+      "code" : "HEADERS",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " frame, informing",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "a peer that the response for a theoretical request like the one in the promise",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "will arrive on a new stream.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "pushPromise"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP210HTTP2FrameV0C7PayloadO11PushPromiseV",
+      "text" : "PushPromise"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP2\/HTTP2Frame\/FramePayload\/pushPromise(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "HTTP2Frame.FramePayload.pushPromise(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp2\/http2frame\/framepayload\/pushpromise(_:)"
+},
+"https://httpwg.org/specs/rfc7540.html#rfc.section.6.6": {
+  "identifier" : "https:\/\/httpwg.org\/specs\/rfc7540.html#rfc.section.6.6",
+  "title" : "RFC 7540 § 6.6",
+  "titleInlineContent" : [
+    {
+      "text" : "RFC 7540 § 6.6",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/httpwg.org\/specs\/rfc7540.html#rfc.section.6.6"
+},
+"https://httpwg.org/specs/rfc7540.html#rfc.section.8.2": {
+  "identifier" : "https:\/\/httpwg.org\/specs\/rfc7540.html#rfc.section.8.2",
+  "title" : "RFC 7540 § 8.2",
+  "titleInlineContent" : [
+    {
+      "text" : "RFC 7540 § 8.2",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/httpwg.org\/specs\/rfc7540.html#rfc.section.8.2"
+}
+}
+}

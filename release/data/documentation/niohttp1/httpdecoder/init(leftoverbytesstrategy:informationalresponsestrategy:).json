@@ -1,0 +1,421 @@
+{
+  "abstract" : [
+    {
+      "text" : "Creates a new instance of ",
+      "type" : "text"
+    },
+    {
+      "code" : "HTTPDecoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPDecoder"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPDecoder\/init(leftOverBytesStrategy:informationalResponseStrategy:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:8NIOHTTP111HTTPDecoderC21leftOverBytesStrategy021informationalResponseF0ACyxq_GAA018RemoveAfterUpgradeF0O_AA016NIOInformationalhF0Vtcfc",
+    "fragments" : [
+      {
+        "kind" : "identifier",
+        "text" : "init"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "leftOverBytesStrategy"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:8NIOHTTP126RemoveAfterUpgradeStrategyO",
+        "text" : "RemoveAfterUpgradeStrategy"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "informationalResponseStrategy"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:8NIOHTTP132NIOInformationalResponseStrategyV",
+        "text" : "NIOInformationalResponseStrategy"
+      },
+      {
+        "kind" : "text",
+        "text" : ")"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIOHTTP1"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Initializer",
+    "symbolKind" : "init",
+    "title" : "init(leftOverBytesStrategy:informationalResponseStrategy:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "init"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "leftOverBytesStrategy"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/RemoveAfterUpgradeStrategy",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:8NIOHTTP126RemoveAfterUpgradeStrategyO",
+              "text" : "RemoveAfterUpgradeStrategy"
+            },
+            {
+              "kind" : "text",
+              "text" : " = .dropBytes, "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "informationalResponseStrategy"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/NIOInformationalResponseStrategy",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:8NIOHTTP132NIOInformationalResponseStrategyV",
+              "text" : "NIOInformationalResponseStrategy"
+            },
+            {
+              "kind" : "text",
+              "text" : " = .drop)"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The strategy to use when removing the decoder from the pipeline and an upgrade was,",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "detected. Note that this does not affect what happens on EOF.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "leftOverBytesStrategy"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Should informational responses (like http status 100) be forwarded or dropped.",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "Default is ",
+                  "type" : "text"
+                },
+                {
+                  "code" : ".drop",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ". This property is only respected when decoding responses.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "informationalResponseStrategy"
+        }
+      ]
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/niohttp1\/httpdecoder\/init(leftoverbytesstrategy:informationalresponsestrategy:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIOHTTP1",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/HTTPDecoder": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelInboundHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that parses HTTP\/1-style messages, converting them from",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "unstructured bytes to a sequence of HTTP messages.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "HTTPDecoder"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPDecoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "HTTPDecoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HTTPDecoder",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/httpdecoder"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/HTTPDecoder/init(leftOverBytesStrategy:informationalResponseStrategy:)": {
+  "abstract" : [
+    {
+      "text" : "Creates a new instance of ",
+      "type" : "text"
+    },
+    {
+      "code" : "HTTPDecoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "leftOverBytesStrategy"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP126RemoveAfterUpgradeStrategyO",
+      "text" : "RemoveAfterUpgradeStrategy"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "informationalResponseStrategy"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP132NIOInformationalResponseStrategyV",
+      "text" : "NIOInformationalResponseStrategy"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/HTTPDecoder\/init(leftOverBytesStrategy:informationalResponseStrategy:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(leftOverBytesStrategy:informationalResponseStrategy:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/httpdecoder\/init(leftoverbytesstrategy:informationalresponsestrategy:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/NIOInformationalResponseStrategy": {
+  "abstract" : [
+    {
+      "text" : "Strategy to use when a HTTPDecoder receives an informational HTTP response (1xx except 101)",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NIOInformationalResponseStrategy"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/NIOInformationalResponseStrategy",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NIOInformationalResponseStrategy"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOInformationalResponseStrategy",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/nioinformationalresponsestrategy"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOHTTP1/RemoveAfterUpgradeStrategy": {
+  "abstract" : [
+    {
+      "text" : "Strategy to use when a HTTPDecoder is removed from a pipeline after a HTTP upgrade was detected.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "RemoveAfterUpgradeStrategy"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOHTTP1\/RemoveAfterUpgradeStrategy",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "RemoveAfterUpgradeStrategy"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "RemoveAfterUpgradeStrategy",
+  "type" : "topic",
+  "url" : "\/documentation\/niohttp1\/removeafterupgradestrategy"
+}
+}
+}

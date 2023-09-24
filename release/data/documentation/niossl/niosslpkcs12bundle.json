@@ -1,0 +1,881 @@
+{
+  "abstract" : [
+    {
+      "text" : "A container for a single PKCS#12 bundle.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLPKCS12Bundle"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:6NIOSSL18NIOSSLPKCS12BundleV",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "struct"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "NIOSSLPKCS12Bundle"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIOSSL"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "NIOSSLPKCS12Bundle"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Structure",
+    "symbolKind" : "struct",
+    "title" : "NIOSSLPKCS12Bundle"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "struct"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "NIOSSLPKCS12Bundle"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "PKCS#12 is a specification that defines an archive format for storing multiple",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "cryptographic objects together in one file. Its most common usage, and the one",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "that SwiftNIO is most interested in, is its use to bundle one or more X.509",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "certificates (",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLCertificate",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ") together with an associated private key",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "(",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLPrivateKey",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ").",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Working-with-TLSConfiguration",
+          "level" : 3,
+          "text" : "Working with TLSConfiguration",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "In many cases users will want to configure a ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/TLSConfiguration",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " with the data",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "from a PKCS#12 bundle. This object assists in unpacking that bundle into its",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "associated pieces.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If you have a PKCS12 bundle, you configure a ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/TLSConfiguration",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " like this:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "let p12Bundle = NIOSSLPKCS12Bundle(file: pathToMyP12)",
+            "let config = TLSConfiguration.makeServerConfiguration(",
+            "    certificateChain: p12Bundle.certificateChain,",
+            "    privateKey: p12Bundle.privateKey",
+            ")"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The created ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/TLSConfiguration",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " can then be safely used for your endpoint.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/SQ",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/SH",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLPKCS12Bundle\/init(buffer:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLPKCS12Bundle\/init(buffer:passphrase:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLPKCS12Bundle\/init(file:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLPKCS12Bundle\/init(file:passphrase:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLPKCS12Bundle\/certificateChain",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLPKCS12Bundle\/privateKey"
+      ],
+      "title" : "Instance Properties"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLPKCS12Bundle\/Equatable-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/niossl\/niosslpkcs12bundle"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/SH": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/SH",
+  "title" : "Swift.Hashable",
+  "type" : "unresolvable"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/SQ": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/SQ",
+  "title" : "Swift.Equatable",
+  "type" : "unresolvable"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSSL": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIOSSL",
+  "type" : "topic",
+  "url" : "\/documentation\/niossl"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSSL/NIOSSLCertificate": {
+  "abstract" : [
+    {
+      "text" : "A reference to a BoringSSL Certificate object (",
+      "type" : "text"
+    },
+    {
+      "code" : "X509 *",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ").",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NIOSSLCertificate"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLCertificate",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NIOSSLCertificate"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOSSLCertificate",
+  "type" : "topic",
+  "url" : "\/documentation\/niossl\/niosslcertificate"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSSL/NIOSSLPKCS12Bundle": {
+  "abstract" : [
+    {
+      "text" : "A container for a single PKCS#12 bundle.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NIOSSLPKCS12Bundle"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLPKCS12Bundle",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NIOSSLPKCS12Bundle"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOSSLPKCS12Bundle",
+  "type" : "topic",
+  "url" : "\/documentation\/niossl\/niosslpkcs12bundle"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSSL/NIOSSLPKCS12Bundle/Equatable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLPKCS12Bundle\/Equatable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Equatable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/niossl\/niosslpkcs12bundle\/equatable-implementations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSSL/NIOSSLPKCS12Bundle/certificateChain": {
+  "abstract" : [
+    {
+      "text" : "The chain of ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLCertificate",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " objects in the PKCS#12 bundle.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "certificateChain"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6NIOSSL17NIOSSLCertificateC",
+      "text" : "NIOSSLCertificate"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLPKCS12Bundle\/certificateChain",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "certificateChain",
+  "type" : "topic",
+  "url" : "\/documentation\/niossl\/niosslpkcs12bundle\/certificatechain"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSSL/NIOSSLPKCS12Bundle/init(buffer:)": {
+  "abstract" : [
+    {
+      "text" : "Create a ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLPKCS12Bundle",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " from the given bytes in memory,",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "assuming it has no passphrase.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "buffer"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s5UInt8V",
+      "text" : "UInt8"
+    },
+    {
+      "kind" : "text",
+      "text" : "]) "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLPKCS12Bundle\/init(buffer:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(buffer:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niossl\/niosslpkcs12bundle\/init(buffer:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSSL/NIOSSLPKCS12Bundle/init(buffer:passphrase:)": {
+  "abstract" : [
+    {
+      "text" : "Create a ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLPKCS12Bundle",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " from the given bytes in memory,",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "optionally decrypting the bundle with the given passphrase.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Bytes"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "buffer"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s5UInt8V",
+      "text" : "UInt8"
+    },
+    {
+      "kind" : "text",
+      "text" : "], "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "passphrase"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6NIOSSL18NIOSSLPKCS12BundleV6buffer10passphraseACSays5UInt8VG_xSgtKcSlRzAG7ElementRtzlufc5BytesL_xmfp",
+      "text" : "Bytes"
+    },
+    {
+      "kind" : "text",
+      "text" : "?) "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLPKCS12Bundle\/init(buffer:passphrase:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(buffer:passphrase:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niossl\/niosslpkcs12bundle\/init(buffer:passphrase:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSSL/NIOSSLPKCS12Bundle/init(file:)": {
+  "abstract" : [
+    {
+      "text" : "Create a ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLPKCS12Bundle",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " from the given bytes on disk,",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "assuming it has no passphrase.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "file"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLPKCS12Bundle\/init(file:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(file:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niossl\/niosslpkcs12bundle\/init(file:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSSL/NIOSSLPKCS12Bundle/init(file:passphrase:)": {
+  "abstract" : [
+    {
+      "text" : "Create a ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLPKCS12Bundle",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " from the given bytes on disk,",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "optionally decrypting the bundle with the given passphrase.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Bytes"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "file"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "passphrase"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6NIOSSL18NIOSSLPKCS12BundleV4file10passphraseACSS_xSgtKcSlRzs5UInt8V7ElementRtzlufc5BytesL_xmfp",
+      "text" : "Bytes"
+    },
+    {
+      "kind" : "text",
+      "text" : "?) "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLPKCS12Bundle\/init(file:passphrase:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(file:passphrase:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niossl\/niosslpkcs12bundle\/init(file:passphrase:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSSL/NIOSSLPKCS12Bundle/privateKey": {
+  "abstract" : [
+    {
+      "text" : "The ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLPrivateKey",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " object for the leaf certificate in the PKCS#12 bundle.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "privateKey"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6NIOSSL16NIOSSLPrivateKeyC",
+      "text" : "NIOSSLPrivateKey"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLPKCS12Bundle\/privateKey",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "privateKey",
+  "type" : "topic",
+  "url" : "\/documentation\/niossl\/niosslpkcs12bundle\/privatekey"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSSL/NIOSSLPrivateKey": {
+  "abstract" : [
+    {
+      "text" : "A reference to an BoringSSL private key object in the form of an ",
+      "type" : "text"
+    },
+    {
+      "code" : "EVP_PKEY *",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NIOSSLPrivateKey"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/NIOSSLPrivateKey",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NIOSSLPrivateKey"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOSSLPrivateKey",
+  "type" : "topic",
+  "url" : "\/documentation\/niossl\/niosslprivatekey"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSSL/TLSConfiguration": {
+  "abstract" : [
+    {
+      "text" : "Manages configuration of TLS for SwiftNIO programs.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TLSConfiguration"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSSL\/TLSConfiguration",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TLSConfiguration"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TLSConfiguration",
+  "type" : "topic",
+  "url" : "\/documentation\/niossl\/tlsconfiguration"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s8SendableP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

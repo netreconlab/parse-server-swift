@@ -1,0 +1,884 @@
+{
+  "abstract" : [
+    {
+      "text" : "Ask the receiving ",
+      "type" : "text"
+    },
+    {
+      "code" : "RemovableChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " to remove itself from the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " as soon as possible.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "The receiving ",
+      "type" : "text"
+    },
+    {
+      "code" : "RemovableChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " may elect to remove itself sometime after this method call, rather than",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "immediately, but if it does so it must take the necessary precautions to handle events arriving between the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "invocation of this method and the call to ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandlerContext.leavePipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that triggers the actual",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "removal.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ByteToMessageHandler",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ByteToMessageHandler\/RemovableChannelHandler-Implementations"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ByteToMessageHandler\/removeHandler(context:removalToken:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "conformance" : {
+      "availabilityPrefix" : [
+        {
+          "text" : "Available when",
+          "type" : "text"
+        }
+      ],
+      "conformancePrefix" : [
+        {
+          "text" : "Conforms when",
+          "type" : "text"
+        }
+      ],
+      "constraints" : [
+        {
+          "code" : "Decoder",
+          "type" : "codeVoice"
+        },
+        {
+          "text" : " conforms to ",
+          "type" : "text"
+        },
+        {
+          "code" : "ByteToMessageDecoder",
+          "type" : "codeVoice"
+        },
+        {
+          "text" : ".",
+          "type" : "text"
+        }
+      ]
+    },
+    "extendedModule" : "NIOCore",
+    "externalID" : "s:7NIOCore20ByteToMessageHandlerC06removeE07context12removalTokenyAA07ChannelE7ContextC_AH07RemovalI0VtF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "removeHandler"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "context"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC",
+        "text" : "ChannelHandlerContext"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "removalToken"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC",
+        "text" : "ChannelHandlerContext"
+      },
+      {
+        "kind" : "text",
+        "text" : "."
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC12RemovalTokenV",
+        "text" : "RemovalToken"
+      },
+      {
+        "kind" : "text",
+        "text" : ")"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIO",
+        "relatedModules" : [
+          "NIOCore"
+        ]
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "removeHandler(context:removalToken:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "removeHandler"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "context"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelHandlerContext",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC",
+              "text" : "ChannelHandlerContext"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "removalToken"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelHandlerContext",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC",
+              "text" : "ChannelHandlerContext"
+            },
+            {
+              "kind" : "text",
+              "text" : "."
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelHandlerContext\/RemovalToken",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC12RemovalTokenV",
+              "text" : "RemovalToken"
+            },
+            {
+              "kind" : "text",
+              "text" : ")"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "ChannelHandlerContext",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " of the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "RemovableChannelHandler",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " to be removed from the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "ChannelPipeline",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ".",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "context"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The removal token to hand to ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "ChannelHandlerContext.leavePipeline",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " to trigger the actual",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "removal from the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "ChannelPipeline",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ".",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "removalToken"
+        }
+      ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Like the other ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "ChannelHandler",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " methods, this method should not be invoked by the user directly. To",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "remove a ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "RemovableChannelHandler",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " from the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "ChannelPipeline",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ", use ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "ChannelPipeline.removeHandler",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ".",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/nio\/bytetomessagehandler\/removehandler(context:removaltoken:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIO",
+  "type" : "topic",
+  "url" : "\/documentation\/nio"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ByteToMessageHandler": {
+  "abstract" : [
+    {
+      "text" : "A handler which turns a given ",
+      "type" : "text"
+    },
+    {
+      "code" : "ByteToMessageDecoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " into a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelInboundHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that can then be added to a",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ByteToMessageHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ByteToMessageHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ByteToMessageHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ByteToMessageHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/bytetomessagehandler"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ByteToMessageHandler/RemovableChannelHandler-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ByteToMessageHandler\/RemovableChannelHandler-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "RemovableChannelHandler Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/bytetomessagehandler\/removablechannelhandler-implementations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ByteToMessageHandler/removeHandler(context:removalToken:)": {
+  "abstract" : [
+    {
+      "text" : "Ask the receiving ",
+      "type" : "text"
+    },
+    {
+      "code" : "RemovableChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " to remove itself from the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " as soon as possible.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "The receiving ",
+      "type" : "text"
+    },
+    {
+      "code" : "RemovableChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " may elect to remove itself sometime after this method call, rather than",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "immediately, but if it does so it must take the necessary precautions to handle events arriving between the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "invocation of this method and the call to ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandlerContext.leavePipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that triggers the actual",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "removal.",
+      "type" : "text"
+    }
+  ],
+  "conformance" : {
+    "availabilityPrefix" : [
+      {
+        "text" : "Available when",
+        "type" : "text"
+      }
+    ],
+    "conformancePrefix" : [
+      {
+        "text" : "Conforms when",
+        "type" : "text"
+      }
+    ],
+    "constraints" : [
+      {
+        "code" : "Decoder",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : " conforms to ",
+        "type" : "text"
+      },
+      {
+        "code" : "ByteToMessageDecoder",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : ".",
+        "type" : "text"
+      }
+    ]
+  },
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "removeHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "context"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC",
+      "text" : "ChannelHandlerContext"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "removalToken"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC",
+      "text" : "ChannelHandlerContext"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC12RemovalTokenV",
+      "text" : "RemovalToken"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ByteToMessageHandler\/removeHandler(context:removalToken:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "removeHandler(context:removalToken:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/bytetomessagehandler\/removehandler(context:removaltoken:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelHandlerContext": {
+  "abstract" : [
+    {
+      "text" : "Every ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " has – when added to a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " – a corresponding ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandlerContext",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " which is",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "the way ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s can interact with other ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s in the pipeline.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ChannelHandlerContext"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelHandlerContext",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ChannelHandlerContext"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ChannelHandlerContext",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelhandlercontext"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelHandlerContext/RemovalToken": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "RemovalToken",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is handed to a ",
+      "type" : "text"
+    },
+    {
+      "code" : "RemovableChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " when its ",
+      "type" : "text"
+    },
+    {
+      "code" : "removeHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " function is invoked. A",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "RemovableChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is then required to remove itself from the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelPipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ". The removal process",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "is finalized by handing the ",
+      "type" : "text"
+    },
+    {
+      "code" : "RemovalToken",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " to the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelHandlerContext.leavePipeline",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " function.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "RemovalToken"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelHandlerContext\/RemovalToken",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "RemovalToken"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ChannelHandlerContext.RemovalToken",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelhandlercontext\/removaltoken"
+}
+}
+}

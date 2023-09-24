@@ -1,0 +1,1087 @@
+{
+  "abstract" : [
+    {
+      "text" : "Encodes ",
+      "type" : "text"
+    },
+    {
+      "code" : "Encodable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " instances to ",
+      "type" : "text"
+    },
+    {
+      "code" : "application\/x-www-form-urlencoded",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " data.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URLEncodedFormEncoder"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:5Vapor21URLEncodedFormEncoderV",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "struct"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "URLEncodedFormEncoder"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Vapor"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "URLEncodedFormEncoder"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Structure",
+    "symbolKind" : "struct",
+    "title" : "URLEncodedFormEncoder"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "struct"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "URLEncodedFormEncoder"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "code" : [
+            "print(user) \/\/\/ User",
+            "let data = try URLEncodedFormEncoder().encode(user)",
+            "print(data) \/\/\/ Data"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "URL-encoded forms are commonly used by websites to send form data via POST requests. This encoding is relatively",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "efficient for small amounts of data but must be percent-encoded.  ",
+              "type" : "text"
+            },
+            {
+              "code" : "multipart\/form-data",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is more efficient for sending",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "large data blobs like files.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "See ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/HTTP\/Methods\/POST",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " docs for more information about",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "url-encoded forms.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "NOTE: This implementation of the encoder does not support encoding booleans to “flags”.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/ContentEncoder",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URLQueryEncoder"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URLEncodedFormEncoder\/Configuration"
+      ],
+      "title" : "Structures"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URLEncodedFormEncoder\/init(configuration:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URLEncodedFormEncoder\/encode(_:to:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URLEncodedFormEncoder\/encode(_:to:headers:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URLEncodedFormEncoder\/encode(_:to:headers:userInfo:)-8um1a",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URLEncodedFormEncoder\/encode(_:to:userInfo:)-3et8a",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URLEncodedFormEncoder\/encode(_:userInfo:)"
+      ],
+      "title" : "Instance Methods"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URLEncodedFormEncoder\/ContentEncoder-Implementations",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URLEncodedFormEncoder\/URLQueryEncoder-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/vapor\/urlencodedformencoder"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Vapor",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/ContentConfiguration": {
+  "abstract" : [
+    {
+      "text" : "Configures which ",
+      "type" : "text"
+    },
+    {
+      "code" : "Encoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s and ",
+      "type" : "text"
+    },
+    {
+      "code" : "Decoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s to use when interacting with data in HTTP messages.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ContentConfiguration"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/ContentConfiguration",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ContentConfiguration"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ContentConfiguration",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/contentconfiguration"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/ContentEncoder": {
+  "abstract" : [
+    {
+      "text" : "Conform a type to this protocol to make it usable for encoding data via Vapor’s ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/ContentConfiguration",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " system.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ContentEncoder"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/ContentEncoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ContentEncoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ContentEncoder",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/contentencoder"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/URLEncodedFormEncoder": {
+  "abstract" : [
+    {
+      "text" : "Encodes ",
+      "type" : "text"
+    },
+    {
+      "code" : "Encodable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " instances to ",
+      "type" : "text"
+    },
+    {
+      "code" : "application\/x-www-form-urlencoded",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " data.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "URLEncodedFormEncoder"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URLEncodedFormEncoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "URLEncodedFormEncoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "URLEncodedFormEncoder",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/urlencodedformencoder"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/URLEncodedFormEncoder/Configuration": {
+  "abstract" : [
+    {
+      "text" : "Used to capture URLForm Coding Configuration used for encoding.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Configuration"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URLEncodedFormEncoder\/Configuration",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Configuration"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "URLEncodedFormEncoder.Configuration",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/urlencodedformencoder\/configuration"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/URLEncodedFormEncoder/ContentEncoder-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URLEncodedFormEncoder\/ContentEncoder-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "ContentEncoder Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/urlencodedformencoder\/contentencoder-implementations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/URLEncodedFormEncoder/URLQueryEncoder-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URLEncodedFormEncoder\/URLQueryEncoder-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "URLQueryEncoder Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/urlencodedformencoder\/urlqueryencoder-implementations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/URLEncodedFormEncoder/encode(_:to:)": {
+  "abstract" : [
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URLQueryEncoder",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " conformance.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "encode"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "E"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Vapor21URLEncodedFormEncoderV6encode_2toyx_AA3URIVztKSERzlF1EL_xmfp",
+      "text" : "E"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "to"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "inout"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Vapor3URIV",
+      "text" : "URI"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URLEncodedFormEncoder\/encode(_:to:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "encode(_:to:)",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/urlencodedformencoder\/encode(_:to:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/URLEncodedFormEncoder/encode(_:to:headers:)": {
+  "abstract" : [
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/ContentEncoder",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " conformance.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "encode"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "E"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Vapor21URLEncodedFormEncoderV6encode_2to7headersyx_7NIOCore10ByteBufferVz8NIOHTTP111HTTPHeadersVztKSERzlF1EL_xmfp",
+      "text" : "E"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "to"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "inout"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore10ByteBufferV",
+      "text" : "ByteBuffer"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "headers"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "inout"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP111HTTPHeadersV",
+      "text" : "HTTPHeaders"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URLEncodedFormEncoder\/encode(_:to:headers:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "encode(_:to:headers:)",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/urlencodedformencoder\/encode(_:to:headers:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/URLEncodedFormEncoder/encode(_:to:headers:userInfo:)-8um1a": {
+  "abstract" : [
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/ContentEncoder",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " conformance.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "encode"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "E"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Vapor21URLEncodedFormEncoderV6encode_2to7headers8userInfoyx_7NIOCore10ByteBufferVz8NIOHTTP111HTTPHeadersVzSDys010CodingUserI3KeyVypGtKSERzlF1EL_xmfp",
+      "text" : "E"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "to"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "inout"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore10ByteBufferV",
+      "text" : "ByteBuffer"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "headers"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "inout"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:8NIOHTTP111HTTPHeadersV",
+      "text" : "HTTPHeaders"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "userInfo"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s17CodingUserInfoKeyV",
+      "text" : "CodingUserInfoKey"
+    },
+    {
+      "kind" : "text",
+      "text" : " : "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "Any"
+    },
+    {
+      "kind" : "text",
+      "text" : "]) "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URLEncodedFormEncoder\/encode(_:to:headers:userInfo:)-8um1a",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "encode(_:to:headers:userInfo:)",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/urlencodedformencoder\/encode(_:to:headers:userinfo:)-8um1a"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/URLEncodedFormEncoder/encode(_:to:userInfo:)-3et8a": {
+  "abstract" : [
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URLQueryEncoder",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " conformance.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "encode"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "E"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Vapor21URLEncodedFormEncoderV6encode_2to8userInfoyx_AA3URIVzSDys010CodingUserH3KeyVypGtKSERzlF1EL_xmfp",
+      "text" : "E"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "to"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "inout"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Vapor3URIV",
+      "text" : "URI"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "userInfo"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s17CodingUserInfoKeyV",
+      "text" : "CodingUserInfoKey"
+    },
+    {
+      "kind" : "text",
+      "text" : " : "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "Any"
+    },
+    {
+      "kind" : "text",
+      "text" : "]) "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URLEncodedFormEncoder\/encode(_:to:userInfo:)-3et8a",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "encode(_:to:userInfo:)",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/urlencodedformencoder\/encode(_:to:userinfo:)-3et8a"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/URLEncodedFormEncoder/encode(_:userInfo:)": {
+  "abstract" : [
+    {
+      "text" : "Encodes the supplied ",
+      "type" : "text"
+    },
+    {
+      "code" : "Encodable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " object to ",
+      "type" : "text"
+    },
+    {
+      "code" : "String",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "encode"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "E"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Vapor21URLEncodedFormEncoderV6encode_8userInfoSSx_SDys010CodingUserG3KeyVypGtKSERzlF1EL_xmfp",
+      "text" : "E"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "userInfo"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s17CodingUserInfoKeyV",
+      "text" : "CodingUserInfoKey"
+    },
+    {
+      "kind" : "text",
+      "text" : " : "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "Any"
+    },
+    {
+      "kind" : "text",
+      "text" : "]) "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URLEncodedFormEncoder\/encode(_:userInfo:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "encode(_:userInfo:)",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/urlencodedformencoder\/encode(_:userinfo:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/URLEncodedFormEncoder/init(configuration:)": {
+  "abstract" : [
+    {
+      "text" : "Create a new ",
+      "type" : "text"
+    },
+    {
+      "code" : "URLEncodedFormEncoder",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "configuration"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Vapor21URLEncodedFormEncoderV13ConfigurationV",
+      "text" : "Configuration"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URLEncodedFormEncoder\/init(configuration:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(configuration:)",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/urlencodedformencoder\/init(configuration:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Vapor/URLQueryEncoder": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "URLQueryEncoder"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Vapor\/URLQueryEncoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "URLQueryEncoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "URLQueryEncoder",
+  "type" : "topic",
+  "url" : "\/documentation\/vapor\/urlqueryencoder"
+},
+"https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST": {
+  "identifier" : "https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/HTTP\/Methods\/POST",
+  "title" : "Mozilla’s",
+  "titleInlineContent" : [
+    {
+      "text" : "Mozilla’s",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/HTTP\/Methods\/POST"
+}
+}
+}

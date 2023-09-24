@@ -1,0 +1,221 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/FixedSizeRecvByteBufferAllocator"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/FixedSizeRecvByteBufferAllocator\/RecvByteBufferAllocator-Implementations"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "NIO"
+      }
+    ],
+    "role" : "collectionGroup",
+    "title" : "RecvByteBufferAllocator Implementations"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/FixedSizeRecvByteBufferAllocator\/nextBufferSize()"
+      ],
+      "title" : "Instance Methods"
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIO",
+  "type" : "topic",
+  "url" : "\/documentation\/nio"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/FixedSizeRecvByteBufferAllocator": {
+  "abstract" : [
+    {
+      "code" : "RecvByteBufferAllocator",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " which will always return a ",
+      "type" : "text"
+    },
+    {
+      "code" : "ByteBuffer",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " with the same fixed size no matter what was recorded.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "FixedSizeRecvByteBufferAllocator"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/FixedSizeRecvByteBufferAllocator",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "FixedSizeRecvByteBufferAllocator"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "FixedSizeRecvByteBufferAllocator",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/fixedsizerecvbytebufferallocator"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/FixedSizeRecvByteBufferAllocator/buffer(allocator:)": {
+  "abstract" : [
+    {
+      "text" : "Allocates a new ",
+      "type" : "text"
+    },
+    {
+      "code" : "ByteBuffer",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " that will be used to read bytes from a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "buffer"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "allocator"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore19ByteBufferAllocatorV",
+      "text" : "ByteBufferAllocator"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore10ByteBufferV",
+      "text" : "ByteBuffer"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/FixedSizeRecvByteBufferAllocator\/buffer(allocator:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "buffer(allocator:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/fixedsizerecvbytebufferallocator\/buffer(allocator:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/FixedSizeRecvByteBufferAllocator/nextBufferSize()": {
+  "abstract" : [
+    {
+      "text" : "Returns the next size of buffer which should be returned by ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/FixedSizeRecvByteBufferAllocator\/buffer(allocator:)",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "nextBufferSize"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/FixedSizeRecvByteBufferAllocator\/nextBufferSize()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "nextBufferSize()",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/fixedsizerecvbytebufferallocator\/nextbuffersize()"
+}
+}
+}

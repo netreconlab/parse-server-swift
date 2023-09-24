@@ -1,0 +1,857 @@
+{
+  "abstract" : [
+    {
+      "code" : "NIOWebSocketFrameAggregator",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " buffers inbound fragmented ",
+      "type" : "text"
+    },
+    {
+      "code" : "WebSocketFrame",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "’s and aggregates them into a single ",
+      "type" : "text"
+    },
+    {
+      "code" : "WebSocketFrame",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "It guarantees that a ",
+      "type" : "text"
+    },
+    {
+      "code" : "WebSocketFrame",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " with an ",
+      "type" : "text"
+    },
+    {
+      "code" : "opcode",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " of ",
+      "type" : "text"
+    },
+    {
+      "code" : ".continuation",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is never forwarded.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Frames which are not fragmented are just forwarded without any processing.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Fragmented frames are unmasked, concatenated and forwarded as a new ",
+      "type" : "text"
+    },
+    {
+      "code" : "WebSocketFrame",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " which is either a ",
+      "type" : "text"
+    },
+    {
+      "code" : ".binary",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " or ",
+      "type" : "text"
+    },
+    {
+      "code" : ".text",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " frame.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "extensionData",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", ",
+      "type" : "text"
+    },
+    {
+      "code" : "rsv1",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", ",
+      "type" : "text"
+    },
+    {
+      "code" : "rsv2",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " and ",
+      "type" : "text"
+    },
+    {
+      "code" : "rsv3",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " are lost if a frame is fragmented because they cannot be concatenated.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/NIOWebSocketFrameAggregator"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:12NIOWebSocket0aB15FrameAggregatorC",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "class"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "NIOWebSocketFrameAggregator"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIOWebSocket"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "NIOWebSocketFrameAggregator"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Class",
+    "symbolKind" : "class",
+    "title" : "NIOWebSocketFrameAggregator"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "final"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "class"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "NIOWebSocketFrameAggregator"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                },
+                {
+                  "code" : ".ping",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ", ",
+                  "type" : "text"
+                },
+                {
+                  "code" : ".pong",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ", ",
+                  "type" : "text"
+                },
+                {
+                  "code" : ".closeConnection",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " frames are forwarded during frame aggregation",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelHandler",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelInboundHandler",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/NIOWebSocketFrameAggregator\/init(minNonFinalFragmentSize:maxAccumulatedFrameCount:maxAccumulatedFrameSize:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/NIOWebSocketFrameAggregator\/channelRead(context:data:)"
+      ],
+      "title" : "Instance Methods"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/NIOWebSocketFrameAggregator\/InboundIn",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/NIOWebSocketFrameAggregator\/InboundOut"
+      ],
+      "title" : "Type Aliases"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/NIOWebSocketFrameAggregator\/Error"
+      ],
+      "title" : "Enumerations"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/NIOWebSocketFrameAggregator\/ChannelHandler-Implementations",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/NIOWebSocketFrameAggregator\/ChannelInboundHandler-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/niowebsocket\/niowebsocketframeaggregator"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelHandler": {
+  "abstract" : [
+    {
+      "text" : "Base protocol for handlers that handle I\/O events or intercept an I\/O operation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ChannelHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ChannelHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ChannelHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelhandler"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIO/ChannelInboundHandler": {
+  "abstract" : [
+    {
+      "code" : "ChannelHandler",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " which handles inbound I\/O events for a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ChannelInboundHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIO\/ChannelInboundHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ChannelInboundHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ChannelInboundHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/nio\/channelinboundhandler"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOWebSocket": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIOWebSocket",
+  "type" : "topic",
+  "url" : "\/documentation\/niowebsocket"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOWebSocket/NIOWebSocketFrameAggregator": {
+  "abstract" : [
+    {
+      "code" : "NIOWebSocketFrameAggregator",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " buffers inbound fragmented ",
+      "type" : "text"
+    },
+    {
+      "code" : "WebSocketFrame",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "’s and aggregates them into a single ",
+      "type" : "text"
+    },
+    {
+      "code" : "WebSocketFrame",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "It guarantees that a ",
+      "type" : "text"
+    },
+    {
+      "code" : "WebSocketFrame",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " with an ",
+      "type" : "text"
+    },
+    {
+      "code" : "opcode",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " of ",
+      "type" : "text"
+    },
+    {
+      "code" : ".continuation",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is never forwarded.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Frames which are not fragmented are just forwarded without any processing.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Fragmented frames are unmasked, concatenated and forwarded as a new ",
+      "type" : "text"
+    },
+    {
+      "code" : "WebSocketFrame",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " which is either a ",
+      "type" : "text"
+    },
+    {
+      "code" : ".binary",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " or ",
+      "type" : "text"
+    },
+    {
+      "code" : ".text",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " frame.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "extensionData",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", ",
+      "type" : "text"
+    },
+    {
+      "code" : "rsv1",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", ",
+      "type" : "text"
+    },
+    {
+      "code" : "rsv2",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " and ",
+      "type" : "text"
+    },
+    {
+      "code" : "rsv3",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " are lost if a frame is fragmented because they cannot be concatenated.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NIOWebSocketFrameAggregator"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/NIOWebSocketFrameAggregator",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NIOWebSocketFrameAggregator"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOWebSocketFrameAggregator",
+  "type" : "topic",
+  "url" : "\/documentation\/niowebsocket\/niowebsocketframeaggregator"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOWebSocket/NIOWebSocketFrameAggregator/ChannelHandler-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/NIOWebSocketFrameAggregator\/ChannelHandler-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "ChannelHandler Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/niowebsocket\/niowebsocketframeaggregator\/channelhandler-implementations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOWebSocket/NIOWebSocketFrameAggregator/ChannelInboundHandler-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/NIOWebSocketFrameAggregator\/ChannelInboundHandler-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "ChannelInboundHandler Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/niowebsocket\/niowebsocketframeaggregator\/channelinboundhandler-implementations"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOWebSocket/NIOWebSocketFrameAggregator/Error": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Error"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/NIOWebSocketFrameAggregator\/Error",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Error"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOWebSocketFrameAggregator.Error",
+  "type" : "topic",
+  "url" : "\/documentation\/niowebsocket\/niowebsocketframeaggregator\/error"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOWebSocket/NIOWebSocketFrameAggregator/InboundIn": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "InboundIn"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/NIOWebSocketFrameAggregator\/InboundIn",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "InboundIn"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOWebSocketFrameAggregator.InboundIn",
+  "type" : "topic",
+  "url" : "\/documentation\/niowebsocket\/niowebsocketframeaggregator\/inboundin"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOWebSocket/NIOWebSocketFrameAggregator/InboundOut": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "InboundOut"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/NIOWebSocketFrameAggregator\/InboundOut",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "InboundOut"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOWebSocketFrameAggregator.InboundOut",
+  "type" : "topic",
+  "url" : "\/documentation\/niowebsocket\/niowebsocketframeaggregator\/inboundout"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOWebSocket/NIOWebSocketFrameAggregator/channelRead(context:data:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "channelRead"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "context"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore21ChannelHandlerContextC",
+      "text" : "ChannelHandlerContext"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "data"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7NIOCore6NIOAnyV",
+      "text" : "NIOAny"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/NIOWebSocketFrameAggregator\/channelRead(context:data:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "channelRead(context:data:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niowebsocket\/niowebsocketframeaggregator\/channelread(context:data:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOWebSocket/NIOWebSocketFrameAggregator/init(minNonFinalFragmentSize:maxAccumulatedFrameCount:maxAccumulatedFrameSize:)": {
+  "abstract" : [
+    {
+      "text" : "Configures a ",
+      "type" : "text"
+    },
+    {
+      "code" : "NIOWebSocketFrameAggregator",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "minNonFinalFragmentSize"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "maxAccumulatedFrameCount"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "maxAccumulatedFrameSize"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOWebSocket\/NIOWebSocketFrameAggregator\/init(minNonFinalFragmentSize:maxAccumulatedFrameCount:maxAccumulatedFrameSize:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(minNonFinalFragmentSize:maxAccumulatedFrameCount:maxAccumulatedFrameSize:)",
+  "type" : "topic",
+  "url" : "\/documentation\/niowebsocket\/niowebsocketframeaggregator\/init(minnonfinalfragmentsize:maxaccumulatedframecount:maxaccumulatedframesize:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s8SendableP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

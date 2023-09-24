@@ -1,0 +1,709 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "NIOSOCKS",
+    "modules" : [
+      {
+        "name" : "NIOSOCKS"
+      }
+    ],
+    "role" : "collection",
+    "roleHeading" : "Framework",
+    "symbolKind" : "module",
+    "title" : "NIOSOCKS"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS\/SOCKSClientHandler",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS\/SOCKSServerHandshakeHandler"
+      ],
+      "title" : "Classes"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS\/AuthenticationMethod",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS\/ClientGreeting",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS\/SOCKSCommand",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS\/SOCKSProxyEstablishedEvent",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS\/SOCKSRequest",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS\/SOCKSResponse",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS\/SOCKSServerReply",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS\/SelectedAuthenticationMethod"
+      ],
+      "title" : "Structures"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS\/ClientMessage",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS\/SOCKSAddress",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS\/SOCKSError",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS\/ServerMessage"
+      ],
+      "title" : "Enumerations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/niosocks"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSOCKS": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIOSOCKS",
+  "type" : "topic",
+  "url" : "\/documentation\/niosocks"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSOCKS/AuthenticationMethod": {
+  "abstract" : [
+    {
+      "text" : "The SOCKS authentication method to use, defined in RFC 1928.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AuthenticationMethod"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS\/AuthenticationMethod",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AuthenticationMethod"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AuthenticationMethod",
+  "type" : "topic",
+  "url" : "\/documentation\/niosocks\/authenticationmethod"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSOCKS/ClientGreeting": {
+  "abstract" : [
+    {
+      "text" : "Clients begin the SOCKS handshake process",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "by providing an array of suggested authentication",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "methods.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ClientGreeting"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS\/ClientGreeting",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ClientGreeting"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ClientGreeting",
+  "type" : "topic",
+  "url" : "\/documentation\/niosocks\/clientgreeting"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSOCKS/ClientMessage": {
+  "abstract" : [
+    {
+      "text" : "Sent by the client and received by the server.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ClientMessage"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS\/ClientMessage",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ClientMessage"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ClientMessage",
+  "type" : "topic",
+  "url" : "\/documentation\/niosocks\/clientmessage"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSOCKS/SOCKSAddress": {
+  "abstract" : [
+    {
+      "text" : "The address used to connect to the target host.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SOCKSAddress"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS\/SOCKSAddress",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SOCKSAddress"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SOCKSAddress",
+  "type" : "topic",
+  "url" : "\/documentation\/niosocks\/socksaddress"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSOCKS/SOCKSClientHandler": {
+  "abstract" : [
+    {
+      "text" : "Connects to a SOCKS server to establish a proxied connection",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "to a host. This handler should be inserted at the beginning of a",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "channel’s pipeline. Note that SOCKS only supports fully-qualified",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "domain names and IPv4 or IPv6 sockets, and not UNIX sockets.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SOCKSClientHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS\/SOCKSClientHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SOCKSClientHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SOCKSClientHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/niosocks\/socksclienthandler"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSOCKS/SOCKSCommand": {
+  "abstract" : [
+    {
+      "text" : "What type of connection the SOCKS server should establish with",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "the target host.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SOCKSCommand"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS\/SOCKSCommand",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SOCKSCommand"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SOCKSCommand",
+  "type" : "topic",
+  "url" : "\/documentation\/niosocks\/sockscommand"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSOCKS/SOCKSError": {
+  "abstract" : [
+    {
+      "text" : "Wrapper for SOCKS protcol error.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SOCKSError"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS\/SOCKSError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SOCKSError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SOCKSError",
+  "type" : "topic",
+  "url" : "\/documentation\/niosocks\/sockserror"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSOCKS/SOCKSProxyEstablishedEvent": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "Channel",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " user event that is sent when a SOCKS connection has been established",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SOCKSProxyEstablishedEvent"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS\/SOCKSProxyEstablishedEvent",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SOCKSProxyEstablishedEvent"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SOCKSProxyEstablishedEvent",
+  "type" : "topic",
+  "url" : "\/documentation\/niosocks\/socksproxyestablishedevent"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSOCKS/SOCKSRequest": {
+  "abstract" : [
+    {
+      "text" : "Instructs the SOCKS proxy server of the target host,",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "and how to connect.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SOCKSRequest"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS\/SOCKSRequest",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SOCKSRequest"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SOCKSRequest",
+  "type" : "topic",
+  "url" : "\/documentation\/niosocks\/socksrequest"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSOCKS/SOCKSResponse": {
+  "abstract" : [
+    {
+      "text" : "The SOCKS Server’s response to the client’s request",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "indicating if the request succeeded or failed.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SOCKSResponse"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS\/SOCKSResponse",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SOCKSResponse"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SOCKSResponse",
+  "type" : "topic",
+  "url" : "\/documentation\/niosocks\/socksresponse"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSOCKS/SOCKSServerHandshakeHandler": {
+  "abstract" : [
+    {
+      "text" : "Add this handshake handler to the front of your channel, closest to the network.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "The handler will receive bytes from the network and run them through a state machine",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "and parser to enforce SOCKSv5 protocol correctness. Inbound bytes will by parsed into",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS\/ClientMessage",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " for downstream consumption. Send ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS\/ServerMessage",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " to this",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "handler.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SOCKSServerHandshakeHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS\/SOCKSServerHandshakeHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SOCKSServerHandshakeHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SOCKSServerHandshakeHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/niosocks\/socksserverhandshakehandler"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSOCKS/SOCKSServerReply": {
+  "abstract" : [
+    {
+      "text" : "Used to indicate if the SOCKS client’s connection request succeeded",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "or failed.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SOCKSServerReply"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS\/SOCKSServerReply",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SOCKSServerReply"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SOCKSServerReply",
+  "type" : "topic",
+  "url" : "\/documentation\/niosocks\/socksserverreply"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSOCKS/SelectedAuthenticationMethod": {
+  "abstract" : [
+    {
+      "text" : "Used by the SOCKS server to inform the client which",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "authentication method it would like to use out of those",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "offered.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SelectedAuthenticationMethod"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS\/SelectedAuthenticationMethod",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SelectedAuthenticationMethod"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SelectedAuthenticationMethod",
+  "type" : "topic",
+  "url" : "\/documentation\/niosocks\/selectedauthenticationmethod"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOSOCKS/ServerMessage": {
+  "abstract" : [
+    {
+      "text" : "Sent by the server and received by the client.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ServerMessage"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOSOCKS\/ServerMessage",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ServerMessage"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ServerMessage",
+  "type" : "topic",
+  "url" : "\/documentation\/niosocks\/servermessage"
+}
+}
+}

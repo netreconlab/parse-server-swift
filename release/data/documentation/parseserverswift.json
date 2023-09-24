@@ -1,0 +1,1217 @@
+{
+  "abstract" : [
+    {
+      "text" : "Write Parse Cloud Code in Swift!",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseServerSwift"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "ParseServerSwift",
+    "modules" : [
+      {
+        "name" : "ParseServerSwift"
+      }
+    ],
+    "role" : "collection",
+    "roleHeading" : "Framework",
+    "symbolKind" : "module",
+    "title" : "ParseServerSwift"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "What is Cloud Code? For complex apps, sometimes you just need logic that isn’t running on a mobile device. Cloud Code makes this possible.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Cloud Code in ",
+              "type" : "text"
+            },
+            {
+              "code" : "ParseServerSwift",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is easy to use because it’s built using ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/github.com\/netreconlab\/Parse-Swift",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : "",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "and ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/github.com\/vapor\/vapor",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ". ",
+              "type" : "text"
+            },
+            {
+              "code" : "ParseServerSwift",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " provides many additional benefits over the traditional ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/docs.parseplatform.org\/cloudcode\/guide\/",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " that runs on the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/github.com\/parse-community\/parse-server",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Write code with the ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/github.com\/netreconlab\/Parse-Swift",
+                      "isActive" : true,
+                      "overridingTitle" : "Parse-Swift SDK",
+                      "overridingTitleInlineContent" : [
+                        {
+                          "text" : "Parse-Swift SDK",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " vs the ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/github.com\/parse-community\/Parse-SDK-JS",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " allowing you to take advantage of a modern SDK which is strongly typed",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Runs on a dedicated server\/container, allowing the ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/github.com\/parse-community\/parse-server",
+                      "isActive" : true,
+                      "overridingTitle" : "Node.js parse-server",
+                      "overridingTitleInlineContent" : [
+                        {
+                          "text" : "Node.js parse-server",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " to focus on request reducing the burden by offloading intensive tasks and providing a true ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/microservices.io",
+                      "isActive" : true,
+                      "type" : "reference"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "All Cloud Code is in one place, but automatically connects supports the ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/github.com\/parse-community\/parse-server",
+                      "isActive" : true,
+                      "overridingTitle" : "Node.js parse-server",
+                      "overridingTitleInlineContent" : [
+                        {
+                          "text" : "Node.js parse-server",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " at scale. This circumvents the issues faced when using ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/docs.parseplatform.org\/cloudcode\/guide\/",
+                      "isActive" : true,
+                      "overridingTitle" : "JS based Cloud Code",
+                      "overridingTitleInlineContent" : [
+                        {
+                          "text" : "JS based Cloud Code",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " with ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/pm2.keymetrics.io",
+                      "isActive" : true,
+                      "type" : "reference"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Leverage the capabilities of ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/www.swift.org\/server\/",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " with ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/github.com\/vapor\/vapor",
+                      "isActive" : true,
+                      "overridingTitle" : "Vapor",
+                      "overridingTitleInlineContent" : [
+                        {
+                          "text" : "Vapor",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "reference"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Technically, complete apps can be written with ",
+              "type" : "text"
+            },
+            {
+              "code" : "ParseServerSwift",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", the only difference is that this code runs in your ",
+              "type" : "text"
+            },
+            {
+              "code" : "ParseServerSwift",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " rather than running on the user’s mobile device. When you update your Cloud Code, it becomes available to all mobile environments instantly. You don’t have to wait for a new release of your application. This lets you change app behavior on the fly and add new features faster.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseServerSwift\/ParseServerConfiguration"
+      ],
+      "title" : "Structures"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseServerSwift\/configuration"
+      ],
+      "title" : "Variables"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseServerSwift\/buildServerPathname(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseServerSwift\/buildServerURL(from:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseServerSwift\/checkHeaders(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseServerSwift\/checkServerHealth()",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseServerSwift\/deleteHooks(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseServerSwift\/getParseServerURLs(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseServerSwift\/initialize(_:app:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseServerSwift\/parseServerSwiftConfigure(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseServerSwift\/serverURLString(_:parseServerURLStrings:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseServerSwift\/setConfiguration(_:)"
+      ],
+      "title" : "Functions"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseServerSwift\/Headers"
+      ],
+      "title" : "Enumerations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/parseserverswift"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ParseServerSwift": {
+  "abstract" : [
+    {
+      "text" : "Write Parse Cloud Code in Swift!",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseServerSwift",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "ParseServerSwift",
+  "type" : "topic",
+  "url" : "\/documentation\/parseserverswift"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ParseServerSwift/Headers": {
+  "abstract" : [
+    {
+      "text" : "Additional headers sent from the Parse Server.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Headers"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseServerSwift\/Headers",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Headers"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Headers",
+  "type" : "topic",
+  "url" : "\/documentation\/parseserverswift\/headers"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ParseServerSwift/ParseServerConfiguration": {
+  "abstract" : [
+    {
+      "text" : "The Configuration for ParseServerSwift.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ParseServerConfiguration"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseServerSwift\/ParseServerConfiguration",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ParseServerConfiguration"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ParseServerConfiguration",
+  "type" : "topic",
+  "url" : "\/documentation\/parseserverswift\/parseserverconfiguration"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ParseServerSwift/buildServerPathname(_:)": {
+  "abstract" : [
+    {
+      "text" : "Construct the full server pathname with route.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "buildServerPathname"
+    },
+    {
+      "kind" : "text",
+      "text" : "(["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10RoutingKit13PathComponentO",
+      "text" : "PathComponent"
+    },
+    {
+      "kind" : "text",
+      "text" : "]) "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation3URLV",
+      "text" : "URL"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseServerSwift\/buildServerPathname(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "buildServerPathname(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/parseserverswift\/buildserverpathname(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ParseServerSwift/buildServerURL(from:)": {
+  "abstract" : [
+    {
+      "text" : "Construct the full server pathname.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "buildServerURL"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "from"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Vapor10HTTPServerC",
+      "text" : "HTTPServer"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Vapor10HTTPServerC13ConfigurationV",
+      "text" : "Configuration"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseServerSwift\/buildServerURL(from:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "buildServerURL(from:)",
+  "type" : "topic",
+  "url" : "\/documentation\/parseserverswift\/buildserverurl(from:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ParseServerSwift/checkHeaders(_:)": {
+  "abstract" : [
+    {
+      "text" : "Checks headers for matching webhookKey to prove authenticity.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "checkHeaders"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Vapor7RequestC",
+      "text" : "Request"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10ParseSwift0A12HookResponseV",
+      "text" : "ParseHookResponse"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:16ParseServerSwift12checkHeadersy0aC00A12HookResponseVyxGSg5Vapor7RequestCSeRzSERzSQRzlF1TL_xmfp",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">?"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseServerSwift\/checkHeaders(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "checkHeaders(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/parseserverswift\/checkheaders(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ParseServerSwift/checkServerHealth()": {
+  "abstract" : [
+    {
+      "text" : "Check the Health of all Parse Servers.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "checkServerHealth"
+    },
+    {
+      "kind" : "text",
+      "text" : "() "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseServerSwift\/checkServerHealth()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "checkServerHealth()",
+  "type" : "topic",
+  "url" : "\/documentation\/parseserverswift\/checkserverhealth()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ParseServerSwift/configuration": {
+  "abstract" : [
+    {
+      "text" : "The current ",
+      "type" : "text"
+    },
+    {
+      "code" : "ParseServerConfiguration",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " for ParseServerSwift.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "configuration"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:16ParseServerSwift0aB13ConfigurationV",
+      "text" : "ParseServerConfiguration"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseServerSwift\/configuration",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "configuration",
+  "type" : "topic",
+  "url" : "\/documentation\/parseserverswift\/configuration"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ParseServerSwift/deleteHooks(_:)": {
+  "abstract" : [
+    {
+      "text" : "Delete all Parse Hooks from all Parse Servers.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "deleteHooks"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Vapor11ApplicationC",
+      "text" : "Application"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseServerSwift\/deleteHooks(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "deleteHooks(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/parseserverswift\/deletehooks(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ParseServerSwift/getParseServerURLs(_:)": {
+  "abstract" : [
+    {
+      "text" : "Get all of the current Parse Server URL’s from a String.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "getParseServerURLs"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "?) "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> ("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "])"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseServerSwift\/getParseServerURLs(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "getParseServerURLs(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/parseserverswift\/getparseserverurls(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ParseServerSwift/initialize(_:app:)": {
+  "abstract" : [
+    {
+      "text" : "Configure ",
+      "type" : "text"
+    },
+    {
+      "code" : "ParseServerSwift",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ". This should only be called once when starting your",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Vapor app. Typically in the ",
+      "type" : "text"
+    },
+    {
+      "code" : "configure(_ app: Application)",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "initialize"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:16ParseServerSwift0aB13ConfigurationV",
+      "text" : "ParseServerConfiguration"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "app"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Vapor11ApplicationC",
+      "text" : "Application"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseServerSwift\/initialize(_:app:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "initialize(_:app:)",
+  "type" : "topic",
+  "url" : "\/documentation\/parseserverswift\/initialize(_:app:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ParseServerSwift/parseServerSwiftConfigure(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "parseServerSwiftConfigure"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Vapor11ApplicationC",
+      "text" : "Application"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseServerSwift\/parseServerSwiftConfigure(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "parseServerSwiftConfigure(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/parseserverswift\/parseserverswiftconfigure(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ParseServerSwift/serverURLString(_:parseServerURLStrings:)": {
+  "abstract" : [
+    {
+      "text" : "Returns the correct Parse Server ",
+      "type" : "text"
+    },
+    {
+      "code" : "URL",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " string related to a particular ",
+      "type" : "text"
+    },
+    {
+      "code" : "URI",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "serverURLString"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Vapor3URIV",
+      "text" : "URI"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "parseServerURLStrings"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "]) "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseServerSwift\/serverURLString(_:parseServerURLStrings:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "serverURLString(_:parseServerURLStrings:)",
+  "type" : "topic",
+  "url" : "\/documentation\/parseserverswift\/serverurlstring(_:parseserverurlstrings:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ParseServerSwift/setConfiguration(_:)": {
+  "abstract" : [
+    {
+      "text" : "Sets the ",
+      "type" : "text"
+    },
+    {
+      "code" : "ParseServerSwift",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " configuration if it has not already been set.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "setConfiguration"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:16ParseServerSwift0aB13ConfigurationV",
+      "text" : "ParseServerConfiguration"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseServerSwift\/setConfiguration(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "setConfiguration(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/parseserverswift\/setconfiguration(_:)"
+},
+"https://docs.parseplatform.org/cloudcode/guide/": {
+  "identifier" : "https:\/\/docs.parseplatform.org\/cloudcode\/guide\/",
+  "title" : "JS based Cloud Code",
+  "titleInlineContent" : [
+    {
+      "text" : "JS based Cloud Code",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/docs.parseplatform.org\/cloudcode\/guide\/"
+},
+"https://github.com/netreconlab/Parse-Swift": {
+  "identifier" : "https:\/\/github.com\/netreconlab\/Parse-Swift",
+  "title" : "Parse-SwiftOG",
+  "titleInlineContent" : [
+    {
+      "text" : "Parse-Swift",
+      "type" : "text"
+    },
+    {
+      "text" : "OG",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/netreconlab\/Parse-Swift"
+},
+"https://github.com/parse-community/Parse-SDK-JS": {
+  "identifier" : "https:\/\/github.com\/parse-community\/Parse-SDK-JS",
+  "title" : "Parse JS SDK",
+  "titleInlineContent" : [
+    {
+      "text" : "Parse JS SDK",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/parse-community\/Parse-SDK-JS"
+},
+"https://github.com/parse-community/parse-server": {
+  "identifier" : "https:\/\/github.com\/parse-community\/parse-server",
+  "title" : "Node.js parse-server",
+  "titleInlineContent" : [
+    {
+      "text" : "Node.js parse-server",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/parse-community\/parse-server"
+},
+"https://github.com/vapor/vapor": {
+  "identifier" : "https:\/\/github.com\/vapor\/vapor",
+  "title" : "Vapor",
+  "titleInlineContent" : [
+    {
+      "text" : "Vapor",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/vapor\/vapor"
+},
+"https://microservices.io": {
+  "identifier" : "https:\/\/microservices.io",
+  "title" : "microservice",
+  "titleInlineContent" : [
+    {
+      "text" : "microservice",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/microservices.io"
+},
+"https://pm2.keymetrics.io": {
+  "identifier" : "https:\/\/pm2.keymetrics.io",
+  "title" : "PM2",
+  "titleInlineContent" : [
+    {
+      "text" : "PM2",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/pm2.keymetrics.io"
+},
+"https://www.swift.org/server/": {
+  "identifier" : "https:\/\/www.swift.org\/server\/",
+  "title" : "server-side-swift",
+  "titleInlineContent" : [
+    {
+      "text" : "server-side-swift",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/www.swift.org\/server\/"
+}
+}
+}
