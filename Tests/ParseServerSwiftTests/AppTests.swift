@@ -115,8 +115,8 @@ final class AppTests: XCTestCase {
         }
         XCTAssertGreaterThan(configuration.parseServerURLStrings.count, 0)
 
-        let function = HookFunction(name: "hello", url: url)
-        let trigger = try HookTrigger(triggerName: .afterSave, url: url)
+        let function = ParseHookFunction(name: "hello", url: url)
+        let trigger = try ParseHookTrigger(trigger: .afterSave, url: url)
 
         await configuration.hooks.updateFunctions([ urlString: function ])
         await configuration.hooks.updateTriggers([ urlString: trigger ])
@@ -214,8 +214,8 @@ final class AppTests: XCTestCase {
         let functions = await configuration.hooks.getFunctions()
         XCTAssertTrue(functions.isEmpty)
 
-        let dummyHooks = ["yo": HookFunction(name: "hello", url: nil),
-                          "no": HookFunction(name: "hello", url: nil)]
+        let dummyHooks = ["yo": ParseHookFunction(name: "hello", url: nil),
+                          "no": ParseHookFunction(name: "hello", url: nil)]
         await configuration.hooks.updateFunctions(dummyHooks)
         let functions2 = await configuration.hooks.getFunctions()
         XCTAssertEqual(functions2.count, 2)
@@ -238,8 +238,12 @@ final class AppTests: XCTestCase {
             XCTFail("Should have unwrapped")
             return
         }
-        let dummyHooks = ["yo": HookTrigger(className: "hello", triggerName: .afterDelete, url: url),
-                          "no": HookTrigger(className: "hello", triggerName: .afterEvent, url: url)]
+        let dummyHooks = ["yo": ParseHookTrigger(className: "hello",
+                                                 trigger: .afterDelete,
+                                                 url: url),
+                          "no": ParseHookTrigger(className: "hello",
+                                                 trigger: .afterEvent,
+                                                 url: url)]
         await configuration.hooks.updateTriggers(dummyHooks)
         let triggers2 = await configuration.hooks.getTriggers()
         XCTAssertEqual(triggers2.count, 2)

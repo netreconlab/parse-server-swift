@@ -18,7 +18,7 @@ jobs:
   spm-test:
     runs-on: macos-13
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Use multiple cores
       run: defaults write com.apple.dt.XCBuild EnableSwiftBuildSystemIntegration 1
     - name: Lint
@@ -28,7 +28,7 @@ jobs:
       env:
           DEVELOPER_DIR: ${{ env.CI_XCODE }}
     - name: Prepare codecov
-      uses: sersoft-gmbh/swift-coverage-action@v3
+      uses: sersoft-gmbh/swift-coverage-action@v4
       id: coverage-files
       with:
         format: lcov
@@ -47,8 +47,8 @@ jobs:
   linux:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: sersoft-gmbh/SwiftyActions@v2
+      - uses: actions/checkout@v4
+      - uses: sersoft-gmbh/SwiftyActions@v3
         with:
           release-version: "5"
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -69,7 +69,7 @@ jobs:
     timeout-minutes: 20
     runs-on: macos-13
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Use multiple cores
         run: defaults write com.apple.dt.XCBuild EnableSwiftBuildSystemIntegration 1
       - name: Generate Docs
