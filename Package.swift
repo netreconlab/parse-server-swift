@@ -16,7 +16,7 @@ let package = Package(
             .library(name: "ParseServerSwift", targets: ["ParseServerSwift"])
     ],
     dependencies: [
-        .package(url: "https://github.com/vapor/vapor.git", exact: "4.83.2"),
+        .package(url: "https://github.com/vapor/vapor.git", .upToNextMajor(from: "4.83.2")),
         .package(url: "https://github.com/netreconlab/Parse-Swift.git",
                  .upToNextMajor(from: "5.8.1"))
     ],
