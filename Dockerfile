@@ -24,7 +24,8 @@ RUN swift package resolve --skip-update \
 COPY . .
 
 # Build everything, with optimizations
-RUN swift build -c release --static-swift-stdlib \
+RUN swift build -c release --static-swift-stdlib
+#RUN swift build -c release --static-swift-stdlib \
     # Workaround for https://github.com/apple/swift/pull/68669
     # This can be removed as soon as 5.9.1 is released, but is harmless if left in.
     #-Xlinker -u -Xlinker _swift_backtrace_isThunkFunction
