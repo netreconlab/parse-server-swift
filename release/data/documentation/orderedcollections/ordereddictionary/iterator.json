@@ -1,22 +1,14 @@
 {
   "abstract" : [
     {
-      "text" : "Inherited from ",
-      "type" : "text"
-    },
-    {
-      "code" : "Sequence.Iterator",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "The type that allows iteration over an ordered dictionary’s elements.",
       "type" : "text"
     }
   ],
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Collections",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/OrderedCollections",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/OrderedCollections\/OrderedDictionary",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/OrderedCollections\/OrderedDictionary\/Sequence-Implementations"
       ]
@@ -78,10 +70,7 @@
     ],
     "modules" : [
       {
-        "name" : "Collections",
-        "relatedModules" : [
-          "OrderedCollections"
-        ]
+        "name" : "OrderedCollections"
       }
     ],
     "navigatorTitle" : [
@@ -177,16 +166,16 @@
   "title" : "Swift.IteratorProtocol",
   "type" : "unresolvable"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Collections": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/OrderedCollections": {
   "abstract" : [
 
   ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Collections",
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/OrderedCollections",
   "kind" : "symbol",
   "role" : "collection",
-  "title" : "Collections",
+  "title" : "OrderedCollections",
   "type" : "topic",
-  "url" : "\/documentation\/collections"
+  "url" : "\/documentation\/orderedcollections"
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/OrderedCollections/OrderedDictionary": {
   "abstract" : [
@@ -224,7 +213,10 @@
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/OrderedCollections/OrderedDictionary/Iterator": {
   "abstract" : [
-
+    {
+      "text" : "The type that allows iteration over an ordered dictionary’s elements.",
+      "type" : "text"
+    }
   ],
   "conformance" : {
     "availabilityPrefix" : [
@@ -287,7 +279,18 @@
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/OrderedCollections/OrderedDictionary/Iterator/next()": {
   "abstract" : [
-
+    {
+      "text" : "Advances to the next element and returns it, or nil if no next",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "element exists.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -305,31 +308,6 @@
     {
       "kind" : "text",
       "text" : "() -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18OrderedCollections0A10DictionaryV",
-      "text" : "OrderedDictionary"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Key"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Value"
-    },
-    {
-      "kind" : "text",
-      "text" : ">."
     },
     {
       "kind" : "typeIdentifier",

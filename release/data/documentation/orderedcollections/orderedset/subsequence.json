@@ -1,22 +1,14 @@
 {
   "abstract" : [
     {
-      "text" : "Inherited from ",
-      "type" : "text"
-    },
-    {
-      "code" : "RandomAccessCollection.SubSequence",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "A collection that represents a contiguous slice of an ordered set.",
       "type" : "text"
     }
   ],
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Collections",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/OrderedCollections",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/OrderedCollections\/OrderedSet",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/OrderedCollections\/OrderedSet\/RandomAccessCollection-Implementations"
       ]
@@ -78,10 +70,7 @@
     ],
     "modules" : [
       {
-        "name" : "Collections",
-        "relatedModules" : [
-          "OrderedCollections"
-        ]
+        "name" : "OrderedCollections"
       }
     ],
     "navigatorTitle" : [
@@ -130,6 +119,78 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Ordered set slices are random access collections that support efficient",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "membership testing. ",
+              "type" : "text"
+            },
+            {
+              "code" : "contains(_:)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "firstIndex(of:)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : "\/",
+              "type" : "text"
+            },
+            {
+              "code" : "lastIndex(of:)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "are expected to have a complexity of O(1), as long as ",
+              "type" : "text"
+            },
+            {
+              "code" : "Element",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " has",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "high-quality hashing.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "relationshipsSections" : [
@@ -213,16 +274,16 @@
   "title" : "Swift.Collection",
   "type" : "unresolvable"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Collections": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/OrderedCollections": {
   "abstract" : [
 
   ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Collections",
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/OrderedCollections",
   "kind" : "symbol",
   "role" : "collection",
-  "title" : "Collections",
+  "title" : "OrderedCollections",
   "type" : "topic",
-  "url" : "\/documentation\/collections"
+  "url" : "\/documentation\/orderedcollections"
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/OrderedCollections/OrderedSet": {
   "abstract" : [
@@ -271,7 +332,10 @@
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/OrderedCollections/OrderedSet/SubSequence": {
   "abstract" : [
-
+    {
+      "text" : "A collection that represents a contiguous slice of an ordered set.",
+      "type" : "text"
+    }
   ],
   "conformance" : {
     "availabilityPrefix" : [

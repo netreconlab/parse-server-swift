@@ -2,7 +2,7 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Collections",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/OrderedCollections",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/OrderedCollections\/OrderedDictionary"
       ]
     ]
@@ -15,7 +15,7 @@
   "metadata" : {
     "modules" : [
       {
-        "name" : "Collections"
+        "name" : "OrderedCollections"
       }
     ],
     "role" : "collectionGroup",
@@ -90,16 +90,16 @@
   ]
 , 
 "references": {
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Collections": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/OrderedCollections": {
   "abstract" : [
 
   ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Collections",
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/OrderedCollections",
   "kind" : "symbol",
   "role" : "collection",
-  "title" : "Collections",
+  "title" : "OrderedCollections",
   "type" : "topic",
-  "url" : "\/documentation\/collections"
+  "url" : "\/documentation\/orderedcollections"
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/OrderedCollections/OrderedDictionary": {
   "abstract" : [
@@ -137,7 +137,18 @@
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/OrderedCollections/OrderedDictionary/Element": {
   "abstract" : [
-
+    {
+      "text" : "The element type of a dictionary: a tuple containing an individual",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "key-value pair.",
+      "type" : "text"
+    }
   ],
   "conformance" : {
     "availabilityPrefix" : [
@@ -200,7 +211,10 @@
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/OrderedCollections/OrderedDictionary/Iterator": {
   "abstract" : [
-
+    {
+      "text" : "The type that allows iteration over an ordered dictionary’s elements.",
+      "type" : "text"
+    }
   ],
   "conformance" : {
     "availabilityPrefix" : [
@@ -1371,7 +1385,10 @@
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/OrderedCollections/OrderedDictionary/makeIterator()": {
   "abstract" : [
-
+    {
+      "text" : "Returns an iterator over the elements of this collection.",
+      "type" : "text"
+    }
   ],
   "conformance" : {
     "availabilityPrefix" : [
@@ -1421,31 +1438,6 @@
     {
       "kind" : "text",
       "text" : "() -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:18OrderedCollections0A10DictionaryV",
-      "text" : "OrderedDictionary"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Key"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Value"
-    },
-    {
-      "kind" : "text",
-      "text" : ">."
     },
     {
       "kind" : "typeIdentifier",
@@ -2709,7 +2701,10 @@
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/OrderedCollections/OrderedDictionary/underestimatedCount": {
   "abstract" : [
-
+    {
+      "text" : "The number of elements in the collection.",
+      "type" : "text"
+    }
   ],
   "conformance" : {
     "availabilityPrefix" : [

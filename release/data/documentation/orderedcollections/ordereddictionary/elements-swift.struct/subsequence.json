@@ -1,22 +1,14 @@
 {
   "abstract" : [
     {
-      "text" : "Inherited from ",
-      "type" : "text"
-    },
-    {
-      "code" : "RandomAccessCollection.SubSequence",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "A collection that represents a contiguous slice of an ordered dictionary.",
       "type" : "text"
     }
   ],
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Collections",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/OrderedCollections",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/OrderedCollections\/OrderedDictionary",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/OrderedCollections\/OrderedDictionary\/Elements-swift.struct",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/OrderedCollections\/OrderedDictionary\/Elements-swift.struct\/RandomAccessCollection-Implementations"
@@ -79,10 +71,7 @@
     ],
     "modules" : [
       {
-        "name" : "Collections",
-        "relatedModules" : [
-          "OrderedCollections"
-        ]
+        "name" : "OrderedCollections"
       }
     ],
     "navigatorTitle" : [
@@ -131,6 +120,34 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Ordered dictionary slices are random access collections that",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "support efficient key-based lookups.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "relationshipsSections" : [
@@ -213,16 +230,16 @@
   "title" : "Swift.Collection",
   "type" : "unresolvable"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Collections": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/OrderedCollections": {
   "abstract" : [
 
   ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Collections",
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/OrderedCollections",
   "kind" : "symbol",
   "role" : "collection",
-  "title" : "Collections",
+  "title" : "OrderedCollections",
   "type" : "topic",
-  "url" : "\/documentation\/collections"
+  "url" : "\/documentation\/orderedcollections"
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/OrderedCollections/OrderedDictionary": {
   "abstract" : [
@@ -345,7 +362,10 @@
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/OrderedCollections/OrderedDictionary/Elements-swift.struct/SubSequence": {
   "abstract" : [
-
+    {
+      "text" : "A collection that represents a contiguous slice of an ordered dictionary.",
+      "type" : "text"
+    }
   ],
   "conformance" : {
     "availabilityPrefix" : [
@@ -516,6 +536,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18OrderedCollections0A10DictionaryV8ElementsV11SubSequenceV3Keyxmfp",
       "text" : "Key"
     },
     {
@@ -606,6 +627,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:18OrderedCollections0A10DictionaryV8ElementsV11SubSequenceV3Keyxmfp",
       "text" : "Key"
     },
     {
@@ -688,23 +710,7 @@
     },
     {
       "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Key"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Value"
-    },
-    {
-      "kind" : "text",
-      "text" : ">."
+      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

@@ -1,11 +1,11 @@
 {
   "abstract" : [
     {
-      "text" : "Inherited from ",
+      "text" : "The index type for an ordered dictionary: ",
       "type" : "text"
     },
     {
-      "code" : "RandomAccessCollection.Index",
+      "code" : "Int",
       "type" : "codeVoice"
     },
     {
@@ -16,7 +16,7 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Collections",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/OrderedCollections",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/OrderedCollections\/OrderedDictionary",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/OrderedCollections\/OrderedDictionary\/Elements-swift.struct",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/OrderedCollections\/OrderedDictionary\/Elements-swift.struct\/RandomAccessCollection-Implementations"
@@ -79,10 +79,7 @@
     ],
     "modules" : [
       {
-        "name" : "Collections",
-        "relatedModules" : [
-          "OrderedCollections"
-        ]
+        "name" : "OrderedCollections"
       }
     ],
     "navigatorTitle" : [
@@ -132,6 +129,42 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Indices in ",
+              "type" : "text"
+            },
+            {
+              "code" : "Elements",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " are integer offsets from the start of the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "collection.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -156,16 +189,16 @@
   ]
 , 
 "references": {
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Collections": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/OrderedCollections": {
   "abstract" : [
 
   ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Collections",
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/OrderedCollections",
   "kind" : "symbol",
   "role" : "collection",
-  "title" : "Collections",
+  "title" : "OrderedCollections",
   "type" : "topic",
-  "url" : "\/documentation\/collections"
+  "url" : "\/documentation\/orderedcollections"
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/OrderedCollections/OrderedDictionary": {
   "abstract" : [
@@ -277,7 +310,18 @@
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/OrderedCollections/OrderedDictionary/Elements-swift.struct/Index": {
   "abstract" : [
-
+    {
+      "text" : "The index type for an ordered dictionary: ",
+      "type" : "text"
+    },
+    {
+      "code" : "Int",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
   ],
   "conformance" : {
     "availabilityPrefix" : [

@@ -51,7 +51,7 @@
     ],
     "modules" : [
       {
-        "name" : "Metrics"
+        "name" : "CoreMetrics"
       }
     ],
     "navigatorTitle" : [
@@ -177,9 +177,6 @@
     {
       "identifiers" : [
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Timer\/destroy()",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Timer\/record(_:)-602u2",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Timer\/record(_:)-7ax6n",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Timer\/recordInterval(since:end:)",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Timer\/recordMicroseconds(_:)-35aca",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Timer\/recordMicroseconds(_:)-3qrc6",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Timer\/recordMilliseconds(_:)-1eh0n",
@@ -190,12 +187,6 @@
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Timer\/recordSeconds(_:)-7vp6b"
       ],
       "title" : "Instance Methods"
-    },
-    {
-      "identifiers" : [
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Timer\/measure(label:dimensions:body:)"
-      ],
-      "title" : "Type Methods"
     },
     {
       "generated" : true,
@@ -403,14 +394,6 @@
   ],
   "fragments" : [
     {
-      "kind" : "keyword",
-      "text" : "convenience"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
       "kind" : "identifier",
       "text" : "init"
     },
@@ -586,14 +569,6 @@
   ],
   "fragments" : [
     {
-      "kind" : "keyword",
-      "text" : "convenience"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
       "kind" : "identifier",
       "text" : "init"
     },
@@ -703,299 +678,6 @@
   "type" : "topic",
   "url" : "\/documentation\/coremetrics\/timer\/label"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Timer/measure(label:dimensions:body:)": {
-  "abstract" : [
-    {
-      "text" : "Convenience for measuring duration of a closure.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "measure"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "T"
-    },
-    {
-      "kind" : "text",
-      "text" : ">("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "label"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "dimensions"
-    },
-    {
-      "kind" : "text",
-      "text" : ": [("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
-    },
-    {
-      "kind" : "text",
-      "text" : ")], "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "body"
-    },
-    {
-      "kind" : "text",
-      "text" : ": () "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "throws"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11CoreMetrics5TimerC0B0E7measure5label10dimensions4bodyxSS_SaySS_SStGxyKctKlFZ1TL_xmfp",
-      "text" : "T"
-    },
-    {
-      "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "rethrows"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11CoreMetrics5TimerC0B0E7measure5label10dimensions4bodyxSS_SaySS_SStGxyKctKlFZ1TL_xmfp",
-      "text" : "T"
-    }
-  ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Timer\/measure(label:dimensions:body:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "measure(label:dimensions:body:)",
-  "type" : "topic",
-  "url" : "\/documentation\/coremetrics\/timer\/measure(label:dimensions:body:)"
-},
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Timer/record(_:)-602u2": {
-  "abstract" : [
-    {
-      "text" : "Convenience for recording a duration based on DispatchTimeInterval.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "record"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:8Dispatch0A12TimeIntervalO",
-      "text" : "DispatchTimeInterval"
-    },
-    {
-      "kind" : "text",
-      "text" : ")"
-    }
-  ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Timer\/record(_:)-602u2",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "record(_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/coremetrics\/timer\/record(_:)-602u2"
-},
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Timer/record(_:)-7ax6n": {
-  "abstract" : [
-    {
-      "text" : "Convenience for recording a duration based on TimeInterval.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "record"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "c:@T@NSTimeInterval",
-      "text" : "TimeInterval"
-    },
-    {
-      "kind" : "text",
-      "text" : ")"
-    }
-  ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Timer\/record(_:)-7ax6n",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "record(_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/coremetrics\/timer\/record(_:)-7ax6n"
-},
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Timer/recordInterval(since:end:)": {
-  "abstract" : [
-    {
-      "text" : "Record the time interval (with nanosecond precision) between the passed ",
-      "type" : "text"
-    },
-    {
-      "code" : "since",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " dispatch time and ",
-      "type" : "text"
-    },
-    {
-      "code" : "end",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " dispatch time.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "recordInterval"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "since"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:8Dispatch0A4TimeV",
-      "text" : "DispatchTime"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "end"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:8Dispatch0A4TimeV",
-      "text" : "DispatchTime"
-    },
-    {
-      "kind" : "text",
-      "text" : ")"
-    }
-  ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Timer\/recordInterval(since:end:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "recordInterval(since:end:)",
-  "type" : "topic",
-  "url" : "\/documentation\/coremetrics\/timer\/recordinterval(since:end:)"
-},
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Timer/recordMicroseconds(_:)-35aca": {
   "abstract" : [
     {
@@ -1030,6 +712,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11CoreMetrics5TimerC18recordMicrosecondsyyxSBRzlF8DataTypeL_xmfp",
       "text" : "DataType"
     },
     {
@@ -1078,6 +761,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11CoreMetrics5TimerC18recordMicrosecondsyyxSzRzlF8DataTypeL_xmfp",
       "text" : "DataType"
     },
     {
@@ -1126,6 +810,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11CoreMetrics5TimerC18recordMillisecondsyyxSzRzlF8DataTypeL_xmfp",
       "text" : "DataType"
     },
     {
@@ -1174,6 +859,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11CoreMetrics5TimerC18recordMillisecondsyyxSBRzlF8DataTypeL_xmfp",
       "text" : "DataType"
     },
     {
@@ -1222,6 +908,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11CoreMetrics5TimerC17recordNanosecondsyyxSzRzlF8DataTypeL_xmfp",
       "text" : "DataType"
     },
     {
@@ -1311,6 +998,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11CoreMetrics5TimerC13recordSecondsyyxSzRzlF8DataTypeL_xmfp",
       "text" : "DataType"
     },
     {
@@ -1359,6 +1047,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11CoreMetrics5TimerC13recordSecondsyyxSBRzlF8DataTypeL_xmfp",
       "text" : "DataType"
     },
     {
