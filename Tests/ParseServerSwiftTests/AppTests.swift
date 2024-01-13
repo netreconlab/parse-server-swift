@@ -13,7 +13,7 @@ final class AppTests: XCTestCase {
         let app = Application(.testing)
         let configuration = try ParseServerConfiguration(app: app,
                                                          hostName: "hostName",
-                                                         port: 8081,
+                                                         port: 8080,
                                                          applicationId: "applicationId",
                                                          primaryKey: "primaryKey",
                                                          webhookKey: hookKey,
@@ -46,7 +46,7 @@ final class AppTests: XCTestCase {
         defer { app.shutdown() }
         let configuration = try ParseServerConfiguration(app: app,
                                                          hostName: "hostName",
-                                                         port: 8081,
+                                                         port: 8080,
                                                          applicationId: "applicationId",
                                                          primaryKey: "primaryKey",
                                                          parseServerURLString: "primaryKey")
@@ -58,7 +58,7 @@ final class AppTests: XCTestCase {
         defer { app.shutdown() }
         let configuration = try ParseServerConfiguration(app: app,
                                                          hostName: "hostName",
-                                                         port: 8081,
+                                                         port: 8080,
                                                          applicationId: "applicationId",
                                                          primaryKey: "primaryKey",
                                                          parseServerURLString: "primaryKey")
