@@ -1184,7 +1184,7 @@ public extension RoutesBuilder {
         let route = self.on(.POST, path, body: body, use: closure)
         Task {
             do {
-                await configuration.hooks.updateTriggers(try await ParseHookTrigger.create(path,
+                await configuration.hooks.updateTriggers(try await ParseHookTrigger.create(route.path,
                                                                                            className: className,
                                                                                            trigger: trigger))
             } catch {
