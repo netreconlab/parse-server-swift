@@ -1,7 +1,7 @@
 # ================================
 # Build image
 # ================================
-FROM swift:5.7-jammy as build
+FROM swift:5.9-jammy as build
 
 # Install OS updates and, if needed, sqlite3
 RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true \
@@ -17,13 +17,18 @@ WORKDIR /build
 # as long as your Package.swift/Package.resolved
 # files do not change.
 COPY ./Package.* ./
-RUN swift package resolve
+RUN swift package resolve --skip-update \
+        $([ -f ./Package.resolved ] && echo "--force-resolved-versions" || true)
 
 # Copy entire repo into container
 COPY . .
 
 # Build everything, with optimizations
 RUN swift build -c release --static-swift-stdlib
+#RUN swift build -c release --static-swift-stdlib \
+    # Workaround for https://github.com/apple/swift/pull/68669
+    # This can be removed as soon as 5.9.1 is released, but is harmless if left in.
+    #-Xlinker -u -Xlinker _swift_backtrace_isThunkFunction
 
 # Switch to the staging area
 WORKDIR /staging
@@ -42,7 +47,7 @@ RUN [ -d /build/Resources ] && { mv /build/Resources ./Resources && chmod -R a-w
 # ================================
 # Run image
 # ================================
-FROM ubuntu:jammy
+FROM swift:5.9-jammy-slim
 
 # Make sure all system packages are up to date, and install only essential packages.
 RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true \
