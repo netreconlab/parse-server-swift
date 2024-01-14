@@ -14,10 +14,10 @@
     @Section(title: "Hostname, Port, and TLS") {
         @Steps {
             @Step {
-                By default, the hostname is `127.0.0.1` and the port is `8081`. These values can easily be changed:
+                By default, the hostname is `127.0.0.1` and the port is `8080`. These values can easily be changed:
                 ```swift
                 app.http.server.configuration.hostname = "your.hostname.com"
-                app.http.server.configuration.port = 8081
+                app.http.server.configuration.port = 8080
                 app.http.server.configuration.tlsConfiguration = .none
                 ```
             }
