@@ -144,21 +144,9 @@ public func getParseServerURLs(_ urls: String? = nil) throws -> (String, [String
 public func buildServerURL(from configuration: HTTPServer.Configuration) -> String {
     let scheme = configuration.tlsConfiguration == nil ? "http" : "https"
     let addressDescription: String
-    
     switch configuration.address {
     case .hostname(let hostname, let port):
-        
-        if port == 8081 {
-            switch configuration.hostname {
-            case "localhost", "127.0.0.1":
-                addressDescription = "\(scheme)://\(hostname ?? configuration.hostname):\(port ?? configuration.port)"
-            default:
-                addressDescription = "\(scheme)://\(hostname ?? configuration.hostname)"
-            }
-        } else {
-            addressDescription = "\(scheme)://\(hostname ?? configuration.hostname):\(port ?? configuration.port)"
-        }
-
+        addressDescription = "\(scheme)://\(hostname ?? configuration.hostname):\(port ?? configuration.port)"
     case .unixDomainSocket(let socketPath):
         addressDescription = "\(scheme)+unix: \(socketPath)"
     }
