@@ -2,7 +2,7 @@
 
 [![Documentation](https://img.shields.io/badge/read-docs-2196f3.svg)](https://swiftpackageindex.com/netreconlab/parse-server-swift/documentation)
 [![Tutorial](https://img.shields.io/badge/read-tutorials-2196f3.svg)](https://netreconlab.github.io/parse-server-swift/release/tutorials/parseserverswift/)
-[![Build Status CI](https://github.com/netreconlab/parse-server-swift/workflows/ci/badge.svg?branch=main)](https://github.com/netreconlab/parse-server-swift/actions?query=workflow%3Aci+branch%3Amain)
+[![Build Status CI](https://github.com/netreconlab/parse-server-swift/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/netreconlab/parse-server-swift/actions?query=workflow%3Aci+branch%3Amain)
 [![release](https://github.com/netreconlab/parse-server-swift/actions/workflows/release.yml/badge.svg)](https://github.com/netreconlab/parse-server-swift/actions/workflows/release.yml)
 [![codecov](https://codecov.io/gh/netreconlab/parse-server-swift/branch/main/graph/badge.svg?token=RC3FLU6BGW)](https://codecov.io/gh/netreconlab/parse-server-swift)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/netreconlab/parse-server-swift/blob/main/LICENSE)
