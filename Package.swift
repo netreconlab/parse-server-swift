@@ -21,7 +21,7 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/vapor/vapor.git",
-                .upToNextMajor(from: "4.91.1")
+                .upToNextMajor(from: "4.92.0")
         ),
         .package(
             url: "https://github.com/netreconlab/Parse-Swift.git",
