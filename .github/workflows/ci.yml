@@ -36,7 +36,7 @@ jobs:
       env:
           DEVELOPER_DIR: ${{ env.CI_XCODE }}
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v3
+      uses: codecov/codecov-action@v4
       with:
         files: ${{join(fromJSON(steps.coverage-files.outputs.files), ',')}}
         env_vars: SPM
@@ -60,7 +60,7 @@ jobs:
         run: |
           llvm-cov export -format="lcov" .build/x86_64-unknown-linux-gnu/debug/ParseServerSwiftPackageTests.xctest -instr-profile .build/x86_64-unknown-linux-gnu/debug/codecov/default.profdata > info_linux.lcov
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
           env_vars: LINUX
           fail_ci_if_error: true
