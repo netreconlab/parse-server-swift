@@ -8,7 +8,7 @@ on:
     branches: [ main ]
 
 env:
-  CI_XCODE: '/Applications/Xcode_15.0.app/Contents/Developer'
+  CI_XCODE: '/Applications/Xcode_15.4.app/Contents/Developer'
 
 concurrency:
    group: ${{ github.workflow }}-${{ github.ref }}
@@ -16,11 +16,11 @@ concurrency:
 
 jobs:
   spm-test:
-    runs-on: macos-13
+    runs-on: macos-14
     steps:
     - uses: actions/checkout@v4
-    - name: Use multiple cores
-      run: defaults write com.apple.dt.XCBuild EnableSwiftBuildSystemIntegration 1
+    - name: Install SwiftLint
+      run: brew install swiftlint
     - name: Lint
       run: set -o pipefail && env NSUnbufferedIO=YES swiftlint --strict
     - name: Build and Test
@@ -69,11 +69,9 @@ jobs:
 
   docs:
     timeout-minutes: 20
-    runs-on: macos-13
+    runs-on: macos-14
     steps:
       - uses: actions/checkout@v4
-      - name: Use multiple cores
-        run: defaults write com.apple.dt.XCBuild EnableSwiftBuildSystemIntegration 1
       - name: Generate Docs
         run: set -o pipefail && env NSUnbufferedIO=YES Scripts/generate-documentation
         env:
