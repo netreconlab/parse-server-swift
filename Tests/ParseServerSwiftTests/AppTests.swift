@@ -195,7 +195,7 @@ final class AppTests: XCTestCase {
                                                        from: encoded)
 
         let options = hookRequest.options()
-        let installationOption = options.first(where: { $0 == .installationId("") })
+        let installationOption = options.first(where: { $0 == .installationId(installationId) })
         XCTAssertEqual(options.count, 1)
         XCTAssertTrue(installationOption.debugDescription.contains(installationId))
 
@@ -203,8 +203,8 @@ final class AppTests: XCTestCase {
         let request = Request(application: app, url: uri, on: app.eventLoopGroup.any())
         let options2 = try hookRequest.options(request,
                                                parseServerURLStrings: configuration.parseServerURLStrings)
-        let installationOption2 = options2.first(where: { $0 == .installationId("") })
-        let serverURLOption = options2.first(where: { $0 == .serverURL("") })
+        let installationOption2 = options2.first(where: { $0 == .installationId(installationId) })
+        let serverURLOption = options2.first(where: { $0 == .serverURL(urlString) })
         XCTAssertEqual(options2.count, 2)
         XCTAssertTrue(installationOption2.debugDescription.contains(installationId))
         XCTAssertTrue(serverURLOption.debugDescription.contains("\"\(urlString)\""))
