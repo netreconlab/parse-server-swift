@@ -9,7 +9,7 @@ import Vapor
  */
 public func parseServerSwiftConfigure(
     _ app: Application,
-    configuration: ParseServerConfiguration? = nil
+    with configuration: ParseServerConfiguration? = nil
 ) async throws {
     // Initialize ParseServerSwift
     let configuration = try configuration ?? ParseServerConfiguration(app: app)
