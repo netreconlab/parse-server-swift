@@ -1,0 +1,317 @@
+{
+  "abstract" : [
+    {
+      "text" : "Directory not empty.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/Errno"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/Errno\/directoryNotEmpty"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:13SystemPackage5ErrnoV17directoryNotEmptyACvpZ",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "static"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "var"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "directoryNotEmpty"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:13SystemPackage5ErrnoV",
+        "text" : "Errno"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "SystemPackage"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Type Property",
+    "symbolKind" : "property",
+    "title" : "directoryNotEmpty"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "static"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "var"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "directoryNotEmpty"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/Errno",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:13SystemPackage5ErrnoV",
+              "text" : "Errno"
+            },
+            {
+              "kind" : "text",
+              "text" : " { "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "get"
+            },
+            {
+              "kind" : "text",
+              "text" : " }"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A directory with entries other than ",
+              "type" : "text"
+            },
+            {
+              "code" : ".",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "..",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "was supplied to a ",
+              "type" : "text"
+            },
+            {
+              "code" : "remove(2)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " directory or ",
+              "type" : "text"
+            },
+            {
+              "code" : "rename(2)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " call.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The corresponding C error is ",
+              "type" : "text"
+            },
+            {
+              "code" : "ENOTEMPTY",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/systempackage\/errno\/directorynotempty"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/SystemPackage": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "SystemPackage",
+  "type" : "topic",
+  "url" : "\/documentation\/systempackage"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/SystemPackage/Errno": {
+  "abstract" : [
+    {
+      "text" : "An error number used by system calls to communicate what kind of error",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "occurred.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Errno"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/Errno",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Errno"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Errno",
+  "type" : "topic",
+  "url" : "\/documentation\/systempackage\/errno"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/SystemPackage/Errno/directoryNotEmpty": {
+  "abstract" : [
+    {
+      "text" : "Directory not empty.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "directoryNotEmpty"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13SystemPackage5ErrnoV",
+      "text" : "Errno"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/Errno\/directoryNotEmpty",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "directoryNotEmpty",
+  "type" : "topic",
+  "url" : "\/documentation\/systempackage\/errno\/directorynotempty"
+}
+}
+}
