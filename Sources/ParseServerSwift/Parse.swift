@@ -73,7 +73,7 @@ func initializeServer(_ configuration: ParseServerConfiguration,
             try await checkServerHealth()
         } catch {
             await deleteHooks(app)
-            app.shutdown()
+            try await app.asyncShutdown()
         }
     } else {
         Parse.configuration = configuration
