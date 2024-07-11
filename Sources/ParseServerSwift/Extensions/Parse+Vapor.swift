@@ -24,7 +24,6 @@ public extension ParseHookRequestable {
      */
     func options(
         _ request: Request,
-        // swiftlint:disable:next line_length
         parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings
     ) throws -> API.Options {
         var options = self.options()
@@ -47,7 +46,6 @@ public extension ParseHookRequestable {
      func hydrateUser(
         options: API.Options = [],
         request: Request,
-        // swiftlint:disable:next line_length
         parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings
      ) async throws -> Self {
          var updatedOptions = try self.options(request, parseServerURLStrings: parseServerURLStrings)
