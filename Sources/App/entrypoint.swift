@@ -8,25 +8,9 @@
 import Vapor
 import Dispatch
 import Logging
+import NIOCore
+import NIOPosix
 import ParseServerSwift
-
-/// This extension is temporary and can be removed once Vapor gets this support.
-private extension Vapor.Application {
-    static let baseExecutionQueue = DispatchQueue(label: "vapor.codes.entrypoint")
-
-    func runFromAsyncMainEntrypoint() async throws {
-        try await withCheckedThrowingContinuation { continuation in
-            Vapor.Application.baseExecutionQueue.async { [self] in
-                do {
-                    try self.run()
-                    continuation.resume()
-                } catch {
-                    continuation.resume(throwing: error)
-                }
-            }
-        }
-    }
-}
 
 @main
 enum Entrypoint {
@@ -36,9 +20,13 @@ enum Entrypoint {
 
         let app = try await Application.make(env)
 
-        defer { app.shutdown() }
+        // This attempts to install NIO as the Swift Concurrency global executor.
+        // You should not call any async functions before this point.
+        let executorTakeoverSuccess = NIOSingletons.unsafeTryInstallSingletonPosixEventLoopGroupAsConcurrencyGlobalExecutor()
+        app.logger.debug("Running with \(executorTakeoverSuccess ? "SwiftNIO" : "standard") Swift Concurrency default executor")
 
         try await parseServerSwiftConfigure(app)
-        try await app.runFromAsyncMainEntrypoint()
+        try await app.execute()
+        try await app.asyncShutdown()
     }
 }

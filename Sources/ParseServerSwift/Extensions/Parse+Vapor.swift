@@ -22,9 +22,11 @@ public extension ParseHookRequestable {
      - note: This options method should be used in a multi Parse Server environment.
      In a single Parse Server environment, use options().
      */
-    func options(_ request: Request,
-                 // swiftlint:disable:next line_length
-                 parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) throws -> API.Options {
+    func options(
+        _ request: Request,
+        // swiftlint:disable:next line_length
+        parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings
+    ) throws -> API.Options {
         var options = self.options()
         options.insert(.serverURL(try serverURLString(request.url,
                                                       parseServerURLStrings: parseServerURLStrings)))
@@ -42,15 +44,14 @@ public extension ParseHookRequestable {
      - note: The default cache policy for this method is `.reloadIgnoringLocalCacheData`. If a developer
      desires a different policy, it should be inserted in `options`.
      */
-     func hydrateUser(options: API.Options = [],
-                      request: Request,
-                      // swiftlint:disable:next line_length
-                      parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> Self {
+     func hydrateUser(
+        options: API.Options = [],
+        request: Request,
+        // swiftlint:disable:next line_length
+        parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings
+     ) async throws -> Self {
          var updatedOptions = try self.options(request, parseServerURLStrings: parseServerURLStrings)
          updatedOptions = options.union(updatedOptions)
-         return try await withCheckedThrowingContinuation { continuation in
-             self.hydrateUser(options: updatedOptions,
-                              completion: continuation.resume)
-         }
+         return try await self.hydrateUser(options: updatedOptions)
      }
 }

@@ -21,7 +21,7 @@ public var configuration: ParseServerConfiguration {
 
 /**
  Configure `ParseServerSwift`. This should only be called once when starting your
- Vapor app. Typically in the `configure(_ app: Application)`.
+ Vapor app. Typically in the `parseServerSwiftConfigure(_ app: Application)`.
  - parameter configuration: The ParseServer configuration.
  - parameter app: Core type representing a Vapor application.
  - throws: An error of `ParseError` type.
