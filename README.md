@@ -99,25 +99,40 @@ The `webhookKey` should match the [webhookKey on the Parse Server](https://githu
 The aforementioned environment variables automatically configure [Parse-Swift<sup>OG</sup> SDK](https://github.com/netreconlab/Parse-Swift). If you need a more custom configuration, see the [documentation](https://netreconlab.github.io/Parse-Swift/release/documentation/parseswift/).
 
 ### Initializing ParseSwiftServer
-To levergage the aforementioned environment variables, you should modify `configure.swift` in your project to look similar to below:
+To levergage the aforementioned environment variables, you should modify `entrypoint.swift` in your project to look similar to below:
 
 ```swift
-public func configure(_ app: Application) throws {
-    // Initialize ParseServerSwift
-    let configuration = try ParseServerConfiguration(app: app)
-    try ParseServerSwift.initialize(configuration, app: app)
-    
-    // Add any additional code to configure your server here...
-    
-    // register routes
-    try routes(app)
+import Vapor
+import Dispatch
+import Logging
+import NIOCore
+import NIOPosix
+import ParseServerSwift
+
+@main
+enum Entrypoint {
+    static func main() async throws {
+        var env = try Environment.detect()
+        try LoggingSystem.bootstrap(from: &env)
+
+        let app = try await Application.make(env)
+
+        // This attempts to install NIO as the Swift Concurrency global executor.
+        // You should not call any async functions before this point.
+        let executorTakeoverSuccess = NIOSingletons.unsafeTryInstallSingletonPosixEventLoopGroupAsConcurrencyGlobalExecutor()
+        app.logger.debug("Running with \(executorTakeoverSuccess ? "SwiftNIO" : "standard") Swift Concurrency default executor")
+
+        try await parseServerSwiftConfigure(app)
+        try await app.execute()
+        try await app.asyncShutdown()
+    }
 }
 ```
 
-If you want to pass the configuration parameters programitically, your `configure` method should look similar to below:
+If you want to pass the configuration parameters programitically, you can add a `configure` method to `configure.swift` should look similar to below:
 
 ```swift
-public func configure(_ app: Application) throws {
+public func configure(_ app: Application) async throws {
     // Initialize ParseServerSwift
     let configuration = try ParseServerConfiguration(app: app,
                                                      hostName: "hostName",
@@ -126,7 +141,7 @@ public func configure(_ app: Application) throws {
                                                      primaryKey: "primaryKey",
                                                      webhookKey: hookKey,
                                                      parseServerURLString: "primaryKey")
-    try ParseServerSwift.initialize(configuration, app: app)
+    try await ParseServerSwift.initialize(configuration, app: app)
     
     // Add any additional code to configure your server here...
     
