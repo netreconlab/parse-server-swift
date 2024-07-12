@@ -57,19 +57,29 @@ public extension ParseHookRequestable {
 
 extension ParseEncoder: ContentEncoder {
 
-    public func encode<E>(_ encodable: E, to body: inout ByteBuffer, headers: inout HTTPHeaders) throws
-        where E: Encodable
-    {
-        try self.encode(encodable, to: &body, headers: &headers, userInfo: [:])
+    public func encode<E>(
+        _ encodable: E,
+        to body: inout ByteBuffer,
+        headers: inout HTTPHeaders
+    ) throws where E: Encodable {
+        try self.encode(
+            encodable,
+            to: &body,
+            headers: &headers,
+            userInfo: [:]
+        )
     }
 
-    public func encode<E>(_ encodable: E, to body: inout ByteBuffer, headers: inout HTTPHeaders, userInfo: [CodingUserInfoKey: Sendable]) throws
-        where E: Encodable
-    {
+    public func encode<E>(
+        _ encodable: E,
+        to body: inout ByteBuffer,
+        headers: inout HTTPHeaders,
+        userInfo: [CodingUserInfoKey: Sendable]
+    ) throws where E: Encodable {
         headers.contentType = .json
         let jsonEncoder = User.getJSONEncoder()
 
-        if !userInfo.isEmpty { // Changing a coder's userInfo is a thread-unsafe mutation, operate on a copy
+        if !userInfo.isEmpty {
             try body.writeBytes(JSONEncoder.custom(
                 dates: jsonEncoder.dateEncodingStrategy,
                 data: jsonEncoder.dataEncodingStrategy,
