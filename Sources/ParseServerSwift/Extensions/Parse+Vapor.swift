@@ -11,6 +11,7 @@ import ParseSwift
 extension ParseHookFunctionRequest: Content {}
 extension ParseHookTriggerRequest: Content {}
 extension ParseHookResponse: Content {}
+
 public extension ParseHookRequestable {
     /**
      Produce the set of options that should be used for subsequent `ParseHook` requests.
@@ -52,4 +53,56 @@ public extension ParseHookRequestable {
          updatedOptions = options.union(updatedOptions)
          return try await self.hydrateUser(options: updatedOptions)
      }
+}
+
+extension ParseEncoder: ContentEncoder {
+
+    public func encode<E>(
+        _ encodable: E,
+        to body: inout ByteBuffer,
+        headers: inout HTTPHeaders
+    ) throws where E: Encodable {
+        try self.encode(
+            encodable,
+            to: &body,
+            headers: &headers,
+            userInfo: [:]
+        )
+    }
+
+    public func encode<E>(
+        _ encodable: E,
+        to body: inout ByteBuffer,
+        headers: inout HTTPHeaders,
+        userInfo: [CodingUserInfoKey: Sendable]
+    ) throws where E: Encodable {
+        headers.contentType = .json
+        let jsonEncoder = User.getJSONEncoder()
+
+        if !userInfo.isEmpty {
+            try body.writeBytes(JSONEncoder.custom(
+                dates: jsonEncoder.dateEncodingStrategy,
+                data: jsonEncoder.dataEncodingStrategy,
+                keys: jsonEncoder.keyEncodingStrategy,
+                format: jsonEncoder.outputFormatting,
+                floats: jsonEncoder.nonConformingFloatEncodingStrategy,
+                userInfo: jsonEncoder.userInfo.merging(userInfo) { $1 }
+            ).encode(encodable))
+        } else {
+            if let parseEncodable = encodable as? ParseCloudTypeable {
+                try body.writeBytes(self.encode(parseEncodable, skipKeys: .cloud))
+            } else if let parseEncodable = encodable as? ParseEncodable {
+                let skipKeys: SkipKeys
+                if !ParseSwift.configuration.isRequiringCustomObjectIds {
+                    skipKeys = .object
+                } else {
+                    skipKeys = .customObjectId
+                }
+                try body.writeBytes(self.encode(parseEncodable, skipKeys: skipKeys))
+            } else {
+                try body.writeBytes(jsonEncoder.encode(encodable))
+            }
+
+        }
+    }
 }
