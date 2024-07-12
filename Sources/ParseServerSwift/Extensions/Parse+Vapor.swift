@@ -11,6 +11,8 @@ import ParseSwift
 extension ParseHookFunctionRequest: Content {}
 extension ParseHookTriggerRequest: Content {}
 extension ParseHookResponse: Content {}
+extension ParseEncoder: @unchecked Swift.Sendable {}
+
 public extension ParseHookRequestable {
     /**
      Produce the set of options that should be used for subsequent `ParseHook` requests.
@@ -52,4 +54,37 @@ public extension ParseHookRequestable {
          updatedOptions = options.union(updatedOptions)
          return try await self.hydrateUser(options: updatedOptions)
      }
+}
+
+extension ParseEncoder: ContentEncoder {
+
+    public func encode<E>(_ encodable: E, to body: inout ByteBuffer, headers: inout HTTPHeaders) throws
+        where E: Encodable
+    {
+        try self.encode(encodable, to: &body, headers: &headers, userInfo: [:])
+    }
+
+    public func encode<E>(_ encodable: E, to body: inout ByteBuffer, headers: inout HTTPHeaders, userInfo: [CodingUserInfoKey: Sendable]) throws
+        where E: Encodable
+    {
+        headers.contentType = .json
+        let jsonEncoder = User.getJSONEncoder()
+
+        if !userInfo.isEmpty { // Changing a coder's userInfo is a thread-unsafe mutation, operate on a copy
+            try body.writeBytes(JSONEncoder.custom(
+                dates: jsonEncoder.dateEncodingStrategy,
+                data: jsonEncoder.dataEncodingStrategy,
+                keys: jsonEncoder.keyEncodingStrategy,
+                format: jsonEncoder.outputFormatting,
+                floats: jsonEncoder.nonConformingFloatEncodingStrategy,
+                userInfo: jsonEncoder.userInfo.merging(userInfo) { $1 }
+            ).encode(encodable))
+        } else {
+            guard let parseEncodable = encodable as? ParseEncodable else {
+                try body.writeBytes(jsonEncoder.encode(encodable))
+                return
+            }
+            try body.writeBytes(self.encode(parseEncodable, skipKeys: .object))
+        }
+    }
 }
