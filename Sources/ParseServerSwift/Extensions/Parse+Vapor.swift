@@ -11,7 +11,6 @@ import ParseSwift
 extension ParseHookFunctionRequest: Content {}
 extension ParseHookTriggerRequest: Content {}
 extension ParseHookResponse: Content {}
-extension ParseEncoder: @unchecked Swift.Sendable {}
 
 public extension ParseHookRequestable {
     /**
@@ -80,11 +79,20 @@ extension ParseEncoder: ContentEncoder {
                 userInfo: jsonEncoder.userInfo.merging(userInfo) { $1 }
             ).encode(encodable))
         } else {
-            guard let parseEncodable = encodable as? ParseEncodable else {
+            if let parseEncodable = encodable as? ParseCloudTypeable {
+                try body.writeBytes(self.encode(parseEncodable, skipKeys: .cloud))
+            } else if let parseEncodable = encodable as? ParseEncodable {
+                let skipKeys: SkipKeys
+                if !ParseSwift.configuration.isRequiringCustomObjectIds {
+                    skipKeys = .object
+                } else {
+                    skipKeys = .customObjectId
+                }
+                try body.writeBytes(self.encode(parseEncodable, skipKeys: skipKeys))
+            } else {
                 try body.writeBytes(jsonEncoder.encode(encodable))
-                return
             }
-            try body.writeBytes(self.encode(parseEncodable, skipKeys: .object))
+
         }
     }
 }

@@ -35,7 +35,7 @@ public struct ParseServerConfiguration {
 
     var hooks = Hooks()
     var isTesting = false
-    var logger = Logger(label: "com.parseserverswift")
+    var logger = Logger(label: "com.parse-server-swift")
 
     /**
      Create a configuration for `ParseServerSwift`.
