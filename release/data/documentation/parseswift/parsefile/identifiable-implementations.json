@@ -3,13 +3,13 @@
     "paths" : [
       [
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseSwift",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseSwift\/ParseObject"
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseSwift\/ParseFile"
       ]
     ]
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseSwift\/ParseObject\/Hashable-Implementations"
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseSwift\/ParseFile\/Identifiable-Implementations"
   },
   "kind" : "article",
   "metadata" : {
@@ -20,7 +20,7 @@
     ],
     "role" : "collectionGroup",
     "roleHeading" : "API Collection",
-    "title" : "Hashable Implementations"
+    "title" : "Identifiable Implementations"
   },
   "schemaVersion" : {
     "major" : 0,
@@ -34,9 +34,9 @@
     {
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseSwift\/ParseObject\/hash(into:)"
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseSwift\/ParseFile\/id"
       ],
-      "title" : "Instance Methods"
+      "title" : "Instance Properties"
     }
   ]
 , 
@@ -52,18 +52,18 @@
   "type" : "topic",
   "url" : "\/documentation\/parseswift"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ParseSwift/ParseObject": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ParseSwift/ParseFile": {
   "abstract" : [
     {
-      "text" : "Objects that conform to the ",
+      "text" : "A ",
       "type" : "text"
     },
     {
-      "code" : "ParseObject",
+      "code" : "ParseFile",
       "type" : "codeVoice"
     },
     {
-      "text" : " protocol have a local representation of data persisted to the Parse Server.",
+      "text" : " object representes a file of binary data stored on the Parse server.",
       "type" : "text"
     },
     {
@@ -71,14 +71,14 @@
       "type" : "text"
     },
     {
-      "text" : "This is the main protocol that is used to interact with objects in your app.",
+      "text" : "This can be a image, video, or anything else that an application needs to reference in a non-relational way.",
       "type" : "text"
     }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "protocol"
+      "text" : "struct"
     },
     {
       "kind" : "text",
@@ -86,30 +86,41 @@
     },
     {
       "kind" : "identifier",
-      "text" : "ParseObject"
+      "text" : "ParseFile"
     }
   ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseSwift\/ParseObject",
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseSwift\/ParseFile",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "ParseObject"
+      "text" : "ParseFile"
     }
   ],
   "role" : "symbol",
-  "title" : "ParseObject",
+  "title" : "ParseFile",
   "type" : "topic",
-  "url" : "\/documentation\/parseswift\/parseobject"
+  "url" : "\/documentation\/parseswift\/parsefile"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ParseSwift/ParseObject/hash(into:)": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ParseSwift/ParseFile/id": {
   "abstract" : [
-
+    {
+      "text" : "A computed property that ensures ",
+      "type" : "text"
+    },
+    {
+      "code" : "ParseFile",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "’s can be uniquely identified across instances.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "func"
+      "text" : "var"
     },
     {
       "kind" : "text",
@@ -117,44 +128,24 @@
     },
     {
       "kind" : "identifier",
-      "text" : "hash"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "into"
+      "text" : "id"
     },
     {
       "kind" : "text",
       "text" : ": "
     },
     {
-      "kind" : "keyword",
-      "text" : "inout"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:s6HasherV",
-      "text" : "Hasher"
-    },
-    {
-      "kind" : "text",
-      "text" : ")"
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
     }
   ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseSwift\/ParseObject\/hash(into:)",
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseSwift\/ParseFile\/id",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "hash(into:)",
+  "title" : "id",
   "type" : "topic",
-  "url" : "\/documentation\/parseswift\/parseobject\/hash(into:)"
+  "url" : "\/documentation\/parseswift\/parsefile\/id"
 }
 }
 }

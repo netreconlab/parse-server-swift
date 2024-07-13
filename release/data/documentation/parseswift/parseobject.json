@@ -144,15 +144,6 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:SH",
-              "text" : "Hashable"
-            },
-            {
-              "kind" : "text",
-              "text" : ", "
-            },
-            {
-              "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:s12IdentifiableP",
               "text" : "Identifiable"
             }
@@ -850,8 +841,7 @@
       "generated" : true,
       "identifiers" : [
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseSwift\/ParseObject\/CustomDebugStringConvertible-Implementations",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseSwift\/ParseObject\/CustomStringConvertible-Implementations",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseSwift\/ParseObject\/Hashable-Implementations"
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseSwift\/ParseObject\/CustomStringConvertible-Implementations"
       ],
       "title" : "Default Implementations"
     }
@@ -1252,17 +1242,6 @@
   "title" : "CustomStringConvertible Implementations",
   "type" : "topic",
   "url" : "\/documentation\/parseswift\/parseobject\/customstringconvertible-implementations"
-},
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ParseSwift/ParseObject/Hashable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseSwift\/ParseObject\/Hashable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Hashable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/parseswift\/parseobject\/hashable-implementations"
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ParseSwift/ParseObject/create(options:)": {
   "abstract" : [
@@ -2627,7 +2606,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ParseSwift/ParseObject/id": {
   "abstract" : [
     {
-      "text" : "A computed property that is a unique identifier and makes it easy to use ",
+      "text" : "A computed property that ensures ",
       "type" : "text"
     },
     {
@@ -2635,15 +2614,7 @@
       "type" : "codeVoice"
     },
     {
-      "text" : "’s",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "as models in MVVM and SwiftUI.",
+      "text" : "’s can be uniquely identified across instances.",
       "type" : "text"
     }
   ],
