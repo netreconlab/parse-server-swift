@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Occurs before saving a ",
+      "text" : "The class name of the ",
       "type" : "text"
     },
     {
@@ -9,23 +9,7 @@
       "type" : "codeVoice"
     },
     {
-      "text" : ", ",
-      "type" : "text"
-    },
-    {
-      "code" : "ParseFile",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ", or ",
-      "type" : "text"
-    },
-    {
-      "code" : "ParseConfig",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : " to trigger on.",
       "type" : "text"
     }
   ],
@@ -33,21 +17,21 @@
     "paths" : [
       [
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseSwift",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseSwift\/ParseHookTriggerType"
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseSwift\/ParseHookTriggerObject"
       ]
     ]
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseSwift\/ParseHookTriggerType\/beforeSave"
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseSwift\/ParseHookTriggerObject\/className"
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:10ParseSwift0A15HookTriggerTypeO10beforeSaveyA2CmF",
+    "externalID" : "s:10ParseSwift0A17HookTriggerObjectO9classNameSSvp",
     "fragments" : [
       {
         "kind" : "keyword",
-        "text" : "case"
+        "text" : "var"
       },
       {
         "kind" : "text",
@@ -55,7 +39,16 @@
       },
       {
         "kind" : "identifier",
-        "text" : "beforeSave"
+        "text" : "className"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:SS",
+        "text" : "String"
       }
     ],
     "modules" : [
@@ -64,9 +57,9 @@
       }
     ],
     "role" : "symbol",
-    "roleHeading" : "Case",
-    "symbolKind" : "case",
-    "title" : "ParseHookTriggerType.beforeSave"
+    "roleHeading" : "Instance Property",
+    "symbolKind" : "property",
+    "title" : "className"
   },
   "primaryContentSections" : [
     {
@@ -81,7 +74,7 @@
           "tokens" : [
             {
               "kind" : "keyword",
-              "text" : "case"
+              "text" : "var"
             },
             {
               "kind" : "text",
@@ -89,7 +82,28 @@
             },
             {
               "kind" : "identifier",
-              "text" : "beforeSave"
+              "text" : "className"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:SS",
+              "text" : "String"
+            },
+            {
+              "kind" : "text",
+              "text" : " { "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "get"
+            },
+            {
+              "kind" : "text",
+              "text" : " }"
             }
           ]
         }
@@ -108,7 +122,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/parseswift\/parsehooktriggertype\/beforesave"
+        "\/documentation\/parseswift\/parsehooktriggerobject\/classname"
       ],
       "traits" : [
         {
@@ -130,10 +144,10 @@
   "type" : "topic",
   "url" : "\/documentation\/parseswift"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ParseSwift/ParseHookTriggerType": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ParseSwift/ParseHookTriggerObject": {
   "abstract" : [
     {
-      "text" : "The types of Parse Hook Triggers available.",
+      "text" : "The objects that Parse Hooks can be triggered on.",
       "type" : "text"
     }
   ],
@@ -148,26 +162,26 @@
     },
     {
       "kind" : "identifier",
-      "text" : "ParseHookTriggerType"
+      "text" : "ParseHookTriggerObject"
     }
   ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseSwift\/ParseHookTriggerType",
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseSwift\/ParseHookTriggerObject",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "ParseHookTriggerType"
+      "text" : "ParseHookTriggerObject"
     }
   ],
   "role" : "symbol",
-  "title" : "ParseHookTriggerType",
+  "title" : "ParseHookTriggerObject",
   "type" : "topic",
-  "url" : "\/documentation\/parseswift\/parsehooktriggertype"
+  "url" : "\/documentation\/parseswift\/parsehooktriggerobject"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ParseSwift/ParseHookTriggerType/beforeSave": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ParseSwift/ParseHookTriggerObject/className": {
   "abstract" : [
     {
-      "text" : "Occurs before saving a ",
+      "text" : "The class name of the ",
       "type" : "text"
     },
     {
@@ -175,30 +189,14 @@
       "type" : "codeVoice"
     },
     {
-      "text" : ", ",
-      "type" : "text"
-    },
-    {
-      "code" : "ParseFile",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ", or ",
-      "type" : "text"
-    },
-    {
-      "code" : "ParseConfig",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : " to trigger on.",
       "type" : "text"
     }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "case"
+      "text" : "var"
     },
     {
       "kind" : "text",
@@ -206,15 +204,24 @@
     },
     {
       "kind" : "identifier",
-      "text" : "beforeSave"
+      "text" : "className"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
     }
   ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseSwift\/ParseHookTriggerType\/beforeSave",
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ParseSwift\/ParseHookTriggerObject\/className",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "ParseHookTriggerType.beforeSave",
+  "title" : "className",
   "type" : "topic",
-  "url" : "\/documentation\/parseswift\/parsehooktriggertype\/beforesave"
+  "url" : "\/documentation\/parseswift\/parsehooktriggerobject\/classname"
 }
 }
 }
