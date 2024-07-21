@@ -25,7 +25,7 @@ let package = Package(
         ),
         .package(
             url: "https://github.com/netreconlab/Parse-Swift.git",
-                 .upToNextMajor(from: "5.10.3")
+                 .upToNextMajor(from: "5.11.1")
         )
     ],
     targets: [
