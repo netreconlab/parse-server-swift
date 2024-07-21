@@ -429,11 +429,13 @@ public extension ParseHookTrigger {
      - note: WIll attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
-    static func fetchAll(_ path: [PathComponent],
-                         className: String? = nil,
-                         trigger: ParseHookTriggerType,
-                         // swiftlint:disable:next line_length
-                         parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings) async throws -> [String: [Self]] {
+    static func fetchAll(
+        _ path: [PathComponent],
+        className: String? = nil,
+        trigger: ParseHookTriggerType,
+        // swiftlint:disable:next line_length
+        parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings
+    ) async throws -> [String: [Self]] {
         let url = try buildServerPathname(path)
         let hookTrigger: Self!
         var hookTriggers = [String: [Self]]()
@@ -443,9 +445,12 @@ public extension ParseHookTrigger {
                                trigger: trigger,
                                url: url)
         } else {
-            hookTrigger = try Self(trigger: trigger,
-                                   url: url)
+            hookTrigger = try Self(
+                trigger: trigger,
+                url: url
+            )
         }
+
         for parseServerURLString in parseServerURLStrings {
             do {
                 hookTriggers[parseServerURLString] = try await hookTrigger
@@ -1415,7 +1420,7 @@ public extension RoutesBuilder {
      Creates a new route for a Parse Cloud Code hook trigger.
      - parameter path: An array of paths.
      - parameter body: Determines how an incoming HTTP request’s body is collected.
-     - parameter className: The name of the `ParseObject` the trigger should act on.
+     - parameter object: The `ParseHookTriggerObject` the trigger should act on.
      - parameter trigger: The `ParseHookTriggerType` type.
      - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
      - parameter hooks: An actor containing all of the current Hooks.
@@ -1432,6 +1437,12 @@ public extension RoutesBuilder {
         trigger: ParseHookTriggerType,
         use closure: @escaping (Request) async throws -> Response
     ) -> Route where Response: AsyncResponseEncodable {
-        self.on(path, body: body, className: object.className, trigger: trigger, use: user)
+        self.on(
+            path,
+            body: body,
+            className: object.className,
+            trigger: trigger,
+            use: closure
+        )
     }
 }
