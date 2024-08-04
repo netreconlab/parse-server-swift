@@ -28,7 +28,10 @@ enum Entrypoint {
             "Running with \(executorTakeoverSuccess ? "SwiftNIO" : "standard") Swift Concurrency default executor"
         )
 
-        try await parseServerSwiftConfigure(app)
+        try await parseServerSwiftConfigure(
+            app,
+            using: exampleRoutes
+        )
         try await app.execute()
         try await app.asyncShutdown()
     }

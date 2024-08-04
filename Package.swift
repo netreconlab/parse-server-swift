@@ -1,4 +1,4 @@
-// swift-tools-version:5.6
+// swift-tools-version:5.7
 import PackageDescription
 
 // swiftlint:disable line_length
@@ -21,11 +21,11 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/vapor/vapor.git",
-                .upToNextMajor(from: "4.102.1")
+            .upToNextMajor(from: "4.102.1")
         ),
         .package(
             url: "https://github.com/netreconlab/Parse-Swift.git",
-                 .upToNextMajor(from: "5.11.1")
+            .upToNextMajor(from: "5.11.2")
         )
     ],
     targets: [
@@ -43,10 +43,14 @@ let package = Package(
                 // the `.unsafeFlags` construct required by SwiftPM, this flag is recommended for Release
                 // builds. See <https://github.com/swift-server/guides/blob/main/docs/building.md#building-for-production> for details.
                 .unsafeFlags(["-cross-module-optimization"], .when(configuration: .release))
-            ]),
-        .testTarget(name: "ParseServerSwiftTests", dependencies: [
-            .target(name: "ParseServerSwift"),
-            .product(name: "XCTVapor", package: "vapor")
-        ])
+            ]
+        ),
+        .testTarget(
+            name: "ParseServerSwiftTests",
+            dependencies: [
+                .target(name: "ParseServerSwift"),
+                .product(name: "XCTVapor", package: "vapor")
+            ]
+        )
     ]
 )
