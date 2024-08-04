@@ -11,27 +11,38 @@ final class AppTests: XCTestCase {
 
     func setupAppForTesting(hookKey: String? = nil) async throws -> Application {
         let app = try await Application.make(.testing)
-        let configuration = try ParseServerConfiguration(app: app,
-                                                         hostName: "hostName",
-                                                         port: 8080,
-                                                         applicationId: "applicationId",
-                                                         primaryKey: "primaryKey",
-                                                         webhookKey: hookKey,
-                                                         parseServerURLString: "primaryKey")
-        try await ParseServerSwift.initialize(configuration, app: app, testing: true)
+        let configuration = try ParseServerConfiguration(
+            app: app,
+            hostName: "hostName",
+            port: 8080,
+            applicationId: "applicationId",
+            primaryKey: "primaryKey",
+            webhookKey: hookKey,
+            parseServerURLString: "primaryKey"
+        )
+        try await ParseServerSwift.initialize(
+            configuration, 
+            app: app,
+            testing: true
+        )
         guard let parseServerURL = URL(string: configuration.primaryParseServerURLString) else {
-            throw ParseError(code: .otherCause,
-                             message: "Could not make a URL from the Parse Server string")
+            let error = ParseError(
+                code: .otherCause,
+                message: "Could not make a URL from the Parse Server string"
+            )
+            throw error
         }
-        try await ParseSwift.initialize(applicationId: configuration.applicationId,
-                                        primaryKey: configuration.primaryKey,
-                                        serverURL: parseServerURL,
-                                        usingPostForQuery: true,
-                                        requestCachePolicy: .reloadIgnoringLocalCacheData) { _, completionHandler in
+        try await ParseSwift.initialize(
+            applicationId: configuration.applicationId,
+            primaryKey: configuration.primaryKey,
+            serverURL: parseServerURL,
+            usingPostForQuery: true,
+            requestCachePolicy: .reloadIgnoringLocalCacheData
+        ) { _, completionHandler in
             // Setup to use default certificate pinning. See Parse-Swift docs for more info
             completionHandler(.performDefaultHandling, nil)
         }
-        try routes(app)
+        try exampleRoutes(app)
         return app
     }
 
@@ -43,24 +54,28 @@ final class AppTests: XCTestCase {
 
     func testAllowInitConfigOnce() async throws {
         let app = try await Application.make(.testing)
-        let configuration = try ParseServerConfiguration(app: app,
-                                                         hostName: "hostName",
-                                                         port: 8080,
-                                                         applicationId: "applicationId",
-                                                         primaryKey: "primaryKey",
-                                                         parseServerURLString: "primaryKey")
+        let configuration = try ParseServerConfiguration(
+            app: app,
+            hostName: "hostName",
+            port: 8080,
+            applicationId: "applicationId",
+            primaryKey: "primaryKey",
+            parseServerURLString: "primaryKey"
+        )
         XCTAssertNoThrow(try setConfiguration(configuration))
         try await app.asyncShutdown()
     }
 
     func testDoNotInitConfigTwice() async throws {
         let app = try await setupAppForTesting()
-        let configuration = try ParseServerConfiguration(app: app,
-                                                         hostName: "hostName",
-                                                         port: 8080,
-                                                         applicationId: "applicationId",
-                                                         primaryKey: "primaryKey",
-                                                         parseServerURLString: "primaryKey")
+        let configuration = try ParseServerConfiguration(
+            app: app,
+            hostName: "hostName",
+            port: 8080,
+            applicationId: "applicationId",
+            primaryKey: "primaryKey",
+            parseServerURLString: "primaryKey"
+        )
         XCTAssertThrowsError(try setConfiguration(configuration))
         try await app.asyncShutdown()
     }
