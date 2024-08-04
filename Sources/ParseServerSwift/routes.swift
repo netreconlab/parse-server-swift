@@ -126,7 +126,7 @@ public func exampleRoutes(_ app: Application) throws {
 
     // Another Parse Hook Trigger route.
     app.post(
-        "score", 
+        "score",
         "find",
         "before",
         object: GameScore.self,

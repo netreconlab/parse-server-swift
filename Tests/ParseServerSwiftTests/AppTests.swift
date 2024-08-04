@@ -21,7 +21,7 @@ final class AppTests: XCTestCase {
             parseServerURLString: "primaryKey"
         )
         try await ParseServerSwift.initialize(
-            configuration, 
+            configuration,
             app: app,
             testing: true
         )
