@@ -1,0 +1,503 @@
+{
+  "abstract" : [
+    {
+      "text" : "Mutate the value, assuming the lock has been acquired manually.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/NIOLockedValueBox",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/NIOLockedValueBox\/Unsafe-swift.struct"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/NIOLockedValueBox\/Unsafe-swift.struct\/withValueAssumingLockIsAcquired(_:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:21NIOConcurrencyHelpers17NIOLockedValueBoxV6UnsafeV04withD22AssumingLockIsAcquiredyqd__qd__xzKXEKlF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "withValueAssumingLockIsAcquired"
+      },
+      {
+        "kind" : "text",
+        "text" : "<"
+      },
+      {
+        "kind" : "genericParameter",
+        "text" : "Result"
+      },
+      {
+        "kind" : "text",
+        "text" : ">(("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "_"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "internalParam",
+        "text" : "value"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "inout"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:21NIOConcurrencyHelpers17NIOLockedValueBoxV0D0xmfp",
+        "text" : "Value"
+      },
+      {
+        "kind" : "text",
+        "text" : ") "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "throws"
+      },
+      {
+        "kind" : "text",
+        "text" : " -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:21NIOConcurrencyHelpers17NIOLockedValueBoxV6UnsafeV04withD22AssumingLockIsAcquiredyqd__qd__xzKXEKlF6ResultL_qd__mfp",
+        "text" : "Result"
+      },
+      {
+        "kind" : "text",
+        "text" : ") "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "rethrows"
+      },
+      {
+        "kind" : "text",
+        "text" : " -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:21NIOConcurrencyHelpers17NIOLockedValueBoxV6UnsafeV04withD22AssumingLockIsAcquiredyqd__qd__xzKXEKlF6ResultL_qd__mfp",
+        "text" : "Result"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "NIOConcurrencyHelpers"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "withValueAssumingLockIsAcquired(_:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "withValueAssumingLockIsAcquired"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
+            },
+            {
+              "kind" : "genericParameter",
+              "text" : "Result"
+            },
+            {
+              "kind" : "text",
+              "text" : ">("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "_"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "mutate"
+            },
+            {
+              "kind" : "text",
+              "text" : ": ("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "_"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "value"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "inout"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:21NIOConcurrencyHelpers17NIOLockedValueBoxV0D0xmfp",
+              "text" : "Value"
+            },
+            {
+              "kind" : "text",
+              "text" : ") "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "throws"
+            },
+            {
+              "kind" : "text",
+              "text" : " -> "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:21NIOConcurrencyHelpers17NIOLockedValueBoxV6UnsafeV04withD22AssumingLockIsAcquiredyqd__qd__xzKXEKlF6ResultL_qd__mfp",
+              "text" : "Result"
+            },
+            {
+              "kind" : "text",
+              "text" : ") "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "rethrows"
+            },
+            {
+              "kind" : "text",
+              "text" : " -> "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:21NIOConcurrencyHelpers17NIOLockedValueBoxV6UnsafeV04withD22AssumingLockIsAcquiredyqd__qd__xzKXEKlF6ResultL_qd__mfp",
+              "text" : "Result"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "A closure with scoped access to the value.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "mutate"
+        }
+      ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "return-value",
+          "level" : 2,
+          "text" : "Return Value",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The result of the ",
+              "type" : "text"
+            },
+            {
+              "code" : "mutate",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " closure.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/nioconcurrencyhelpers\/niolockedvaluebox\/unsafe-swift.struct\/withvalueassuminglockisacquired(_:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOConcurrencyHelpers": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "NIOConcurrencyHelpers",
+  "type" : "topic",
+  "url" : "\/documentation\/nioconcurrencyhelpers"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOConcurrencyHelpers/NIOLockedValueBox": {
+  "abstract" : [
+    {
+      "text" : "Provides locked access to ",
+      "type" : "text"
+    },
+    {
+      "code" : "Value",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NIOLockedValueBox"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/NIOLockedValueBox",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NIOLockedValueBox"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOLockedValueBox",
+  "type" : "topic",
+  "url" : "\/documentation\/nioconcurrencyhelpers\/niolockedvaluebox"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOConcurrencyHelpers/NIOLockedValueBox/Unsafe-swift.struct": {
+  "abstract" : [
+    {
+      "text" : "Provides an unsafe view over the lock and its value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Unsafe"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/NIOLockedValueBox\/Unsafe-swift.struct",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Unsafe"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NIOLockedValueBox.Unsafe",
+  "type" : "topic",
+  "url" : "\/documentation\/nioconcurrencyhelpers\/niolockedvaluebox\/unsafe-swift.struct"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOConcurrencyHelpers/NIOLockedValueBox/Unsafe-swift.struct/withValueAssumingLockIsAcquired(_:)": {
+  "abstract" : [
+    {
+      "text" : "Mutate the value, assuming the lock has been acquired manually.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "withValueAssumingLockIsAcquired"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Result"
+    },
+    {
+      "kind" : "text",
+      "text" : ">(("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "_"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "internalParam",
+      "text" : "value"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "inout"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:21NIOConcurrencyHelpers17NIOLockedValueBoxV0D0xmfp",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:21NIOConcurrencyHelpers17NIOLockedValueBoxV6UnsafeV04withD22AssumingLockIsAcquiredyqd__qd__xzKXEKlF6ResultL_qd__mfp",
+      "text" : "Result"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "rethrows"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:21NIOConcurrencyHelpers17NIOLockedValueBoxV6UnsafeV04withD22AssumingLockIsAcquiredyqd__qd__xzKXEKlF6ResultL_qd__mfp",
+      "text" : "Result"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/NIOLockedValueBox\/Unsafe-swift.struct\/withValueAssumingLockIsAcquired(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "withValueAssumingLockIsAcquired(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/nioconcurrencyhelpers\/niolockedvaluebox\/unsafe-swift.struct\/withvalueassuminglockisacquired(_:)"
+}
+}
+}

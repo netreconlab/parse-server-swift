@@ -1,36 +1,29 @@
 {
   "abstract" : [
     {
-      "text" : "Provides locked access to ",
-      "type" : "text"
-    },
-    {
-      "code" : "Value",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Provides an unsafe view over the lock and its value.",
       "type" : "text"
     }
   ],
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers"
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/NIOLockedValueBox"
       ]
     ]
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/NIOLockedValueBox"
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/NIOLockedValueBox\/unsafe-swift.property"
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:21NIOConcurrencyHelpers17NIOLockedValueBoxV",
+    "externalID" : "s:21NIOConcurrencyHelpers17NIOLockedValueBoxV6unsafeAC6UnsafeVyx_Gvp",
     "fragments" : [
       {
         "kind" : "keyword",
-        "text" : "struct"
+        "text" : "var"
       },
       {
         "kind" : "text",
@@ -38,7 +31,16 @@
       },
       {
         "kind" : "identifier",
-        "text" : "NIOLockedValueBox"
+        "text" : "unsafe"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:21NIOConcurrencyHelpers17NIOLockedValueBoxV6UnsafeV",
+        "text" : "Unsafe"
       }
     ],
     "modules" : [
@@ -46,16 +48,10 @@
         "name" : "NIOConcurrencyHelpers"
       }
     ],
-    "navigatorTitle" : [
-      {
-        "kind" : "identifier",
-        "text" : "NIOLockedValueBox"
-      }
-    ],
     "role" : "symbol",
-    "roleHeading" : "Structure",
-    "symbolKind" : "struct",
-    "title" : "NIOLockedValueBox"
+    "roleHeading" : "Instance Property",
+    "symbolKind" : "property",
+    "title" : "unsafe"
   },
   "primaryContentSections" : [
     {
@@ -70,7 +66,7 @@
           "tokens" : [
             {
               "kind" : "keyword",
-              "text" : "struct"
+              "text" : "var"
             },
             {
               "kind" : "text",
@@ -78,19 +74,29 @@
             },
             {
               "kind" : "identifier",
-              "text" : "NIOLockedValueBox"
+              "text" : "unsafe"
             },
             {
               "kind" : "text",
-              "text" : "<"
+              "text" : ": "
             },
             {
-              "kind" : "genericParameter",
-              "text" : "Value"
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/NIOLockedValueBox\/Unsafe-swift.struct",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:21NIOConcurrencyHelpers17NIOLockedValueBoxV6UnsafeV",
+              "text" : "Unsafe"
             },
             {
               "kind" : "text",
-              "text" : ">"
+              "text" : " { "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "get"
+            },
+            {
+              "kind" : "text",
+              "text" : " }"
             }
           ]
         }
@@ -100,61 +106,32 @@
     {
       "content" : [
         {
-          "anchor" : "overview",
+          "anchor" : "discussion",
           "level" : 2,
-          "text" : "Overview",
+          "text" : "Discussion",
           "type" : "heading"
-        },
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "",
-                  "type" : "text"
-                },
-                {
-                  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/NIOLockedValueBox",
-                  "isActive" : true,
-                  "type" : "reference"
-                },
-                {
-                  "text" : " has reference semantics and holds the ",
-                  "type" : "text"
-                },
-                {
-                  "code" : "Value",
-                  "type" : "codeVoice"
-                },
-                {
-                  "text" : " ",
-                  "type" : "text"
-                },
-                {
-                  "text" : "alongside a lock behind a reference.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "Note",
-          "style" : "note",
-          "type" : "aside"
         },
         {
           "inlineContent" : [
             {
-              "text" : "This is no different than creating a ",
+              "text" : "This can be beneficial when you require fine grained control over the lock in some",
               "type" : "text"
             },
             {
-              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/Lock",
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "situations but don’t want lose the benefits of ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/NIOLockedValueBox\/withLockedValue(_:)",
               "isActive" : true,
               "type" : "reference"
             },
             {
-              "text" : " and protecting all",
+              "text" : " in others by",
               "type" : "text"
             },
             {
@@ -162,32 +139,16 @@
               "type" : "text"
             },
             {
-              "text" : "accesses to a value using the lock. But it’s easy to forget to actually",
+              "text" : "switching to ",
               "type" : "text"
             },
             {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "acquire\/release the lock in the correct place. ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/NIOLockedValueBox",
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/NIOLock",
               "isActive" : true,
               "type" : "reference"
             },
             {
-              "text" : " makes",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "that much easier.",
+              "text" : ".",
               "type" : "text"
             }
           ],
@@ -195,16 +156,6 @@
         }
       ],
       "kind" : "content"
-    }
-  ],
-  "relationshipsSections" : [
-    {
-      "identifiers" : [
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP"
-      ],
-      "kind" : "relationships",
-      "title" : "Conforms To",
-      "type" : "conformsTo"
     }
   ],
   "schemaVersion" : {
@@ -215,36 +166,10 @@
   "sections" : [
 
   ],
-  "topicSections" : [
-    {
-      "identifiers" : [
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/NIOLockedValueBox\/Unsafe-swift.struct"
-      ],
-      "title" : "Structures"
-    },
-    {
-      "identifiers" : [
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/NIOLockedValueBox\/init(_:)"
-      ],
-      "title" : "Initializers"
-    },
-    {
-      "identifiers" : [
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/NIOLockedValueBox\/unsafe-swift.property"
-      ],
-      "title" : "Instance Properties"
-    },
-    {
-      "identifiers" : [
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/NIOLockedValueBox\/withLockedValue(_:)"
-      ],
-      "title" : "Instance Methods"
-    }
-  ],
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/nioconcurrencyhelpers\/niolockedvaluebox"
+        "\/documentation\/nioconcurrencyhelpers\/niolockedvaluebox\/unsafe-swift.property"
       ],
       "traits" : [
         {
@@ -266,7 +191,7 @@
   "type" : "topic",
   "url" : "\/documentation\/nioconcurrencyhelpers"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOConcurrencyHelpers/Lock": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOConcurrencyHelpers/NIOLock": {
   "abstract" : [
     {
       "text" : "A threading lock based on ",
@@ -289,11 +214,10 @@
       "type" : "text"
     }
   ],
-  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "class"
+      "text" : "struct"
     },
     {
       "kind" : "text",
@@ -301,21 +225,21 @@
     },
     {
       "kind" : "identifier",
-      "text" : "Lock"
+      "text" : "NIOLock"
     }
   ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/Lock",
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/NIOLock",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "Lock"
+      "text" : "NIOLock"
     }
   ],
   "role" : "symbol",
-  "title" : "Lock",
+  "title" : "NIOLock",
   "type" : "topic",
-  "url" : "\/documentation\/nioconcurrencyhelpers\/lock"
+  "url" : "\/documentation\/nioconcurrencyhelpers\/niolock"
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOConcurrencyHelpers/NIOLockedValueBox": {
   "abstract" : [
@@ -392,47 +316,6 @@
   "title" : "NIOLockedValueBox.Unsafe",
   "type" : "topic",
   "url" : "\/documentation\/nioconcurrencyhelpers\/niolockedvaluebox\/unsafe-swift.struct"
-},
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOConcurrencyHelpers/NIOLockedValueBox/init(_:)": {
-  "abstract" : [
-    {
-      "text" : "Initialize the ",
-      "type" : "text"
-    },
-    {
-      "code" : "Value",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "identifier",
-      "text" : "init"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:21NIOConcurrencyHelpers17NIOLockedValueBoxV0D0xmfp",
-      "text" : "Value"
-    },
-    {
-      "kind" : "text",
-      "text" : ")"
-    }
-  ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/NIOConcurrencyHelpers\/NIOLockedValueBox\/init(_:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "init(_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/nioconcurrencyhelpers\/niolockedvaluebox\/init(_:)"
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/NIOConcurrencyHelpers/NIOLockedValueBox/unsafe-swift.property": {
   "abstract" : [
@@ -565,11 +448,6 @@
   "title" : "withLockedValue(_:)",
   "type" : "topic",
   "url" : "\/documentation\/nioconcurrencyhelpers\/niolockedvaluebox\/withlockedvalue(_:)"
-},
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/s8SendableP": {
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP",
-  "title" : "Swift.Sendable",
-  "type" : "unresolvable"
 }
 }
 }
