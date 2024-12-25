@@ -33,6 +33,7 @@ jobs:
       with:
         format: lcov
         search-paths: ./.build
+        ignore-conversion-failures: true
       env:
           DEVELOPER_DIR: ${{ env.CI_XCODE }}
     - name: Upload coverage to Codecov
@@ -51,7 +52,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: sersoft-gmbh/SwiftyActions@v3
         with:
-          release-version: "6"
+          release-version: "5"
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and Test
         run: set -o pipefail && env NSUnbufferedIO=YES swift test --enable-test-discovery --enable-code-coverage
