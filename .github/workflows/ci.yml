@@ -8,7 +8,7 @@ on:
     branches: [ main ]
 
 env:
-  CI_XCODE: '/Applications/Xcode_15.4.app/Contents/Developer'
+  CI_XCODE: '/Applications/Xcode_16.2.app/Contents/Developer'
 
 concurrency:
    group: ${{ github.workflow }}-${{ github.ref }}
@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   spm-test:
-    runs-on: macos-14
+    runs-on: macos-15
     steps:
     - uses: actions/checkout@v4
     - name: Install SwiftLint
@@ -33,6 +33,7 @@ jobs:
       with:
         format: lcov
         search-paths: ./.build
+        ignore-conversion-failures: true
       env:
           DEVELOPER_DIR: ${{ env.CI_XCODE }}
     - name: Upload coverage to Codecov
@@ -69,7 +70,7 @@ jobs:
 
   docs:
     timeout-minutes: 20
-    runs-on: macos-14
+    runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
       - name: Generate Docs
