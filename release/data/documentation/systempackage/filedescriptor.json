@@ -52,6 +52,15 @@
         "text" : "FileDescriptor"
       }
     ],
+    "platforms" : [
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "8.0",
+        "name" : "iOS",
+        "unavailable" : false
+      }
+    ],
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -141,6 +150,7 @@
   "relationshipsSections" : [
     {
       "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s15BitwiseCopyableP",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/Se",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/SE",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/SQ",
@@ -163,6 +173,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Structures",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/FileDescriptor\/AccessMode",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/FileDescriptor\/OpenOptions",
@@ -171,18 +183,24 @@
       "title" : "Structures"
     },
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/FileDescriptor\/init(rawValue:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/FileDescriptor\/rawValue"
       ],
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/FileDescriptor\/close()",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/FileDescriptor\/closeAfter(_:)",
@@ -199,6 +217,8 @@
       "title" : "Instance Methods"
     },
     {
+      "anchor" : "Type-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/FileDescriptor\/standardError",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/FileDescriptor\/standardInput",
@@ -207,6 +227,8 @@
       "title" : "Type Properties"
     },
     {
+      "anchor" : "Type-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/FileDescriptor\/open(_:_:options:permissions:retryOnInterrupt:)-2266j",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/FileDescriptor\/open(_:_:options:permissions:retryOnInterrupt:)-8iaux",
@@ -215,6 +237,7 @@
       "title" : "Type Methods"
     },
     {
+      "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/FileDescriptor\/Equatable-Implementations",
@@ -548,7 +571,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/SystemPackage/FileDescriptor/duplicate(as:retryOnInterrupt:)": {
   "abstract" : [
     {
-      "text" : "Duplicate this file descriptor and return the newly created copy.",
+      "text" : "Duplicates this file descriptor and return the newly created copy.",
       "type" : "text"
     }
   ],
@@ -848,17 +871,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13SystemPackage8CInteropO",
-      "text" : "CInterop"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13SystemPackage8CInteropO12PlatformChara",
-      "text" : "PlatformChar"
+      "preciseIdentifier" : "s:s5CChara",
+      "text" : "CChar"
     },
     {
       "kind" : "text",
@@ -966,7 +980,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/SystemPackage/FileDescriptor/pipe()": {
   "abstract" : [
     {
-      "text" : "Create a pipe, a unidirectional data channel which can be used for interprocess communication.",
+      "text" : "Creates a unidirectional data channel, which can be used for interprocess communication.",
       "type" : "text"
     }
   ],
@@ -1252,7 +1266,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/SystemPackage/FileDescriptor/resize(to:retryOnInterrupt:)": {
   "abstract" : [
     {
-      "text" : "Truncate or extend the file referenced by this file descriptor.",
+      "text" : "Truncates or extends the file referenced by this file descriptor.",
       "type" : "text"
     }
   ],
@@ -1322,7 +1336,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/SystemPackage/FileDescriptor/seek(offset:from:)": {
   "abstract" : [
     {
-      "text" : "Reposition the offset for the given file descriptor.",
+      "text" : "Repositions the offset for the given file descriptor.",
       "type" : "text"
     }
   ],
@@ -1849,6 +1863,11 @@
   "title" : "writeAll(toAbsoluteOffset:_:)",
   "type" : "topic",
   "url" : "\/documentation\/systempackage\/filedescriptor\/writeall(toabsoluteoffset:_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s15BitwiseCopyableP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s15BitwiseCopyableP",
+  "title" : "Swift.BitwiseCopyable",
+  "type" : "unresolvable"
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/s8SendableP": {
   "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP",

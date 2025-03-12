@@ -1,4 +1,7 @@
 {
+  "includedArchiveIdentifiers" : [
+    "edu.uky.cs.netreconlab.ParseServerSwift"
+  ],
   "interfaceLanguages" : {
     "swift" : [
       {
@@ -1089,20 +1092,6 @@
           {
             "children" : [
               {
-                "title" : "Operators",
-                "type" : "groupMarker"
-              },
-              {
-                "path" : "\/documentation\/crypto\/digest\/==(_:_:)-6m59k",
-                "title" : "static func == (Self, Self) -> Bool",
-                "type" : "op"
-              },
-              {
-                "path" : "\/documentation\/crypto\/digest\/==(_:_:)-7yz3z",
-                "title" : "static func == <D>(Self, D) -> Bool",
-                "type" : "op"
-              },
-              {
                 "title" : "Type Properties",
                 "type" : "groupMarker"
               },
@@ -1337,20 +1326,6 @@
           },
           {
             "children" : [
-              {
-                "title" : "Operators",
-                "type" : "groupMarker"
-              },
-              {
-                "path" : "\/documentation\/crypto\/messageauthenticationcode\/==(_:_:)-3rxc4",
-                "title" : "static func == <D>(Self, D) -> Bool",
-                "type" : "op"
-              },
-              {
-                "path" : "\/documentation\/crypto\/messageauthenticationcode\/==(_:_:)-b90",
-                "title" : "static func == (Self, Self) -> Bool",
-                "type" : "op"
-              },
               {
                 "title" : "Instance Properties",
                 "type" : "groupMarker"
@@ -1655,6 +1630,11 @@
                     "type" : "method"
                   },
                   {
+                    "path" : "\/documentation\/crypto\/hashedauthenticationcode\/count(where:)",
+                    "title" : "func count<E>(where: (Self.Element) throws(E) -> Bool) throws(E) -> Int",
+                    "type" : "method"
+                  },
+                  {
                     "path" : "\/documentation\/crypto\/hashedauthenticationcode\/drop(while:)",
                     "title" : "func drop(while: (Self.Element) throws -> Bool) rethrows -> DropWhileSequence<Self>",
                     "type" : "method"
@@ -1736,7 +1716,7 @@
                   },
                   {
                     "path" : "\/documentation\/crypto\/hashedauthenticationcode\/map(_:)",
-                    "title" : "func map<T>((Self.Element) throws -> T) rethrows -> [T]",
+                    "title" : "func map<T, E>((Self.Element) throws(E) -> T) throws(E) -> [T]",
                     "type" : "method"
                   },
                   {
@@ -1894,12 +1874,12 @@
               },
               {
                 "path" : "\/documentation\/crypto\/sha256\/blockbytecount",
-                "title" : "static var blockByteCount: Int",
+                "title" : "static let blockByteCount: Int",
                 "type" : "property"
               },
               {
                 "path" : "\/documentation\/crypto\/sha256\/bytecount",
-                "title" : "static var byteCount: Int",
+                "title" : "static let byteCount: Int",
                 "type" : "property"
               },
               {
@@ -2081,6 +2061,11 @@
                     "type" : "method"
                   },
                   {
+                    "path" : "\/documentation\/crypto\/sha256digest\/count(where:)",
+                    "title" : "func count<E>(where: (Self.Element) throws(E) -> Bool) throws(E) -> Int",
+                    "type" : "method"
+                  },
+                  {
                     "path" : "\/documentation\/crypto\/sha256digest\/drop(while:)",
                     "title" : "func drop(while: (Self.Element) throws -> Bool) rethrows -> DropWhileSequence<Self>",
                     "type" : "method"
@@ -2162,7 +2147,7 @@
                   },
                   {
                     "path" : "\/documentation\/crypto\/sha256digest\/map(_:)",
-                    "title" : "func map<T>((Self.Element) throws -> T) rethrows -> [T]",
+                    "title" : "func map<T, E>((Self.Element) throws(E) -> T) throws(E) -> [T]",
                     "type" : "method"
                   },
                   {
@@ -2320,12 +2305,12 @@
               },
               {
                 "path" : "\/documentation\/crypto\/sha384\/blockbytecount",
-                "title" : "static var blockByteCount: Int",
+                "title" : "static let blockByteCount: Int",
                 "type" : "property"
               },
               {
                 "path" : "\/documentation\/crypto\/sha384\/bytecount",
-                "title" : "static var byteCount: Int",
+                "title" : "static let byteCount: Int",
                 "type" : "property"
               },
               {
@@ -2507,6 +2492,11 @@
                     "type" : "method"
                   },
                   {
+                    "path" : "\/documentation\/crypto\/sha384digest\/count(where:)",
+                    "title" : "func count<E>(where: (Self.Element) throws(E) -> Bool) throws(E) -> Int",
+                    "type" : "method"
+                  },
+                  {
                     "path" : "\/documentation\/crypto\/sha384digest\/drop(while:)",
                     "title" : "func drop(while: (Self.Element) throws -> Bool) rethrows -> DropWhileSequence<Self>",
                     "type" : "method"
@@ -2588,7 +2578,7 @@
                   },
                   {
                     "path" : "\/documentation\/crypto\/sha384digest\/map(_:)",
-                    "title" : "func map<T>((Self.Element) throws -> T) rethrows -> [T]",
+                    "title" : "func map<T, E>((Self.Element) throws(E) -> T) throws(E) -> [T]",
                     "type" : "method"
                   },
                   {
@@ -2746,12 +2736,12 @@
               },
               {
                 "path" : "\/documentation\/crypto\/sha512\/blockbytecount",
-                "title" : "static var blockByteCount: Int",
+                "title" : "static let blockByteCount: Int",
                 "type" : "property"
               },
               {
                 "path" : "\/documentation\/crypto\/sha512\/bytecount",
-                "title" : "static var byteCount: Int",
+                "title" : "static let byteCount: Int",
                 "type" : "property"
               },
               {
@@ -2933,6 +2923,11 @@
                     "type" : "method"
                   },
                   {
+                    "path" : "\/documentation\/crypto\/sha512digest\/count(where:)",
+                    "title" : "func count<E>(where: (Self.Element) throws(E) -> Bool) throws(E) -> Int",
+                    "type" : "method"
+                  },
+                  {
                     "path" : "\/documentation\/crypto\/sha512digest\/drop(while:)",
                     "title" : "func drop(while: (Self.Element) throws -> Bool) rethrows -> DropWhileSequence<Self>",
                     "type" : "method"
@@ -3014,7 +3009,7 @@
                   },
                   {
                     "path" : "\/documentation\/crypto\/sha512digest\/map(_:)",
-                    "title" : "func map<T>((Self.Element) throws -> T) rethrows -> [T]",
+                    "title" : "func map<T, E>((Self.Element) throws(E) -> T) throws(E) -> [T]",
                     "type" : "method"
                   },
                   {
@@ -3456,6 +3451,11 @@
                             "type" : "method"
                           },
                           {
+                            "path" : "\/documentation\/crypto\/aes\/gcm\/nonce\/count(where:)",
+                            "title" : "func count<E>(where: (Self.Element) throws(E) -> Bool) throws(E) -> Int",
+                            "type" : "method"
+                          },
+                          {
                             "path" : "\/documentation\/crypto\/aes\/gcm\/nonce\/drop(while:)",
                             "title" : "func drop(while: (Self.Element) throws -> Bool) rethrows -> DropWhileSequence<Self>",
                             "type" : "method"
@@ -3532,7 +3532,7 @@
                           },
                           {
                             "path" : "\/documentation\/crypto\/aes\/gcm\/nonce\/map(_:)",
-                            "title" : "func map<T>((Self.Element) throws -> T) rethrows -> [T]",
+                            "title" : "func map<T, E>((Self.Element) throws(E) -> T) throws(E) -> [T]",
                             "type" : "method"
                           },
                           {
@@ -3855,6 +3855,11 @@
                         "type" : "method"
                       },
                       {
+                        "path" : "\/documentation\/crypto\/chachapoly\/nonce\/count(where:)",
+                        "title" : "func count<E>(where: (Self.Element) throws(E) -> Bool) throws(E) -> Int",
+                        "type" : "method"
+                      },
+                      {
                         "path" : "\/documentation\/crypto\/chachapoly\/nonce\/drop(while:)",
                         "title" : "func drop(while: (Self.Element) throws -> Bool) rethrows -> DropWhileSequence<Self>",
                         "type" : "method"
@@ -3931,7 +3936,7 @@
                       },
                       {
                         "path" : "\/documentation\/crypto\/chachapoly\/nonce\/map(_:)",
-                        "title" : "func map<T>((Self.Element) throws -> T) rethrows -> [T]",
+                        "title" : "func map<T, E>((Self.Element) throws(E) -> T) throws(E) -> [T]",
                         "type" : "method"
                       },
                       {
@@ -5227,12 +5232,12 @@
                   },
                   {
                     "path" : "\/documentation\/crypto\/insecure\/md5\/blockbytecount",
-                    "title" : "static var blockByteCount: Int",
+                    "title" : "static let blockByteCount: Int",
                     "type" : "property"
                   },
                   {
                     "path" : "\/documentation\/crypto\/insecure\/md5\/bytecount",
-                    "title" : "static var byteCount: Int",
+                    "title" : "static let byteCount: Int",
                     "type" : "property"
                   },
                   {
@@ -5414,6 +5419,11 @@
                         "type" : "method"
                       },
                       {
+                        "path" : "\/documentation\/crypto\/insecure\/md5digest\/count(where:)",
+                        "title" : "func count<E>(where: (Self.Element) throws(E) -> Bool) throws(E) -> Int",
+                        "type" : "method"
+                      },
+                      {
                         "path" : "\/documentation\/crypto\/insecure\/md5digest\/drop(while:)",
                         "title" : "func drop(while: (Self.Element) throws -> Bool) rethrows -> DropWhileSequence<Self>",
                         "type" : "method"
@@ -5495,7 +5505,7 @@
                       },
                       {
                         "path" : "\/documentation\/crypto\/insecure\/md5digest\/map(_:)",
-                        "title" : "func map<T>((Self.Element) throws -> T) rethrows -> [T]",
+                        "title" : "func map<T, E>((Self.Element) throws(E) -> T) throws(E) -> [T]",
                         "type" : "method"
                       },
                       {
@@ -5653,12 +5663,12 @@
                   },
                   {
                     "path" : "\/documentation\/crypto\/insecure\/sha1\/blockbytecount",
-                    "title" : "static var blockByteCount: Int",
+                    "title" : "static let blockByteCount: Int",
                     "type" : "property"
                   },
                   {
                     "path" : "\/documentation\/crypto\/insecure\/sha1\/bytecount",
-                    "title" : "static var byteCount: Int",
+                    "title" : "static let byteCount: Int",
                     "type" : "property"
                   },
                   {
@@ -5840,6 +5850,11 @@
                         "type" : "method"
                       },
                       {
+                        "path" : "\/documentation\/crypto\/insecure\/sha1digest\/count(where:)",
+                        "title" : "func count<E>(where: (Self.Element) throws(E) -> Bool) throws(E) -> Int",
+                        "type" : "method"
+                      },
+                      {
                         "path" : "\/documentation\/crypto\/insecure\/sha1digest\/drop(while:)",
                         "title" : "func drop(while: (Self.Element) throws -> Bool) rethrows -> DropWhileSequence<Self>",
                         "type" : "method"
@@ -5921,7 +5936,7 @@
                       },
                       {
                         "path" : "\/documentation\/crypto\/insecure\/sha1digest\/map(_:)",
-                        "title" : "func map<T>((Self.Element) throws -> T) rethrows -> [T]",
+                        "title" : "func map<T, E>((Self.Element) throws(E) -> T) throws(E) -> [T]",
                         "type" : "method"
                       },
                       {
@@ -7998,82 +8013,82 @@
               },
               {
                 "path" : "\/documentation\/logging\/logger\/critical(_:metadata:file:function:line:)",
-                "title" : "func critical(() -> Logger.Message, metadata: () -> Logger.Metadata?, file: String, function: String, line: UInt)",
+                "title" : "func critical(@autoclosure () -> Logger.Message, metadata: @autoclosure () -> Logger.Metadata?, file: String, function: String, line: UInt)",
                 "type" : "method"
               },
               {
                 "path" : "\/documentation\/logging\/logger\/critical(_:metadata:source:file:function:line:)",
-                "title" : "func critical(() -> Logger.Message, metadata: () -> Logger.Metadata?, source: () -> String?, file: String, function: String, line: UInt)",
+                "title" : "func critical(@autoclosure () -> Logger.Message, metadata: @autoclosure () -> Logger.Metadata?, source: @autoclosure () -> String?, file: String, function: String, line: UInt)",
                 "type" : "method"
               },
               {
                 "path" : "\/documentation\/logging\/logger\/debug(_:metadata:file:function:line:)",
-                "title" : "func debug(() -> Logger.Message, metadata: () -> Logger.Metadata?, file: String, function: String, line: UInt)",
+                "title" : "func debug(@autoclosure () -> Logger.Message, metadata: @autoclosure () -> Logger.Metadata?, file: String, function: String, line: UInt)",
                 "type" : "method"
               },
               {
                 "path" : "\/documentation\/logging\/logger\/debug(_:metadata:source:file:function:line:)",
-                "title" : "func debug(() -> Logger.Message, metadata: () -> Logger.Metadata?, source: () -> String?, file: String, function: String, line: UInt)",
+                "title" : "func debug(@autoclosure () -> Logger.Message, metadata: @autoclosure () -> Logger.Metadata?, source: @autoclosure () -> String?, file: String, function: String, line: UInt)",
                 "type" : "method"
               },
               {
                 "path" : "\/documentation\/logging\/logger\/error(_:metadata:file:function:line:)",
-                "title" : "func error(() -> Logger.Message, metadata: () -> Logger.Metadata?, file: String, function: String, line: UInt)",
+                "title" : "func error(@autoclosure () -> Logger.Message, metadata: @autoclosure () -> Logger.Metadata?, file: String, function: String, line: UInt)",
                 "type" : "method"
               },
               {
                 "path" : "\/documentation\/logging\/logger\/error(_:metadata:source:file:function:line:)",
-                "title" : "func error(() -> Logger.Message, metadata: () -> Logger.Metadata?, source: () -> String?, file: String, function: String, line: UInt)",
+                "title" : "func error(@autoclosure () -> Logger.Message, metadata: @autoclosure () -> Logger.Metadata?, source: @autoclosure () -> String?, file: String, function: String, line: UInt)",
                 "type" : "method"
               },
               {
                 "path" : "\/documentation\/logging\/logger\/info(_:metadata:file:function:line:)",
-                "title" : "func info(() -> Logger.Message, metadata: () -> Logger.Metadata?, file: String, function: String, line: UInt)",
+                "title" : "func info(@autoclosure () -> Logger.Message, metadata: @autoclosure () -> Logger.Metadata?, file: String, function: String, line: UInt)",
                 "type" : "method"
               },
               {
                 "path" : "\/documentation\/logging\/logger\/info(_:metadata:source:file:function:line:)",
-                "title" : "func info(() -> Logger.Message, metadata: () -> Logger.Metadata?, source: () -> String?, file: String, function: String, line: UInt)",
+                "title" : "func info(@autoclosure () -> Logger.Message, metadata: @autoclosure () -> Logger.Metadata?, source: @autoclosure () -> String?, file: String, function: String, line: UInt)",
                 "type" : "method"
               },
               {
                 "path" : "\/documentation\/logging\/logger\/log(level:_:metadata:file:function:line:)",
-                "title" : "func log(level: Logger.Level, () -> Logger.Message, metadata: () -> Logger.Metadata?, file: String, function: String, line: UInt)",
+                "title" : "func log(level: Logger.Level, @autoclosure () -> Logger.Message, metadata: @autoclosure () -> Logger.Metadata?, file: String, function: String, line: UInt)",
                 "type" : "method"
               },
               {
                 "path" : "\/documentation\/logging\/logger\/log(level:_:metadata:source:file:function:line:)",
-                "title" : "func log(level: Logger.Level, () -> Logger.Message, metadata: () -> Logger.Metadata?, source: () -> String?, file: String, function: String, line: UInt)",
+                "title" : "func log(level: Logger.Level, @autoclosure () -> Logger.Message, metadata: @autoclosure () -> Logger.Metadata?, source: @autoclosure () -> String?, file: String, function: String, line: UInt)",
                 "type" : "method"
               },
               {
                 "path" : "\/documentation\/logging\/logger\/notice(_:metadata:file:function:line:)",
-                "title" : "func notice(() -> Logger.Message, metadata: () -> Logger.Metadata?, file: String, function: String, line: UInt)",
+                "title" : "func notice(@autoclosure () -> Logger.Message, metadata: @autoclosure () -> Logger.Metadata?, file: String, function: String, line: UInt)",
                 "type" : "method"
               },
               {
                 "path" : "\/documentation\/logging\/logger\/notice(_:metadata:source:file:function:line:)",
-                "title" : "func notice(() -> Logger.Message, metadata: () -> Logger.Metadata?, source: () -> String?, file: String, function: String, line: UInt)",
+                "title" : "func notice(@autoclosure () -> Logger.Message, metadata: @autoclosure () -> Logger.Metadata?, source: @autoclosure () -> String?, file: String, function: String, line: UInt)",
                 "type" : "method"
               },
               {
                 "path" : "\/documentation\/logging\/logger\/trace(_:metadata:file:function:line:)",
-                "title" : "func trace(() -> Logger.Message, metadata: () -> Logger.Metadata?, file: String, function: String, line: UInt)",
+                "title" : "func trace(@autoclosure () -> Logger.Message, metadata: @autoclosure () -> Logger.Metadata?, file: String, function: String, line: UInt)",
                 "type" : "method"
               },
               {
                 "path" : "\/documentation\/logging\/logger\/trace(_:metadata:source:file:function:line:)",
-                "title" : "func trace(() -> Logger.Message, metadata: () -> Logger.Metadata?, source: () -> String?, file: String, function: String, line: UInt)",
+                "title" : "func trace(@autoclosure () -> Logger.Message, metadata: @autoclosure () -> Logger.Metadata?, source: @autoclosure () -> String?, file: String, function: String, line: UInt)",
                 "type" : "method"
               },
               {
                 "path" : "\/documentation\/logging\/logger\/warning(_:metadata:file:function:line:)",
-                "title" : "func warning(() -> Logger.Message, metadata: () -> Logger.Metadata?, file: String, function: String, line: UInt)",
+                "title" : "func warning(@autoclosure () -> Logger.Message, metadata: @autoclosure () -> Logger.Metadata?, file: String, function: String, line: UInt)",
                 "type" : "method"
               },
               {
                 "path" : "\/documentation\/logging\/logger\/warning(_:metadata:source:file:function:line:)",
-                "title" : "func warning(() -> Logger.Message, metadata: () -> Logger.Metadata?, source: () -> String?, file: String, function: String, line: UInt)",
+                "title" : "func warning(@autoclosure () -> Logger.Message, metadata: @autoclosure () -> Logger.Metadata?, source: @autoclosure () -> String?, file: String, function: String, line: UInt)",
                 "type" : "method"
               },
               {
@@ -9922,7 +9937,17 @@
                   {
                     "children" : [
                       {
+                        "path" : "\/documentation\/parseswift\/deletable\/delete(options:)-6rpv",
+                        "title" : "func delete(options: API.Options) async throws",
+                        "type" : "method"
+                      },
+                      {
                         "path" : "\/documentation\/parseswift\/deletable\/delete(options:)-u8rk",
+                        "title" : "func delete(options: API.Options) async throws",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/parseswift\/deletable\/delete(options:)-3vgtv",
                         "title" : "func delete(options: API.Options) async throws",
                         "type" : "method"
                       }
@@ -9978,6 +10003,16 @@
                   {
                     "children" : [
                       {
+                        "path" : "\/documentation\/parseswift\/fetchable\/fetch(includekeys:options:)-33xzq",
+                        "title" : "func fetch(includeKeys: [String]?, options: API.Options) async throws -> Self",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/parseswift\/fetchable\/fetch(includekeys:options:)-12t7t",
+                        "title" : "func fetch(includeKeys: [String]?, options: API.Options) async throws -> Self",
+                        "type" : "method"
+                      },
+                      {
                         "path" : "\/documentation\/parseswift\/fetchable\/fetch(includekeys:options:)-9iop9",
                         "title" : "func fetch(includeKeys: [String]?, options: API.Options) async throws -> Self",
                         "type" : "method"
@@ -10017,7 +10052,27 @@
                   {
                     "children" : [
                       {
+                        "path" : "\/documentation\/parseswift\/objectable\/endpoint-11glf",
+                        "title" : "var endpoint: API.Endpoint",
+                        "type" : "property"
+                      },
+                      {
+                        "path" : "\/documentation\/parseswift\/objectable\/endpoint-9s7vq",
+                        "title" : "var endpoint: API.Endpoint",
+                        "type" : "property"
+                      },
+                      {
                         "path" : "\/documentation\/parseswift\/objectable\/endpoint-6b5zy",
+                        "title" : "var endpoint: API.Endpoint",
+                        "type" : "property"
+                      },
+                      {
+                        "path" : "\/documentation\/parseswift\/objectable\/endpoint-3vf5d",
+                        "title" : "var endpoint: API.Endpoint",
+                        "type" : "property"
+                      },
+                      {
+                        "path" : "\/documentation\/parseswift\/objectable\/endpoint-8slln",
                         "title" : "var endpoint: API.Endpoint",
                         "type" : "property"
                       }
@@ -10067,14 +10122,14 @@
                   {
                     "children" : [
                       {
-                        "path" : "\/documentation\/parseswift\/objectable\/issaved()-9c65v",
-                        "title" : "func isSaved() async throws -> Bool",
-                        "type" : "method"
-                      },
-                      {
                         "path" : "\/documentation\/parseswift\/objectable\/issaved",
                         "title" : "var isSaved: Bool",
                         "type" : "property"
+                      },
+                      {
+                        "path" : "\/documentation\/parseswift\/objectable\/issaved()-9c65v",
+                        "title" : "func isSaved() async throws -> Bool",
+                        "type" : "method"
                       }
                     ],
                     "title" : "Objectable Implementations",
@@ -10099,7 +10154,32 @@
                         "type" : "property"
                       },
                       {
+                        "path" : "\/documentation\/parseswift\/objectable\/classname-64fhv",
+                        "title" : "static var className: String",
+                        "type" : "property"
+                      },
+                      {
+                        "path" : "\/documentation\/parseswift\/objectable\/classname-4npbu",
+                        "title" : "static var className: String",
+                        "type" : "property"
+                      },
+                      {
+                        "path" : "\/documentation\/parseswift\/objectable\/classname-5hhno",
+                        "title" : "static var className: String",
+                        "type" : "property"
+                      },
+                      {
+                        "path" : "\/documentation\/parseswift\/objectable\/classname-6pzxq",
+                        "title" : "static var className: String",
+                        "type" : "property"
+                      },
+                      {
                         "path" : "\/documentation\/parseswift\/objectable\/classname-499yb",
+                        "title" : "static var className: String",
+                        "type" : "property"
+                      },
+                      {
+                        "path" : "\/documentation\/parseswift\/objectable\/classname-8okkp",
                         "title" : "static var className: String",
                         "type" : "property"
                       }
@@ -11041,11 +11121,6 @@
                 "type" : "property"
               },
               {
-                "path" : "\/documentation\/parseswift\/parseinstallation\/endpoint",
-                "title" : "var endpoint: API.Endpoint",
-                "type" : "property"
-              },
-              {
                 "path" : "\/documentation\/parseswift\/parseinstallation\/installationid",
                 "title" : "var installationId: String?",
                 "type" : "property"
@@ -11085,11 +11160,6 @@
                 "type" : "method"
               },
               {
-                "path" : "\/documentation\/parseswift\/parseinstallation\/delete(options:)",
-                "title" : "func delete(options: API.Options) async throws",
-                "type" : "method"
-              },
-              {
                 "path" : "\/documentation\/parseswift\/parseinstallation\/delete(options:callbackqueue:completion:)",
                 "title" : "func delete(options: API.Options, callbackQueue: DispatchQueue, completion: (Result<Void, ParseError>) -> Void)",
                 "type" : "method"
@@ -11097,11 +11167,6 @@
               {
                 "path" : "\/documentation\/parseswift\/parseinstallation\/deletepublisher(options:)",
                 "title" : "func deletePublisher(options: API.Options) -> Future<Void, ParseError>",
-                "type" : "method"
-              },
-              {
-                "path" : "\/documentation\/parseswift\/parseinstallation\/fetch(includekeys:options:)",
-                "title" : "func fetch(includeKeys: [String]?, options: API.Options) async throws -> Self",
                 "type" : "method"
               },
               {
@@ -11187,26 +11252,6 @@
                 "path" : "\/documentation\/parseswift\/parseinstallation\/deleteobjckeychainpublisher(options:)",
                 "title" : "static func deleteObjCKeychainPublisher(options: API.Options) -> Future<Void, ParseError>",
                 "type" : "method"
-              },
-              {
-                "title" : "Default Implementations",
-                "type" : "groupMarker"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Type Properties",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/parseswift\/parseinstallation\/classname",
-                    "title" : "static var className: String",
-                    "type" : "property"
-                  }
-                ],
-                "path" : "\/documentation\/parseswift\/parseinstallation\/objectable-implementations",
-                "title" : "Objectable Implementations",
-                "type" : "symbol"
               }
             ],
             "path" : "\/documentation\/parseswift\/parseinstallation",
@@ -11265,13 +11310,13 @@
                   {
                     "children" : [
                       {
-                        "path" : "\/documentation\/parseswift\/parselivequerydelegate\/received(_:)-798hl",
-                        "title" : "func received(URLSessionTaskTransactionMetrics)",
+                        "path" : "\/documentation\/parseswift\/parselivequerydelegate\/received(_:)-1f3yl",
+                        "title" : "func received(Error)",
                         "type" : "method"
                       },
                       {
-                        "path" : "\/documentation\/parseswift\/parselivequerydelegate\/received(_:)-1f3yl",
-                        "title" : "func received(Error)",
+                        "path" : "\/documentation\/parseswift\/parselivequerydelegate\/received(_:)-798hl",
+                        "title" : "func received(URLSessionTaskTransactionMetrics)",
                         "type" : "method"
                       }
                     ],
@@ -11356,11 +11401,6 @@
               {
                 "title" : "Instance Properties",
                 "type" : "groupMarker"
-              },
-              {
-                "path" : "\/documentation\/parseswift\/parseobject\/id",
-                "title" : "var id: String",
-                "type" : "property"
               },
               {
                 "children" : [
@@ -11482,12 +11522,7 @@
                   {
                     "children" : [
                       {
-                        "path" : "\/documentation\/parseswift\/parseobject\/merge(with:)-3cli5",
-                        "title" : "func merge(with: Self) throws -> Self",
-                        "type" : "method"
-                      },
-                      {
-                        "path" : "\/documentation\/parseswift\/parseobject\/merge(with:)-35a9v",
+                        "path" : "\/documentation\/parseswift\/parseobject\/merge(with:)-4hjo0",
                         "title" : "func merge(with: Self) throws -> Self",
                         "type" : "method"
                       },
@@ -11497,7 +11532,12 @@
                         "type" : "method"
                       },
                       {
-                        "path" : "\/documentation\/parseswift\/parseobject\/merge(with:)-4hjo0",
+                        "path" : "\/documentation\/parseswift\/parseobject\/merge(with:)-35a9v",
+                        "title" : "func merge(with: Self) throws -> Self",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/parseswift\/parseobject\/merge(with:)-3cli5",
                         "title" : "func merge(with: Self) throws -> Self",
                         "type" : "method"
                       }
@@ -11515,11 +11555,6 @@
                   {
                     "children" : [
                       {
-                        "path" : "\/documentation\/parseswift\/parseobject\/mergeparse(with:)-13frx",
-                        "title" : "func mergeParse(with: Self) throws -> Self",
-                        "type" : "method"
-                      },
-                      {
                         "path" : "\/documentation\/parseswift\/parseobject\/mergeparse(with:)-49r7x",
                         "title" : "func mergeParse(with: Self) throws -> Self",
                         "type" : "method"
@@ -11531,6 +11566,11 @@
                       },
                       {
                         "path" : "\/documentation\/parseswift\/parseobject\/mergeparse(with:)-8plu3",
+                        "title" : "func mergeParse(with: Self) throws -> Self",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/parseswift\/parseobject\/mergeparse(with:)-13frx",
                         "title" : "func mergeParse(with: Self) throws -> Self",
                         "type" : "method"
                       }
@@ -12105,26 +12145,6 @@
                 "path" : "\/documentation\/parseswift\/parsepushstatusable\/title",
                 "title" : "var title: String?",
                 "type" : "property"
-              },
-              {
-                "title" : "Default Implementations",
-                "type" : "groupMarker"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Type Properties",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/parseswift\/parsepushstatusable\/classname",
-                    "title" : "static var className: String",
-                    "type" : "property"
-                  }
-                ],
-                "path" : "\/documentation\/parseswift\/parsepushstatusable\/objectable-implementations",
-                "title" : "Objectable Implementations",
-                "type" : "symbol"
               }
             ],
             "path" : "\/documentation\/parseswift\/parsepushstatusable",
@@ -12233,11 +12253,6 @@
                 "type" : "groupMarker"
               },
               {
-                "path" : "\/documentation\/parseswift\/parserole\/endpoint",
-                "title" : "var endpoint: API.Endpoint",
-                "type" : "property"
-              },
-              {
                 "path" : "\/documentation\/parseswift\/parserole\/name",
                 "title" : "var name: String?",
                 "type" : "property"
@@ -12291,26 +12306,6 @@
                 "path" : "\/documentation\/parseswift\/parserole\/queryusers()",
                 "title" : "func queryUsers() throws -> Query<RoleUser>",
                 "type" : "method"
-              },
-              {
-                "title" : "Default Implementations",
-                "type" : "groupMarker"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Type Properties",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/parseswift\/parserole\/classname",
-                    "title" : "static var className: String",
-                    "type" : "property"
-                  }
-                ],
-                "path" : "\/documentation\/parseswift\/parserole\/objectable-implementations",
-                "title" : "Objectable Implementations",
-                "type" : "symbol"
               }
             ],
             "path" : "\/documentation\/parseswift\/parserole",
@@ -12338,11 +12333,6 @@
                 "type" : "property"
               },
               {
-                "path" : "\/documentation\/parseswift\/parsesession\/endpoint",
-                "title" : "var endpoint: API.Endpoint",
-                "type" : "property"
-              },
-              {
                 "path" : "\/documentation\/parseswift\/parsesession\/expiresat",
                 "title" : "var expiresAt: Date",
                 "type" : "property"
@@ -12366,26 +12356,6 @@
                 "path" : "\/documentation\/parseswift\/parsesession\/user",
                 "title" : "var user: SessionUser",
                 "type" : "property"
-              },
-              {
-                "title" : "Default Implementations",
-                "type" : "groupMarker"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Type Properties",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/parseswift\/parsesession\/classname",
-                    "title" : "static var className: String",
-                    "type" : "property"
-                  }
-                ],
-                "path" : "\/documentation\/parseswift\/parsesession\/objectable-implementations",
-                "title" : "Objectable Implementations",
-                "type" : "symbol"
               }
             ],
             "path" : "\/documentation\/parseswift\/parsesession",
@@ -12464,11 +12434,6 @@
               {
                 "path" : "\/documentation\/parseswift\/parseuser\/emailverified",
                 "title" : "var emailVerified: Bool?",
-                "type" : "property"
-              },
-              {
-                "path" : "\/documentation\/parseswift\/parseuser\/endpoint",
-                "title" : "var endpoint: API.Endpoint",
                 "type" : "property"
               },
               {
@@ -12556,11 +12521,6 @@
                 "type" : "method"
               },
               {
-                "path" : "\/documentation\/parseswift\/parseuser\/delete(options:)",
-                "title" : "func delete(options: API.Options) async throws",
-                "type" : "method"
-              },
-              {
                 "path" : "\/documentation\/parseswift\/parseuser\/delete(options:callbackqueue:completion:)",
                 "title" : "func delete(options: API.Options, callbackQueue: DispatchQueue, completion: (Result<Void, ParseError>) -> Void)",
                 "type" : "method"
@@ -12568,11 +12528,6 @@
               {
                 "path" : "\/documentation\/parseswift\/parseuser\/deletepublisher(options:)",
                 "title" : "func deletePublisher(options: API.Options) -> Future<Void, ParseError>",
-                "type" : "method"
-              },
-              {
-                "path" : "\/documentation\/parseswift\/parseuser\/fetch(includekeys:options:)",
-                "title" : "func fetch(includeKeys: [String]?, options: API.Options) async throws -> Self",
                 "type" : "method"
               },
               {
@@ -12892,26 +12847,6 @@
                 "path" : "\/documentation\/parseswift\/parseuser\/verifypasswordpublisher(password:usingpost:options:)",
                 "title" : "static func verifyPasswordPublisher(password: String, usingPost: Bool, options: API.Options) -> Future<Self, ParseError>",
                 "type" : "method"
-              },
-              {
-                "title" : "Default Implementations",
-                "type" : "groupMarker"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Type Properties",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/parseswift\/parseuser\/classname",
-                    "title" : "static var className: String",
-                    "type" : "property"
-                  }
-                ],
-                "path" : "\/documentation\/parseswift\/parseuser\/objectable-implementations",
-                "title" : "Objectable Implementations",
-                "type" : "symbol"
               }
             ],
             "path" : "\/documentation\/parseswift\/parseuser",
@@ -13521,6 +13456,11 @@
                   {
                     "path" : "\/documentation\/parseswift\/api\/option\/tags(_:)",
                     "title" : "case tags([String : String])",
+                    "type" : "case"
+                  },
+                  {
+                    "path" : "\/documentation\/parseswift\/api\/option\/usemaintenancekey",
+                    "title" : "case useMaintenanceKey",
                     "type" : "case"
                   },
                   {
@@ -15071,8 +15011,8 @@
                 "type" : "groupMarker"
               },
               {
-                "path" : "\/documentation\/parseswift\/parseconfiguration\/init(applicationid:clientkey:primarykey:webhookkey:serverurl:livequeryserverurl:requiringcustomobjectids:usingtransactions:usingequalqueryconstraint:usingpostforquery:primitivestore:requestcachepolicy:cachememorycapacity:cachediskcapacity:u-4vywn",
-                "title" : "init(applicationId: String, clientKey: String?, primaryKey: String?, webhookKey: String?, serverURL: URL, liveQueryServerURL: URL?, requiringCustomObjectIds: Bool, usingTransactions: Bool, usingEqualQueryConstraint: Bool, usingPostForQuery: Bool, primitiveStore: ParsePrimitiveStorable?, requestCachePolicy: URLRequest.CachePolicy, cacheMemoryCapacity: Int, cacheDiskCapacity: Int, usingDataProtectionKeychain: Bool, deletingKeychainIfNeeded: Bool, httpAdditionalHeaders: [AnyHashable : Any]?, usingAutomaticLogin: Bool, maxConnectionAttempts: Int, liveQueryConnectionAdditionalProperties: Bool, liveQueryMaxConnectionAttempts: Int, parseFileTransfer: ParseFileTransferable?, authentication: ((URLAuthenticationChallenge, (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) -> Void)?)",
+                "path" : "\/documentation\/parseswift\/parseconfiguration\/init(applicationid:clientkey:primarykey:maintenancekey:webhookkey:serverurl:livequeryserverurl:requiringcustomobjectids:usingtransactions:usingequalqueryconstraint:usingpostforquery:primitivestore:requestcachepolicy:cachememorycapacity:cach-f3sf",
+                "title" : "init(applicationId: String, clientKey: String?, primaryKey: String?, maintenanceKey: String?, webhookKey: String?, serverURL: URL, liveQueryServerURL: URL?, requiringCustomObjectIds: Bool, usingTransactions: Bool, usingEqualQueryConstraint: Bool, usingPostForQuery: Bool, primitiveStore: ParsePrimitiveStorable?, requestCachePolicy: URLRequest.CachePolicy, cacheMemoryCapacity: Int, cacheDiskCapacity: Int, usingDataProtectionKeychain: Bool, deletingKeychainIfNeeded: Bool, httpAdditionalHeaders: [AnyHashable : Any]?, usingAutomaticLogin: Bool, maxConnectionAttempts: Int, liveQueryConnectionAdditionalProperties: Bool, liveQueryMaxConnectionAttempts: Int, parseFileTransfer: ParseFileTransferable?, authentication: ((URLAuthenticationChallenge, (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) -> Void)?)",
                 "type" : "init"
               },
               {
@@ -15157,6 +15097,11 @@
               {
                 "path" : "\/documentation\/parseswift\/parseconfiguration\/livequerysserverurl",
                 "title" : "var liveQuerysServerURL: URL?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/parseswift\/parseconfiguration\/maintenancekey",
+                "title" : "var maintenanceKey: String?",
                 "type" : "property"
               },
               {
@@ -23641,13 +23586,23 @@
             "type" : "func"
           },
           {
-            "path" : "\/documentation\/parseswift\/equalto(key:object:usingeqcomparator:)",
-            "title" : "func equalTo<T>(key: String, object: T, usingEqComparator: Bool) throws -> QueryConstraint",
+            "path" : "\/documentation\/parseswift\/equalto(key:object:)",
+            "title" : "func equalTo<T>(key: String, object: T) throws -> QueryConstraint",
             "type" : "func"
           },
           {
-            "path" : "\/documentation\/parseswift\/equalto(key:value:usingeqcomparator:)",
-            "title" : "func equalTo<T>(key: String, value: T, usingEqComparator: Bool) -> QueryConstraint",
+            "path" : "\/documentation\/parseswift\/equalto(key:value:)",
+            "title" : "func equalTo<T>(key: String, value: T) -> QueryConstraint",
+            "type" : "func"
+          },
+          {
+            "path" : "\/documentation\/parseswift\/equaltonocomparator(key:object:)",
+            "title" : "func equalToNoComparator<T>(key: String, object: T) throws -> QueryConstraint",
+            "type" : "func"
+          },
+          {
+            "path" : "\/documentation\/parseswift\/equaltonocomparator(key:value:)",
+            "title" : "func equalToNoComparator<T>(key: String, value: T) -> QueryConstraint",
             "type" : "func"
           },
           {
@@ -23676,8 +23631,8 @@
             "type" : "func"
           },
           {
-            "path" : "\/documentation\/parseswift\/initialize(applicationid:clientkey:primarykey:serverurl:livequeryserverurl:requiringcustomobjectids:usingtransactions:usingequalqueryconstraint:usingpostforquery:primitivestore:requestcachepolicy:cachememorycapacity:cachediskcapacity:usingd-8yiow",
-            "title" : "func initialize(applicationId: String, clientKey: String?, primaryKey: String?, serverURL: URL, liveQueryServerURL: URL?, requiringCustomObjectIds: Bool, usingTransactions: Bool, usingEqualQueryConstraint: Bool, usingPostForQuery: Bool, primitiveStore: ParsePrimitiveStorable?, requestCachePolicy: URLRequest.CachePolicy, cacheMemoryCapacity: Int, cacheDiskCapacity: Int, usingDataProtectionKeychain: Bool, deletingKeychainIfNeeded: Bool, httpAdditionalHeaders: [AnyHashable : Any]?, usingAutomaticLogin: Bool, maxConnectionAttempts: Int, liveQueryConnectionAdditionalProperties: Bool, liveQueryMaxConnectionAttempts: Int, parseFileTransfer: ParseFileTransferable?, authentication: ((URLAuthenticationChallenge, (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) -> Void)?) async throws",
+            "path" : "\/documentation\/parseswift\/initialize(applicationid:clientkey:primarykey:maintenancekey:serverurl:livequeryserverurl:requiringcustomobjectids:usingtransactions:usingequalqueryconstraint:usingpostforquery:primitivestore:requestcachepolicy:cachememorycapacity:cachedisk-fuew",
+            "title" : "func initialize(applicationId: String, clientKey: String?, primaryKey: String?, maintenanceKey: String?, serverURL: URL, liveQueryServerURL: URL?, requiringCustomObjectIds: Bool, usingTransactions: Bool, usingEqualQueryConstraint: Bool, usingPostForQuery: Bool, primitiveStore: ParsePrimitiveStorable?, requestCachePolicy: URLRequest.CachePolicy, cacheMemoryCapacity: Int, cacheDiskCapacity: Int, usingDataProtectionKeychain: Bool, deletingKeychainIfNeeded: Bool, httpAdditionalHeaders: [AnyHashable : Any]?, usingAutomaticLogin: Bool, maxConnectionAttempts: Int, liveQueryConnectionAdditionalProperties: Bool, liveQueryMaxConnectionAttempts: Int, parseFileTransfer: ParseFileTransferable?, authentication: ((URLAuthenticationChallenge, (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) -> Void)?) async throws",
             "type" : "func"
           },
           {
@@ -24509,7 +24464,20 @@
                 "type" : "method"
               },
               {
-                "path" : "\/documentation\/realmodule\/elementaryfunctions\/sqrt(_:)",
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "path" : "\/documentation\/realmodule\/elementaryfunctions\/sqrt(_:)-579s1",
+                        "title" : "static func sqrt(Self) -> Self",
+                        "type" : "method"
+                      }
+                    ],
+                    "title" : "ElementaryFunctions Implementations",
+                    "type" : "groupMarker"
+                  }
+                ],
+                "path" : "\/documentation\/realmodule\/elementaryfunctions\/sqrt(_:)-2phn9",
                 "title" : "static func sqrt(Self) -> Self",
                 "type" : "method"
               },
@@ -24538,26 +24506,6 @@
                 "path" : "\/documentation\/realmodule\/real\/cosminusone(_:)",
                 "title" : "static func cosMinusOne(Self) -> Self",
                 "type" : "method"
-              },
-              {
-                "title" : "Default Implementations",
-                "type" : "groupMarker"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Type Methods",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/realmodule\/real\/sqrt(_:)",
-                    "title" : "static func sqrt(Self) -> Self",
-                    "type" : "method"
-                  }
-                ],
-                "path" : "\/documentation\/realmodule\/real\/elementaryfunctions-implementations",
-                "title" : "ElementaryFunctions Implementations",
-                "type" : "symbol"
               }
             ],
             "path" : "\/documentation\/realmodule\/real",
@@ -24698,6 +24646,228 @@
       },
       {
         "children" : [
+          {
+            "title" : "Protocols",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Associated Types",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/servicecontextmodule\/servicecontextkey\/value",
+                "title" : "Value",
+                "type" : "associatedtype"
+              },
+              {
+                "title" : "Type Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "path" : "\/documentation\/servicecontextmodule\/servicecontextkey\/nameoverride-5psa2",
+                        "title" : "static var nameOverride: String?",
+                        "type" : "property"
+                      }
+                    ],
+                    "title" : "ServiceContextKey Implementations",
+                    "type" : "groupMarker"
+                  }
+                ],
+                "path" : "\/documentation\/servicecontextmodule\/servicecontextkey\/nameoverride-6shk1",
+                "title" : "static var nameOverride: String?",
+                "type" : "property"
+              }
+            ],
+            "path" : "\/documentation\/servicecontextmodule\/servicecontextkey",
+            "title" : "ServiceContextKey",
+            "type" : "protocol"
+          },
+          {
+            "title" : "Structures",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/servicecontextmodule\/anyservicecontextkey\/keytype",
+                "title" : "let keyType: Any.Type",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/servicecontextmodule\/anyservicecontextkey\/name",
+                "title" : "var name: String",
+                "type" : "property"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/servicecontextmodule\/anyservicecontextkey\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  },
+                  {
+                    "path" : "\/documentation\/servicecontextmodule\/anyservicecontextkey\/==(_:_:)",
+                    "title" : "static func == (AnyServiceContextKey, AnyServiceContextKey) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/servicecontextmodule\/anyservicecontextkey\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/servicecontextmodule\/anyservicecontextkey\/hash(into:)",
+                    "title" : "func hash(into: inout Hasher)",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/servicecontextmodule\/anyservicecontextkey\/hashable-implementations",
+                "title" : "Hashable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/servicecontextmodule\/anyservicecontextkey",
+            "title" : "AnyServiceContextKey",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/servicecontextmodule\/servicecontext\/count",
+                "title" : "var count: Int",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/servicecontextmodule\/servicecontext\/isempty",
+                "title" : "var isEmpty: Bool",
+                "type" : "property"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/servicecontextmodule\/servicecontext\/foreach(_:)",
+                "title" : "func forEach((AnyServiceContextKey, Any) throws -> Void) rethrows",
+                "type" : "method"
+              },
+              {
+                "title" : "Subscripts",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/servicecontextmodule\/servicecontext\/subscript(_:)",
+                "title" : "subscript<Key>(Key.Type) -> Key.Value?",
+                "type" : "subscript"
+              },
+              {
+                "title" : "Type Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/servicecontextmodule\/servicecontext\/current",
+                "title" : "static var current: ServiceContext?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/servicecontextmodule\/servicecontext\/toplevel",
+                "title" : "static var topLevel: ServiceContext",
+                "type" : "property"
+              },
+              {
+                "title" : "Type Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/servicecontextmodule\/servicecontext\/todo(_:function:file:line:)",
+                "title" : "static func TODO(StaticString?, function: String, file: String, line: UInt) -> ServiceContext",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/servicecontextmodule\/servicecontext\/withvalue(_:isolation:operation:)",
+                "title" : "static func withValue<T>(ServiceContext?, isolation: isolated (any Actor)?, operation: () async throws -> T) async rethrows -> T",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/servicecontextmodule\/servicecontext\/withvalue(_:operation:)-3tddk",
+                "title" : "static func withValue<T>(ServiceContext?, operation: () async throws -> T) async rethrows -> T",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/servicecontextmodule\/servicecontext\/withvalue(_:operation:)-4f7xo",
+                "title" : "static func withValue<T>(ServiceContext?, operation: () throws -> T) rethrows -> T",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/servicecontextmodule\/servicecontext",
+            "title" : "ServiceContext",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/servicecontextmodule\/todolocation\/file",
+                "title" : "let file: String",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/servicecontextmodule\/todolocation\/line",
+                "title" : "let line: UInt",
+                "type" : "property"
+              }
+            ],
+            "path" : "\/documentation\/servicecontextmodule\/todolocation",
+            "title" : "TODOLocation",
+            "type" : "struct"
+          }
+        ],
+        "path" : "\/documentation\/servicecontextmodule",
+        "title" : "ServiceContextModule",
+        "type" : "module"
+      },
+      {
+        "children" : [
+          {
+            "title" : "Protocols",
+            "type" : "groupMarker"
+          },
+          {
+            "path" : "\/documentation\/systempackage\/machportright",
+            "title" : "MachPortRight",
+            "type" : "protocol"
+          },
           {
             "title" : "Structures",
             "type" : "groupMarker"
@@ -26088,7 +26258,7 @@
               },
               {
                 "path" : "\/documentation\/systempackage\/filedescriptor\/open(_:_:options:permissions:retryoninterrupt:)-8iaux",
-                "title" : "static func open(UnsafePointer<CInterop.PlatformChar>, FileDescriptor.AccessMode, options: FileDescriptor.OpenOptions, permissions: FilePermissions?, retryOnInterrupt: Bool) throws -> FileDescriptor",
+                "title" : "static func open(UnsafePointer<CChar>, FileDescriptor.AccessMode, options: FileDescriptor.OpenOptions, permissions: FilePermissions?, retryOnInterrupt: Bool) throws -> FileDescriptor",
                 "type" : "method"
               },
               {
@@ -26679,13 +26849,23 @@
                         "type" : "method"
                       },
                       {
+                        "path" : "\/documentation\/systempackage\/filepath\/componentview\/indices(of:)",
+                        "title" : "func indices(of: Self.Element) -> RangeSet<Self.Index>",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/systempackage\/filepath\/componentview\/indices(where:)",
+                        "title" : "func indices(where: (Self.Element) throws -> Bool) rethrows -> RangeSet<Self.Index>",
+                        "type" : "method"
+                      },
+                      {
                         "path" : "\/documentation\/systempackage\/filepath\/componentview\/makeiterator()",
                         "title" : "func makeIterator() -> IndexingIterator<Self>",
                         "type" : "method"
                       },
                       {
-                        "path" : "\/documentation\/systempackage\/filepath\/componentview\/map(_:)-rbe",
-                        "title" : "func map<T>((Self.Element) throws -> T) rethrows -> [T]",
+                        "path" : "\/documentation\/systempackage\/filepath\/componentview\/map(_:)-16k9f",
+                        "title" : "func map<T, E>((Self.Element) throws(E) -> T) throws(E) -> [T]",
                         "type" : "method"
                       },
                       {
@@ -26721,6 +26901,11 @@
                       {
                         "path" : "\/documentation\/systempackage\/filepath\/componentview\/ranges(of:)",
                         "title" : "func ranges<C>(of: C) -> [Range<Self.Index>]",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/systempackage\/filepath\/componentview\/removingsubranges(_:)",
+                        "title" : "func removingSubranges(RangeSet<Self.Index>) -> DiscontiguousSlice<Self>",
                         "type" : "method"
                       },
                       {
@@ -26924,6 +27109,11 @@
                         "type" : "method"
                       },
                       {
+                        "path" : "\/documentation\/systempackage\/filepath\/componentview\/removesubranges(_:)",
+                        "title" : "func removeSubranges(RangeSet<Self.Index>)",
+                        "type" : "method"
+                      },
+                      {
                         "path" : "\/documentation\/systempackage\/filepath\/componentview\/replace(_:with:maxreplacements:)",
                         "title" : "func replace<C, Replacement>(C, with: Replacement, maxReplacements: Int)",
                         "type" : "method"
@@ -27009,6 +27199,11 @@
                         "type" : "method"
                       },
                       {
+                        "path" : "\/documentation\/systempackage\/filepath\/componentview\/count(where:)",
+                        "title" : "func count<E>(where: (Self.Element) throws(E) -> Bool) throws(E) -> Int",
+                        "type" : "method"
+                      },
+                      {
                         "path" : "\/documentation\/systempackage\/filepath\/componentview\/elementsequal(_:)",
                         "title" : "func elementsEqual<OtherSequence>(OtherSequence) -> Bool",
                         "type" : "method"
@@ -27049,8 +27244,8 @@
                         "type" : "method"
                       },
                       {
-                        "path" : "\/documentation\/systempackage\/filepath\/componentview\/map(_:)-18ndm",
-                        "title" : "func map<T>((Self.Element) throws -> T) rethrows -> [T]",
+                        "path" : "\/documentation\/systempackage\/filepath\/componentview\/map(_:)-5gt6x",
+                        "title" : "func map<T, E>((Self.Element) throws(E) -> T) throws(E) -> [T]",
                         "type" : "method"
                       },
                       {
@@ -27658,7 +27853,7 @@
               },
               {
                 "path" : "\/documentation\/systempackage\/filepermissions\/init(rawvalue:)",
-                "title" : "init(rawValue: CInterop.Mode)",
+                "title" : "init(rawValue: CModeT)",
                 "type" : "init"
               },
               {
@@ -27667,7 +27862,7 @@
               },
               {
                 "path" : "\/documentation\/systempackage\/filepermissions\/rawvalue",
-                "title" : "let rawValue: CInterop.Mode",
+                "title" : "let rawValue: CModeT",
                 "type" : "property"
               },
               {
@@ -28072,6 +28267,156 @@
             "path" : "\/documentation\/systempackage\/cinterop",
             "title" : "CInterop",
             "type" : "enum"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Structures",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Initializers",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/systempackage\/mach\/port\/init()",
+                    "title" : "init()",
+                    "type" : "init"
+                  },
+                  {
+                    "path" : "\/documentation\/systempackage\/mach\/port\/init(name:)",
+                    "title" : "init(name: mach_port_name_t)",
+                    "type" : "init"
+                  },
+                  {
+                    "path" : "\/documentation\/systempackage\/mach\/port\/init(name:context:)",
+                    "title" : "init(name: mach_port_name_t, context: mach_port_context_t)",
+                    "type" : "init"
+                  },
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/systempackage\/mach\/port\/makesendcount",
+                    "title" : "var makeSendCount: mach_port_mscount_t",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/systempackage\/mach\/port\/copysendright()",
+                    "title" : "func copySendRight() throws -> Mach.Port<Mach.SendRight>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/systempackage\/mach\/port\/makesendonceright()",
+                    "title" : "func makeSendOnceRight() -> Mach.Port<Mach.SendOnceRight>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/systempackage\/mach\/port\/makesendright()",
+                    "title" : "func makeSendRight() -> Mach.Port<Mach.SendRight>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/systempackage\/mach\/port\/relinquish()-6sdin",
+                    "title" : "func relinquish() -> (name: mach_port_name_t, context: mach_port_context_t)",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/systempackage\/mach\/port\/relinquish()-71rkb",
+                    "title" : "func relinquish() -> mach_port_name_t",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/systempackage\/mach\/port\/relinquish()-lvv3",
+                    "title" : "func relinquish() -> mach_port_name_t",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/systempackage\/mach\/port\/unguardandrelinquish()",
+                    "title" : "func unguardAndRelinquish() -> mach_port_name_t",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/systempackage\/mach\/port\/withborrowedname(body:)-89ybe",
+                    "title" : "func withBorrowedName<ReturnType>(body: (mach_port_name_t) -> ReturnType) -> ReturnType",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/systempackage\/mach\/port\/withborrowedname(body:)-9vvg4",
+                    "title" : "func withBorrowedName<ReturnType>(body: (mach_port_name_t, mach_port_context_t) -> ReturnType) -> ReturnType",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/systempackage\/mach\/port",
+                "title" : "Mach.Port",
+                "type" : "struct"
+              },
+              {
+                "path" : "\/documentation\/systempackage\/mach\/receiveright",
+                "title" : "Mach.ReceiveRight",
+                "type" : "struct"
+              },
+              {
+                "path" : "\/documentation\/systempackage\/mach\/sendonceright",
+                "title" : "Mach.SendOnceRight",
+                "type" : "struct"
+              },
+              {
+                "path" : "\/documentation\/systempackage\/mach\/sendright",
+                "title" : "Mach.SendRight",
+                "type" : "struct"
+              },
+              {
+                "title" : "Enumerations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Enumeration Cases",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/systempackage\/mach\/portrighterror\/deadname",
+                    "title" : "case deadName",
+                    "type" : "case"
+                  },
+                  {
+                    "title" : "Default Implementations",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Operators",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/systempackage\/mach\/portrighterror\/!=(_:_:)",
+                        "title" : "static func != (Self, Self) -> Bool",
+                        "type" : "op"
+                      }
+                    ],
+                    "path" : "\/documentation\/systempackage\/mach\/portrighterror\/equatable-implementations",
+                    "title" : "Equatable Implementations",
+                    "type" : "symbol"
+                  }
+                ],
+                "path" : "\/documentation\/systempackage\/mach\/portrighterror",
+                "title" : "Mach.PortRightError",
+                "type" : "enum"
+              }
+            ],
+            "path" : "\/documentation\/systempackage\/mach",
+            "title" : "Mach",
+            "type" : "enum"
           }
         ],
         "path" : "\/documentation\/systempackage",
@@ -28211,7 +28556,7 @@
               },
               {
                 "path" : "\/documentation\/_niodatastructures\/priorityqueue\/removefirst(where:)",
-                "title" : "func removeFirst(where: (Element) throws -> Bool) rethrows",
+                "title" : "func removeFirst(where: (Element) throws -> Bool) rethrows -> Element?",
                 "type" : "method"
               },
               {
@@ -28325,6 +28670,11 @@
                     "type" : "method"
                   },
                   {
+                    "path" : "\/documentation\/_niodatastructures\/priorityqueue\/count(where:)",
+                    "title" : "func count<E>(where: (Self.Element) throws(E) -> Bool) throws(E) -> Int",
+                    "type" : "method"
+                  },
+                  {
                     "path" : "\/documentation\/_niodatastructures\/priorityqueue\/drop(while:)",
                     "title" : "func drop(while: (Self.Element) throws -> Bool) rethrows -> DropWhileSequence<Self>",
                     "type" : "method"
@@ -28411,7 +28761,7 @@
                   },
                   {
                     "path" : "\/documentation\/_niodatastructures\/priorityqueue\/map(_:)",
-                    "title" : "func map<T>((Self.Element) throws -> T) rethrows -> [T]",
+                    "title" : "func map<T, E>((Self.Element) throws(E) -> T) throws(E) -> [T]",
                     "type" : "method"
                   },
                   {
@@ -28529,6 +28879,6 @@
   "schemaVersion" : {
     "major" : 0,
     "minor" : 1,
-    "patch" : 1
+    "patch" : 2
   }
 }

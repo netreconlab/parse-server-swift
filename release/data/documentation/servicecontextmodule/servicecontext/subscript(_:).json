@@ -1,0 +1,580 @@
+{
+  "abstract" : [
+    {
+      "text" : "Provides type-safe access to the context’s values.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "This API should ONLY be used inside of accessor implementations.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ServiceContextModule",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ServiceContextModule\/ServiceContext"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ServiceContextModule\/ServiceContext\/subscript(_:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "ServiceContextModule",
+    "externalID" : "s:20ServiceContextModule0aB0Vy5ValueQzSgxmcAA0aB3KeyRzluip",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "subscript"
+      },
+      {
+        "kind" : "text",
+        "text" : "<"
+      },
+      {
+        "kind" : "genericParameter",
+        "text" : "Key"
+      },
+      {
+        "kind" : "text",
+        "text" : ">("
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:20ServiceContextModule0aB0Vy5ValueQzSgxmcAA0aB3KeyRzluip0E0L_xmfp",
+        "text" : "Key"
+      },
+      {
+        "kind" : "text",
+        "text" : ".Type) -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:20ServiceContextModule0aB0Vy5ValueQzSgxmcAA0aB3KeyRzluip0E0L_xmfp",
+        "text" : "Key"
+      },
+      {
+        "kind" : "text",
+        "text" : "."
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:20ServiceContextModule0aB3KeyP5ValueQa",
+        "text" : "Value"
+      },
+      {
+        "kind" : "text",
+        "text" : "?"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "ServiceContextModule"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Subscript",
+    "symbolKind" : "subscript",
+    "title" : "subscript(_:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "subscript"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
+            },
+            {
+              "kind" : "genericParameter",
+              "text" : "Key"
+            },
+            {
+              "kind" : "text",
+              "text" : ">("
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "key"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:20ServiceContextModule0aB0Vy5ValueQzSgxmcAA0aB3KeyRzluip0E0L_xmfp",
+              "text" : "Key"
+            },
+            {
+              "kind" : "text",
+              "text" : ".Type) -> "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:20ServiceContextModule0aB0Vy5ValueQzSgxmcAA0aB3KeyRzluip0E0L_xmfp",
+              "text" : "Key"
+            },
+            {
+              "kind" : "text",
+              "text" : "."
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ServiceContextModule\/ServiceContextKey\/Value",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:20ServiceContextModule0aB3KeyP5ValueQa",
+              "text" : "Value"
+            },
+            {
+              "kind" : "text",
+              "text" : "? "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "where"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Key"
+            },
+            {
+              "kind" : "text",
+              "text" : " : "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ServiceContextModule\/ServiceContextKey",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:20ServiceContextModule0aB3KeyP",
+              "text" : "ServiceContextKey"
+            },
+            {
+              "kind" : "text",
+              "text" : " { "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "get"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "set"
+            },
+            {
+              "kind" : "text",
+              "text" : " }"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "End users should use “accessors” the key’s author MUST define rather than using this subscript, following this pattern:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "internal enum TestID: ServiceContext.Key {",
+            "    typealias Value = TestID",
+            "}",
+            "",
+            "extension ServiceContext {",
+            "    public internal(set) var testID: TestID? {",
+            "        get {",
+            "            self[TestIDKey.self]",
+            "        }",
+            "        set {",
+            "            self[TestIDKey.self] = newValue",
+            "        }",
+            "    }",
+            "}"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This is in order to enforce a consistent style across projects and also allow for fine grained control over",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "who may set and who may get such property. Just access control to the Key type itself lacks such fidelity.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Note that specific context and context types MAY (and usually do), offer also a way to set context values,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "however in the most general case it is not required, as some frameworks may only be able to offer reading.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/servicecontextmodule\/servicecontext\/subscript(_:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ServiceContextModule": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ServiceContextModule",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "ServiceContextModule",
+  "type" : "topic",
+  "url" : "\/documentation\/servicecontextmodule"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ServiceContextModule/ServiceContext": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "ServiceContext",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is a heterogeneous storage type with value semantics for keyed values in a type-safe fashion.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ServiceContext"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ServiceContextModule\/ServiceContext",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ServiceContext"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ServiceContext",
+  "type" : "topic",
+  "url" : "\/documentation\/servicecontextmodule\/servicecontext"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ServiceContextModule/ServiceContext/subscript(_:)": {
+  "abstract" : [
+    {
+      "text" : "Provides type-safe access to the context’s values.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "This API should ONLY be used inside of accessor implementations.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "subscript"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Key"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:20ServiceContextModule0aB0Vy5ValueQzSgxmcAA0aB3KeyRzluip0E0L_xmfp",
+      "text" : "Key"
+    },
+    {
+      "kind" : "text",
+      "text" : ".Type) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:20ServiceContextModule0aB0Vy5ValueQzSgxmcAA0aB3KeyRzluip0E0L_xmfp",
+      "text" : "Key"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:20ServiceContextModule0aB3KeyP5ValueQa",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ServiceContextModule\/ServiceContext\/subscript(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "subscript(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/servicecontextmodule\/servicecontext\/subscript(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ServiceContextModule/ServiceContextKey": {
+  "abstract" : [
+    {
+      "text" : "Context keys provide type-safe access to ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ServiceContextModule\/ServiceContext",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : "s by declaring the type of value they “key” at compile-time.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "To give your ",
+      "type" : "text"
+    },
+    {
+      "code" : "ServiceContextKey",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " an explicit name, override the ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ServiceContextModule\/ServiceContextKey\/nameOverride-6shk1",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " property.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ServiceContextKey"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ServiceContextModule\/ServiceContextKey",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ServiceContextKey"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ServiceContextKey",
+  "type" : "topic",
+  "url" : "\/documentation\/servicecontextmodule\/servicecontextkey"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ServiceContextModule/ServiceContextKey/Value": {
+  "abstract" : [
+    {
+      "text" : "The type of value uniquely identified by this key.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "associatedtype"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : " : "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s8SendableP",
+      "text" : "Sendable"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ServiceContextModule\/ServiceContextKey\/Value",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "Value",
+  "type" : "topic",
+  "url" : "\/documentation\/servicecontextmodule\/servicecontextkey\/value"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ServiceContextModule/ServiceContextKey/nameOverride-6shk1": {
+  "abstract" : [
+    {
+      "text" : "The human-readable name of this key.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "This name will be used instead of the type name when a value is printed.",
+      "type" : "text"
+    }
+  ],
+  "defaultImplementations" : 1,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "nameOverride"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ServiceContextModule\/ServiceContextKey\/nameOverride-6shk1",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "nameOverride",
+  "type" : "topic",
+  "url" : "\/documentation\/servicecontextmodule\/servicecontextkey\/nameoverride-6shk1"
+}
+}
+}
