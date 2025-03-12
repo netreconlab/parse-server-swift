@@ -85,7 +85,7 @@ let maintenanceKeyIps = process.env.PARSE_SERVER_MAINTENANCE_KEY_IPS || '172.16.
 maintenanceKeyIps = maintenanceKeyIps.split(", ");
 let primaryKeyIps = process.env.PARSE_SERVER_PRIMARY_KEY_IPS || '172.16.0.0/12, 192.168.0.0/16, 10.0.0.0/8, 127.0.0.1, ::1';
 primaryKeyIps = primaryKeyIps.split(", ");
-let classNames = process.env.PARSE_SERVER_LIVEQUERY_CLASSNAMES || 'Clock, RevisionRecord';
+let classNames = process.env.PARSE_SERVER_LIVEQUERY_CLASSNAMES || 'GameScore';
 classNames = classNames.split(", ");
 let trustServerProxy = process.env.PARSE_SERVER_TRUST_PROXY || false;
 if (trustServerProxy == 'true') {
