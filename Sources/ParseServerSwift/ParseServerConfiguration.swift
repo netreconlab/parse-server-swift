@@ -16,6 +16,9 @@ public struct ParseServerConfiguration {
     /// The application id for your Node.js Parse Server application.
     public internal(set) var applicationId: String
 
+    /// The maintenance key for your Node.js Parse Server application.
+    public internal(set) var maintenanceKey: String?
+
     /// The primary key for your Node.js Parse Server application.
     /// - note: This has been renamed from `masterKey` to reflect
     /// [inclusive language](https://github.com/dialpad/inclusive-language#motivation).
@@ -43,17 +46,22 @@ public struct ParseServerConfiguration {
      - parameter tlsConfiguration: Manages configuration of TLS for SwiftNIO programs.
      - throws: An error of `ParseError` type.
      - important: This initializer looks for environment variables that begin
-     with **PARSE_SERVER_SWIFT** such as **PARSE_SERVER_SWIFT_APPLICATION_ID**
-     and **PARSE_SERVER_SWIFT_PRIMARY_KEY**.
+     with **PARSE_SERVER_SWIFT** such as **PARSE_SERVER_SWIFT_APPLICATION_ID**,
+      **PARSE_SERVER_SWIFT_MAINTENANCE_KEY**, and **PARSE_SERVER_SWIFT_PRIMARY_KEY**.
      */
-    public init(app: Application,
-                tlsConfiguration: TLSConfiguration? = nil) throws {
+    public init(
+        app: Application,
+        tlsConfiguration: TLSConfiguration? = nil
+    ) throws {
         guard let applicationId = Environment.process.PARSE_SERVER_SWIFT_APPLICATION_ID,
                 let primaryKey = Environment.process.PARSE_SERVER_SWIFT_PRIMARY_KEY else {
-            throw ParseError(code: .otherCause,
-                             message: "Missing environment variables for applicationId or primaryKey")
+            throw ParseError(
+                code: .otherCause,
+                message: "Missing environment variables for applicationId or primaryKey"
+            )
         }
         self.applicationId = applicationId
+        self.maintenanceKey = Environment.process.PARSE_SERVER_SWIFT_MAINTENANCE_KEY
         self.primaryKey = primaryKey
         app.http.server.configuration.hostname = Environment.process.PARSE_SERVER_SWIFT_HOST_NAME ?? "localhost"
         app.http.server.configuration.port = Int(Environment.process.PARSE_SERVER_SWIFT_PORT ?? 8080)
@@ -88,16 +96,20 @@ public struct ParseServerConfiguration {
      needs to be one server.
      - throws: An error of `ParseError` type.
      */
-    public init(app: Application,
-                hostName: String = "localhost",
-                port: Int = 8080,
-                tlsConfiguration: TLSConfiguration? = nil,
-                maxBodySize: ByteCount = "16kb",
-                applicationId: String,
-                primaryKey: String,
-                webhookKey: String? = nil,
-                parseServerURLString: String) throws {
+    public init(
+        app: Application,
+        hostName: String = "localhost",
+        port: Int = 8080,
+        tlsConfiguration: TLSConfiguration? = nil,
+        maxBodySize: ByteCount = "16kb",
+        applicationId: String,
+        maintenanceKey: String? = nil,
+        primaryKey: String,
+        webhookKey: String? = nil,
+        parseServerURLString: String
+    ) throws {
         self.applicationId = applicationId
+        self.maintenanceKey = maintenanceKey
         self.primaryKey = primaryKey
         self.webhookKey = webhookKey
 

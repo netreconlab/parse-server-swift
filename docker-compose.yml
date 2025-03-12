@@ -17,6 +17,7 @@ version: '3.7'
 x-shared_environment: &shared_environment
   LOG_LEVEL: ${LOG_LEVEL:-debug}
   PARSE_SERVER_APPLICATION_ID: ${PARSE_SERVER_APPLICATION_ID}
+  PARSE_SERVER_MAINTENANCE_KEY: ${PARSE_SERVER_MAINTENANCE_KEY}
   PARSE_SERVER_PRIMARY_KEY: ${PARSE_SERVER_PRIMARY_KEY}
   PARSE_SERVER_READ_ONLY_PRIMARY_KEY: 367F7395-2E3A-46B1-ABA3-963A25D533C3
   PARSE_SERVER_WEBHOOK_KEY: ${PARSE_SERVER_WEBHOOK_KEY}
@@ -30,14 +31,17 @@ x-shared_environment: &shared_environment
   PARSE_SERVER_MOUNT_GRAPHQL: 'false'
   PARSE_SERVER_ALLOW_CLIENT_CLASS_CREATION: 'true' # Don't allow classes to be created on the client side. You can create classes by using ParseDashboard instead
   PARSE_SERVER_ALLOW_CUSTOM_OBJECTID: 'true' # Required to be true for ParseCareKit
-  PARSE_SERVER_ENABLE_SCHEMA_HOOKS: 'true' # When this is true, only need one server for PARSE_SERVER_SWIFT_URLS 
+  PARSE_SERVER_ENABLE_SCHEMA_HOOKS: 'true' # When this is true, only need one server for PARSE_SERVER_SWIFT_URLS
+  PARSE_SERVER_ENCODE_PARSE_OBJECT_IN_CLOUD_FUNCTION: 'true'
+  PARSE_SERVER_PAGES_ENABLE_ROUTER": 'true'
   PARSE_SERVER_DIRECT_ACCESS: 'false' # WARNING: Setting to 'true' is known to cause crashes on parse-hipaa running postgres
   PARSE_SERVER_ENABLE_PRIVATE_USERS: 'true'
   PARSE_SERVER_USING_PARSECAREKIT: 'false' # If you are not using ParseCareKit, set this to 'false'
-  PARSE_SERVER_RATE_LIMIT: 'true'
+  PARSE_SERVER_RATE_LIMIT: 'false'
   PARSE_SERVER_RATE_LIMIT_REQUEST_COUNT: '100'
   PARSE_SERVER_RATE_LIMIT_INCLUDE_PRIMARY_KEY: 'false'
   PARSE_SERVER_RATE_LIMIT_INCLUDE_INTERNAL_REQUESTS: 'false'
+  PARSE_SERVER_LIVEQUERY_CLASSNAMES: 'GameScore'
   PARSE_DASHBOARD_START: 'true'
   PARSE_DASHBOARD_APP_NAME: Parse HIPAA
   PARSE_DASHBOARD_USERNAMES: parse, parseRead
@@ -47,6 +51,7 @@ x-shared_environment: &shared_environment
   PARSE_DASHBOARD_COOKIE_SESSION_SECRET: AB8849B6-D725-4A75-AA73-AB7103F0363F # This should be constant across all deployments on your system
   PARSE_DASHBOARD_MOUNT_PATH: /dashboard # This needs to be exactly what you plan it to be behind the proxy, i.e. If you want to access cs.uky.edu/dashboard it should be "/dashboard"
   PARSE_VERBOSE: 'false'
+  POSTGRES_USER: ${POSTGRES_USER}
   POSTGRES_PASSWORD: ${POSTGRES_PASSWORD} # Needed for wait-for-postgres.sh
   
 services:
@@ -61,6 +66,7 @@ services:
       PARSE_SERVER_SWIFT_DEFAULT_MAX_BODY_SIZE: 16kb
       PARSE_SERVER_SWIFT_URLS: http://parse:1337/parse #,http://parse2:1337/parse # Only need to list one server.
       PARSE_SERVER_SWIFT_APPLICATION_ID: ${PARSE_SERVER_APPLICATION_ID}
+      PARSE_SERVER_SWIFT_MAINTENANCE_KEY: ${PARSE_SERVER_MAINTENANCE_KEY}
       PARSE_SERVER_SWIFT_PRIMARY_KEY: ${PARSE_SERVER_PRIMARY_KEY}
       PARSE_SERVER_SWIFT_WEBHOOK_KEY: ${PARSE_SERVER_WEBHOOK_KEY}
     # ports:
@@ -74,9 +80,7 @@ services:
     depends_on:
         - parse
   parse:
-    image: netreconlab/parse-hipaa:6.4.0-dashboard
-    # Uncomment the image below to use Parse Server 5.4.0 instead. Be sure to comment out 6.0.0x
-    #image: netreconlab/parse-hipaa:5.4.0-dashboard
+    image: netreconlab/parse-hipaa:8.0.1-dashboard
     environment:
       <<: *shared_environment
       PARSE_SERVER_URL: http://parse:${PORT}${MOUNT_PATH}
@@ -87,8 +91,6 @@ services:
     volumes:
       - ./parse/wait-for-postgres.sh:/parse-server/wait-for-postgres.sh
       - ./parse/index.js:/parse-server/index.js
-      # Uncomment the mount below to use Parse Server 5.4.0 instead. Be sure to comment out the index.js mount above
-      #- ./parse/index-5.4.0.js:/parse-server/index.js
       - ./parse/cloud:/parse-server/cloud
       - ./parse/files:/parse-server/files # All files uploaded from users are stored to an ecrypted drive locally for HIPAA compliance
     restart: always

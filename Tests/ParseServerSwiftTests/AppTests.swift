@@ -16,9 +16,10 @@ final class AppTests: XCTestCase {
             hostName: "hostName",
             port: 8080,
             applicationId: "applicationId",
+            maintenanceKey: "maintenanceKey",
             primaryKey: "primaryKey",
             webhookKey: hookKey,
-            parseServerURLString: "primaryKey"
+            parseServerURLString: "http://localhost:1337/1"
         )
         try await ParseServerSwift.initialize(
             configuration,
@@ -35,6 +36,7 @@ final class AppTests: XCTestCase {
         try await ParseSwift.initialize(
             applicationId: configuration.applicationId,
             primaryKey: configuration.primaryKey,
+            maintenanceKey: configuration.maintenanceKey,
             serverURL: parseServerURL,
             usingPostForQuery: true,
             requestCachePolicy: .reloadIgnoringLocalCacheData
@@ -59,8 +61,9 @@ final class AppTests: XCTestCase {
             hostName: "hostName",
             port: 8080,
             applicationId: "applicationId",
+            maintenanceKey: "maintenanceKey",
             primaryKey: "primaryKey",
-            parseServerURLString: "primaryKey"
+            parseServerURLString: "http://localhost:1337/1"
         )
         XCTAssertNoThrow(try setConfiguration(configuration))
         try await app.asyncShutdown()
@@ -73,8 +76,9 @@ final class AppTests: XCTestCase {
             hostName: "hostName",
             port: 8080,
             applicationId: "applicationId",
+            maintenanceKey: "maintenanceKey",
             primaryKey: "primaryKey",
-            parseServerURLString: "primaryKey"
+            parseServerURLString: "http://localhost:1337/1"
         )
         XCTAssertThrowsError(try setConfiguration(configuration))
         try await app.asyncShutdown()

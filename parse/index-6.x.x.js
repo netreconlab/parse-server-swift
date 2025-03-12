@@ -10,10 +10,9 @@ const cors = require('cors');
 const FSFilesAdapter = require('@parse/fs-files-adapter');
 
 const mountPath = process.env.PARSE_SERVER_MOUNT_PATH || '/parse';
-const graphQLPath = process.env.PARSE_SERVER_GRAPHQL_PATH || '/graphql';
+const graphMountPath = process.env.PARSE_SERVER_GRAPHQL_PATH || '/graphql';
 const dashboardMountPath = process.env.PARSE_DASHBOARD_MOUNT_PATH || '/dashboard';
 const applicationId = process.env.PARSE_SERVER_APPLICATION_ID || 'myAppId';
-const maintenanceKey = process.env.PARSE_SERVER_MAINTENANCE_KEY || 'myMaintenanceKey';
 const primaryKey = process.env.PARSE_SERVER_PRIMARY_KEY || 'myKey';
 const redisURL = process.env.PARSE_SERVER_REDIS_URL || process.env.REDIS_TLS_URL || process.env.REDIS_URL;
 const host = process.env.HOST || process.env.PARSE_SERVER_HOST || '0.0.0.0';
@@ -31,7 +30,7 @@ if ("NEW_RELIC_APP_NAME" in process.env) {
 const publicServerURL = process.env.PARSE_SERVER_PUBLIC_URL || serverURL;
 const url = new URL(publicServerURL);
 const graphURL = new URL(publicServerURL);
-graphURL.pathname = graphQLPath;
+graphURL.pathname = graphMountPath;
 const dashboardURL = new URL(publicServerURL);
 dashboardURL.pathname = dashboardMountPath;
 
@@ -81,11 +80,9 @@ const playgroundPath = process.env.PARSE_SERVER_MOUNT_PLAYGROUND || '/playground
 const websocketTimeout = process.env.PARSE_LIVE_QUERY_SERVER_WEBSOCKET_TIMEOUT || 10 * 1000;
 const cacheTimeout = process.env.PARSE_LIVE_QUERY_SERVER_CACHE_TIMEOUT || 5 * 1000;
 const logLevel = process.env.PARSE_LIVE_QUERY_SERVER_LOG_LEVEL || 'INFO';
-let maintenanceKeyIps = process.env.PARSE_SERVER_MAINTENANCE_KEY_IPS || '172.16.0.0/12, 192.168.0.0/16, 10.0.0.0/8, 127.0.0.1, ::1';
-maintenanceKeyIps = maintenanceKeyIps.split(", ");
-let primaryKeyIps = process.env.PARSE_SERVER_PRIMARY_KEY_IPS || '172.16.0.0/12, 192.168.0.0/16, 10.0.0.0/8, 127.0.0.1, ::1';
-primaryKeyIps = primaryKeyIps.split(", ");
-let classNames = process.env.PARSE_SERVER_LIVEQUERY_CLASSNAMES || 'GameScore';
+let primaryKeyIPs = process.env.PARSE_SERVER_PRIMARY_KEY_IPS || '172.16.0.0/12, 192.168.0.0/16, 10.0.0.0/8, 127.0.0.1, ::1';
+primaryKeyIPs = primaryKeyIPs.split(", ");
+let classNames = process.env.PARSE_SERVER_LIVEQUERY_CLASSNAMES || 'Clock';
 classNames = classNames.split(", ");
 let trustServerProxy = process.env.PARSE_SERVER_TRUST_PROXY || false;
 if (trustServerProxy == 'true') {
@@ -112,20 +109,6 @@ if (process.env.PARSE_SERVER_DATABASE_ENABLE_SCHEMA_HOOKS == 'true') {
   enableSchemaHooks = true
 }
 
-let encodeParseObjectInCloudFunction = false;
-if (process.env.PARSE_SERVER_ENCODE_PARSE_OBJECT_IN_CLOUD_FUNCTION == 'true') {
-  encodeParseObjectInCloudFunction = true
-}
-
-let enablePagesRouter = false;
-if (process.env.PARSE_SERVER_PAGES_ENABLE_ROUTER == 'true') {
-  enablePagesRouter = true
-}
-
-const pagesOptions = {
-  enableRouter: enablePagesRouter,
-};
-
 let useDirectAccess = false;
 if (process.env.PARSE_SERVER_DIRECT_ACCESS == 'true') {
   useDirectAccess = true
@@ -149,12 +132,6 @@ if (process.env.PARSE_SERVER_FILE_UPLOAD_ENABLE_FOR_ANONYMOUS_USER == 'false') {
 let fileUploadAuthenticated = true;
 if (process.env.PARSE_SERVER_FILE_UPLOAD_ENABLE_FOR_AUTHENTICATED_USER == 'false') {
   fileUploadAuthenticated = false
-}
-
-let fileExtensions = ['^[^hH][^tT][^mM][^lL]?$'];
-if ("PARSE_SERVER_FILE_UPLOAD_FILE_EXTENSIONS" in process.env) {
-  const extensions = process.env.PARSE_SERVER_FILE_UPLOAD_FILE_EXTENSIONS.split(", ");
-  fileExtensions = extensions;
 }
 
 let enableAnonymousUsers = true;
@@ -242,17 +219,6 @@ if ("PARSE_SERVER_ENCRYPTION_KEY" in process.env) {
   filesFSAdapterOptions.encryptionKey = process.env.PARSE_SERVER_ENCRYPTION_KEY;
 }
 
-if ("PARSE_SERVER_DATABASE_URI" in process.env) {
-  if (process.env.PARSE_SERVER_DATABASE_URI.indexOf('postgres') !== -1) {
-    filesAdapter = new FSFilesAdapter(filesFSAdapterOptions);
-  }
-} else if ("DB_URL" in process.env) {
-  if (process.env.DB_URL.indexOf('postgres') !== -1) {
-    filesAdapter = new FSFilesAdapter(filesFSAdapterOptions);
-    databaseUri = `${databaseUri}?ssl=true&rejectUnauthorized=false`;
-  }  
-}
-
 if ("PARSE_SERVER_S3_BUCKET" in process.env) {
   filesAdapter = {
     "module": "@parse/s3-files-adapter",
@@ -262,6 +228,15 @@ if ("PARSE_SERVER_S3_BUCKET" in process.env) {
       "ServerSideEncryption": process.env.PARSE_SERVER_S3_BUCKET_ENCRYPTION || 'AES256', //AES256 or aws:kms, or if you do not pass this, encryption won't be done
     }
   }
+} else if ("PARSE_SERVER_DATABASE_URI" in process.env) {
+  if (process.env.PARSE_SERVER_DATABASE_URI.indexOf('postgres') !== -1) {
+    filesAdapter = new FSFilesAdapter(filesFSAdapterOptions);
+  }
+} else if ("DB_URL" in process.env) {
+  if (process.env.DB_URL.indexOf('postgres') !== -1) {
+    filesAdapter = new FSFilesAdapter(filesFSAdapterOptions);
+    databaseUri = `${databaseUri}?ssl=true&rejectUnauthorized=false`;
+  }  
 }
 
 if (Object.keys(filesAdapter).length === 0) {
@@ -274,15 +249,10 @@ if (Object.keys(filesAdapter).length === 0) {
 
 configuration = {
   databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
-  databaseOptions: {
-    enableSchemaHooks: enableSchemaHooks,
-  },
   cloud: process.env.PARSE_SERVER_CLOUD || __dirname + '/cloud/main.js',
   appId: applicationId,
-  maintenanceKey: maintenanceKey,
-  maintenanceKeyIps: maintenanceKeyIps,
   masterKey: primaryKey,
-  masterKeyIps: primaryKeyIps,
+  masterKeyIps: primaryKeyIPs,
   webhookKey: process.env.PARSE_SERVER_WEBHOOK_KEY,
   encryptionKey: process.env.PARSE_SERVER_ENCRYPTION_KEY,
   objectIdSize: objectIdSize,
@@ -304,16 +274,14 @@ configuration = {
     enableForPublic: fileUploadPublic,
     enableForAnonymousUser: fileUploadAnonymous,
     enableForAuthenticatedUser: fileUploadAuthenticated,
-    fileExtensions: fileExtensions,
   },
   maxUploadSize: fileMaxUploadSize,
-  encodeParseObjectInCloudFunction: encodeParseObjectInCloudFunction,
+  enableSchemaHooks: enableSchemaHooks,
   directAccess: useDirectAccess,
   allowExpiredAuthDataToken: allowExpiredAuthDataToken,
   enforcePrivateUsers: enforcePrivateUsers,
   jsonLogs: jsonLogs,
   logsFolder: logsFolder,
-  pages: pagesOptions,
   preserveFileName: preserveFileName,
   revokeSessionOnPasswordReset: revokeSessionOnPasswordReset,
   sessionLength: sessionLength,
@@ -323,9 +291,11 @@ configuration = {
   startLiveQueryServer: startLiveQueryServer,
   liveQuery: {
     classNames: classNames, // List of classes to support for query subscriptions
+    websocketTimeout: websocketTimeout,
+    cacheTimeout: cacheTimeout
   },
   mountGraphQL: enableGraphQL, 
-  graphQLPath: graphQLPath,
+  graphMountPath: graphMountPath,
   mountPlayground: mountPlayground,
   playgroundPath: playgroundPath,
   verifyUserEmails: verifyUserEmails,
@@ -528,8 +498,8 @@ function setAuditClassLevelPermissions() {
     protectedFields: { }
   };
   // Don't audit '_Role' as it doesn't work.
-  const modifiedClasses = ['_User', '_Installation', '_Audience', 'Clock', 'Patient', 'CarePlan', 'Contact', 'Task', 'HealthKitTask', 'Outcome', 'HealthKitOutcome', 'RevisionRecord'];
-  const accessedClasses = ['_User', '_Installation', '_Audience', 'Clock', 'Patient', 'CarePlan', 'Contact', 'Task', 'HealthKitTask', 'Outcome', 'HealthKitOutcome', 'RevisionRecord'];
+  const modifiedClasses = ['_User', '_Installation', '_Audience', 'Clock', 'Patient', 'CarePlan', 'Contact', 'Task', 'HealthKitTask', 'Outcome', 'HealthKitOutcome'];
+  const accessedClasses = ['_User', '_Installation', '_Audience', 'Clock', 'Patient', 'CarePlan', 'Contact', 'Task', 'HealthKitTask', 'Outcome', 'HealthKitOutcome'];
   ParseAuditor(modifiedClasses, accessedClasses, { classPostfix: '_Audit', useMasterKey: true, clp: auditCLP });
 };
 

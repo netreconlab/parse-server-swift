@@ -71,6 +71,7 @@ func initializeServer(
             try await ParseSwift.initialize(
                 applicationId: configuration.applicationId,
                 primaryKey: configuration.primaryKey,
+                maintenanceKey: configuration.maintenanceKey,
                 serverURL: parseServerURL,
                 // POST all queries instead of using GET.
                 usingPostForQuery: true,
