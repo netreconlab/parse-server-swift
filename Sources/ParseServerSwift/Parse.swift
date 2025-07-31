@@ -53,7 +53,7 @@ func initializeServer(
 ) async throws {
 
     // Parse uses tailored encoders/decoders. These can be retrieved from any ParseObject
-    ContentConfiguration.global.use(encoder: User.getEncoder(), for: .json)
+    ContentConfiguration.global.use(encoder: User.getJSONEncoder(), for: .json)
     ContentConfiguration.global.use(decoder: User.getDecoder(), for: .json)
 
     guard let parseServerURL = URL(string: configuration.primaryParseServerURLString) else {
