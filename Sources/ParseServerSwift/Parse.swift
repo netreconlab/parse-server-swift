@@ -11,7 +11,7 @@ import ParseSwift
 // MARK: Internal
 
 internal struct Parse {
-    static var configuration: ParseServerConfiguration!
+	nonisolated(unsafe) static var configuration: ParseServerConfiguration!
 }
 
 /// The current `ParseServerConfiguration` for ParseServerSwift.
