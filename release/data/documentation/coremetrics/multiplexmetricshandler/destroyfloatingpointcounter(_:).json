@@ -1,31 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Invoked when the corresponding ",
-      "type" : "text"
-    },
-    {
-      "code" : "FloatingPointCounter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : "’s ",
-      "type" : "text"
-    },
-    {
-      "code" : "destroy()",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " function is invoked.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Upon receiving this signal the factory may eagerly release any resources related to this counter.",
+      "text" : "Signal the underlying metrics library that this floating point counter will never be updated again.",
       "type" : "text"
     }
   ],
@@ -147,7 +123,7 @@
             {
               "inlineContent" : [
                 {
-                  "text" : "The handler to be destroyed.",
+                  "text" : "The floating point counter handler to signal.",
                   "type" : "text"
                 }
               ],
@@ -195,23 +171,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/FloatingPointCounterHandler": {
   "abstract" : [
     {
-      "text" : "A ",
-      "type" : "text"
-    },
-    {
-      "code" : "FloatingPointCounterHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " represents a backend implementation of a ",
-      "type" : "text"
-    },
-    {
-      "code" : "FloatingPointCounter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "A floating-point counter handler represents a backend implementation of a floating-point counter.",
       "type" : "text"
     }
   ],
@@ -279,31 +239,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MultiplexMetricsHandler/destroyFloatingPointCounter(_:)": {
   "abstract" : [
     {
-      "text" : "Invoked when the corresponding ",
-      "type" : "text"
-    },
-    {
-      "code" : "FloatingPointCounter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : "’s ",
-      "type" : "text"
-    },
-    {
-      "code" : "destroy()",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " function is invoked.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Upon receiving this signal the factory may eagerly release any resources related to this counter.",
+      "text" : "Signal the underlying metrics library that this floating point counter will never be updated again.",
       "type" : "text"
     }
   ],

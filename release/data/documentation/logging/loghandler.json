@@ -271,19 +271,23 @@
         },
         {
           "code" : [
-            "LoggingSystem.bootstrap(MyLogHandler.init) \/\/ your LogHandler might have a different bootstrapping step",
-            "var logger1 = Logger(label: \"first logger\")",
-            "logger1.logLevel = .debug",
-            "logger1[metadataKey: \"only-on\"] = \"first\"",
+            "@Test",
+            "func logHandlerValueSemantics() {",
+            "    LoggingSystem.bootstrap(MyLogHandler.init)",
+            "    var logger1 = Logger(label: \"first logger\")",
+            "    logger1.logLevel = .debug",
+            "    logger1[metadataKey: \"only-on\"] = \"first\"",
             "",
-            "var logger2 = logger1",
-            "logger2.logLevel = .error                  \/\/ this must not override `logger1`'s log level",
-            "logger2[metadataKey: \"only-on\"] = \"second\" \/\/ this must not override `logger1`'s metadata",
+            "    var logger2 = logger1",
+            "    logger2.logLevel = .error                  \/\/ Must not affect logger1",
+            "    logger2[metadataKey: \"only-on\"] = \"second\" \/\/ Must not affect logger1",
             "",
-            "XCTAssertEqual(.debug, logger1.logLevel)",
-            "XCTAssertEqual(.error, logger2.logLevel)",
-            "XCTAssertEqual(\"first\", logger1[metadataKey: \"only-on\"])",
-            "XCTAssertEqual(\"second\", logger2[metadataKey: \"only-on\"])"
+            "    \/\/ These expectations must pass",
+            "    #expect(logger1.logLevel == .debug)",
+            "    #expect(logger2.logLevel == .error)",
+            "    #expect(logger1[metadataKey: \"only-on\"] == \"first\")",
+            "    #expect(logger2[metadataKey: \"only-on\"] == \"second\")",
+            "}"
           ],
           "syntax" : "swift",
           "type" : "codeListing"
@@ -546,7 +550,7 @@
       "identifiers" : [
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/LogHandler\/logLevel",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/LogHandler\/metadata",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/LogHandler\/metadataProvider-1vq31"
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/LogHandler\/metadataProvider"
       ],
       "title" : "Instance Properties"
     },
@@ -554,8 +558,8 @@
       "anchor" : "Instance-Methods",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/LogHandler\/log(level:message:metadata:file:function:line:)-89rya",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/LogHandler\/log(level:message:metadata:source:file:function:line:)-8kgt7"
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/LogHandler\/log(level:message:metadata:file:function:line:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/LogHandler\/log(level:message:metadata:source:file:function:line:)"
       ],
       "title" : "Instance Methods"
     },
@@ -635,7 +639,7 @@
   "type" : "topic",
   "url" : "\/documentation\/logging\/loghandler"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/LogHandler/log(level:message:metadata:file:function:line:)-89rya": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/LogHandler/log(level:message:metadata:file:function:line:)": {
   "abstract" : [
     {
       "text" : "SwiftLog 1.0 compatibility method. Please do ",
@@ -828,15 +832,15 @@
       "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/LogHandler\/log(level:message:metadata:file:function:line:)-89rya",
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/LogHandler\/log(level:message:metadata:file:function:line:)",
   "kind" : "symbol",
   "required" : true,
   "role" : "symbol",
   "title" : "log(level:message:metadata:file:function:line:)",
   "type" : "topic",
-  "url" : "\/documentation\/logging\/loghandler\/log(level:message:metadata:file:function:line:)-89rya"
+  "url" : "\/documentation\/logging\/loghandler\/log(level:message:metadata:file:function:line:)"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/LogHandler/log(level:message:metadata:source:file:function:line:)-8kgt7": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/LogHandler/log(level:message:metadata:source:file:function:line:)": {
   "abstract" : [
     {
       "text" : "This method is called when a ",
@@ -1064,13 +1068,13 @@
       "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/LogHandler\/log(level:message:metadata:source:file:function:line:)-8kgt7",
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/LogHandler\/log(level:message:metadata:source:file:function:line:)",
   "kind" : "symbol",
   "required" : true,
   "role" : "symbol",
   "title" : "log(level:message:metadata:source:file:function:line:)",
   "type" : "topic",
-  "url" : "\/documentation\/logging\/loghandler\/log(level:message:metadata:source:file:function:line:)-8kgt7"
+  "url" : "\/documentation\/logging\/loghandler\/log(level:message:metadata:source:file:function:line:)"
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/LogHandler/logLevel": {
   "abstract" : [
@@ -1166,7 +1170,7 @@
   "type" : "topic",
   "url" : "\/documentation\/logging\/loghandler\/metadata"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/LogHandler/metadataProvider-1vq31": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/LogHandler/metadataProvider": {
   "abstract" : [
     {
       "text" : "The metadata provider this ",
@@ -1218,13 +1222,13 @@
       "text" : "?"
     }
   ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/LogHandler\/metadataProvider-1vq31",
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/LogHandler\/metadataProvider",
   "kind" : "symbol",
   "required" : true,
   "role" : "symbol",
   "title" : "metadataProvider",
   "type" : "topic",
-  "url" : "\/documentation\/logging\/loghandler\/metadataprovider-1vq31"
+  "url" : "\/documentation\/logging\/loghandler\/metadataprovider"
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/LogHandler/subscript(metadataKey:)": {
   "abstract" : [

@@ -1,15 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Invoked when the corresponding ",
-      "type" : "text"
-    },
-    {
-      "code" : "Counter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : "’s ",
+      "text" : "Invoked when the corresponding counter’s ",
       "type" : "text"
     },
     {
@@ -18,14 +10,6 @@
     },
     {
       "text" : " function is invoked.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Upon receiving this signal the factory may eagerly release any resources related to this counter.",
       "type" : "text"
     }
   ],
@@ -158,6 +142,26 @@
           "name" : "handler"
         }
       ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Upon receiving this signal the factory may eagerly release any resources related to this counter.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -196,23 +200,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/CounterHandler": {
   "abstract" : [
     {
-      "text" : "A ",
-      "type" : "text"
-    },
-    {
-      "code" : "CounterHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " represents a backend implementation of a ",
-      "type" : "text"
-    },
-    {
-      "code" : "Counter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "A counter handler represents a backend implementation of a counter.",
       "type" : "text"
     }
   ],
@@ -264,18 +252,6 @@
     {
       "text" : " and the metrics backend implementation.",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "code" : "MetricsFactory",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : "’s role is to initialize concrete implementations of the various metric types:",
-      "type" : "text"
     }
   ],
   "fragments" : [
@@ -308,15 +284,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MetricsFactory/destroyCounter(_:)": {
   "abstract" : [
     {
-      "text" : "Invoked when the corresponding ",
-      "type" : "text"
-    },
-    {
-      "code" : "Counter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : "’s ",
+      "text" : "Invoked when the corresponding counter’s ",
       "type" : "text"
     },
     {
@@ -325,14 +293,6 @@
     },
     {
       "text" : " function is invoked.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Upon receiving this signal the factory may eagerly release any resources related to this counter.",
       "type" : "text"
     }
   ],

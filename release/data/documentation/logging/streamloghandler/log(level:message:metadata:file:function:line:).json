@@ -34,8 +34,7 @@
     "paths" : [
       [
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/StreamLogHandler",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/StreamLogHandler\/LogHandler-Implementations"
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/StreamLogHandler"
       ]
     ]
   },
@@ -212,7 +211,12 @@
       }
     ],
     "platforms" : [
-
+      {
+        "beta" : false,
+        "deprecated" : true,
+        "renamed" : "log(level:message:metadata:source:file:function:line:)",
+        "unavailable" : false
+      }
     ],
     "role" : "symbol",
     "roleHeading" : "Instance Method",
@@ -681,17 +685,6 @@
   "title" : "StreamLogHandler",
   "type" : "topic",
   "url" : "\/documentation\/logging\/streamloghandler"
-},
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/StreamLogHandler/LogHandler-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/StreamLogHandler\/LogHandler-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "LogHandler Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/logging\/streamloghandler\/loghandler-implementations"
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/StreamLogHandler/log(level:message:metadata:file:function:line:)": {
   "abstract" : [

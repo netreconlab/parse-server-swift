@@ -3,22 +3,6 @@
     {
       "text" : "Signal the underlying metrics library that this counter will never be updated again.",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "In response the library MAY decide to eagerly release any resources held by this ",
-      "type" : "text"
-    },
-    {
-      "code" : "Counter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
-      "type" : "text"
     }
   ],
   "hierarchy" : {
@@ -96,6 +80,26 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "In response the library MAY decide to eagerly release any resources held by this counter.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -136,14 +140,6 @@
     {
       "text" : "A counter is a cumulative metric that represents a single monotonically increasing counter whose value can only increase or be reset to zero.",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "For example, you can use a counter to represent the number of requests served, tasks completed, or errors.",
-      "type" : "text"
     }
   ],
   "fragments" : [
@@ -177,22 +173,6 @@
   "abstract" : [
     {
       "text" : "Signal the underlying metrics library that this counter will never be updated again.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "In response the library MAY decide to eagerly release any resources held by this ",
-      "type" : "text"
-    },
-    {
-      "code" : "Counter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
       "type" : "text"
     }
   ],

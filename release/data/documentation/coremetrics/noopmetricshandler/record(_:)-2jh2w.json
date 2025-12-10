@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Record a value.",
+      "text" : "Record a floating-point value.",
       "type" : "text"
     }
   ],
@@ -105,6 +105,25 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Value to record.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "value"
+        }
+      ]
     }
   ],
   "schemaVersion" : {
@@ -143,7 +162,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/NOOPMetricsHandler": {
   "abstract" : [
     {
-      "text" : "Ships with the metrics module, used for initial bootstrapping.",
+      "text" : "A metrics handler that implements the protocols but does nothing.",
       "type" : "text"
     }
   ],
@@ -177,7 +196,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/NOOPMetricsHandler/record(_:)-2jh2w": {
   "abstract" : [
     {
-      "text" : "Record a value.",
+      "text" : "Record a floating-point value.",
       "type" : "text"
     }
   ],

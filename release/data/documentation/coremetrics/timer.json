@@ -1,23 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "A timer collects observations within a time window (usually things like request durations) and provides aggregated information about the data sample,",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "for example, min, max and various quantiles. It is similar to a ",
-      "type" : "text"
-    },
-    {
-      "code" : "Recorder",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " but specialized for values that represent durations.",
+      "text" : "A timer collects observations that represents durations within a time window.",
       "type" : "text"
     }
   ],
@@ -112,7 +96,23 @@
         {
           "inlineContent" : [
             {
-              "text" : "This is the user-facing Timer API.",
+              "text" : "It is similar to a ",
+              "type" : "text"
+            },
+            {
+              "code" : "Recorder",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " but specialized for values that represent durations, such as request durations.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "A time provides  aggregated information about the data sample, such as min, max, and various quantiles.",
               "type" : "text"
             }
           ],
@@ -121,12 +121,21 @@
         {
           "inlineContent" : [
             {
+              "text" : "This is the user-facing Timer API.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
               "text" : "Its behavior depends on the ",
               "type" : "text"
             },
             {
-              "code" : "TimerHandler",
-              "type" : "codeVoice"
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/TimerHandler",
+              "isActive" : true,
+              "type" : "reference"
             },
             {
               "text" : " implementation.",
@@ -134,6 +143,22 @@
             }
           ],
           "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Recording a value:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "timer.recordMilliseconds(52)"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
         }
       ],
       "kind" : "content"
@@ -165,8 +190,11 @@
       "generated" : true,
       "identifiers" : [
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Timer\/init(label:dimensions:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Timer\/init(label:dimensions:factory:)",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Timer\/init(label:dimensions:handler:)",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Timer\/init(label:dimensions:preferredDisplayUnit:)"
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Timer\/init(label:dimensions:handler:factory:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Timer\/init(label:dimensions:preferredDisplayUnit:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Timer\/init(label:dimensions:preferredDisplayUnit:factory:)"
       ],
       "title" : "Initializers"
     },
@@ -232,23 +260,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Timer": {
   "abstract" : [
     {
-      "text" : "A timer collects observations within a time window (usually things like request durations) and provides aggregated information about the data sample,",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "for example, min, max and various quantiles. It is similar to a ",
-      "type" : "text"
-    },
-    {
-      "code" : "Recorder",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " but specialized for values that represent durations.",
+      "text" : "A timer collects observations that represents durations within a time window.",
       "type" : "text"
     }
   ],
@@ -295,22 +307,6 @@
     {
       "text" : "Signal the underlying metrics library that this timer will never be updated again.",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "In response the library MAY decide to eagerly release any resources held by this ",
-      "type" : "text"
-    },
-    {
-      "code" : "Timer",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
-      "type" : "text"
     }
   ],
   "fragments" : [
@@ -340,7 +336,10 @@
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Timer/dimensions": {
   "abstract" : [
-
+    {
+      "text" : "The dimensions for the timer.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -388,15 +387,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Timer/init(label:dimensions:)": {
   "abstract" : [
     {
-      "text" : "Create a new ",
-      "type" : "text"
-    },
-    {
-      "code" : "Timer",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Create a new timer using a custom metrics factory that you provide..",
       "type" : "text"
     }
   ],
@@ -460,26 +451,94 @@
   "type" : "topic",
   "url" : "\/documentation\/coremetrics\/timer\/init(label:dimensions:)"
 },
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Timer/init(label:dimensions:factory:)": {
+  "abstract" : [
+    {
+      "text" : "Create a new timer.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "label"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "dimensions"
+    },
+    {
+      "kind" : "text",
+      "text" : ": [("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")], "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "factory"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11CoreMetrics0B7FactoryP",
+      "text" : "MetricsFactory"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Timer\/init(label:dimensions:factory:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(label:dimensions:factory:)",
+  "type" : "topic",
+  "url" : "\/documentation\/coremetrics\/timer\/init(label:dimensions:factory:)"
+},
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Timer/init(label:dimensions:handler:)": {
   "abstract" : [
     {
-      "text" : "Alternative way to create a new ",
-      "type" : "text"
-    },
-    {
-      "code" : "Timer",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ", while providing an explicit ",
-      "type" : "text"
-    },
-    {
-      "code" : "TimerHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Alternative way to create a new timer, while providing an explicit timer handler.",
       "type" : "text"
     }
   ],
@@ -560,18 +619,111 @@
   "type" : "topic",
   "url" : "\/documentation\/coremetrics\/timer\/init(label:dimensions:handler:)"
 },
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Timer/init(label:dimensions:handler:factory:)": {
+  "abstract" : [
+    {
+      "text" : "Alternative way to create a new timer, while providing an explicit timer handler.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "label"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "dimensions"
+    },
+    {
+      "kind" : "text",
+      "text" : ": [("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")], "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "handler"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11CoreMetrics12TimerHandlerP",
+      "text" : "TimerHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "factory"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11CoreMetrics0B7FactoryP",
+      "text" : "MetricsFactory"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Timer\/init(label:dimensions:handler:factory:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(label:dimensions:handler:factory:)",
+  "type" : "topic",
+  "url" : "\/documentation\/coremetrics\/timer\/init(label:dimensions:handler:factory:)"
+},
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Timer/init(label:dimensions:preferredDisplayUnit:)": {
   "abstract" : [
     {
-      "text" : "Create a new ",
-      "type" : "text"
-    },
-    {
-      "code" : "Timer",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Create a new timer.",
       "type" : "text"
     }
   ],
@@ -652,9 +804,113 @@
   "type" : "topic",
   "url" : "\/documentation\/coremetrics\/timer\/init(label:dimensions:preferreddisplayunit:)"
 },
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Timer/init(label:dimensions:preferredDisplayUnit:factory:)": {
+  "abstract" : [
+    {
+      "text" : "Create a new timer.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "label"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "dimensions"
+    },
+    {
+      "kind" : "text",
+      "text" : ": [("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")], "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "preferredDisplayUnit"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11CoreMetrics8TimeUnitV",
+      "text" : "TimeUnit"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "factory"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11CoreMetrics0B7FactoryP",
+      "text" : "MetricsFactory"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Timer\/init(label:dimensions:preferredDisplayUnit:factory:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(label:dimensions:preferredDisplayUnit:factory:)",
+  "type" : "topic",
+  "url" : "\/documentation\/coremetrics\/timer\/init(label:dimensions:preferreddisplayunit:factory:)"
+},
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Timer/label": {
   "abstract" : [
-
+    {
+      "text" : "The label for the timer.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -1069,6 +1325,40 @@
   "title" : "recordSeconds(_:)",
   "type" : "topic",
   "url" : "\/documentation\/coremetrics\/timer\/recordseconds(_:)-7vp6b"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/TimerHandler": {
+  "abstract" : [
+    {
+      "text" : "A timer handler represents a backend implementation of a timer.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TimerHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/TimerHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TimerHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TimerHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/coremetrics\/timerhandler"
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/s23CustomStringConvertibleP": {
   "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s23CustomStringConvertibleP",

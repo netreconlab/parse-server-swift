@@ -19,18 +19,6 @@
     {
       "text" : " and the metrics backend implementation.",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "code" : "MetricsFactory",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : "’s role is to initialize concrete implementations of the various metric types:",
-      "type" : "text"
     }
   ],
   "hierarchy" : {
@@ -122,6 +110,23 @@
           "type" : "heading"
         },
         {
+          "inlineContent" : [
+            {
+              "text" : "The role of ",
+              "type" : "text"
+            },
+            {
+              "code" : "MetricsFactory",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is to initialize concrete implementations of the various metric types:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
           "items" : [
             {
               "content" : [
@@ -211,40 +216,25 @@
           "type" : "unorderedList"
         },
         {
-          "content" : [
+          "inlineContent" : [
             {
-              "inlineContent" : [
-                {
-                  "text" : "This type is an implementation detail and should not be used directly, unless implementing your own metrics backend.",
-                  "type" : "text"
-                },
-                {
-                  "text" : " ",
-                  "type" : "text"
-                },
-                {
-                  "text" : "To use the SwiftMetrics API, please refer to the documentation of ",
-                  "type" : "text"
-                },
-                {
-                  "code" : "MetricsSystem",
-                  "type" : "codeVoice"
-                },
-                {
-                  "text" : ".",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
+              "text" : "To use the SwiftMetrics API, please refer to the documentation of ",
+              "type" : "text"
+            },
+            {
+              "code" : "MetricsSystem",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
             }
           ],
-          "name" : "Warning",
-          "style" : "warning",
-          "type" : "aside"
+          "type" : "paragraph"
         },
         {
           "anchor" : "Destroying-metrics",
-          "level" : 1,
+          "level" : 3,
           "text" : "Destroying metrics",
           "type" : "heading"
         },
@@ -289,7 +279,7 @@
               "type" : "text"
             },
             {
-              "text" : "some metrics have well defined unique life-cycles, and it may be beneficial to release any resources held by them",
+              "text" : "some metrics have well defined unique life-cycles where it may be beneficial to release any resources held by them",
               "type" : "text"
             },
             {
@@ -421,13 +411,13 @@
       "generated" : true,
       "identifiers" : [
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory\/destroyCounter(_:)",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory\/destroyFloatingPointCounter(_:)-8zdha",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory\/destroyMeter(_:)-3ak7l",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory\/destroyFloatingPointCounter(_:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory\/destroyMeter(_:)",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory\/destroyRecorder(_:)",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory\/destroyTimer(_:)",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory\/makeCounter(label:dimensions:)",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory\/makeFloatingPointCounter(label:dimensions:)-2irnb",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory\/makeMeter(label:dimensions:)-1u7ae",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory\/makeFloatingPointCounter(label:dimensions:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory\/makeMeter(label:dimensions:)",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory\/makeRecorder(label:dimensions:aggregate:)",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory\/makeTimer(label:dimensions:)"
       ],
@@ -480,18 +470,6 @@
     {
       "text" : " and the metrics backend implementation.",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "code" : "MetricsFactory",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : "’s role is to initialize concrete implementations of the various metric types:",
-      "type" : "text"
     }
   ],
   "fragments" : [
@@ -524,15 +502,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MetricsFactory/destroyCounter(_:)": {
   "abstract" : [
     {
-      "text" : "Invoked when the corresponding ",
-      "type" : "text"
-    },
-    {
-      "code" : "Counter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : "’s ",
+      "text" : "Invoked when the corresponding counter’s ",
       "type" : "text"
     },
     {
@@ -541,14 +511,6 @@
     },
     {
       "text" : " function is invoked.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Upon receiving this signal the factory may eagerly release any resources related to this counter.",
       "type" : "text"
     }
   ],
@@ -587,18 +549,10 @@
   "type" : "topic",
   "url" : "\/documentation\/coremetrics\/metricsfactory\/destroycounter(_:)"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MetricsFactory/destroyFloatingPointCounter(_:)-8zdha": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MetricsFactory/destroyFloatingPointCounter(_:)": {
   "abstract" : [
     {
-      "text" : "Invoked when the corresponding ",
-      "type" : "text"
-    },
-    {
-      "code" : "FloatingPointCounter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : "’s ",
+      "text" : "Invoked when the corresponding floating-point counter’s ",
       "type" : "text"
     },
     {
@@ -607,14 +561,6 @@
     },
     {
       "text" : " function is invoked.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Upon receiving this signal the factory may eagerly release any resources related to this counter.",
       "type" : "text"
     }
   ],
@@ -646,26 +592,18 @@
       "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory\/destroyFloatingPointCounter(_:)-8zdha",
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory\/destroyFloatingPointCounter(_:)",
   "kind" : "symbol",
   "required" : true,
   "role" : "symbol",
   "title" : "destroyFloatingPointCounter(_:)",
   "type" : "topic",
-  "url" : "\/documentation\/coremetrics\/metricsfactory\/destroyfloatingpointcounter(_:)-8zdha"
+  "url" : "\/documentation\/coremetrics\/metricsfactory\/destroyfloatingpointcounter(_:)"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MetricsFactory/destroyMeter(_:)-3ak7l": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MetricsFactory/destroyMeter(_:)": {
   "abstract" : [
     {
-      "text" : "Invoked when the corresponding ",
-      "type" : "text"
-    },
-    {
-      "code" : "Meter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : "’s ",
+      "text" : "Invoked when the corresponding meter’s ",
       "type" : "text"
     },
     {
@@ -674,14 +612,6 @@
     },
     {
       "text" : " function is invoked.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Upon receiving this signal the factory may eagerly release any resources related to this recorder.",
       "type" : "text"
     }
   ],
@@ -713,26 +643,18 @@
       "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory\/destroyMeter(_:)-3ak7l",
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory\/destroyMeter(_:)",
   "kind" : "symbol",
   "required" : true,
   "role" : "symbol",
   "title" : "destroyMeter(_:)",
   "type" : "topic",
-  "url" : "\/documentation\/coremetrics\/metricsfactory\/destroymeter(_:)-3ak7l"
+  "url" : "\/documentation\/coremetrics\/metricsfactory\/destroymeter(_:)"
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MetricsFactory/destroyRecorder(_:)": {
   "abstract" : [
     {
-      "text" : "Invoked when the corresponding ",
-      "type" : "text"
-    },
-    {
-      "code" : "Recorder",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : "’s ",
+      "text" : "Invoked when the corresponding recorder’s ",
       "type" : "text"
     },
     {
@@ -741,14 +663,6 @@
     },
     {
       "text" : " function is invoked.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Upon receiving this signal the factory may eagerly release any resources related to this recorder.",
       "type" : "text"
     }
   ],
@@ -790,15 +704,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MetricsFactory/destroyTimer(_:)": {
   "abstract" : [
     {
-      "text" : "Invoked when the corresponding ",
-      "type" : "text"
-    },
-    {
-      "code" : "Timer",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : "’s ",
+      "text" : "Invoked when the corresponding Timer’s ",
       "type" : "text"
     },
     {
@@ -807,14 +713,6 @@
     },
     {
       "text" : " function is invoked.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Upon receiving this signal the factory may eagerly release any resources related to this timer.",
       "type" : "text"
     }
   ],
@@ -856,15 +754,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MetricsFactory/makeCounter(label:dimensions:)": {
   "abstract" : [
     {
-      "text" : "Create a backing ",
-      "type" : "text"
-    },
-    {
-      "code" : "CounterHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Create a backing counter handler.",
       "type" : "text"
     }
   ],
@@ -942,18 +832,10 @@
   "type" : "topic",
   "url" : "\/documentation\/coremetrics\/metricsfactory\/makecounter(label:dimensions:)"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MetricsFactory/makeFloatingPointCounter(label:dimensions:)-2irnb": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MetricsFactory/makeFloatingPointCounter(label:dimensions:)": {
   "abstract" : [
     {
-      "text" : "Create a backing ",
-      "type" : "text"
-    },
-    {
-      "code" : "FloatingPointCounterHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Create a backing floating-point handler.",
       "type" : "text"
     }
   ],
@@ -1024,26 +906,18 @@
       "text" : "FloatingPointCounterHandler"
     }
   ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory\/makeFloatingPointCounter(label:dimensions:)-2irnb",
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory\/makeFloatingPointCounter(label:dimensions:)",
   "kind" : "symbol",
   "required" : true,
   "role" : "symbol",
   "title" : "makeFloatingPointCounter(label:dimensions:)",
   "type" : "topic",
-  "url" : "\/documentation\/coremetrics\/metricsfactory\/makefloatingpointcounter(label:dimensions:)-2irnb"
+  "url" : "\/documentation\/coremetrics\/metricsfactory\/makefloatingpointcounter(label:dimensions:)"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MetricsFactory/makeMeter(label:dimensions:)-1u7ae": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MetricsFactory/makeMeter(label:dimensions:)": {
   "abstract" : [
     {
-      "text" : "Create a backing ",
-      "type" : "text"
-    },
-    {
-      "code" : "MeterHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Create a backing meter handler.",
       "type" : "text"
     }
   ],
@@ -1114,26 +988,18 @@
       "text" : "MeterHandler"
     }
   ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory\/makeMeter(label:dimensions:)-1u7ae",
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory\/makeMeter(label:dimensions:)",
   "kind" : "symbol",
   "required" : true,
   "role" : "symbol",
   "title" : "makeMeter(label:dimensions:)",
   "type" : "topic",
-  "url" : "\/documentation\/coremetrics\/metricsfactory\/makemeter(label:dimensions:)-1u7ae"
+  "url" : "\/documentation\/coremetrics\/metricsfactory\/makemeter(label:dimensions:)"
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MetricsFactory/makeRecorder(label:dimensions:aggregate:)": {
   "abstract" : [
     {
-      "text" : "Create a backing ",
-      "type" : "text"
-    },
-    {
-      "code" : "RecorderHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Create a backing recorder handler.",
       "type" : "text"
     }
   ],
@@ -1231,15 +1097,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MetricsFactory/makeTimer(label:dimensions:)": {
   "abstract" : [
     {
-      "text" : "Create a backing ",
-      "type" : "text"
-    },
-    {
-      "code" : "TimerHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Create a backing timer handler.",
       "type" : "text"
     }
   ],
@@ -1354,7 +1212,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/NOOPMetricsHandler": {
   "abstract" : [
     {
-      "text" : "Ships with the metrics module, used for initial bootstrapping.",
+      "text" : "A metrics handler that implements the protocols but does nothing.",
       "type" : "text"
     }
   ],

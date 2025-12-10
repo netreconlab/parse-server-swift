@@ -1,4 +1,10 @@
 {
+  "abstract" : [
+    {
+      "text" : "Creates a new multiplex metrics handler from the metric factories you provide.",
+      "type" : "text"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -92,6 +98,25 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The metric factories to multiplex together.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "factories"
+        }
+      ]
     }
   ],
   "schemaVersion" : {
@@ -147,18 +172,6 @@
     },
     {
       "text" : " and the metrics backend implementation.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "code" : "MetricsFactory",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : "’s role is to initialize concrete implementations of the various metric types:",
       "type" : "text"
     }
   ],
@@ -225,7 +238,10 @@
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MultiplexMetricsHandler/init(factories:)": {
   "abstract" : [
-
+    {
+      "text" : "Creates a new multiplex metrics handler from the metric factories you provide.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

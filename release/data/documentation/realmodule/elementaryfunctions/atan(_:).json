@@ -187,79 +187,56 @@
           "type" : "codeListing"
         },
         {
-          "anchor" : "See-also",
-          "level" : 2,
-          "text" : "See also:",
-          "type" : "heading"
-        },
-        {
-          "items" : [
+          "inlineContent" : [
             {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "code" : "acos()",
-                      "type" : "codeVoice"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
+              "text" : "See also ",
+              "type" : "text"
             },
             {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "code" : "asin()",
-                      "type" : "codeVoice"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/ElementaryFunctions\/tan(_:)",
+              "isActive" : true,
+              "type" : "reference"
             },
             {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "code" : "atan2()",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : " (for types conforming to ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "RealFunctions",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ")",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
+              "text" : ".",
+              "type" : "text"
             },
             {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "code" : "tan()",
-                      "type" : "codeVoice"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For types that conform to ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ", you will sometimes want",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to use ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions\/atan2(y:x:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " instead.",
+              "type" : "text"
             }
           ],
-          "type" : "unorderedList"
+          "type" : "paragraph"
         }
       ],
       "kind" : "content"
@@ -300,10 +277,7 @@
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/ElementaryFunctions": {
   "abstract" : [
-    {
-      "text" : "A type that has elementary functions available.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -402,6 +376,200 @@
   "type" : "topic",
   "url" : "\/documentation\/realmodule\/elementaryfunctions\/atan(_:)"
 },
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/ElementaryFunctions/tan(_:)": {
+  "abstract" : [
+    {
+      "text" : "The ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Tangent",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " of ",
+      "type" : "text"
+    },
+    {
+      "code" : "x",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "tan"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/ElementaryFunctions\/tan(_:)",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "tan(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/realmodule\/elementaryfunctions\/tan(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/RealFunctions": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "RealFunctions"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "RealFunctions"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "RealFunctions",
+  "type" : "topic",
+  "url" : "\/documentation\/realmodule\/realfunctions"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/RealFunctions/atan2(y:x:)": {
+  "abstract" : [
+    {
+      "text" : "The signed angle formed in the plane between the vector ",
+      "type" : "text"
+    },
+    {
+      "code" : "(x,y)",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " and the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "positive real axis, measured in radians.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "atan2"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "y"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "x"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions\/atan2(y:x:)",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "atan2(y:x:)",
+  "type" : "topic",
+  "url" : "\/documentation\/realmodule\/realfunctions\/atan2(y:x:)"
+},
 "https://en.wikipedia.org/wiki/Inverse_trigonometric_functions": {
   "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Inverse_trigonometric_functions",
   "title" : "arctangent",
@@ -413,6 +581,18 @@
   ],
   "type" : "link",
   "url" : "https:\/\/en.wikipedia.org\/wiki\/Inverse_trigonometric_functions"
+},
+"https://en.wikipedia.org/wiki/Tangent": {
+  "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Tangent",
+  "title" : "tangent",
+  "titleInlineContent" : [
+    {
+      "text" : "tangent",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/en.wikipedia.org\/wiki\/Tangent"
 }
 }
 }

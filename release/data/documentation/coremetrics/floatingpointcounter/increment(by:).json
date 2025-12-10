@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Increment the FloatingPointCounter.",
+      "text" : "Increment the floating-point counter.",
       "type" : "text"
     }
   ],
@@ -158,6 +158,25 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Amount to increment by.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "amount"
+        }
+      ]
     }
   ],
   "schemaVersion" : {
@@ -196,23 +215,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/FloatingPointCounter": {
   "abstract" : [
     {
-      "text" : "A FloatingPointCounter is a cumulative metric that represents a single monotonically increasing FloatingPointCounter whose value can only increase or be reset to zero.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "For example, you can use a FloatingPointCounter to represent the number of requests served, tasks completed, or errors.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "FloatingPointCounter is not supported by all metrics backends, however a default implementation is provided which accumulates floating point values and records increments to a standard Counter after crossing integer boundaries.",
+      "text" : "A floating-point counter is a cumulative metric that represents a single monotonically increasing floating-point counter whose value can only increase or be reset to zero.",
       "type" : "text"
     }
   ],
@@ -246,7 +249,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/FloatingPointCounter/increment(by:)": {
   "abstract" : [
     {
-      "text" : "Increment the FloatingPointCounter.",
+      "text" : "Increment the floating-point counter.",
       "type" : "text"
     }
   ],

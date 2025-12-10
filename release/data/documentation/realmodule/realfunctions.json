@@ -118,14 +118,14 @@
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions\/atan2(y:x:)",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions\/erf(_:)",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions\/erfc(_:)",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions\/exp10(_:)-2hsp",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions\/exp10(_:)",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions\/exp2(_:)",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions\/gamma(_:)",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions\/hypot(_:_:)",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions\/log10(_:)",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions\/log2(_:)",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions\/logGamma(_:)",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions\/signGamma(_:)-lh4l"
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions\/signGamma(_:)"
       ],
       "title" : "Type Methods"
     }
@@ -162,10 +162,7 @@
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/ElementaryFunctions": {
   "abstract" : [
-    {
-      "text" : "A type that has elementary functions available.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -262,19 +259,23 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/RealFunctions/atan2(y:x:)": {
   "abstract" : [
     {
-      "code" : "atan(y\/x)",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ", with sign selected according to the quadrant of ",
+      "text" : "The signed angle formed in the plane between the vector ",
       "type" : "text"
     },
     {
-      "code" : "(x, y)",
+      "code" : "(x,y)",
       "type" : "codeVoice"
     },
     {
-      "text" : ".",
+      "text" : " and the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "positive real axis, measured in radians.",
       "type" : "text"
     }
   ],
@@ -351,7 +352,20 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/RealFunctions/erf(_:)": {
   "abstract" : [
     {
-      "text" : "The error function evaluated at ",
+      "text" : "The ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Error_function",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "evaluated at ",
       "type" : "text"
     },
     {
@@ -412,7 +426,20 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/RealFunctions/erfc(_:)": {
   "abstract" : [
     {
-      "text" : "The complimentary error function evaluated at ",
+      "text" : "The complimentary ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Error_function",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "evaluated at ",
       "type" : "text"
     },
     {
@@ -470,10 +497,10 @@
   "type" : "topic",
   "url" : "\/documentation\/realmodule\/realfunctions\/erfc(_:)"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/RealFunctions/exp10(_:)-2hsp": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/RealFunctions/exp10(_:)": {
   "abstract" : [
     {
-      "text" : "10^x",
+      "text" : "10 raised to the power x.",
       "type" : "text"
     }
   ],
@@ -516,18 +543,18 @@
       "text" : "Self"
     }
   ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions\/exp10(_:)-2hsp",
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions\/exp10(_:)",
   "kind" : "symbol",
   "required" : true,
   "role" : "symbol",
   "title" : "exp10(_:)",
   "type" : "topic",
-  "url" : "\/documentation\/realmodule\/realfunctions\/exp10(_:)-2hsp"
+  "url" : "\/documentation\/realmodule\/realfunctions\/exp10(_:)"
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/RealFunctions/exp2(_:)": {
   "abstract" : [
     {
-      "text" : "2^x",
+      "text" : "2 raised to the power x.",
       "type" : "text"
     }
   ],
@@ -580,7 +607,16 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/RealFunctions/gamma(_:)": {
   "abstract" : [
     {
-      "text" : "The gamma function Γ(x).",
+      "text" : "The ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Gamma_function",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " Γ(x).",
       "type" : "text"
     }
   ],
@@ -633,11 +669,15 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/RealFunctions/hypot(_:_:)": {
   "abstract" : [
     {
-      "code" : "sqrt(x*x + y*y)",
+      "text" : "The length of the vector ",
+      "type" : "text"
+    },
+    {
+      "code" : "(x,y)",
       "type" : "codeVoice"
     },
     {
-      "text" : ", computed in a manner that avoids spurious overflow or",
+      "text" : ", computed in a manner that avoids",
       "type" : "text"
     },
     {
@@ -645,7 +685,7 @@
       "type" : "text"
     },
     {
-      "text" : "underflow.",
+      "text" : "spurious overflow or underflow.",
       "type" : "text"
     }
   ],
@@ -828,7 +868,28 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/RealFunctions/logGamma(_:)": {
   "abstract" : [
     {
-      "text" : "The logarithm of the absolute value of the gamma function, log(|Γ(x)|).",
+      "text" : "The logarithm of the absolute value of the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Gamma_function",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ",",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "log(|Γ(x)|).",
       "type" : "text"
     }
   ],
@@ -878,10 +939,23 @@
   "type" : "topic",
   "url" : "\/documentation\/realmodule\/realfunctions\/loggamma(_:)"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/RealFunctions/signGamma(_:)-lh4l": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/RealFunctions/signGamma(_:)": {
   "abstract" : [
     {
-      "text" : "The sign of the gamma function, Γ(x).",
+      "text" : "The sign of the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Gamma_function",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ", Γ(x).",
       "type" : "text"
     }
   ],
@@ -925,18 +999,42 @@
       "text" : "FloatingPointSign"
     }
   ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions\/signGamma(_:)-lh4l",
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions\/signGamma(_:)",
   "kind" : "symbol",
   "required" : true,
   "role" : "symbol",
   "title" : "signGamma(_:)",
   "type" : "topic",
-  "url" : "\/documentation\/realmodule\/realfunctions\/signgamma(_:)-lh4l"
+  "url" : "\/documentation\/realmodule\/realfunctions\/signgamma(_:)"
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/s18AdditiveArithmeticP": {
   "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s18AdditiveArithmeticP",
   "title" : "Swift.AdditiveArithmetic",
   "type" : "unresolvable"
+},
+"https://en.wikipedia.org/wiki/Error_function": {
+  "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Error_function",
+  "title" : "error function",
+  "titleInlineContent" : [
+    {
+      "text" : "error function",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/en.wikipedia.org\/wiki\/Error_function"
+},
+"https://en.wikipedia.org/wiki/Gamma_function": {
+  "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Gamma_function",
+  "title" : "gamma function",
+  "titleInlineContent" : [
+    {
+      "text" : "gamma function",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/en.wikipedia.org\/wiki\/Gamma_function"
 }
 }
 }

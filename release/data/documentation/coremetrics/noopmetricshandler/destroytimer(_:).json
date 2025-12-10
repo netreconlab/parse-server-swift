@@ -1,15 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Invoked when the corresponding ",
-      "type" : "text"
-    },
-    {
-      "code" : "Timer",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : "’s ",
+      "text" : "Invoked when the corresponding Timer’s ",
       "type" : "text"
     },
     {
@@ -18,14 +10,6 @@
     },
     {
       "text" : " function is invoked.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Upon receiving this signal the factory may eagerly release any resources related to this timer.",
       "type" : "text"
     }
   ],
@@ -130,6 +114,45 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The handler to be destroyed.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "handler"
+        }
+      ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Upon receiving this signal the factory may eagerly release any resources related to this timer.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -168,7 +191,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/NOOPMetricsHandler": {
   "abstract" : [
     {
-      "text" : "Ships with the metrics module, used for initial bootstrapping.",
+      "text" : "A metrics handler that implements the protocols but does nothing.",
       "type" : "text"
     }
   ],
@@ -202,15 +225,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/NOOPMetricsHandler/destroyTimer(_:)": {
   "abstract" : [
     {
-      "text" : "Invoked when the corresponding ",
-      "type" : "text"
-    },
-    {
-      "code" : "Timer",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : "’s ",
+      "text" : "Invoked when the corresponding Timer’s ",
       "type" : "text"
     },
     {
@@ -219,14 +234,6 @@
     },
     {
       "text" : " function is invoked.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Upon receiving this signal the factory may eagerly release any resources related to this timer.",
       "type" : "text"
     }
   ],
@@ -267,23 +274,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/TimerHandler": {
   "abstract" : [
     {
-      "text" : "A ",
-      "type" : "text"
-    },
-    {
-      "code" : "TimerHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " represents a backend implementation of a ",
-      "type" : "text"
-    },
-    {
-      "code" : "Timer",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "A timer handler represents a backend implementation of a timer.",
       "type" : "text"
     }
   ],

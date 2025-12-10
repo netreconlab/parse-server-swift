@@ -98,6 +98,14 @@
           ],
           "tokens" : [
             {
+              "kind" : "attribute",
+              "text" : "@preconcurrency"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
               "kind" : "keyword",
               "text" : "protocol"
             },
@@ -135,6 +143,15 @@
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:SH",
               "text" : "Hashable"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s8SendableP",
+              "text" : "Sendable"
             },
             {
               "kind" : "text",
@@ -192,6 +209,7 @@
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s23CustomStringConvertibleP",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/SQ",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/SH",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/ST"
       ],
       "kind" : "relationships",
@@ -228,8 +246,7 @@
       "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/MessageAuthenticationCode\/CustomStringConvertible-Implementations",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/MessageAuthenticationCode\/Sequence-Implementations"
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/MessageAuthenticationCode\/CustomStringConvertible-Implementations"
       ],
       "title" : "Default Implementations"
     }
@@ -358,17 +375,6 @@
   "type" : "topic",
   "url" : "\/documentation\/crypto\/messageauthenticationcode\/customstringconvertible-implementations"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Crypto/MessageAuthenticationCode/Sequence-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/MessageAuthenticationCode\/Sequence-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Sequence Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/crypto\/messageauthenticationcode\/sequence-implementations"
-},
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Crypto/MessageAuthenticationCode/byteCount": {
   "abstract" : [
     {
@@ -410,6 +416,11 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/s23CustomStringConvertibleP": {
   "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s23CustomStringConvertibleP",
   "title" : "Swift.CustomStringConvertible",
+  "type" : "unresolvable"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s8SendableP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP",
+  "title" : "Swift.Sendable",
   "type" : "unresolvable"
 }
 }

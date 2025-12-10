@@ -37,8 +37,18 @@
                 "type" : "init"
               },
               {
+                "path" : "\/documentation\/coremetrics\/counter\/init(label:dimensions:factory:)",
+                "title" : "init(label: String, dimensions: [(String, String)], factory: MetricsFactory)",
+                "type" : "init"
+              },
+              {
                 "path" : "\/documentation\/coremetrics\/counter\/init(label:dimensions:handler:)",
                 "title" : "init(label: String, dimensions: [(String, String)], handler: CounterHandler)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/coremetrics\/counter\/init(label:dimensions:handler:factory:)",
+                "title" : "init(label: String, dimensions: [(String, String)], handler: CounterHandler, factory: MetricsFactory)",
                 "type" : "init"
               },
               {
@@ -116,8 +126,18 @@
                 "type" : "init"
               },
               {
+                "path" : "\/documentation\/coremetrics\/floatingpointcounter\/init(label:dimensions:factory:)",
+                "title" : "init(label: String, dimensions: [(String, String)], factory: MetricsFactory)",
+                "type" : "init"
+              },
+              {
                 "path" : "\/documentation\/coremetrics\/floatingpointcounter\/init(label:dimensions:handler:)",
                 "title" : "init(label: String, dimensions: [(String, String)], handler: FloatingPointCounterHandler)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/coremetrics\/floatingpointcounter\/init(label:dimensions:handler:factory:)",
+                "title" : "init(label: String, dimensions: [(String, String)], handler: FloatingPointCounterHandler, factory: MetricsFactory)",
                 "type" : "init"
               },
               {
@@ -193,6 +213,11 @@
                 "path" : "\/documentation\/coremetrics\/gauge\/init(label:dimensions:)",
                 "title" : "init(label: String, dimensions: [(String, String)])",
                 "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/coremetrics\/gauge\/init(label:dimensions:factory:)",
+                "title" : "init(label: String, dimensions: [(String, String)], factory: MetricsFactory)",
+                "type" : "init"
               }
             ],
             "path" : "\/documentation\/coremetrics\/gauge",
@@ -211,8 +236,18 @@
                 "type" : "init"
               },
               {
+                "path" : "\/documentation\/coremetrics\/meter\/init(label:dimensions:factory:)",
+                "title" : "init(label: String, dimensions: [(String, String)], factory: MetricsFactory)",
+                "type" : "init"
+              },
+              {
                 "path" : "\/documentation\/coremetrics\/meter\/init(label:dimensions:handler:)",
                 "title" : "init(label: String, dimensions: [(String, String)], handler: MeterHandler)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/coremetrics\/meter\/init(label:dimensions:handler:factory:)",
+                "title" : "init(label: String, dimensions: [(String, String)], handler: MeterHandler, factory: MetricsFactory)",
                 "type" : "init"
               },
               {
@@ -510,8 +545,18 @@
                 "type" : "init"
               },
               {
+                "path" : "\/documentation\/coremetrics\/recorder\/init(label:dimensions:aggregate:factory:)",
+                "title" : "init(label: String, dimensions: [(String, String)], aggregate: Bool, factory: MetricsFactory)",
+                "type" : "init"
+              },
+              {
                 "path" : "\/documentation\/coremetrics\/recorder\/init(label:dimensions:aggregate:handler:)",
                 "title" : "init(label: String, dimensions: [(String, String)], aggregate: Bool, handler: RecorderHandler)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/coremetrics\/recorder\/init(label:dimensions:aggregate:handler:factory:)",
+                "title" : "init(label: String, dimensions: [(String, String)], aggregate: Bool, handler: RecorderHandler, factory: MetricsFactory)",
                 "type" : "init"
               },
               {
@@ -589,13 +634,28 @@
                 "type" : "init"
               },
               {
+                "path" : "\/documentation\/coremetrics\/timer\/init(label:dimensions:factory:)",
+                "title" : "init(label: String, dimensions: [(String, String)], factory: MetricsFactory)",
+                "type" : "init"
+              },
+              {
                 "path" : "\/documentation\/coremetrics\/timer\/init(label:dimensions:handler:)",
                 "title" : "init(label: String, dimensions: [(String, String)], handler: TimerHandler)",
                 "type" : "init"
               },
               {
+                "path" : "\/documentation\/coremetrics\/timer\/init(label:dimensions:handler:factory:)",
+                "title" : "init(label: String, dimensions: [(String, String)], handler: TimerHandler, factory: MetricsFactory)",
+                "type" : "init"
+              },
+              {
                 "path" : "\/documentation\/coremetrics\/timer\/init(label:dimensions:preferreddisplayunit:)",
                 "title" : "init(label: String, dimensions: [(String, String)], preferredDisplayUnit: TimeUnit)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/coremetrics\/timer\/init(label:dimensions:preferreddisplayunit:factory:)",
+                "title" : "init(label: String, dimensions: [(String, String)], preferredDisplayUnit: TimeUnit, factory: MetricsFactory)",
                 "type" : "init"
               },
               {
@@ -788,7 +848,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/coremetrics\/metricsfactory\/destroyfloatingpointcounter(_:)-8zdha",
+                "path" : "\/documentation\/coremetrics\/metricsfactory\/destroyfloatingpointcounter(_:)",
                 "title" : "func destroyFloatingPointCounter(FloatingPointCounterHandler)",
                 "type" : "method"
               },
@@ -806,7 +866,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/coremetrics\/metricsfactory\/destroymeter(_:)-3ak7l",
+                "path" : "\/documentation\/coremetrics\/metricsfactory\/destroymeter(_:)",
                 "title" : "func destroyMeter(MeterHandler)",
                 "type" : "method"
               },
@@ -839,7 +899,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/coremetrics\/metricsfactory\/makefloatingpointcounter(label:dimensions:)-2irnb",
+                "path" : "\/documentation\/coremetrics\/metricsfactory\/makefloatingpointcounter(label:dimensions:)",
                 "title" : "func makeFloatingPointCounter(label: String, dimensions: [(String, String)]) -> FloatingPointCounterHandler",
                 "type" : "method"
               },
@@ -857,7 +917,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/coremetrics\/metricsfactory\/makemeter(label:dimensions:)-1u7ae",
+                "path" : "\/documentation\/coremetrics\/metricsfactory\/makemeter(label:dimensions:)",
                 "title" : "func makeMeter(label: String, dimensions: [(String, String)]) -> MeterHandler",
                 "type" : "method"
               },
@@ -917,7 +977,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/coremetrics\/timerhandler\/preferdisplayunit(_:)-1ldza",
+                "path" : "\/documentation\/coremetrics\/timerhandler\/preferdisplayunit(_:)",
                 "title" : "func preferDisplayUnit(TimeUnit)",
                 "type" : "method"
               },
@@ -1118,22 +1178,6 @@
                 ],
                 "path" : "\/documentation\/crypto\/digest\/customstringconvertible-implementations",
                 "title" : "CustomStringConvertible Implementations",
-                "type" : "symbol"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Instance Methods",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/crypto\/digest\/makeiterator()",
-                    "title" : "func makeIterator() -> Array<UInt8>.Iterator",
-                    "type" : "method"
-                  }
-                ],
-                "path" : "\/documentation\/crypto\/digest\/sequence-implementations",
-                "title" : "Sequence Implementations",
                 "type" : "symbol"
               }
             ],
@@ -1354,22 +1398,6 @@
                 "path" : "\/documentation\/crypto\/messageauthenticationcode\/customstringconvertible-implementations",
                 "title" : "CustomStringConvertible Implementations",
                 "type" : "symbol"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Instance Methods",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/crypto\/messageauthenticationcode\/makeiterator()",
-                    "title" : "func makeIterator() -> Array<UInt8>.Iterator",
-                    "type" : "method"
-                  }
-                ],
-                "path" : "\/documentation\/crypto\/messageauthenticationcode\/sequence-implementations",
-                "title" : "Sequence Implementations",
-                "type" : "symbol"
               }
             ],
             "path" : "\/documentation\/crypto\/messageauthenticationcode",
@@ -1379,6 +1407,11 @@
           {
             "title" : "Structures",
             "type" : "groupMarker"
+          },
+          {
+            "path" : "\/documentation\/crypto\/corecryptocurvetype",
+            "title" : "CorecryptoCurveType",
+            "type" : "struct"
           },
           {
             "children" : [
@@ -1573,6 +1606,15 @@
                     "path" : "\/documentation\/crypto\/hashedauthenticationcode\/==(_:_:)-6fwjy",
                     "title" : "static func == (Self, Self) -> Bool",
                     "type" : "op"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/crypto\/hashedauthenticationcode\/makeiterator()",
+                    "title" : "func makeIterator() -> Array<UInt8>.Iterator",
+                    "type" : "method"
                   }
                 ],
                 "path" : "\/documentation\/crypto\/hashedauthenticationcode\/messageauthenticationcode-implementations",
@@ -1665,12 +1707,7 @@
                     "type" : "method"
                   },
                   {
-                    "path" : "\/documentation\/crypto\/hashedauthenticationcode\/filter(_:)-2wd6x",
-                    "title" : "func filter(Predicate<Self.Element>) throws -> [Self.Element]",
-                    "type" : "method"
-                  },
-                  {
-                    "path" : "\/documentation\/crypto\/hashedauthenticationcode\/filter(_:)-uwyn",
+                    "path" : "\/documentation\/crypto\/hashedauthenticationcode\/filter(_:)",
                     "title" : "func filter((Self.Element) throws -> Bool) rethrows -> [Self.Element]",
                     "type" : "method"
                   },
@@ -1680,6 +1717,7 @@
                     "type" : "method"
                   },
                   {
+                    "deprecated" : true,
                     "path" : "\/documentation\/crypto\/hashedauthenticationcode\/flatmap(_:)-3qbo7",
                     "title" : "func flatMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]",
                     "type" : "method"
@@ -1707,11 +1745,6 @@
                   {
                     "path" : "\/documentation\/crypto\/hashedauthenticationcode\/lexicographicallyprecedes(_:by:)",
                     "title" : "func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Bool",
-                    "type" : "method"
-                  },
-                  {
-                    "path" : "\/documentation\/crypto\/hashedauthenticationcode\/makeiterator()",
-                    "title" : "func makeIterator() -> Array<UInt8>.Iterator",
                     "type" : "method"
                   },
                   {
@@ -1988,6 +2021,15 @@
                     "path" : "\/documentation\/crypto\/sha256digest\/==(_:_:)-1k7o1",
                     "title" : "static func == (Self, Self) -> Bool",
                     "type" : "op"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/crypto\/sha256digest\/makeiterator()",
+                    "title" : "func makeIterator() -> Array<UInt8>.Iterator",
+                    "type" : "method"
                   }
                 ],
                 "path" : "\/documentation\/crypto\/sha256digest\/digest-implementations",
@@ -2096,12 +2138,7 @@
                     "type" : "method"
                   },
                   {
-                    "path" : "\/documentation\/crypto\/sha256digest\/filter(_:)-7380r",
-                    "title" : "func filter(Predicate<Self.Element>) throws -> [Self.Element]",
-                    "type" : "method"
-                  },
-                  {
-                    "path" : "\/documentation\/crypto\/sha256digest\/filter(_:)-8ivo9",
+                    "path" : "\/documentation\/crypto\/sha256digest\/filter(_:)",
                     "title" : "func filter((Self.Element) throws -> Bool) rethrows -> [Self.Element]",
                     "type" : "method"
                   },
@@ -2111,6 +2148,7 @@
                     "type" : "method"
                   },
                   {
+                    "deprecated" : true,
                     "path" : "\/documentation\/crypto\/sha256digest\/flatmap(_:)-1cvsi",
                     "title" : "func flatMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]",
                     "type" : "method"
@@ -2138,11 +2176,6 @@
                   {
                     "path" : "\/documentation\/crypto\/sha256digest\/lexicographicallyprecedes(_:by:)",
                     "title" : "func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Bool",
-                    "type" : "method"
-                  },
-                  {
-                    "path" : "\/documentation\/crypto\/sha256digest\/makeiterator()",
-                    "title" : "func makeIterator() -> Array<UInt8>.Iterator",
                     "type" : "method"
                   },
                   {
@@ -2419,6 +2452,15 @@
                     "path" : "\/documentation\/crypto\/sha384digest\/==(_:_:)-6nv6i",
                     "title" : "static func == (Self, Self) -> Bool",
                     "type" : "op"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/crypto\/sha384digest\/makeiterator()",
+                    "title" : "func makeIterator() -> Array<UInt8>.Iterator",
+                    "type" : "method"
                   }
                 ],
                 "path" : "\/documentation\/crypto\/sha384digest\/digest-implementations",
@@ -2527,13 +2569,8 @@
                     "type" : "method"
                   },
                   {
-                    "path" : "\/documentation\/crypto\/sha384digest\/filter(_:)-5zdtr",
+                    "path" : "\/documentation\/crypto\/sha384digest\/filter(_:)",
                     "title" : "func filter((Self.Element) throws -> Bool) rethrows -> [Self.Element]",
-                    "type" : "method"
-                  },
-                  {
-                    "path" : "\/documentation\/crypto\/sha384digest\/filter(_:)-mpld",
-                    "title" : "func filter(Predicate<Self.Element>) throws -> [Self.Element]",
                     "type" : "method"
                   },
                   {
@@ -2542,6 +2579,7 @@
                     "type" : "method"
                   },
                   {
+                    "deprecated" : true,
                     "path" : "\/documentation\/crypto\/sha384digest\/flatmap(_:)-38d9w",
                     "title" : "func flatMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]",
                     "type" : "method"
@@ -2569,11 +2607,6 @@
                   {
                     "path" : "\/documentation\/crypto\/sha384digest\/lexicographicallyprecedes(_:by:)",
                     "title" : "func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Bool",
-                    "type" : "method"
-                  },
-                  {
-                    "path" : "\/documentation\/crypto\/sha384digest\/makeiterator()",
-                    "title" : "func makeIterator() -> Array<UInt8>.Iterator",
                     "type" : "method"
                   },
                   {
@@ -2850,6 +2883,15 @@
                     "path" : "\/documentation\/crypto\/sha512digest\/==(_:_:)-5jr32",
                     "title" : "static func == (Self, Self) -> Bool",
                     "type" : "op"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/crypto\/sha512digest\/makeiterator()",
+                    "title" : "func makeIterator() -> Array<UInt8>.Iterator",
+                    "type" : "method"
                   }
                 ],
                 "path" : "\/documentation\/crypto\/sha512digest\/digest-implementations",
@@ -2958,12 +3000,7 @@
                     "type" : "method"
                   },
                   {
-                    "path" : "\/documentation\/crypto\/sha512digest\/filter(_:)-33qzh",
-                    "title" : "func filter(Predicate<Self.Element>) throws -> [Self.Element]",
-                    "type" : "method"
-                  },
-                  {
-                    "path" : "\/documentation\/crypto\/sha512digest\/filter(_:)-5y7ox",
+                    "path" : "\/documentation\/crypto\/sha512digest\/filter(_:)",
                     "title" : "func filter((Self.Element) throws -> Bool) rethrows -> [Self.Element]",
                     "type" : "method"
                   },
@@ -2978,6 +3015,7 @@
                     "type" : "method"
                   },
                   {
+                    "deprecated" : true,
                     "path" : "\/documentation\/crypto\/sha512digest\/flatmap(_:)-87l77",
                     "title" : "func flatMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]",
                     "type" : "method"
@@ -3000,11 +3038,6 @@
                   {
                     "path" : "\/documentation\/crypto\/sha512digest\/lexicographicallyprecedes(_:by:)",
                     "title" : "func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Bool",
-                    "type" : "method"
-                  },
-                  {
-                    "path" : "\/documentation\/crypto\/sha512digest\/makeiterator()",
-                    "title" : "func makeIterator() -> Array<UInt8>.Iterator",
                     "type" : "method"
                   },
                   {
@@ -3337,6 +3370,25 @@
             "type" : "struct"
           },
           {
+            "title" : "Type Aliases",
+            "type" : "groupMarker"
+          },
+          {
+            "path" : "\/documentation\/crypto\/cryptoasn1error",
+            "title" : "CryptoASN1Error",
+            "type" : "typealias"
+          },
+          {
+            "path" : "\/documentation\/crypto\/cryptoerror",
+            "title" : "CryptoError",
+            "type" : "typealias"
+          },
+          {
+            "path" : "\/documentation\/crypto\/cryptokitmetaerror",
+            "title" : "CryptoKitMetaError",
+            "type" : "typealias"
+          },
+          {
             "title" : "Enumerations",
             "type" : "groupMarker"
           },
@@ -3486,13 +3538,8 @@
                             "type" : "method"
                           },
                           {
-                            "path" : "\/documentation\/crypto\/aes\/gcm\/nonce\/filter(_:)-32gd6",
+                            "path" : "\/documentation\/crypto\/aes\/gcm\/nonce\/filter(_:)",
                             "title" : "func filter((Self.Element) throws -> Bool) rethrows -> [Self.Element]",
-                            "type" : "method"
-                          },
-                          {
-                            "path" : "\/documentation\/crypto\/aes\/gcm\/nonce\/filter(_:)-5sc7n",
-                            "title" : "func filter(Predicate<Self.Element>) throws -> [Self.Element]",
                             "type" : "method"
                           },
                           {
@@ -3501,6 +3548,7 @@
                             "type" : "method"
                           },
                           {
+                            "deprecated" : true,
                             "path" : "\/documentation\/crypto\/aes\/gcm\/nonce\/flatmap(_:)-4if6r",
                             "title" : "func flatMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]",
                             "type" : "method"
@@ -3890,13 +3938,8 @@
                         "type" : "method"
                       },
                       {
-                        "path" : "\/documentation\/crypto\/chachapoly\/nonce\/filter(_:)-6eh9u",
+                        "path" : "\/documentation\/crypto\/chachapoly\/nonce\/filter(_:)",
                         "title" : "func filter((Self.Element) throws -> Bool) rethrows -> [Self.Element]",
-                        "type" : "method"
-                      },
-                      {
-                        "path" : "\/documentation\/crypto\/chachapoly\/nonce\/filter(_:)-7txam",
-                        "title" : "func filter(Predicate<Self.Element>) throws -> [Self.Element]",
                         "type" : "method"
                       },
                       {
@@ -3910,6 +3953,7 @@
                         "type" : "method"
                       },
                       {
+                        "deprecated" : true,
                         "path" : "\/documentation\/crypto\/chachapoly\/nonce\/flatmap(_:)-5xyhv",
                         "title" : "func flatMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]",
                         "type" : "method"
@@ -5346,6 +5390,15 @@
                         "path" : "\/documentation\/crypto\/insecure\/md5digest\/==(_:_:)-4kdxb",
                         "title" : "static func == (Self, Self) -> Bool",
                         "type" : "op"
+                      },
+                      {
+                        "title" : "Instance Methods",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/crypto\/insecure\/md5digest\/makeiterator()",
+                        "title" : "func makeIterator() -> Array<UInt8>.Iterator",
+                        "type" : "method"
                       }
                     ],
                     "path" : "\/documentation\/crypto\/insecure\/md5digest\/digest-implementations",
@@ -5454,12 +5507,7 @@
                         "type" : "method"
                       },
                       {
-                        "path" : "\/documentation\/crypto\/insecure\/md5digest\/filter(_:)-50cy5",
-                        "title" : "func filter(Predicate<Self.Element>) throws -> [Self.Element]",
-                        "type" : "method"
-                      },
-                      {
-                        "path" : "\/documentation\/crypto\/insecure\/md5digest\/filter(_:)-9qig7",
+                        "path" : "\/documentation\/crypto\/insecure\/md5digest\/filter(_:)",
                         "title" : "func filter((Self.Element) throws -> Bool) rethrows -> [Self.Element]",
                         "type" : "method"
                       },
@@ -5474,6 +5522,7 @@
                         "type" : "method"
                       },
                       {
+                        "deprecated" : true,
                         "path" : "\/documentation\/crypto\/insecure\/md5digest\/flatmap(_:)-g6s1",
                         "title" : "func flatMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]",
                         "type" : "method"
@@ -5496,11 +5545,6 @@
                       {
                         "path" : "\/documentation\/crypto\/insecure\/md5digest\/lexicographicallyprecedes(_:by:)",
                         "title" : "func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Bool",
-                        "type" : "method"
-                      },
-                      {
-                        "path" : "\/documentation\/crypto\/insecure\/md5digest\/makeiterator()",
-                        "title" : "func makeIterator() -> Array<UInt8>.Iterator",
                         "type" : "method"
                       },
                       {
@@ -5777,6 +5821,15 @@
                         "path" : "\/documentation\/crypto\/insecure\/sha1digest\/==(_:_:)-8cfsu",
                         "title" : "static func == <D>(Self, D) -> Bool",
                         "type" : "op"
+                      },
+                      {
+                        "title" : "Instance Methods",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/crypto\/insecure\/sha1digest\/makeiterator()",
+                        "title" : "func makeIterator() -> Array<UInt8>.Iterator",
+                        "type" : "method"
                       }
                     ],
                     "path" : "\/documentation\/crypto\/insecure\/sha1digest\/digest-implementations",
@@ -5885,13 +5938,8 @@
                         "type" : "method"
                       },
                       {
-                        "path" : "\/documentation\/crypto\/insecure\/sha1digest\/filter(_:)-2jng0",
+                        "path" : "\/documentation\/crypto\/insecure\/sha1digest\/filter(_:)",
                         "title" : "func filter((Self.Element) throws -> Bool) rethrows -> [Self.Element]",
-                        "type" : "method"
-                      },
-                      {
-                        "path" : "\/documentation\/crypto\/insecure\/sha1digest\/filter(_:)-7xm7v",
-                        "title" : "func filter(Predicate<Self.Element>) throws -> [Self.Element]",
                         "type" : "method"
                       },
                       {
@@ -5905,6 +5953,7 @@
                         "type" : "method"
                       },
                       {
+                        "deprecated" : true,
                         "path" : "\/documentation\/crypto\/insecure\/sha1digest\/flatmap(_:)-7zc70",
                         "title" : "func flatMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]",
                         "type" : "method"
@@ -5927,11 +5976,6 @@
                       {
                         "path" : "\/documentation\/crypto\/insecure\/sha1digest\/lexicographicallyprecedes(_:by:)",
                         "title" : "func lexicographicallyPrecedes<OtherSequence>(OtherSequence, by: (Self.Element, Self.Element) throws -> Bool) rethrows -> Bool",
-                        "type" : "method"
-                      },
-                      {
-                        "path" : "\/documentation\/crypto\/insecure\/sha1digest\/makeiterator()",
-                        "title" : "func makeIterator() -> Array<UInt8>.Iterator",
                         "type" : "method"
                       },
                       {
@@ -7755,7 +7799,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/logging\/loghandler\/metadataprovider-1vq31",
+                "path" : "\/documentation\/logging\/loghandler\/metadataprovider",
                 "title" : "var metadataProvider: Logger.MetadataProvider?",
                 "type" : "property"
               },
@@ -7777,7 +7821,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/logging\/loghandler\/log(level:message:metadata:file:function:line:)-89rya",
+                "path" : "\/documentation\/logging\/loghandler\/log(level:message:metadata:file:function:line:)",
                 "title" : "func log(level: Logging.Logger.Level, message: Logging.Logger.Message, metadata: Logging.Logger.Metadata?, file: String, function: String, line: UInt)",
                 "type" : "method"
               },
@@ -7795,7 +7839,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/logging\/loghandler\/log(level:message:metadata:source:file:function:line:)-8kgt7",
+                "path" : "\/documentation\/logging\/loghandler\/log(level:message:metadata:source:file:function:line:)",
                 "title" : "func log(level: Logger.Level, message: Logger.Message, metadata: Logger.Metadata?, source: String, file: String, function: String, line: UInt)",
                 "type" : "method"
               },
@@ -7879,8 +7923,8 @@
                         "type" : "groupMarker"
                       },
                       {
-                        "path" : "\/documentation\/logging\/logger\/message\/init(extendedgraphemeclusterliteral:)",
-                        "title" : "init(extendedGraphemeClusterLiteral: Self.StringLiteralType)",
+                        "path" : "\/documentation\/logging\/logger\/message\/init(unicodescalarliteral:)",
+                        "title" : "init(unicodeScalarLiteral: Self.ExtendedGraphemeClusterLiteralType)",
                         "type" : "init"
                       }
                     ],
@@ -7911,13 +7955,13 @@
                         "type" : "groupMarker"
                       },
                       {
-                        "path" : "\/documentation\/logging\/logger\/message\/init(unicodescalarliteral:)",
-                        "title" : "init(unicodeScalarLiteral: Self.ExtendedGraphemeClusterLiteralType)",
+                        "path" : "\/documentation\/logging\/logger\/message\/init(extendedgraphemeclusterliteral:)",
+                        "title" : "init(extendedGraphemeClusterLiteral: Self.StringLiteralType)",
                         "type" : "init"
                       }
                     ],
-                    "path" : "\/documentation\/logging\/logger\/message\/expressiblebyunicodescalarliteral-implementations",
-                    "title" : "ExpressibleByUnicodeScalarLiteral Implementations",
+                    "path" : "\/documentation\/logging\/logger\/message\/expressiblebystringliteral-implementations",
+                    "title" : "ExpressibleByStringLiteral Implementations",
                     "type" : "symbol"
                   }
                 ],
@@ -8199,13 +8243,13 @@
                         "type" : "op"
                       },
                       {
-                        "path" : "\/documentation\/logging\/logger\/level\/_(_:_:)-88op7",
-                        "title" : "static func > (Self, Self) -> Bool",
+                        "path" : "\/documentation\/logging\/logger\/level\/_(_:_:)",
+                        "title" : "static func < (Logger.Level, Logger.Level) -> Bool",
                         "type" : "op"
                       },
                       {
-                        "path" : "\/documentation\/logging\/logger\/level\/_(_:_:)-8ts75",
-                        "title" : "static func < (Logger.Level, Logger.Level) -> Bool",
+                        "path" : "\/documentation\/logging\/logger\/level\/_(_:_:)-88op7",
+                        "title" : "static func > (Self, Self) -> Bool",
                         "type" : "op"
                       },
                       {
@@ -8412,8 +8456,8 @@
                         "type" : "groupMarker"
                       },
                       {
-                        "path" : "\/documentation\/logging\/logger\/metadatavalue\/init(extendedgraphemeclusterliteral:)",
-                        "title" : "init(extendedGraphemeClusterLiteral: Self.StringLiteralType)",
+                        "path" : "\/documentation\/logging\/logger\/metadatavalue\/init(unicodescalarliteral:)",
+                        "title" : "init(unicodeScalarLiteral: Self.ExtendedGraphemeClusterLiteralType)",
                         "type" : "init"
                       }
                     ],
@@ -8444,6 +8488,11 @@
                         "type" : "groupMarker"
                       },
                       {
+                        "path" : "\/documentation\/logging\/logger\/metadatavalue\/init(extendedgraphemeclusterliteral:)",
+                        "title" : "init(extendedGraphemeClusterLiteral: Self.StringLiteralType)",
+                        "type" : "init"
+                      },
+                      {
                         "path" : "\/documentation\/logging\/logger\/metadatavalue\/init(stringliteral:)",
                         "title" : "init(stringLiteral: String)",
                         "type" : "init"
@@ -8460,22 +8509,6 @@
                     ],
                     "path" : "\/documentation\/logging\/logger\/metadatavalue\/expressiblebystringliteral-implementations",
                     "title" : "ExpressibleByStringLiteral Implementations",
-                    "type" : "symbol"
-                  },
-                  {
-                    "children" : [
-                      {
-                        "title" : "Initializers",
-                        "type" : "groupMarker"
-                      },
-                      {
-                        "path" : "\/documentation\/logging\/logger\/metadatavalue\/init(unicodescalarliteral:)",
-                        "title" : "init(unicodeScalarLiteral: Self.ExtendedGraphemeClusterLiteralType)",
-                        "type" : "init"
-                      }
-                    ],
-                    "path" : "\/documentation\/logging\/logger\/metadatavalue\/expressiblebyunicodescalarliteral-implementations",
-                    "title" : "ExpressibleByUnicodeScalarLiteral Implementations",
                     "type" : "symbol"
                   }
                 ],
@@ -9408,6 +9441,11 @@
                 "type" : "groupMarker"
               },
               {
+                "path" : "\/documentation\/parseswift\/parselivequery\/close()",
+                "title" : "func close() async",
+                "type" : "method"
+              },
+              {
                 "path" : "\/documentation\/parseswift\/parselivequery\/closeall()",
                 "title" : "func closeAll() async",
                 "type" : "method"
@@ -9487,7 +9525,7 @@
                     "type" : "groupMarker"
                   },
                   {
-                    "path" : "\/documentation\/parseswift\/parselivequery\/connectionstatus\/_(_:_:)-3ydrw",
+                    "path" : "\/documentation\/parseswift\/parselivequery\/connectionstatus\/_(_:_:)",
                     "title" : "static func < (`Self`, `Self`) -> Bool",
                     "type" : "op"
                   },
@@ -9595,26 +9633,6 @@
                 "path" : "\/documentation\/parseswift\/parselivequery\/connectionstatus",
                 "title" : "ParseLiveQuery.ConnectionStatus",
                 "type" : "enum"
-              },
-              {
-                "title" : "Default Implementations",
-                "type" : "groupMarker"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Instance Methods",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/parseswift\/parselivequery\/close()",
-                    "title" : "func close() async",
-                    "type" : "method"
-                  }
-                ],
-                "path" : "\/documentation\/parseswift\/parselivequery\/livequerysocketdelegate-implementations",
-                "title" : "LiveQuerySocketDelegate Implementations",
-                "type" : "symbol"
               }
             ],
             "path" : "\/documentation\/parseswift\/parselivequery",
@@ -9928,7 +9946,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/deletable\/delete()-3wdvi",
+                "path" : "\/documentation\/parseswift\/deletable\/delete()",
                 "title" : "func delete() async throws -> DeletingType",
                 "type" : "method"
               },
@@ -9937,7 +9955,7 @@
                   {
                     "children" : [
                       {
-                        "path" : "\/documentation\/parseswift\/deletable\/delete(options:)-6rpv",
+                        "path" : "\/documentation\/parseswift\/deletable\/delete(options:)-3vgtv",
                         "title" : "func delete(options: API.Options) async throws",
                         "type" : "method"
                       },
@@ -9947,7 +9965,7 @@
                         "type" : "method"
                       },
                       {
-                        "path" : "\/documentation\/parseswift\/deletable\/delete(options:)-3vgtv",
+                        "path" : "\/documentation\/parseswift\/deletable\/delete(options:)-6rpv",
                         "title" : "func delete(options: API.Options) async throws",
                         "type" : "method"
                       }
@@ -9956,7 +9974,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/deletable\/delete(options:)-370sk",
+                "path" : "\/documentation\/parseswift\/deletable\/delete(options:)",
                 "title" : "func delete(options: API.Options) async throws -> DeletingType",
                 "type" : "method"
               }
@@ -9994,7 +10012,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/fetchable\/fetch()-2agid",
+                "path" : "\/documentation\/parseswift\/fetchable\/fetch()",
                 "title" : "func fetch() async throws -> FetchingType",
                 "type" : "method"
               },
@@ -10002,11 +10020,6 @@
                 "children" : [
                   {
                     "children" : [
-                      {
-                        "path" : "\/documentation\/parseswift\/fetchable\/fetch(includekeys:options:)-33xzq",
-                        "title" : "func fetch(includeKeys: [String]?, options: API.Options) async throws -> Self",
-                        "type" : "method"
-                      },
                       {
                         "path" : "\/documentation\/parseswift\/fetchable\/fetch(includekeys:options:)-12t7t",
                         "title" : "func fetch(includeKeys: [String]?, options: API.Options) async throws -> Self",
@@ -10016,13 +10029,18 @@
                         "path" : "\/documentation\/parseswift\/fetchable\/fetch(includekeys:options:)-9iop9",
                         "title" : "func fetch(includeKeys: [String]?, options: API.Options) async throws -> Self",
                         "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/parseswift\/fetchable\/fetch(includekeys:options:)-33xzq",
+                        "title" : "func fetch(includeKeys: [String]?, options: API.Options) async throws -> Self",
+                        "type" : "method"
                       }
                     ],
                     "title" : "Fetchable Implementations",
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/fetchable\/fetch(includekeys:options:)-6xt2n",
+                "path" : "\/documentation\/parseswift\/fetchable\/fetch(includekeys:options:)",
                 "title" : "func fetch(includeKeys: [String]?, options: API.Options) async throws -> FetchingType",
                 "type" : "method"
               }
@@ -10052,6 +10070,11 @@
                   {
                     "children" : [
                       {
+                        "path" : "\/documentation\/parseswift\/objectable\/endpoint-3vf5d",
+                        "title" : "var endpoint: API.Endpoint",
+                        "type" : "property"
+                      },
+                      {
                         "path" : "\/documentation\/parseswift\/objectable\/endpoint-11glf",
                         "title" : "var endpoint: API.Endpoint",
                         "type" : "property"
@@ -10067,11 +10090,6 @@
                         "type" : "property"
                       },
                       {
-                        "path" : "\/documentation\/parseswift\/objectable\/endpoint-3vf5d",
-                        "title" : "var endpoint: API.Endpoint",
-                        "type" : "property"
-                      },
-                      {
                         "path" : "\/documentation\/parseswift\/objectable\/endpoint-8slln",
                         "title" : "var endpoint: API.Endpoint",
                         "type" : "property"
@@ -10081,7 +10099,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/objectable\/endpoint-65g5f",
+                "path" : "\/documentation\/parseswift\/objectable\/endpoint",
                 "title" : "var endpoint: API.Endpoint",
                 "type" : "property"
               },
@@ -10113,7 +10131,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/objectable\/endpoint(_:)-26c5h",
+                "path" : "\/documentation\/parseswift\/objectable\/endpoint(_:)",
                 "title" : "func endpoint(API.Method) async throws -> API.Endpoint",
                 "type" : "method"
               },
@@ -10136,7 +10154,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/objectable\/issaved()-2szlz",
+                "path" : "\/documentation\/parseswift\/objectable\/issaved()",
                 "title" : "func isSaved() async throws -> Bool",
                 "type" : "method"
               },
@@ -10149,12 +10167,27 @@
                   {
                     "children" : [
                       {
+                        "path" : "\/documentation\/parseswift\/objectable\/classname-5hhno",
+                        "title" : "static var className: String",
+                        "type" : "property"
+                      },
+                      {
                         "path" : "\/documentation\/parseswift\/objectable\/classname-swift.property",
                         "title" : "var className: String",
                         "type" : "property"
                       },
                       {
+                        "path" : "\/documentation\/parseswift\/objectable\/classname-6pzxq",
+                        "title" : "static var className: String",
+                        "type" : "property"
+                      },
+                      {
                         "path" : "\/documentation\/parseswift\/objectable\/classname-64fhv",
+                        "title" : "static var className: String",
+                        "type" : "property"
+                      },
+                      {
+                        "path" : "\/documentation\/parseswift\/objectable\/classname-8okkp",
                         "title" : "static var className: String",
                         "type" : "property"
                       },
@@ -10164,22 +10197,7 @@
                         "type" : "property"
                       },
                       {
-                        "path" : "\/documentation\/parseswift\/objectable\/classname-5hhno",
-                        "title" : "static var className: String",
-                        "type" : "property"
-                      },
-                      {
-                        "path" : "\/documentation\/parseswift\/objectable\/classname-6pzxq",
-                        "title" : "static var className: String",
-                        "type" : "property"
-                      },
-                      {
                         "path" : "\/documentation\/parseswift\/objectable\/classname-499yb",
-                        "title" : "static var className: String",
-                        "type" : "property"
-                      },
-                      {
-                        "path" : "\/documentation\/parseswift\/objectable\/classname-8okkp",
                         "title" : "static var className: String",
                         "type" : "property"
                       }
@@ -10188,7 +10206,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/objectable\/classname-7kg6w",
+                "path" : "\/documentation\/parseswift\/objectable\/classname",
                 "title" : "static var className: String",
                 "type" : "property"
               }
@@ -10235,7 +10253,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/parseauthentication\/islinked()-5a3xp",
+                "path" : "\/documentation\/parseswift\/parseauthentication\/islinked()",
                 "title" : "func isLinked() async -> Bool",
                 "type" : "method"
               },
@@ -10278,7 +10296,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/parseauthentication\/strip()-7jyyz",
+                "path" : "\/documentation\/parseswift\/parseauthentication\/strip()",
                 "title" : "func strip() async throws -> AuthenticatedUser",
                 "type" : "method"
               },
@@ -10296,7 +10314,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/parseauthentication\/strip(_:)-ovl0",
+                "path" : "\/documentation\/parseswift\/parseauthentication\/strip(_:)",
                 "title" : "func strip(AuthenticatedUser) -> AuthenticatedUser",
                 "type" : "method"
               },
@@ -10314,7 +10332,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/parseauthentication\/unlink(_:options:)-5hyok",
+                "path" : "\/documentation\/parseswift\/parseauthentication\/unlink(_:options:)",
                 "title" : "func unlink(AuthenticatedUser, options: API.Options) async throws -> AuthenticatedUser",
                 "type" : "method"
               },
@@ -10332,7 +10350,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/parseauthentication\/unlink(_:options:callbackqueue:completion:)-7rp64",
+                "path" : "\/documentation\/parseswift\/parseauthentication\/unlink(_:options:callbackqueue:completion:)",
                 "title" : "func unlink(AuthenticatedUser, options: API.Options, callbackQueue: DispatchQueue, completion: (Result<AuthenticatedUser, ParseError>) -> Void)",
                 "type" : "method"
               },
@@ -10350,7 +10368,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/parseauthentication\/unlink(options:)-8buh1",
+                "path" : "\/documentation\/parseswift\/parseauthentication\/unlink(options:)",
                 "title" : "func unlink(options: API.Options) async throws -> AuthenticatedUser",
                 "type" : "method"
               },
@@ -10368,7 +10386,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/parseauthentication\/unlink(options:callbackqueue:completion:)-6gyvj",
+                "path" : "\/documentation\/parseswift\/parseauthentication\/unlink(options:callbackqueue:completion:)",
                 "title" : "func unlink(options: API.Options, callbackQueue: DispatchQueue, completion: (Result<AuthenticatedUser, ParseError>) -> Void)",
                 "type" : "method"
               },
@@ -10386,7 +10404,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/parseauthentication\/unlinkpublisher(_:options:)-2zjlv",
+                "path" : "\/documentation\/parseswift\/parseauthentication\/unlinkpublisher(_:options:)",
                 "title" : "func unlinkPublisher(AuthenticatedUser, options: API.Options) -> Future<AuthenticatedUser, ParseError>",
                 "type" : "method"
               },
@@ -10404,7 +10422,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/parseauthentication\/unlinkpublisher(options:)-2wrer",
+                "path" : "\/documentation\/parseswift\/parseauthentication\/unlinkpublisher(options:)",
                 "title" : "func unlinkPublisher(options: API.Options) -> Future<AuthenticatedUser, ParseError>",
                 "type" : "method"
               },
@@ -10426,7 +10444,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/parseauthentication\/islinked(with:)-7d4nj",
+                "path" : "\/documentation\/parseswift\/parseauthentication\/islinked(with:)",
                 "title" : "static func isLinked(with: AuthenticatedUser) -> Bool",
                 "type" : "method"
               }
@@ -10460,7 +10478,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/parseclouduser\/accountlockoutexpiresat-2drtq",
+                "path" : "\/documentation\/parseswift\/parseclouduser\/accountlockoutexpiresat",
                 "title" : "var accountLockoutExpiresAt: Date?",
                 "type" : "property"
               },
@@ -10478,7 +10496,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/parseclouduser\/failedlogincount-9kljm",
+                "path" : "\/documentation\/parseswift\/parseclouduser\/failedlogincount",
                 "title" : "var failedLoginCount: Int?",
                 "type" : "property"
               },
@@ -10656,7 +10674,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/parsefiletransferable\/makedummyuploadtask()-71gc1",
+                "path" : "\/documentation\/parseswift\/parsefiletransferable\/makedummyuploadtask()",
                 "title" : "func makeDummyUploadTask() throws -> URLSessionUploadTask",
                 "type" : "method"
               },
@@ -10674,7 +10692,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/parsefiletransferable\/makesuccessfuluploadresponse(_:url:)-h8xr",
+                "path" : "\/documentation\/parseswift\/parsefiletransferable\/makesuccessfuluploadresponse(_:url:)",
                 "title" : "func makeSuccessfulUploadResponse(String, url: URL) throws -> (Data, HTTPURLResponse?)",
                 "type" : "method"
               },
@@ -11278,7 +11296,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/parselivequerydelegate\/closedsocket(_:reason:)-170q6",
+                "path" : "\/documentation\/parseswift\/parselivequerydelegate\/closedsocket(_:reason:)",
                 "title" : "func closedSocket(URLSessionWebSocketTask.CloseCode?, reason: Data?)",
                 "type" : "method"
               },
@@ -11287,13 +11305,13 @@
                   {
                     "children" : [
                       {
-                        "path" : "\/documentation\/parseswift\/parselivequerydelegate\/received(_:)-798hl",
-                        "title" : "func received(URLSessionTaskTransactionMetrics)",
+                        "path" : "\/documentation\/parseswift\/parselivequerydelegate\/received(_:)-1f3yl",
+                        "title" : "func received(Error)",
                         "type" : "method"
                       },
                       {
-                        "path" : "\/documentation\/parseswift\/parselivequerydelegate\/received(_:)-1f3yl",
-                        "title" : "func received(Error)",
+                        "path" : "\/documentation\/parseswift\/parselivequerydelegate\/received(_:)-798hl",
+                        "title" : "func received(URLSessionTaskTransactionMetrics)",
                         "type" : "method"
                       }
                     ],
@@ -11342,7 +11360,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/parselivequerydelegate\/received(_:completionhandler:)-8g2o0",
+                "path" : "\/documentation\/parseswift\/parselivequerydelegate\/received(_:completionhandler:)",
                 "title" : "func received(URLAuthenticationChallenge, completionHandler: (URLSession.AuthChallengeDisposition, URLCredential?) -> Void)",
                 "type" : "method"
               },
@@ -11360,7 +11378,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/parselivequerydelegate\/receivedunsupported(_:socketmessage:)-83dzx",
+                "path" : "\/documentation\/parseswift\/parselivequerydelegate\/receivedunsupported(_:socketmessage:)",
                 "title" : "func receivedUnsupported(Data?, socketMessage: URLSessionWebSocketTask.Message?)",
                 "type" : "method"
               }
@@ -11394,7 +11412,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/parseobject\/init(objectid:)-7sv7",
+                "path" : "\/documentation\/parseswift\/parseobject\/init(objectid:)",
                 "title" : "init(objectId: String)",
                 "type" : "init"
               },
@@ -11407,6 +11425,11 @@
                   {
                     "children" : [
                       {
+                        "path" : "\/documentation\/parseswift\/parseobject\/mergeable-60gba",
+                        "title" : "var mergeable: Self",
+                        "type" : "property"
+                      },
+                      {
                         "path" : "\/documentation\/parseswift\/parseobject\/mergeable-96fqk",
                         "title" : "var mergeable: Self",
                         "type" : "property"
@@ -11416,7 +11439,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/parseobject\/mergeable-1pmms",
+                "path" : "\/documentation\/parseswift\/parseobject\/mergeable",
                 "title" : "var mergeable: Self",
                 "type" : "property"
               },
@@ -11508,7 +11531,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/parseobject\/hassameobjectid(as:)-5gkd9",
+                "path" : "\/documentation\/parseswift\/parseobject\/hassameobjectid(as:)",
                 "title" : "func hasSameObjectId<T>(as: T) -> Bool",
                 "type" : "method"
               },
@@ -11522,7 +11545,12 @@
                   {
                     "children" : [
                       {
-                        "path" : "\/documentation\/parseswift\/parseobject\/merge(with:)-4hjo0",
+                        "path" : "\/documentation\/parseswift\/parseobject\/merge(with:)-35a9v",
+                        "title" : "func merge(with: Self) throws -> Self",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/parseswift\/parseobject\/merge(with:)-3cli5",
                         "title" : "func merge(with: Self) throws -> Self",
                         "type" : "method"
                       },
@@ -11532,12 +11560,7 @@
                         "type" : "method"
                       },
                       {
-                        "path" : "\/documentation\/parseswift\/parseobject\/merge(with:)-35a9v",
-                        "title" : "func merge(with: Self) throws -> Self",
-                        "type" : "method"
-                      },
-                      {
-                        "path" : "\/documentation\/parseswift\/parseobject\/merge(with:)-3cli5",
+                        "path" : "\/documentation\/parseswift\/parseobject\/merge(with:)-4hjo0",
                         "title" : "func merge(with: Self) throws -> Self",
                         "type" : "method"
                       }
@@ -11546,7 +11569,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/parseobject\/merge(with:)-6romo",
+                "path" : "\/documentation\/parseswift\/parseobject\/merge(with:)",
                 "title" : "func merge(with: Self) throws -> Self",
                 "type" : "method"
               },
@@ -11555,12 +11578,12 @@
                   {
                     "children" : [
                       {
-                        "path" : "\/documentation\/parseswift\/parseobject\/mergeparse(with:)-49r7x",
+                        "path" : "\/documentation\/parseswift\/parseobject\/mergeparse(with:)-6csd5",
                         "title" : "func mergeParse(with: Self) throws -> Self",
                         "type" : "method"
                       },
                       {
-                        "path" : "\/documentation\/parseswift\/parseobject\/mergeparse(with:)-6csd5",
+                        "path" : "\/documentation\/parseswift\/parseobject\/mergeparse(with:)-49r7x",
                         "title" : "func mergeParse(with: Self) throws -> Self",
                         "type" : "method"
                       },
@@ -11579,7 +11602,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/parseobject\/mergeparse(with:)-9yft4",
+                "path" : "\/documentation\/parseswift\/parseobject\/mergeparse(with:)",
                 "title" : "func mergeParse(with: Self) throws -> Self",
                 "type" : "method"
               },
@@ -11672,7 +11695,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/parseobject\/shouldrestorekey(_:original:)-9ntkl",
+                "path" : "\/documentation\/parseswift\/parseobject\/shouldrestorekey(_:original:)",
                 "title" : "func shouldRestoreKey<W>(KeyPath<Self, W?>, original: Self) -> Bool",
                 "type" : "method"
               },
@@ -11690,7 +11713,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/parseobject\/topointer()-413zu",
+                "path" : "\/documentation\/parseswift\/parseobject\/topointer()",
                 "title" : "func toPointer() throws -> Pointer<Self>",
                 "type" : "method"
               },
@@ -12226,7 +12249,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/parserole\/init(name:)-56bux",
+                "path" : "\/documentation\/parseswift\/parserole\/init(name:)",
                 "title" : "init(name: String) throws",
                 "type" : "init"
               },
@@ -12244,7 +12267,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/parserole\/init(name:acl:)-3h6fq",
+                "path" : "\/documentation\/parseswift\/parserole\/init(name:acl:)",
                 "title" : "init(name: String, acl: ParseACL) throws",
                 "type" : "init"
               },
@@ -12271,7 +12294,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/parserole\/roles-7omk",
+                "path" : "\/documentation\/parseswift\/parserole\/roles",
                 "title" : "var roles: ParseRelation<Self>?",
                 "type" : "property"
               },
@@ -12289,7 +12312,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/parserole\/users-7o4v6",
+                "path" : "\/documentation\/parseswift\/parserole\/users",
                 "title" : "var users: ParseRelation<Self>?",
                 "type" : "property"
               },
@@ -13053,7 +13076,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/savable\/save()-51ej7",
+                "path" : "\/documentation\/parseswift\/savable\/save()",
                 "title" : "func save() async throws -> SavingType",
                 "type" : "method"
               },
@@ -13071,7 +13094,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/parseswift\/savable\/save(options:)-15f1x",
+                "path" : "\/documentation\/parseswift\/savable\/save(options:)",
                 "title" : "func save(options: API.Options) async throws -> SavingType",
                 "type" : "method"
               }
@@ -13671,7 +13694,7 @@
                     "type" : "groupMarker"
                   },
                   {
-                    "path" : "\/documentation\/parseswift\/parseacl\/access\/init(from:)-630fw",
+                    "path" : "\/documentation\/parseswift\/parseacl\/access\/init(from:)",
                     "title" : "init(from: Decoder) throws",
                     "type" : "init"
                   },
@@ -24331,7 +24354,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/realmodule\/algebraicfield\/_(_:_:)-9nuhy",
+                "path" : "\/documentation\/realmodule\/algebraicfield\/_(_:_:)",
                 "title" : "static func \/ (Self, Self) -> Self",
                 "type" : "op"
               },
@@ -24363,7 +24386,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/realmodule\/algebraicfield\/reciprocal-156o3",
+                "path" : "\/documentation\/realmodule\/algebraicfield\/reciprocal",
                 "title" : "var reciprocal: Self?",
                 "type" : "property"
               }
@@ -24477,7 +24500,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/realmodule\/elementaryfunctions\/sqrt(_:)-2phn9",
+                "path" : "\/documentation\/realmodule\/elementaryfunctions\/sqrt(_:)",
                 "title" : "static func sqrt(Self) -> Self",
                 "type" : "method"
               },
@@ -24547,7 +24570,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/realmodule\/realfunctions\/exp10(_:)-2hsp",
+                "path" : "\/documentation\/realmodule\/realfunctions\/exp10(_:)",
                 "title" : "static func exp10(Self) -> Self",
                 "type" : "method"
               },
@@ -24595,7 +24618,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/realmodule\/realfunctions\/signgamma(_:)-lh4l",
+                "path" : "\/documentation\/realmodule\/realfunctions\/signgamma(_:)",
                 "title" : "static func signGamma(Self) -> FloatingPointSign",
                 "type" : "method"
               }
@@ -24615,28 +24638,49 @@
                 "type" : "groupMarker"
               },
               {
-                "path" : "\/documentation\/realmodule\/augmented\/fasttwosum(_:_:)",
-                "title" : "static func fastTwoSum<T>(T, T) -> (head: T, tail: T)",
+                "path" : "\/documentation\/realmodule\/augmented\/product(_:_:)",
+                "title" : "static func product<T>(T, T) -> (head: T, tail: T)",
                 "type" : "method"
               },
               {
-                "path" : "\/documentation\/realmodule\/augmented\/product(_:_:)",
-                "title" : "static func product<T>(T, T) -> (head: T, tail: T)",
+                "path" : "\/documentation\/realmodule\/augmented\/sum(_:_:)",
+                "title" : "static func sum<T>(T, T) -> (head: T, tail: T)",
                 "type" : "method"
               },
               {
                 "path" : "\/documentation\/realmodule\/augmented\/sum(large:small:)",
                 "title" : "static func sum<T>(large: T, small: T) -> (head: T, tail: T)",
                 "type" : "method"
-              },
-              {
-                "path" : "\/documentation\/realmodule\/augmented\/twoprodfma(_:_:)",
-                "title" : "static func twoProdFMA<T>(T, T) -> (head: T, tail: T)",
-                "type" : "method"
               }
             ],
             "path" : "\/documentation\/realmodule\/augmented",
             "title" : "Augmented",
+            "type" : "enum"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Type Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/realmodule\/relaxed\/multiplyadd(_:_:_:)",
+                "title" : "static func multiplyAdd<T>(T, T, T) -> T",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/realmodule\/relaxed\/product(_:_:)",
+                "title" : "static func product<T>(T, T) -> T",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/realmodule\/relaxed\/sum(_:_:)",
+                "title" : "static func sum<T>(T, T) -> T",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/realmodule\/relaxed",
+            "title" : "Relaxed",
             "type" : "enum"
           }
         ],
@@ -24679,7 +24723,7 @@
                     "type" : "groupMarker"
                   }
                 ],
-                "path" : "\/documentation\/servicecontextmodule\/servicecontextkey\/nameoverride-6shk1",
+                "path" : "\/documentation\/servicecontextmodule\/servicecontextkey\/nameoverride",
                 "title" : "static var nameOverride: String?",
                 "type" : "property"
               }
@@ -24776,7 +24820,7 @@
               },
               {
                 "path" : "\/documentation\/servicecontextmodule\/servicecontext\/foreach(_:)",
-                "title" : "func forEach((AnyServiceContextKey, Any) throws -> Void) rethrows",
+                "title" : "func forEach((AnyServiceContextKey, any Sendable) throws -> Void) rethrows",
                 "type" : "method"
               },
               {
@@ -26512,42 +26556,15 @@
                         "path" : "\/documentation\/systempackage\/filepath\/component\/!=(_:_:)",
                         "title" : "static func != (Self, Self) -> Bool",
                         "type" : "op"
+                      },
+                      {
+                        "path" : "\/documentation\/systempackage\/filepath\/component\/==(_:_:)",
+                        "title" : "static func == (Self, Self) -> Bool",
+                        "type" : "op"
                       }
                     ],
                     "path" : "\/documentation\/systempackage\/filepath\/component\/equatable-implementations",
                     "title" : "Equatable Implementations",
-                    "type" : "symbol"
-                  },
-                  {
-                    "children" : [
-                      {
-                        "title" : "Initializers",
-                        "type" : "groupMarker"
-                      },
-                      {
-                        "path" : "\/documentation\/systempackage\/filepath\/component\/init(extendedgraphemeclusterliteral:)",
-                        "title" : "init(extendedGraphemeClusterLiteral: Self.StringLiteralType)",
-                        "type" : "init"
-                      }
-                    ],
-                    "path" : "\/documentation\/systempackage\/filepath\/component\/expressiblebyextendedgraphemeclusterliteral-implementations",
-                    "title" : "ExpressibleByExtendedGraphemeClusterLiteral Implementations",
-                    "type" : "symbol"
-                  },
-                  {
-                    "children" : [
-                      {
-                        "title" : "Initializers",
-                        "type" : "groupMarker"
-                      },
-                      {
-                        "path" : "\/documentation\/systempackage\/filepath\/component\/init(stringliteral:)",
-                        "title" : "init(stringLiteral: String)",
-                        "type" : "init"
-                      }
-                    ],
-                    "path" : "\/documentation\/systempackage\/filepath\/component\/expressiblebystringliteral-implementations",
-                    "title" : "ExpressibleByStringLiteral Implementations",
                     "type" : "symbol"
                   },
                   {
@@ -26562,8 +26579,45 @@
                         "type" : "init"
                       }
                     ],
-                    "path" : "\/documentation\/systempackage\/filepath\/component\/expressiblebyunicodescalarliteral-implementations",
-                    "title" : "ExpressibleByUnicodeScalarLiteral Implementations",
+                    "path" : "\/documentation\/systempackage\/filepath\/component\/expressiblebyextendedgraphemeclusterliteral-implementations",
+                    "title" : "ExpressibleByExtendedGraphemeClusterLiteral Implementations",
+                    "type" : "symbol"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Initializers",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/systempackage\/filepath\/component\/init(extendedgraphemeclusterliteral:)",
+                        "title" : "init(extendedGraphemeClusterLiteral: Self.StringLiteralType)",
+                        "type" : "init"
+                      },
+                      {
+                        "path" : "\/documentation\/systempackage\/filepath\/component\/init(stringliteral:)",
+                        "title" : "init(stringLiteral: String)",
+                        "type" : "init"
+                      }
+                    ],
+                    "path" : "\/documentation\/systempackage\/filepath\/component\/expressiblebystringliteral-implementations",
+                    "title" : "ExpressibleByStringLiteral Implementations",
+                    "type" : "symbol"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Instance Methods",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/systempackage\/filepath\/component\/hash(into:)",
+                        "title" : "func hash(into: inout Hasher)",
+                        "type" : "method"
+                      }
+                    ],
+                    "path" : "\/documentation\/systempackage\/filepath\/component\/hashable-implementations",
+                    "title" : "Hashable Implementations",
                     "type" : "symbol"
                   }
                 ],
@@ -26680,7 +26734,7 @@
                             "type" : "groupMarker"
                           },
                           {
-                            "path" : "\/documentation\/systempackage\/filepath\/componentview\/index\/_(_:_:)-1mqnj",
+                            "path" : "\/documentation\/systempackage\/filepath\/componentview\/index\/_(_:_:)",
                             "title" : "static func < (`Self`, `Self`) -> Bool",
                             "type" : "op"
                           },
@@ -26844,6 +26898,7 @@
                         "type" : "method"
                       },
                       {
+                        "deprecated" : true,
                         "path" : "\/documentation\/systempackage\/filepath\/componentview\/index(of:)",
                         "title" : "func index(of: Self.Element) -> Self.Index?",
                         "type" : "method"
@@ -26973,10 +27028,31 @@
                         "path" : "\/documentation\/systempackage\/filepath\/componentview\/!=(_:_:)",
                         "title" : "static func != (Self, Self) -> Bool",
                         "type" : "op"
+                      },
+                      {
+                        "path" : "\/documentation\/systempackage\/filepath\/componentview\/==(_:_:)",
+                        "title" : "static func == (Self, Self) -> Bool",
+                        "type" : "op"
                       }
                     ],
                     "path" : "\/documentation\/systempackage\/filepath\/componentview\/equatable-implementations",
                     "title" : "Equatable Implementations",
+                    "type" : "symbol"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Instance Methods",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/systempackage\/filepath\/componentview\/hash(into:)",
+                        "title" : "func hash(into: inout Hasher)",
+                        "type" : "method"
+                      }
+                    ],
+                    "path" : "\/documentation\/systempackage\/filepath\/componentview\/hashable-implementations",
+                    "title" : "Hashable Implementations",
                     "type" : "symbol"
                   },
                   {
@@ -27119,7 +27195,7 @@
                         "type" : "method"
                       },
                       {
-                        "path" : "\/documentation\/systempackage\/filepath\/componentview\/replacesubrange(_:with:)-25m50",
+                        "path" : "\/documentation\/systempackage\/filepath\/componentview\/replacesubrange(_:with:)",
                         "title" : "func replaceSubrange<C>(Range<Index>, with: C)",
                         "type" : "method"
                       },
@@ -27224,6 +27300,7 @@
                         "type" : "method"
                       },
                       {
+                        "deprecated" : true,
                         "path" : "\/documentation\/systempackage\/filepath\/componentview\/flatmap(_:)-5e7fe",
                         "title" : "func flatMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]",
                         "type" : "method"
@@ -27428,42 +27505,15 @@
                         "path" : "\/documentation\/systempackage\/filepath\/root-swift.struct\/!=(_:_:)",
                         "title" : "static func != (Self, Self) -> Bool",
                         "type" : "op"
+                      },
+                      {
+                        "path" : "\/documentation\/systempackage\/filepath\/root-swift.struct\/==(_:_:)",
+                        "title" : "static func == (Self, Self) -> Bool",
+                        "type" : "op"
                       }
                     ],
                     "path" : "\/documentation\/systempackage\/filepath\/root-swift.struct\/equatable-implementations",
                     "title" : "Equatable Implementations",
-                    "type" : "symbol"
-                  },
-                  {
-                    "children" : [
-                      {
-                        "title" : "Initializers",
-                        "type" : "groupMarker"
-                      },
-                      {
-                        "path" : "\/documentation\/systempackage\/filepath\/root-swift.struct\/init(extendedgraphemeclusterliteral:)",
-                        "title" : "init(extendedGraphemeClusterLiteral: Self.StringLiteralType)",
-                        "type" : "init"
-                      }
-                    ],
-                    "path" : "\/documentation\/systempackage\/filepath\/root-swift.struct\/expressiblebyextendedgraphemeclusterliteral-implementations",
-                    "title" : "ExpressibleByExtendedGraphemeClusterLiteral Implementations",
-                    "type" : "symbol"
-                  },
-                  {
-                    "children" : [
-                      {
-                        "title" : "Initializers",
-                        "type" : "groupMarker"
-                      },
-                      {
-                        "path" : "\/documentation\/systempackage\/filepath\/root-swift.struct\/init(stringliteral:)",
-                        "title" : "init(stringLiteral: String)",
-                        "type" : "init"
-                      }
-                    ],
-                    "path" : "\/documentation\/systempackage\/filepath\/root-swift.struct\/expressiblebystringliteral-implementations",
-                    "title" : "ExpressibleByStringLiteral Implementations",
                     "type" : "symbol"
                   },
                   {
@@ -27478,8 +27528,45 @@
                         "type" : "init"
                       }
                     ],
-                    "path" : "\/documentation\/systempackage\/filepath\/root-swift.struct\/expressiblebyunicodescalarliteral-implementations",
-                    "title" : "ExpressibleByUnicodeScalarLiteral Implementations",
+                    "path" : "\/documentation\/systempackage\/filepath\/root-swift.struct\/expressiblebyextendedgraphemeclusterliteral-implementations",
+                    "title" : "ExpressibleByExtendedGraphemeClusterLiteral Implementations",
+                    "type" : "symbol"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Initializers",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/systempackage\/filepath\/root-swift.struct\/init(extendedgraphemeclusterliteral:)",
+                        "title" : "init(extendedGraphemeClusterLiteral: Self.StringLiteralType)",
+                        "type" : "init"
+                      },
+                      {
+                        "path" : "\/documentation\/systempackage\/filepath\/root-swift.struct\/init(stringliteral:)",
+                        "title" : "init(stringLiteral: String)",
+                        "type" : "init"
+                      }
+                    ],
+                    "path" : "\/documentation\/systempackage\/filepath\/root-swift.struct\/expressiblebystringliteral-implementations",
+                    "title" : "ExpressibleByStringLiteral Implementations",
+                    "type" : "symbol"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Instance Methods",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/systempackage\/filepath\/root-swift.struct\/hash(into:)",
+                        "title" : "func hash(into: inout Hasher)",
+                        "type" : "method"
+                      }
+                    ],
+                    "path" : "\/documentation\/systempackage\/filepath\/root-swift.struct\/hashable-implementations",
+                    "title" : "Hashable Implementations",
                     "type" : "symbol"
                   }
                 ],
@@ -27799,8 +27886,8 @@
                     "type" : "groupMarker"
                   },
                   {
-                    "path" : "\/documentation\/systempackage\/filepath\/init(extendedgraphemeclusterliteral:)",
-                    "title" : "init(extendedGraphemeClusterLiteral: Self.StringLiteralType)",
+                    "path" : "\/documentation\/systempackage\/filepath\/init(unicodescalarliteral:)",
+                    "title" : "init(unicodeScalarLiteral: Self.ExtendedGraphemeClusterLiteralType)",
                     "type" : "init"
                   }
                 ],
@@ -27815,6 +27902,11 @@
                     "type" : "groupMarker"
                   },
                   {
+                    "path" : "\/documentation\/systempackage\/filepath\/init(extendedgraphemeclusterliteral:)",
+                    "title" : "init(extendedGraphemeClusterLiteral: Self.StringLiteralType)",
+                    "type" : "init"
+                  },
+                  {
                     "path" : "\/documentation\/systempackage\/filepath\/init(stringliteral:)",
                     "title" : "init(stringLiteral: String)",
                     "type" : "init"
@@ -27822,22 +27914,6 @@
                 ],
                 "path" : "\/documentation\/systempackage\/filepath\/expressiblebystringliteral-implementations",
                 "title" : "ExpressibleByStringLiteral Implementations",
-                "type" : "symbol"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Initializers",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/systempackage\/filepath\/init(unicodescalarliteral:)",
-                    "title" : "init(unicodeScalarLiteral: Self.ExtendedGraphemeClusterLiteralType)",
-                    "type" : "init"
-                  }
-                ],
-                "path" : "\/documentation\/systempackage\/filepath\/expressiblebyunicodescalarliteral-implementations",
-                "title" : "ExpressibleByUnicodeScalarLiteral Implementations",
                 "type" : "symbol"
               }
             ],
@@ -28324,13 +28400,13 @@
                     "type" : "method"
                   },
                   {
-                    "path" : "\/documentation\/systempackage\/mach\/port\/relinquish()-6sdin",
-                    "title" : "func relinquish() -> (name: mach_port_name_t, context: mach_port_context_t)",
+                    "path" : "\/documentation\/systempackage\/mach\/port\/relinquish()-71rkb",
+                    "title" : "func relinquish() -> mach_port_name_t",
                     "type" : "method"
                   },
                   {
-                    "path" : "\/documentation\/systempackage\/mach\/port\/relinquish()-71rkb",
-                    "title" : "func relinquish() -> mach_port_name_t",
+                    "path" : "\/documentation\/systempackage\/mach\/port\/relinquish()-78cnj",
+                    "title" : "func relinquish() -> (name: mach_port_name_t, context: mach_port_context_t)",
                     "type" : "method"
                   },
                   {
@@ -28344,13 +28420,13 @@
                     "type" : "method"
                   },
                   {
-                    "path" : "\/documentation\/systempackage\/mach\/port\/withborrowedname(body:)-89ybe",
-                    "title" : "func withBorrowedName<ReturnType>(body: (mach_port_name_t) -> ReturnType) -> ReturnType",
+                    "path" : "\/documentation\/systempackage\/mach\/port\/withborrowedname(body:)-7rgjm",
+                    "title" : "func withBorrowedName<ReturnType>(body: (mach_port_name_t, mach_port_context_t) -> ReturnType) -> ReturnType",
                     "type" : "method"
                   },
                   {
-                    "path" : "\/documentation\/systempackage\/mach\/port\/withborrowedname(body:)-9vvg4",
-                    "title" : "func withBorrowedName<ReturnType>(body: (mach_port_name_t, mach_port_context_t) -> ReturnType) -> ReturnType",
+                    "path" : "\/documentation\/systempackage\/mach\/port\/withborrowedname(body:)-89ybe",
+                    "title" : "func withBorrowedName<ReturnType>(body: (mach_port_name_t) -> ReturnType) -> ReturnType",
                     "type" : "method"
                   }
                 ],
@@ -28715,6 +28791,7 @@
                     "type" : "method"
                   },
                   {
+                    "deprecated" : true,
                     "path" : "\/documentation\/_niodatastructures\/priorityqueue\/flatmap(_:)-1zatq",
                     "title" : "func flatMap<ElementOfResult>((Self.Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]",
                     "type" : "method"

@@ -178,41 +178,39 @@
     {
       "content" : [
         {
-          "anchor" : "See-also",
+          "anchor" : "discussion",
           "level" : 2,
-          "text" : "See also:",
+          "text" : "Discussion",
           "type" : "heading"
         },
         {
-          "items" : [
+          "inlineContent" : [
             {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "code" : "sqrt()",
-                      "type" : "codeVoice"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
+              "text" : "The edge-cases of this function are defined in terms of repeated",
+              "type" : "text"
             },
             {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "code" : "root()",
-                      "type" : "codeVoice"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "multiplication or division, rather than exp(n log x). In particular,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "Float.pow(0, 0)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is 1.",
+              "type" : "text"
             }
           ],
-          "type" : "unorderedList"
+          "type" : "paragraph"
         }
       ],
       "kind" : "content"
@@ -253,10 +251,7 @@
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/ElementaryFunctions": {
   "abstract" : [
-    {
-      "text" : "A type that has elementary functions available.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

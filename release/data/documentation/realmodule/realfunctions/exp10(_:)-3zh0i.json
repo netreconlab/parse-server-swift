@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "10^x",
+      "text" : "10 raised to the power x.",
       "type" : "text"
     }
   ],
@@ -9,8 +9,7 @@
     "paths" : [
       [
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions\/exp10(_:)-2hsp"
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions"
       ]
     ]
   },
@@ -141,80 +140,63 @@
     {
       "content" : [
         {
-          "anchor" : "See-also",
+          "anchor" : "discussion",
           "level" : 2,
-          "text" : "See also:",
+          "text" : "Discussion",
           "type" : "heading"
         },
         {
-          "items" : [
+          "inlineContent" : [
             {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "code" : "exp()",
-                      "type" : "codeVoice"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
+              "text" : "See also ",
+              "type" : "text"
             },
             {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "code" : "expMinusOne()",
-                      "type" : "codeVoice"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions\/log10(_:)",
+              "isActive" : true,
+              "type" : "reference"
             },
             {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "code" : "exp2()",
-                      "type" : "codeVoice"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
+              "text" : ", ",
+              "type" : "text"
             },
             {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "code" : "log10()",
-                      "type" : "codeVoice"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/ElementaryFunctions\/exp(_:)",
+              "isActive" : true,
+              "type" : "reference"
             },
             {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "code" : "pow()",
-                      "type" : "codeVoice"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
+              "text" : ",",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/ElementaryFunctions\/expMinusOne(_:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "and ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/ElementaryFunctions\/pow(_:_:)-2qmul",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
             }
           ],
-          "type" : "unorderedList"
+          "type" : "paragraph"
         }
       ],
       "kind" : "content"
@@ -253,6 +235,198 @@
   "type" : "topic",
   "url" : "\/documentation\/realmodule"
 },
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/ElementaryFunctions/exp(_:)": {
+  "abstract" : [
+    {
+      "text" : "The ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Exponential_function",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " e^x whose base ",
+      "type" : "text"
+    },
+    {
+      "code" : "e",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is the base of the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "natural logarithm.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "exp"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/ElementaryFunctions\/exp(_:)",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "exp(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/realmodule\/elementaryfunctions\/exp(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/ElementaryFunctions/expMinusOne(_:)": {
+  "abstract" : [
+    {
+      "text" : "exp(x) - 1, computed in such a way as to maintain accuracy for small x.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "expMinusOne"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/ElementaryFunctions\/expMinusOne(_:)",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "expMinusOne(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/realmodule\/elementaryfunctions\/expminusone(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/ElementaryFunctions/pow(_:_:)-2qmul": {
+  "abstract" : [
+    {
+      "text" : "exp(y * log(x)) computed with additional internal precision.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "pow"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/ElementaryFunctions\/pow(_:_:)-2qmul",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "pow(_:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/realmodule\/elementaryfunctions\/pow(_:_:)-2qmul"
+},
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/RealFunctions": {
   "abstract" : [
 
@@ -284,64 +458,10 @@
   "type" : "topic",
   "url" : "\/documentation\/realmodule\/realfunctions"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/RealFunctions/exp10(_:)-2hsp": {
-  "abstract" : [
-    {
-      "text" : "10^x",
-      "type" : "text"
-    }
-  ],
-  "defaultImplementations" : 1,
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "exp10"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : ") -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Self"
-    }
-  ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions\/exp10(_:)-2hsp",
-  "kind" : "symbol",
-  "required" : true,
-  "role" : "symbol",
-  "title" : "exp10(_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/realmodule\/realfunctions\/exp10(_:)-2hsp"
-},
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/RealFunctions/exp10(_:)-3zh0i": {
   "abstract" : [
     {
-      "text" : "10^x",
+      "text" : "10 raised to the power x.",
       "type" : "text"
     }
   ],
@@ -389,6 +509,79 @@
   "title" : "exp10(_:)",
   "type" : "topic",
   "url" : "\/documentation\/realmodule\/realfunctions\/exp10(_:)-3zh0i"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/RealFunctions/log10(_:)": {
+  "abstract" : [
+    {
+      "text" : "The base-10 logarithm of ",
+      "type" : "text"
+    },
+    {
+      "code" : "x",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "log10"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions\/log10(_:)",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "log10(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/realmodule\/realfunctions\/log10(_:)"
+},
+"https://en.wikipedia.org/wiki/Exponential_function": {
+  "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Exponential_function",
+  "title" : "exponential function",
+  "titleInlineContent" : [
+    {
+      "text" : "exponential function",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/en.wikipedia.org\/wiki\/Exponential_function"
 }
 }
 }

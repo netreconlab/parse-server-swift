@@ -34,8 +34,7 @@
     "paths" : [
       [
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/LogHandler",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/LogHandler\/log(level:message:metadata:file:function:line:)-89rya"
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/LogHandler"
       ]
     ]
   },
@@ -212,7 +211,12 @@
       }
     ],
     "platforms" : [
-
+      {
+        "beta" : false,
+        "deprecated" : true,
+        "renamed" : "log(level:message:metadata:source:file:function:line:)",
+        "unavailable" : false
+      }
     ],
     "role" : "symbol",
     "roleHeading" : "Instance Method",
@@ -672,207 +676,6 @@
   "title" : "log(level:message:metadata:file:function:line:)",
   "type" : "topic",
   "url" : "\/documentation\/logging\/loghandler\/log(level:message:metadata:file:function:line:)-1xdau"
-},
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/LogHandler/log(level:message:metadata:file:function:line:)-89rya": {
-  "abstract" : [
-    {
-      "text" : "SwiftLog 1.0 compatibility method. Please do ",
-      "type" : "text"
-    },
-    {
-      "inlineContent" : [
-        {
-          "text" : "not",
-          "type" : "text"
-        }
-      ],
-      "type" : "emphasis"
-    },
-    {
-      "text" : " implement, implement",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "code" : "log(level:message:metadata:source:file:function:line:)",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " instead.",
-      "type" : "text"
-    }
-  ],
-  "defaultImplementations" : 1,
-  "deprecated" : true,
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "log"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "level"
-    },
-    {
-      "kind" : "text",
-      "text" : ": Logging"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Logging6LoggerV",
-      "text" : "Logger"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Logging6LoggerV5LevelO",
-      "text" : "Level"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "message"
-    },
-    {
-      "kind" : "text",
-      "text" : ": Logging"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Logging6LoggerV",
-      "text" : "Logger"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Logging6LoggerV7MessageV",
-      "text" : "Message"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "metadata"
-    },
-    {
-      "kind" : "text",
-      "text" : ": Logging"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Logging6LoggerV",
-      "text" : "Logger"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Logging6LoggerV8Metadataa",
-      "text" : "Metadata"
-    },
-    {
-      "kind" : "text",
-      "text" : "?, "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "file"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "function"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "line"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Su",
-      "text" : "UInt"
-    },
-    {
-      "kind" : "text",
-      "text" : ")"
-    }
-  ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Logging\/LogHandler\/log(level:message:metadata:file:function:line:)-89rya",
-  "kind" : "symbol",
-  "required" : true,
-  "role" : "symbol",
-  "title" : "log(level:message:metadata:file:function:line:)",
-  "type" : "topic",
-  "url" : "\/documentation\/logging\/loghandler\/log(level:message:metadata:file:function:line:)-89rya"
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/Logging/Logger": {
   "abstract" : [

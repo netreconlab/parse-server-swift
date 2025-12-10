@@ -1,7 +1,20 @@
 {
   "abstract" : [
     {
-      "text" : "The sign of the gamma function, Γ(x).",
+      "text" : "The sign of the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Gamma_function",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ", Γ(x).",
       "type" : "text"
     }
   ],
@@ -9,8 +22,7 @@
     "paths" : [
       [
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions\/signGamma(_:)-lh4l"
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions"
       ]
     ]
   },
@@ -260,8 +272,9 @@
               "type" : "text"
             },
             {
-              "code" : "logGamma",
-              "type" : "codeVoice"
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions\/logGamma(_:)",
+              "isActive" : true,
+              "type" : "reference"
             },
             {
               "text" : ", which computes the",
@@ -286,43 +299,6 @@
             }
           ],
           "type" : "paragraph"
-        },
-        {
-          "anchor" : "See-also",
-          "level" : 2,
-          "text" : "See also:",
-          "type" : "heading"
-        },
-        {
-          "items" : [
-            {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "code" : "gamma()",
-                      "type" : "codeVoice"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
-            },
-            {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "code" : "logGamma()",
-                      "type" : "codeVoice"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
-            }
-          ],
-          "type" : "unorderedList"
         }
       ],
       "kind" : "content"
@@ -392,10 +368,97 @@
   "type" : "topic",
   "url" : "\/documentation\/realmodule\/realfunctions"
 },
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/RealFunctions/logGamma(_:)": {
+  "abstract" : [
+    {
+      "text" : "The logarithm of the absolute value of the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Gamma_function",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ",",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "log(|Γ(x)|).",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "logGamma"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions\/logGamma(_:)",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "logGamma(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/realmodule\/realfunctions\/loggamma(_:)"
+},
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/RealFunctions/signGamma(_:)-53fqx": {
   "abstract" : [
     {
-      "text" : "The sign of the gamma function, Γ(x).",
+      "text" : "The sign of the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Gamma_function",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ", Γ(x).",
       "type" : "text"
     }
   ],
@@ -445,60 +508,17 @@
   "type" : "topic",
   "url" : "\/documentation\/realmodule\/realfunctions\/signgamma(_:)-53fqx"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/RealFunctions/signGamma(_:)-lh4l": {
-  "abstract" : [
+"https://en.wikipedia.org/wiki/Gamma_function": {
+  "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Gamma_function",
+  "title" : "gamma function",
+  "titleInlineContent" : [
     {
-      "text" : "The sign of the gamma function, Γ(x).",
+      "text" : "gamma function",
       "type" : "text"
     }
   ],
-  "defaultImplementations" : 1,
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "signGamma"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : ") -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:s17FloatingPointSignO",
-      "text" : "FloatingPointSign"
-    }
-  ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions\/signGamma(_:)-lh4l",
-  "kind" : "symbol",
-  "required" : true,
-  "role" : "symbol",
-  "title" : "signGamma(_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/realmodule\/realfunctions\/signgamma(_:)-lh4l"
+  "type" : "link",
+  "url" : "https:\/\/en.wikipedia.org\/wiki\/Gamma_function"
 }
 }
 }

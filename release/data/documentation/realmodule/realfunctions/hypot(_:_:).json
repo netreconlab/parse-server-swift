@@ -1,11 +1,15 @@
 {
   "abstract" : [
     {
-      "code" : "sqrt(x*x + y*y)",
+      "text" : "The length of the vector ",
+      "type" : "text"
+    },
+    {
+      "code" : "(x,y)",
       "type" : "codeVoice"
     },
     {
-      "text" : ", computed in a manner that avoids spurious overflow or",
+      "text" : ", computed in a manner that avoids",
       "type" : "text"
     },
     {
@@ -13,7 +17,7 @@
       "type" : "text"
     },
     {
-      "text" : "underflow.",
+      "text" : "spurious overflow or underflow.",
       "type" : "text"
     }
   ],
@@ -180,6 +184,54 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "See also the ",
+              "type" : "text"
+            },
+            {
+              "code" : "length",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "polar",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " properties defined on the ",
+              "type" : "text"
+            },
+            {
+              "code" : "Complex",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "type.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -249,11 +301,15 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/RealFunctions/hypot(_:_:)": {
   "abstract" : [
     {
-      "code" : "sqrt(x*x + y*y)",
+      "text" : "The length of the vector ",
+      "type" : "text"
+    },
+    {
+      "code" : "(x,y)",
       "type" : "codeVoice"
     },
     {
-      "text" : ", computed in a manner that avoids spurious overflow or",
+      "text" : ", computed in a manner that avoids",
       "type" : "text"
     },
     {
@@ -261,7 +317,7 @@
       "type" : "text"
     },
     {
-      "text" : "underflow.",
+      "text" : "spurious overflow or underflow.",
       "type" : "text"
     }
   ],

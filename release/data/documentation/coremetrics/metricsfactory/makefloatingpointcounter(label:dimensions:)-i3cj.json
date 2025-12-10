@@ -1,15 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Create a default backing ",
-      "type" : "text"
-    },
-    {
-      "code" : "FloatingPointCounterHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " for backends which do not naively support floating point counters.",
+      "text" : "Create a default backing floating-point counter handler for backends which do not naively support floating point counters.",
       "type" : "text"
     }
   ],
@@ -17,8 +9,7 @@
     "paths" : [
       [
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory\/makeFloatingPointCounter(label:dimensions:)-2irnb"
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory"
       ]
     ]
   },
@@ -247,7 +238,7 @@
         {
           "inlineContent" : [
             {
-              "text" : "The created FloatingPointCounterHandler is a wrapper around a backend’s CounterHandler which accumulates floating point values and records increments to an underlying CounterHandler after crossing integer boundaries.",
+              "text" : "The created floating-point counter handler is a wrapper around a backend’s counter handler which accumulates floating point values and records increments to an underlying counter handler after crossing integer boundaries.",
               "type" : "text"
             }
           ],
@@ -293,23 +284,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/FloatingPointCounterHandler": {
   "abstract" : [
     {
-      "text" : "A ",
-      "type" : "text"
-    },
-    {
-      "code" : "FloatingPointCounterHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " represents a backend implementation of a ",
-      "type" : "text"
-    },
-    {
-      "code" : "FloatingPointCounter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "A floating-point counter handler represents a backend implementation of a floating-point counter.",
       "type" : "text"
     }
   ],
@@ -361,18 +336,6 @@
     {
       "text" : " and the metrics backend implementation.",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "code" : "MetricsFactory",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : "’s role is to initialize concrete implementations of the various metric types:",
-      "type" : "text"
     }
   ],
   "fragments" : [
@@ -402,108 +365,10 @@
   "type" : "topic",
   "url" : "\/documentation\/coremetrics\/metricsfactory"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MetricsFactory/makeFloatingPointCounter(label:dimensions:)-2irnb": {
-  "abstract" : [
-    {
-      "text" : "Create a backing ",
-      "type" : "text"
-    },
-    {
-      "code" : "FloatingPointCounterHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
-      "type" : "text"
-    }
-  ],
-  "defaultImplementations" : 1,
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "makeFloatingPointCounter"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "label"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "dimensions"
-    },
-    {
-      "kind" : "text",
-      "text" : ": [("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
-    },
-    {
-      "kind" : "text",
-      "text" : ")]) -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11CoreMetrics27FloatingPointCounterHandlerP",
-      "text" : "FloatingPointCounterHandler"
-    }
-  ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory\/makeFloatingPointCounter(label:dimensions:)-2irnb",
-  "kind" : "symbol",
-  "required" : true,
-  "role" : "symbol",
-  "title" : "makeFloatingPointCounter(label:dimensions:)",
-  "type" : "topic",
-  "url" : "\/documentation\/coremetrics\/metricsfactory\/makefloatingpointcounter(label:dimensions:)-2irnb"
-},
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MetricsFactory/makeFloatingPointCounter(label:dimensions:)-i3cj": {
   "abstract" : [
     {
-      "text" : "Create a default backing ",
-      "type" : "text"
-    },
-    {
-      "code" : "FloatingPointCounterHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " for backends which do not naively support floating point counters.",
+      "text" : "Create a default backing floating-point counter handler for backends which do not naively support floating point counters.",
       "type" : "text"
     }
   ],

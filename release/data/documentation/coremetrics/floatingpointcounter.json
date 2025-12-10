@@ -1,23 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "A FloatingPointCounter is a cumulative metric that represents a single monotonically increasing FloatingPointCounter whose value can only increase or be reset to zero.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "For example, you can use a FloatingPointCounter to represent the number of requests served, tasks completed, or errors.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "FloatingPointCounter is not supported by all metrics backends, however a default implementation is provided which accumulates floating point values and records increments to a standard Counter after crossing integer boundaries.",
+      "text" : "A floating-point counter is a cumulative metric that represents a single monotonically increasing floating-point counter whose value can only increase or be reset to zero.",
       "type" : "text"
     }
   ],
@@ -112,7 +96,15 @@
         {
           "inlineContent" : [
             {
-              "text" : "This is the user-facing FloatingPointCounter API.",
+              "text" : "For example, you can use a floating-point counter to represent the number of requests served, tasks completed, or errors.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "floating-point counter is not supported by all metrics backends, however a default implementation is provided which accumulates floating point values and records increments to a standard counter after crossing integer boundaries.",
               "type" : "text"
             }
           ],
@@ -121,12 +113,21 @@
         {
           "inlineContent" : [
             {
+              "text" : "This is the user-facing floating-point counter API.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
               "text" : "Its behavior depends on the ",
               "type" : "text"
             },
             {
-              "code" : "FloatingCounterHandler",
-              "type" : "codeVoice"
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/FloatingPointCounterHandler",
+              "isActive" : true,
+              "type" : "reference"
             },
             {
               "text" : " implementation.",
@@ -134,6 +135,39 @@
             }
           ],
           "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Increment a counter:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "counter.increment(by: 5.1)",
+            "counter.increment() \/\/ increments counter by 1"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Reset a counter:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "counter.reset()"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
         }
       ],
       "kind" : "content"
@@ -165,7 +199,9 @@
       "generated" : true,
       "identifiers" : [
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/FloatingPointCounter\/init(label:dimensions:)",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/FloatingPointCounter\/init(label:dimensions:handler:)"
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/FloatingPointCounter\/init(label:dimensions:factory:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/FloatingPointCounter\/init(label:dimensions:handler:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/FloatingPointCounter\/init(label:dimensions:handler:factory:)"
       ],
       "title" : "Initializers"
     },
@@ -226,23 +262,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/FloatingPointCounter": {
   "abstract" : [
     {
-      "text" : "A FloatingPointCounter is a cumulative metric that represents a single monotonically increasing FloatingPointCounter whose value can only increase or be reset to zero.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "For example, you can use a FloatingPointCounter to represent the number of requests served, tasks completed, or errors.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "FloatingPointCounter is not supported by all metrics backends, however a default implementation is provided which accumulates floating point values and records increments to a standard Counter after crossing integer boundaries.",
+      "text" : "A floating-point counter is a cumulative metric that represents a single monotonically increasing floating-point counter whose value can only increase or be reset to zero.",
       "type" : "text"
     }
   ],
@@ -287,23 +307,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/FloatingPointCounter/destroy()": {
   "abstract" : [
     {
-      "text" : "Signal the underlying metrics library that this FloatingPointCounter will never be updated again.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "In response the library MAY decide to eagerly release any resources held by this ",
-      "type" : "text"
-    },
-    {
-      "code" : "FloatingPointCounter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Signal the underlying metrics library that this floating point counter will never be updated again.",
       "type" : "text"
     }
   ],
@@ -334,7 +338,10 @@
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/FloatingPointCounter/dimensions": {
   "abstract" : [
-
+    {
+      "text" : "The dimensions for the floating point counter.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -382,7 +389,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/FloatingPointCounter/increment()": {
   "abstract" : [
     {
-      "text" : "Increment the FloatingPointCounter by one.",
+      "text" : "Increment the floating-point counter by one.",
       "type" : "text"
     }
   ],
@@ -414,7 +421,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/FloatingPointCounter/increment(by:)": {
   "abstract" : [
     {
-      "text" : "Increment the FloatingPointCounter.",
+      "text" : "Increment the floating-point counter.",
       "type" : "text"
     }
   ],
@@ -471,15 +478,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/FloatingPointCounter/init(label:dimensions:)": {
   "abstract" : [
     {
-      "text" : "Create a new ",
-      "type" : "text"
-    },
-    {
-      "code" : "FloatingPointCounter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Create a new floating-point counter.",
       "type" : "text"
     }
   ],
@@ -543,26 +542,94 @@
   "type" : "topic",
   "url" : "\/documentation\/coremetrics\/floatingpointcounter\/init(label:dimensions:)"
 },
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/FloatingPointCounter/init(label:dimensions:factory:)": {
+  "abstract" : [
+    {
+      "text" : "Create a new floating-point counter using a custom metrics factory that you provide.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "label"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "dimensions"
+    },
+    {
+      "kind" : "text",
+      "text" : ": [("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")], "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "factory"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11CoreMetrics0B7FactoryP",
+      "text" : "MetricsFactory"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/FloatingPointCounter\/init(label:dimensions:factory:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(label:dimensions:factory:)",
+  "type" : "topic",
+  "url" : "\/documentation\/coremetrics\/floatingpointcounter\/init(label:dimensions:factory:)"
+},
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/FloatingPointCounter/init(label:dimensions:handler:)": {
   "abstract" : [
     {
-      "text" : "Alternative way to create a new ",
-      "type" : "text"
-    },
-    {
-      "code" : "FloatingPointCounter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ", while providing an explicit ",
-      "type" : "text"
-    },
-    {
-      "code" : "FloatingPointCounterHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Alternative way to create a new floating-point counter, while providing an explicit floating-point counter handler..",
       "type" : "text"
     }
   ],
@@ -643,9 +710,113 @@
   "type" : "topic",
   "url" : "\/documentation\/coremetrics\/floatingpointcounter\/init(label:dimensions:handler:)"
 },
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/FloatingPointCounter/init(label:dimensions:handler:factory:)": {
+  "abstract" : [
+    {
+      "text" : "Alternative way to create a new floating-point counter, while providing an explicit floating-point counter handler.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "label"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "dimensions"
+    },
+    {
+      "kind" : "text",
+      "text" : ": [("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")], "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "handler"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11CoreMetrics27FloatingPointCounterHandlerP",
+      "text" : "FloatingPointCounterHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "factory"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11CoreMetrics0B7FactoryP",
+      "text" : "MetricsFactory"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/FloatingPointCounter\/init(label:dimensions:handler:factory:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(label:dimensions:handler:factory:)",
+  "type" : "topic",
+  "url" : "\/documentation\/coremetrics\/floatingpointcounter\/init(label:dimensions:handler:factory:)"
+},
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/FloatingPointCounter/label": {
   "abstract" : [
-
+    {
+      "text" : "The label for the floating point counter.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -680,7 +851,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/FloatingPointCounter/reset()": {
   "abstract" : [
     {
-      "text" : "Reset the FloatingPointCounter back to zero.",
+      "text" : "Reset the floating-point counter back to zero.",
       "type" : "text"
     }
   ],
@@ -708,6 +879,40 @@
   "title" : "reset()",
   "type" : "topic",
   "url" : "\/documentation\/coremetrics\/floatingpointcounter\/reset()"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/FloatingPointCounterHandler": {
+  "abstract" : [
+    {
+      "text" : "A floating-point counter handler represents a backend implementation of a floating-point counter.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "FloatingPointCounterHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/FloatingPointCounterHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "FloatingPointCounterHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "FloatingPointCounterHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/coremetrics\/floatingpointcounterhandler"
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/s23CustomStringConvertibleP": {
   "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s23CustomStringConvertibleP",

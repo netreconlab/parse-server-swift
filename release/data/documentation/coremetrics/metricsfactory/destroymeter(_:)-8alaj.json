@@ -1,15 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Invoked when the corresponding ",
-      "type" : "text"
-    },
-    {
-      "code" : "Meter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : "’s ",
+      "text" : "Invoked when the corresponding meter’s ",
       "type" : "text"
     },
     {
@@ -19,22 +11,13 @@
     {
       "text" : " function is invoked.",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Upon receiving this signal the factory may eagerly release any resources related to this counter.",
-      "type" : "text"
     }
   ],
   "hierarchy" : {
     "paths" : [
       [
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory\/destroyMeter(_:)-3ak7l"
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory"
       ]
     ]
   },
@@ -171,6 +154,15 @@
         {
           "inlineContent" : [
             {
+              "text" : "Upon receiving this signal the factory may eagerly release any resources related to this counter.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
               "code" : "destroyMeter",
               "type" : "codeVoice"
             },
@@ -229,23 +221,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MeterHandler": {
   "abstract" : [
     {
-      "text" : "A ",
-      "type" : "text"
-    },
-    {
-      "code" : "MeterHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " represents a backend implementation of a ",
-      "type" : "text"
-    },
-    {
-      "code" : "Meter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "A meter handler represents a backend implementation of a meter.",
       "type" : "text"
     }
   ],
@@ -297,18 +273,6 @@
     {
       "text" : " and the metrics backend implementation.",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "code" : "MetricsFactory",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : "’s role is to initialize concrete implementations of the various metric types:",
-      "type" : "text"
     }
   ],
   "fragments" : [
@@ -338,85 +302,10 @@
   "type" : "topic",
   "url" : "\/documentation\/coremetrics\/metricsfactory"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MetricsFactory/destroyMeter(_:)-3ak7l": {
-  "abstract" : [
-    {
-      "text" : "Invoked when the corresponding ",
-      "type" : "text"
-    },
-    {
-      "code" : "Meter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : "’s ",
-      "type" : "text"
-    },
-    {
-      "code" : "destroy()",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " function is invoked.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Upon receiving this signal the factory may eagerly release any resources related to this recorder.",
-      "type" : "text"
-    }
-  ],
-  "defaultImplementations" : 1,
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "destroyMeter"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11CoreMetrics12MeterHandlerP",
-      "text" : "MeterHandler"
-    },
-    {
-      "kind" : "text",
-      "text" : ")"
-    }
-  ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory\/destroyMeter(_:)-3ak7l",
-  "kind" : "symbol",
-  "required" : true,
-  "role" : "symbol",
-  "title" : "destroyMeter(_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/coremetrics\/metricsfactory\/destroymeter(_:)-3ak7l"
-},
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MetricsFactory/destroyMeter(_:)-8alaj": {
   "abstract" : [
     {
-      "text" : "Invoked when the corresponding ",
-      "type" : "text"
-    },
-    {
-      "code" : "Meter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : "’s ",
+      "text" : "Invoked when the corresponding meter’s ",
       "type" : "text"
     },
     {
@@ -425,14 +314,6 @@
     },
     {
       "text" : " function is invoked.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Upon receiving this signal the factory may eagerly release any resources related to this counter.",
       "type" : "text"
     }
   ],

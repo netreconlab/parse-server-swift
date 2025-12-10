@@ -98,6 +98,14 @@
           ],
           "tokens" : [
             {
+              "kind" : "attribute",
+              "text" : "@preconcurrency"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
               "kind" : "keyword",
               "text" : "protocol"
             },
@@ -108,6 +116,15 @@
             {
               "kind" : "identifier",
               "text" : "HashFunction"
+            },
+            {
+              "kind" : "text",
+              "text" : " : "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s8SendableP",
+              "text" : "Sendable"
             }
           ]
         }
@@ -283,6 +300,14 @@
     }
   ],
   "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Inherits From",
+      "type" : "inheritsFrom"
+    },
     {
       "identifiers" : [
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/Insecure\/MD5",
@@ -977,6 +1002,11 @@
   "title" : "SHA512",
   "type" : "topic",
   "url" : "\/documentation\/crypto\/sha512"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s8SendableP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
 }
 }
 }

@@ -1,23 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Alternative way to create a new ",
-      "type" : "text"
-    },
-    {
-      "code" : "Counter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ", while providing an explicit ",
-      "type" : "text"
-    },
-    {
-      "code" : "CounterHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Alternative way to create a new counter, with an explicit counter handler.",
       "type" : "text"
     }
   ],
@@ -127,6 +111,14 @@
             "macOS"
           ],
           "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "convenience"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
             {
               "kind" : "keyword",
               "text" : "init"
@@ -253,7 +245,7 @@
             {
               "inlineContent" : [
                 {
-                  "text" : "The custom backend.",
+                  "text" : "The custom backend, created by the global metrics factory.",
                   "type" : "text"
                 }
               ],
@@ -277,30 +269,6 @@
             {
               "inlineContent" : [
                 {
-                  "text" : "This initializer provides an escape hatch for situations where one must use a custom factory instead of the global one.",
-                  "type" : "text"
-                },
-                {
-                  "text" : " ",
-                  "type" : "text"
-                },
-                {
-                  "text" : "We do not expect this API to be used in normal circumstances, so if you find yourself using it make sure it’s for a good reason.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "Warning",
-          "style" : "warning",
-          "type" : "aside"
-        },
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
                   "text" : "Use ",
                   "type" : "text"
                 },
@@ -309,15 +277,16 @@
                   "type" : "codeVoice"
                 },
                 {
-                  "text" : " to create ",
+                  "text" : " to create instances of ",
                   "type" : "text"
                 },
                 {
-                  "code" : "Counter",
-                  "type" : "codeVoice"
+                  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Counter",
+                  "isActive" : true,
+                  "type" : "reference"
                 },
                 {
-                  "text" : " instances using the configured metrics backend.",
+                  "text" : " using the configured metrics backend.",
                   "type" : "text"
                 }
               ],
@@ -370,14 +339,6 @@
     {
       "text" : "A counter is a cumulative metric that represents a single monotonically increasing counter whose value can only increase or be reset to zero.",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "For example, you can use a counter to represent the number of requests served, tasks completed, or errors.",
-      "type" : "text"
     }
   ],
   "fragments" : [
@@ -410,23 +371,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Counter/init(label:dimensions:handler:)": {
   "abstract" : [
     {
-      "text" : "Alternative way to create a new ",
-      "type" : "text"
-    },
-    {
-      "code" : "Counter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ", while providing an explicit ",
-      "type" : "text"
-    },
-    {
-      "code" : "CounterHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Alternative way to create a new counter, with an explicit counter handler.",
       "type" : "text"
     }
   ],
@@ -510,23 +455,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/CounterHandler": {
   "abstract" : [
     {
-      "text" : "A ",
-      "type" : "text"
-    },
-    {
-      "code" : "CounterHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " represents a backend implementation of a ",
-      "type" : "text"
-    },
-    {
-      "code" : "Counter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "A counter handler represents a backend implementation of a counter.",
       "type" : "text"
     }
   ],

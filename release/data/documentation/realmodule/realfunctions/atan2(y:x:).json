@@ -1,19 +1,23 @@
 {
   "abstract" : [
     {
-      "code" : "atan(y\/x)",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ", with sign selected according to the quadrant of ",
+      "text" : "The signed angle formed in the plane between the vector ",
       "type" : "text"
     },
     {
-      "code" : "(x, y)",
+      "code" : "(x,y)",
       "type" : "codeVoice"
     },
     {
-      "text" : ".",
+      "text" : " and the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "positive real axis, measured in radians.",
       "type" : "text"
     }
   ],
@@ -184,28 +188,145 @@
     {
       "content" : [
         {
-          "anchor" : "See-also",
+          "anchor" : "discussion",
           "level" : 2,
-          "text" : "See also:",
+          "text" : "Discussion",
           "type" : "heading"
         },
         {
-          "items" : [
+          "inlineContent" : [
             {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "code" : "atan()",
-                      "type" : "codeVoice"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
+              "text" : "The result is in the interval ",
+              "type" : "text"
+            },
+            {
+              "code" : "[-π, π]",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
             }
           ],
-          "type" : "unorderedList"
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The argument order to ",
+              "type" : "text"
+            },
+            {
+              "code" : "atan2",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " may be surprising to new programmers.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The convention of ",
+              "type" : "text"
+            },
+            {
+              "code" : "y",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " being the first argument goes back at least to",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Fortran IV in 1961 and is generally followed in computing with a few",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "notable exceptions (e.g. Mathematica and Excel). This convention was",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "originally chosen because of the mathematical definition of the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "function:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "atan2(y,x) = atan(y\/x) if x > 0"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "See also ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/ElementaryFunctions\/atan(_:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ", as well as the ",
+              "type" : "text"
+            },
+            {
+              "code" : "phase",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "polar",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " properties defined on the ",
+              "type" : "text"
+            },
+            {
+              "code" : "Complex",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " type.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
         }
       ],
       "kind" : "content"
@@ -244,6 +365,76 @@
   "type" : "topic",
   "url" : "\/documentation\/realmodule"
 },
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/ElementaryFunctions/atan(_:)": {
+  "abstract" : [
+    {
+      "text" : "The ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Inverse_trigonometric_functions",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : "  (inverse tangent) of ",
+      "type" : "text"
+    },
+    {
+      "code" : "x",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "atan"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/ElementaryFunctions\/atan(_:)",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "atan(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/realmodule\/elementaryfunctions\/atan(_:)"
+},
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/RealFunctions": {
   "abstract" : [
 
@@ -278,19 +469,23 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/RealFunctions/atan2(y:x:)": {
   "abstract" : [
     {
-      "code" : "atan(y\/x)",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ", with sign selected according to the quadrant of ",
+      "text" : "The signed angle formed in the plane between the vector ",
       "type" : "text"
     },
     {
-      "code" : "(x, y)",
+      "code" : "(x,y)",
       "type" : "codeVoice"
     },
     {
-      "text" : ".",
+      "text" : " and the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "positive real axis, measured in radians.",
       "type" : "text"
     }
   ],
@@ -363,6 +558,18 @@
   "title" : "atan2(y:x:)",
   "type" : "topic",
   "url" : "\/documentation\/realmodule\/realfunctions\/atan2(y:x:)"
+},
+"https://en.wikipedia.org/wiki/Inverse_trigonometric_functions": {
+  "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Inverse_trigonometric_functions",
+  "title" : "arctangent",
+  "titleInlineContent" : [
+    {
+      "text" : "arctangent",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/en.wikipedia.org\/wiki\/Inverse_trigonometric_functions"
 }
 }
 }

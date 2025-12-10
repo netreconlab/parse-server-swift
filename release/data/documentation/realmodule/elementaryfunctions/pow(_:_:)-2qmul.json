@@ -172,41 +172,125 @@
     {
       "content" : [
         {
-          "anchor" : "See-also",
+          "anchor" : "discussion",
           "level" : 2,
-          "text" : "See also:",
+          "text" : "Discussion",
           "type" : "heading"
         },
         {
-          "items" : [
+          "inlineContent" : [
             {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "code" : "sqrt()",
-                      "type" : "codeVoice"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
+              "text" : "The edge-cases of this function are defined based on the behavior of the",
+              "type" : "text"
             },
             {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "code" : "root()",
-                      "type" : "codeVoice"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "expression ",
+              "type" : "text"
+            },
+            {
+              "code" : "exp(y log x)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", matching IEEE 754’s ",
+              "type" : "text"
+            },
+            {
+              "code" : "powr",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " operation.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "In particular, this means that if ",
+              "type" : "text"
+            },
+            {
+              "code" : "x",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "y",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " are both zero, ",
+              "type" : "text"
+            },
+            {
+              "code" : "pow(x,y)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "is ",
+              "type" : "text"
+            },
+            {
+              "code" : "nan",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " for real types and ",
+              "type" : "text"
+            },
+            {
+              "code" : "infinity",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " for complex types, rather than 1.",
+              "type" : "text"
             }
           ],
-          "type" : "unorderedList"
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "There is also",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/ElementaryFunctions\/pow(_:_:)-9imp6",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ",",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "whose behavior is defined in terms of repeated multiplication.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
         }
       ],
       "kind" : "content"
@@ -247,10 +331,7 @@
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/ElementaryFunctions": {
   "abstract" : [
-    {
-      "text" : "A type that has elementary functions available.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -339,6 +420,72 @@
   "title" : "pow(_:_:)",
   "type" : "topic",
   "url" : "\/documentation\/realmodule\/elementaryfunctions\/pow(_:_:)-2qmul"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/ElementaryFunctions/pow(_:_:)-9imp6": {
+  "abstract" : [
+    {
+      "code" : "x",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " raised to the nth power.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "pow"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/ElementaryFunctions\/pow(_:_:)-9imp6",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "pow(_:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/realmodule\/elementaryfunctions\/pow(_:_:)-9imp6"
 }
 }
 }

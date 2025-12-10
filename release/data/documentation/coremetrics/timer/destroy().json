@@ -3,22 +3,6 @@
     {
       "text" : "Signal the underlying metrics library that this timer will never be updated again.",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "In response the library MAY decide to eagerly release any resources held by this ",
-      "type" : "text"
-    },
-    {
-      "code" : "Timer",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
-      "type" : "text"
     }
   ],
   "hierarchy" : {
@@ -96,6 +80,34 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "In response the library MAY decide to eagerly release any resources held by this ",
+              "type" : "text"
+            },
+            {
+              "code" : "Timer",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -134,23 +146,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Timer": {
   "abstract" : [
     {
-      "text" : "A timer collects observations within a time window (usually things like request durations) and provides aggregated information about the data sample,",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "for example, min, max and various quantiles. It is similar to a ",
-      "type" : "text"
-    },
-    {
-      "code" : "Recorder",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " but specialized for values that represent durations.",
+      "text" : "A timer collects observations that represents durations within a time window.",
       "type" : "text"
     }
   ],
@@ -185,22 +181,6 @@
   "abstract" : [
     {
       "text" : "Signal the underlying metrics library that this timer will never be updated again.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "In response the library MAY decide to eagerly release any resources held by this ",
-      "type" : "text"
-    },
-    {
-      "code" : "Timer",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
       "type" : "text"
     }
   ],

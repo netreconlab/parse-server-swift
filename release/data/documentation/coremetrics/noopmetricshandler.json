@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Ships with the metrics module, used for initial bootstrapping.",
+      "text" : "A metrics handler that implements the protocols but does nothing.",
       "type" : "text"
     }
   ],
@@ -84,6 +84,26 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The no-op metrics handler ships with the metrics module, and is used by default unless a different metrics backend is bootstrapped.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "relationshipsSections" : [
@@ -182,23 +202,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/CounterHandler": {
   "abstract" : [
     {
-      "text" : "A ",
-      "type" : "text"
-    },
-    {
-      "code" : "CounterHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " represents a backend implementation of a ",
-      "type" : "text"
-    },
-    {
-      "code" : "Counter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "A counter handler represents a backend implementation of a counter.",
       "type" : "text"
     }
   ],
@@ -232,23 +236,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/FloatingPointCounterHandler": {
   "abstract" : [
     {
-      "text" : "A ",
-      "type" : "text"
-    },
-    {
-      "code" : "FloatingPointCounterHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " represents a backend implementation of a ",
-      "type" : "text"
-    },
-    {
-      "code" : "FloatingPointCounter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "A floating-point counter handler represents a backend implementation of a floating-point counter.",
       "type" : "text"
     }
   ],
@@ -282,23 +270,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MeterHandler": {
   "abstract" : [
     {
-      "text" : "A ",
-      "type" : "text"
-    },
-    {
-      "code" : "MeterHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " represents a backend implementation of a ",
-      "type" : "text"
-    },
-    {
-      "code" : "Meter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "A meter handler represents a backend implementation of a meter.",
       "type" : "text"
     }
   ],
@@ -350,18 +322,6 @@
     {
       "text" : " and the metrics backend implementation.",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "code" : "MetricsFactory",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : "’s role is to initialize concrete implementations of the various metric types:",
-      "type" : "text"
     }
   ],
   "fragments" : [
@@ -394,7 +354,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/NOOPMetricsHandler": {
   "abstract" : [
     {
-      "text" : "Ships with the metrics module, used for initial bootstrapping.",
+      "text" : "A metrics handler that implements the protocols but does nothing.",
       "type" : "text"
     }
   ],
@@ -488,15 +448,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/NOOPMetricsHandler/destroyCounter(_:)": {
   "abstract" : [
     {
-      "text" : "Invoked when the corresponding ",
-      "type" : "text"
-    },
-    {
-      "code" : "Counter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : "’s ",
+      "text" : "Invoked when the corresponding counter’s ",
       "type" : "text"
     },
     {
@@ -505,14 +457,6 @@
     },
     {
       "text" : " function is invoked.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Upon receiving this signal the factory may eagerly release any resources related to this counter.",
       "type" : "text"
     }
   ],
@@ -553,15 +497,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/NOOPMetricsHandler/destroyFloatingPointCounter(_:)": {
   "abstract" : [
     {
-      "text" : "Invoked when the corresponding ",
-      "type" : "text"
-    },
-    {
-      "code" : "FloatingPointCounter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : "’s ",
+      "text" : "Invoked when the corresponding floating-point counter’s ",
       "type" : "text"
     },
     {
@@ -570,14 +506,6 @@
     },
     {
       "text" : " function is invoked.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Upon receiving this signal the factory may eagerly release any resources related to this counter.",
       "type" : "text"
     }
   ],
@@ -618,15 +546,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/NOOPMetricsHandler/destroyMeter(_:)": {
   "abstract" : [
     {
-      "text" : "Invoked when the corresponding ",
-      "type" : "text"
-    },
-    {
-      "code" : "Meter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : "’s ",
+      "text" : "Invoked when the corresponding meter’s ",
       "type" : "text"
     },
     {
@@ -635,14 +555,6 @@
     },
     {
       "text" : " function is invoked.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Upon receiving this signal the factory may eagerly release any resources related to this recorder.",
       "type" : "text"
     }
   ],
@@ -683,15 +595,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/NOOPMetricsHandler/destroyRecorder(_:)": {
   "abstract" : [
     {
-      "text" : "Invoked when the corresponding ",
-      "type" : "text"
-    },
-    {
-      "code" : "Recorder",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : "’s ",
+      "text" : "Invoked when the corresponding recorder’s ",
       "type" : "text"
     },
     {
@@ -700,14 +604,6 @@
     },
     {
       "text" : " function is invoked.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Upon receiving this signal the factory may eagerly release any resources related to this recorder.",
       "type" : "text"
     }
   ],
@@ -748,15 +644,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/NOOPMetricsHandler/destroyTimer(_:)": {
   "abstract" : [
     {
-      "text" : "Invoked when the corresponding ",
-      "type" : "text"
-    },
-    {
-      "code" : "Timer",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : "’s ",
+      "text" : "Invoked when the corresponding Timer’s ",
       "type" : "text"
     },
     {
@@ -765,14 +653,6 @@
     },
     {
       "text" : " function is invoked.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Upon receiving this signal the factory may eagerly release any resources related to this timer.",
       "type" : "text"
     }
   ],
@@ -910,7 +790,10 @@
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/NOOPMetricsHandler/instance": {
   "abstract" : [
-
+    {
+      "text" : "A sharable instance of a No-op metrics handler.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -953,15 +836,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/NOOPMetricsHandler/makeCounter(label:dimensions:)": {
   "abstract" : [
     {
-      "text" : "Create a backing ",
-      "type" : "text"
-    },
-    {
-      "code" : "CounterHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Create a backing counter handler.",
       "type" : "text"
     }
   ],
@@ -1041,15 +916,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/NOOPMetricsHandler/makeFloatingPointCounter(label:dimensions:)": {
   "abstract" : [
     {
-      "text" : "Create a backing ",
-      "type" : "text"
-    },
-    {
-      "code" : "FloatingPointCounterHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Create a backing floating-point handler.",
       "type" : "text"
     }
   ],
@@ -1129,15 +996,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/NOOPMetricsHandler/makeMeter(label:dimensions:)": {
   "abstract" : [
     {
-      "text" : "Create a backing ",
-      "type" : "text"
-    },
-    {
-      "code" : "MeterHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Create a backing meter handler.",
       "type" : "text"
     }
   ],
@@ -1217,15 +1076,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/NOOPMetricsHandler/makeRecorder(label:dimensions:aggregate:)": {
   "abstract" : [
     {
-      "text" : "Create a backing ",
-      "type" : "text"
-    },
-    {
-      "code" : "RecorderHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Create a backing recorder handler.",
       "type" : "text"
     }
   ],
@@ -1322,15 +1173,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/NOOPMetricsHandler/makeTimer(label:dimensions:)": {
   "abstract" : [
     {
-      "text" : "Create a backing ",
-      "type" : "text"
-    },
-    {
-      "code" : "TimerHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Create a backing timer handler.",
       "type" : "text"
     }
   ],
@@ -1410,7 +1253,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/NOOPMetricsHandler/record(_:)-2jh2w": {
   "abstract" : [
     {
-      "text" : "Record a value.",
+      "text" : "Record a floating-point value.",
       "type" : "text"
     }
   ],
@@ -1451,7 +1294,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/NOOPMetricsHandler/record(_:)-33tjf": {
   "abstract" : [
     {
-      "text" : "Record a value.",
+      "text" : "Record an integer value.",
       "type" : "text"
     }
   ],
@@ -1565,7 +1408,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/NOOPMetricsHandler/set(_:)-11de": {
   "abstract" : [
     {
-      "text" : "Set a value.",
+      "text" : "Set a floating-point value.",
       "type" : "text"
     }
   ],
@@ -1606,7 +1449,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/NOOPMetricsHandler/set(_:)-9r6pn": {
   "abstract" : [
     {
-      "text" : "Set a value.",
+      "text" : "Set an integer value.",
       "type" : "text"
     }
   ],
@@ -1647,23 +1490,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/RecorderHandler": {
   "abstract" : [
     {
-      "text" : "A ",
-      "type" : "text"
-    },
-    {
-      "code" : "RecorderHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " represents a backend implementation of a ",
-      "type" : "text"
-    },
-    {
-      "code" : "Recorder",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "A recorder handler represents a backend implementation of a recorder.",
       "type" : "text"
     }
   ],
@@ -1697,23 +1524,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/TimerHandler": {
   "abstract" : [
     {
-      "text" : "A ",
-      "type" : "text"
-    },
-    {
-      "code" : "TimerHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " represents a backend implementation of a ",
-      "type" : "text"
-    },
-    {
-      "code" : "Timer",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "A timer handler represents a backend implementation of a timer.",
       "type" : "text"
     }
   ],

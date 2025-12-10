@@ -157,78 +157,50 @@
     {
       "content" : [
         {
-          "anchor" : "See-also",
+          "anchor" : "discussion",
           "level" : 2,
-          "text" : "See also:",
+          "text" : "Discussion",
           "type" : "heading"
         },
         {
-          "items" : [
+          "inlineContent" : [
             {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "code" : "log(onePlus:)",
-                      "type" : "codeVoice"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
+              "text" : "For types that conform to ",
+              "type" : "text"
             },
             {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "code" : "log2()",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : " (for types conforming to ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "RealFunctions",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ")",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions",
+              "isActive" : true,
+              "type" : "reference"
             },
             {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "code" : "log10()",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : " (for types conforming to ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "RealFunctions",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ")",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
+              "text" : " see also",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions\/log2(_:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions\/log10(_:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
             }
           ],
-          "type" : "unorderedList"
+          "type" : "paragraph"
         }
       ],
       "kind" : "content"
@@ -269,10 +241,7 @@
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/ElementaryFunctions": {
   "abstract" : [
-    {
-      "text" : "A type that has elementary functions available.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -370,6 +339,159 @@
   "title" : "log(_:)",
   "type" : "topic",
   "url" : "\/documentation\/realmodule\/elementaryfunctions\/log(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/RealFunctions": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "RealFunctions"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "RealFunctions"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "RealFunctions",
+  "type" : "topic",
+  "url" : "\/documentation\/realmodule\/realfunctions"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/RealFunctions/log10(_:)": {
+  "abstract" : [
+    {
+      "text" : "The base-10 logarithm of ",
+      "type" : "text"
+    },
+    {
+      "code" : "x",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "log10"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions\/log10(_:)",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "log10(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/realmodule\/realfunctions\/log10(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/RealFunctions/log2(_:)": {
+  "abstract" : [
+    {
+      "text" : "The base-2 logarithm of ",
+      "type" : "text"
+    },
+    {
+      "code" : "x",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "log2"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/RealFunctions\/log2(_:)",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "log2(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/realmodule\/realfunctions\/log2(_:)"
 },
 "https://en.wikipedia.org/wiki/Logarithm": {
   "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Logarithm",

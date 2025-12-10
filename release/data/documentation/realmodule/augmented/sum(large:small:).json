@@ -36,7 +36,7 @@
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "RealModule",
-    "externalID" : "s:10RealModule9AugmentedO3sum5large5smallx4head_x4tailtx_xtAA0A0RzlFZ",
+    "externalID" : "s:10RealModule9AugmentedO3sum5large5smallx4head_x4tailtx_xtSFRzlFZ",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -80,7 +80,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10RealModule9AugmentedO3sum5large5smallx4head_x4tailtx_xtAA0A0RzlFZ1TL_xmfp",
+        "preciseIdentifier" : "s:10RealModule9AugmentedO3sum5large5smallx4head_x4tailtx_xtSFRzlFZ1TL_xmfp",
         "text" : "T"
       },
       {
@@ -97,7 +97,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10RealModule9AugmentedO3sum5large5smallx4head_x4tailtx_xtAA0A0RzlFZ1TL_xmfp",
+        "preciseIdentifier" : "s:10RealModule9AugmentedO3sum5large5smallx4head_x4tailtx_xtSFRzlFZ1TL_xmfp",
         "text" : "T"
       },
       {
@@ -110,7 +110,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10RealModule9AugmentedO3sum5large5smallx4head_x4tailtx_xtAA0A0RzlFZ1TL_xmfp",
+        "preciseIdentifier" : "s:10RealModule9AugmentedO3sum5large5smallx4head_x4tailtx_xtSFRzlFZ1TL_xmfp",
         "text" : "T"
       },
       {
@@ -123,7 +123,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10RealModule9AugmentedO3sum5large5smallx4head_x4tailtx_xtAA0A0RzlFZ1TL_xmfp",
+        "preciseIdentifier" : "s:10RealModule9AugmentedO3sum5large5smallx4head_x4tailtx_xtSFRzlFZ1TL_xmfp",
         "text" : "T"
       },
       {
@@ -202,7 +202,7 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10RealModule9AugmentedO3sum5large5smallx4head_x4tailtx_xtAA0A0RzlFZ1TL_xmfp",
+              "preciseIdentifier" : "s:10RealModule9AugmentedO3sum5large5smallx4head_x4tailtx_xtSFRzlFZ1TL_xmfp",
               "text" : "T"
             },
             {
@@ -227,7 +227,7 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10RealModule9AugmentedO3sum5large5smallx4head_x4tailtx_xtAA0A0RzlFZ1TL_xmfp",
+              "preciseIdentifier" : "s:10RealModule9AugmentedO3sum5large5smallx4head_x4tailtx_xtSFRzlFZ1TL_xmfp",
               "text" : "T"
             },
             {
@@ -240,7 +240,7 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10RealModule9AugmentedO3sum5large5smallx4head_x4tailtx_xtAA0A0RzlFZ1TL_xmfp",
+              "preciseIdentifier" : "s:10RealModule9AugmentedO3sum5large5smallx4head_x4tailtx_xtSFRzlFZ1TL_xmfp",
               "text" : "T"
             },
             {
@@ -253,7 +253,7 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10RealModule9AugmentedO3sum5large5smallx4head_x4tailtx_xtAA0A0RzlFZ1TL_xmfp",
+              "preciseIdentifier" : "s:10RealModule9AugmentedO3sum5large5smallx4head_x4tailtx_xtSFRzlFZ1TL_xmfp",
               "text" : "T"
             },
             {
@@ -277,10 +277,9 @@
               "text" : " : "
             },
             {
-              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/Real",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10RealModule0A0P",
-              "text" : "Real"
+              "preciseIdentifier" : "s:SF",
+              "text" : "FloatingPoint"
             }
           ]
         }
@@ -374,45 +373,143 @@
           "type" : "paragraph"
         },
         {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "tail",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " is guaranteed to be the best approximation to the error of",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "the sum only if ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "large.magnitude",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " >= ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "small.magnitude",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ". If this is",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "not the case, then ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "head",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " is the correctly rounded sum, but ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "tail",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "is not guaranteed to be the exact error. If you do not know a priori",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "how the magnitudes of ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "a",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " and ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "b",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " compare, you likely want to use",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/Augmented\/sum(_:_:)",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : " instead.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
           "inlineContent" : [
             {
               "text" : "Unlike ",
               "type" : "text"
             },
             {
-              "code" : "Augmented.product(a, b)",
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/Augmented\/product(_:_:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ", the rounding error of ",
+              "type" : "text"
+            },
+            {
+              "code" : "sum",
               "type" : "codeVoice"
             },
             {
-              "text" : ", the rounding error of a sum can",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "never underflow. However, it may not be exactly representable when",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "code" : "a",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " and ",
-              "type" : "text"
-            },
-            {
-              "code" : "b",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " differ widely in magnitude.",
+              "text" : " never underflows.",
               "type" : "text"
             }
           ],
@@ -421,77 +518,77 @@
         {
           "inlineContent" : [
             {
-              "text" : "This operation is sometimes called “fastTwoSum”.",
+              "text" : "This operation is sometimes called ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/en.wikipedia.org\/wiki\/2Sum",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
               "type" : "text"
             }
           ],
           "type" : "paragraph"
         },
         {
-          "anchor" : "Preconditions",
-          "level" : 2,
-          "text" : "Preconditions:",
-          "type" : "heading"
-        },
-        {
-          "items" : [
+          "content" : [
             {
-              "content" : [
+              "inlineContent" : [
                 {
-                  "inlineContent" : [
-                    {
-                      "code" : "large.magnitude",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : " must not be smaller than ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "small.magnitude",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ".",
-                      "type" : "text"
-                    },
-                    {
-                      "text" : " ",
-                      "type" : "text"
-                    },
-                    {
-                      "text" : "They may be equal, or one or both may be ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "NaN",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ".",
-                      "type" : "text"
-                    },
-                    {
-                      "text" : " ",
-                      "type" : "text"
-                    },
-                    {
-                      "text" : "This precondition is only enforced in debug builds.",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
+                  "text" : "",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "Classical fastTwoSum does not work when ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "radix",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " is 10. This function",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "will fall back on another algorithm for decimal floating-point types",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "to ensure correct results.",
+                  "type" : "text"
                 }
-              ]
+              ],
+              "type" : "paragraph"
             }
           ],
-          "type" : "unorderedList"
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
         },
         {
-          "anchor" : "Edge-Cases",
-          "level" : 2,
-          "text" : "Edge Cases:",
-          "type" : "heading"
+          "inlineContent" : [
+            {
+              "text" : "Edge Cases:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
         },
         {
           "items" : [
@@ -577,10 +674,13 @@
           "type" : "unorderedList"
         },
         {
-          "anchor" : "Postconditions",
-          "level" : 2,
-          "text" : "Postconditions:",
-          "type" : "heading"
+          "inlineContent" : [
+            {
+              "text" : "Postconditions:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
         },
         {
           "items" : [
@@ -671,22 +771,7 @@
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/Augmented": {
   "abstract" : [
-    {
-      "text" : "A namespace for “augmented arithmetic” operations for types conforming to",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "code" : "Real",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -714,6 +799,222 @@
   "title" : "Augmented",
   "type" : "topic",
   "url" : "\/documentation\/realmodule\/augmented"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/Augmented/product(_:_:)": {
+  "abstract" : [
+    {
+      "text" : "The product ",
+      "type" : "text"
+    },
+    {
+      "code" : "a * b",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " represented as an implicit sum ",
+      "type" : "text"
+    },
+    {
+      "code" : "head + tail",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "product"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10RealModule9AugmentedO7productyx4head_x4tailtx_xtSFRzlFZ1TL_xmfp",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10RealModule9AugmentedO7productyx4head_x4tailtx_xtSFRzlFZ1TL_xmfp",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> (head"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10RealModule9AugmentedO7productyx4head_x4tailtx_xtSFRzlFZ1TL_xmfp",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ", tail"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10RealModule9AugmentedO7productyx4head_x4tailtx_xtSFRzlFZ1TL_xmfp",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/Augmented\/product(_:_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "product(_:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/realmodule\/augmented\/product(_:_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/Augmented/sum(_:_:)": {
+  "abstract" : [
+    {
+      "text" : "The sum ",
+      "type" : "text"
+    },
+    {
+      "code" : "a + b",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " represented as an implicit sum ",
+      "type" : "text"
+    },
+    {
+      "code" : "head + tail",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "sum"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10RealModule9AugmentedO3sumyx4head_x4tailtx_xtSFRzlFZ1TL_xmfp",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10RealModule9AugmentedO3sumyx4head_x4tailtx_xtSFRzlFZ1TL_xmfp",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> (head"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10RealModule9AugmentedO3sumyx4head_x4tailtx_xtSFRzlFZ1TL_xmfp",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ", tail"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10RealModule9AugmentedO3sumyx4head_x4tailtx_xtSFRzlFZ1TL_xmfp",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/Augmented\/sum(_:_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "sum(_:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/realmodule\/augmented\/sum(_:_:)"
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/Augmented/sum(large:small:)": {
   "abstract" : [
@@ -781,7 +1082,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10RealModule9AugmentedO3sum5large5smallx4head_x4tailtx_xtAA0A0RzlFZ1TL_xmfp",
+      "preciseIdentifier" : "s:10RealModule9AugmentedO3sum5large5smallx4head_x4tailtx_xtSFRzlFZ1TL_xmfp",
       "text" : "T"
     },
     {
@@ -798,7 +1099,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10RealModule9AugmentedO3sum5large5smallx4head_x4tailtx_xtAA0A0RzlFZ1TL_xmfp",
+      "preciseIdentifier" : "s:10RealModule9AugmentedO3sum5large5smallx4head_x4tailtx_xtSFRzlFZ1TL_xmfp",
       "text" : "T"
     },
     {
@@ -811,7 +1112,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10RealModule9AugmentedO3sum5large5smallx4head_x4tailtx_xtAA0A0RzlFZ1TL_xmfp",
+      "preciseIdentifier" : "s:10RealModule9AugmentedO3sum5large5smallx4head_x4tailtx_xtSFRzlFZ1TL_xmfp",
       "text" : "T"
     },
     {
@@ -824,7 +1125,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10RealModule9AugmentedO3sum5large5smallx4head_x4tailtx_xtAA0A0RzlFZ1TL_xmfp",
+      "preciseIdentifier" : "s:10RealModule9AugmentedO3sum5large5smallx4head_x4tailtx_xtSFRzlFZ1TL_xmfp",
       "text" : "T"
     },
     {
@@ -839,39 +1140,17 @@
   "type" : "topic",
   "url" : "\/documentation\/realmodule\/augmented\/sum(large:small:)"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/Real": {
-  "abstract" : [
+"https://en.wikipedia.org/wiki/2Sum": {
+  "identifier" : "https:\/\/en.wikipedia.org\/wiki\/2Sum",
+  "title" : "“fastTwoSum”",
+  "titleInlineContent" : [
     {
-      "text" : "A type that models the real numbers.",
+      "text" : "“fastTwoSum”",
       "type" : "text"
     }
   ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "protocol"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Real"
-    }
-  ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/Real",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "Real"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "Real",
-  "type" : "topic",
-  "url" : "\/documentation\/realmodule\/real"
+  "type" : "link",
+  "url" : "https:\/\/en.wikipedia.org\/wiki\/2Sum"
 }
 }
 }

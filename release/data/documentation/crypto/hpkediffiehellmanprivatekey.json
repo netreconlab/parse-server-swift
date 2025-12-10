@@ -98,6 +98,14 @@
           ],
           "tokens" : [
             {
+              "kind" : "attribute",
+              "text" : "@preconcurrency"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
               "kind" : "keyword",
               "text" : "protocol"
             },
@@ -164,7 +172,8 @@
   "relationshipsSections" : [
     {
       "identifiers" : [
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/DiffieHellmanKeyAgreement"
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/DiffieHellmanKeyAgreement",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP"
       ],
       "kind" : "relationships",
       "title" : "Inherits From",
@@ -311,6 +320,15 @@
     {
       "kind" : "identifier",
       "text" : "PublicKey"
+    },
+    {
+      "kind" : "text",
+      "text" : " : "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s8SendableP",
+      "text" : "Sendable"
     }
   ],
   "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/Crypto\/DiffieHellmanKeyAgreement\/PublicKey-swift.associatedtype",
@@ -558,6 +576,11 @@
   "title" : "SecureEnclave.P256.KeyAgreement.PrivateKey",
   "type" : "topic",
   "url" : "\/documentation\/crypto\/secureenclave\/p256\/keyagreement\/privatekey"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/s8SendableP": {
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
 }
 }
 }

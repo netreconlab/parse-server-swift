@@ -107,14 +107,6 @@
     {
       "text" : "A counter is a cumulative metric that represents a single monotonically increasing counter whose value can only increase or be reset to zero.",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "For example, you can use a counter to represent the number of requests served, tasks completed, or errors.",
-      "type" : "text"
     }
   ],
   "fragments" : [
@@ -147,23 +139,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/CounterHandler": {
   "abstract" : [
     {
-      "text" : "A ",
-      "type" : "text"
-    },
-    {
-      "code" : "CounterHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " represents a backend implementation of a ",
-      "type" : "text"
-    },
-    {
-      "code" : "Counter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "A counter handler represents a backend implementation of a counter.",
       "type" : "text"
     }
   ],
@@ -197,23 +173,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/FloatingPointCounter": {
   "abstract" : [
     {
-      "text" : "A FloatingPointCounter is a cumulative metric that represents a single monotonically increasing FloatingPointCounter whose value can only increase or be reset to zero.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "For example, you can use a FloatingPointCounter to represent the number of requests served, tasks completed, or errors.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "FloatingPointCounter is not supported by all metrics backends, however a default implementation is provided which accumulates floating point values and records increments to a standard Counter after crossing integer boundaries.",
+      "text" : "A floating-point counter is a cumulative metric that represents a single monotonically increasing floating-point counter whose value can only increase or be reset to zero.",
       "type" : "text"
     }
   ],
@@ -247,23 +207,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/FloatingPointCounterHandler": {
   "abstract" : [
     {
-      "text" : "A ",
-      "type" : "text"
-    },
-    {
-      "code" : "FloatingPointCounterHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " represents a backend implementation of a ",
-      "type" : "text"
-    },
-    {
-      "code" : "FloatingPointCounter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "A floating-point counter handler represents a backend implementation of a floating-point counter.",
       "type" : "text"
     }
   ],
@@ -299,30 +243,6 @@
     {
       "text" : "A gauge is a metric that represents a single numerical value that can arbitrarily go up and down.",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Gauges are typically used for measured values like temperatures or current memory usage, but also “counts” that can go up and down, like the number of active threads.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Gauges are modeled as ",
-      "type" : "text"
-    },
-    {
-      "code" : "Recorder",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " with a sample size of 1 and that does not perform any aggregation.",
-      "type" : "text"
     }
   ],
   "fragments" : [
@@ -357,14 +277,6 @@
     {
       "text" : "A meter is similar to a gauge, it is a metric that represents a single numerical value that can arbitrarily go up and down.",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Meters are typically used for measured values like temperatures or current memory usage, but also “counts” that can go up and down, like the number of active threads.",
-      "type" : "text"
     }
   ],
   "fragments" : [
@@ -397,23 +309,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MeterHandler": {
   "abstract" : [
     {
-      "text" : "A ",
-      "type" : "text"
-    },
-    {
-      "code" : "MeterHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " represents a backend implementation of a ",
-      "type" : "text"
-    },
-    {
-      "code" : "Meter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "A meter handler represents a backend implementation of a meter.",
       "type" : "text"
     }
   ],
@@ -465,18 +361,6 @@
     {
       "text" : " and the metrics backend implementation.",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "code" : "MetricsFactory",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : "’s role is to initialize concrete implementations of the various metric types:",
-      "type" : "text"
     }
   ],
   "fragments" : [
@@ -509,47 +393,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MetricsSystem": {
   "abstract" : [
     {
-      "text" : "The ",
-      "type" : "text"
-    },
-    {
-      "code" : "MetricsSystem",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " is a global facility where the default metrics backend implementation (",
-      "type" : "text"
-    },
-    {
-      "code" : "MetricsFactory",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ") can be",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "configured. ",
-      "type" : "text"
-    },
-    {
-      "code" : "MetricsSystem",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " is set up just once in a given program to set up the desired metrics backend",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "implementation.",
+      "text" : "A global facility where the default metrics backend implementation is configured.",
       "type" : "text"
     }
   ],
@@ -617,7 +461,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/NOOPMetricsHandler": {
   "abstract" : [
     {
-      "text" : "Ships with the metrics module, used for initial bootstrapping.",
+      "text" : "A metrics handler that implements the protocols but does nothing.",
       "type" : "text"
     }
   ],
@@ -651,20 +495,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Recorder": {
   "abstract" : [
     {
-      "text" : "A recorder collects observations within a time window (usually things like response sizes) and ",
-      "type" : "text"
-    },
-    {
-      "inlineContent" : [
-        {
-          "text" : "can",
-          "type" : "text"
-        }
-      ],
-      "type" : "emphasis"
-    },
-    {
-      "text" : " provide aggregated information about the data sample, for example, count, sum, min, max and various quantiles.",
+      "text" : "A recorder collects observations within a time window.",
       "type" : "text"
     }
   ],
@@ -698,23 +529,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/RecorderHandler": {
   "abstract" : [
     {
-      "text" : "A ",
-      "type" : "text"
-    },
-    {
-      "code" : "RecorderHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " represents a backend implementation of a ",
-      "type" : "text"
-    },
-    {
-      "code" : "Recorder",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "A recorder handler represents a backend implementation of a recorder.",
       "type" : "text"
     }
   ],
@@ -747,7 +562,10 @@
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/TimeUnit": {
   "abstract" : [
-
+    {
+      "text" : "A unit of time.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -779,23 +597,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Timer": {
   "abstract" : [
     {
-      "text" : "A timer collects observations within a time window (usually things like request durations) and provides aggregated information about the data sample,",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "for example, min, max and various quantiles. It is similar to a ",
-      "type" : "text"
-    },
-    {
-      "code" : "Recorder",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " but specialized for values that represent durations.",
+      "text" : "A timer collects observations that represents durations within a time window.",
       "type" : "text"
     }
   ],
@@ -829,23 +631,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/TimerHandler": {
   "abstract" : [
     {
-      "text" : "A ",
-      "type" : "text"
-    },
-    {
-      "code" : "TimerHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " represents a backend implementation of a ",
-      "type" : "text"
-    },
-    {
-      "code" : "Timer",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "A timer handler represents a backend implementation of a timer.",
       "type" : "text"
     }
   ],

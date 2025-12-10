@@ -39,15 +39,6 @@
         "text" : "Port"
       }
     ],
-    "platforms" : [
-      {
-        "beta" : false,
-        "deprecated" : false,
-        "introducedAt" : "8.0",
-        "name" : "iOS",
-        "unavailable" : false
-      }
-    ],
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -150,12 +141,12 @@
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/Mach\/Port\/copySendRight()",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/Mach\/Port\/makeSendOnceRight()",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/Mach\/Port\/makeSendRight()",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/Mach\/Port\/relinquish()-6sdin",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/Mach\/Port\/relinquish()-71rkb",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/Mach\/Port\/relinquish()-78cnj",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/Mach\/Port\/relinquish()-lvv3",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/Mach\/Port\/unguardAndRelinquish()",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/Mach\/Port\/withBorrowedName(body:)-89ybe",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/Mach\/Port\/withBorrowedName(body:)-9vvg4"
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/Mach\/Port\/withBorrowedName(body:)-7rgjm",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/Mach\/Port\/withBorrowedName(body:)-89ybe"
       ],
       "title" : "Instance Methods"
     }
@@ -839,7 +830,76 @@
   "type" : "topic",
   "url" : "\/documentation\/systempackage\/mach\/port\/makesendright()"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/SystemPackage/Mach/Port/relinquish()-6sdin": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/SystemPackage/Mach/Port/relinquish()-71rkb": {
+  "abstract" : [
+    {
+      "text" : "Transfer ownership of the underlying port right to the caller.",
+      "type" : "text"
+    }
+  ],
+  "conformance" : {
+    "availabilityPrefix" : [
+      {
+        "text" : "Available when",
+        "type" : "text"
+      }
+    ],
+    "conformancePrefix" : [
+      {
+        "text" : "Conforms when",
+        "type" : "text"
+      }
+    ],
+    "constraints" : [
+      {
+        "code" : "RightType",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : " is ",
+        "type" : "text"
+      },
+      {
+        "code" : "Mach.SendOnceRight",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : ".",
+        "type" : "text"
+      }
+    ]
+  },
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "relinquish"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:@T@mach_port_name_t",
+      "text" : "mach_port_name_t"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/Mach\/Port\/relinquish()-71rkb",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "relinquish()",
+  "type" : "topic",
+  "url" : "\/documentation\/systempackage\/mach\/port\/relinquish()-71rkb"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/SystemPackage/Mach/Port/relinquish()-78cnj": {
   "abstract" : [
     {
       "text" : "Transfer ownership of the underlying port right to the caller.",
@@ -922,81 +982,12 @@
       "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/Mach\/Port\/relinquish()-6sdin",
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/Mach\/Port\/relinquish()-78cnj",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "relinquish()",
   "type" : "topic",
-  "url" : "\/documentation\/systempackage\/mach\/port\/relinquish()-6sdin"
-},
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/SystemPackage/Mach/Port/relinquish()-71rkb": {
-  "abstract" : [
-    {
-      "text" : "Transfer ownership of the underlying port right to the caller.",
-      "type" : "text"
-    }
-  ],
-  "conformance" : {
-    "availabilityPrefix" : [
-      {
-        "text" : "Available when",
-        "type" : "text"
-      }
-    ],
-    "conformancePrefix" : [
-      {
-        "text" : "Conforms when",
-        "type" : "text"
-      }
-    ],
-    "constraints" : [
-      {
-        "code" : "RightType",
-        "type" : "codeVoice"
-      },
-      {
-        "text" : " is ",
-        "type" : "text"
-      },
-      {
-        "code" : "Mach.SendOnceRight",
-        "type" : "codeVoice"
-      },
-      {
-        "text" : ".",
-        "type" : "text"
-      }
-    ]
-  },
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "relinquish"
-    },
-    {
-      "kind" : "text",
-      "text" : "() -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "c:@T@mach_port_name_t",
-      "text" : "mach_port_name_t"
-    }
-  ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/Mach\/Port\/relinquish()-71rkb",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "relinquish()",
-  "type" : "topic",
-  "url" : "\/documentation\/systempackage\/mach\/port\/relinquish()-71rkb"
+  "url" : "\/documentation\/systempackage\/mach\/port\/relinquish()-78cnj"
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/SystemPackage/Mach/Port/relinquish()-lvv3": {
   "abstract" : [
@@ -1144,86 +1135,7 @@
   "type" : "topic",
   "url" : "\/documentation\/systempackage\/mach\/port\/unguardandrelinquish()"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/SystemPackage/Mach/Port/withBorrowedName(body:)-89ybe": {
-  "abstract" : [
-    {
-      "text" : "Borrow access to the port name in a block that can perform",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "non-consuming operations.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "withBorrowedName"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "ReturnType"
-    },
-    {
-      "kind" : "text",
-      "text" : ">("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "body"
-    },
-    {
-      "kind" : "text",
-      "text" : ": ("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "c:@T@mach_port_name_t",
-      "text" : "mach_port_name_t"
-    },
-    {
-      "kind" : "text",
-      "text" : ") -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13SystemPackage4MachO4PortV16withBorrowedName4bodyqd__qd__s6UInt32VXE_tlF10ReturnTypeL_qd__mfp",
-      "text" : "ReturnType"
-    },
-    {
-      "kind" : "text",
-      "text" : ") -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13SystemPackage4MachO4PortV16withBorrowedName4bodyqd__qd__s6UInt32VXE_tlF10ReturnTypeL_qd__mfp",
-      "text" : "ReturnType"
-    }
-  ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/Mach\/Port\/withBorrowedName(body:)-89ybe",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "withBorrowedName(body:)",
-  "type" : "topic",
-  "url" : "\/documentation\/systempackage\/mach\/port\/withborrowedname(body:)-89ybe"
-},
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/SystemPackage/Mach/Port/withBorrowedName(body:)-9vvg4": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/SystemPackage/Mach/Port/withBorrowedName(body:)-7rgjm": {
   "abstract" : [
     {
       "text" : "Borrow access to the port name in a block that can perform",
@@ -1323,7 +1235,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13SystemPackage4MachO4PortVAaC12ReceiveRightVRszrlE16withBorrowedName4bodyqd__qd__s6UInt32V_SutXE_tlF10ReturnTypeL_qd__mfp",
+      "preciseIdentifier" : "s:13SystemPackage4MachO4PortVAaC12ReceiveRightVRszrlE16withBorrowedName4bodyqd__qd__s6UInt32V_s6UInt64VtXE_tlF10ReturnTypeL_qd__mfp",
       "text" : "ReturnType"
     },
     {
@@ -1332,16 +1244,95 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:13SystemPackage4MachO4PortVAaC12ReceiveRightVRszrlE16withBorrowedName4bodyqd__qd__s6UInt32V_SutXE_tlF10ReturnTypeL_qd__mfp",
+      "preciseIdentifier" : "s:13SystemPackage4MachO4PortVAaC12ReceiveRightVRszrlE16withBorrowedName4bodyqd__qd__s6UInt32V_s6UInt64VtXE_tlF10ReturnTypeL_qd__mfp",
       "text" : "ReturnType"
     }
   ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/Mach\/Port\/withBorrowedName(body:)-9vvg4",
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/Mach\/Port\/withBorrowedName(body:)-7rgjm",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "withBorrowedName(body:)",
   "type" : "topic",
-  "url" : "\/documentation\/systempackage\/mach\/port\/withborrowedname(body:)-9vvg4"
+  "url" : "\/documentation\/systempackage\/mach\/port\/withborrowedname(body:)-7rgjm"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/SystemPackage/Mach/Port/withBorrowedName(body:)-89ybe": {
+  "abstract" : [
+    {
+      "text" : "Borrow access to the port name in a block that can perform",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "non-consuming operations.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "withBorrowedName"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "ReturnType"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "body"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:@T@mach_port_name_t",
+      "text" : "mach_port_name_t"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13SystemPackage4MachO4PortV16withBorrowedName4bodyqd__qd__s6UInt32VXE_tlF10ReturnTypeL_qd__mfp",
+      "text" : "ReturnType"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:13SystemPackage4MachO4PortV16withBorrowedName4bodyqd__qd__s6UInt32VXE_tlF10ReturnTypeL_qd__mfp",
+      "text" : "ReturnType"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/SystemPackage\/Mach\/Port\/withBorrowedName(body:)-89ybe",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "withBorrowedName(body:)",
+  "type" : "topic",
+  "url" : "\/documentation\/systempackage\/mach\/port\/withborrowedname(body:)-89ybe"
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/SystemPackage/MachPortRight": {
   "abstract" : [

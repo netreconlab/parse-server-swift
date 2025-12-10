@@ -105,6 +105,41 @@
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:s13SignedNumericP",
               "text" : "SignedNumeric"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "where"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Self"
+            },
+            {
+              "kind" : "text",
+              "text" : "."
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:Sj9MagnitudeQa",
+              "text" : "Magnitude"
+            },
+            {
+              "kind" : "text",
+              "text" : " : "
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/AlgebraicField",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10RealModule14AlgebraicFieldP",
+              "text" : "AlgebraicField"
             }
           ]
         }
@@ -154,7 +189,7 @@
               "type" : "text"
             },
             {
-              "text" : "group under its multiplication, and the distributitve law holds.",
+              "text" : "group under its multiplication, and the distributive law holds.",
               "type" : "text"
             }
           ],
@@ -291,7 +326,15 @@
               "type" : "text"
             },
             {
-              "text" : "that a*b = 1. The existence of inverses is requried to form a field.",
+              "text" : "that ",
+              "type" : "text"
+            },
+            {
+              "code" : "a*b = 1",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". The existence of inverses is requried to form a field.",
               "type" : "text"
             }
           ],
@@ -312,8 +355,9 @@
               "type" : "text"
             },
             {
-              "code" : "Real",
-              "type" : "codeVoice"
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/Real",
+              "isActive" : true,
+              "type" : "reference"
             },
             {
               "text" : " protocol, then ",
@@ -351,67 +395,41 @@
           "type" : "paragraph"
         },
         {
-          "anchor" : "See-Also",
-          "level" : 2,
-          "text" : "See Also:",
-          "type" : "heading"
-        },
-        {
-          "items" : [
+          "inlineContent" : [
             {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "Real",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
+              "text" : "See also Swift’s ",
+              "type" : "text"
             },
             {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "SignedNumeric",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
+              "code" : "SignedNumeric",
+              "type" : "codeVoice"
             },
             {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "Numeric",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
+              "text" : ", ",
+              "type" : "text"
             },
             {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "AdditiveArithmetic",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
+              "code" : "Numeric",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "AdditiveArithmetic",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "protocols.",
+              "type" : "text"
             }
           ],
-          "type" : "unorderedList"
+          "type" : "paragraph"
         }
       ],
       "kind" : "content"
@@ -452,7 +470,7 @@
       "anchor" : "Operators",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/AlgebraicField\/_(_:_:)-9nuhy",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/AlgebraicField\/_(_:_:)",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/AlgebraicField\/_=(_:_:)"
       ],
       "title" : "Operators"
@@ -461,7 +479,7 @@
       "anchor" : "Instance-Properties",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/AlgebraicField\/reciprocal-156o3"
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/AlgebraicField\/reciprocal"
       ],
       "title" : "Instance Properties"
     }
@@ -560,7 +578,7 @@
   "type" : "topic",
   "url" : "\/documentation\/realmodule\/algebraicfield"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/AlgebraicField/_(_:_:)-9nuhy": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/AlgebraicField/_(_:_:)": {
   "abstract" : [
     {
       "text" : "The (approximate) quotient ",
@@ -626,13 +644,13 @@
       "text" : "Self"
     }
   ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/AlgebraicField\/_(_:_:)-9nuhy",
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/AlgebraicField\/_(_:_:)",
   "kind" : "symbol",
   "required" : true,
   "role" : "symbol",
   "title" : "\/(_:_:)",
   "type" : "topic",
-  "url" : "\/documentation\/realmodule\/algebraicfield\/_(_:_:)-9nuhy"
+  "url" : "\/documentation\/realmodule\/algebraicfield\/_(_:_:)"
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/AlgebraicField/_=(_:_:)": {
   "abstract" : [
@@ -711,7 +729,7 @@
   "type" : "topic",
   "url" : "\/documentation\/realmodule\/algebraicfield\/_=(_:_:)"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/AlgebraicField/reciprocal-156o3": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/AlgebraicField/reciprocal": {
   "abstract" : [
     {
       "text" : "The (approximate) reciprocal (multiplicative inverse) of this number,",
@@ -753,13 +771,13 @@
       "text" : "?"
     }
   ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/AlgebraicField\/reciprocal-156o3",
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/AlgebraicField\/reciprocal",
   "kind" : "symbol",
   "required" : true,
   "role" : "symbol",
   "title" : "reciprocal",
   "type" : "topic",
-  "url" : "\/documentation\/realmodule\/algebraicfield\/reciprocal-156o3"
+  "url" : "\/documentation\/realmodule\/algebraicfield\/reciprocal"
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/Real": {
   "abstract" : [

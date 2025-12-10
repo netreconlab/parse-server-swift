@@ -1,23 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "A ",
-      "type" : "text"
-    },
-    {
-      "code" : "MeterHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " represents a backend implementation of a ",
-      "type" : "text"
-    },
-    {
-      "code" : "Meter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "A meter handler represents a backend implementation of a meter.",
       "type" : "text"
     }
   ],
@@ -136,7 +120,7 @@
         },
         {
           "anchor" : "Implementation-requirements",
-          "level" : 1,
+          "level" : 3,
           "text" : "Implementation requirements",
           "type" : "heading"
         },
@@ -278,23 +262,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MeterHandler": {
   "abstract" : [
     {
-      "text" : "A ",
-      "type" : "text"
-    },
-    {
-      "code" : "MeterHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " represents a backend implementation of a ",
-      "type" : "text"
-    },
-    {
-      "code" : "Meter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "A meter handler represents a backend implementation of a meter.",
       "type" : "text"
     }
   ],
@@ -428,7 +396,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MeterHandler/set(_:)-7rx8l": {
   "abstract" : [
     {
-      "text" : "Set a value.",
+      "text" : "Set a floating-point value.",
       "type" : "text"
     }
   ],
@@ -470,7 +438,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MeterHandler/set(_:)-8u6gx": {
   "abstract" : [
     {
-      "text" : "Set a value.",
+      "text" : "Set an integer value.",
       "type" : "text"
     }
   ],
@@ -512,7 +480,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/NOOPMetricsHandler": {
   "abstract" : [
     {
-      "text" : "Ships with the metrics module, used for initial bootstrapping.",
+      "text" : "A metrics handler that implements the protocols but does nothing.",
       "type" : "text"
     }
   ],

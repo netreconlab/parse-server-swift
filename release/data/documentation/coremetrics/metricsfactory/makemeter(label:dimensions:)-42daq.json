@@ -1,15 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Create a default backing ",
-      "type" : "text"
-    },
-    {
-      "code" : "MeterHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " for backends which do not naively support meters.",
+      "text" : "Create a default backing meter handler for backends which do not naively support meters.",
       "type" : "text"
     }
   ],
@@ -17,8 +9,7 @@
     "paths" : [
       [
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory\/makeMeter(label:dimensions:)-1u7ae"
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory"
       ]
     ]
   },
@@ -293,23 +284,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MeterHandler": {
   "abstract" : [
     {
-      "text" : "A ",
-      "type" : "text"
-    },
-    {
-      "code" : "MeterHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " represents a backend implementation of a ",
-      "type" : "text"
-    },
-    {
-      "code" : "Meter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "A meter handler represents a backend implementation of a meter.",
       "type" : "text"
     }
   ],
@@ -361,18 +336,6 @@
     {
       "text" : " and the metrics backend implementation.",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "code" : "MetricsFactory",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : "’s role is to initialize concrete implementations of the various metric types:",
-      "type" : "text"
     }
   ],
   "fragments" : [
@@ -402,108 +365,10 @@
   "type" : "topic",
   "url" : "\/documentation\/coremetrics\/metricsfactory"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MetricsFactory/makeMeter(label:dimensions:)-1u7ae": {
-  "abstract" : [
-    {
-      "text" : "Create a backing ",
-      "type" : "text"
-    },
-    {
-      "code" : "MeterHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
-      "type" : "text"
-    }
-  ],
-  "defaultImplementations" : 1,
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "makeMeter"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "label"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "dimensions"
-    },
-    {
-      "kind" : "text",
-      "text" : ": [("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
-    },
-    {
-      "kind" : "text",
-      "text" : ")]) -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11CoreMetrics12MeterHandlerP",
-      "text" : "MeterHandler"
-    }
-  ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory\/makeMeter(label:dimensions:)-1u7ae",
-  "kind" : "symbol",
-  "required" : true,
-  "role" : "symbol",
-  "title" : "makeMeter(label:dimensions:)",
-  "type" : "topic",
-  "url" : "\/documentation\/coremetrics\/metricsfactory\/makemeter(label:dimensions:)-1u7ae"
-},
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MetricsFactory/makeMeter(label:dimensions:)-42daq": {
   "abstract" : [
     {
-      "text" : "Create a default backing ",
-      "type" : "text"
-    },
-    {
-      "code" : "MeterHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " for backends which do not naively support meters.",
+      "text" : "Create a default backing meter handler for backends which do not naively support meters.",
       "type" : "text"
     }
   ],

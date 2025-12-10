@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Set the preferred display unit for this TimerHandler.",
+      "text" : "Set the preferred display unit for this timer handler.",
       "type" : "text"
     }
   ],
@@ -9,8 +9,7 @@
     "paths" : [
       [
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/TimerHandler",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/TimerHandler\/preferDisplayUnit(_:)-1ldza"
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/TimerHandler"
       ]
     ]
   },
@@ -92,6 +91,14 @@
             },
             {
               "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "unit"
+            },
+            {
+              "kind" : "text",
               "text" : ": "
             },
             {
@@ -108,6 +115,25 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "A hint to the backend responsible for presenting the data of the preferred display unit. This is not guaranteed to be supported by all backends.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "unit"
+        }
+      ]
     }
   ],
   "schemaVersion" : {
@@ -145,7 +171,10 @@
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/TimeUnit": {
   "abstract" : [
-
+    {
+      "text" : "A unit of time.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -177,23 +206,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/TimerHandler": {
   "abstract" : [
     {
-      "text" : "A ",
-      "type" : "text"
-    },
-    {
-      "code" : "TimerHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " represents a backend implementation of a ",
-      "type" : "text"
-    },
-    {
-      "code" : "Timer",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "A timer handler represents a backend implementation of a timer.",
       "type" : "text"
     }
   ],
@@ -224,53 +237,10 @@
   "type" : "topic",
   "url" : "\/documentation\/coremetrics\/timerhandler"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/TimerHandler/preferDisplayUnit(_:)-1ldza": {
-  "abstract" : [
-    {
-      "text" : "Set the preferred display unit for this TimerHandler.",
-      "type" : "text"
-    }
-  ],
-  "defaultImplementations" : 1,
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "preferDisplayUnit"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11CoreMetrics8TimeUnitV",
-      "text" : "TimeUnit"
-    },
-    {
-      "kind" : "text",
-      "text" : ")"
-    }
-  ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/TimerHandler\/preferDisplayUnit(_:)-1ldza",
-  "kind" : "symbol",
-  "required" : true,
-  "role" : "symbol",
-  "title" : "preferDisplayUnit(_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/coremetrics\/timerhandler\/preferdisplayunit(_:)-1ldza"
-},
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/TimerHandler/preferDisplayUnit(_:)-8st88": {
   "abstract" : [
     {
-      "text" : "Set the preferred display unit for this TimerHandler.",
+      "text" : "Set the preferred display unit for this timer handler.",
       "type" : "text"
     }
   ],

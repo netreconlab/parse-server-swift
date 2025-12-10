@@ -1,11 +1,7 @@
 {
   "abstract" : [
     {
-      "code" : "bootstrap",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " is an one-time configuration function which globally selects the desired metrics backend",
+      "text" : "A one-time configuration function which globally selects the desired metrics backend",
       "type" : "text"
     },
     {
@@ -13,23 +9,7 @@
       "type" : "text"
     },
     {
-      "text" : "implementation. ",
-      "type" : "text"
-    },
-    {
-      "code" : "bootstrap",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " can be called at maximum once in any given program, calling it more than once will",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "lead to undefined behavior, most likely a crash.",
+      "text" : "implementation.",
       "type" : "text"
     }
   ],
@@ -171,24 +151,27 @@
                   "type" : "text"
                 },
                 {
-                  "code" : "CounterHandler",
-                  "type" : "codeVoice"
+                  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/CounterHandler",
+                  "isActive" : true,
+                  "type" : "reference"
                 },
                 {
                   "text" : ", ",
                   "type" : "text"
                 },
                 {
-                  "code" : "RecorderHandler",
-                  "type" : "codeVoice"
+                  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/RecorderHandler",
+                  "isActive" : true,
+                  "type" : "reference"
                 },
                 {
-                  "text" : " and ",
+                  "text" : ", or  ",
                   "type" : "text"
                 },
                 {
-                  "code" : "TimerHandler",
-                  "type" : "codeVoice"
+                  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/TimerHandler",
+                  "isActive" : true,
+                  "type" : "reference"
                 },
                 {
                   "text" : ".",
@@ -201,6 +184,38 @@
           "name" : "factory"
         }
       ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "code" : "bootstrap",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " can be called at maximum once in any given program, calling it more than once will",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "lead to undefined behavior, most likely a crash.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -236,6 +251,40 @@
   "type" : "topic",
   "url" : "\/documentation\/coremetrics"
 },
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/CounterHandler": {
+  "abstract" : [
+    {
+      "text" : "A counter handler represents a backend implementation of a counter.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CounterHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/CounterHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CounterHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CounterHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/coremetrics\/counterhandler"
+},
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MetricsFactory": {
   "abstract" : [
     {
@@ -256,18 +305,6 @@
     },
     {
       "text" : " and the metrics backend implementation.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "code" : "MetricsFactory",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : "’s role is to initialize concrete implementations of the various metric types:",
       "type" : "text"
     }
   ],
@@ -301,47 +338,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MetricsSystem": {
   "abstract" : [
     {
-      "text" : "The ",
-      "type" : "text"
-    },
-    {
-      "code" : "MetricsSystem",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " is a global facility where the default metrics backend implementation (",
-      "type" : "text"
-    },
-    {
-      "code" : "MetricsFactory",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ") can be",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "configured. ",
-      "type" : "text"
-    },
-    {
-      "code" : "MetricsSystem",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " is set up just once in a given program to set up the desired metrics backend",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "implementation.",
+      "text" : "A global facility where the default metrics backend implementation is configured.",
       "type" : "text"
     }
   ],
@@ -375,11 +372,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MetricsSystem/bootstrap(_:)": {
   "abstract" : [
     {
-      "code" : "bootstrap",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " is an one-time configuration function which globally selects the desired metrics backend",
+      "text" : "A one-time configuration function which globally selects the desired metrics backend",
       "type" : "text"
     },
     {
@@ -387,23 +380,7 @@
       "type" : "text"
     },
     {
-      "text" : "implementation. ",
-      "type" : "text"
-    },
-    {
-      "code" : "bootstrap",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " can be called at maximum once in any given program, calling it more than once will",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "lead to undefined behavior, most likely a crash.",
+      "text" : "implementation.",
       "type" : "text"
     }
   ],
@@ -448,6 +425,74 @@
   "title" : "bootstrap(_:)",
   "type" : "topic",
   "url" : "\/documentation\/coremetrics\/metricssystem\/bootstrap(_:)"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/RecorderHandler": {
+  "abstract" : [
+    {
+      "text" : "A recorder handler represents a backend implementation of a recorder.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "RecorderHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/RecorderHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "RecorderHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "RecorderHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/coremetrics\/recorderhandler"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/TimerHandler": {
+  "abstract" : [
+    {
+      "text" : "A timer handler represents a backend implementation of a timer.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TimerHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/TimerHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TimerHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TimerHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/coremetrics\/timerhandler"
 }
 }
 }

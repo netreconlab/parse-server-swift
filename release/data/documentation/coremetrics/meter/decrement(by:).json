@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Decrement the Meter.",
+      "text" : "Decrement the meter.",
       "type" : "text"
     }
   ],
@@ -158,6 +158,25 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Amount to decrement by.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "amount"
+        }
+      ]
     }
   ],
   "schemaVersion" : {
@@ -198,14 +217,6 @@
     {
       "text" : "A meter is similar to a gauge, it is a metric that represents a single numerical value that can arbitrarily go up and down.",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Meters are typically used for measured values like temperatures or current memory usage, but also “counts” that can go up and down, like the number of active threads.",
-      "type" : "text"
     }
   ],
   "fragments" : [
@@ -238,7 +249,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Meter/decrement(by:)": {
   "abstract" : [
     {
-      "text" : "Decrement the Meter.",
+      "text" : "Decrement the meter.",
       "type" : "text"
     }
   ],

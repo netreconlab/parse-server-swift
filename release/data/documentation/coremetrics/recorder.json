@@ -1,20 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "A recorder collects observations within a time window (usually things like response sizes) and ",
-      "type" : "text"
-    },
-    {
-      "inlineContent" : [
-        {
-          "text" : "can",
-          "type" : "text"
-        }
-      ],
-      "type" : "emphasis"
-    },
-    {
-      "text" : " provide aggregated information about the data sample, for example, count, sum, min, max and various quantiles.",
+      "text" : "A recorder collects observations within a time window.",
       "type" : "text"
     }
   ],
@@ -101,7 +88,28 @@
         {
           "inlineContent" : [
             {
-              "text" : "This is the user-facing Recorder API.",
+              "text" : "An example is using a recorder to capture response sizes.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "A recorder ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "can",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " provide aggregated information about the data sample such as count, sum, min, max, and various quantiles.",
               "type" : "text"
             }
           ],
@@ -110,12 +118,21 @@
         {
           "inlineContent" : [
             {
+              "text" : "This is the user-facing Recorder API.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
               "text" : "Its behavior depends on the ",
               "type" : "text"
             },
             {
-              "code" : "RecorderHandler",
-              "type" : "codeVoice"
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/RecorderHandler",
+              "isActive" : true,
+              "type" : "reference"
             },
             {
               "text" : " implementation.",
@@ -123,6 +140,22 @@
             }
           ],
           "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Recording a value:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "recorder.record(101)"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
         }
       ],
       "kind" : "content"
@@ -162,7 +195,9 @@
       "generated" : true,
       "identifiers" : [
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Recorder\/init(label:dimensions:aggregate:)",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Recorder\/init(label:dimensions:aggregate:handler:)"
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Recorder\/init(label:dimensions:aggregate:factory:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Recorder\/init(label:dimensions:aggregate:handler:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Recorder\/init(label:dimensions:aggregate:handler:factory:)"
       ],
       "title" : "Initializers"
     },
@@ -225,30 +260,6 @@
     {
       "text" : "A gauge is a metric that represents a single numerical value that can arbitrarily go up and down.",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Gauges are typically used for measured values like temperatures or current memory usage, but also “counts” that can go up and down, like the number of active threads.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Gauges are modeled as ",
-      "type" : "text"
-    },
-    {
-      "code" : "Recorder",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " with a sample size of 1 and that does not perform any aggregation.",
-      "type" : "text"
     }
   ],
   "fragments" : [
@@ -281,20 +292,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Recorder": {
   "abstract" : [
     {
-      "text" : "A recorder collects observations within a time window (usually things like response sizes) and ",
-      "type" : "text"
-    },
-    {
-      "inlineContent" : [
-        {
-          "text" : "can",
-          "type" : "text"
-        }
-      ],
-      "type" : "emphasis"
-    },
-    {
-      "text" : " provide aggregated information about the data sample, for example, count, sum, min, max and various quantiles.",
+      "text" : "A recorder collects observations within a time window.",
       "type" : "text"
     }
   ],
@@ -338,7 +336,10 @@
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Recorder/aggregate": {
   "abstract" : [
-
+    {
+      "text" : "A Boolean value that indicates whether to aggregate values.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -375,22 +376,6 @@
     {
       "text" : "Signal the underlying metrics library that this recorder will never be updated again.",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "In response the library MAY decide to eagerly release any resources held by this ",
-      "type" : "text"
-    },
-    {
-      "code" : "Recorder",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
-      "type" : "text"
     }
   ],
   "fragments" : [
@@ -420,7 +405,10 @@
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Recorder/dimensions": {
   "abstract" : [
-
+    {
+      "text" : "The dimensions for the recorder.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -468,15 +456,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Recorder/init(label:dimensions:aggregate:)": {
   "abstract" : [
     {
-      "text" : "Create a new ",
-      "type" : "text"
-    },
-    {
-      "code" : "Recorder",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Create a new recorder.",
       "type" : "text"
     }
   ],
@@ -557,26 +537,111 @@
   "type" : "topic",
   "url" : "\/documentation\/coremetrics\/recorder\/init(label:dimensions:aggregate:)"
 },
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Recorder/init(label:dimensions:aggregate:factory:)": {
+  "abstract" : [
+    {
+      "text" : "Create a new recorder using a custom metrics factory that you provide..",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "label"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "dimensions"
+    },
+    {
+      "kind" : "text",
+      "text" : ": [("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")], "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "aggregate"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "factory"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11CoreMetrics0B7FactoryP",
+      "text" : "MetricsFactory"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Recorder\/init(label:dimensions:aggregate:factory:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(label:dimensions:aggregate:factory:)",
+  "type" : "topic",
+  "url" : "\/documentation\/coremetrics\/recorder\/init(label:dimensions:aggregate:factory:)"
+},
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Recorder/init(label:dimensions:aggregate:handler:)": {
   "abstract" : [
     {
-      "text" : "Alternative way to create a new ",
-      "type" : "text"
-    },
-    {
-      "code" : "Recorder",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ", while providing an explicit ",
-      "type" : "text"
-    },
-    {
-      "code" : "RecorderHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Alternative way to create a new recorder, while providing an explicit recorder handler.",
       "type" : "text"
     }
   ],
@@ -674,9 +739,130 @@
   "type" : "topic",
   "url" : "\/documentation\/coremetrics\/recorder\/init(label:dimensions:aggregate:handler:)"
 },
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Recorder/init(label:dimensions:aggregate:handler:factory:)": {
+  "abstract" : [
+    {
+      "text" : "Alternative way to create a new recorder, while providing an explicit recorder handler.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "label"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "dimensions"
+    },
+    {
+      "kind" : "text",
+      "text" : ": [("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")], "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "aggregate"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "handler"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11CoreMetrics15RecorderHandlerP",
+      "text" : "RecorderHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "factory"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11CoreMetrics0B7FactoryP",
+      "text" : "MetricsFactory"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Recorder\/init(label:dimensions:aggregate:handler:factory:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(label:dimensions:aggregate:handler:factory:)",
+  "type" : "topic",
+  "url" : "\/documentation\/coremetrics\/recorder\/init(label:dimensions:aggregate:handler:factory:)"
+},
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Recorder/label": {
   "abstract" : [
-
+    {
+      "text" : "The label for the recorder.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -805,6 +991,40 @@
   "title" : "record(_:)",
   "type" : "topic",
   "url" : "\/documentation\/coremetrics\/recorder\/record(_:)-8gebr"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/RecorderHandler": {
+  "abstract" : [
+    {
+      "text" : "A recorder handler represents a backend implementation of a recorder.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "RecorderHandler"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/RecorderHandler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "RecorderHandler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "RecorderHandler",
+  "type" : "topic",
+  "url" : "\/documentation\/coremetrics\/recorderhandler"
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/s23CustomStringConvertibleP": {
   "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/s23CustomStringConvertibleP",

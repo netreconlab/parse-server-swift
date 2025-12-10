@@ -3,22 +3,6 @@
     {
       "text" : "Signal the underlying metrics library that this recorder will never be updated again.",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "In response the library MAY decide to eagerly release any resources held by this ",
-      "type" : "text"
-    },
-    {
-      "code" : "Recorder",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
-      "type" : "text"
     }
   ],
   "hierarchy" : {
@@ -96,6 +80,34 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "In response the library MAY decide to eagerly release any resources held by this ",
+              "type" : "text"
+            },
+            {
+              "code" : "Recorder",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -134,20 +146,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Recorder": {
   "abstract" : [
     {
-      "text" : "A recorder collects observations within a time window (usually things like response sizes) and ",
-      "type" : "text"
-    },
-    {
-      "inlineContent" : [
-        {
-          "text" : "can",
-          "type" : "text"
-        }
-      ],
-      "type" : "emphasis"
-    },
-    {
-      "text" : " provide aggregated information about the data sample, for example, count, sum, min, max and various quantiles.",
+      "text" : "A recorder collects observations within a time window.",
       "type" : "text"
     }
   ],
@@ -182,22 +181,6 @@
   "abstract" : [
     {
       "text" : "Signal the underlying metrics library that this recorder will never be updated again.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "In response the library MAY decide to eagerly release any resources held by this ",
-      "type" : "text"
-    },
-    {
-      "code" : "Recorder",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
       "type" : "text"
     }
   ],

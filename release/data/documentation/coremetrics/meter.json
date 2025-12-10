@@ -3,14 +3,6 @@
     {
       "text" : "A meter is similar to a gauge, it is a metric that represents a single numerical value that can arbitrarily go up and down.",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Meters are typically used for measured values like temperatures or current memory usage, but also “counts” that can go up and down, like the number of active threads.",
-      "type" : "text"
     }
   ],
   "hierarchy" : {
@@ -92,6 +84,42 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Meters are typically used for measured values like temperatures or current memory usage, but also “counts” that can go up and down, such as the number of active threads.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Recording a value with a meter:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "meter.record(100)"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "relationshipsSections" : [
@@ -120,7 +148,9 @@
       "generated" : true,
       "identifiers" : [
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Meter\/init(label:dimensions:)",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Meter\/init(label:dimensions:handler:)"
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Meter\/init(label:dimensions:factory:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Meter\/init(label:dimensions:handler:)",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Meter\/init(label:dimensions:handler:factory:)"
       ],
       "title" : "Initializers"
     },
@@ -186,14 +216,6 @@
     {
       "text" : "A meter is similar to a gauge, it is a metric that represents a single numerical value that can arbitrarily go up and down.",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Meters are typically used for measured values like temperatures or current memory usage, but also “counts” that can go up and down, like the number of active threads.",
-      "type" : "text"
     }
   ],
   "fragments" : [
@@ -237,7 +259,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Meter/decrement()": {
   "abstract" : [
     {
-      "text" : "Decrement the Meter by one.",
+      "text" : "Decrement the meter by one.",
       "type" : "text"
     }
   ],
@@ -269,7 +291,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Meter/decrement(by:)": {
   "abstract" : [
     {
-      "text" : "Decrement the Meter.",
+      "text" : "Decrement the meter.",
       "type" : "text"
     }
   ],
@@ -328,22 +350,6 @@
     {
       "text" : "Signal the underlying metrics library that this recorder will never be updated again.",
       "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "In response the library MAY decide to eagerly release any resources held by this ",
-      "type" : "text"
-    },
-    {
-      "code" : "Recorder",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
-      "type" : "text"
     }
   ],
   "fragments" : [
@@ -373,7 +379,10 @@
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Meter/dimensions": {
   "abstract" : [
-
+    {
+      "text" : "The dimensions for the meter.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -421,7 +430,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Meter/increment()": {
   "abstract" : [
     {
-      "text" : "Increment the Meter by one.",
+      "text" : "Increment the meter by one.",
       "type" : "text"
     }
   ],
@@ -453,7 +462,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Meter/increment(by:)": {
   "abstract" : [
     {
-      "text" : "Increment the Meter.",
+      "text" : "Increment the meter.",
       "type" : "text"
     }
   ],
@@ -510,15 +519,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Meter/init(label:dimensions:)": {
   "abstract" : [
     {
-      "text" : "Create a new ",
-      "type" : "text"
-    },
-    {
-      "code" : "Meter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Create a new meter.",
       "type" : "text"
     }
   ],
@@ -582,26 +583,94 @@
   "type" : "topic",
   "url" : "\/documentation\/coremetrics\/meter\/init(label:dimensions:)"
 },
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Meter/init(label:dimensions:factory:)": {
+  "abstract" : [
+    {
+      "text" : "Create a new meter.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "label"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "dimensions"
+    },
+    {
+      "kind" : "text",
+      "text" : ": [("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")], "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "factory"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11CoreMetrics0B7FactoryP",
+      "text" : "MetricsFactory"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Meter\/init(label:dimensions:factory:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(label:dimensions:factory:)",
+  "type" : "topic",
+  "url" : "\/documentation\/coremetrics\/meter\/init(label:dimensions:factory:)"
+},
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Meter/init(label:dimensions:handler:)": {
   "abstract" : [
     {
-      "text" : "Alternative way to create a new ",
-      "type" : "text"
-    },
-    {
-      "code" : "Meter",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ", while providing an explicit ",
-      "type" : "text"
-    },
-    {
-      "code" : "MeterHandler",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Alternative way to create a new meter, while providing an explicit meter handler.",
       "type" : "text"
     }
   ],
@@ -682,9 +751,113 @@
   "type" : "topic",
   "url" : "\/documentation\/coremetrics\/meter\/init(label:dimensions:handler:)"
 },
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Meter/init(label:dimensions:handler:factory:)": {
+  "abstract" : [
+    {
+      "text" : "Alternative way to create a new meter, while providing an explicit meter handler.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "label"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "dimensions"
+    },
+    {
+      "kind" : "text",
+      "text" : ": [("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")], "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "handler"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11CoreMetrics12MeterHandlerP",
+      "text" : "MeterHandler"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "factory"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11CoreMetrics0B7FactoryP",
+      "text" : "MetricsFactory"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/Meter\/init(label:dimensions:handler:factory:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(label:dimensions:handler:factory:)",
+  "type" : "topic",
+  "url" : "\/documentation\/coremetrics\/meter\/init(label:dimensions:handler:factory:)"
+},
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Meter/label": {
   "abstract" : [
-
+    {
+      "text" : "The label for the meter.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -719,7 +892,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Meter/set(_:)-6f38": {
   "abstract" : [
     {
-      "text" : "Set a value.",
+      "text" : "Set a floating-point value.",
       "type" : "text"
     }
   ],
@@ -768,7 +941,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/Meter/set(_:)-8bkhi": {
   "abstract" : [
     {
-      "text" : "Set a value.",
+      "text" : "Set an integer value.",
       "type" : "text"
     }
   ],

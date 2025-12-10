@@ -180,88 +180,22 @@
           "type" : "paragraph"
         },
         {
-          "anchor" : "See-also",
-          "level" : 2,
-          "text" : "See also:",
-          "type" : "heading"
-        },
-        {
-          "items" : [
+          "inlineContent" : [
             {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "code" : "cos()",
-                      "type" : "codeVoice"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
+              "text" : "See also ",
+              "type" : "text"
             },
             {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "code" : "sin()",
-                      "type" : "codeVoice"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/ElementaryFunctions\/atan(_:)",
+              "isActive" : true,
+              "type" : "reference"
             },
             {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "code" : "atan()",
-                      "type" : "codeVoice"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
-            },
-            {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "code" : "atan2(y:x:)",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : " (for types conforming to ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "RealFunctions",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ")",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
+              "text" : ".",
+              "type" : "text"
             }
           ],
-          "type" : "unorderedList"
-        },
-        {
-          "code" : [
-            "          sin(x)",
-            "tan(x) = --------",
-            "          cos(x)"
-          ],
-          "syntax" : null,
-          "type" : "codeListing"
+          "type" : "paragraph"
         }
       ],
       "kind" : "content"
@@ -302,10 +236,7 @@
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/ElementaryFunctions": {
   "abstract" : [
-    {
-      "text" : "A type that has elementary functions available.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -333,6 +264,76 @@
   "title" : "ElementaryFunctions",
   "type" : "topic",
   "url" : "\/documentation\/realmodule\/elementaryfunctions"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/ElementaryFunctions/atan(_:)": {
+  "abstract" : [
+    {
+      "text" : "The ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Inverse_trigonometric_functions",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : "  (inverse tangent) of ",
+      "type" : "text"
+    },
+    {
+      "code" : "x",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "atan"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/ElementaryFunctions\/atan(_:)",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "atan(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/realmodule\/elementaryfunctions\/atan(_:)"
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/ElementaryFunctions/tan(_:)": {
   "abstract" : [
@@ -403,6 +404,18 @@
   "title" : "tan(_:)",
   "type" : "topic",
   "url" : "\/documentation\/realmodule\/elementaryfunctions\/tan(_:)"
+},
+"https://en.wikipedia.org/wiki/Inverse_trigonometric_functions": {
+  "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Inverse_trigonometric_functions",
+  "title" : "arctangent",
+  "titleInlineContent" : [
+    {
+      "text" : "arctangent",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/en.wikipedia.org\/wiki\/Inverse_trigonometric_functions"
 },
 "https://en.wikipedia.org/wiki/Tangent": {
   "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Tangent",

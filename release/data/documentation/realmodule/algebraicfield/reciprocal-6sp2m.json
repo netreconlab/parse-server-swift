@@ -1,20 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Implementations should be ",
-      "type" : "text"
-    },
-    {
-      "inlineContent" : [
-        {
-          "text" : "conservative",
-          "type" : "text"
-        }
-      ],
-      "type" : "emphasis"
-    },
-    {
-      "text" : " with the reciprocal property;",
+      "text" : "The (approximate) reciprocal (multiplicative inverse) of this number,",
       "type" : "text"
     },
     {
@@ -22,47 +9,7 @@
       "type" : "text"
     },
     {
-      "text" : "it is OK to return ",
-      "type" : "text"
-    },
-    {
-      "code" : "nil",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " even in cases where a reciprocal could be",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "represented. For this reason, a default implementation that simply",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "always returns ",
-      "type" : "text"
-    },
-    {
-      "code" : "nil",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " is correct, but conforming types should provide",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "a better implementation if possible.",
+      "text" : "if it is representable.",
       "type" : "text"
     }
   ],
@@ -70,8 +17,7 @@
     "paths" : [
       [
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/AlgebraicField",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/AlgebraicField\/reciprocal-156o3"
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/AlgebraicField"
       ]
     ]
   },
@@ -166,6 +112,274 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If reciprocal is non-nil, you can replace division by self with",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "multiplication by reciprocal and either get exact the same result",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "(for finite fields) or approximately the same result up to a typical",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "rounding error (for floating-point formats).",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If self is zero and the type has no representation for infinity (as",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "in a typical finite field implementation), or if a reciprocal would",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "overflow or underflow such that it cannot be accurately represented,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the result is nil.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Note that ",
+              "type" : "text"
+            },
+            {
+              "code" : ".zero.reciprocal",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", somewhat surprisingly, is ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "not",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " nil",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "for ",
+              "type" : "text"
+            },
+            {
+              "code" : "Real",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " or ",
+              "type" : "text"
+            },
+            {
+              "code" : "Complex",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " types, because these types have an",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : ".infinity",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " value that acts as the reciprocal of ",
+              "type" : "text"
+            },
+            {
+              "code" : ".zero",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If ",
+              "type" : "text"
+            },
+            {
+              "code" : "b.reciprocal",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is non-nil, you may be able to replace division by ",
+              "type" : "text"
+            },
+            {
+              "code" : "b",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "with multiplication by this value. It is not advantageous to do this",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "for an isolated division unless it is a compile-time constant visible",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to the compiler, but if you are dividing many values by a single",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "denominator, this will often be a significant performance win.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Note that this will slightly perturb results for fields with approximate",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "arithmetic, such as real or complex types–using a normal division",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "is generally more accurate–but no catastrophic loss of accuracy will",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "result. For fields with exact arithmetic, the results are necessarily",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "identical.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A typical use case looks something like this:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "func divide<T: AlgebraicField>(data: [T], by divisor: T) -> [T] {",
+            "  \/\/ If divisor is well-scaled, multiply by reciprocal.",
+            "  if let recip = divisor.reciprocal {",
+            "    return data.map { $0 * recip }",
+            "  }",
+            "  \/\/ Fallback on using division.",
+            "  return data.map { $0 \/ divisor }",
+            "}"
+          ],
+          "syntax" : null,
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -260,7 +474,7 @@
   "type" : "topic",
   "url" : "\/documentation\/realmodule\/algebraicfield"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/AlgebraicField/reciprocal-156o3": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/AlgebraicField/reciprocal-6sp2m": {
   "abstract" : [
     {
       "text" : "The (approximate) reciprocal (multiplicative inverse) of this number,",
@@ -272,109 +486,6 @@
     },
     {
       "text" : "if it is representable.",
-      "type" : "text"
-    }
-  ],
-  "defaultImplementations" : 2,
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "var"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "reciprocal"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "?"
-    }
-  ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/AlgebraicField\/reciprocal-156o3",
-  "kind" : "symbol",
-  "required" : true,
-  "role" : "symbol",
-  "title" : "reciprocal",
-  "type" : "topic",
-  "url" : "\/documentation\/realmodule\/algebraicfield\/reciprocal-156o3"
-},
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/AlgebraicField/reciprocal-6sp2m": {
-  "abstract" : [
-    {
-      "text" : "Implementations should be ",
-      "type" : "text"
-    },
-    {
-      "inlineContent" : [
-        {
-          "text" : "conservative",
-          "type" : "text"
-        }
-      ],
-      "type" : "emphasis"
-    },
-    {
-      "text" : " with the reciprocal property;",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "it is OK to return ",
-      "type" : "text"
-    },
-    {
-      "code" : "nil",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " even in cases where a reciprocal could be",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "represented. For this reason, a default implementation that simply",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "always returns ",
-      "type" : "text"
-    },
-    {
-      "code" : "nil",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " is correct, but conforming types should provide",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "a better implementation if possible.",
       "type" : "text"
     }
   ],

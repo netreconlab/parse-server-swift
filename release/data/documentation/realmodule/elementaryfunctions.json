@@ -1,10 +1,4 @@
 {
-  "abstract" : [
-    {
-      "text" : "A type that has elementary functions available.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -85,474 +79,6 @@
         }
       ],
       "kind" : "declarations"
-    },
-    {
-      "content" : [
-        {
-          "anchor" : "overview",
-          "level" : 2,
-          "text" : "Overview",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "An ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "http:\/\/en.wikipedia.org\/wiki\/Elementary_function",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : " is a function built up from powers, roots,",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "exponentials, logarithms, trigonometric functions (sin, cos, tan) and",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "their inverses, and the hyperbolic functions (sinh, cosh, tanh) and their",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "inverses.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "Conformance to this protocol means that all of these building blocks are",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "available as static functions on the type.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "code" : [
-            "let x: Float = 1",
-            "let y = Float.sin(x) \/\/ 0.84147096"
-          ],
-          "syntax" : "swift",
-          "type" : "codeListing"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "There are three broad families of functions defined by",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "code" : "ElementaryFunctions",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : ":",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "items" : [
-            {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "Exponential, trigonometric, and hyperbolic functions:",
-                      "type" : "text"
-                    },
-                    {
-                      "text" : " ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "exp",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ", ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "expMinusOne",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ", ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "cos",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ", ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "sin",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ", ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "tan",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ", ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "cosh",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ", ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "sinh",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ", and ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "tanh",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ".",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
-            },
-            {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "Logarithmic, inverse trigonometric, and inverse hyperbolic functions:",
-                      "type" : "text"
-                    },
-                    {
-                      "text" : " ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "log",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ", ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "log(onePlus:)",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ", ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "acos",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ", ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "asin",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ", ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "atan",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ", ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "acosh",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ", ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "asinh",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ", and",
-                      "type" : "text"
-                    },
-                    {
-                      "text" : " ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "atanh",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ".",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
-            },
-            {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "Power and root functions:",
-                      "type" : "text"
-                    },
-                    {
-                      "text" : " ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "pow",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ", ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "sqrt",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ", and ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "root",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ".",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
-            }
-          ],
-          "type" : "unorderedList"
-        },
-        {
-          "inlineContent" : [
-            {
-              "code" : "ElementaryFunctions",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " conformance implies ",
-              "type" : "text"
-            },
-            {
-              "code" : "AdditiveArithmetic",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : ", so addition",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "and subtraction and the ",
-              "type" : "text"
-            },
-            {
-              "code" : ".zero",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " property are also available.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "There are two other protocols that you are more likely to want to use",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "directly:",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "inlineContent" : [
-            {
-              "code" : "RealFunctions",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " refines ",
-              "type" : "text"
-            },
-            {
-              "code" : "ElementaryFunctions",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " and includes",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "additional functions specific to real number types.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "inlineContent" : [
-            {
-              "code" : "Real",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " conforms to ",
-              "type" : "text"
-            },
-            {
-              "code" : "RealFunctions",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " and ",
-              "type" : "text"
-            },
-            {
-              "code" : "FloatingPoint",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : ", and is the",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "protocol that you will want to use most often for generic code.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "anchor" : "See-Also",
-          "level" : 2,
-          "text" : "See Also:",
-          "type" : "heading"
-        },
-        {
-          "items" : [
-            {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "code" : "RealFunctions",
-                      "type" : "codeVoice"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
-            },
-            {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "code" : "Real",
-                      "type" : "codeVoice"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
-            }
-          ],
-          "type" : "unorderedList"
-        }
-      ],
-      "kind" : "content"
     }
   ],
   "relationshipsSections" : [
@@ -605,7 +131,7 @@
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/ElementaryFunctions\/root(_:_:)",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/ElementaryFunctions\/sin(_:)",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/ElementaryFunctions\/sinh(_:)",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/ElementaryFunctions\/sqrt(_:)-2phn9",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/ElementaryFunctions\/sqrt(_:)",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/ElementaryFunctions\/tan(_:)",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/ElementaryFunctions\/tanh(_:)"
       ],
@@ -644,10 +170,7 @@
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/ElementaryFunctions": {
   "abstract" : [
-    {
-      "text" : "A type that has elementary functions available.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -1835,7 +1358,7 @@
   "type" : "topic",
   "url" : "\/documentation\/realmodule\/elementaryfunctions\/sinh(_:)"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/ElementaryFunctions/sqrt(_:)-2phn9": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/ElementaryFunctions/sqrt(_:)": {
   "abstract" : [
     {
       "text" : "The ",
@@ -1898,13 +1421,13 @@
       "text" : "Self"
     }
   ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/ElementaryFunctions\/sqrt(_:)-2phn9",
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/RealModule\/ElementaryFunctions\/sqrt(_:)",
   "kind" : "symbol",
   "required" : true,
   "role" : "symbol",
   "title" : "sqrt(_:)",
   "type" : "topic",
-  "url" : "\/documentation\/realmodule\/elementaryfunctions\/sqrt(_:)-2phn9"
+  "url" : "\/documentation\/realmodule\/elementaryfunctions\/sqrt(_:)"
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/RealModule/ElementaryFunctions/tan(_:)": {
   "abstract" : [
@@ -2116,18 +1639,6 @@
   "title" : "Swift.AdditiveArithmetic",
   "type" : "unresolvable"
 },
-"http://en.wikipedia.org/wiki/Elementary_function": {
-  "identifier" : "http:\/\/en.wikipedia.org\/wiki\/Elementary_function",
-  "title" : "“elementary function”",
-  "titleInlineContent" : [
-    {
-      "text" : "“elementary function”",
-      "type" : "text"
-    }
-  ],
-  "type" : "link",
-  "url" : "http:\/\/en.wikipedia.org\/wiki\/Elementary_function"
-},
 "https://en.wikipedia.org/wiki/Cosine": {
   "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Cosine",
   "title" : "cosine",
@@ -2154,10 +1665,10 @@
 },
 "https://en.wikipedia.org/wiki/Hyperbolic_function": {
   "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Hyperbolic_function",
-  "title" : "hyperbolic cosine",
+  "title" : "hyperbolic sine",
   "titleInlineContent" : [
     {
-      "text" : "hyperbolic cosine",
+      "text" : "hyperbolic sine",
       "type" : "text"
     }
   ],

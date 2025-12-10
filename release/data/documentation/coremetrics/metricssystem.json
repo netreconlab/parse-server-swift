@@ -1,47 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "The ",
-      "type" : "text"
-    },
-    {
-      "code" : "MetricsSystem",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " is a global facility where the default metrics backend implementation (",
-      "type" : "text"
-    },
-    {
-      "code" : "MetricsFactory",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ") can be",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "configured. ",
-      "type" : "text"
-    },
-    {
-      "code" : "MetricsSystem",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " is set up just once in a given program to set up the desired metrics backend",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "implementation.",
+      "text" : "A global facility where the default metrics backend implementation is configured.",
       "type" : "text"
     }
   ],
@@ -116,6 +76,47 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "code" : "MetricsSystem",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is set up just once in a given program to create the desired metrics backend",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "implementation using ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "relationshipsSections" : [
@@ -180,18 +181,10 @@
   "type" : "topic",
   "url" : "\/documentation\/coremetrics"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MetricsSystem": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MetricsFactory": {
   "abstract" : [
     {
       "text" : "The ",
-      "type" : "text"
-    },
-    {
-      "code" : "MetricsSystem",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " is a global facility where the default metrics backend implementation (",
       "type" : "text"
     },
     {
@@ -199,15 +192,7 @@
       "type" : "codeVoice"
     },
     {
-      "text" : ") can be",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "configured. ",
+      "text" : " is the bridge between the ",
       "type" : "text"
     },
     {
@@ -215,15 +200,41 @@
       "type" : "codeVoice"
     },
     {
-      "text" : " is set up just once in a given program to set up the desired metrics backend",
+      "text" : " and the metrics backend implementation.",
       "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
     },
     {
-      "text" : " ",
-      "type" : "text"
+      "kind" : "text",
+      "text" : " "
     },
     {
-      "text" : "implementation.",
+      "kind" : "identifier",
+      "text" : "MetricsFactory"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/CoreMetrics\/MetricsFactory",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "MetricsFactory"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "MetricsFactory",
+  "type" : "topic",
+  "url" : "\/documentation\/coremetrics\/metricsfactory"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MetricsSystem": {
+  "abstract" : [
+    {
+      "text" : "A global facility where the default metrics backend implementation is configured.",
       "type" : "text"
     }
   ],
@@ -257,11 +268,7 @@
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/CoreMetrics/MetricsSystem/bootstrap(_:)": {
   "abstract" : [
     {
-      "code" : "bootstrap",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " is an one-time configuration function which globally selects the desired metrics backend",
+      "text" : "A one-time configuration function which globally selects the desired metrics backend",
       "type" : "text"
     },
     {
@@ -269,23 +276,7 @@
       "type" : "text"
     },
     {
-      "text" : "implementation. ",
-      "type" : "text"
-    },
-    {
-      "code" : "bootstrap",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " can be called at maximum once in any given program, calling it more than once will",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "lead to undefined behavior, most likely a crash.",
+      "text" : "implementation.",
       "type" : "text"
     }
   ],
