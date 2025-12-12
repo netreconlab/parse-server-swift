@@ -27,72 +27,7 @@ let package = Package(
         .package(
             url: "https://github.com/netreconlab/Parse-Swift.git",
             .upToNextMajor(from: "5.12.3")
-        ),
-		.package(
-			url: "https://github.com/apple/swift-collections.git",
-			exact: Version(1, 1, 6)
-
-		),
-		.package(
-			url: "https://github.com/apple/swift-nio.git",
-			exact: Version(2, 86, 2)
-
-		),
-		.package(
-			url: "https://github.com/apple/swift-nio-http2.git",
-			exact: Version(1, 38, 0)
-
-		),
-		.package(
-			url: "https://github.com/apple/swift-log.git",
-			exact: Version(1, 6, 4)
-
-		),
-		.package(
-			url: "https://github.com/apple/swift-nio-ssl.git",
-			exact: Version(2, 34, 1)
-
-		),
-		.package(
-			url: "https://github.com/apple/swift-crypto.git",
-			exact: Version(3, 15, 1)
-
-		),
-		.package(
-			url: "https://github.com/swift-server/async-http-client.git",
-			exact: Version(1, 29, 1)
-
-		),
-		.package(
-			url: "https://github.com/apple/swift-nio-extras.git",
-			exact: Version(1, 29, 0)
-
-		),
-		.package(
-			url: "https://github.com/apple/swift-asn1.git",
-			exact: Version(1, 4, 0)
-
-		),
-		.package(
-			url: "https://github.com/apple/swift-async-algorithms.git",
-			exact: Version(1, 0, 4)
-
-		),
-		.package(
-			url: "https://github.com/apple/swift-certificates.git",
-			exact: Version(1, 15, 1)
-
-		),
-		.package(
-			url: "https://github.com/apple/swift-http-structured-headers.git",
-			exact: Version(1, 4, 0)
-
-		),
-		.package(
-			url: "https://github.com/apple/swift-nio-transport-services.git",
-			exact: Version(1, 25, 2)
-
-		)
+        )
     ],
     targets: [
         .target(
