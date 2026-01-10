@@ -29,11 +29,11 @@ RUN mkdir /staging
 # N.B.: The static version of jemalloc is incompatible with the static Swift runtime.
 RUN --mount=type=cache,target=/build/.build \
     swift build -c release \
-        --product HelloVapor \
+        --product App \
         --static-swift-stdlib \
         -Xlinker -ljemalloc && \
     # Copy main executable to staging area
-    cp "$(swift build -c release --show-bin-path)/HelloVapor" /staging && \
+    cp "$(swift build -c release --show-bin-path)/App" /staging && \
     # Copy resources bundled by SPM to staging area
     find -L "$(swift build -c release --show-bin-path)" -regex '.*\.resources$' -exec cp -Ra {} /staging \;
 
