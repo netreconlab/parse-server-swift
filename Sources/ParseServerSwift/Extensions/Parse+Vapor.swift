@@ -74,7 +74,7 @@ extension ParseEncoder: @retroactive ContentEncoder {
         _ encodable: E,
         to body: inout ByteBuffer,
         headers: inout HTTPHeaders,
-        userInfo: [CodingUserInfoKey: Sendable]
+        userInfo: [CodingUserInfoKey: any Sendable]
     ) throws where E: Encodable {
         headers.contentType = .json
         let jsonEncoder = User.getJSONEncoder()
@@ -89,9 +89,9 @@ extension ParseEncoder: @retroactive ContentEncoder {
                 userInfo: jsonEncoder.userInfo.merging(userInfo) { $1 }
             ).encode(encodable))
         } else {
-            if let parseEncodable = encodable as? ParseCloudTypeable {
+            if let parseEncodable = encodable as? (any ParseCloudTypeable) {
                 try body.writeBytes(self.encode(parseEncodable, skipKeys: .cloud))
-            } else if let parseEncodable = encodable as? ParseEncodable {
+            } else if let parseEncodable = encodable as? (any ParseEncodable) {
                 let skipKeys: SkipKeys
                 if !ParseSwift.configuration.isRequiringCustomObjectIds {
                     skipKeys = .object

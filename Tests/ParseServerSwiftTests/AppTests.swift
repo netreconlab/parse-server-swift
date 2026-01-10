@@ -138,7 +138,7 @@ final class AppTests: XCTestCase {
         XCTAssertGreaterThan(configuration.parseServerURLStrings.count, 0)
 
         let function = ParseHookFunction(name: "hello", url: url)
-        let trigger = try ParseHookTrigger(trigger: .afterSave, url: url)
+        let trigger = ParseHookTrigger(trigger: .afterSave, url: url)
 
         await configuration.hooks.updateFunctions([ urlString: function ])
         await configuration.hooks.updateTriggers([ urlString: trigger ])
