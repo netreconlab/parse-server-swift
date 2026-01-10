@@ -55,7 +55,6 @@ public extension ParseHookRequestable {
      }
 }
 
-
 extension ParseEncoder: @retroactive ContentEncoder {
 
     public func encode<E>(
@@ -75,24 +74,25 @@ extension ParseEncoder: @retroactive ContentEncoder {
         _ encodable: E,
         to body: inout ByteBuffer,
         headers: inout HTTPHeaders,
-        userInfo: [CodingUserInfoKey: Sendable]
+        userInfo: [CodingUserInfoKey: any Sendable]
     ) throws where E: Encodable {
         headers.contentType = .json
         let jsonEncoder = User.getJSONEncoder()
 
         if !userInfo.isEmpty {
-            try body.writeBytes(JSONEncoder.custom(
-                dates: jsonEncoder.dateEncodingStrategy,
-                data: jsonEncoder.dataEncodingStrategy,
-                keys: jsonEncoder.keyEncodingStrategy,
-                format: jsonEncoder.outputFormatting,
-                floats: jsonEncoder.nonConformingFloatEncodingStrategy,
-                userInfo: jsonEncoder.userInfo.merging(userInfo) { $1 }
-            ).encode(encodable))
+			let encoder = JSONEncoder.custom(
+				dates: jsonEncoder.dateEncodingStrategy,
+				data: jsonEncoder.dataEncodingStrategy,
+				keys: jsonEncoder.keyEncodingStrategy,
+				format: jsonEncoder.outputFormatting,
+				floats: jsonEncoder.nonConformingFloatEncodingStrategy
+			) // don't use userInfo parameter of `JSONEncoder.custom()` until Swift 6.2 is required
+			encoder.userInfo = jsonEncoder.userInfo.merging(userInfo) { $1 }
+            try body.writeBytes(encoder.encode(encodable))
         } else {
-            if let parseEncodable = encodable as? ParseCloudTypeable {
+            if let parseEncodable = encodable as? (any ParseCloudTypeable) {
                 try body.writeBytes(self.encode(parseEncodable, skipKeys: .cloud))
-            } else if let parseEncodable = encodable as? ParseEncodable {
+            } else if let parseEncodable = encodable as? (any ParseEncodable) {
                 let skipKeys: SkipKeys
                 if !ParseSwift.configuration.isRequiringCustomObjectIds {
                     skipKeys = .object
