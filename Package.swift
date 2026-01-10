@@ -1,8 +1,6 @@
 // swift-tools-version:6.0
 import PackageDescription
 
-// swiftlint:disable line_length
-
 let package = Package(
     name: "ParseServerSwift",
     platforms: [
@@ -54,6 +52,8 @@ let package = Package(
     ]
 )
 
-var swiftSettings: [SwiftSetting] { [
-	.enableUpcomingFeature("ExistentialAny"),
-] }
+var swiftSettings: [SwiftSetting] {
+	[
+		.enableUpcomingFeature("ExistentialAny")
+	]
+}
