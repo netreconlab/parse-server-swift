@@ -28,11 +28,11 @@ enum Entrypoint {
 		// calling async functions before this point as it can cause assertion
 		// failures.
         // swiftlint:disable:next line_length
-        let executorTakeoverSuccess = NIOSingletons.unsafeTryInstallSingletonPosixEventLoopGroupAsConcurrencyGlobalExecutor()
-		app.logger.debug(
-			"Tried to install SwiftNIO's EventLoopGroup as Swift's global concurrency executor",
-			metadata: ["success": .stringConvertible(executorTakeoverSuccess)]
-		)
+        // let executorTakeoverSuccess = NIOSingletons.unsafeTryInstallSingletonPosixEventLoopGroupAsConcurrencyGlobalExecutor()
+		// app.logger.debug(
+		//	"Tried to install SwiftNIO's EventLoopGroup as Swift's global concurrency executor",
+		//	metadata: ["success": .stringConvertible(executorTakeoverSuccess)]
+		// )
 
 		do {
 			try await parseServerSwiftConfigure(
