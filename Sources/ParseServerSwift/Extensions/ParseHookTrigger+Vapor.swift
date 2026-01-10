@@ -48,10 +48,10 @@ extension ParseHookTrigger {
                 url: url
             )
         } else {
-            hookTrigger = try Self(
-                trigger: trigger,
-                url: url
-            )
+			hookTrigger = Self(
+				trigger: trigger,
+				url: url
+			)
         }
 
         for parseServerURLString in parseServerURLStrings {
@@ -105,6 +105,12 @@ extension ParseHookTrigger {
 
 // MARK: HookTrigger - Fetch
 public extension ParseHookTrigger {
+
+	init(trigger: ParseHookTriggerType, url: URL) {
+		self.init()
+		self.trigger = trigger
+		self.url = url
+	}
 
     /**
      Fetch a Parse Cloud Code hook trigger.
@@ -459,14 +465,16 @@ public extension ParseHookTrigger {
         var hookTriggers = [String: [Self]]()
 
         if let className = className {
-            hookTrigger = Self(className: className,
-                               trigger: trigger,
-                               url: url)
+            hookTrigger = Self(
+				className: className,
+				trigger: trigger,
+				url: url
+			)
         } else {
-            hookTrigger = try Self(
-                trigger: trigger,
-                url: url
-            )
+			hookTrigger = Self(
+				trigger: trigger,
+				url: url
+			)
         }
 
         for parseServerURLString in parseServerURLStrings {
@@ -1146,7 +1154,7 @@ public extension RoutesBuilder {
         _ path: PathComponent...,
         object: V.Type,
         trigger: ParseHookTriggerType,
-        use closure: @escaping (Request) async throws -> Response
+        use closure: @escaping @Sendable (Request) async throws -> Response
     ) -> Route
     where Response: AsyncResponseEncodable, V: ParseObject {
         self.on(
@@ -1175,7 +1183,7 @@ public extension RoutesBuilder {
         _ path: PathComponent...,
         className: String? = nil,
         triggerName: ParseHookTriggerType,
-        use closure: @escaping (Request) async throws -> Response
+        use closure: @escaping @Sendable (Request) async throws -> Response
     ) -> Route
     where Response: AsyncResponseEncodable {
         self.post(
@@ -1203,7 +1211,7 @@ public extension RoutesBuilder {
         _ path: PathComponent...,
         className: String? = nil,
         trigger: ParseHookTriggerType,
-        use closure: @escaping (Request) async throws -> Response
+        use closure: @escaping @Sendable (Request) async throws -> Response
     ) -> Route
     where Response: AsyncResponseEncodable {
         self.on(
@@ -1232,7 +1240,7 @@ public extension RoutesBuilder {
         _ path: [PathComponent],
         object: V.Type,
         trigger: ParseHookTriggerType,
-        use closure: @escaping (Request) async throws -> Response
+        use closure: @escaping @Sendable (Request) async throws -> Response
     ) -> Route
     where Response: AsyncResponseEncodable, V: ParseObject {
         self.on(
@@ -1262,7 +1270,7 @@ public extension RoutesBuilder {
         _ path: [PathComponent],
         className: String? = nil,
         triggerName: ParseHookTriggerType,
-        use closure: @escaping (Request) async throws -> Response
+        use closure: @escaping @Sendable (Request) async throws -> Response
     ) -> Route
     where Response: AsyncResponseEncodable {
         self.post(
@@ -1291,7 +1299,7 @@ public extension RoutesBuilder {
         _ path: [PathComponent],
         className: String? = nil,
         trigger: ParseHookTriggerType,
-        use closure: @escaping (Request) async throws -> Response
+        use closure: @escaping @Sendable (Request) async throws -> Response
     ) -> Route where Response: AsyncResponseEncodable {
         self.on(
             path,
@@ -1319,7 +1327,7 @@ public extension RoutesBuilder {
         _ path: [PathComponent],
         object: ParseHookTriggerObject,
         trigger: ParseHookTriggerType,
-        use closure: @escaping (Request) async throws -> Response
+        use closure: @escaping @Sendable (Request) async throws -> Response
     ) -> Route where Response: AsyncResponseEncodable {
         self.on(
             path,
@@ -1348,7 +1356,7 @@ public extension RoutesBuilder {
         body: HTTPBodyStreamStrategy = .collect,
         object: V.Type,
         trigger: ParseHookTriggerType,
-        use closure: @escaping (Request) async throws -> Response
+        use closure: @escaping @Sendable (Request) async throws -> Response
     ) -> Route
     where Response: AsyncResponseEncodable, V: ParseObject {
         self.on(
@@ -1380,7 +1388,7 @@ public extension RoutesBuilder {
         body: HTTPBodyStreamStrategy = .collect,
         className: String? = nil,
         triggerName: ParseHookTriggerType,
-        use closure: @escaping (Request) async throws -> Response
+        use closure: @escaping @Sendable (Request) async throws -> Response
     ) -> Route where Response: AsyncResponseEncodable {
         self.on(
             path,
@@ -1410,7 +1418,7 @@ public extension RoutesBuilder {
         body: HTTPBodyStreamStrategy = .collect,
         className: String? = nil,
         trigger: ParseHookTriggerType,
-        use closure: @escaping (Request) async throws -> Response
+        use closure: @escaping @Sendable (Request) async throws -> Response
     ) -> Route where Response: AsyncResponseEncodable {
     self.on(path,
             body: body,
@@ -1438,7 +1446,7 @@ public extension RoutesBuilder {
         body: HTTPBodyStreamStrategy = .collect,
         object: V.Type,
         trigger: ParseHookTriggerType,
-        use closure: @escaping (Request) async throws -> Response
+        use closure: @escaping @Sendable (Request) async throws -> Response
     ) -> Route where Response: AsyncResponseEncodable, V: ParseObject {
         self.on(
             path,
@@ -1469,7 +1477,7 @@ public extension RoutesBuilder {
         body: HTTPBodyStreamStrategy = .collect,
         className: String? = nil,
         triggerName: ParseHookTriggerType,
-        use closure: @escaping (Request) async throws -> Response
+        use closure: @escaping @Sendable (Request) async throws -> Response
     ) -> Route where Response: AsyncResponseEncodable {
         self.on(
             path,
@@ -1499,7 +1507,7 @@ public extension RoutesBuilder {
         body: HTTPBodyStreamStrategy = .collect,
         className: String? = nil,
         trigger: ParseHookTriggerType,
-        use closure: @escaping (Request) async throws -> Response
+        use closure: @escaping @Sendable (Request) async throws -> Response
     ) -> Route where Response: AsyncResponseEncodable {
         let route = self.on(.POST, path, body: body, use: closure)
         Task {
@@ -1539,7 +1547,7 @@ public extension RoutesBuilder {
         body: HTTPBodyStreamStrategy = .collect,
         object: ParseHookTriggerObject,
         trigger: ParseHookTriggerType,
-        use closure: @escaping (Request) async throws -> Response
+        use closure: @escaping @Sendable (Request) async throws -> Response
     ) -> Route where Response: AsyncResponseEncodable {
         self.on(
             path,

@@ -8,9 +8,9 @@
 import Vapor
 import ParseSwift
 
-extension ParseHookFunctionRequest: Content {}
-extension ParseHookTriggerRequest: Content {}
-extension ParseHookResponse: Content {}
+extension ParseHookFunctionRequest: @retroactive Content {}
+extension ParseHookTriggerRequest: @retroactive Content {}
+extension ParseHookResponse: @retroactive Content {}
 
 public extension ParseHookRequestable {
     /**
@@ -55,7 +55,7 @@ public extension ParseHookRequestable {
      }
 }
 
-extension ParseEncoder: ContentEncoder {
+extension ParseEncoder: @retroactive ContentEncoder {
 
     public func encode<E>(
         _ encodable: E,

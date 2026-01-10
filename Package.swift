@@ -1,4 +1,4 @@
-// swift-tools-version:5.10
+// swift-tools-version:6.0
 import PackageDescription
 
 // swiftlint:disable line_length
@@ -21,12 +21,12 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/vapor/vapor.git",
-			exact: Version(4, 117, 2)
+			.upToNextMajor(from: "4.121.0")
 
         ),
         .package(
             url: "https://github.com/netreconlab/Parse-Swift.git",
-            .upToNextMajor(from: "5.12.3")
+            .upToNextMajor(from: "6.0.0-beta.6")
         )
     ],
     targets: [
