@@ -80,7 +80,7 @@ services:
     depends_on:
         - parse
   parse:
-    image: netreconlab/parse-hipaa:8.5.0-dashboard
+    image: netreconlab/parse-hipaa:9.1.2-dashboard
     environment:
       <<: *shared_environment
       PARSE_SERVER_URL: http://parse:${PORT}${MOUNT_PATH}

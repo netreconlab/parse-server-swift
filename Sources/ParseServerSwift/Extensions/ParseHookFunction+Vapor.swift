@@ -281,7 +281,7 @@ public extension RoutesBuilder {
     @discardableResult
     func post<Response>(_ path: PathComponent...,
                         name: String,
-                        use closure: @escaping (Request) async throws -> Response) -> Route
+                        use closure: @escaping @Sendable (Request) async throws -> Response) -> Route
     where Response: AsyncResponseEncodable {
         self.on(path,
                 name: name,
@@ -300,7 +300,7 @@ public extension RoutesBuilder {
     @discardableResult
     func post<Response>(_ path: [PathComponent],
                         name: String,
-                        use closure: @escaping (Request) async throws -> Response) -> Route
+                        use closure: @escaping @Sendable (Request) async throws -> Response) -> Route
     where Response: AsyncResponseEncodable {
         self.on(path,
                 name: name,
@@ -321,7 +321,7 @@ public extension RoutesBuilder {
     func on<Response>(_ path: PathComponent...,
                       body: HTTPBodyStreamStrategy = .collect,
                       name: String,
-                      use closure: @escaping (Request) async throws -> Response) -> Route
+                      use closure: @escaping @Sendable (Request) async throws -> Response) -> Route
     where Response: AsyncResponseEncodable {
         self.on(path,
                 body: body,
@@ -343,7 +343,7 @@ public extension RoutesBuilder {
     func on<Response>(_ path: [PathComponent],
                       body: HTTPBodyStreamStrategy = .collect,
                       name: String,
-                      use closure: @escaping (Request) async throws -> Response) -> Route
+                      use closure: @escaping @Sendable (Request) async throws -> Response) -> Route
     where Response: AsyncResponseEncodable {
         let route = self.on(.POST, path, body: body, use: closure)
         Task {
