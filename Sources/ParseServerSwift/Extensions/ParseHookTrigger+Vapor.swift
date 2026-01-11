@@ -106,17 +106,6 @@ extension ParseHookTrigger {
 // MARK: HookTrigger - Fetch
 public extension ParseHookTrigger {
 
-	/**
-	 Creates a new Parse hook trigger.
-	 - parameter trigger: The `ParseHookTriggerType` type.
-	 - parameter url: The endpoint of the hook.
-	 */
-	init(trigger: ParseHookTriggerType, url: URL) {
-		self.init()
-		self.trigger = trigger
-		self.url = url
-	}
-
     /**
      Fetch a Parse Cloud Code hook trigger.
      - parameter path: A variadic list of paths.
