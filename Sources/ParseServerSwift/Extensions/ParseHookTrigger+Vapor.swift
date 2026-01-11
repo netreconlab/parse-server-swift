@@ -113,13 +113,19 @@ extension ParseHookTrigger {
                     configuration.logger.warning(
 						"Hook Trigger: \"\(String(describing: hookTrigger))\"; warning: \(error); on server: \(parseServerURLString)"
 					)
-                    try await Self.method(
-						.DELETE,
-						path,
-						className: className,
-						trigger: trigger,
-						parseServerURLStrings: parseServerURLStrings
-					)
+					do {
+						try await Self.method(
+							.DELETE,
+							path,
+							className: className,
+							trigger: trigger,
+							parseServerURLStrings: [parseServerURLString]
+						)
+					} catch {
+						configuration.logger.warning(
+							"Hook Trigger: \"\(String(describing: hookTrigger))\"; warning: \(error); on server: \(parseServerURLString)"
+						)
+					}
                     return try await Self.method(
 						method,
 						path,
