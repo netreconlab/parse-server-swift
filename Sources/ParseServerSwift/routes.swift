@@ -181,6 +181,7 @@ public func exampleRoutes(_ app: Application) throws {
         "file",
         "save",
         "before",
+		hookObject: .file,
         trigger: .beforeSave
     ) { req async throws -> ParseHookResponse<Bool> in
         // Note that `ParseHookResponse<Bool>` means a "successful"
