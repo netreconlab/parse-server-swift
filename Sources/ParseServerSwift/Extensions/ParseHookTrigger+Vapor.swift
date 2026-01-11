@@ -125,7 +125,7 @@ extension ParseHookTrigger {
 						path,
 						className: className,
 						trigger: trigger,
-						parseServerURLStrings: parseServerURLStrings
+						parseServerURLStrings: [parseServerURLString]
 					)
                 } else {
                     configuration.logger.error(
@@ -424,14 +424,12 @@ public extension ParseHookTrigger {
         parseServerURLStrings: [String] = ParseServerSwift.configuration.parseServerURLStrings
     ) async throws -> [String: [Self]] {
         let url = try buildServerPathname(path)
-        let hookTrigger: Self!
-        var hookTriggers = [String: [Self]]()
-
-		hookTrigger = Self(
+		let hookTrigger = Self(
 			className: className,
 			trigger: trigger,
 			url: url
 		)
+		var hookTriggers = [String: [Self]]()
 
         for parseServerURLString in parseServerURLStrings {
             do {
