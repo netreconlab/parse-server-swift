@@ -181,6 +181,7 @@ public func exampleRoutes(_ app: Application) throws {
         "file",
         "save",
         "before",
+		object: .file,
         trigger: .beforeSave
     ) { req async throws -> ParseHookResponse<Bool> in
         // Note that `ParseHookResponse<Bool>` means a "successful"
@@ -202,6 +203,7 @@ public func exampleRoutes(_ app: Application) throws {
         "file",
         "delete",
         "before",
+		object: .file,
         trigger: .beforeDelete
     ) { req async throws -> ParseHookResponse<Bool> in
         // Note that `ParseHookResponse<Bool>` means a "successful"
@@ -221,6 +223,7 @@ public func exampleRoutes(_ app: Application) throws {
     app.post(
         "connect",
         "before",
+		object: .liveQueryConnect,
         trigger: .beforeConnect
     ) { req async throws -> ParseHookResponse<Bool> in
         // Note that `ParseHookResponse<Bool>` means a "successful"

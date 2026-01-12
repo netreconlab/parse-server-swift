@@ -12,7 +12,6 @@
 #      Start app: docker-compose up app
 #       Stop all: docker-compose down
 #
-version: '3.7'
 
 x-shared_environment: &shared_environment
   LOG_LEVEL: ${LOG_LEVEL:-debug}
@@ -80,7 +79,7 @@ services:
     depends_on:
         - parse
   parse:
-    image: netreconlab/parse-hipaa:8.5.0-dashboard
+    image: netreconlab/parse-hipaa:9.1.2-dashboard
     environment:
       <<: *shared_environment
       PARSE_SERVER_URL: http://parse:${PORT}${MOUNT_PATH}
