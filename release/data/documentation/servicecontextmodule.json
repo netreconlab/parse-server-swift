@@ -1,0 +1,351 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ServiceContextModule"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "ServiceContextModule",
+    "modules" : [
+      {
+        "name" : "ServiceContextModule"
+      }
+    ],
+    "role" : "collection",
+    "roleHeading" : "Framework",
+    "symbolKind" : "module",
+    "title" : "ServiceContextModule"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Protocols",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ServiceContextModule\/ServiceContextKey"
+      ],
+      "title" : "Protocols"
+    },
+    {
+      "anchor" : "Structures",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ServiceContextModule\/AnyServiceContextKey",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ServiceContextModule\/ServiceContext",
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ServiceContextModule\/TODOLocation"
+      ],
+      "title" : "Structures"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/servicecontextmodule"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ServiceContextModule": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ServiceContextModule",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "ServiceContextModule",
+  "type" : "topic",
+  "url" : "\/documentation\/servicecontextmodule"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ServiceContextModule/AnyServiceContextKey": {
+  "abstract" : [
+    {
+      "text" : "A type-erased ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ServiceContextModule\/ServiceContextKey",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " used when iterating through the ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ServiceContextModule\/ServiceContext",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " using its ",
+      "type" : "text"
+    },
+    {
+      "code" : "forEach",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " method.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AnyServiceContextKey"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ServiceContextModule\/AnyServiceContextKey",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AnyServiceContextKey"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AnyServiceContextKey",
+  "type" : "topic",
+  "url" : "\/documentation\/servicecontextmodule\/anyservicecontextkey"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ServiceContextModule/ServiceContext": {
+  "abstract" : [
+    {
+      "text" : "A ",
+      "type" : "text"
+    },
+    {
+      "code" : "ServiceContext",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is a heterogeneous storage type with value semantics for keyed values in a type-safe fashion.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ServiceContext"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ServiceContextModule\/ServiceContext",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ServiceContext"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ServiceContext",
+  "type" : "topic",
+  "url" : "\/documentation\/servicecontextmodule\/servicecontext"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ServiceContextModule/ServiceContextKey": {
+  "abstract" : [
+    {
+      "text" : "Context keys provide type-safe access to ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ServiceContextModule\/ServiceContext",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : "s by declaring the type of value they “key” at compile-time.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "To give your ",
+      "type" : "text"
+    },
+    {
+      "code" : "ServiceContextKey",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " an explicit name, override the ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ServiceContextModule\/ServiceContextKey\/nameOverride",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " property.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ServiceContextKey"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ServiceContextModule\/ServiceContextKey",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ServiceContextKey"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ServiceContextKey",
+  "type" : "topic",
+  "url" : "\/documentation\/servicecontextmodule\/servicecontextkey"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ServiceContextModule/ServiceContextKey/nameOverride": {
+  "abstract" : [
+    {
+      "text" : "The human-readable name of this key.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "This name will be used instead of the type name when a value is printed.",
+      "type" : "text"
+    }
+  ],
+  "defaultImplementations" : 1,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "nameOverride"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ServiceContextModule\/ServiceContextKey\/nameOverride",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "nameOverride",
+  "type" : "topic",
+  "url" : "\/documentation\/servicecontextmodule\/servicecontextkey\/nameoverride"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/documentation/ServiceContextModule/TODOLocation": {
+  "abstract" : [
+    {
+      "text" : "Carried automatically by a “to do” context.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "It can be used to track where a context originated and which “to do” context must be fixed into a real one to avoid this.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TODOLocation"
+    }
+  ],
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/documentation\/ServiceContextModule\/TODOLocation",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TODOLocation"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TODOLocation",
+  "type" : "topic",
+  "url" : "\/documentation\/servicecontextmodule\/todolocation"
+}
+}
+}
