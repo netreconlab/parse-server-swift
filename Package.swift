@@ -19,12 +19,12 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/vapor/vapor.git",
-			.upToNextMajor(from: "4.121.0")
+			.upToNextMajor(from: "4.121.1")
 
         ),
         .package(
             url: "https://github.com/netreconlab/Parse-Swift.git",
-            .upToNextMajor(from: "6.0.0-beta.8")
+            .upToNextMajor(from: "6.0.0")
         )
     ],
     targets: [
