@@ -14,3 +14,20 @@ and [Vapor](https://github.com/vapor/vapor). `ParseServerSwift` provides many ad
 * Leverage the capabilities of [server-side-swift](https://www.swift.org/server/) with [Vapor](https://github.com/vapor/vapor)
 
 Technically, complete apps can be written with `ParseServerSwift`, the only difference is that this code runs in your `ParseServerSwift` rather than running on the user’s mobile device. When you update your Cloud Code, it becomes available to all mobile environments instantly. You don’t have to wait for a new release of your application. This lets you change app behavior on the fly and add new features faster.
+
+## Additional Resources
+
+For more information on using Parse Swift SDK:
+- [Parse Swift API Documentation](https://swiftpackageindex.com/netreconlab/Parse-Swift/documentation)
+- [Parse Swift Tutorials](https://netreconlab.github.io/Parse-Swift/release/tutorials/parseswift/)
+- [Parse Swift Playgrounds](https://github.com/netreconlab/Parse-Swift/tree/main/ParseSwift.playground/Pages)
+
+## Topics
+
+### Getting Started
+- <doc:configuring-parse-server-swift>
+- <doc:adding-parseobjects>
+
+### Cloud Code
+- <doc:cloud-code-functions>
+- <doc:cloud-code-triggers>
