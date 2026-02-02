@@ -190,7 +190,7 @@ To start your server type, `swift run` in the terminal of the project root direc
 2. When leveraging your shared queries in ParseServerSwift; they will never access local server cache as they always request the latest data from the Node.js Parse Server
 3. Calling Cloud-Code functions from clients do not ever access local cache as these are `POST` calls to the Node.js Parse Server
 
-Learn more about sharing models by reading the [SwiftLee Blog](https://www.avanderlee.com/swift/share-swift-code-swift-on-server-vapor/).
+Learn more about sharing models by reading the [SwiftLee Blog](https://www.avanderlee.com/swift/share-swift-code-swift-on-server-vapor/). For more information on using Parse Swift SDK, see the [Parse Swift API documentation](https://swiftpackageindex.com/netreconlab/Parse-Swift/documentation) and [Parse Swift tutorials](https://netreconlab.github.io/Parse-Swift/release/tutorials/parseswift/).
 
 ### Creating `ParseObject`'s
 If you have not created a [shared package for your models](#sharing-server-client-code), it is recommended to add all of your `ParseObject`'s in a folder called `Models` similar to [ParseServerSwift/Sources/ParseServerSwift/Models](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/Models).
@@ -256,7 +256,11 @@ struct GameScore: ParseObject {
 ```
 
 ### Creating New Cloud Code Routes 
-Adding routes for `ParseHooks` are as simple as adding [routes in Vapor](https://docs.vapor.codes/basics/routing/). `ParseServerSwift` provides some additional methods to routes to easily create and register [Hook Functions](https://parseplatform.org/Parse-Swift/release/documentation/parseswift/parsehookfunctionable) and [Hook Triggers](https://parseplatform.org/Parse-Swift/release/documentation/parseswift/parsehooktriggerable/). All routes should be added to the `routes.swift` file in your project. Example `ParseServerSwift` routes can be found in [ParseServerSwift/Sources/ParseServerSwift/routes.swift](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/routes.swift).
+Adding routes for `ParseHooks` are as simple as adding [routes in Vapor](https://docs.vapor.codes/basics/routing/). `ParseServerSwift` provides some additional methods to routes to easily create and register [Hook Functions](https://swiftpackageindex.com/netreconlab/Parse-Swift/documentation/parseswift/parsehookfunctionable) and [Hook Triggers](https://swiftpackageindex.com/netreconlab/Parse-Swift/documentation/parseswift/parsehooktriggerable). All routes should be added to the `routes.swift` file in your project. Example `ParseServerSwift` routes can be found in [ParseServerSwift/Sources/ParseServerSwift/routes.swift](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/routes.swift).
+
+For detailed tutorials, see:
+- [Cloud Code Functions tutorial](https://netreconlab.github.io/parse-server-swift/release/tutorials/parseserverswift/cloud-code-functions)
+- [Cloud Code Triggers tutorial](https://netreconlab.github.io/parse-server-swift/release/tutorials/parseserverswift/cloud-code-triggers)
 
 #### Router Groups and Collections
 Since `ParseServerSwift` is a Vapor server, it can be configured a number of different ways to suite your needs. Be sure to read through the [vapor documentation](https://docs.vapor.codes). Some important features you may want to take advantage of are highlighed below:
@@ -290,15 +294,23 @@ return ParseHookResponse<T>(error: customError) // Be sure to "return" ParseHook
 - [Push Notifications](https://github.com/netreconlab/Parse-Swift/blob/main/ParseSwift.playground/Pages/21%20-%20Cloud%20Push%20Notifications.xcplaygroundpage/Contents.swift)
 - [Calling Cloud Functions From Client Apps](https://github.com/netreconlab/Parse-Swift/blob/main/ParseSwift.playground/Pages/10%20-%20Cloud%20Code.xcplaygroundpage/Contents.swift)
 
+For comprehensive tutorials on creating Cloud Code, see:
+- [Cloud Code Functions tutorial](https://netreconlab.github.io/parse-server-swift/release/tutorials/parseserverswift/cloud-code-functions)
+- [Cloud Code Triggers tutorial](https://netreconlab.github.io/parse-server-swift/release/tutorials/parseserverswift/cloud-code-triggers)
+
+For more information on Parse Swift SDK, see the [Parse Swift API documentation](https://swiftpackageindex.com/netreconlab/Parse-Swift/documentation) and [Parse Swift tutorials](https://netreconlab.github.io/Parse-Swift/release/tutorials/parseswift/).
+
 
 ### Cloud Code Functions
 Cloud Code Functions can also take parameters. It's recommended to place all parameters in 
-[ParseServerSwift/Sources/ParseServerSwift/Models/Parameters](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/Models/Parameters)
+[ParseServerSwift/Sources/ParseServerSwift/Models/Parameters](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/Models/Parameters). Learn more in the [Cloud Code Functions tutorial](https://netreconlab.github.io/parse-server-swift/release/tutorials/parseserverswift/cloud-code-functions).
 
 ```swift
 // A simple Parse Hook Function route that returns "Hello World".
-app.post("hello",
-         name: "hello") { req async throws -> ParseHookResponse<String> in
+app.post(
+    "hello",
+    name: "hello"
+) { req async throws -> ParseHookResponse<String> in
     // Note that `ParseHookResponse<String>` means a "successful"
     // response will return a "String" type.
     if let error: ParseHookResponse<String> = checkHeaders(req) {
@@ -306,12 +318,12 @@ app.post("hello",
     }
     var parseRequest = try req.content
         .decode(ParseHookFunctionRequest<User, FooParameters>.self)
-    
+
     // If a User made the request, fetch the complete user.
     if parseRequest.user != nil {
         parseRequest = try await parseRequest.hydrateUser(request: req)
     }
-    
+
     // To query using the User's credentials who called this function,
     // use the options() method from the parseRequest
     let options = try parseRequest.options(req)
@@ -322,11 +334,18 @@ app.post("hello",
 ```
 
 ### Cloud Code Triggers
+Learn more about Cloud Code Triggers in the [Cloud Code Triggers tutorial](https://netreconlab.github.io/parse-server-swift/release/tutorials/parseserverswift/cloud-code-triggers).
+
+#### beforeSave Trigger
 ```swift
 // A Parse Hook Trigger route.
-app.post("score", "save", "before",
-         object: GameScore.self,
-         trigger: .beforeSave) { req async throws -> ParseHookResponse<GameScore> in
+app.post(
+    "score",
+    "save",
+    "before",
+    object: GameScore.self,
+    trigger: .beforeSave
+) { req async throws -> ParseHookResponse<GameScore> in
     // Note that `ParseHookResponse<GameScore>` means a "successful"
     // response will return a "GameScore" type.
     if let error: ParseHookResponse<GameScore> = checkHeaders(req) {
@@ -350,11 +369,18 @@ app.post("score", "save", "before",
     req.logger.info("Before save is being made. Showing all scores before saving new ones: \(scores)")
     return ParseHookResponse(success: object)
 }
+```
 
+#### beforeFind Trigger
+```swift
 // Another Parse Hook Trigger route.
-app.post("score", "find", "before",
-         object: GameScore.self,
-         trigger: .beforeFind) { req async throws -> ParseHookResponse<[GameScore]> in
+app.post(
+    "score",
+    "find",
+    "before",
+    object: GameScore.self,
+    trigger: .beforeFind
+) { req async throws -> ParseHookResponse<[GameScore]> in
     // Note that `ParseHookResponse<[GameScore]>` means a "successful"
     // response will return a "[GameScore]" type.
     if let error: ParseHookResponse<[GameScore]> = checkHeaders(req) {
@@ -377,11 +403,18 @@ app.post("score", "find", "before",
     """)
     return ParseHookResponse(success: [score1, score2])
 }
+```
 
+#### afterLogin Trigger
+```swift
 // Another Parse Hook Trigger route.
-app.post("user", "login", "after",
-         object: User.self,
-         trigger: .afterLogin) { req async throws -> ParseHookResponse<Bool> in
+app.post(
+    "user",
+    "login",
+    "after",
+    object: User.self,
+    trigger: .afterLogin
+) { req async throws -> ParseHookResponse<Bool> in
     // Note that `ParseHookResponse<Bool>` means a "successful"
     // response will return a "Bool" type. Bool is the standard response with
     // a "true" response meaning everything is okay or continue.
@@ -394,10 +427,18 @@ app.post("user", "login", "after",
     req.logger.info("A user has logged in: \(parseRequest)")
     return ParseHookResponse(success: true)
 }
+```
 
+#### ParseFile Triggers
+```swift
 // A Parse Hook Trigger route for `ParseFile`.
-app.on("file", "save", "before",
-       trigger: .beforeSave) { req async throws -> ParseHookResponse<Bool> in
+app.on(
+    "file",
+    "save",
+    "before",
+    object: .file,
+    trigger: .beforeSave
+) { req async throws -> ParseHookResponse<Bool> in
     // Note that `ParseHookResponse<Bool>` means a "successful"
     // response will return a "Bool" type. Bool is the standard response with
     // a "true" response meaning everything is okay or continue. Sending "false"
@@ -413,8 +454,13 @@ app.on("file", "save", "before",
 }
 
 // Another Parse Hook Trigger route for `ParseFile`.
-app.post("file", "delete", "before",
-         trigger: .beforeDelete) { req async throws -> ParseHookResponse<Bool> in
+app.post(
+    "file",
+    "delete",
+    "before",
+    object: .file,
+    trigger: .beforeDelete
+) { req async throws -> ParseHookResponse<Bool> in
     // Note that `ParseHookResponse<Bool>` means a "successful"
     // response will return a "Bool" type. Bool is the standard response with
     // a "true" response meaning everything is okay or continue.
@@ -427,10 +473,17 @@ app.post("file", "delete", "before",
     req.logger.info("A ParseFile is being deleted: \(parseRequest)")
     return ParseHookResponse(success: true)
 }
+```
 
+#### LiveQuery Triggers
+```swift
 // A Parse Hook Trigger route for `ParseLiveQuery`.
-app.post("connect", "before",
-         trigger: .beforeConnect) { req async throws -> ParseHookResponse<Bool> in
+app.post(
+    "connect",
+    "before",
+    object: .liveQueryConnect,
+    trigger: .beforeConnect
+) { req async throws -> ParseHookResponse<Bool> in
     // Note that `ParseHookResponse<Bool>` means a "successful"
     // response will return a "Bool" type. Bool is the standard response with
     // a "true" response meaning everything is okay or continue.
@@ -445,9 +498,13 @@ app.post("connect", "before",
 }
 
 // Another Parse Hook Trigger route for `ParseLiveQuery`.
-app.post("score", "subscribe", "before",
-         object: GameScore.self,
-         trigger: .beforeSubscribe) { req async throws -> ParseHookResponse<Bool> in
+app.post(
+    "score",
+    "subscribe",
+    "before",
+    object: GameScore.self,
+    trigger: .beforeSubscribe
+) { req async throws -> ParseHookResponse<Bool> in
     // Note that `ParseHookResponse<Bool>` means a "successful"
     // response will return a "Bool" type. Bool is the standard response with
     // a "true" response meaning everything is okay or continue.
@@ -462,9 +519,13 @@ app.post("score", "subscribe", "before",
 }
 
 // Another Parse Hook Trigger route for `ParseLiveQuery`.
-app.post("score", "event", "after",
-         object: GameScore.self,
-         trigger: .afterEvent) { req async throws -> ParseHookResponse<Bool> in
+app.post(
+    "score",
+    "event",
+    "after",
+    object: GameScore.self,
+    trigger: .afterEvent
+) { req async throws -> ParseHookResponse<Bool> in
     // Note that `ParseHookResponse<Bool>` means a "successful"
     // response will return a "Bool" type. Bool is the standard response with
     // a "true" response meaning everything is okay or continue.

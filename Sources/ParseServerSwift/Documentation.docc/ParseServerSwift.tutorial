@@ -1,20 +1,25 @@
 @Tutorials(name: "ParseServerSwift") {
     @Intro(title: "Welcome to ParseServerSwift") {
+        Learn how to write Parse Cloud Code in Swift using ParseServerSwift! These tutorials will guide you through configuration, creating models, and implementing Cloud Code Functions and Triggers.
         
+        For more information on Parse Swift, see the [Parse Swift API documentation](https://swiftpackageindex.com/netreconlab/Parse-Swift/documentation) and [Parse Swift tutorials](https://netreconlab.github.io/Parse-Swift/release/tutorials/parseswift/).
     }
     
-    @Chapter(name: "Configuring Parse Server Swift") {
+    @Chapter(name: "Getting Started") {
         @Image(source: parse-swift.png, alt: "Parse image")
+        
+        Get your ParseServerSwift server up and running.
+        
         @TutorialReference(tutorial: "doc:configuring-parse-server-swift")
-    }
-
-    @Chapter(name: "Adding ParseObjects") {
-        @Image(source: parse-swift.png, alt: "Parse image")
-        @TutorialReference(tutorial: "doc:adding-parseobjects)
+        @TutorialReference(tutorial: "doc:adding-parseobjects")
     }
 
     @Chapter(name: "Cloud Code") {
         @Image(source: parse-swift.png, alt: "Parse image")
-        @TutorialReference(tutorial: "doc:cloud-code")
+        
+        Learn how to create Cloud Code Functions and Triggers to add server-side logic to your application.
+        
+        @TutorialReference(tutorial: "doc:cloud-code-functions")
+        @TutorialReference(tutorial: "doc:cloud-code-triggers")
     }
 }

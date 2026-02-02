@@ -1,0 +1,316 @@
+@Tutorial(time: 15) {
+    @Intro(title: "Cloud Code Functions") {
+        Learn how to create Cloud Code Functions in ParseServerSwift. Functions allow you to run custom server-side logic that can be called from client applications.
+        
+        Cloud Code Functions are custom endpoints that you define on your server which can be called from client applications using the Parse SDK. They are perfect for operations that need to be secure, require server-side logic, or need access to the primary key.
+        
+        For more information on the Parse Swift SDK, see the [Parse Swift API documentation](https://swiftpackageindex.com/netreconlab/Parse-Swift/documentation) and [Parse Swift tutorials](https://netreconlab.github.io/Parse-Swift/release/tutorials/parseswift/).
+    }
+    
+    @Section(title: "Creating a Simple Cloud Function") {
+        @ContentAndMedia {
+            The most basic Cloud Function returns a simple response. This example demonstrates the fundamental structure of a Cloud Function route.
+        }
+        
+        @Steps {
+            @Step {
+                Create a simple "Hello World" function. All Cloud Functions should check headers for security using `checkHeaders(req)`.
+                
+                ```swift
+                app.post(
+                    "hello",
+                    name: "hello"
+                ) { req async throws -> ParseHookResponse<String> in
+                    // Check webhook key for security
+                    if let error: ParseHookResponse<String> = checkHeaders(req) {
+                        return error
+                    }
+                    
+                    // Decode the function request
+                    var parseRequest = try req.content
+                        .decode(ParseHookFunctionRequest<User, FooParameters>.self)
+                    
+                    // Return success response
+                    return ParseHookResponse(success: "Hello world!")
+                }
+                ```
+                
+                @Image(source: parse-swift.png, alt: "Parse image")
+            }
+            
+            @Step {
+                The `ParseHookResponse<String>` type indicates this function will return a String on success. The type parameter can be any `Codable` type.
+                
+                Other common return types:
+                - `ParseHookResponse<String>` - For text responses
+                - `ParseHookResponse<Int>` - For numeric responses
+                - `ParseHookResponse<Bool>` - For true/false responses
+                - `ParseHookResponse<GameScore>` - For ParseObject responses
+                - `ParseHookResponse<[GameScore]>` - For array responses
+            }
+        }
+    }
+    
+    @Section(title: "Working with User Context") {
+        @ContentAndMedia {
+            Cloud Functions can access information about the user making the request and perform operations on their behalf.
+        }
+        
+        @Steps {
+            @Step {
+                When a user calls a Cloud Function, you can access their information and use their credentials for queries.
+                
+                ```swift
+                app.post(
+                    "hello",
+                    name: "hello"
+                ) { req async throws -> ParseHookResponse<String> in
+                    if let error: ParseHookResponse<String> = checkHeaders(req) {
+                        return error
+                    }
+                    var parseRequest = try req.content
+                        .decode(ParseHookFunctionRequest<User, FooParameters>.self)
+                    
+                    // Hydrate the user if present
+                    if parseRequest.user != nil {
+                        parseRequest = try await parseRequest.hydrateUser(request: req)
+                    }
+                    
+                    return ParseHookResponse(success: "Hello world!")
+                }
+                ```
+            }
+            
+            @Step {
+                Use the user's credentials to query data they have access to. The `options()` method provides the user's session token.
+                
+                ```swift
+                // Get query options with user's credentials
+                let options = try parseRequest.options(req)
+                
+                // Query using the user's permissions
+                let scores = try await GameScore.query.findAll(options: options)
+                req.logger.info("Scores this user can access: \(scores)")
+                ```
+            }
+        }
+    }
+    
+    @Section(title: "Handling Function Parameters") {
+        @ContentAndMedia {
+            Cloud Functions can accept custom parameters from client applications. Parameters should be defined as Codable structs.
+        }
+        
+        @Steps {
+            @Step {
+                Define your parameters in a separate file. It's recommended to place parameters in `Models/Parameters/`.
+                
+                ```swift
+                import Foundation
+                import ParseSwift
+                
+                struct FooParameters: Codable {
+                    var foo: String?
+                    var bar: Int?
+                }
+                ```
+                
+                @Code(name: "FooParameters.swift", file: FooParameters.swift)
+            }
+            
+            @Step {
+                Access the parameters from your function request.
+                
+                ```swift
+                app.post(
+                    "hello",
+                    name: "hello"
+                ) { req async throws -> ParseHookResponse<String> in
+                    if let error: ParseHookResponse<String> = checkHeaders(req) {
+                        return error
+                    }
+                    var parseRequest = try req.content
+                        .decode(ParseHookFunctionRequest<User, FooParameters>.self)
+                    
+                    // Access parameters
+                    if let foo = parseRequest.params?.foo {
+                        req.logger.info("Received foo parameter: \(foo)")
+                    }
+                    
+                    return ParseHookResponse(success: "Hello world!")
+                }
+                ```
+            }
+        }
+    }
+    
+    @Section(title: "Requiring Authentication") {
+        @ContentAndMedia {
+            Some Cloud Functions should only be accessible to authenticated users. Learn how to enforce authentication requirements.
+        }
+        
+        @Steps {
+            @Step {
+                Check if a user is present and validate their session.
+                
+                ```swift
+                app.post(
+                    "version",
+                    name: "version"
+                ) { req async throws -> ParseHookResponse<String> in
+                    if let error: ParseHookResponse<String> = checkHeaders(req) {
+                        return error
+                    }
+                    var parseRequest = try req.content
+                        .decode(ParseHookFunctionRequest<User, FooParameters>.self)
+                    
+                    // Require user to be signed in
+                    guard parseRequest.user != nil else {
+                        let error = ParseError(code: .invalidSessionToken,
+                                               message: "User must be signed in to access server version")
+                        return ParseHookResponse<String>(error: error)
+                    }
+                    
+                    return ParseHookResponse(success: "1.0.0")
+                }
+                ```
+            }
+            
+            @Step {
+                Validate the user's session token by hydrating the user. This ensures their session is still valid.
+                
+                ```swift
+                do {
+                    // Validate session by hydrating user
+                    parseRequest = try await parseRequest.hydrateUser(request: req)
+                } catch {
+                    guard let parseError = error as? ParseError else {
+                        let error = ParseError(code: .otherCause, swift: error)
+                        return ParseHookResponse<String>(error: error)
+                    }
+                    return ParseHookResponse<String>(error: parseError)
+                }
+                ```
+            }
+        }
+    }
+    
+    @Section(title: "Querying with Primary Key") {
+        @ContentAndMedia {
+            Cloud Functions have access to the primary (master) key, allowing them to bypass ACLs and perform privileged operations.
+        }
+        
+        @Steps {
+            @Step {
+                Use the primary key to access all data regardless of ACLs.
+                
+                ```swift
+                // Query using the primary key to bypass ACLs
+                let allScores = try await GameScore.query.findAll(options: [.usePrimaryKey])
+                req.logger.info("All scores (bypassing ACLs): \(allScores)")
+                ```
+            }
+            
+            @Step {
+                You can also get server information using Cloud Functions.
+                
+                ```swift
+                // Get Parse Server version
+                guard let version = try await ParseServer.information().version else {
+                    let error = ParseError(code: .otherCause,
+                                           message: "Could not retrieve server information")
+                    return ParseHookResponse<String>(error: error)
+                }
+                return ParseHookResponse(success: "\(version)")
+                ```
+            }
+        }
+    }
+    
+    @Section(title: "Error Handling") {
+        @ContentAndMedia {
+            Properly handle and return errors to provide clear feedback to client applications.
+        }
+        
+        @Steps {
+            @Step {
+                Return standard Parse errors with custom messages.
+                
+                ```swift
+                // Standard Parse error
+                let error = ParseError(code: .invalidSessionToken,
+                                       message: "User must be signed in")
+                return ParseHookResponse<String>(error: error)
+                ```
+            }
+            
+            @Step {
+                Create custom errors with your own error codes.
+                
+                ```swift
+                // Custom error with unique code
+                let customError = ParseError(otherCode: 1001,
+                                            message: "My custom error message")
+                return ParseHookResponse<String>(error: customError)
+                ```
+            }
+            
+            @Step {
+                Convert Swift errors to Parse errors for consistency.
+                
+                ```swift
+                do {
+                    let result = try await somethingThatMightFail()
+                    return ParseHookResponse(success: result)
+                } catch {
+                    guard let parseError = error as? ParseError else {
+                        let error = ParseError(code: .otherCause, swift: error)
+                        return ParseHookResponse<String>(error: error)
+                    }
+                    return ParseHookResponse<String>(error: parseError)
+                }
+                ```
+            }
+        }
+    }
+    
+    @Section(title: "Calling Functions from Client Apps") {
+        @ContentAndMedia {
+            Once your Cloud Function is deployed, client applications can call it using the Parse SDK.
+        }
+        
+        @Steps {
+            @Step {
+                From iOS/macOS apps, call your function using Parse Swift SDK.
+                
+                ```swift
+                // Swift client code
+                do {
+                    let response: String = try await Cloud.runFunction(name: "hello")
+                    print("Response: \(response)") // "Hello world!"
+                } catch {
+                    print("Error calling function: \(error)")
+                }
+                ```
+                
+                For more examples, see the [Cloud Code Playground](https://github.com/netreconlab/Parse-Swift/blob/main/ParseSwift.playground/Pages/10%20-%20Cloud%20Code.xcplaygroundpage/Contents.swift).
+            }
+            
+            @Step {
+                Pass parameters to your function from the client.
+                
+                ```swift
+                // Swift client code with parameters
+                struct FooParameters: Codable {
+                    var foo: String?
+                    var bar: Int?
+                }
+                
+                let params = FooParameters(foo: "test", bar: 42)
+                let response: String = try await Cloud.runFunction(name: "hello", 
+                                                                   params: params)
+                ```
+            }
+        }
+    }
+}

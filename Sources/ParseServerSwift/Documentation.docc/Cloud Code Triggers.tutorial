@@ -1,0 +1,466 @@
+@Tutorial(time: 20) {
+    @Intro(title: "Cloud Code Triggers") {
+        Learn how to create Cloud Code Triggers in ParseServerSwift. Triggers allow you to run custom logic before or after database operations.
+        
+        Cloud Code Triggers are hooks that execute automatically when specific database operations occur. They are perfect for validation, data transformation, logging, and enforcing business rules.
+        
+        For more information on the Parse Swift SDK, see the [Parse Swift API documentation](https://swiftpackageindex.com/netreconlab/Parse-Swift/documentation) and [Parse Swift tutorials](https://netreconlab.github.io/Parse-Swift/release/tutorials/parseswift/).
+    }
+    
+    @Section(title: "Understanding Trigger Types") {
+        @ContentAndMedia {
+            ParseServerSwift supports various trigger types for different database operations. Each trigger type serves a specific purpose.
+        }
+        
+        @Steps {
+            @Step {
+                **beforeSave** triggers run before an object is saved. Use them for:
+                - Validating data
+                - Setting default values
+                - Transforming data before storage
+                - Rejecting invalid saves
+                
+                ```swift
+                app.post(
+                    "score",
+                    "save",
+                    "before",
+                    object: GameScore.self,
+                    trigger: .beforeSave
+                ) { req async throws -> ParseHookResponse<GameScore> in
+                    // Your validation logic here
+                }
+                ```
+            }
+            
+            @Step {
+                **afterSave**, **afterDelete**, **beforeDelete** triggers work similarly for their respective operations.
+                
+                **beforeFind** triggers can modify queries before execution.
+                
+                **afterFind** triggers can modify results after execution.
+                
+                **afterLogin** triggers run after user authentication.
+            }
+        }
+    }
+    
+    @Section(title: "Creating a beforeSave Trigger") {
+        @ContentAndMedia {
+            The beforeSave trigger is one of the most commonly used triggers. It validates and transforms data before it's saved to the database.
+        }
+        
+        @Steps {
+            @Step {
+                Create a basic beforeSave trigger for GameScore objects.
+                
+                ```swift
+                app.post(
+                    "score",
+                    "save",
+                    "before",
+                    object: GameScore.self,
+                    trigger: .beforeSave
+                ) { req async throws -> ParseHookResponse<GameScore> in
+                    // Check webhook key
+                    if let error: ParseHookResponse<GameScore> = checkHeaders(req) {
+                        return error
+                    }
+                    
+                    // Decode the trigger request
+                    var parseRequest = try req.content
+                        .decode(ParseHookTriggerObjectRequest<User, GameScore>.self)
+                    
+                    // Get the object being saved
+                    guard let object = parseRequest.object else {
+                        return ParseHookResponse(error: .init(code: .missingObjectId,
+                                                              message: "Object not sent in request."))
+                    }
+                    
+                    // Return the object to allow save
+                    return ParseHookResponse(success: object)
+                }
+                ```
+                
+                @Image(source: parse-swift.png, alt: "Parse image")
+            }
+            
+            @Step {
+                Access user information if the save was triggered by an authenticated user.
+                
+                ```swift
+                // Hydrate user if present
+                if parseRequest.user != nil {
+                    parseRequest = try await parseRequest.hydrateUser(request: req)
+                }
+                
+                // Log user information
+                if let user = parseRequest.user {
+                    req.logger.info("User \(user.objectId ?? "unknown") is saving a score")
+                }
+                ```
+            }
+            
+            @Step {
+                Validate the object data before allowing the save.
+                
+                ```swift
+                guard let object = parseRequest.object else {
+                    return ParseHookResponse(error: .init(code: .missingObjectId,
+                                                          message: "Object not sent in request."))
+                }
+                
+                // Validate points are within acceptable range
+                if let points = object.points, points < 0 {
+                    let error = ParseError(code: .validationError,
+                                           message: "Points cannot be negative")
+                    return ParseHookResponse<GameScore>(error: error)
+                }
+                
+                // Allow the save
+                return ParseHookResponse(success: object)
+                ```
+            }
+            
+            @Step {
+                You can also modify the object before it's saved.
+                
+                ```swift
+                var object = parseRequest.object!
+                
+                // Add a timestamp or modify data
+                // Note: Only modify if you have a mutable copy
+                
+                req.logger.info("Before save is being made: \(object)")
+                return ParseHookResponse(success: object)
+                ```
+            }
+        }
+    }
+    
+    @Section(title: "Creating a beforeFind Trigger") {
+        @ContentAndMedia {
+            The beforeFind trigger allows you to modify queries before they're executed or return custom results.
+        }
+        
+        @Steps {
+            @Step {
+                Create a beforeFind trigger that logs query information.
+                
+                ```swift
+                app.post(
+                    "score",
+                    "find",
+                    "before",
+                    object: GameScore.self,
+                    trigger: .beforeFind
+                ) { req async throws -> ParseHookResponse<[GameScore]> in
+                    if let error: ParseHookResponse<[GameScore]> = checkHeaders(req) {
+                        return error
+                    }
+                    
+                    let parseRequest = try req.content
+                        .decode(ParseHookTriggerObjectRequest<User, GameScore>.self)
+                    
+                    req.logger.info("A query is being made: \(parseRequest)")
+                    
+                    // Return empty array to let query proceed normally
+                    return ParseHookResponse(success: [])
+                }
+                ```
+            }
+            
+            @Step {
+                Return custom objects instead of executing the query. This is useful for caching or custom logic.
+                
+                ```swift
+                // Create custom scores to return
+                let score1 = GameScore(objectId: "yolo",
+                                       createdAt: Date(),
+                                       points: 50)
+                let score2 = GameScore(objectId: "nolo",
+                                       createdAt: Date(),
+                                       points: 60)
+                
+                req.logger.info("""
+                    Returning custom objects from Cloud Code instead of querying:
+                    \(score1); \(score2)
+                """)
+                
+                return ParseHookResponse(success: [score1, score2])
+                ```
+            }
+        }
+    }
+    
+    @Section(title: "Creating an afterLogin Trigger") {
+        @ContentAndMedia {
+            The afterLogin trigger runs after a user successfully authenticates. Use it for logging, analytics, or post-login setup.
+        }
+        
+        @Steps {
+            @Step {
+                Create an afterLogin trigger to log user logins.
+                
+                ```swift
+                app.post(
+                    "user",
+                    "login",
+                    "after",
+                    object: User.self,
+                    trigger: .afterLogin
+                ) { req async throws -> ParseHookResponse<Bool> in
+                    if let error: ParseHookResponse<Bool> = checkHeaders(req) {
+                        return error
+                    }
+                    
+                    let parseRequest = try req.content
+                        .decode(ParseHookTriggerObjectRequest<User, GameScore>.self)
+                    
+                    req.logger.info("A user has logged in: \(parseRequest)")
+                    
+                    // Return true to indicate success
+                    return ParseHookResponse(success: true)
+                }
+                ```
+            }
+            
+            @Step {
+                The `ParseHookResponse<Bool>` return type is standard for triggers that don't need to return data. Return `true` to indicate success or `false` to indicate failure.
+                
+                Triggers that return `Bool`:
+                - afterLogin
+                - afterSave  
+                - afterDelete
+                - beforeConnect (LiveQuery)
+                - beforeSubscribe (LiveQuery)
+                - afterEvent (LiveQuery)
+            }
+        }
+    }
+    
+    @Section(title: "Querying with Primary Key in Triggers") {
+        @ContentAndMedia {
+            Triggers have access to the primary key, allowing them to perform privileged operations.
+        }
+        
+        @Steps {
+            @Step {
+                Use the primary key to bypass ACLs and access all data.
+                
+                ```swift
+                // Query using primary key
+                let scores = try await GameScore.query.findAll(options: [.usePrimaryKey])
+                req.logger.info("All scores (bypassing ACLs): \(scores)")
+                ```
+            }
+            
+            @Step {
+                This is useful in beforeSave triggers for validation that requires checking existing data.
+                
+                ```swift
+                // Check if a score with these points already exists
+                let existingScores = try await GameScore.query
+                    .where("points" == object.points)
+                    .findAll(options: [.usePrimaryKey])
+                
+                if !existingScores.isEmpty {
+                    let error = ParseError(code: .duplicateValue,
+                                           message: "A score with these points already exists")
+                    return ParseHookResponse<GameScore>(error: error)
+                }
+                ```
+            }
+        }
+    }
+    
+    @Section(title: "Working with ParseFile Triggers") {
+        @ContentAndMedia {
+            Special triggers exist for ParseFile operations. These use a different syntax since ParseFile is not a ParseObject.
+        }
+        
+        @Steps {
+            @Step {
+                Create a beforeSave trigger for file uploads. Use `app.on()` instead of `app.post()` and specify `object: .file`.
+                
+                ```swift
+                app.on(
+                    "file",
+                    "save",
+                    "before",
+                    object: .file,
+                    trigger: .beforeSave
+                ) { req async throws -> ParseHookResponse<Bool> in
+                    if let error: ParseHookResponse<Bool> = checkHeaders(req) {
+                        return error
+                    }
+                    
+                    let parseRequest = try req.content
+                        .decode(ParseHookTriggerRequest<User>.self)
+                    
+                    req.logger.info("A ParseFile is being saved: \(parseRequest)")
+                    
+                    // Return true to allow save, false to reject
+                    return ParseHookResponse(success: true)
+                }
+                ```
+            }
+            
+            @Step {
+                Create a beforeDelete trigger for file deletions.
+                
+                ```swift
+                app.post(
+                    "file",
+                    "delete",
+                    "before",
+                    object: .file,
+                    trigger: .beforeDelete
+                ) { req async throws -> ParseHookResponse<Bool> in
+                    if let error: ParseHookResponse<Bool> = checkHeaders(req) {
+                        return error
+                    }
+                    
+                    let parseRequest = try req.content
+                        .decode(ParseHookTriggerRequest<User>.self)
+                    
+                    req.logger.info("A ParseFile is being deleted: \(parseRequest)")
+                    return ParseHookResponse(success: true)
+                }
+                ```
+            }
+            
+            @Step {
+                File triggers use `ParseHookTriggerRequest<User>` instead of `ParseHookTriggerObjectRequest` since there's no typed object for files. You can still access user information if the operation was performed by an authenticated user.
+            }
+        }
+    }
+    
+    @Section(title: "Working with LiveQuery Triggers") {
+        @ContentAndMedia {
+            LiveQuery triggers allow you to control and monitor real-time subscriptions.
+        }
+        
+        @Steps {
+            @Step {
+                Create a beforeConnect trigger that runs when clients connect to LiveQuery.
+                
+                ```swift
+                app.post(
+                    "connect",
+                    "before",
+                    object: .liveQueryConnect,
+                    trigger: .beforeConnect
+                ) { req async throws -> ParseHookResponse<Bool> in
+                    if let error: ParseHookResponse<Bool> = checkHeaders(req) {
+                        return error
+                    }
+                    
+                    let parseRequest = try req.content
+                        .decode(ParseHookTriggerRequest<User>.self)
+                    
+                    req.logger.info("A LiveQuery connection is being made: \(parseRequest)")
+                    
+                    // Return true to allow connection
+                    return ParseHookResponse(success: true)
+                }
+                ```
+            }
+            
+            @Step {
+                Create a beforeSubscribe trigger to control subscription attempts.
+                
+                ```swift
+                app.post(
+                    "score",
+                    "subscribe",
+                    "before",
+                    object: GameScore.self,
+                    trigger: .beforeSubscribe
+                ) { req async throws -> ParseHookResponse<Bool> in
+                    if let error: ParseHookResponse<Bool> = checkHeaders(req) {
+                        return error
+                    }
+                    
+                    let parseRequest = try req.content
+                        .decode(ParseHookTriggerObjectRequest<User, GameScore>.self)
+                    
+                    req.logger.info("A LiveQuery subscription is being made: \(parseRequest)")
+                    return ParseHookResponse(success: true)
+                }
+                ```
+            }
+            
+            @Step {
+                Create an afterEvent trigger to monitor LiveQuery events.
+                
+                ```swift
+                app.post(
+                    "score",
+                    "event",
+                    "after",
+                    object: GameScore.self,
+                    trigger: .afterEvent
+                ) { req async throws -> ParseHookResponse<Bool> in
+                    if let error: ParseHookResponse<Bool> = checkHeaders(req) {
+                        return error
+                    }
+                    
+                    let parseRequest = try req.content
+                        .decode(ParseHookTriggerObjectRequest<User, GameScore>.self)
+                    
+                    req.logger.info("A LiveQuery event occurred: \(parseRequest)")
+                    return ParseHookResponse(success: true)
+                }
+                ```
+            }
+        }
+    }
+    
+    @Section(title: "Best Practices") {
+        @ContentAndMedia {
+            Follow these best practices when working with triggers.
+        }
+        
+        @Steps {
+            @Step {
+                **Always check headers** for security. The `checkHeaders()` function validates the webhook key.
+                
+                ```swift
+                if let error: ParseHookResponse<YourType> = checkHeaders(req) {
+                    return error
+                }
+                ```
+            }
+            
+            @Step {
+                **Handle errors gracefully**. Return proper error responses instead of throwing exceptions.
+                
+                ```swift
+                guard let object = parseRequest.object else {
+                    return ParseHookResponse(error: .init(code: .missingObjectId,
+                                                          message: "Object not sent in request."))
+                }
+                ```
+            }
+            
+            @Step {
+                **Use logging** to track trigger execution. This helps with debugging.
+                
+                ```swift
+                req.logger.info("Trigger executed: \(parseRequest)")
+                ```
+            }
+            
+            @Step {
+                **Keep triggers fast**. Triggers run synchronously with database operations, so minimize processing time.
+                
+                For long-running tasks, return success quickly and use background jobs.
+            }
+            
+            @Step {
+                **Test thoroughly**. Triggers affect all database operations, so ensure they work correctly to avoid blocking legitimate operations.
+            }
+        }
+    }
+}
