@@ -5,6 +5,8 @@
         Cloud Code Triggers are hooks that execute automatically when specific database operations occur. They are perfect for validation, data transformation, logging, and enforcing business rules.
         
         For more information on the Parse Swift SDK, see the [Parse Swift API documentation](https://swiftpackageindex.com/netreconlab/Parse-Swift/documentation) and [Parse Swift tutorials](https://netreconlab.github.io/Parse-Swift/release/tutorials/parseswift/).
+		
+		@Image(source: chapter-server.png, alt: "Server with database schema grid and webhook arrows representing server-side operations")
     }
     
     @Section(title: "Understanding Trigger Types") {
@@ -81,8 +83,6 @@
                     return ParseHookResponse(success: object)
                 }
                 ```
-                
-                @Image(source: parse-swift.png, alt: "Parse image")
             }
             
             @Step {
