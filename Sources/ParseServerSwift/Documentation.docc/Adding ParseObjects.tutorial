@@ -40,28 +40,13 @@
             @Step {
                 Add the `merge` method to handle updates correctly:
                 
-                ```swift
-                struct GameScore: ParseObject {
-                    // ... required properties
-                    var points: Int?
-                
-                    // Implement merge for proper updates
-                    func merge(with object: Self) throws -> Self {
-                        var updated = try mergeParse(with: object)
-                        if updated.shouldRestoreKey(\.points,
-                                                     original: object) {
-                            updated.points = object.points
-                        }
-                        return updated
-                    }
-                }
-                ```
+                @Code(name: "gamescore-with-merge.swift", file: gamescore-with-merge.swift)
                 
                 The `merge` method ensures your custom properties are properly handled during updates.
             }
             
             @Step {
-                You can add as many custom properties as you need.ååå
+                You can add as many custom properties as you need.
             }
         }
     }
@@ -83,17 +68,7 @@
             @Step {
                 Add any custom properties your application needs:
                 
-                ```swift
-                struct User: ParseCloudUser {
-                    // Required properties...
-                    
-                    // Custom properties
-                    var displayName: String?
-                    var profilePicture: ParseFile?
-                    var level: Int?
-                    var lastLogin: Date?
-                }
-                ```
+                @Code(name: "user-custom-properties.swift", file: user-custom-properties.swift)
             }
             
             @Step {
@@ -111,61 +86,19 @@
             @Step {
                 **Pointer**: A one-to-one relationship. Add a property of another ParseObject type:
                 
-                ```swift
-                struct Post: ParseObject {
-                    var objectId: String?
-                    var createdAt: Date?
-                    var updatedAt: Date?
-                    var ACL: ParseACL?
-                    var originalData: Data?
-                    
-                    var title: String?
-                    var content: String?
-                    var author: User?  // Pointer to User
-                    
-                    func merge(with object: Self) throws -> Self {
-                        var updated = try mergeParse(with: object)
-                        if updated.shouldRestoreKey(\.title, original: object) {
-                            updated.title = object.title
-                        }
-                        if updated.shouldRestoreKey(\.content, original: object) {
-                            updated.content = object.content
-                        }
-                        if updated.shouldRestoreKey(\.author, original: object) {
-                            updated.author = object.author
-                        }
-                        return updated
-                    }
-                }
-                ```
+                @Code(name: "post-with-pointer.swift", file: post-with-pointer.swift)
             }
             
             @Step {
                 **Array**: A one-to-many relationship using an array of ParseObjects:
                 
-                ```swift
-                struct Post: ParseObject {
-                    // ... other properties
-                    
-                    var tags: [Tag]?  // Array of Tag objects
-                    var relatedPosts: [Post]?  // Array of other Posts
-                }
-                ```
+                @Code(name: "post-with-arrays.swift", file: post-with-arrays.swift)
             }
             
             @Step {
                 **Relation**: Use ParseRelation for large collections:
                 
-                ```swift
-                import ParseSwift
-                
-                struct User: ParseCloudUser {
-                    // ... required properties
-                    
-                    var friends: ParseRelation<User>?  // Many-to-many
-                    var followers: ParseRelation<User>?
-                }
-                ```
+                @Code(name: "user-with-relations.swift", file: user-with-relations.swift)
                 
                 Relations are more efficient for large collections compared to arrays.
             }
@@ -181,37 +114,7 @@
             @Step {
                 Add ParseFile properties to store files:
                 
-                ```swift
-                struct Profile: ParseObject {
-                    var objectId: String?
-                    var createdAt: Date?
-                    var updatedAt: Date?
-                    var ACL: ParseACL?
-                    var originalData: Data?
-                    
-                    var user: User?
-                    var profilePicture: ParseFile?
-                    var coverPhoto: ParseFile?
-                    var documents: [ParseFile]?
-                    
-                    func merge(with object: Self) throws -> Self {
-                        var updated = try mergeParse(with: object)
-                        if updated.shouldRestoreKey(\.user, original: object) {
-                            updated.user = object.user
-                        }
-                        if updated.shouldRestoreKey(\.profilePicture, original: object) {
-                            updated.profilePicture = object.profilePicture
-                        }
-                        if updated.shouldRestoreKey(\.coverPhoto, original: object) {
-                            updated.coverPhoto = object.coverPhoto
-                        }
-                        if updated.shouldRestoreKey(\.documents, original: object) {
-                            updated.documents = object.documents
-                        }
-                        return updated
-                    }
-                }
-                ```
+                @Code(name: "profile-with-files.swift", file: profile-with-files.swift)
             }
         }
     }
@@ -225,40 +128,7 @@
             @Step {
                 Use CodingKeys to map property names:
                 
-                ```swift
-                struct GameScore: ParseObject {
-                    var objectId: String?
-                    var createdAt: Date?
-                    var updatedAt: Date?
-                    var ACL: ParseACL?
-                    var originalData: Data?
-                    
-                    var points: Int?
-                    var playerName: String?
-                    
-                    // Map Swift names to database names
-                    enum CodingKeys: String, CodingKey {
-                        case objectId
-                        case createdAt
-                        case updatedAt
-                        case ACL
-                        case originalData
-                        case points
-                        case playerName = "player_name"  // Database uses snake_case
-                    }
-                    
-                    func merge(with object: Self) throws -> Self {
-                        var updated = try mergeParse(with: object)
-                        if updated.shouldRestoreKey(\.points, original: object) {
-                            updated.points = object.points
-                        }
-                        if updated.shouldRestoreKey(\.playerName, original: object) {
-                            updated.playerName = object.playerName
-                        }
-                        return updated
-                    }
-                }
-                ```
+                @Code(name: "gamescore-with-codingkeys.swift", file: gamescore-with-codingkeys.swift)
             }
         }
     }
@@ -292,18 +162,7 @@
                 
                 Keep separate User models or use conditional compilation:
                 
-                ```swift
-                #if canImport(Vapor)
-                import Vapor
-                typealias UserBase = ParseCloudUser
-                #else
-                typealias UserBase = ParseUser
-                #endif
-                
-                struct User: UserBase {
-                    // ... properties
-                }
-                ```
+                @Code(name: "user-conditional-compilation.swift", file: user-conditional-compilation.swift)
             }
         }
     }
