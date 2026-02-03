@@ -1,20 +1,27 @@
 @Tutorials(name: "ParseServerSwift") {
     @Intro(title: "Welcome to ParseServerSwift") {
+        Learn how to write Parse Cloud Code in Swift using ParseServerSwift! These tutorials will guide you through configuration, creating models, and implementing Cloud Code Functions and Triggers.
         
+        For more information, see the: [Parse-Server-Swift API Documentation](https://swiftpackageindex.com/netreconlab/parse-server-swift/documentation), [Parse-Swift API documentation](https://swiftpackageindex.com/netreconlab/Parse-Swift/documentation), and [Parse-Swift tutorials](https://netreconlab.github.io/Parse-Swift/release/tutorials/parseswift/).
+		
+		@Image(source: parse-logo.png, alt: "Parse logo")
     }
     
-    @Chapter(name: "Configuring Parse Server Swift") {
-        @Image(source: parse-swift.png, alt: "Parse image")
-        @TutorialReference(tutorial: "doc:configuring-parse-server-swift")
-    }
-
-    @Chapter(name: "Adding ParseObjects") {
-        @Image(source: parse-swift.png, alt: "Parse image")
-        @TutorialReference(tutorial: "doc:adding-parseobjects)
+    @Chapter(name: "Getting Started") {
+		@Image(source: chapter-getting-started.png, alt: "Foundation building blocks representing ParseObjects as the foundation of data storage")
+        
+        Get your ParseServerSwift server up and running.
+        
+        @TutorialReference(tutorial: "doc:Configuring-Parse-Server-Swift")
+        @TutorialReference(tutorial: "doc:Adding-ParseObjects")
     }
 
     @Chapter(name: "Cloud Code") {
-        @Image(source: parse-swift.png, alt: "Parse image")
-        @TutorialReference(tutorial: "doc:cloud-code")
+		@Image(source: chapter-server.png, alt: "Server with database schema grid and webhook arrows representing server-side operations")
+        
+        Learn how to create Cloud Code Functions and Triggers to add server-side logic to your application.
+        
+        @TutorialReference(tutorial: "doc:Cloud-Code-Functions")
+        @TutorialReference(tutorial: "doc:Cloud-Code-Triggers")
     }
 }

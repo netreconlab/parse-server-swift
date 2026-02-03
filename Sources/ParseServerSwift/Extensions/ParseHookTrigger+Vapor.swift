@@ -157,7 +157,7 @@ public extension ParseHookTrigger {
      Defaults to the set of servers added during configuration.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     - note: Will attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func fetch<V: ParseObject>(
@@ -183,7 +183,7 @@ public extension ParseHookTrigger {
      Defaults to the set of servers added during configuration.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     - note: Will attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func fetch(
@@ -209,7 +209,7 @@ public extension ParseHookTrigger {
 	 Defaults to the set of servers added during configuration.
 	 - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
 	 - throws: An error of `ParseError` type.
-	 - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+	 - note: Will attempt to create triggers on all `parseServerURLStrings`.
 	 Will log an error for each `parseServerURLString` that returns an error.
 	 */
 	static func fetch(
@@ -235,7 +235,7 @@ public extension ParseHookTrigger {
      Defaults to the set of servers added during configuration.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     - note: Will attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func fetch<V: ParseObject>(
@@ -262,7 +262,7 @@ public extension ParseHookTrigger {
      Defaults to the set of servers added during configuration.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     - note: Will attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func fetch(
@@ -289,7 +289,7 @@ public extension ParseHookTrigger {
      Defaults to the set of servers added during configuration.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     - note: Will attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func fetch(
@@ -310,13 +310,13 @@ public extension ParseHookTrigger {
     /**
      Fetch all Parse Cloud Code hook trigger.
      - parameter path: A variadic list of paths.
-     - parameter className: The name of the `ParseObject` the trigger should act on.
+     - parameter object: The `ParseObject` the trigger should act on.
      - parameter trigger: The `ParseHookTriggerType` type.
      - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
      Defaults to the set of servers added during configuration.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`'s.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     - note: Will attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func fetchAll<V: ParseObject>(
@@ -342,7 +342,7 @@ public extension ParseHookTrigger {
      Defaults to the set of servers added during configuration.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`'s.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     - note: Will attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func fetchAll(
@@ -368,7 +368,7 @@ public extension ParseHookTrigger {
 	 Defaults to the set of servers added during configuration.
 	 - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`'s.
 	 - throws: An error of `ParseError` type.
-	 - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+	 - note: Will attempt to create triggers on all `parseServerURLStrings`.
 	 Will log an error for each `parseServerURLString` that returns an error.
 	 */
 	static func fetchAll(
@@ -394,7 +394,7 @@ public extension ParseHookTrigger {
      Defaults to the set of servers added during configuration.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`'s.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     - note: Will attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func fetchAll<V: ParseObject>(
@@ -420,7 +420,7 @@ public extension ParseHookTrigger {
      Defaults to the set of servers added during configuration.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`'s.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     - note: Will attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func fetchAll(
@@ -458,7 +458,7 @@ public extension ParseHookTrigger {
      Defaults to the set of servers added during configuration.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`'s.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     - note: Will attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func fetchAll(
@@ -500,7 +500,7 @@ public extension ParseHookTrigger {
      Defaults to the set of servers added during configuration.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     - note: Will attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func create<V: ParseObject>(
@@ -526,7 +526,7 @@ public extension ParseHookTrigger {
      Defaults to the set of servers added during configuration.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     - note: Will attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func create(
@@ -552,7 +552,7 @@ public extension ParseHookTrigger {
 	 Defaults to the set of servers added during configuration.
 	 - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
 	 - throws: An error of `ParseError` type.
-	 - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+	 - note: Will attempt to create triggers on all `parseServerURLStrings`.
 	 Will log an error for each `parseServerURLString` that returns an error.
 	 */
 	static func create(
@@ -578,7 +578,7 @@ public extension ParseHookTrigger {
      Defaults to the set of servers added during configuration.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     - note: Will attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func create<V: ParseObject>(
@@ -605,7 +605,7 @@ public extension ParseHookTrigger {
      Defaults to the set of servers added during configuration.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     - note: Will attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func create(
@@ -632,7 +632,7 @@ public extension ParseHookTrigger {
      Defaults to the set of servers added during configuration.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     - note: Will attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func create(
@@ -663,7 +663,7 @@ public extension ParseHookTrigger {
      Defaults to the set of servers added during configuration.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     - note: Will attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func update<V: ParseObject>(
@@ -689,7 +689,7 @@ public extension ParseHookTrigger {
      Defaults to the set of servers added during configuration.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     - note: Will attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func update(
@@ -715,7 +715,7 @@ public extension ParseHookTrigger {
 	 Defaults to the set of servers added during configuration.
 	 - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
 	 - throws: An error of `ParseError` type.
-	 - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+	 - note: Will attempt to create triggers on all `parseServerURLStrings`.
 	 Will log an error for each `parseServerURLString` that returns an error.
 	 */
 	static func update(
@@ -741,7 +741,7 @@ public extension ParseHookTrigger {
      Defaults to the set of servers added during configuration.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     - note: Will attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func update<V: ParseObject>(
@@ -768,7 +768,7 @@ public extension ParseHookTrigger {
      Defaults to the set of servers added during configuration.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     - note: Will attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func update(
@@ -795,7 +795,7 @@ public extension ParseHookTrigger {
      Defaults to the set of servers added during configuration.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookTrigger`.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     - note: Will attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func update(
@@ -825,7 +825,7 @@ public extension ParseHookTrigger {
      - parameter parseServerURLStrings: A set of Parse Server `URL`'s to delete triggers for.
      Defaults to the set of servers added during configuration.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     - note: Will attempt to delete triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func delete<V: ParseObject>(
@@ -850,7 +850,7 @@ public extension ParseHookTrigger {
      - parameter parseServerURLStrings: A set of Parse Server `URL`'s to delete triggers for.
      Defaults to the set of servers added during configuration.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     - note: Will attempt to delete triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func delete(
@@ -875,7 +875,7 @@ public extension ParseHookTrigger {
 	 - parameter parseServerURLStrings: A set of Parse Server `URL`'s to delete triggers for.
 	 Defaults to the set of servers added during configuration.
 	 - throws: An error of `ParseError` type.
-	 - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+	 - note: Will attempt to delete triggers on all `parseServerURLStrings`.
 	 Will log an error for each `parseServerURLString` that returns an error.
 	 */
 	static func delete(
@@ -900,7 +900,7 @@ public extension ParseHookTrigger {
      - parameter parseServerURLStrings: A set of Parse Server `URL`'s to delete triggers for.
      Defaults to the set of servers added during configuration.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     - note: Will attempt to delete triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func delete<V: ParseObject>(
@@ -926,7 +926,7 @@ public extension ParseHookTrigger {
      - parameter parseServerURLStrings: A set of Parse Server `URL`'s to delete triggers for.
      Defaults to the set of servers added during configuration.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     - note: Will attempt to delete triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func delete(
@@ -952,7 +952,7 @@ public extension ParseHookTrigger {
      - parameter parseServerURLStrings: A set of Parse Server `URL`'s to delete triggers for.
      Defaults to the set of servers added during configuration.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     - note: Will attempt to delete triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func delete(
@@ -979,10 +979,7 @@ public extension RoutesBuilder {
      - parameter path: A variadic list of paths.
      - parameter object: The type of `ParseObject` the trigger should act on.
      - parameter trigger: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
-     - parameter hooks: An actor containing all of the current Hooks.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
-     Will log an error for each `parseServerURLString` that returns an error.
+     - parameter closure: A closure that takes as input an HTTP `Request` and returns a `Response`.
      */
     @discardableResult
     func post<Response, V>(
@@ -1005,9 +1002,8 @@ public extension RoutesBuilder {
      - parameter path: A variadic list of paths.
      - parameter className: The name of the `ParseObject` the trigger should act on.
      - parameter trigger: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
-     - parameter hooks: An actor containing all of the current Hooks.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
+     - parameter closure: A closure that takes as input an HTTP `Request` and returns a `Response`.
+     - note: Will attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     @discardableResult
@@ -1031,10 +1027,7 @@ public extension RoutesBuilder {
 	 - parameter path: A variadic list of paths.
 	 - parameter object: The `ParseHookTriggerObject` the trigger should act on.
 	 - parameter trigger: The `ParseHookTriggerType` type.
-	 - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
-	 - parameter hooks: An actor containing all of the current Hooks.
-	 - note: WIll attempt to create triggers on all `parseServerURLStrings`.
-	 Will log an error for each `parseServerURLString` that returns an error.
+	 - parameter closure: A closure that takes as input an HTTP `Request` and returns a `Response`.
 	 */
 	@discardableResult
 	func post<Response>(
@@ -1054,14 +1047,10 @@ public extension RoutesBuilder {
 
     /**
      Creates a new route for a Parse Cloud Code hook trigger.
-     - parameter method: The method to use for the route.
      - parameter path: An array of paths.
      - parameter object: The type of `ParseObject` the trigger should act on.
      - parameter trigger: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
-     - parameter hooks: An actor containing all of the current Hooks.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
-     Will log an error for each `parseServerURLString` that returns an error.
+     - parameter closure: A closure that takes as input an HTTP `Request` and returns a `Response`.
      */
     @discardableResult
     func post<Response, V>(
@@ -1081,14 +1070,10 @@ public extension RoutesBuilder {
 
     /**
      Creates a new route for a Parse Cloud Code hook trigger.
-     - parameter method: The method to use for the route.
      - parameter path: An array of paths.
      - parameter className: The name of the `ParseObject` the trigger should act on.
      - parameter trigger: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
-     - parameter hooks: An actor containing all of the current Hooks.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
-     Will log an error for each `parseServerURLString` that returns an error.
+     - parameter closure: A closure that takes as input an HTTP `Request` and returns a `Response`.
      */
     @discardableResult
     func post<Response>(
@@ -1107,14 +1092,10 @@ public extension RoutesBuilder {
 
     /**
      Creates a new route for a Parse Cloud Code hook trigger.
-     - parameter method: The method to use for the route.
      - parameter path: An array of paths.
      - parameter object: The `ParseHookTriggerObject` the trigger should act on.
      - parameter trigger: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
-     - parameter hooks: An actor containing all of the current Hooks.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
-     Will log an error for each `parseServerURLString` that returns an error.
+     - parameter closure: A closure that takes as input an HTTP `Request` and returns a `Response`.
      */
     @discardableResult
     func post<Response>(
@@ -1137,10 +1118,7 @@ public extension RoutesBuilder {
      - parameter body: Determines how an incoming HTTP request’s body is collected.
      - parameter object: The type of `ParseObject` the trigger should act on.
      - parameter trigger: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
-     - parameter hooks: An actor containing all of the current Hooks.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
-     Will log an error for each `parseServerURLString` that returns an error.
+     - parameter closure: A closure that takes as input an HTTP `Request` and returns a `Response`.
      */
     @discardableResult
     func on<Response, V>(
@@ -1166,10 +1144,7 @@ public extension RoutesBuilder {
      - parameter body: Determines how an incoming HTTP request’s body is collected.
      - parameter className: The name of the `ParseObject` the trigger should act on.
      - parameter trigger: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
-     - parameter hooks: An actor containing all of the current Hooks.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
-     Will log an error for each `parseServerURLString` that returns an error.
+     - parameter closure: A closure that takes as input an HTTP `Request` and returns a `Response`.
      */
     @discardableResult
     func on<Response>(
@@ -1194,10 +1169,7 @@ public extension RoutesBuilder {
 	 - parameter body: Determines how an incoming HTTP request’s body is collected.
 	 - parameter object: The `ParseHookTriggerObject` the trigger should act on.
 	 - parameter trigger: The `ParseHookTriggerType` type.
-	 - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
-	 - parameter hooks: An actor containing all of the current Hooks.
-	 - note: WIll attempt to create triggers on all `parseServerURLStrings`.
-	 Will log an error for each `parseServerURLString` that returns an error.
+	 - parameter closure: A closure that takes as input an HTTP `Request` and returns a `Response`.
 	 */
 	@discardableResult
 	func on<Response>(
@@ -1222,10 +1194,7 @@ public extension RoutesBuilder {
      - parameter body: Determines how an incoming HTTP request’s body is collected.
      - parameter object: The type of `ParseObject` the trigger should act on.
      - parameter trigger: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
-     - parameter hooks: An actor containing all of the current Hooks.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
-     Will log an error for each `parseServerURLString` that returns an error.
+     - parameter closure: A closure that takes as input an HTTP `Request` and returns a `Response`.
      */
     @discardableResult
     func on<Response, V>(
@@ -1259,10 +1228,7 @@ public extension RoutesBuilder {
      - parameter body: Determines how an incoming HTTP request’s body is collected.
      - parameter className: The name of the `ParseObject` the trigger should act on.
      - parameter trigger: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
-     - parameter hooks: An actor containing all of the current Hooks.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
-     Will log an error for each `parseServerURLString` that returns an error.
+     - parameter closure: A closure that takes as input an HTTP `Request` and returns a `Response`.
      */
     @discardableResult
     func on<Response>(
@@ -1296,10 +1262,7 @@ public extension RoutesBuilder {
      - parameter body: Determines how an incoming HTTP request’s body is collected.
      - parameter object: The `ParseHookTriggerObject` the trigger should act on.
      - parameter trigger: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
-     - parameter hooks: An actor containing all of the current Hooks.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
-     Will log an error for each `parseServerURLString` that returns an error.
+     - parameter closure: A closure that takes as input an HTTP `Request` and returns a `Response`.
      */
     @discardableResult
     func on<Response>(

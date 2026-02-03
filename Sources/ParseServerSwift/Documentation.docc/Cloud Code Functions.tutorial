@@ -1,0 +1,159 @@
+@Tutorial(time: 15) {
+    @Intro(title: "Cloud Code Functions") {
+        Learn how to create Cloud Code Functions in ParseServerSwift. Functions allow you to run custom server-side logic that can be called from client applications.
+        
+        Cloud Code Functions are custom endpoints that you define on your server which can be called from client applications using the Parse SDK. They are perfect for operations that need to be secure, require server-side logic, or need access to the primary key.
+        
+		For more information, see the: [Parse-Server-Swift API Documentation](https://swiftpackageindex.com/netreconlab/parse-server-swift/documentation), [Parse-Swift API documentation](https://swiftpackageindex.com/netreconlab/Parse-Swift/documentation), and [Parse-Swift tutorials](https://netreconlab.github.io/Parse-Swift/release/tutorials/parseswift/).
+		
+		@Image(source: chapter-server.png, alt: "Server with database schema grid and webhook arrows representing server-side operations")
+    }
+    
+    @Section(title: "Creating a Simple Cloud Function") {
+        @ContentAndMedia {
+            The most basic Cloud Function returns a simple response. This example demonstrates the fundamental structure of a Cloud Function route.
+        }
+        
+        @Steps {
+            @Step {
+                Create a simple "Hello World" function. All Cloud Functions should check headers for security using `checkHeaders(req)`.
+                
+                @Code(name: "hello-function-01.swift", file: hello-function-01.swift)
+            }
+            
+            @Step {
+                The `ParseHookResponse<String>` type indicates this function will return a String on success. The type parameter can be any `Codable` type.
+                
+                @Code(name: "response-types-examples.swift", file: response-types-examples.swift)
+            }
+        }
+    }
+    
+    @Section(title: "Working with User Context") {
+        @ContentAndMedia {
+            Cloud Functions can access information about the user making the request and perform operations on their behalf.
+        }
+        
+        @Steps {
+            @Step {
+                When a user calls a Cloud Function, you can access their information and use their credentials for queries.
+                
+                @Code(name: "hello-function-02.swift", file: hello-function-02.swift)
+            }
+            
+            @Step {
+                Use the user's credentials to query data they have access to. The `options()` method provides the user's session token.
+                
+                @Code(name: "query-with-user-credentials.swift", file: query-with-user-credentials.swift)
+            }
+        }
+    }
+    
+    @Section(title: "Handling Function Parameters") {
+        @ContentAndMedia {
+            Cloud Functions can accept custom parameters from client applications. Parameters should be defined as Codable structs.
+        }
+        
+        @Steps {
+            @Step {
+                Define your parameters in a separate file. It's recommended to place parameters in `Models/Parameters/`.
+                
+                @Code(name: "FooParameters.swift", file: FooParameters.swift)
+            }
+            
+            @Step {
+                Access the parameters from your function request.
+                
+                @Code(name: "access-parameters.swift", file: access-parameters.swift)
+            }
+        }
+    }
+    
+    @Section(title: "Requiring Authentication") {
+        @ContentAndMedia {
+            Some Cloud Functions should only be accessible to authenticated users. Learn how to enforce authentication requirements.
+        }
+        
+        @Steps {
+            @Step {
+                Check if a user is present and validate their session.
+                
+                @Code(name: "require-authentication.swift", file: require-authentication.swift)
+            }
+            
+            @Step {
+                Validate the user's session token by hydrating the user. This ensures their session is still valid.
+                
+                @Code(name: "validate-session.swift", file: validate-session.swift)
+            }
+        }
+    }
+    
+    @Section(title: "Querying with Primary Key") {
+        @ContentAndMedia {
+            Cloud Functions have access to the primary (master) key, allowing them to bypass ACLs and perform privileged operations.
+        }
+        
+        @Steps {
+            @Step {
+                Use the primary key to access all data regardless of ACLs.
+                
+                @Code(name: "query-primary-key.swift", file: query-primary-key.swift)
+            }
+            
+            @Step {
+                You can also get server information using Cloud Functions.
+                
+                @Code(name: "get-server-version.swift", file: get-server-version.swift)
+            }
+        }
+    }
+    
+    @Section(title: "Error Handling") {
+        @ContentAndMedia {
+            Properly handle and return errors to provide clear feedback to client applications.
+        }
+        
+        @Steps {
+            @Step {
+                Return standard Parse errors with custom messages.
+                
+                @Code(name: "standard-error.swift", file: standard-error.swift)
+            }
+            
+            @Step {
+                Create custom errors with your own error codes.
+                
+                @Code(name: "custom-error.swift", file: custom-error.swift)
+            }
+            
+            @Step {
+                Convert Swift errors to Parse errors for consistency.
+                
+                @Code(name: "convert-errors.swift", file: convert-errors.swift)
+            }
+        }
+    }
+    
+    @Section(title: "Calling Functions from Client Apps") {
+        @ContentAndMedia {
+            Once your Cloud Function is deployed, client applications can call it using the Parse SDK.
+        }
+        
+        @Steps {
+            @Step {
+                From iOS/macOS apps, call your function using Parse Swift SDK.
+                
+                @Code(name: "client-call-function.swift", file: client-call-function.swift)
+                
+                For more examples, see the [Cloud Code Playground](https://github.com/netreconlab/Parse-Swift/blob/main/ParseSwift.playground/Pages/10%20-%20Cloud%20Code.xcplaygroundpage/Contents.swift).
+            }
+            
+            @Step {
+                Pass parameters to your function from the client.
+                
+                @Code(name: "client-call-with-params.swift", file: client-call-with-params.swift)
+            }
+        }
+    }
+}

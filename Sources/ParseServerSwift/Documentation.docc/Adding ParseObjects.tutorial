@@ -1,21 +1,164 @@
-@Tutorial(time: 3) {
+@Tutorial(time: 10) {
     @Intro(title: "Adding ParseObjects") {
-        The ParseObject models in your server should mirror the same models in your client applications.
+        Learn how to create and configure ParseObject models for your ParseServerSwift application.
+        
+        ParseObject models in your server should mirror the same models in your client applications. This ensures consistency and allows you to share code between client and server.
+        
+        For more information on creating ParseObjects, see the [Parse Swift API documentation](https://swiftpackageindex.com/netreconlab/Parse-Swift/documentation/parseswift/parseobject) and [Parse Swift tutorials](https://netreconlab.github.io/Parse-Swift/release/tutorials/parseswift/).
+		
+		@Image(source: chapter-getting-started.png, alt: "Foundation building blocks representing ParseObjects as the foundation of data storage")
     }
     
-    @Section(title: "Example Models") {
+    @Section(title: "Understanding ParseObjects") {
+        @ContentAndMedia {
+            ParseObjects are Swift structs that conform to the ParseObject protocol. They represent data stored in your Parse Server database.
+        }
+        
         @Steps {
             @Step {
-                It is recommended to add all of your `ParseObject`'s to [ParseServerSwift/Sources/ParseServerSwift/Models](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/Models).
+                Every ParseObject must have these required properties:
                 
-                @Code(name: "GameScore Model", file: GameScore.swift)
+                @Code(name: "parseobject-required-properties.swift", file: parseobject-required-properties.swift)
             }
             
             @Step {
-                Be sure to add all of the additional properties you have in your `_User` class to the `User` model which is located at [ParseServerSwift/Sources/ParseServerSwift/Models/User.swift](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/Models/User.swift).
+                It's recommended to add all of your `ParseObject` models to the `Models` directory - `Sources/ParseServerSwift/Models/`
+            }
+        }
+    }
+    
+    @Section(title: "Creating a Basic ParseObject") {
+        @ContentAndMedia {
+            Let's create a GameScore model to track player scores in a game.
+        }
+        
+        @Steps {
+            @Step {
+                Create a new Swift file `GameScore.swift` in the Models directory. This struct conforms to `ParseObject` protocol and includes all required properties.
                 
-                @Code(name: "User Model", file: GameScore.swift)
+                @Code(name: "GameScore.swift", file: GameScore.swift)
+            }
+            
+            @Step {
+                Add the `merge` method to handle updates correctly:
+                
+                @Code(name: "gamescore-with-merge.swift", file: gamescore-with-merge.swift)
+                
+                The `merge` method ensures your custom properties are properly handled during updates.
+            }
+            
+            @Step {
+                You can add as many custom properties as you need.
+                
+                @Code(name: "gamescore-many-properties.swift", file: gamescore-many-properties.swift)
+            }
+        }
+    }
+    
+    @Section(title: "Creating the User Model") {
+        @ContentAndMedia {
+            The User model is special because it represents authenticated users and must conform to ParseCloudUser on the server.
+        }
+        
+        @Steps {
+            @Step {
+                The `ParseUser` in `ParseServerSwift` should conform to `ParseCloudUser` instead of `ParseUser`. This is because `ParseCloudUser` contains additional server-side properties.
+                
+                **Important**: On client apps, always use `ParseUser`, not `ParseCloudUser`.
+                
+                @Code(name: "User.swift", file: User.swift)
+            }
+            
+            @Step {
+                Add any custom properties your application needs:
+                
+                @Code(name: "user-custom-properties.swift", file: user-custom-properties.swift)
+            }
+            
+            @Step {
+                Be sure to add all additional properties you have in your `_User` class on Parse Server. The server-side model should match your database schema exactly.
+                
+                @Code(name: "user-match-schema.swift", file: user-match-schema.swift)
+            }
+        }
+    }
+    
+    @Section(title: "Working with Relationships") {
+        @ContentAndMedia {
+            ParseObjects can have relationships with other ParseObjects using pointers and relations.
+        }
+        
+        @Steps {
+            @Step {
+                **Pointer**: A one-to-one relationship. Add a property of another ParseObject type:
+                
+                @Code(name: "post-with-pointer.swift", file: post-with-pointer.swift)
+            }
+            
+            @Step {
+                **Array**: A one-to-many relationship using an array of ParseObjects:
+                
+                @Code(name: "post-with-arrays.swift", file: post-with-arrays.swift)
+            }
+            
+            @Step {
+                **Relation**: Use ParseRelation for large collections:
+                
+                @Code(name: "user-with-relations.swift", file: user-with-relations.swift)
+                
+                Relations are more efficient for large collections compared to arrays.
+            }
+        }
+    }
+    
+    @Section(title: "Using ParseFile") {
+        @ContentAndMedia {
+            ParseFile allows you to store files associated with your ParseObjects.
+        }
+        
+        @Steps {
+            @Step {
+                Add ParseFile properties to store files:
+                
+                @Code(name: "profile-with-files.swift", file: profile-with-files.swift)
+            }
+        }
+    }
+    
+    @Section(title: "Advanced: Custom Codable Keys") {
+        @ContentAndMedia {
+            If your database uses different naming conventions, you can map Swift property names to database column names.
+        }
+        
+        @Steps {
+            @Step {
+                Use CodingKeys to map property names:
+                
+                @Code(name: "gamescore-with-codingkeys.swift", file: gamescore-with-codingkeys.swift)
+            }
+        }
+    }
+    
+    @Section(title: "Sharing Models Between Client and Server") {
+        @ContentAndMedia {
+            To reduce code duplication, share ParseObject models between your client apps and ParseServerSwift.
+        }
+        
+        @Steps {
+            @Step {
+                Create a Swift Package with your shared models to use in both client and server:
+                
+                @Code(name: "shared-package-structure.swift", file: shared-package-structure.swift)
+                
+                Learn more in [Apple's WWDC session on server-side Swift](https://developer.apple.com/videos/play/wwdc2022/110360/).
+            }
+            
+            @Step {
+                **Important**: The User model is different: Server uses `ParseCloudUser` (in ParseServerSwift); Client uses `ParseUser` (in iOS/macOS apps); Keep separate User models or use conditional compilation.
+                
+                @Code(name: "user-conditional-compilation.swift", file: user-conditional-compilation.swift)
             }
         }
     }
 }
+
