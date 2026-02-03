@@ -165,7 +165,7 @@ public func configure(_ app: Application) async throws {
 `ParseServerSwift` is optimized to run in Docker containers. A sample [docker-compose.yml](https://github.com/netreconlab/parse-server-swift/blob/main/docker-compose.yml) demonstrates how to quickly spin up one (1) `ParseServerSwift` server with one (1) [parse-hipaa](https://github.com/netreconlab/parse-hipaa) servers and (1) [hipaa-postgres](https://github.com/netreconlab/hipaa-postgres) database.
 
 ### In Docker
-`ParseSwift` depends on `FoundationNetworking` when it is not built on Apple Platforms. Be sure to add the [following lines](https://github.com/netreconlab/parse-server-swift/blob/e7dbb85e60a9d40d67425dd10d50235cf63f7bae/Dockerfile#L54) to your Dockerfile release stage when building your own projects with `ParseServerSwift`.
+`ParseSwift` depends on `FoundationNetworking` when it is not built on Apple Platforms. Be sure to add the [following line](https://github.com/netreconlab/parse-server-swift/blob/608b6cbbbbe4d8e24d3de0a5c8fed0b78410d478/Dockerfile#L64) to your Dockerfile release stage when building your own projects with `ParseServerSwift`.
 1. Fork this repo
 2. In your terminal, change directories into `ParseServerSwift` folder
 3. Type `docker-compose up`
