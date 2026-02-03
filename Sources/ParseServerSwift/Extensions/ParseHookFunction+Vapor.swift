@@ -273,10 +273,7 @@ public extension RoutesBuilder {
      Creates a new route for a Parse Cloud Code hook function.
      - parameter path: A variadic list of paths.
      - parameter name: The name of the function.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for.
-     - parameter hooks: An actor containing all of the current Hooks.
-     - note: WIll attempt to create functions on all `parseServerURLStrings`.
-     Will log an error for each `parseServerURLString` that returns an error.
+     - parameter closure: A closure that takes as input a HTTP `Request` and returns a `Response`.
      */
     @discardableResult
     func post<Response>(_ path: PathComponent...,
@@ -292,10 +289,7 @@ public extension RoutesBuilder {
      Creates a new route for a Parse Cloud Code hook function.
      - parameter path: An array of paths.
      - parameter name: The name of the function.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for.
-     - parameter hooks: An actor containing all of the current Hooks.
-     - note: WIll attempt to create functions on all `parseServerURLStrings`.
-     Will log an error for each `parseServerURLString` that returns an error.
+     - parameter closure: A closure that takes as input a HTTP `Request` and returns a `Response`.
      */
     @discardableResult
     func post<Response>(_ path: [PathComponent],
@@ -312,10 +306,7 @@ public extension RoutesBuilder {
      - parameter path: A variadic list of paths.
      - parameter body: Determines how an incoming HTTP request’s body is collected.
      - parameter name: The name of the function.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for.
-     - parameter hooks: An actor containing all of the current Hooks.
-     - note: WIll attempt to create functions on all `parseServerURLStrings`.
-     Will log an error for each `parseServerURLString` that returns an error.
+     - parameter closure: A closure that takes as input a HTTP `Request` and returns a `Response`.
      */
     @discardableResult
     func on<Response>(_ path: PathComponent...,
@@ -334,10 +325,7 @@ public extension RoutesBuilder {
      - parameter path: An array of paths.
      - parameter body: Determines how an incoming HTTP request’s body is collected.
      - parameter name: The name of the function.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for.
-     - parameter hooks: An actor containing all of the current Hooks.
-     - note: WIll attempt to create functions on all `parseServerURLStrings`.
-     Will log an error for each `parseServerURLString` that returns an error.
+     - parameter closure: A closure that takes as input a HTTP `Request` and returns a `Response`.
      */
     @discardableResult
     func on<Response>(_ path: [PathComponent],

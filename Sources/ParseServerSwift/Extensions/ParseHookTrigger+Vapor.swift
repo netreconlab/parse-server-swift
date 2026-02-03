@@ -310,7 +310,7 @@ public extension ParseHookTrigger {
     /**
      Fetch all Parse Cloud Code hook trigger.
      - parameter path: A variadic list of paths.
-     - parameter className: The name of the `ParseObject` the trigger should act on.
+     - parameter object: The `ParseObject` the trigger should act on.
      - parameter trigger: The `ParseHookTriggerType` type.
      - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
      Defaults to the set of servers added during configuration.
@@ -979,10 +979,7 @@ public extension RoutesBuilder {
      - parameter path: A variadic list of paths.
      - parameter object: The type of `ParseObject` the trigger should act on.
      - parameter trigger: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
-     - parameter hooks: An actor containing all of the current Hooks.
-     - note: WIll attempt to create triggers on all `parseServerURLStrings`.
-     Will log an error for each `parseServerURLString` that returns an error.
+     - parameter closure: A closure that takes as input a HTTP `Request` and returns a `Response`.
      */
     @discardableResult
     func post<Response, V>(
@@ -1005,8 +1002,7 @@ public extension RoutesBuilder {
      - parameter path: A variadic list of paths.
      - parameter className: The name of the `ParseObject` the trigger should act on.
      - parameter trigger: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
-     - parameter hooks: An actor containing all of the current Hooks.
+     - parameter closure: A closure that takes as input a HTTP `Request` and returns a `Response`.
      - note: WIll attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
@@ -1031,8 +1027,7 @@ public extension RoutesBuilder {
 	 - parameter path: A variadic list of paths.
 	 - parameter object: The `ParseHookTriggerObject` the trigger should act on.
 	 - parameter trigger: The `ParseHookTriggerType` type.
-	 - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
-	 - parameter hooks: An actor containing all of the current Hooks.
+	 - parameter closure: A closure that takes as input a HTTP `Request` and returns a `Response`.
 	 - note: WIll attempt to create triggers on all `parseServerURLStrings`.
 	 Will log an error for each `parseServerURLString` that returns an error.
 	 */
@@ -1054,12 +1049,10 @@ public extension RoutesBuilder {
 
     /**
      Creates a new route for a Parse Cloud Code hook trigger.
-     - parameter method: The method to use for the route.
      - parameter path: An array of paths.
      - parameter object: The type of `ParseObject` the trigger should act on.
      - parameter trigger: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
-     - parameter hooks: An actor containing all of the current Hooks.
+     - parameter closure: A closure that takes as input a HTTP `Request` and returns a `Response`.
      - note: WIll attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
@@ -1081,12 +1074,10 @@ public extension RoutesBuilder {
 
     /**
      Creates a new route for a Parse Cloud Code hook trigger.
-     - parameter method: The method to use for the route.
      - parameter path: An array of paths.
      - parameter className: The name of the `ParseObject` the trigger should act on.
      - parameter trigger: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
-     - parameter hooks: An actor containing all of the current Hooks.
+     - parameter closure: A closure that takes as input a HTTP `Request` and returns a `Response`.
      - note: WIll attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
@@ -1107,12 +1098,10 @@ public extension RoutesBuilder {
 
     /**
      Creates a new route for a Parse Cloud Code hook trigger.
-     - parameter method: The method to use for the route.
      - parameter path: An array of paths.
      - parameter object: The `ParseHookTriggerObject` the trigger should act on.
      - parameter trigger: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
-     - parameter hooks: An actor containing all of the current Hooks.
+     - parameter closure: A closure that takes as input a HTTP `Request` and returns a `Response`.
      - note: WIll attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
@@ -1137,8 +1126,7 @@ public extension RoutesBuilder {
      - parameter body: Determines how an incoming HTTP request’s body is collected.
      - parameter object: The type of `ParseObject` the trigger should act on.
      - parameter trigger: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
-     - parameter hooks: An actor containing all of the current Hooks.
+     - parameter closure: A closure that takes as input a HTTP `Request` and returns a `Response`.
      - note: WIll attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
@@ -1166,8 +1154,7 @@ public extension RoutesBuilder {
      - parameter body: Determines how an incoming HTTP request’s body is collected.
      - parameter className: The name of the `ParseObject` the trigger should act on.
      - parameter trigger: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
-     - parameter hooks: An actor containing all of the current Hooks.
+     - parameter closure: A closure that takes as input a HTTP `Request` and returns a `Response`.
      - note: WIll attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
@@ -1194,8 +1181,7 @@ public extension RoutesBuilder {
 	 - parameter body: Determines how an incoming HTTP request’s body is collected.
 	 - parameter object: The `ParseHookTriggerObject` the trigger should act on.
 	 - parameter trigger: The `ParseHookTriggerType` type.
-	 - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
-	 - parameter hooks: An actor containing all of the current Hooks.
+	 - parameter closure: A closure that takes as input a HTTP `Request` and returns a `Response`.
 	 - note: WIll attempt to create triggers on all `parseServerURLStrings`.
 	 Will log an error for each `parseServerURLString` that returns an error.
 	 */
@@ -1222,8 +1208,7 @@ public extension RoutesBuilder {
      - parameter body: Determines how an incoming HTTP request’s body is collected.
      - parameter object: The type of `ParseObject` the trigger should act on.
      - parameter trigger: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
-     - parameter hooks: An actor containing all of the current Hooks.
+     - parameter closure: A closure that takes as input a HTTP `Request` and returns a `Response`.
      - note: WIll attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
@@ -1259,8 +1244,7 @@ public extension RoutesBuilder {
      - parameter body: Determines how an incoming HTTP request’s body is collected.
      - parameter className: The name of the `ParseObject` the trigger should act on.
      - parameter trigger: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
-     - parameter hooks: An actor containing all of the current Hooks.
+     - parameter closure: A closure that takes as input a HTTP `Request` and returns a `Response`.
      - note: WIll attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
@@ -1296,8 +1280,7 @@ public extension RoutesBuilder {
      - parameter body: Determines how an incoming HTTP request’s body is collected.
      - parameter object: The `ParseHookTriggerObject` the trigger should act on.
      - parameter trigger: The `ParseHookTriggerType` type.
-     - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create triggers for.
-     - parameter hooks: An actor containing all of the current Hooks.
+     - parameter closure: A closure that takes as input a HTTP `Request` and returns a `Response`.
      - note: WIll attempt to create triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */

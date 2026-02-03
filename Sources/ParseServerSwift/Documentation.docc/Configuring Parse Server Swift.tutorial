@@ -144,12 +144,7 @@
             }
             
             @Step {
-                The `parseServerSwiftConfigure` function:
-                1. Reads environment variables
-                2. Initializes the Parse Swift SDK
-                3. Configures the server
-                4. Registers your routes (passed as the `using` parameter)
-                5. Sets up webhook endpoints
+                The `parseServerSwiftConfigure` function: 1. Reads environment variables; 2. Initializes the Parse Swift SDK; 3. Configures the server; 4. Registers your routes (passed as the `using` parameter); 5. Sets up webhook endpoints.
             }
         }
     }
@@ -290,11 +285,7 @@
             }
             
             @Step {
-                Navigate to your Parse Dashboard at `http://localhost:1337/dashboard`, go to your app, and click "Webhooks" to see all registered Cloud Code:
-                - Cloud Functions appear as function webhooks
-                - Cloud Triggers appear as trigger webhooks
-                
-                Each webhook will point to your ParseServerSwift server.
+                Navigate to your Parse Dashboard at `http://localhost:1337/dashboard`, go to your app, and click "Webhooks" to see all registered Cloud Code: Cloud Functions appear as function webhooks; Cloud Triggers appear as trigger webhooks. Each webhook will point to your ParseServerSwift server.
             }
         }
     }

@@ -25,9 +25,9 @@ For more information on using Parse Swift SDK:
 ## Topics
 
 ### Getting Started
-- <doc:configuring-parse-server-swift>
-- <doc:adding-parseobjects>
+- <doc:Configuring-Parse-Server-Swift>
+- <doc:Adding-ParseObjects>
 
 ### Cloud Code
-- <doc:cloud-code-functions>
-- <doc:cloud-code-triggers>
+- <doc:Cloud-Code-Functions>
+- <doc:Cloud-Code-Triggers>

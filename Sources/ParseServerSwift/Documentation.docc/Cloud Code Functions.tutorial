@@ -39,14 +39,7 @@
             }
             
             @Step {
-                The `ParseHookResponse<String>` type indicates this function will return a String on success. The type parameter can be any `Codable` type.
-                
-                Other common return types:
-                - `ParseHookResponse<String>` - For text responses
-                - `ParseHookResponse<Int>` - For numeric responses
-                - `ParseHookResponse<Bool>` - For true/false responses
-                - `ParseHookResponse<GameScore>` - For ParseObject responses
-                - `ParseHookResponse<[GameScore]>` - For array responses
+                The `ParseHookResponse<String>` type indicates this function will return a String on success. The type parameter can be any `Codable` type. Other common return types: `ParseHookResponse<String>` - For text responses; `ParseHookResponse<Int>` - For numeric responses; `ParseHookResponse<Bool>` - For true/false responses; `ParseHookResponse<GameScore>` - For ParseObject responses; `ParseHookResponse<[GameScore]>` - For array responses
             }
         }
     }

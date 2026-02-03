@@ -16,26 +16,11 @@
         
         @Steps {
             @Step {
-                Every ParseObject must have these required properties:
-                - `objectId`: Unique identifier
-                - `createdAt`: Creation timestamp
-                - `updatedAt`: Last update timestamp
-                - `ACL`: Access Control List
-                - `originalData`: Raw data from server
+                Every ParseObject must have these required properties: `objectId`: Unique identifier, `createdAt`: Creation timestamp, `updatedAt`: Last update timestamp, `ACL`: Access Control List `originalData`: Raw data from server
             }
             
             @Step {
-                It's recommended to add all of your `ParseObject` models to the `Models` directory:
-                
-                ```
-                Sources/
-                  ParseServerSwift/
-                    Models/
-                      User.swift
-                      GameScore.swift
-                      Post.swift
-                      Comment.swift
-                ```
+                It's recommended to add all of your `ParseObject` models to the `Models` directory - `Sources/ParseServerSwift/Models/`
             }
         }
     }
@@ -76,37 +61,7 @@
             }
             
             @Step {
-                You can add as many custom properties as you need:
-                
-                ```swift
-                struct GameScore: ParseObject {
-                    // Required properties...
-                    
-                    // Custom properties
-                    var points: Int?
-                    var playerName: String?
-                    var cheatMode: Bool?
-                    var level: Int?
-                    
-                    // Merge implementation
-                    func merge(with object: Self) throws -> Self {
-                        var updated = try mergeParse(with: object)
-                        if updated.shouldRestoreKey(\.points, original: object) {
-                            updated.points = object.points
-                        }
-                        if updated.shouldRestoreKey(\.playerName, original: object) {
-                            updated.playerName = object.playerName
-                        }
-                        if updated.shouldRestoreKey(\.cheatMode, original: object) {
-                            updated.cheatMode = object.cheatMode
-                        }
-                        if updated.shouldRestoreKey(\.level, original: object) {
-                            updated.level = object.level
-                        }
-                        return updated
-                    }
-                }
-                ```
+                You can add as many custom properties as you need.ååå
             }
         }
     }
