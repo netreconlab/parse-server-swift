@@ -152,21 +152,21 @@
       [
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/$volume",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/Getting-Started"
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/Cloud-Code"
       ]
     ],
     "reference" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift"
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/Configuring-Parse-Server-Swift"
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/Cloud-Code-Triggers"
   },
   "kind" : "project",
   "metadata" : {
     "category" : "ParseServerSwift",
     "categoryPathComponent" : "ParseServerSwift",
     "role" : "project",
-    "title" : "Configuring Parse Server Swift"
+    "title" : "Cloud Code Triggers"
   },
   "schemaVersion" : {
     "major" : 0,
@@ -175,13 +175,13 @@
   },
   "sections" : [
     {
-      "backgroundImage" : "chapter-getting-started.png",
-      "chapter" : "Getting Started",
+      "backgroundImage" : "chapter-server.png",
+      "chapter" : "Cloud Code",
       "content" : [
         {
           "inlineContent" : [
             {
-              "text" : "Learn how to configure ParseServerSwift to connect to your Parse Server and set up your Cloud Code environment.",
+              "text" : "Learn how to create Cloud Code Triggers in ParseServerSwift. Triggers allow you to run custom logic before or after database operations.",
               "type" : "text"
             }
           ],
@@ -190,7 +190,7 @@
         {
           "inlineContent" : [
             {
-              "text" : "ParseServerSwift can be configured using environment variables or programmatically. This tutorial covers both approaches and explains the important configuration options.",
+              "text" : "Cloud Code Triggers are hooks that execute automatically when specific database operations occur. They are perfect for validation, data transformation, logging, and enforcing business rules.",
               "type" : "text"
             }
           ],
@@ -233,23 +233,23 @@
           "type" : "paragraph"
         }
       ],
-      "estimatedTimeInMinutes" : 10,
-      "image" : "chapter-getting-started.png",
+      "estimatedTimeInMinutes" : 20,
+      "image" : "chapter-server.png",
       "kind" : "hero",
-      "title" : "Configuring Parse Server Swift"
+      "title" : "Cloud Code Triggers"
     },
     {
       "kind" : "tasks",
       "tasks" : [
         {
-          "anchor" : "Environment-Variables-Configuration",
+          "anchor" : "Understanding-Trigger-Types",
           "contentSection" : [
             {
               "content" : [
                 {
                   "inlineContent" : [
                     {
-                      "text" : "The recommended way to configure ParseServerSwift is using environment variables. This approach works well with Docker and keeps sensitive information out of your code.",
+                      "text" : "ParseServerSwift supports various trigger types for different database operations. Each trigger type serves a specific purpose.",
                       "type" : "text"
                     }
                   ],
@@ -265,20 +265,21 @@
               "caption" : [
 
               ],
-              "code" : "env-config.txt",
+              "code" : "trigger-beforesave-01.swift",
               "content" : [
                 {
                   "inlineContent" : [
                     {
-                      "text" : "Create a ",
-                      "type" : "text"
+                      "inlineContent" : [
+                        {
+                          "text" : "beforeSave",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
                     },
                     {
-                      "code" : ".env",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : " file in your project root with the following variables:",
+                      "text" : " triggers run before an object is saved. Use them for: Validating data, Setting default values, Transforming data before storage, Rejecting invalid saves",
                       "type" : "text"
                     }
                   ],
@@ -293,104 +294,12 @@
               "caption" : [
 
               ],
-              "code" : "env-config-explained.txt",
+              "code" : "trigger-types-overview.swift",
               "content" : [
                 {
                   "inlineContent" : [
                     {
-                      "text" : "Understanding the environment variables:",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "media" : null,
-              "runtimePreview" : null,
-              "type" : "step"
-            },
-            {
-              "caption" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "The last URL in the list will be used as the main server.",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "code" : "env-multiple-servers.txt",
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "inlineContent" : [
-                        {
-                          "text" : "PARSE_SERVER_SWIFT_URLS",
-                          "type" : "text"
-                        }
-                      ],
-                      "type" : "strong"
-                    },
-                    {
-                      "text" : ": (Required) Your Parse Server URL(s). You can specify multiple servers separated by commas:",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "media" : null,
-              "runtimePreview" : null,
-              "type" : "step"
-            },
-            {
-              "caption" : [
-
-              ],
-              "code" : null,
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "inlineContent" : [
-                        {
-                          "text" : "PARSE_SERVER_SWIFT_APPLICATION_ID",
-                          "type" : "text"
-                        }
-                      ],
-                      "type" : "strong"
-                    },
-                    {
-                      "text" : ": (Required) Your Parse Server’s application ID. ",
-                      "type" : "text"
-                    },
-                    {
-                      "inlineContent" : [
-                        {
-                          "text" : "PARSE_SERVER_SWIFT_PRIMARY_KEY",
-                          "type" : "text"
-                        }
-                      ],
-                      "type" : "strong"
-                    },
-                    {
-                      "text" : ": (Required) Your Parse Server’s master\/primary key. This gives your Cloud Code privileged access. ",
-                      "type" : "text"
-                    },
-                    {
-                      "inlineContent" : [
-                        {
-                          "text" : "PARSE_SERVER_SWIFT_WEBHOOK_KEY",
-                          "type" : "text"
-                        }
-                      ],
-                      "type" : "strong"
-                    },
-                    {
-                      "text" : ": Your Parse Server’s webhook key. This should match the webhookKey configured on your Parse Server for security.",
+                      "text" : "Other trigger types work similarly for their respective operations:",
                       "type" : "text"
                     }
                   ],
@@ -402,17 +311,17 @@
               "type" : "step"
             }
           ],
-          "title" : "Environment Variables Configuration"
+          "title" : "Understanding Trigger Types"
         },
         {
-          "anchor" : "WebhookKey-Security",
+          "anchor" : "Creating-a-beforeSave-Trigger",
           "contentSection" : [
             {
               "content" : [
                 {
                   "inlineContent" : [
                     {
-                      "text" : "The webhookKey is an important security feature that ensures only your Parse Server can call your Cloud Code.",
+                      "text" : "The beforeSave trigger is one of the most commonly used triggers. It validates and transforms data before it’s saved to the database.",
                       "type" : "text"
                     }
                   ],
@@ -426,17 +335,195 @@
           "stepsSection" : [
             {
               "caption" : [
+
+              ],
+              "code" : "trigger-beforesave-02.swift",
+              "content" : [
                 {
                   "inlineContent" : [
                     {
-                      "text" : "Configure it on your Parse Server:",
+                      "text" : "Create a basic beforeSave trigger for GameScore objects.",
                       "type" : "text"
                     }
                   ],
                   "type" : "paragraph"
                 }
               ],
-              "code" : "parse-server-config.js",
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "trigger-hydrate-user.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Access user information if the save was triggered by an authenticated user.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "trigger-validate-object.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Validate the object data before allowing the save.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "trigger-modify-object.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "You can also modify the object before it’s saved.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Creating a beforeSave Trigger"
+        },
+        {
+          "anchor" : "Creating-a-beforeFind-Trigger",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "The beforeFind trigger allows you to modify queries before they’re executed or return custom results.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+
+              ],
+              "code" : "trigger-beforefind-01.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Create a beforeFind trigger that logs query information.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "trigger-return-custom.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Return custom objects instead of executing the query. This is useful for caching or custom logic.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Creating a beforeFind Trigger"
+        },
+        {
+          "anchor" : "Creating-an-afterLogin-Trigger",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "The afterLogin trigger runs after a user successfully authenticates. Use it for logging, analytics, or post-login setup.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+
+              ],
+              "code" : "trigger-afterlogin.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Create an afterLogin trigger to log user logins.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "trigger-bool-return-types.swift",
               "content" : [
                 {
                   "inlineContent" : [
@@ -445,17 +532,154 @@
                       "type" : "text"
                     },
                     {
-                      "code" : "webhookKey",
+                      "code" : "ParseHookResponse<Bool>",
                       "type" : "codeVoice"
                     },
                     {
-                      "text" : " in ParseServerSwift must match the ",
+                      "text" : " return type is standard for triggers that don’t need to return data. Return ",
                       "type" : "text"
                     },
                     {
-                      "identifier" : "https:\/\/github.com\/parse-community\/parse-server\/blob\/42c954318926823446326c95188b844e19954711\/src\/Options\/Definitions.js#L491-L494",
-                      "isActive" : true,
-                      "type" : "reference"
+                      "code" : "true",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " to indicate success or ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "false",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " to indicate failure.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Creating an afterLogin Trigger"
+        },
+        {
+          "anchor" : "Querying-with-Primary-Key-in-Triggers",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Triggers have access to the primary key, allowing them to perform privileged operations.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+
+              ],
+              "code" : "trigger-query-primary.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Use the primary key to bypass ACLs and access all data.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "trigger-check-duplicate.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "This is useful in beforeSave triggers for validation that requires checking existing data.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Querying with Primary Key in Triggers"
+        },
+        {
+          "anchor" : "Working-with-ParseFile-Triggers",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Special triggers exist for ParseFile operations. These use a different syntax since ParseFile is not a ParseObject.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+
+              ],
+              "code" : "trigger-file-beforesave.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Create a beforeSave trigger for file uploads. Use ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "app.on()",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " instead of ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "app.post()",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " and specify ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "object: .file",
+                      "type" : "codeVoice"
                     },
                     {
                       "text" : ".",
@@ -471,22 +695,185 @@
             },
             {
               "caption" : [
+
+              ],
+              "code" : "trigger-file-beforedelete.swift",
+              "content" : [
                 {
                   "inlineContent" : [
                     {
-                      "text" : "This validates that the request came from your Parse Server.",
+                      "text" : "Create a beforeDelete trigger for file deletions.",
                       "type" : "text"
                     }
                   ],
                   "type" : "paragraph"
                 }
               ],
-              "code" : "check-webhook-key.swift",
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "trigger-file-request-type.swift",
               "content" : [
                 {
                   "inlineContent" : [
                     {
-                      "text" : "All Cloud Code routes should check this key using the ",
+                      "text" : "File triggers use ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "ParseHookTriggerRequest<User>",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " instead of ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "ParseHookTriggerObjectRequest",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " since there’s no typed object for files. You can still access user information if the operation was performed by an authenticated user.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Working with ParseFile Triggers"
+        },
+        {
+          "anchor" : "Working-with-LiveQuery-Triggers",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "LiveQuery triggers allow you to control and monitor real-time subscriptions.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+
+              ],
+              "code" : "trigger-livequery-beforeconnect.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Create a beforeConnect trigger that runs when clients connect to LiveQuery.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "trigger-livequery-beforesubscribe.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Create a beforeSubscribe trigger to control subscription attempts.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "trigger-livequery-afterevent.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Create an afterEvent trigger to monitor LiveQuery events.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Working with LiveQuery Triggers"
+        },
+        {
+          "anchor" : "Best-Practices",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Follow these best practices when working with triggers.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+
+              ],
+              "code" : "trigger-check-headers.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "Always check headers",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    },
+                    {
+                      "text" : " for security. The ",
                       "type" : "text"
                     },
                     {
@@ -494,74 +881,7 @@
                       "type" : "codeVoice"
                     },
                     {
-                      "text" : " function:",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "media" : null,
-              "runtimePreview" : null,
-              "type" : "step"
-            }
-          ],
-          "title" : "WebhookKey Security"
-        },
-        {
-          "anchor" : "Using-parseServerSwiftConfigure",
-          "contentSection" : [
-            {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "The simplest way to initialize ParseServerSwift is using the ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "parseServerSwiftConfigure",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : " function, which reads from environment variables.",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "kind" : "contentAndMedia",
-              "mediaPosition" : "trailing"
-            }
-          ],
-          "stepsSection" : [
-            {
-              "caption" : [
-
-              ],
-              "code" : "entrypoint-config.swift",
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "In your ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "entrypoint.swift",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : " file, use ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "parseServerSwiftConfigure",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : " to automatically configure the server:",
+                      "text" : " function validates the webhook key.",
                       "type" : "text"
                     }
                   ],
@@ -576,219 +896,21 @@
               "caption" : [
 
               ],
-              "code" : "configure-function-steps.swift",
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "The ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "parseServerSwiftConfigure",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : " function automates the entire setup process:",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "media" : null,
-              "runtimePreview" : null,
-              "type" : "step"
-            }
-          ],
-          "title" : "Using parseServerSwiftConfigure"
-        },
-        {
-          "anchor" : "Programmatic-Configuration",
-          "contentSection" : [
-            {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "For more control, you can configure ParseServerSwift programmatically without environment variables.",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "kind" : "contentAndMedia",
-              "mediaPosition" : "trailing"
-            }
-          ],
-          "stepsSection" : [
-            {
-              "caption" : [
-
-              ],
-              "code" : "programmatic-config.swift",
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "Create a ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "configure.swift",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : " file with custom configuration:",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "media" : null,
-              "runtimePreview" : null,
-              "type" : "step"
-            },
-            {
-              "caption" : [
-
-              ],
-              "code" : "config-multiple-servers.swift",
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "For multiple Parse Servers, use an array of URLs:",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "media" : null,
-              "runtimePreview" : null,
-              "type" : "step"
-            }
-          ],
-          "title" : "Programmatic Configuration"
-        },
-        {
-          "anchor" : "Parse-Swift-SDK-Configuration",
-          "contentSection" : [
-            {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "When using ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "parseServerSwiftConfigure",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ", the Parse Swift SDK is configured automatically. For custom setups, you need to configure it manually.",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "kind" : "contentAndMedia",
-              "mediaPosition" : "trailing"
-            }
-          ],
-          "stepsSection" : [
-            {
-              "caption" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "For more SDK configuration options, see the ",
-                      "type" : "text"
-                    },
-                    {
-                      "identifier" : "https:\/\/swiftpackageindex.com\/netreconlab\/Parse-Swift\/documentation\/parseswift\/",
-                      "isActive" : true,
-                      "type" : "reference"
-                    },
-                    {
-                      "text" : ".",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "code" : "sdk-manual-config.swift",
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "The Parse Swift SDK configuration is handled by ParseServerSwift, but you can customize it if needed:",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "media" : null,
-              "runtimePreview" : null,
-              "type" : "step"
-            }
-          ],
-          "title" : "Parse Swift SDK Configuration"
-        },
-        {
-          "anchor" : "Starting-the-Server",
-          "contentSection" : [
-            {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "Once configured, you can start your ParseServerSwift server.",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "kind" : "contentAndMedia",
-              "mediaPosition" : "trailing"
-            }
-          ],
-          "stepsSection" : [
-            {
-              "caption" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "Your server will start on the configured hostname and port.",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "code" : "start-server.sh",
+              "code" : "trigger-handle-errors.swift",
               "content" : [
                 {
                   "inlineContent" : [
                     {
                       "inlineContent" : [
                         {
-                          "text" : "On macOS\/Linux",
+                          "text" : "Handle errors gracefully",
                           "type" : "text"
                         }
                       ],
                       "type" : "strong"
                     },
                     {
-                      "text" : ": Run from the terminal in your project root:",
+                      "text" : ". Return proper error responses instead of throwing exceptions.",
                       "type" : "text"
                     }
                   ],
@@ -803,30 +925,21 @@
               "caption" : [
 
               ],
-              "code" : "start-docker.sh",
+              "code" : "trigger-use-logging.swift",
               "content" : [
                 {
                   "inlineContent" : [
                     {
                       "inlineContent" : [
                         {
-                          "text" : "In Docker",
+                          "text" : "Use logging",
                           "type" : "text"
                         }
                       ],
                       "type" : "strong"
                     },
                     {
-                      "text" : ": Use docker-compose to start all service. This starts ParseServerSwift along with your Parse Server and database. See the ",
-                      "type" : "text"
-                    },
-                    {
-                      "identifier" : "https:\/\/github.com\/netreconlab\/parse-server-swift\/blob\/main\/docker-compose.yml",
-                      "isActive" : true,
-                      "type" : "reference"
-                    },
-                    {
-                      "text" : " for a complete setup.",
+                      "text" : " to track trigger execution. This helps with debugging.",
                       "type" : "text"
                     }
                   ],
@@ -841,64 +954,21 @@
               "caption" : [
 
               ],
-              "code" : "startup-logs.txt",
+              "code" : "trigger-performance-tips.swift",
               "content" : [
                 {
                   "inlineContent" : [
                     {
                       "inlineContent" : [
                         {
-                          "text" : "Verify it’s working",
+                          "text" : "Keep triggers fast",
                           "type" : "text"
                         }
                       ],
                       "type" : "strong"
                     },
                     {
-                      "text" : ": Check the logs for successful startup messages:",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "media" : null,
-              "runtimePreview" : null,
-              "type" : "step"
-            }
-          ],
-          "title" : "Starting the Server"
-        },
-        {
-          "anchor" : "Registering-Cloud-Code-with-Parse-Server",
-          "contentSection" : [
-            {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "ParseServerSwift automatically registers your Cloud Code functions and triggers with Parse Server.",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "kind" : "contentAndMedia",
-              "mediaPosition" : "trailing"
-            }
-          ],
-          "stepsSection" : [
-            {
-              "caption" : [
-
-              ],
-              "code" : null,
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "When your server starts, it registers all routes as webhooks on your Parse Server. You can view them in the Parse Dashboard.",
+                      "text" : ". Triggers run synchronously with database operations, so minimize processing time. For long-running tasks, return success quickly and use background jobs.",
                       "type" : "text"
                     }
                   ],
@@ -918,15 +988,16 @@
                 {
                   "inlineContent" : [
                     {
-                      "text" : "Navigate to your Parse Dashboard at ",
-                      "type" : "text"
+                      "inlineContent" : [
+                        {
+                          "text" : "Test thoroughly",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
                     },
                     {
-                      "code" : "http:\/\/localhost:1337\/dashboard",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ", go to your app, and click “Webhooks” to see all registered Cloud Code: Cloud Functions appear as function webhooks; Cloud Triggers appear as trigger webhooks. Each webhook will point to your ParseServerSwift server.",
+                      "text" : ". Triggers affect all database operations, so ensure they work correctly to avoid blocking legitimate operations.",
                       "type" : "text"
                     }
                   ],
@@ -938,38 +1009,15 @@
               "type" : "step"
             }
           ],
-          "title" : "Registering Cloud Code with Parse Server"
+          "title" : "Best Practices"
         }
       ]
-    },
-    {
-      "abstract" : [
-        {
-          "text" : "Learn how to create and configure ParseObject models for your ParseServerSwift application.",
-          "type" : "text"
-        }
-      ],
-      "action" : {
-        "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/Adding-ParseObjects",
-        "isActive" : true,
-        "overridingTitle" : "Get started",
-        "overridingTitleInlineContent" : [
-          {
-            "text" : "Get started",
-            "type" : "text"
-          }
-        ],
-        "type" : "reference"
-      },
-      "featuredEyebrow" : "Tutorial",
-      "kind" : "callToAction",
-      "title" : "Adding ParseObjects"
     }
   ],
   "variants" : [
     {
       "paths" : [
-        "\/tutorials\/parseserverswift\/configuring-parse-server-swift"
+        "\/tutorials\/parseserverswift\/cloud-code-triggers"
       ],
       "traits" : [
         {
@@ -980,9 +1028,9 @@
   ]
 , 
 "references": {
-"chapter-getting-started.png": {
-  "alt" : "Foundation building blocks representing ParseObjects as the foundation of data storage",
-  "identifier" : "chapter-getting-started.png",
+"chapter-server.png": {
+  "alt" : "Server with database schema grid and webhook arrows representing server-side operations",
+  "identifier" : "chapter-server.png",
   "type" : "image",
   "variants" : [
     {
@@ -990,88 +1038,9 @@
         "1x",
         "light"
       ],
-      "url" : "\/images\/edu.uky.cs.netreconlab.ParseServerSwift\/chapter-getting-started.png"
+      "url" : "\/images\/edu.uky.cs.netreconlab.ParseServerSwift\/chapter-server.png"
     }
   ]
-},
-"check-webhook-key.swift": {
-  "content" : [
-    "if let error: ParseHookResponse<String> = checkHeaders(req) {",
-    "    return error",
-    "}"
-  ],
-  "fileName" : "check-webhook-key.swift",
-  "fileType" : "swift",
-  "highlights" : [
-
-  ],
-  "identifier" : "check-webhook-key.swift",
-  "syntax" : "swift",
-  "type" : "file"
-},
-"config-multiple-servers.swift": {
-  "content" : [
-    "let configuration = try ParseServerConfiguration(",
-    "    app: app,",
-    "    hostName: \"localhost\",",
-    "    port: 8081,",
-    "    applicationId: \"applicationId\",",
-    "    primaryKey: \"primaryKey\",",
-    "    webhookKey: \"webhookKey\",",
-    "    parseServerURLStrings: [",
-    "        \"http:\/\/parse1:1337\/parse\",",
-    "        \"http:\/\/parse2:1337\/parse\"",
-    "    ]",
-    ")"
-  ],
-  "fileName" : "config-multiple-servers.swift",
-  "fileType" : "swift",
-  "highlights" : [
-
-  ],
-  "identifier" : "config-multiple-servers.swift",
-  "syntax" : "swift",
-  "type" : "file"
-},
-"configure-function-steps.swift": {
-  "content" : [
-    "\/\/ The parseServerSwiftConfigure function automates the setup process",
-    "",
-    "\/\/ Step 1: Reads environment variables",
-    "\/\/ - PARSE_SERVER_SWIFT_URLS",
-    "\/\/ - PARSE_SERVER_SWIFT_APPLICATION_ID",
-    "\/\/ - PARSE_SERVER_SWIFT_PRIMARY_KEY",
-    "\/\/ - PARSE_SERVER_SWIFT_WEBHOOK_KEY",
-    "\/\/ - PARSE_SERVER_SWIFT_HOST_NAME (optional)",
-    "\/\/ - PARSE_SERVER_SWIFT_PORT (optional)",
-    "",
-    "\/\/ Step 2: Initializes the Parse Swift SDK",
-    "ParseSwift.initialize(",
-    "    applicationId: \"appId\",",
-    "    clientKey: nil,",
-    "    primaryKey: \"primaryKey\",",
-    "    serverURL: URL(string: \"http:\/\/parse:1337\/parse\")!,",
-    "    usingPostForQuery: true",
-    ")",
-    "",
-    "\/\/ Step 3: Configures the Vapor application",
-    "app.http.server.configuration.hostname = \"cloud-code\"",
-    "app.http.server.configuration.port = 8080",
-    "",
-    "\/\/ Step 4: Registers your routes (passed via the 'using' parameter)",
-    "try exampleRoutes(app)",
-    "",
-    "\/\/ Step 5: Sets up webhook endpoints for Parse Server",
-    "\/\/ All Cloud Code Functions and Triggers are automatically registered"
-  ],
-  "fileName" : "configure-function-steps.swift",
-  "fileType" : "swift",
-  "highlights" : [
-
-  ],
-  "identifier" : "configure-function-steps.swift",
-  "syntax" : "swift",
-  "type" : "file"
 },
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/tutorials/ParseServerSwift": {
   "abstract" : [
@@ -1575,135 +1544,6 @@
   "type" : "topic",
   "url" : "\/tutorials\/parseserverswift\/getting-started"
 },
-"entrypoint-config.swift": {
-  "content" : [
-    "import Vapor",
-    "import Dispatch",
-    "import Logging",
-    "import NIOCore",
-    "import NIOPosix",
-    "import ParseServerSwift",
-    "",
-    "@main",
-    "enum Entrypoint {",
-    "    static func main() async throws {",
-    "        var env = try Environment.detect()",
-    "        try LoggingSystem.bootstrap(from: &env)",
-    "",
-    "        let app = try await Application.make(env)",
-    "",
-    "        \/\/ Install NIO as global executor (optional)",
-    "        let executorTakeoverSuccess = NIOSingletons",
-    "            .unsafeTryInstallSingletonPosixEventLoopGroupAsConcurrencyGlobalExecutor()",
-    "        app.logger.debug(",
-    "            \"Tried to install SwiftNIO's EventLoopGroup\",",
-    "            metadata: [\"success\": .stringConvertible(executorTakeoverSuccess)]",
-    "        )",
-    "",
-    "        do {",
-    "            try await parseServerSwiftConfigure(",
-    "                app,",
-    "                using: exampleRoutes",
-    "            )",
-    "            try await app.execute()",
-    "        } catch {",
-    "            app.logger.report(error: error)",
-    "            try? await app.asyncShutdown()",
-    "            throw error",
-    "        }",
-    "        try await app.asyncShutdown()",
-    "    }",
-    "}"
-  ],
-  "fileName" : "entrypoint-config.swift",
-  "fileType" : "swift",
-  "highlights" : [
-
-  ],
-  "identifier" : "entrypoint-config.swift",
-  "syntax" : "swift",
-  "type" : "file"
-},
-"env-config-explained.txt": {
-  "content" : [
-    "# Environment Variables for ParseServerSwift",
-    "",
-    "# Server Configuration",
-    "PARSE_SERVER_SWIFT_HOST_NAME=cloud-code          # Hostname for your server",
-    "PARSE_SERVER_SWIFT_PORT=8080                      # Port (default: 8080)",
-    "PARSE_SERVER_SWIFT_DEFAULT_MAX_BODY_SIZE=500kb   # Max body size for uploads",
-    "",
-    "# Parse Server Connection (Required)",
-    "PARSE_SERVER_SWIFT_URLS=http:\/\/parse:1337\/parse",
-    "PARSE_SERVER_SWIFT_APPLICATION_ID=appId",
-    "PARSE_SERVER_SWIFT_PRIMARY_KEY=primaryKey",
-    "PARSE_SERVER_SWIFT_WEBHOOK_KEY=webhookKey"
-  ],
-  "fileName" : "env-config-explained.txt",
-  "fileType" : "txt",
-  "highlights" : [
-
-  ],
-  "identifier" : "env-config-explained.txt",
-  "syntax" : "txt",
-  "type" : "file"
-},
-"env-config.txt": {
-  "content" : [
-    "PARSE_SERVER_SWIFT_HOST_NAME=cloud-code",
-    "PARSE_SERVER_SWIFT_PORT=8080",
-    "PARSE_SERVER_SWIFT_DEFAULT_MAX_BODY_SIZE=500kb",
-    "PARSE_SERVER_SWIFT_URLS=http:\/\/parse:1337\/parse",
-    "PARSE_SERVER_SWIFT_APPLICATION_ID=appId",
-    "PARSE_SERVER_SWIFT_PRIMARY_KEY=primaryKey",
-    "PARSE_SERVER_SWIFT_WEBHOOK_KEY=webhookKey"
-  ],
-  "fileName" : "env-config.txt",
-  "fileType" : "txt",
-  "highlights" : [
-
-  ],
-  "identifier" : "env-config.txt",
-  "syntax" : "txt",
-  "type" : "file"
-},
-"env-multiple-servers.txt": {
-  "content" : [
-    "PARSE_SERVER_SWIFT_URLS=http:\/\/parse1:1337\/parse,http:\/\/parse2:1337\/parse"
-  ],
-  "fileName" : "env-multiple-servers.txt",
-  "fileType" : "txt",
-  "highlights" : [
-
-  ],
-  "identifier" : "env-multiple-servers.txt",
-  "syntax" : "txt",
-  "type" : "file"
-},
-"https://github.com/netreconlab/parse-server-swift/blob/main/docker-compose.yml": {
-  "identifier" : "https:\/\/github.com\/netreconlab\/parse-server-swift\/blob\/main\/docker-compose.yml",
-  "title" : "docker-compose.yml example",
-  "titleInlineContent" : [
-    {
-      "text" : "docker-compose.yml example",
-      "type" : "text"
-    }
-  ],
-  "type" : "link",
-  "url" : "https:\/\/github.com\/netreconlab\/parse-server-swift\/blob\/main\/docker-compose.yml"
-},
-"https://github.com/parse-community/parse-server/blob/42c954318926823446326c95188b844e19954711/src/Options/Definitions.js#L491-L494": {
-  "identifier" : "https:\/\/github.com\/parse-community\/parse-server\/blob\/42c954318926823446326c95188b844e19954711\/src\/Options\/Definitions.js#L491-L494",
-  "title" : "webhookKey on your Parse Server",
-  "titleInlineContent" : [
-    {
-      "text" : "webhookKey on your Parse Server",
-      "type" : "text"
-    }
-  ],
-  "type" : "link",
-  "url" : "https:\/\/github.com\/parse-community\/parse-server\/blob\/42c954318926823446326c95188b844e19954711\/src\/Options\/Definitions.js#L491-L494"
-},
 "https://netreconlab.github.io/Parse-Swift/release/tutorials/parseswift/": {
   "identifier" : "https:\/\/netreconlab.github.io\/Parse-Swift\/release\/tutorials\/parseswift\/",
   "title" : "Parse-Swift tutorials",
@@ -1728,18 +1568,6 @@
   "type" : "link",
   "url" : "https:\/\/swiftpackageindex.com\/netreconlab\/Parse-Swift\/documentation"
 },
-"https://swiftpackageindex.com/netreconlab/Parse-Swift/documentation/parseswift/": {
-  "identifier" : "https:\/\/swiftpackageindex.com\/netreconlab\/Parse-Swift\/documentation\/parseswift\/",
-  "title" : "Parse Swift documentation",
-  "titleInlineContent" : [
-    {
-      "text" : "Parse Swift documentation",
-      "type" : "text"
-    }
-  ],
-  "type" : "link",
-  "url" : "https:\/\/swiftpackageindex.com\/netreconlab\/Parse-Swift\/documentation\/parseswift\/"
-},
 "https://swiftpackageindex.com/netreconlab/parse-server-swift/documentation": {
   "identifier" : "https:\/\/swiftpackageindex.com\/netreconlab\/parse-server-swift\/documentation",
   "title" : "Parse-Server-Swift API Documentation",
@@ -1752,122 +1580,639 @@
   "type" : "link",
   "url" : "https:\/\/swiftpackageindex.com\/netreconlab\/parse-server-swift\/documentation"
 },
-"parse-server-config.js": {
+"trigger-afterlogin.swift": {
   "content" : [
-    "\/\/ parse-server configuration",
-    "{",
-    "  appId: 'appId',",
-    "  masterKey: 'primaryKey',",
-    "  webhookKey: 'webhookKey',",
-    "  \/\/ ... other options",
+    "app.post(",
+    "    \"user\",",
+    "    \"login\",",
+    "    \"after\",",
+    "    object: User.self,",
+    "    trigger: .afterLogin",
+    ") { req async throws -> ParseHookResponse<Bool> in",
+    "    if let error: ParseHookResponse<Bool> = checkHeaders(req) {",
+    "        return error",
+    "    }",
+    "    ",
+    "    let parseRequest = try req.content",
+    "\t\t\/\/ GameScore is used as dummy generic type here,",
+    "\t\t\/\/ essentially any ParseObject can be used",
+    "\t\t\/\/ for login related triggers.",
+    "        .decode(ParseHookTriggerObjectRequest<User, GameScore>.self)",
+    "    ",
+    "    req.logger.info(\"A user has logged in: \\(parseRequest)\")",
+    "    ",
+    "    \/\/ Return true to indicate success",
+    "    return ParseHookResponse(success: true)",
     "}"
   ],
-  "fileName" : "parse-server-config.js",
-  "fileType" : "js",
-  "highlights" : [
-
-  ],
-  "identifier" : "parse-server-config.js",
-  "syntax" : "js",
-  "type" : "file"
-},
-"programmatic-config.swift": {
-  "content" : [
-    "import Vapor",
-    "import ParseServerSwift",
-    "",
-    "public func configure(_ app: Application) async throws {",
-    "    \/\/ Initialize ParseServerSwift",
-    "    let configuration = try ParseServerConfiguration(",
-    "        app: app,",
-    "        hostName: \"localhost\",",
-    "        port: 8081,",
-    "        applicationId: \"applicationId\",",
-    "        primaryKey: \"primaryKey\",",
-    "        webhookKey: \"webhookKey\",",
-    "        parseServerURLString: \"http:\/\/localhost:1337\/parse\"",
-    "    )",
-    "    try await ParseServerSwift.initialize(configuration, app: app)",
-    "    ",
-    "    \/\/ Add any additional server configuration here...",
-    "    ",
-    "    \/\/ Register routes",
-    "    try routes(app)",
-    "}"
-  ],
-  "fileName" : "programmatic-config.swift",
+  "fileName" : "trigger-afterlogin.swift",
   "fileType" : "swift",
   "highlights" : [
 
   ],
-  "identifier" : "programmatic-config.swift",
+  "identifier" : "trigger-afterlogin.swift",
   "syntax" : "swift",
   "type" : "file"
 },
-"sdk-manual-config.swift": {
+"trigger-beforefind-01.swift": {
   "content" : [
-    "\/\/ This is done automatically by parseServerSwiftConfigure",
-    "guard let parseServerURL = URL(string: \"http:\/\/localhost:1337\/parse\") else {",
-    "    throw ParseError(code: .unknownError,",
-    "                     message: \"Could not make Parse Server URL\")",
+    "app.post(",
+    "    \"score\",",
+    "    \"find\",",
+    "    \"before\",",
+    "    object: GameScore.self,",
+    "    trigger: .beforeFind",
+    ") { req async throws -> ParseHookResponse<[GameScore]> in",
+    "    if let error: ParseHookResponse<[GameScore]> = checkHeaders(req) {",
+    "        return error",
+    "    }",
+    "    ",
+    "    let parseRequest = try req.content",
+    "        .decode(ParseHookTriggerObjectRequest<User, GameScore>.self)",
+    "    ",
+    "    req.logger.info(\"A query is being made: \\(parseRequest)\")",
+    "    ",
+    "    \/\/ Return empty array to let query proceed normally",
+    "    return ParseHookResponse(success: [])",
+    "}"
+  ],
+  "fileName" : "trigger-beforefind-01.swift",
+  "fileType" : "swift",
+  "highlights" : [
+
+  ],
+  "identifier" : "trigger-beforefind-01.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"trigger-beforesave-01.swift": {
+  "content" : [
+    "app.post(",
+    "    \"score\",",
+    "    \"save\",",
+    "    \"before\",",
+    "    object: GameScore.self,",
+    "    trigger: .beforeSave",
+    ") { req async throws -> ParseHookResponse<GameScore> in",
+    "    if let error: ParseHookResponse<GameScore> = checkHeaders(req) {",
+    "        return error",
+    "    }",
+    "    var parseRequest = try req.content",
+    "        .decode(ParseHookTriggerObjectRequest<User, GameScore>.self)",
+    "    ",
+    "    guard let object = parseRequest.object else {",
+    "        return ParseHookResponse(error: .init(code: .missingObjectId,",
+    "                                              message: \"Object not sent in request.\"))",
+    "    }",
+    "    return ParseHookResponse(success: object)",
+    "}"
+  ],
+  "fileName" : "trigger-beforesave-01.swift",
+  "fileType" : "swift",
+  "highlights" : [
+
+  ],
+  "identifier" : "trigger-beforesave-01.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"trigger-beforesave-02.swift": {
+  "content" : [
+    "app.post(",
+    "    \"score\",",
+    "    \"save\",",
+    "    \"before\",",
+    "    object: GameScore.self,",
+    "    trigger: .beforeSave",
+    ") { req async throws -> ParseHookResponse<GameScore> in",
+    "    \/\/ Check webhook key",
+    "    if let error: ParseHookResponse<GameScore> = checkHeaders(req) {",
+    "        return error",
+    "    }",
+    "    ",
+    "    \/\/ Decode the trigger request",
+    "    var parseRequest = try req.content",
+    "        .decode(ParseHookTriggerObjectRequest<User, GameScore>.self)",
+    "    ",
+    "    \/\/ Get the object being saved",
+    "    guard let object = parseRequest.object else {",
+    "        return ParseHookResponse(error: .init(code: .missingObjectId,",
+    "                                              message: \"Object not sent in request.\"))",
+    "    }",
+    "    ",
+    "    \/\/ Return the object to allow save",
+    "    return ParseHookResponse(success: object)",
+    "}"
+  ],
+  "fileName" : "trigger-beforesave-02.swift",
+  "fileType" : "swift",
+  "highlights" : [
+
+  ],
+  "identifier" : "trigger-beforesave-02.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"trigger-bool-return-types.swift": {
+  "content" : [
+    "\/\/ Bool return type - indicates success (true) or failure (false)",
+    "",
+    "\/\/ afterLogin trigger",
+    "app.post(\"user\", \"login\", \"after\", object: User.self, trigger: .afterLogin) {",
+    "    req async throws -> ParseHookResponse<Bool> in",
+    "    return ParseHookResponse(success: true)",
     "}",
     "",
-    "\/\/ Initialize the Parse-Swift SDK",
-    "ParseSwift.initialize(",
-    "    applicationId: \"applicationId\",",
-    "    clientKey: \"clientKey\",",
-    "    primaryKey: \"primaryKey\",",
-    "    serverURL: parseServerURL,",
-    "    usingPostForQuery: true",
-    ")"
+    "\/\/ afterSave trigger",
+    "app.post(\"score\", \"save\", \"after\", object: GameScore.self, trigger: .afterSave) {",
+    "    req async throws -> ParseHookResponse<Bool> in",
+    "    return ParseHookResponse(success: true)",
+    "}",
+    "",
+    "\/\/ afterDelete trigger",
+    "app.post(\"score\", \"delete\", \"after\", object: GameScore.self, trigger: .afterDelete) {",
+    "    req async throws -> ParseHookResponse<Bool> in",
+    "    return ParseHookResponse(success: true)",
+    "}",
+    "",
+    "\/\/ beforeConnect LiveQuery trigger",
+    "app.post(\"connect\", \"before\", object: .liveQueryConnect, trigger: .beforeConnect) {",
+    "    req async throws -> ParseHookResponse<Bool> in",
+    "    return ParseHookResponse(success: true)",
+    "}",
+    "",
+    "\/\/ beforeSubscribe LiveQuery trigger",
+    "app.post(\"score\", \"subscribe\", \"before\", object: GameScore.self, trigger: .beforeSubscribe) {",
+    "    req async throws -> ParseHookResponse<Bool> in",
+    "    return ParseHookResponse(success: true)",
+    "}",
+    "",
+    "\/\/ afterEvent LiveQuery trigger",
+    "app.post(\"score\", \"event\", \"after\", object: GameScore.self, trigger: .afterEvent) {",
+    "    req async throws -> ParseHookResponse<Bool> in",
+    "    return ParseHookResponse(success: true)",
+    "}"
   ],
-  "fileName" : "sdk-manual-config.swift",
+  "fileName" : "trigger-bool-return-types.swift",
   "fileType" : "swift",
   "highlights" : [
 
   ],
-  "identifier" : "sdk-manual-config.swift",
+  "identifier" : "trigger-bool-return-types.swift",
   "syntax" : "swift",
   "type" : "file"
 },
-"start-docker.sh": {
+"trigger-check-duplicate.swift": {
   "content" : [
-    "docker-compose up"
+    "\/\/ Check if a score with these points already exists",
+    "let existingScores = try await GameScore.query",
+    "    .where(\"points\" == object.points)",
+    "    .findAll(options: [.usePrimaryKey])",
+    "",
+    "if !existingScores.isEmpty {",
+    "    let error = ParseError(code: .duplicateValue,",
+    "                           message: \"A score with these points already exists\")",
+    "    return ParseHookResponse<GameScore>(error: error)",
+    "}"
   ],
-  "fileName" : "start-docker.sh",
-  "fileType" : "sh",
+  "fileName" : "trigger-check-duplicate.swift",
+  "fileType" : "swift",
   "highlights" : [
 
   ],
-  "identifier" : "start-docker.sh",
-  "syntax" : "sh",
+  "identifier" : "trigger-check-duplicate.swift",
+  "syntax" : "swift",
   "type" : "file"
 },
-"start-server.sh": {
+"trigger-check-headers.swift": {
   "content" : [
-    "swift run"
+    "if let error: ParseHookResponse<YourType> = checkHeaders(req) {",
+    "    return error",
+    "}"
   ],
-  "fileName" : "start-server.sh",
-  "fileType" : "sh",
+  "fileName" : "trigger-check-headers.swift",
+  "fileType" : "swift",
   "highlights" : [
 
   ],
-  "identifier" : "start-server.sh",
-  "syntax" : "sh",
+  "identifier" : "trigger-check-headers.swift",
+  "syntax" : "swift",
   "type" : "file"
 },
-"startup-logs.txt": {
+"trigger-file-beforedelete.swift": {
   "content" : [
-    "[ INFO ] Parse Server (http:\/\/parse:1337\/parse) health is \"ok\"",
-    "[ NOTICE ] Server starting on http:\/\/cloud-code:8080"
+    "app.post(",
+    "    \"file\",",
+    "    \"delete\",",
+    "    \"before\",",
+    "    object: .file,",
+    "    trigger: .beforeDelete",
+    ") { req async throws -> ParseHookResponse<Bool> in",
+    "    if let error: ParseHookResponse<Bool> = checkHeaders(req) {",
+    "        return error",
+    "    }",
+    "    ",
+    "    let parseRequest = try req.content",
+    "        .decode(ParseHookTriggerRequest<User>.self)",
+    "    ",
+    "    req.logger.info(\"A ParseFile is being deleted: \\(parseRequest)\")",
+    "    return ParseHookResponse(success: true)",
+    "}"
   ],
-  "fileName" : "startup-logs.txt",
-  "fileType" : "txt",
+  "fileName" : "trigger-file-beforedelete.swift",
+  "fileType" : "swift",
   "highlights" : [
 
   ],
-  "identifier" : "startup-logs.txt",
-  "syntax" : "txt",
+  "identifier" : "trigger-file-beforedelete.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"trigger-file-beforesave.swift": {
+  "content" : [
+    "app.on(",
+    "    \"file\",",
+    "    \"save\",",
+    "    \"before\",",
+    "    object: .file,",
+    "    trigger: .beforeSave",
+    ") { req async throws -> ParseHookResponse<Bool> in",
+    "    if let error: ParseHookResponse<Bool> = checkHeaders(req) {",
+    "        return error",
+    "    }",
+    "    ",
+    "    let parseRequest = try req.content",
+    "        .decode(ParseHookTriggerRequest<User>.self)",
+    "    ",
+    "    req.logger.info(\"A ParseFile is being saved: \\(parseRequest)\")",
+    "    ",
+    "    \/\/ Return true to allow save, false to reject",
+    "    return ParseHookResponse(success: true)",
+    "}"
+  ],
+  "fileName" : "trigger-file-beforesave.swift",
+  "fileType" : "swift",
+  "highlights" : [
+
+  ],
+  "identifier" : "trigger-file-beforesave.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"trigger-file-request-type.swift": {
+  "content" : [
+    "\/\/ File triggers use ParseHookTriggerRequest<User> instead of ParseHookTriggerObjectRequest",
+    "app.on(",
+    "    \"file\",",
+    "    \"save\",",
+    "    \"before\",",
+    "    object: .file,",
+    "    trigger: .beforeSave",
+    ") { req async throws -> ParseHookResponse<Bool> in",
+    "    if let error: ParseHookResponse<Bool> = checkHeaders(req) {",
+    "        return error",
+    "    }",
+    "    ",
+    "    \/\/ Decode ParseHookTriggerRequest instead of ParseHookTriggerObjectRequest",
+    "    let parseRequest = try req.content",
+    "        .decode(ParseHookTriggerRequest<User>.self)",
+    "    ",
+    "    \/\/ Access user information if available",
+    "    if let user = parseRequest.user {",
+    "        req.logger.info(\"File uploaded by user: \\(user.objectId ?? \"unknown\")\")",
+    "    }",
+    "    ",
+    "    req.logger.info(\"A ParseFile is being saved: \\(parseRequest)\")",
+    "    return ParseHookResponse(success: true)",
+    "}"
+  ],
+  "fileName" : "trigger-file-request-type.swift",
+  "fileType" : "swift",
+  "highlights" : [
+
+  ],
+  "identifier" : "trigger-file-request-type.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"trigger-handle-errors.swift": {
+  "content" : [
+    "guard let object = parseRequest.object else {",
+    "    return ParseHookResponse(error: .init(code: .missingObjectId,",
+    "                                          message: \"Object not sent in request.\"))",
+    "}"
+  ],
+  "fileName" : "trigger-handle-errors.swift",
+  "fileType" : "swift",
+  "highlights" : [
+
+  ],
+  "identifier" : "trigger-handle-errors.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"trigger-hydrate-user.swift": {
+  "content" : [
+    "\/\/ Hydrate user if present",
+    "if parseRequest.user != nil {",
+    "    parseRequest = try await parseRequest.hydrateUser(request: req)",
+    "}",
+    "",
+    "\/\/ Log user information",
+    "if let user = parseRequest.user {",
+    "    req.logger.info(\"User \\(user.objectId ?? \"unknown\") is saving a score\")",
+    "}"
+  ],
+  "fileName" : "trigger-hydrate-user.swift",
+  "fileType" : "swift",
+  "highlights" : [
+
+  ],
+  "identifier" : "trigger-hydrate-user.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"trigger-livequery-afterevent.swift": {
+  "content" : [
+    "app.post(",
+    "    \"score\",",
+    "    \"event\",",
+    "    \"after\",",
+    "    object: GameScore.self,",
+    "    trigger: .afterEvent",
+    ") { req async throws -> ParseHookResponse<Bool> in",
+    "    if let error: ParseHookResponse<Bool> = checkHeaders(req) {",
+    "        return error",
+    "    }",
+    "    ",
+    "    let parseRequest = try req.content",
+    "        .decode(ParseHookTriggerObjectRequest<User, GameScore>.self)",
+    "    ",
+    "    req.logger.info(\"A LiveQuery event occurred: \\(parseRequest)\")",
+    "    return ParseHookResponse(success: true)",
+    "}"
+  ],
+  "fileName" : "trigger-livequery-afterevent.swift",
+  "fileType" : "swift",
+  "highlights" : [
+
+  ],
+  "identifier" : "trigger-livequery-afterevent.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"trigger-livequery-beforeconnect.swift": {
+  "content" : [
+    "app.post(",
+    "    \"connect\",",
+    "    \"before\",",
+    "    object: .liveQueryConnect,",
+    "    trigger: .beforeConnect",
+    ") { req async throws -> ParseHookResponse<Bool> in",
+    "    if let error: ParseHookResponse<Bool> = checkHeaders(req) {",
+    "        return error",
+    "    }",
+    "    ",
+    "    let parseRequest = try req.content",
+    "        .decode(ParseHookTriggerRequest<User>.self)",
+    "    ",
+    "    req.logger.info(\"A LiveQuery connection is being made: \\(parseRequest)\")",
+    "    ",
+    "    \/\/ Return true to allow connection",
+    "    return ParseHookResponse(success: true)",
+    "}"
+  ],
+  "fileName" : "trigger-livequery-beforeconnect.swift",
+  "fileType" : "swift",
+  "highlights" : [
+
+  ],
+  "identifier" : "trigger-livequery-beforeconnect.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"trigger-livequery-beforesubscribe.swift": {
+  "content" : [
+    "app.post(",
+    "    \"score\",",
+    "    \"subscribe\",",
+    "    \"before\",",
+    "    object: GameScore.self,",
+    "    trigger: .beforeSubscribe",
+    ") { req async throws -> ParseHookResponse<Bool> in",
+    "    if let error: ParseHookResponse<Bool> = checkHeaders(req) {",
+    "        return error",
+    "    }",
+    "    ",
+    "    let parseRequest = try req.content",
+    "        .decode(ParseHookTriggerObjectRequest<User, GameScore>.self)",
+    "    ",
+    "    req.logger.info(\"A LiveQuery subscription is being made: \\(parseRequest)\")",
+    "    return ParseHookResponse(success: true)",
+    "}"
+  ],
+  "fileName" : "trigger-livequery-beforesubscribe.swift",
+  "fileType" : "swift",
+  "highlights" : [
+
+  ],
+  "identifier" : "trigger-livequery-beforesubscribe.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"trigger-modify-object.swift": {
+  "content" : [
+    "guard let object = parseRequest.object else { return }",
+    "",
+    "\/\/ Add a timestamp or modify data",
+    "\/\/ Note: Only modify if you have a mutable copy",
+    "",
+    "req.logger.info(\"Before save is being made: \\(object)\")",
+    "return ParseHookResponse(success: object)"
+  ],
+  "fileName" : "trigger-modify-object.swift",
+  "fileType" : "swift",
+  "highlights" : [
+
+  ],
+  "identifier" : "trigger-modify-object.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"trigger-performance-tips.swift": {
+  "content" : [
+    "\/\/ Fast trigger - quick validation",
+    "app.post(\"score\", \"save\", \"before\", object: GameScore.self, trigger: .beforeSave) {",
+    "    req async throws -> ParseHookResponse<GameScore> in",
+    "    if let error: ParseHookResponse<GameScore> = checkHeaders(req) {",
+    "        return error",
+    "    }",
+    "    let parseRequest = try req.content",
+    "        .decode(ParseHookTriggerObjectRequest<User, GameScore>.self)",
+    "    ",
+    "    guard let object = parseRequest.object else {",
+    "        return ParseHookResponse(error: .init(code: .missingObjectId,",
+    "                                              message: \"Object not sent\"))",
+    "    }",
+    "    ",
+    "    \/\/ Quick validation - runs synchronously",
+    "    guard let points = object.points, points >= 0 else {",
+    "        return ParseHookResponse(error: .init(code: .validationError,",
+    "                                              message: \"Invalid points\"))",
+    "    }",
+    "    ",
+    "    return ParseHookResponse(success: object)",
+    "}",
+    "",
+    "\/\/ For long-running tasks, return success quickly",
+    "app.post(\"score\", \"save\", \"after\", object: GameScore.self, trigger: .afterSave) {",
+    "    req async throws -> ParseHookResponse<Bool> in",
+    "    if let error: ParseHookResponse<Bool> = checkHeaders(req) {",
+    "        return error",
+    "    }",
+    "    ",
+    "    \/\/ Return success immediately",
+    "    Task {",
+    "        \/\/ Long-running background task",
+    "        try? await performSlowAnalytics()",
+    "    }",
+    "    ",
+    "    return ParseHookResponse(success: true)",
+    "}"
+  ],
+  "fileName" : "trigger-performance-tips.swift",
+  "fileType" : "swift",
+  "highlights" : [
+
+  ],
+  "identifier" : "trigger-performance-tips.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"trigger-query-primary.swift": {
+  "content" : [
+    "\/\/ Query using primary key",
+    "let scores = try await GameScore.query.findAll(options: [.usePrimaryKey])",
+    "req.logger.info(\"All scores (bypassing ACLs): \\(scores)\")"
+  ],
+  "fileName" : "trigger-query-primary.swift",
+  "fileType" : "swift",
+  "highlights" : [
+
+  ],
+  "identifier" : "trigger-query-primary.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"trigger-return-custom.swift": {
+  "content" : [
+    "\/\/ Create custom scores to return",
+    "let score1 = GameScore(objectId: \"yolo\",",
+    "                       createdAt: Date(),",
+    "                       points: 50)",
+    "let score2 = GameScore(objectId: \"nolo\",",
+    "                       createdAt: Date(),",
+    "                       points: 60)",
+    "",
+    "req.logger.info(\"\"\"",
+    "    Returning custom objects from Cloud Code instead of querying:",
+    "    \\(score1); \\(score2)",
+    "\"\"\")",
+    "",
+    "return ParseHookResponse(success: [score1, score2])"
+  ],
+  "fileName" : "trigger-return-custom.swift",
+  "fileType" : "swift",
+  "highlights" : [
+
+  ],
+  "identifier" : "trigger-return-custom.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"trigger-types-overview.swift": {
+  "content" : [
+    "\/\/ afterSave trigger - runs after an object is saved",
+    "app.post(\"score\", \"save\", \"after\", object: GameScore.self, trigger: .afterSave) {",
+    "    req async throws -> ParseHookResponse<Bool> in",
+    "    \/\/ Log or perform post-save actions",
+    "    return ParseHookResponse(success: true)",
+    "}",
+    "",
+    "\/\/ beforeDelete trigger - runs before an object is deleted",
+    "app.post(\"score\", \"delete\", \"before\", object: GameScore.self, trigger: .beforeDelete) {",
+    "    req async throws -> ParseHookResponse<Bool> in",
+    "    \/\/ Validate deletion is allowed",
+    "    return ParseHookResponse(success: true)",
+    "}",
+    "",
+    "\/\/ afterDelete trigger - runs after an object is deleted",
+    "app.post(\"score\", \"delete\", \"after\", object: GameScore.self, trigger: .afterDelete) {",
+    "    req async throws -> ParseHookResponse<Bool> in",
+    "    \/\/ Clean up related data",
+    "    return ParseHookResponse(success: true)",
+    "}",
+    "",
+    "\/\/ beforeFind trigger - can modify queries before execution",
+    "app.post(\"score\", \"find\", \"before\", object: GameScore.self, trigger: .beforeFind) {",
+    "    req async throws -> ParseHookResponse<[GameScore]> in",
+    "    \/\/ Modify query or return custom results",
+    "    return ParseHookResponse(success: [])",
+    "}",
+    "",
+    "\/\/ afterFind trigger - can modify results after execution",
+    "app.post(\"score\", \"find\", \"after\", object: GameScore.self, trigger: .afterFind) {",
+    "    req async throws -> ParseHookResponse<[GameScore]> in",
+    "    \/\/ Transform results before sending to client",
+    "    return ParseHookResponse(success: [])",
+    "}"
+  ],
+  "fileName" : "trigger-types-overview.swift",
+  "fileType" : "swift",
+  "highlights" : [
+
+  ],
+  "identifier" : "trigger-types-overview.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"trigger-use-logging.swift": {
+  "content" : [
+    "req.logger.info(\"Trigger executed: \\(parseRequest)\")"
+  ],
+  "fileName" : "trigger-use-logging.swift",
+  "fileType" : "swift",
+  "highlights" : [
+
+  ],
+  "identifier" : "trigger-use-logging.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"trigger-validate-object.swift": {
+  "content" : [
+    "guard let object = parseRequest.object else {",
+    "    return ParseHookResponse(error: .init(code: .missingObjectId,",
+    "                                          message: \"Object not sent in request.\"))",
+    "}",
+    "",
+    "\/\/ Validate points are within acceptable range",
+    "if let points = object.points, points < 0 {",
+    "    let error = ParseError(code: .validationError,",
+    "                           message: \"Points cannot be negative\")",
+    "    return ParseHookResponse<GameScore>(error: error)",
+    "}",
+    "",
+    "\/\/ Allow the save",
+    "return ParseHookResponse(success: object)"
+  ],
+  "fileName" : "trigger-validate-object.swift",
+  "fileType" : "swift",
+  "highlights" : [
+
+  ],
+  "identifier" : "trigger-validate-object.swift",
+  "syntax" : "swift",
   "type" : "file"
 }
 }

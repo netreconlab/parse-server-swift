@@ -152,21 +152,21 @@
       [
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift",
         "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/$volume",
-        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/Getting-Started"
+        "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/Cloud-Code"
       ]
     ],
     "reference" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift"
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/Configuring-Parse-Server-Swift"
+    "url" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/Cloud-Code-Functions"
   },
   "kind" : "project",
   "metadata" : {
     "category" : "ParseServerSwift",
     "categoryPathComponent" : "ParseServerSwift",
     "role" : "project",
-    "title" : "Configuring Parse Server Swift"
+    "title" : "Cloud Code Functions"
   },
   "schemaVersion" : {
     "major" : 0,
@@ -175,13 +175,13 @@
   },
   "sections" : [
     {
-      "backgroundImage" : "chapter-getting-started.png",
-      "chapter" : "Getting Started",
+      "backgroundImage" : "chapter-server.png",
+      "chapter" : "Cloud Code",
       "content" : [
         {
           "inlineContent" : [
             {
-              "text" : "Learn how to configure ParseServerSwift to connect to your Parse Server and set up your Cloud Code environment.",
+              "text" : "Learn how to create Cloud Code Functions in ParseServerSwift. Functions allow you to run custom server-side logic that can be called from client applications.",
               "type" : "text"
             }
           ],
@@ -190,7 +190,7 @@
         {
           "inlineContent" : [
             {
-              "text" : "ParseServerSwift can be configured using environment variables or programmatically. This tutorial covers both approaches and explains the important configuration options.",
+              "text" : "Cloud Code Functions are custom endpoints that you define on your server which can be called from client applications using the Parse SDK. They are perfect for operations that need to be secure, require server-side logic, or need access to the primary key.",
               "type" : "text"
             }
           ],
@@ -233,23 +233,23 @@
           "type" : "paragraph"
         }
       ],
-      "estimatedTimeInMinutes" : 10,
-      "image" : "chapter-getting-started.png",
+      "estimatedTimeInMinutes" : 15,
+      "image" : "chapter-server.png",
       "kind" : "hero",
-      "title" : "Configuring Parse Server Swift"
+      "title" : "Cloud Code Functions"
     },
     {
       "kind" : "tasks",
       "tasks" : [
         {
-          "anchor" : "Environment-Variables-Configuration",
+          "anchor" : "Creating-a-Simple-Cloud-Function",
           "contentSection" : [
             {
               "content" : [
                 {
                   "inlineContent" : [
                     {
-                      "text" : "The recommended way to configure ParseServerSwift is using environment variables. This approach works well with Docker and keeps sensitive information out of your code.",
+                      "text" : "The most basic Cloud Function returns a simple response. This example demonstrates the fundamental structure of a Cloud Function route.",
                       "type" : "text"
                     }
                   ],
@@ -265,197 +265,17 @@
               "caption" : [
 
               ],
-              "code" : "env-config.txt",
+              "code" : "hello-function-01.swift",
               "content" : [
                 {
                   "inlineContent" : [
                     {
-                      "text" : "Create a ",
+                      "text" : "Create a simple “Hello World” function. All Cloud Functions should check headers for security using ",
                       "type" : "text"
                     },
                     {
-                      "code" : ".env",
+                      "code" : "checkHeaders(req)",
                       "type" : "codeVoice"
-                    },
-                    {
-                      "text" : " file in your project root with the following variables:",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "media" : null,
-              "runtimePreview" : null,
-              "type" : "step"
-            },
-            {
-              "caption" : [
-
-              ],
-              "code" : "env-config-explained.txt",
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "Understanding the environment variables:",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "media" : null,
-              "runtimePreview" : null,
-              "type" : "step"
-            },
-            {
-              "caption" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "The last URL in the list will be used as the main server.",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "code" : "env-multiple-servers.txt",
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "inlineContent" : [
-                        {
-                          "text" : "PARSE_SERVER_SWIFT_URLS",
-                          "type" : "text"
-                        }
-                      ],
-                      "type" : "strong"
-                    },
-                    {
-                      "text" : ": (Required) Your Parse Server URL(s). You can specify multiple servers separated by commas:",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "media" : null,
-              "runtimePreview" : null,
-              "type" : "step"
-            },
-            {
-              "caption" : [
-
-              ],
-              "code" : null,
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "inlineContent" : [
-                        {
-                          "text" : "PARSE_SERVER_SWIFT_APPLICATION_ID",
-                          "type" : "text"
-                        }
-                      ],
-                      "type" : "strong"
-                    },
-                    {
-                      "text" : ": (Required) Your Parse Server’s application ID. ",
-                      "type" : "text"
-                    },
-                    {
-                      "inlineContent" : [
-                        {
-                          "text" : "PARSE_SERVER_SWIFT_PRIMARY_KEY",
-                          "type" : "text"
-                        }
-                      ],
-                      "type" : "strong"
-                    },
-                    {
-                      "text" : ": (Required) Your Parse Server’s master\/primary key. This gives your Cloud Code privileged access. ",
-                      "type" : "text"
-                    },
-                    {
-                      "inlineContent" : [
-                        {
-                          "text" : "PARSE_SERVER_SWIFT_WEBHOOK_KEY",
-                          "type" : "text"
-                        }
-                      ],
-                      "type" : "strong"
-                    },
-                    {
-                      "text" : ": Your Parse Server’s webhook key. This should match the webhookKey configured on your Parse Server for security.",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "media" : null,
-              "runtimePreview" : null,
-              "type" : "step"
-            }
-          ],
-          "title" : "Environment Variables Configuration"
-        },
-        {
-          "anchor" : "WebhookKey-Security",
-          "contentSection" : [
-            {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "The webhookKey is an important security feature that ensures only your Parse Server can call your Cloud Code.",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "kind" : "contentAndMedia",
-              "mediaPosition" : "trailing"
-            }
-          ],
-          "stepsSection" : [
-            {
-              "caption" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "Configure it on your Parse Server:",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "code" : "parse-server-config.js",
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "The ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "webhookKey",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : " in ParseServerSwift must match the ",
-                      "type" : "text"
-                    },
-                    {
-                      "identifier" : "https:\/\/github.com\/parse-community\/parse-server\/blob\/42c954318926823446326c95188b844e19954711\/src\/Options\/Definitions.js#L491-L494",
-                      "isActive" : true,
-                      "type" : "reference"
                     },
                     {
                       "text" : ".",
@@ -471,112 +291,9 @@
             },
             {
               "caption" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "This validates that the request came from your Parse Server.",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "code" : "check-webhook-key.swift",
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "All Cloud Code routes should check this key using the ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "checkHeaders()",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : " function:",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "media" : null,
-              "runtimePreview" : null,
-              "type" : "step"
-            }
-          ],
-          "title" : "WebhookKey Security"
-        },
-        {
-          "anchor" : "Using-parseServerSwiftConfigure",
-          "contentSection" : [
-            {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "The simplest way to initialize ParseServerSwift is using the ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "parseServerSwiftConfigure",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : " function, which reads from environment variables.",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "kind" : "contentAndMedia",
-              "mediaPosition" : "trailing"
-            }
-          ],
-          "stepsSection" : [
-            {
-              "caption" : [
 
               ],
-              "code" : "entrypoint-config.swift",
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "In your ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "entrypoint.swift",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : " file, use ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "parseServerSwiftConfigure",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : " to automatically configure the server:",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "media" : null,
-              "runtimePreview" : null,
-              "type" : "step"
-            },
-            {
-              "caption" : [
-
-              ],
-              "code" : "configure-function-steps.swift",
+              "code" : "response-types-examples.swift",
               "content" : [
                 {
                   "inlineContent" : [
@@ -585,11 +302,19 @@
                       "type" : "text"
                     },
                     {
-                      "code" : "parseServerSwiftConfigure",
+                      "code" : "ParseHookResponse<String>",
                       "type" : "codeVoice"
                     },
                     {
-                      "text" : " function automates the entire setup process:",
+                      "text" : " type indicates this function will return a String on success. The type parameter can be any ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Codable",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " type.",
                       "type" : "text"
                     }
                   ],
@@ -601,17 +326,17 @@
               "type" : "step"
             }
           ],
-          "title" : "Using parseServerSwiftConfigure"
+          "title" : "Creating a Simple Cloud Function"
         },
         {
-          "anchor" : "Programmatic-Configuration",
+          "anchor" : "Working-with-User-Context",
           "contentSection" : [
             {
               "content" : [
                 {
                   "inlineContent" : [
                     {
-                      "text" : "For more control, you can configure ParseServerSwift programmatically without environment variables.",
+                      "text" : "Cloud Functions can access information about the user making the request and perform operations on their behalf.",
                       "type" : "text"
                     }
                   ],
@@ -627,20 +352,12 @@
               "caption" : [
 
               ],
-              "code" : "programmatic-config.swift",
+              "code" : "hello-function-02.swift",
               "content" : [
                 {
                   "inlineContent" : [
                     {
-                      "text" : "Create a ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "configure.swift",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : " file with custom configuration:",
+                      "text" : "When a user calls a Cloud Function, you can access their information and use their credentials for queries.",
                       "type" : "text"
                     }
                   ],
@@ -655,12 +372,20 @@
               "caption" : [
 
               ],
-              "code" : "config-multiple-servers.swift",
+              "code" : "query-with-user-credentials.swift",
               "content" : [
                 {
                   "inlineContent" : [
                     {
-                      "text" : "For multiple Parse Servers, use an array of URLs:",
+                      "text" : "Use the user’s credentials to query data they have access to. The ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "options()",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " method provides the user’s session token.",
                       "type" : "text"
                     }
                   ],
@@ -672,25 +397,297 @@
               "type" : "step"
             }
           ],
-          "title" : "Programmatic Configuration"
+          "title" : "Working with User Context"
         },
         {
-          "anchor" : "Parse-Swift-SDK-Configuration",
+          "anchor" : "Handling-Function-Parameters",
           "contentSection" : [
             {
               "content" : [
                 {
                   "inlineContent" : [
                     {
-                      "text" : "When using ",
+                      "text" : "Cloud Functions can accept custom parameters from client applications. Parameters should be defined as Codable structs.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+
+              ],
+              "code" : "FooParameters.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Define your parameters in a separate file. It’s recommended to place parameters in ",
                       "type" : "text"
                     },
                     {
-                      "code" : "parseServerSwiftConfigure",
+                      "code" : "Models\/Parameters\/",
                       "type" : "codeVoice"
                     },
                     {
-                      "text" : ", the Parse Swift SDK is configured automatically. For custom setups, you need to configure it manually.",
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "access-parameters.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Access the parameters from your function request.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Handling Function Parameters"
+        },
+        {
+          "anchor" : "Requiring-Authentication",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Some Cloud Functions should only be accessible to authenticated users. Learn how to enforce authentication requirements.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+
+              ],
+              "code" : "require-authentication.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Check if a user is present and validate their session.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "validate-session.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Validate the user’s session token by hydrating the user. This ensures their session is still valid.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Requiring Authentication"
+        },
+        {
+          "anchor" : "Querying-with-Primary-Key",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Cloud Functions have access to the primary (master) key, allowing them to bypass ACLs and perform privileged operations.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+
+              ],
+              "code" : "query-primary-key.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Use the primary key to access all data regardless of ACLs.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "get-server-version.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "You can also get server information using Cloud Functions.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Querying with Primary Key"
+        },
+        {
+          "anchor" : "Error-Handling",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Properly handle and return errors to provide clear feedback to client applications.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+
+              ],
+              "code" : "standard-error.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Return standard Parse errors with custom messages.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "custom-error.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Create custom errors with your own error codes.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "convert-errors.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Convert Swift errors to Parse errors for consistency.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Error Handling"
+        },
+        {
+          "anchor" : "Calling-Functions-from-Client-Apps",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Once your Cloud Function is deployed, client applications can call it using the Parse SDK.",
                       "type" : "text"
                     }
                   ],
@@ -707,11 +704,11 @@
                 {
                   "inlineContent" : [
                     {
-                      "text" : "For more SDK configuration options, see the ",
+                      "text" : "For more examples, see the ",
                       "type" : "text"
                     },
                     {
-                      "identifier" : "https:\/\/swiftpackageindex.com\/netreconlab\/Parse-Swift\/documentation\/parseswift\/",
+                      "identifier" : "https:\/\/github.com\/netreconlab\/Parse-Swift\/blob\/main\/ParseSwift.playground\/Pages\/10%20-%20Cloud%20Code.xcplaygroundpage\/Contents.swift",
                       "isActive" : true,
                       "type" : "reference"
                     },
@@ -723,72 +720,12 @@
                   "type" : "paragraph"
                 }
               ],
-              "code" : "sdk-manual-config.swift",
+              "code" : "client-call-function.swift",
               "content" : [
                 {
                   "inlineContent" : [
                     {
-                      "text" : "The Parse Swift SDK configuration is handled by ParseServerSwift, but you can customize it if needed:",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "media" : null,
-              "runtimePreview" : null,
-              "type" : "step"
-            }
-          ],
-          "title" : "Parse Swift SDK Configuration"
-        },
-        {
-          "anchor" : "Starting-the-Server",
-          "contentSection" : [
-            {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "Once configured, you can start your ParseServerSwift server.",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "kind" : "contentAndMedia",
-              "mediaPosition" : "trailing"
-            }
-          ],
-          "stepsSection" : [
-            {
-              "caption" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "Your server will start on the configured hostname and port.",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "code" : "start-server.sh",
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "inlineContent" : [
-                        {
-                          "text" : "On macOS\/Linux",
-                          "type" : "text"
-                        }
-                      ],
-                      "type" : "strong"
-                    },
-                    {
-                      "text" : ": Run from the terminal in your project root:",
+                      "text" : "From iOS\/macOS apps, call your function using Parse Swift SDK.",
                       "type" : "text"
                     }
                   ],
@@ -803,59 +740,12 @@
               "caption" : [
 
               ],
-              "code" : "start-docker.sh",
+              "code" : "client-call-with-params.swift",
               "content" : [
                 {
                   "inlineContent" : [
                     {
-                      "inlineContent" : [
-                        {
-                          "text" : "In Docker",
-                          "type" : "text"
-                        }
-                      ],
-                      "type" : "strong"
-                    },
-                    {
-                      "text" : ": Use docker-compose to start all service. This starts ParseServerSwift along with your Parse Server and database. See the ",
-                      "type" : "text"
-                    },
-                    {
-                      "identifier" : "https:\/\/github.com\/netreconlab\/parse-server-swift\/blob\/main\/docker-compose.yml",
-                      "isActive" : true,
-                      "type" : "reference"
-                    },
-                    {
-                      "text" : " for a complete setup.",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "media" : null,
-              "runtimePreview" : null,
-              "type" : "step"
-            },
-            {
-              "caption" : [
-
-              ],
-              "code" : "startup-logs.txt",
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "inlineContent" : [
-                        {
-                          "text" : "Verify it’s working",
-                          "type" : "text"
-                        }
-                      ],
-                      "type" : "strong"
-                    },
-                    {
-                      "text" : ": Check the logs for successful startup messages:",
+                      "text" : "Pass parameters to your function from the client.",
                       "type" : "text"
                     }
                   ],
@@ -867,90 +757,19 @@
               "type" : "step"
             }
           ],
-          "title" : "Starting the Server"
-        },
-        {
-          "anchor" : "Registering-Cloud-Code-with-Parse-Server",
-          "contentSection" : [
-            {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "ParseServerSwift automatically registers your Cloud Code functions and triggers with Parse Server.",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "kind" : "contentAndMedia",
-              "mediaPosition" : "trailing"
-            }
-          ],
-          "stepsSection" : [
-            {
-              "caption" : [
-
-              ],
-              "code" : null,
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "When your server starts, it registers all routes as webhooks on your Parse Server. You can view them in the Parse Dashboard.",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "media" : null,
-              "runtimePreview" : null,
-              "type" : "step"
-            },
-            {
-              "caption" : [
-
-              ],
-              "code" : null,
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "Navigate to your Parse Dashboard at ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "http:\/\/localhost:1337\/dashboard",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ", go to your app, and click “Webhooks” to see all registered Cloud Code: Cloud Functions appear as function webhooks; Cloud Triggers appear as trigger webhooks. Each webhook will point to your ParseServerSwift server.",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "media" : null,
-              "runtimePreview" : null,
-              "type" : "step"
-            }
-          ],
-          "title" : "Registering Cloud Code with Parse Server"
+          "title" : "Calling Functions from Client Apps"
         }
       ]
     },
     {
       "abstract" : [
         {
-          "text" : "Learn how to create and configure ParseObject models for your ParseServerSwift application.",
+          "text" : "Learn how to create Cloud Code Triggers in ParseServerSwift. Triggers allow you to run custom logic before or after database operations.",
           "type" : "text"
         }
       ],
       "action" : {
-        "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/Adding-ParseObjects",
+        "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/Cloud-Code-Triggers",
         "isActive" : true,
         "overridingTitle" : "Get started",
         "overridingTitleInlineContent" : [
@@ -963,13 +782,13 @@
       },
       "featuredEyebrow" : "Tutorial",
       "kind" : "callToAction",
-      "title" : "Adding ParseObjects"
+      "title" : "Cloud Code Triggers"
     }
   ],
   "variants" : [
     {
       "paths" : [
-        "\/tutorials\/parseserverswift\/configuring-parse-server-swift"
+        "\/tutorials\/parseserverswift\/cloud-code-functions"
       ],
       "traits" : [
         {
@@ -980,9 +799,70 @@
   ]
 , 
 "references": {
-"chapter-getting-started.png": {
-  "alt" : "Foundation building blocks representing ParseObjects as the foundation of data storage",
-  "identifier" : "chapter-getting-started.png",
+"FooParameters.swift": {
+  "content" : [
+    "\/\/",
+    "\/\/  FooParameters.swift",
+    "\/\/  ",
+    "\/\/",
+    "\/\/  Created by Corey E. Baker on 6\/21\/22.",
+    "\/\/",
+    "",
+    "import ParseSwift",
+    "import Vapor",
+    "",
+    "\/**",
+    " Parameters for the Foo Parse Hook Function.",
+    " *\/",
+    "struct FooParameters: ParseHookParametable {}",
+    "",
+    "extension FooParameters: Validatable {",
+    "    static func validations(_ validations: inout Validations) {",
+    "        return",
+    "    }",
+    "}"
+  ],
+  "fileName" : "FooParameters.swift",
+  "fileType" : "swift",
+  "highlights" : [
+
+  ],
+  "identifier" : "FooParameters.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"access-parameters.swift": {
+  "content" : [
+    "app.post(",
+    "    \"hello\",",
+    "    name: \"hello\"",
+    ") { req async throws -> ParseHookResponse<String> in",
+    "    if let error: ParseHookResponse<String> = checkHeaders(req) {",
+    "        return error",
+    "    }",
+    "    var parseRequest = try req.content",
+    "        .decode(ParseHookFunctionRequest<User, FooParameters>.self)",
+    "    ",
+    "    \/\/ Access parameters",
+    "    if let foo = parseRequest.params?.foo {",
+    "        req.logger.info(\"Received foo parameter: \\(foo)\")",
+    "    }",
+    "    ",
+    "    return ParseHookResponse(success: \"Hello world!\")",
+    "}"
+  ],
+  "fileName" : "access-parameters.swift",
+  "fileType" : "swift",
+  "highlights" : [
+
+  ],
+  "identifier" : "access-parameters.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"chapter-server.png": {
+  "alt" : "Server with database schema grid and webhook arrows representing server-side operations",
+  "identifier" : "chapter-server.png",
   "type" : "image",
   "variants" : [
     {
@@ -990,86 +870,85 @@
         "1x",
         "light"
       ],
-      "url" : "\/images\/edu.uky.cs.netreconlab.ParseServerSwift\/chapter-getting-started.png"
+      "url" : "\/images\/edu.uky.cs.netreconlab.ParseServerSwift\/chapter-server.png"
     }
   ]
 },
-"check-webhook-key.swift": {
+"client-call-function.swift": {
   "content" : [
-    "if let error: ParseHookResponse<String> = checkHeaders(req) {",
-    "    return error",
+    "\/\/ Swift client code",
+    "do {",
+    "    let response: String = try await Cloud.runFunction(name: \"hello\")",
+    "    print(\"Response: \\(response)\") \/\/ \"Hello world!\"",
+    "} catch {",
+    "    print(\"Error calling function: \\(error)\")",
     "}"
   ],
-  "fileName" : "check-webhook-key.swift",
+  "fileName" : "client-call-function.swift",
   "fileType" : "swift",
   "highlights" : [
 
   ],
-  "identifier" : "check-webhook-key.swift",
+  "identifier" : "client-call-function.swift",
   "syntax" : "swift",
   "type" : "file"
 },
-"config-multiple-servers.swift": {
+"client-call-with-params.swift": {
   "content" : [
-    "let configuration = try ParseServerConfiguration(",
-    "    app: app,",
-    "    hostName: \"localhost\",",
-    "    port: 8081,",
-    "    applicationId: \"applicationId\",",
-    "    primaryKey: \"primaryKey\",",
-    "    webhookKey: \"webhookKey\",",
-    "    parseServerURLStrings: [",
-    "        \"http:\/\/parse1:1337\/parse\",",
-    "        \"http:\/\/parse2:1337\/parse\"",
-    "    ]",
-    ")"
+    "\/\/ Swift client code with parameters",
+    "struct FooParameters: Codable {",
+    "    var foo: String?",
+    "    var bar: Int?",
+    "}",
+    "",
+    "let params = FooParameters(foo: \"test\", bar: 42)",
+    "let response: String = try await Cloud.runFunction(name: \"hello\", ",
+    "                                                   params: params)"
   ],
-  "fileName" : "config-multiple-servers.swift",
+  "fileName" : "client-call-with-params.swift",
   "fileType" : "swift",
   "highlights" : [
 
   ],
-  "identifier" : "config-multiple-servers.swift",
+  "identifier" : "client-call-with-params.swift",
   "syntax" : "swift",
   "type" : "file"
 },
-"configure-function-steps.swift": {
+"convert-errors.swift": {
   "content" : [
-    "\/\/ The parseServerSwiftConfigure function automates the setup process",
-    "",
-    "\/\/ Step 1: Reads environment variables",
-    "\/\/ - PARSE_SERVER_SWIFT_URLS",
-    "\/\/ - PARSE_SERVER_SWIFT_APPLICATION_ID",
-    "\/\/ - PARSE_SERVER_SWIFT_PRIMARY_KEY",
-    "\/\/ - PARSE_SERVER_SWIFT_WEBHOOK_KEY",
-    "\/\/ - PARSE_SERVER_SWIFT_HOST_NAME (optional)",
-    "\/\/ - PARSE_SERVER_SWIFT_PORT (optional)",
-    "",
-    "\/\/ Step 2: Initializes the Parse Swift SDK",
-    "ParseSwift.initialize(",
-    "    applicationId: \"appId\",",
-    "    clientKey: nil,",
-    "    primaryKey: \"primaryKey\",",
-    "    serverURL: URL(string: \"http:\/\/parse:1337\/parse\")!,",
-    "    usingPostForQuery: true",
-    ")",
-    "",
-    "\/\/ Step 3: Configures the Vapor application",
-    "app.http.server.configuration.hostname = \"cloud-code\"",
-    "app.http.server.configuration.port = 8080",
-    "",
-    "\/\/ Step 4: Registers your routes (passed via the 'using' parameter)",
-    "try exampleRoutes(app)",
-    "",
-    "\/\/ Step 5: Sets up webhook endpoints for Parse Server",
-    "\/\/ All Cloud Code Functions and Triggers are automatically registered"
+    "do {",
+    "    let result = try await somethingThatMightFail()",
+    "    return ParseHookResponse(success: result)",
+    "} catch {",
+    "    guard let parseError = error as? ParseError else {",
+    "        let error = ParseError(code: .otherCause, swift: error)",
+    "        return ParseHookResponse<String>(error: error)",
+    "    }",
+    "    return ParseHookResponse<String>(error: parseError)",
+    "}"
   ],
-  "fileName" : "configure-function-steps.swift",
+  "fileName" : "convert-errors.swift",
   "fileType" : "swift",
   "highlights" : [
 
   ],
-  "identifier" : "configure-function-steps.swift",
+  "identifier" : "convert-errors.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"custom-error.swift": {
+  "content" : [
+    "\/\/ Custom error with unique code",
+    "let customError = ParseError(otherCode: 1001,",
+    "                            message: \"My custom error message\")",
+    "return ParseHookResponse<String>(error: customError)"
+  ],
+  "fileName" : "custom-error.swift",
+  "fileType" : "swift",
+  "highlights" : [
+
+  ],
+  "identifier" : "custom-error.swift",
   "syntax" : "swift",
   "type" : "file"
 },
@@ -1575,134 +1454,93 @@
   "type" : "topic",
   "url" : "\/tutorials\/parseserverswift\/getting-started"
 },
-"entrypoint-config.swift": {
+"get-server-version.swift": {
   "content" : [
-    "import Vapor",
-    "import Dispatch",
-    "import Logging",
-    "import NIOCore",
-    "import NIOPosix",
-    "import ParseServerSwift",
-    "",
-    "@main",
-    "enum Entrypoint {",
-    "    static func main() async throws {",
-    "        var env = try Environment.detect()",
-    "        try LoggingSystem.bootstrap(from: &env)",
-    "",
-    "        let app = try await Application.make(env)",
-    "",
-    "        \/\/ Install NIO as global executor (optional)",
-    "        let executorTakeoverSuccess = NIOSingletons",
-    "            .unsafeTryInstallSingletonPosixEventLoopGroupAsConcurrencyGlobalExecutor()",
-    "        app.logger.debug(",
-    "            \"Tried to install SwiftNIO's EventLoopGroup\",",
-    "            metadata: [\"success\": .stringConvertible(executorTakeoverSuccess)]",
-    "        )",
-    "",
-    "        do {",
-    "            try await parseServerSwiftConfigure(",
-    "                app,",
-    "                using: exampleRoutes",
-    "            )",
-    "            try await app.execute()",
-    "        } catch {",
-    "            app.logger.report(error: error)",
-    "            try? await app.asyncShutdown()",
-    "            throw error",
-    "        }",
-    "        try await app.asyncShutdown()",
-    "    }",
-    "}"
+    "\/\/ Get Parse Server version",
+    "guard let version = try await ParseServer.information().version else {",
+    "    let error = ParseError(code: .otherCause,",
+    "                           message: \"Could not retrieve server information\")",
+    "    return ParseHookResponse<String>(error: error)",
+    "}",
+    "return ParseHookResponse(success: \"\\(version)\")"
   ],
-  "fileName" : "entrypoint-config.swift",
+  "fileName" : "get-server-version.swift",
   "fileType" : "swift",
   "highlights" : [
 
   ],
-  "identifier" : "entrypoint-config.swift",
+  "identifier" : "get-server-version.swift",
   "syntax" : "swift",
   "type" : "file"
 },
-"env-config-explained.txt": {
+"hello-function-01.swift": {
   "content" : [
-    "# Environment Variables for ParseServerSwift",
-    "",
-    "# Server Configuration",
-    "PARSE_SERVER_SWIFT_HOST_NAME=cloud-code          # Hostname for your server",
-    "PARSE_SERVER_SWIFT_PORT=8080                      # Port (default: 8080)",
-    "PARSE_SERVER_SWIFT_DEFAULT_MAX_BODY_SIZE=500kb   # Max body size for uploads",
-    "",
-    "# Parse Server Connection (Required)",
-    "PARSE_SERVER_SWIFT_URLS=http:\/\/parse:1337\/parse",
-    "PARSE_SERVER_SWIFT_APPLICATION_ID=appId",
-    "PARSE_SERVER_SWIFT_PRIMARY_KEY=primaryKey",
-    "PARSE_SERVER_SWIFT_WEBHOOK_KEY=webhookKey"
+    "app.post(",
+    "    \"hello\",",
+    "    name: \"hello\"",
+    ") { req async throws -> ParseHookResponse<String> in",
+    "    \/\/ Check webhook key for security",
+    "    if let error: ParseHookResponse<String> = checkHeaders(req) {",
+    "        return error",
+    "    }",
+    "    ",
+    "    \/\/ Decode the function request",
+    "    var parseRequest = try req.content",
+    "        .decode(ParseHookFunctionRequest<User, FooParameters>.self)",
+    "    ",
+    "    \/\/ Return success response",
+    "    return ParseHookResponse(success: \"Hello world!\")",
+    "}"
   ],
-  "fileName" : "env-config-explained.txt",
-  "fileType" : "txt",
+  "fileName" : "hello-function-01.swift",
+  "fileType" : "swift",
   "highlights" : [
 
   ],
-  "identifier" : "env-config-explained.txt",
-  "syntax" : "txt",
+  "identifier" : "hello-function-01.swift",
+  "syntax" : "swift",
   "type" : "file"
 },
-"env-config.txt": {
+"hello-function-02.swift": {
   "content" : [
-    "PARSE_SERVER_SWIFT_HOST_NAME=cloud-code",
-    "PARSE_SERVER_SWIFT_PORT=8080",
-    "PARSE_SERVER_SWIFT_DEFAULT_MAX_BODY_SIZE=500kb",
-    "PARSE_SERVER_SWIFT_URLS=http:\/\/parse:1337\/parse",
-    "PARSE_SERVER_SWIFT_APPLICATION_ID=appId",
-    "PARSE_SERVER_SWIFT_PRIMARY_KEY=primaryKey",
-    "PARSE_SERVER_SWIFT_WEBHOOK_KEY=webhookKey"
+    "app.post(",
+    "    \"hello\",",
+    "    name: \"hello\"",
+    ") { req async throws -> ParseHookResponse<String> in",
+    "    if let error: ParseHookResponse<String> = checkHeaders(req) {",
+    "        return error",
+    "    }",
+    "    var parseRequest = try req.content",
+    "        .decode(ParseHookFunctionRequest<User, FooParameters>.self)",
+    "    ",
+    "    \/\/ Hydrate the user if present",
+    "    if parseRequest.user != nil {",
+    "        parseRequest = try await parseRequest.hydrateUser(request: req)",
+    "    }",
+    "    ",
+    "    return ParseHookResponse(success: \"Hello world!\")",
+    "}"
   ],
-  "fileName" : "env-config.txt",
-  "fileType" : "txt",
+  "fileName" : "hello-function-02.swift",
+  "fileType" : "swift",
   "highlights" : [
 
   ],
-  "identifier" : "env-config.txt",
-  "syntax" : "txt",
+  "identifier" : "hello-function-02.swift",
+  "syntax" : "swift",
   "type" : "file"
 },
-"env-multiple-servers.txt": {
-  "content" : [
-    "PARSE_SERVER_SWIFT_URLS=http:\/\/parse1:1337\/parse,http:\/\/parse2:1337\/parse"
-  ],
-  "fileName" : "env-multiple-servers.txt",
-  "fileType" : "txt",
-  "highlights" : [
-
-  ],
-  "identifier" : "env-multiple-servers.txt",
-  "syntax" : "txt",
-  "type" : "file"
-},
-"https://github.com/netreconlab/parse-server-swift/blob/main/docker-compose.yml": {
-  "identifier" : "https:\/\/github.com\/netreconlab\/parse-server-swift\/blob\/main\/docker-compose.yml",
-  "title" : "docker-compose.yml example",
+"https://github.com/netreconlab/Parse-Swift/blob/main/ParseSwift.playground/Pages/10%20-%20Cloud%20Code.xcplaygroundpage/Contents.swift": {
+  "identifier" : "https:\/\/github.com\/netreconlab\/Parse-Swift\/blob\/main\/ParseSwift.playground\/Pages\/10%20-%20Cloud%20Code.xcplaygroundpage\/Contents.swift",
+  "title" : "Cloud Code Playground",
   "titleInlineContent" : [
     {
-      "text" : "docker-compose.yml example",
+      "text" : "Cloud Code Playground",
       "type" : "text"
     }
   ],
   "type" : "link",
-  "url" : "https:\/\/github.com\/netreconlab\/parse-server-swift\/blob\/main\/docker-compose.yml"
-},
-"https://github.com/parse-community/parse-server/blob/42c954318926823446326c95188b844e19954711/src/Options/Definitions.js#L491-L494": {
-  "identifier" : "https:\/\/github.com\/parse-community\/parse-server\/blob\/42c954318926823446326c95188b844e19954711\/src\/Options\/Definitions.js#L491-L494",
-  "title" : "webhookKey on your Parse Server",
-  "titleInlineContent" : [
-    {
-      "text" : "webhookKey on your Parse Server",
-      "type" : "text"
-    }
-  ],
-  "type" : "link",
-  "url" : "https:\/\/github.com\/parse-community\/parse-server\/blob\/42c954318926823446326c95188b844e19954711\/src\/Options\/Definitions.js#L491-L494"
+  "url" : "https:\/\/github.com\/netreconlab\/Parse-Swift\/blob\/main\/ParseSwift.playground\/Pages\/10%20-%20Cloud%20Code.xcplaygroundpage\/Contents.swift"
 },
 "https://netreconlab.github.io/Parse-Swift/release/tutorials/parseswift/": {
   "identifier" : "https:\/\/netreconlab.github.io\/Parse-Swift\/release\/tutorials\/parseswift\/",
@@ -1728,18 +1566,6 @@
   "type" : "link",
   "url" : "https:\/\/swiftpackageindex.com\/netreconlab\/Parse-Swift\/documentation"
 },
-"https://swiftpackageindex.com/netreconlab/Parse-Swift/documentation/parseswift/": {
-  "identifier" : "https:\/\/swiftpackageindex.com\/netreconlab\/Parse-Swift\/documentation\/parseswift\/",
-  "title" : "Parse Swift documentation",
-  "titleInlineContent" : [
-    {
-      "text" : "Parse Swift documentation",
-      "type" : "text"
-    }
-  ],
-  "type" : "link",
-  "url" : "https:\/\/swiftpackageindex.com\/netreconlab\/Parse-Swift\/documentation\/parseswift\/"
-},
 "https://swiftpackageindex.com/netreconlab/parse-server-swift/documentation": {
   "identifier" : "https:\/\/swiftpackageindex.com\/netreconlab\/parse-server-swift\/documentation",
   "title" : "Parse-Server-Swift API Documentation",
@@ -1752,122 +1578,144 @@
   "type" : "link",
   "url" : "https:\/\/swiftpackageindex.com\/netreconlab\/parse-server-swift\/documentation"
 },
-"parse-server-config.js": {
+"query-primary-key.swift": {
   "content" : [
-    "\/\/ parse-server configuration",
-    "{",
-    "  appId: 'appId',",
-    "  masterKey: 'primaryKey',",
-    "  webhookKey: 'webhookKey',",
-    "  \/\/ ... other options",
-    "}"
+    "\/\/ Query using the primary key to bypass ACLs",
+    "let allScores = try await GameScore.query.findAll(options: [.usePrimaryKey])",
+    "req.logger.info(\"All scores (bypassing ACLs): \\(allScores)\")"
   ],
-  "fileName" : "parse-server-config.js",
-  "fileType" : "js",
-  "highlights" : [
-
-  ],
-  "identifier" : "parse-server-config.js",
-  "syntax" : "js",
-  "type" : "file"
-},
-"programmatic-config.swift": {
-  "content" : [
-    "import Vapor",
-    "import ParseServerSwift",
-    "",
-    "public func configure(_ app: Application) async throws {",
-    "    \/\/ Initialize ParseServerSwift",
-    "    let configuration = try ParseServerConfiguration(",
-    "        app: app,",
-    "        hostName: \"localhost\",",
-    "        port: 8081,",
-    "        applicationId: \"applicationId\",",
-    "        primaryKey: \"primaryKey\",",
-    "        webhookKey: \"webhookKey\",",
-    "        parseServerURLString: \"http:\/\/localhost:1337\/parse\"",
-    "    )",
-    "    try await ParseServerSwift.initialize(configuration, app: app)",
-    "    ",
-    "    \/\/ Add any additional server configuration here...",
-    "    ",
-    "    \/\/ Register routes",
-    "    try routes(app)",
-    "}"
-  ],
-  "fileName" : "programmatic-config.swift",
+  "fileName" : "query-primary-key.swift",
   "fileType" : "swift",
   "highlights" : [
 
   ],
-  "identifier" : "programmatic-config.swift",
+  "identifier" : "query-primary-key.swift",
   "syntax" : "swift",
   "type" : "file"
 },
-"sdk-manual-config.swift": {
+"query-with-user-credentials.swift": {
   "content" : [
-    "\/\/ This is done automatically by parseServerSwiftConfigure",
-    "guard let parseServerURL = URL(string: \"http:\/\/localhost:1337\/parse\") else {",
-    "    throw ParseError(code: .unknownError,",
-    "                     message: \"Could not make Parse Server URL\")",
+    "\/\/ Get query options with user's credentials",
+    "let options = try parseRequest.options(req)",
+    "",
+    "\/\/ Query using the user's permissions",
+    "let scores = try await GameScore.query.findAll(options: options)",
+    "req.logger.info(\"Scores this user can access: \\(scores)\")"
+  ],
+  "fileName" : "query-with-user-credentials.swift",
+  "fileType" : "swift",
+  "highlights" : [
+
+  ],
+  "identifier" : "query-with-user-credentials.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"require-authentication.swift": {
+  "content" : [
+    "app.post(",
+    "    \"version\",",
+    "    name: \"version\"",
+    ") { req async throws -> ParseHookResponse<String> in",
+    "    if let error: ParseHookResponse<String> = checkHeaders(req) {",
+    "        return error",
+    "    }",
+    "    var parseRequest = try req.content",
+    "        .decode(ParseHookFunctionRequest<User, FooParameters>.self)",
+    "    ",
+    "    \/\/ Require user to be signed in",
+    "    guard parseRequest.user != nil else {",
+    "        let error = ParseError(code: .invalidSessionToken,",
+    "                               message: \"User must be signed in to access server version\")",
+    "        return ParseHookResponse<String>(error: error)",
+    "    }",
+    "    ",
+    "    return ParseHookResponse(success: \"1.0.0\")",
+    "}"
+  ],
+  "fileName" : "require-authentication.swift",
+  "fileType" : "swift",
+  "highlights" : [
+
+  ],
+  "identifier" : "require-authentication.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"response-types-examples.swift": {
+  "content" : [
+    "\/\/ String response",
+    "func stringFunction() -> ParseHookResponse<String> {",
+    "    return ParseHookResponse(success: \"Hello world!\")",
     "}",
     "",
-    "\/\/ Initialize the Parse-Swift SDK",
-    "ParseSwift.initialize(",
-    "    applicationId: \"applicationId\",",
-    "    clientKey: \"clientKey\",",
-    "    primaryKey: \"primaryKey\",",
-    "    serverURL: parseServerURL,",
-    "    usingPostForQuery: true",
-    ")"
+    "\/\/ Int response",
+    "func numberFunction() -> ParseHookResponse<Int> {",
+    "    return ParseHookResponse(success: 42)",
+    "}",
+    "",
+    "\/\/ Bool response",
+    "func boolFunction() -> ParseHookResponse<Bool> {",
+    "    return ParseHookResponse(success: true)",
+    "}",
+    "",
+    "\/\/ ParseObject response",
+    "func objectFunction() -> ParseHookResponse<GameScore> {",
+    "    let score = GameScore(objectId: \"abc123\", createdAt: Date(), points: 100)",
+    "    return ParseHookResponse(success: score)",
+    "}",
+    "",
+    "\/\/ Array response",
+    "func arrayFunction() -> ParseHookResponse<[GameScore]> {",
+    "    let scores = [GameScore(objectId: \"abc123\", createdAt: Date(), points: 100)]",
+    "    return ParseHookResponse(success: scores)",
+    "}"
   ],
-  "fileName" : "sdk-manual-config.swift",
+  "fileName" : "response-types-examples.swift",
   "fileType" : "swift",
   "highlights" : [
 
   ],
-  "identifier" : "sdk-manual-config.swift",
+  "identifier" : "response-types-examples.swift",
   "syntax" : "swift",
   "type" : "file"
 },
-"start-docker.sh": {
+"standard-error.swift": {
   "content" : [
-    "docker-compose up"
+    "\/\/ Standard Parse error",
+    "let error = ParseError(code: .invalidSessionToken,",
+    "                       message: \"User must be signed in\")",
+    "return ParseHookResponse<String>(error: error)"
   ],
-  "fileName" : "start-docker.sh",
-  "fileType" : "sh",
+  "fileName" : "standard-error.swift",
+  "fileType" : "swift",
   "highlights" : [
 
   ],
-  "identifier" : "start-docker.sh",
-  "syntax" : "sh",
+  "identifier" : "standard-error.swift",
+  "syntax" : "swift",
   "type" : "file"
 },
-"start-server.sh": {
+"validate-session.swift": {
   "content" : [
-    "swift run"
+    "do {",
+    "    \/\/ Validate session by hydrating user",
+    "    parseRequest = try await parseRequest.hydrateUser(request: req)",
+    "} catch {",
+    "    guard let parseError = error as? ParseError else {",
+    "        let error = ParseError(code: .otherCause, swift: error)",
+    "        return ParseHookResponse<String>(error: error)",
+    "    }",
+    "    return ParseHookResponse<String>(error: parseError)",
+    "}"
   ],
-  "fileName" : "start-server.sh",
-  "fileType" : "sh",
+  "fileName" : "validate-session.swift",
+  "fileType" : "swift",
   "highlights" : [
 
   ],
-  "identifier" : "start-server.sh",
-  "syntax" : "sh",
-  "type" : "file"
-},
-"startup-logs.txt": {
-  "content" : [
-    "[ INFO ] Parse Server (http:\/\/parse:1337\/parse) health is \"ok\"",
-    "[ NOTICE ] Server starting on http:\/\/cloud-code:8080"
-  ],
-  "fileName" : "startup-logs.txt",
-  "fileType" : "txt",
-  "highlights" : [
-
-  ],
-  "identifier" : "startup-logs.txt",
-  "syntax" : "txt",
+  "identifier" : "validate-session.swift",
+  "syntax" : "swift",
   "type" : "file"
 }
 }

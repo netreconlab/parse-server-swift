@@ -13,7 +13,7 @@
   "metadata" : {
     "category" : "ParseServerSwift",
     "categoryPathComponent" : "ParseServerSwift",
-    "estimatedTime" : "13min",
+    "estimatedTime" : "55min",
     "role" : "overview",
     "title" : "Welcome to ParseServerSwift"
   },
@@ -25,7 +25,7 @@
   "sections" : [
     {
       "action" : {
-        "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/Configuring-Parse-Server-Swift#WebhookKey",
+        "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/Configuring-Parse-Server-Swift",
         "isActive" : true,
         "overridingTitle" : "Get started",
         "overridingTitleInlineContent" : [
@@ -36,9 +36,55 @@
         ],
         "type" : "reference"
       },
+      "backgroundImage" : "parse-logo.png",
       "content" : [
-
+        {
+          "inlineContent" : [
+            {
+              "text" : "Learn how to write Parse Cloud Code in Swift using ParseServerSwift! These tutorials will guide you through configuration, creating models, and implementing Cloud Code Functions and Triggers.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For more information, see the: ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/swiftpackageindex.com\/netreconlab\/parse-server-swift\/documentation",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ", ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/swiftpackageindex.com\/netreconlab\/Parse-Swift\/documentation",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ", and ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/netreconlab.github.io\/Parse-Swift\/release\/tutorials\/parseswift\/",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
       ],
+      "image" : "parse-logo.png",
       "kind" : "hero",
       "title" : "Welcome to ParseServerSwift"
     },
@@ -46,29 +92,40 @@
       "chapters" : [
         {
           "content" : [
-
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Get your ParseServerSwift server up and running.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
           ],
-          "name" : "Configuring Parse Server Swift",
+          "image" : "chapter-getting-started.png",
+          "name" : "Getting Started",
           "tutorials" : [
-            "doc:configuring-parse-server-swift"
+            "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/Configuring-Parse-Server-Swift",
+            "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/Adding-ParseObjects"
           ]
         },
         {
           "content" : [
-
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Learn how to create Cloud Code Functions and Triggers to add server-side logic to your application.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
           ],
-          "name" : "Adding ParseObjects",
-          "tutorials" : [
-            "doc:adding-parseobjects)"
-          ]
-        },
-        {
-          "content" : [
-
-          ],
+          "image" : "chapter-server.png",
           "name" : "Cloud Code",
           "tutorials" : [
-            "doc:cloud-code"
+            "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/Cloud-Code-Functions",
+            "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/Cloud-Code-Triggers"
           ]
         }
       ],
@@ -94,9 +151,40 @@
   ]
 , 
 "references": {
+"chapter-getting-started.png": {
+  "alt" : "Foundation building blocks representing ParseObjects as the foundation of data storage",
+  "identifier" : "chapter-getting-started.png",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/edu.uky.cs.netreconlab.ParseServerSwift\/chapter-getting-started.png"
+    }
+  ]
+},
+"chapter-server.png": {
+  "alt" : "Server with database schema grid and webhook arrows representing server-side operations",
+  "identifier" : "chapter-server.png",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/edu.uky.cs.netreconlab.ParseServerSwift\/chapter-server.png"
+    }
+  ]
+},
 "doc://edu.uky.cs.netreconlab.ParseServerSwift/tutorials/ParseServerSwift": {
   "abstract" : [
-
+    {
+      "text" : "Learn how to write Parse Cloud Code in Swift using ParseServerSwift! These tutorials will guide you through configuration, creating models, and implementing Cloud Code Functions and Triggers.",
+      "type" : "text"
+    }
   ],
   "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift",
   "kind" : "overview",
@@ -105,36 +193,115 @@
   "type" : "topic",
   "url" : "\/tutorials\/parseserverswift"
 },
-"doc://edu.uky.cs.netreconlab.ParseServerSwift/tutorials/ParseServerSwift/Configuring-Parse-Server-Swift#WebhookKey": {
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/tutorials/ParseServerSwift/Adding-ParseObjects": {
   "abstract" : [
     {
-      "text" : "To configure, you should edit ",
+      "text" : "Learn how to create and configure ParseObject models for your ParseServerSwift application.",
       "type" : "text"
-    },
-    {
-      "identifier" : "https:\/\/github.com\/netreconlab\/ParseServerSwift\/blob\/main\/Sources\/ParseServerSwift\/configure.swift",
-      "isActive" : true,
-      "type" : "reference"
     }
   ],
-  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/Configuring-Parse-Server-Swift#WebhookKey",
-  "kind" : "section",
-  "role" : "pseudoSymbol",
-  "title" : "WebhookKey",
-  "type" : "section",
-  "url" : "\/tutorials\/parseserverswift\/configuring-parse-server-swift#WebhookKey"
+  "estimatedTime" : "10min",
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/Adding-ParseObjects",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Adding ParseObjects",
+  "type" : "topic",
+  "url" : "\/tutorials\/parseserverswift\/adding-parseobjects"
 },
-"https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/configure.swift": {
-  "identifier" : "https:\/\/github.com\/netreconlab\/ParseServerSwift\/blob\/main\/Sources\/ParseServerSwift\/configure.swift",
-  "title" : "ParseServerSwift\/Sources\/ParseServerSwift\/configure.swift",
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/tutorials/ParseServerSwift/Cloud-Code-Functions": {
+  "abstract" : [
+    {
+      "text" : "Learn how to create Cloud Code Functions in ParseServerSwift. Functions allow you to run custom server-side logic that can be called from client applications.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "15min",
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/Cloud-Code-Functions",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Cloud Code Functions",
+  "type" : "topic",
+  "url" : "\/tutorials\/parseserverswift\/cloud-code-functions"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/tutorials/ParseServerSwift/Cloud-Code-Triggers": {
+  "abstract" : [
+    {
+      "text" : "Learn how to create Cloud Code Triggers in ParseServerSwift. Triggers allow you to run custom logic before or after database operations.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "20min",
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/Cloud-Code-Triggers",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Cloud Code Triggers",
+  "type" : "topic",
+  "url" : "\/tutorials\/parseserverswift\/cloud-code-triggers"
+},
+"doc://edu.uky.cs.netreconlab.ParseServerSwift/tutorials/ParseServerSwift/Configuring-Parse-Server-Swift": {
+  "abstract" : [
+    {
+      "text" : "Learn how to configure ParseServerSwift to connect to your Parse Server and set up your Cloud Code environment.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "10min",
+  "identifier" : "doc:\/\/edu.uky.cs.netreconlab.ParseServerSwift\/tutorials\/ParseServerSwift\/Configuring-Parse-Server-Swift",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Configuring Parse Server Swift",
+  "type" : "topic",
+  "url" : "\/tutorials\/parseserverswift\/configuring-parse-server-swift"
+},
+"https://netreconlab.github.io/Parse-Swift/release/tutorials/parseswift/": {
+  "identifier" : "https:\/\/netreconlab.github.io\/Parse-Swift\/release\/tutorials\/parseswift\/",
+  "title" : "Parse-Swift tutorials",
   "titleInlineContent" : [
     {
-      "text" : "ParseServerSwift\/Sources\/ParseServerSwift\/configure.swift",
+      "text" : "Parse-Swift tutorials",
       "type" : "text"
     }
   ],
   "type" : "link",
-  "url" : "https:\/\/github.com\/netreconlab\/ParseServerSwift\/blob\/main\/Sources\/ParseServerSwift\/configure.swift"
+  "url" : "https:\/\/netreconlab.github.io\/Parse-Swift\/release\/tutorials\/parseswift\/"
+},
+"https://swiftpackageindex.com/netreconlab/Parse-Swift/documentation": {
+  "identifier" : "https:\/\/swiftpackageindex.com\/netreconlab\/Parse-Swift\/documentation",
+  "title" : "Parse-Swift API documentation",
+  "titleInlineContent" : [
+    {
+      "text" : "Parse-Swift API documentation",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/swiftpackageindex.com\/netreconlab\/Parse-Swift\/documentation"
+},
+"https://swiftpackageindex.com/netreconlab/parse-server-swift/documentation": {
+  "identifier" : "https:\/\/swiftpackageindex.com\/netreconlab\/parse-server-swift\/documentation",
+  "title" : "Parse-Server-Swift API Documentation",
+  "titleInlineContent" : [
+    {
+      "text" : "Parse-Server-Swift API Documentation",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/swiftpackageindex.com\/netreconlab\/parse-server-swift\/documentation"
+},
+"parse-logo.png": {
+  "alt" : "Parse logo",
+  "identifier" : "parse-logo.png",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/edu.uky.cs.netreconlab.ParseServerSwift\/parse-logo.png"
+    }
+  ]
 }
 }
 }
