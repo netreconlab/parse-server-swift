@@ -30,7 +30,7 @@ Setup a Vapor project by following the [directions](https://www.kodeco.com/11555
 Then add `ParseServerSwift` to `dependencies` in your `Package.swift` file:
 
 ```swift
-// swift-tools-version:5.6
+// swift-tools-version:6.0
 import PackageDescription
 
 let package = Package(
@@ -46,9 +46,9 @@ let package = Package(
             .library(name: "YOUR_PROJECT_NAME", targets: ["YOUR_PROJECT_NAME"])
     ],
     dependencies: [
-        .package(url: "https://github.com/netreconlab/ParseServerSwift", .upToNextMajor(from: "0.8.4")),
-        .package(url: "https://github.com/vapor/vapor.git", .upToNextMajor(from: "4.76.2")),
-        .package(url: "https://github.com/netreconlab/Parse-Swift.git", .upToNextMajor(from: "5.7.0"))
+        .package(url: "https://github.com/netreconlab/ParseServerSwift", .upToNextMajor(from: "1.0.2")),
+        .package(url: "https://github.com/vapor/vapor.git", .upToNextMajor(from: "4.121.1")),
+        .package(url: "https://github.com/netreconlab/Parse-Swift.git", .upToNextMajor(from: "6.0.5"))
     ]
     ...
     targets: [

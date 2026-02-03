@@ -1,5 +1,5 @@
 // Package.swift - Create a shared Swift Package for your models
-// swift-tools-version: 5.9
+// swift-tools-version: 6.0
 import PackageDescription
 
 let package = Package(
@@ -17,7 +17,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/netreconlab/Parse-Swift", from: "5.0.0")
+        .package(url: "https://github.com/netreconlab/Parse-Swift", from: "6.0.5")
     ],
     targets: [
         .target(
