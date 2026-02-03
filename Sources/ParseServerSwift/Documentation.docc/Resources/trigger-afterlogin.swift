@@ -10,6 +10,9 @@ app.post(
     }
     
     let parseRequest = try req.content
+		// GameScore is used as dummy generic type here,
+		// essentially any ParseObject can be used
+		// for login related triggers.
         .decode(ParseHookTriggerObjectRequest<User, GameScore>.self)
     
     req.logger.info("A user has logged in: \(parseRequest)")

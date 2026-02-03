@@ -77,7 +77,7 @@ public extension ParseHookFunction {
      - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookFunction`.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create functions on all `parseServerURLStrings`.
+     - note: Will attempt to create functions on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func fetch(_ path: PathComponent...,
@@ -93,7 +93,7 @@ public extension ParseHookFunction {
      - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookFunction`.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create functions on all `parseServerURLStrings`.
+     - note: Will attempt to create functions on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func fetch(_ path: [PathComponent],
@@ -109,7 +109,7 @@ public extension ParseHookFunction {
      - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookFunction`'s.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create functions on all `parseServerURLStrings`.
+     - note: Will attempt to create functions on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func fetchAll(_ path: PathComponent...,
@@ -125,7 +125,7 @@ public extension ParseHookFunction {
      - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookFunction`'s.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create functions on all `parseServerURLStrings`.
+     - note: Will attempt to create functions on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func fetchAll(_ path: [PathComponent],
@@ -160,7 +160,7 @@ public extension ParseHookFunction {
      Defaults to the set of servers added during configuration.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookFunction`.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create functions on all `parseServerURLStrings`.
+     - note: Will attempt to create functions on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func create(_ path: PathComponent...,
@@ -178,7 +178,7 @@ public extension ParseHookFunction {
      Defaults to the set of servers added during configuration.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookFunction`.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create functions on all `parseServerURLStrings`.
+     - note: Will attempt to create functions on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func create(_ path: [PathComponent],
@@ -200,7 +200,7 @@ public extension ParseHookFunction {
      Defaults to the set of servers added during configuration.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookFunction`.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create functions on all `parseServerURLStrings`.
+     - note: Will attempt to create functions on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func update(_ path: PathComponent...,
@@ -218,7 +218,7 @@ public extension ParseHookFunction {
      Defaults to the set of servers added during configuration.
      - returns: A dictionary where the keys are Parse Server `URL`'s and the respective `HookFunction`.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create functions on all `parseServerURLStrings`.
+     - note: Will attempt to create functions on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func update(_ path: [PathComponent],
@@ -239,7 +239,7 @@ public extension ParseHookFunction {
      - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for.
      Defaults to the set of servers added during configuration.
      - throws: An error of `ParseError` type.
-     - note: WIll attempt to create functions on all `parseServerURLStrings`.
+     - note: Will attempt to create functions on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func delete(_ path: PathComponent...,
@@ -256,7 +256,7 @@ public extension ParseHookFunction {
      - parameter parseServerURLStrings: A set of Parse Server `URL`'s to create hook functions for.
      - throws: An error of `ParseError` type.
      Defaults to the set of servers added during configuration.
-     - note: WIll attempt to create functions on all `parseServerURLStrings`.
+     - note: Will attempt to create functions on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func delete(_ path: [PathComponent],
@@ -273,7 +273,7 @@ public extension RoutesBuilder {
      Creates a new route for a Parse Cloud Code hook function.
      - parameter path: A variadic list of paths.
      - parameter name: The name of the function.
-     - parameter closure: A closure that takes as input a HTTP `Request` and returns a `Response`.
+     - parameter closure: A closure that takes as input an HTTP `Request` and returns a `Response`.
      */
     @discardableResult
     func post<Response>(_ path: PathComponent...,
@@ -289,7 +289,7 @@ public extension RoutesBuilder {
      Creates a new route for a Parse Cloud Code hook function.
      - parameter path: An array of paths.
      - parameter name: The name of the function.
-     - parameter closure: A closure that takes as input a HTTP `Request` and returns a `Response`.
+     - parameter closure: A closure that takes as input an HTTP `Request` and returns a `Response`.
      */
     @discardableResult
     func post<Response>(_ path: [PathComponent],
@@ -306,7 +306,7 @@ public extension RoutesBuilder {
      - parameter path: A variadic list of paths.
      - parameter body: Determines how an incoming HTTP request’s body is collected.
      - parameter name: The name of the function.
-     - parameter closure: A closure that takes as input a HTTP `Request` and returns a `Response`.
+     - parameter closure: A closure that takes as input an HTTP `Request` and returns a `Response`.
      */
     @discardableResult
     func on<Response>(_ path: PathComponent...,
@@ -325,7 +325,7 @@ public extension RoutesBuilder {
      - parameter path: An array of paths.
      - parameter body: Determines how an incoming HTTP request’s body is collected.
      - parameter name: The name of the function.
-     - parameter closure: A closure that takes as input a HTTP `Request` and returns a `Response`.
+     - parameter closure: A closure that takes as input an HTTP `Request` and returns a `Response`.
      */
     @discardableResult
     func on<Response>(_ path: [PathComponent],

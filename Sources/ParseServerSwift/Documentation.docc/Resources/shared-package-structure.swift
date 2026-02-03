@@ -17,7 +17,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/netreconlab/Parse-Swift", from: "6.0.5")
+        .package(url: "https://github.com/netreconlab/Parse-Swift", from: "6.0.6")
     ],
     targets: [
         .target(

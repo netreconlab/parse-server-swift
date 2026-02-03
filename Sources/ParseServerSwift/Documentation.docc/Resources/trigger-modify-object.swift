@@ -1,4 +1,4 @@
-var object = parseRequest.object!
+guard let object = parseRequest.object else { return }
 
 // Add a timestamp or modify data
 // Note: Only modify if you have a mutable copy
