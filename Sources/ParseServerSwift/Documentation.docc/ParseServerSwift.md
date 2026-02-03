@@ -17,10 +17,11 @@ Technically, complete apps can be written with `ParseServerSwift`, the only diff
 
 ## Additional Resources
 
-For more information on using Parse Swift SDK:
-- [Parse Swift API Documentation](https://swiftpackageindex.com/netreconlab/Parse-Swift/documentation)
-- [Parse Swift Tutorials](https://netreconlab.github.io/Parse-Swift/release/tutorials/parseswift/)
-- [Parse Swift Playgrounds](https://github.com/netreconlab/Parse-Swift/tree/main/ParseSwift.playground/Pages)
+For more information, see the following:
+- [Parse-Server-Swift Tutorials](https://netreconlab.github.io/parse-server-swift/release/tutorials/parseserverswift/)
+- [Parse-Swift API Documentation](https://swiftpackageindex.com/netreconlab/Parse-Swift/documentation)
+- [Parse-Swift Tutorials](https://netreconlab.github.io/Parse-Swift/release/tutorials/parseswift/)
+- [Parse-Swift Playgrounds](https://github.com/netreconlab/Parse-Swift/tree/main/ParseSwift.playground/Pages)
 
 ## Topics
 

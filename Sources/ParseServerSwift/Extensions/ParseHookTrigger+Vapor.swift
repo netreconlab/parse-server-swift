@@ -825,7 +825,7 @@ public extension ParseHookTrigger {
      - parameter parseServerURLStrings: A set of Parse Server `URL`'s to delete triggers for.
      Defaults to the set of servers added during configuration.
      - throws: An error of `ParseError` type.
-     - note: Will attempt to create triggers on all `parseServerURLStrings`.
+     - note: Will attempt to delete triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func delete<V: ParseObject>(
@@ -850,7 +850,7 @@ public extension ParseHookTrigger {
      - parameter parseServerURLStrings: A set of Parse Server `URL`'s to delete triggers for.
      Defaults to the set of servers added during configuration.
      - throws: An error of `ParseError` type.
-     - note: Will attempt to create triggers on all `parseServerURLStrings`.
+     - note: Will attempt to delete triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func delete(
@@ -875,7 +875,7 @@ public extension ParseHookTrigger {
 	 - parameter parseServerURLStrings: A set of Parse Server `URL`'s to delete triggers for.
 	 Defaults to the set of servers added during configuration.
 	 - throws: An error of `ParseError` type.
-	 - note: Will attempt to create triggers on all `parseServerURLStrings`.
+	 - note: Will attempt to delete triggers on all `parseServerURLStrings`.
 	 Will log an error for each `parseServerURLString` that returns an error.
 	 */
 	static func delete(
@@ -900,7 +900,7 @@ public extension ParseHookTrigger {
      - parameter parseServerURLStrings: A set of Parse Server `URL`'s to delete triggers for.
      Defaults to the set of servers added during configuration.
      - throws: An error of `ParseError` type.
-     - note: Will attempt to create triggers on all `parseServerURLStrings`.
+     - note: Will attempt to delete triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func delete<V: ParseObject>(
@@ -926,7 +926,7 @@ public extension ParseHookTrigger {
      - parameter parseServerURLStrings: A set of Parse Server `URL`'s to delete triggers for.
      Defaults to the set of servers added during configuration.
      - throws: An error of `ParseError` type.
-     - note: Will attempt to create triggers on all `parseServerURLStrings`.
+     - note: Will attempt to delete triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func delete(
@@ -952,7 +952,7 @@ public extension ParseHookTrigger {
      - parameter parseServerURLStrings: A set of Parse Server `URL`'s to delete triggers for.
      Defaults to the set of servers added during configuration.
      - throws: An error of `ParseError` type.
-     - note: Will attempt to create triggers on all `parseServerURLStrings`.
+     - note: Will attempt to delete triggers on all `parseServerURLStrings`.
      Will log an error for each `parseServerURLString` that returns an error.
      */
     static func delete(
