@@ -47,24 +47,7 @@
         
         @Steps {
             @Step {
-                Create a new Swift file `GameScore.swift` in the Models directory:
-                
-                ```swift
-                import Foundation
-                import ParseSwift
-                
-                struct GameScore: ParseObject {
-                    // Required by ParseObject
-                    var objectId: String?
-                    var createdAt: Date?
-                    var updatedAt: Date?
-                    var ACL: ParseACL?
-                    var originalData: Data?
-                
-                    // Your custom properties
-                    var points: Int?
-                }
-                ```
+                Create a new Swift file `GameScore.swift` in the Models directory. This struct conforms to `ParseObject` protocol and includes all required properties.
                 
                 @Code(name: "GameScore.swift", file: GameScore.swift)
             }

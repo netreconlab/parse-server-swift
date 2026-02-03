@@ -105,16 +105,6 @@
             @Step {
                 Define your parameters in a separate file. It's recommended to place parameters in `Models/Parameters/`.
                 
-                ```swift
-                import Foundation
-                import ParseSwift
-                
-                struct FooParameters: Codable {
-                    var foo: String?
-                    var bar: Int?
-                }
-                ```
-                
                 @Code(name: "FooParameters.swift", file: FooParameters.swift)
             }
             
