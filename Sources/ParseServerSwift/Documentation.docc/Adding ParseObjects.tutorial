@@ -122,33 +122,7 @@
                 
                 **Important**: On client apps, always use `ParseUser`, not `ParseCloudUser`.
                 
-                ```swift
-                import Foundation
-                import ParseSwift
-                
-                /**
-                 An example ParseUser for server-side code.
-                 Add custom properties to match your _User class.
-                 */
-                struct User: ParseCloudUser {
-                    // Required by ParseCloudUser
-                    var authData: [String: [String: String]?]?
-                    var username: String?
-                    var email: String?
-                    var emailVerified: Bool?
-                    var password: String?
-                    var objectId: String?
-                    var createdAt: Date?
-                    var updatedAt: Date?
-                    var ACL: ParseACL?
-                    var originalData: Data?
-                    var sessionToken: String?
-                    
-                    // Server-only properties
-                    var _failed_login_count: Int?
-                    var _account_lockout_expires_at: Date?
-                }
-                ```
+                @Code(name: "User.swift", file: User.swift)
             }
             
             @Step {
