@@ -22,7 +22,9 @@
             }
             
             @Step {
-                **PARSE_SERVER_SWIFT_HOST_NAME**: The hostname for your server. When running in Docker, use the service name from docker-compose.yml. **PARSE_SERVER_SWIFT_PORT**: The port your server will listen on. Default is 8080. **PARSE_SERVER_SWIFT_DEFAULT_MAX_BODY_SIZE**: Maximum body size for requests. Useful for file uploads.
+                Understanding the environment variables:
+                
+                @Code(name: "env-config-explained.txt", file: env-config-explained.txt)
             }
             
             @Step {
@@ -76,7 +78,9 @@
             }
             
             @Step {
-                The `parseServerSwiftConfigure` function: 1. Reads environment variables; 2. Initializes the Parse Swift SDK; 3. Configures the server; 4. Registers your routes (passed as the `using` parameter); 5. Sets up webhook endpoints.
+                The `parseServerSwiftConfigure` function automates the entire setup process:
+                
+                @Code(name: "configure-function-steps.swift", file: configure-function-steps.swift)
             }
         }
     }

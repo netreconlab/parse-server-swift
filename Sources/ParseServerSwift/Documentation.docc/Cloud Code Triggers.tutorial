@@ -22,7 +22,9 @@
             }
             
             @Step {
-                **afterSave**, **afterDelete**, **beforeDelete** triggers work similarly for their respective operations. **beforeFind** triggers can modify queries before execution. **afterFind** triggers can modify results after execution. **afterLogin** triggers run after user authentication.
+                Other trigger types work similarly for their respective operations:
+                
+                @Code(name: "trigger-types-overview.swift", file: trigger-types-overview.swift)
             }
         }
     }
@@ -92,7 +94,9 @@
             }
             
             @Step {
-                The `ParseHookResponse<Bool>` return type is standard for triggers that don't need to return data. Return `true` to indicate success or `false` to indicate failure. Triggers that return `Bool`: afterLogin, afterSave, afterDelete, beforeConnect (LiveQuery), beforeSubscribe (LiveQuery), afterEvent (LiveQuery)
+                The `ParseHookResponse<Bool>` return type is standard for triggers that don't need to return data. Return `true` to indicate success or `false` to indicate failure.
+                
+                @Code(name: "trigger-bool-return-types.swift", file: trigger-bool-return-types.swift)
             }
         }
     }
@@ -137,6 +141,8 @@
             
             @Step {
                 File triggers use `ParseHookTriggerRequest<User>` instead of `ParseHookTriggerObjectRequest` since there's no typed object for files. You can still access user information if the operation was performed by an authenticated user.
+                
+                @Code(name: "trigger-file-request-type.swift", file: trigger-file-request-type.swift)
             }
         }
     }
@@ -192,9 +198,9 @@
             }
             
             @Step {
-                **Keep triggers fast**. Triggers run synchronously with database operations, so minimize processing time.
+                **Keep triggers fast**. Triggers run synchronously with database operations, so minimize processing time. For long-running tasks, return success quickly and use background jobs.
                 
-                For long-running tasks, return success quickly and use background jobs.
+                @Code(name: "trigger-performance-tips.swift", file: trigger-performance-tips.swift)
             }
             
             @Step {

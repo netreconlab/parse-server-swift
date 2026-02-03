@@ -16,7 +16,9 @@
         
         @Steps {
             @Step {
-                Every ParseObject must have these required properties: `objectId`: Unique identifier, `createdAt`: Creation timestamp, `updatedAt`: Last update timestamp, `ACL`: Access Control List `originalData`: Raw data from server
+                Every ParseObject must have these required properties:
+                
+                @Code(name: "parseobject-required-properties.swift", file: parseobject-required-properties.swift)
             }
             
             @Step {
@@ -47,6 +49,8 @@
             
             @Step {
                 You can add as many custom properties as you need.
+                
+                @Code(name: "gamescore-many-properties.swift", file: gamescore-many-properties.swift)
             }
         }
     }
@@ -73,6 +77,8 @@
             
             @Step {
                 Be sure to add all additional properties you have in your `_User` class on Parse Server. The server-side model should match your database schema exactly.
+                
+                @Code(name: "user-match-schema.swift", file: user-match-schema.swift)
             }
         }
     }
@@ -140,7 +146,9 @@
         
         @Steps {
             @Step {
-                Create a Swift Package with your shared models: `MySharedModels/`
+                Create a Swift Package with your shared models to use in both client and server:
+                
+                @Code(name: "shared-package-structure.swift", file: shared-package-structure.swift)
                 
                 Learn more in [Apple's WWDC session on server-side Swift](https://developer.apple.com/videos/play/wwdc2022/110360/).
             }
