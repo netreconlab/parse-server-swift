@@ -140,27 +140,13 @@
         
         @Steps {
             @Step {
-                Create a Swift Package with your shared models:
-                
-                ```
-                MySharedModels/
-                  Package.swift
-                  Sources/
-                    MySharedModels/
-                      GameScore.swift
-                      Post.swift
-                      Comment.swift
-                ```
+                Create a Swift Package with your shared models: `MySharedModels/`
                 
                 Learn more in [Apple's WWDC session on server-side Swift](https://developer.apple.com/videos/play/wwdc2022/110360/).
             }
             
             @Step {
-                **Important**: The User model is different:
-                - Server uses `ParseCloudUser` (in ParseServerSwift)
-                - Client uses `ParseUser` (in iOS/macOS apps)
-                
-                Keep separate User models or use conditional compilation:
+                **Important**: The User model is different: Server uses `ParseCloudUser` (in ParseServerSwift); Client uses `ParseUser` (in iOS/macOS apps); Keep separate User models or use conditional compilation.
                 
                 @Code(name: "user-conditional-compilation.swift", file: user-conditional-compilation.swift)
             }

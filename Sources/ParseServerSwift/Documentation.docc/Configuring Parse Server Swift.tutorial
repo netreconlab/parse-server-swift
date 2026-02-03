@@ -22,11 +22,7 @@
             }
             
             @Step {
-                **PARSE_SERVER_SWIFT_HOST_NAME**: The hostname for your server. When running in Docker, use the service name from docker-compose.yml.
-                
-                **PARSE_SERVER_SWIFT_PORT**: The port your server will listen on. Default is 8080.
-                
-                **PARSE_SERVER_SWIFT_DEFAULT_MAX_BODY_SIZE**: Maximum body size for requests. Useful for file uploads.
+                **PARSE_SERVER_SWIFT_HOST_NAME**: The hostname for your server. When running in Docker, use the service name from docker-compose.yml. **PARSE_SERVER_SWIFT_PORT**: The port your server will listen on. Default is 8080. **PARSE_SERVER_SWIFT_DEFAULT_MAX_BODY_SIZE**: Maximum body size for requests. Useful for file uploads.
             }
             
             @Step {
@@ -38,11 +34,7 @@
             }
             
             @Step {
-                **PARSE_SERVER_SWIFT_APPLICATION_ID**: (Required) Your Parse Server's application ID.
-                
-                **PARSE_SERVER_SWIFT_PRIMARY_KEY**: (Required) Your Parse Server's master/primary key. This gives your Cloud Code privileged access.
-                
-                **PARSE_SERVER_SWIFT_WEBHOOK_KEY**: Your Parse Server's webhook key. This should match the webhookKey configured on your Parse Server for security.
+                **PARSE_SERVER_SWIFT_APPLICATION_ID**: (Required) Your Parse Server's application ID. **PARSE_SERVER_SWIFT_PRIMARY_KEY**: (Required) Your Parse Server's master/primary key. This gives your Cloud Code privileged access. **PARSE_SERVER_SWIFT_WEBHOOK_KEY**: Your Parse Server's webhook key. This should match the webhookKey configured on your Parse Server for security.
             }
         }
     }
@@ -140,13 +132,9 @@
             }
             
             @Step {
-                **In Docker**: Use docker-compose to start all services:
+                **In Docker**: Use docker-compose to start all service. This starts ParseServerSwift along with your Parse Server and database. See the [docker-compose.yml example](https://github.com/netreconlab/parse-server-swift/blob/main/docker-compose.yml) for a complete setup.
                 
                 @Code(name: "start-docker.sh", file: start-docker.sh)
-                
-                This starts ParseServerSwift along with your Parse Server and database.
-                
-                See the [docker-compose.yml example](https://github.com/netreconlab/parse-server-swift/blob/main/docker-compose.yml) for a complete setup.
             }
             
             @Step {

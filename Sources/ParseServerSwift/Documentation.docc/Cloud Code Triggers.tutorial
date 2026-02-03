@@ -92,15 +92,7 @@
             }
             
             @Step {
-                The `ParseHookResponse<Bool>` return type is standard for triggers that don't need to return data. Return `true` to indicate success or `false` to indicate failure.
-                
-                Triggers that return `Bool`:
-                - afterLogin
-                - afterSave  
-                - afterDelete
-                - beforeConnect (LiveQuery)
-                - beforeSubscribe (LiveQuery)
-                - afterEvent (LiveQuery)
+                The `ParseHookResponse<Bool>` return type is standard for triggers that don't need to return data. Return `true` to indicate success or `false` to indicate failure. Triggers that return `Bool`: afterLogin, afterSave, afterDelete, beforeConnect (LiveQuery), beforeSubscribe (LiveQuery), afterEvent (LiveQuery)
             }
         }
     }
