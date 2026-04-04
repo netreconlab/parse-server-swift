@@ -6,6 +6,7 @@ import Vapor
  - parameter app: Core type representing a Vapor application.
  - parameter configuration: A `ParseServerConfiguration`. If `nil`, the vapor
  environment variables will be used for configuration.
+ - parameter routes: A closure that takes as input an `Application`.
  */
 public func parseServerSwiftConfigure(
     _ app: Application,

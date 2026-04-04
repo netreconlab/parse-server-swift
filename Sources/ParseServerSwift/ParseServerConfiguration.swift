@@ -89,6 +89,7 @@ public struct ParseServerConfiguration {
      `HTTPBodyStreamStrategy.collect` when `maxSize` is `nil`.
      - parameter applicationId:The application id for your Node.js Parse Server application.
      - parameter primaryKey: The primary key for your Node.js Parse Server application.
+     - parameter maintenanceKey: The maintenance key for your Node.js Parse Server application.
      - parameter webhookKey: The key used to authenticate
      incoming webhook calls from a Parse Server. Defaults to **nil**.
      - parameter parseServerURLString: The Node.js Parse

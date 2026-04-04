@@ -1,0 +1,211 @@
+@Tutorial(time: 20) {
+    @Intro(title: "Cloud Code Triggers") {
+        Learn how to create Cloud Code Triggers in ParseServerSwift. Triggers allow you to run custom logic before or after database operations.
+        
+        Cloud Code Triggers are hooks that execute automatically when specific database operations occur. They are perfect for validation, data transformation, logging, and enforcing business rules.
+        
+		For more information, see the: [Parse-Server-Swift API Documentation](https://swiftpackageindex.com/netreconlab/parse-server-swift/documentation), [Parse-Swift API documentation](https://swiftpackageindex.com/netreconlab/Parse-Swift/documentation), and [Parse-Swift tutorials](https://netreconlab.github.io/Parse-Swift/release/tutorials/parseswift/).
+		
+		@Image(source: chapter-server.png, alt: "Server with database schema grid and webhook arrows representing server-side operations")
+    }
+    
+    @Section(title: "Understanding Trigger Types") {
+        @ContentAndMedia {
+            ParseServerSwift supports various trigger types for different database operations. Each trigger type serves a specific purpose.
+        }
+        
+        @Steps {
+            @Step {
+                **beforeSave** triggers run before an object is saved. Use them for: Validating data, Setting default values, Transforming data before storage, Rejecting invalid saves
+                
+                @Code(name: "trigger-beforesave-01.swift", file: trigger-beforesave-01.swift)
+            }
+            
+            @Step {
+                Other trigger types work similarly for their respective operations:
+                
+                @Code(name: "trigger-types-overview.swift", file: trigger-types-overview.swift)
+            }
+        }
+    }
+    
+    @Section(title: "Creating a beforeSave Trigger") {
+        @ContentAndMedia {
+            The beforeSave trigger is one of the most commonly used triggers. It validates and transforms data before it's saved to the database.
+        }
+        
+        @Steps {
+            @Step {
+                Create a basic beforeSave trigger for GameScore objects.
+                
+                @Code(name: "trigger-beforesave-02.swift", file: trigger-beforesave-02.swift)
+            }
+            
+            @Step {
+                Access user information if the save was triggered by an authenticated user.
+                
+                @Code(name: "trigger-hydrate-user.swift", file: trigger-hydrate-user.swift)
+            }
+            
+            @Step {
+                Validate the object data before allowing the save.
+                
+                @Code(name: "trigger-validate-object.swift", file: trigger-validate-object.swift)
+            }
+            
+            @Step {
+                You can also modify the object before it's saved.
+                
+                @Code(name: "trigger-modify-object.swift", file: trigger-modify-object.swift)
+            }
+        }
+    }
+    
+    @Section(title: "Creating a beforeFind Trigger") {
+        @ContentAndMedia {
+            The beforeFind trigger allows you to modify queries before they're executed or return custom results.
+        }
+        
+        @Steps {
+            @Step {
+                Create a beforeFind trigger that logs query information.
+                
+                @Code(name: "trigger-beforefind-01.swift", file: trigger-beforefind-01.swift)
+            }
+            
+            @Step {
+                Return custom objects instead of executing the query. This is useful for caching or custom logic.
+                
+                @Code(name: "trigger-return-custom.swift", file: trigger-return-custom.swift)
+            }
+        }
+    }
+    
+    @Section(title: "Creating an afterLogin Trigger") {
+        @ContentAndMedia {
+            The afterLogin trigger runs after a user successfully authenticates. Use it for logging, analytics, or post-login setup.
+        }
+        
+        @Steps {
+            @Step {
+                Create an afterLogin trigger to log user logins.
+                
+                @Code(name: "trigger-afterlogin.swift", file: trigger-afterlogin.swift)
+            }
+            
+            @Step {
+                The `ParseHookResponse<Bool>` return type is standard for triggers that don't need to return data. Return `true` to indicate success or `false` to indicate failure.
+                
+                @Code(name: "trigger-bool-return-types.swift", file: trigger-bool-return-types.swift)
+            }
+        }
+    }
+    
+    @Section(title: "Querying with Primary Key in Triggers") {
+        @ContentAndMedia {
+            Triggers have access to the primary key, allowing them to perform privileged operations.
+        }
+        
+        @Steps {
+            @Step {
+                Use the primary key to bypass ACLs and access all data.
+                
+                @Code(name: "trigger-query-primary.swift", file: trigger-query-primary.swift)
+            }
+            
+            @Step {
+                This is useful in beforeSave triggers for validation that requires checking existing data.
+                
+                @Code(name: "trigger-check-duplicate.swift", file: trigger-check-duplicate.swift)
+            }
+        }
+    }
+    
+    @Section(title: "Working with ParseFile Triggers") {
+        @ContentAndMedia {
+            Special triggers exist for ParseFile operations. These use a different syntax since ParseFile is not a ParseObject.
+        }
+        
+        @Steps {
+            @Step {
+                Create a beforeSave trigger for file uploads. Use `app.on()` instead of `app.post()` and specify `object: .file`.
+                
+                @Code(name: "trigger-file-beforesave.swift", file: trigger-file-beforesave.swift)
+            }
+            
+            @Step {
+                Create a beforeDelete trigger for file deletions.
+                
+                @Code(name: "trigger-file-beforedelete.swift", file: trigger-file-beforedelete.swift)
+            }
+            
+            @Step {
+                File triggers use `ParseHookTriggerRequest<User>` instead of `ParseHookTriggerObjectRequest` since there's no typed object for files. You can still access user information if the operation was performed by an authenticated user.
+                
+                @Code(name: "trigger-file-request-type.swift", file: trigger-file-request-type.swift)
+            }
+        }
+    }
+    
+    @Section(title: "Working with LiveQuery Triggers") {
+        @ContentAndMedia {
+            LiveQuery triggers allow you to control and monitor real-time subscriptions.
+        }
+        
+        @Steps {
+            @Step {
+                Create a beforeConnect trigger that runs when clients connect to LiveQuery.
+                
+                @Code(name: "trigger-livequery-beforeconnect.swift", file: trigger-livequery-beforeconnect.swift)
+            }
+            
+            @Step {
+                Create a beforeSubscribe trigger to control subscription attempts.
+                
+                @Code(name: "trigger-livequery-beforesubscribe.swift", file: trigger-livequery-beforesubscribe.swift)
+            }
+            
+            @Step {
+                Create an afterEvent trigger to monitor LiveQuery events.
+                
+                @Code(name: "trigger-livequery-afterevent.swift", file: trigger-livequery-afterevent.swift)
+            }
+        }
+    }
+    
+    @Section(title: "Best Practices") {
+        @ContentAndMedia {
+            Follow these best practices when working with triggers.
+        }
+        
+        @Steps {
+            @Step {
+                **Always check headers** for security. The `checkHeaders()` function validates the webhook key.
+                
+                @Code(name: "trigger-check-headers.swift", file: trigger-check-headers.swift)
+            }
+            
+            @Step {
+                **Handle errors gracefully**. Return proper error responses instead of throwing exceptions.
+                
+                @Code(name: "trigger-handle-errors.swift", file: trigger-handle-errors.swift)
+            }
+            
+            @Step {
+                **Use logging** to track trigger execution. This helps with debugging.
+                
+                @Code(name: "trigger-use-logging.swift", file: trigger-use-logging.swift)
+            }
+            
+            @Step {
+                **Keep triggers fast**. Triggers run synchronously with database operations, so minimize processing time. For long-running tasks, return success quickly and use background jobs.
+                
+                @Code(name: "trigger-performance-tips.swift", file: trigger-performance-tips.swift)
+            }
+            
+            @Step {
+                **Test thoroughly**. Triggers affect all database operations, so ensure they work correctly to avoid blocking legitimate operations.
+            }
+        }
+    }
+}

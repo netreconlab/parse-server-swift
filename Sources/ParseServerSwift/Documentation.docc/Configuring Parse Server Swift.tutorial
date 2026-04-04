@@ -1,58 +1,168 @@
-@Tutorial(time: 5) {
-    @Intro(title: "Configuring Parse Swift Server") {
-        To configure, you should edit [ParseServerSwift/Sources/ParseServerSwift/configure.swift](https://github.com/netreconlab/ParseServerSwift/blob/main/Sources/ParseServerSwift/configure.swift)
+@Tutorial(time: 10) {
+    @Intro(title: "Configuring Parse Server Swift") {
+        Learn how to configure ParseServerSwift to connect to your Parse Server and set up your Cloud Code environment.
+        
+        ParseServerSwift can be configured using environment variables or programmatically. This tutorial covers both approaches and explains the important configuration options.
+        
+		For more information, see the: [Parse-Server-Swift API Documentation](https://swiftpackageindex.com/netreconlab/parse-server-swift/documentation), [Parse-Swift API documentation](https://swiftpackageindex.com/netreconlab/Parse-Swift/documentation), and [Parse-Swift tutorials](https://netreconlab.github.io/Parse-Swift/release/tutorials/parseswift/).
+		
+		@Image(source: chapter-getting-started.png, alt: "Foundation building blocks representing ParseObjects as the foundation of data storage")
     }
     
-    @Section(title: "WebhookKey") {
+    @Section(title: "Environment Variables Configuration") {
+        @ContentAndMedia {
+            The recommended way to configure ParseServerSwift is using environment variables. This approach works well with Docker and keeps sensitive information out of your code.
+        }
+        
         @Steps {
             @Step {
-                The `webhookKey` should match the [webhookKey on the Parse Server](https://github.com/parse-community/parse-server/blob/42c954318926823446326c95188b844e19954711/src/Options/Definitions.js#L491-L494). If you decide not the a `webhookKey`, set the value to `nil` in your ParseServerSwift.
+                Create a `.env` file in your project root with the following variables:
+                
+                @Code(name: "env-config.txt", file: env-config.txt)
+            }
+            
+            @Step {
+                Understanding the environment variables:
+                
+                @Code(name: "env-config-explained.txt", file: env-config-explained.txt)
+            }
+            
+            @Step {
+                **PARSE_SERVER_SWIFT_URLS**: (Required) Your Parse Server URL(s). You can specify multiple servers separated by commas:
+                
+                @Code(name: "env-multiple-servers.txt", file: env-multiple-servers.txt)
+                
+                The last URL in the list will be used as the main server.
+            }
+            
+            @Step {
+                **PARSE_SERVER_SWIFT_APPLICATION_ID**: (Required) Your Parse Server's application ID. **PARSE_SERVER_SWIFT_PRIMARY_KEY**: (Required) Your Parse Server's master/primary key. This gives your Cloud Code privileged access. **PARSE_SERVER_SWIFT_WEBHOOK_KEY**: Your Parse Server's webhook key. This should match the webhookKey configured on your Parse Server for security.
             }
         }
     }
-
-    @Section(title: "Hostname, Port, and TLS") {
+    
+    @Section(title: "WebhookKey Security") {
+        @ContentAndMedia {
+            The webhookKey is an important security feature that ensures only your Parse Server can call your Cloud Code.
+        }
+        
         @Steps {
             @Step {
-                By default, the hostname is `127.0.0.1` and the port is `8080`. These values can easily be changed:
-                ```swift
-                app.http.server.configuration.hostname = "your.hostname.com"
-                app.http.server.configuration.port = 8080
-                app.http.server.configuration.tlsConfiguration = .none
-                ```
+                The `webhookKey` in ParseServerSwift must match the [webhookKey on your Parse Server](https://github.com/parse-community/parse-server/blob/42c954318926823446326c95188b844e19954711/src/Options/Definitions.js#L491-L494).
+                
+                Configure it on your Parse Server:
+                
+                @Code(name: "parse-server-config.js", file: parse-server-config.js)
+            }
+            
+            @Step {
+                All Cloud Code routes should check this key using the `checkHeaders()` function:
+                
+                @Code(name: "check-webhook-key.swift", file: check-webhook-key.swift)
+                
+                This validates that the request came from your Parse Server.
             }
         }
     }
-
-    @Section(title: "Parse Swift SDK") {
+    
+    @Section(title: "Using parseServerSwiftConfigure") {
+        @ContentAndMedia {
+            The simplest way to initialize ParseServerSwift is using the `parseServerSwiftConfigure` function, which reads from environment variables.
+        }
+        
         @Steps {
             @Step {
-                Configure the SDK as described in the [documentation](https://parseplatform.org/Parse-Swift/release/documentation/parseswift/).
-                ```swift
-                // Required: Change to your Parse Server serverURL.
-                guard let parseServerURL = URL(string: "http://localhost:1337/1") else {
-                    throw ParseError(code: .unknownError,
-                                     message: "Could not make Parse Server URL")
-                }
-
-                // Initialize the Parse-Swift SDK
-                ParseSwift.initialize(applicationId: "applicationId", // Required: Change to your applicationId.
-                                      clientKey: "clientKey", // Required: Change to your clientKey.
-                                      primaryKey: "primaryKey", // Required: Change to your primaryKey.
-                                      serverURL: parseServerURL,
-                                      usingPostForQuery: true) { _, completionHandler in
-                    completionHandler(.performDefaultHandling, nil)
-                }
-                ```
+                In your `entrypoint.swift` file, use `parseServerSwiftConfigure` to automatically configure the server:
+                
+                @Code(name: "entrypoint-config.swift", file: entrypoint-config.swift)
+            }
+            
+            @Step {
+                The `parseServerSwiftConfigure` function automates the entire setup process:
+                
+                @Code(name: "configure-function-steps.swift", file: configure-function-steps.swift)
             }
         }
     }
-
-    @Section(title: "Starting Parse Swift Server") {
+    
+    @Section(title: "Programmatic Configuration") {
+        @ContentAndMedia {
+            For more control, you can configure ParseServerSwift programmatically without environment variables.
+        }
+        
         @Steps {
             @Step {
-                To start your server type, `swift run` in the terminal of the project root directory.
+                Create a `configure.swift` file with custom configuration:
+                
+                @Code(name: "programmatic-config.swift", file: programmatic-config.swift)
+            }
+            
+            @Step {
+                For multiple Parse Servers, use an array of URLs:
+                
+                @Code(name: "config-multiple-servers.swift", file: config-multiple-servers.swift)
+            }
+        }
+    }
+    
+    @Section(title: "Parse Swift SDK Configuration") {
+        @ContentAndMedia {
+            When using `parseServerSwiftConfigure`, the Parse Swift SDK is configured automatically. For custom setups, you need to configure it manually.
+        }
+        
+        @Steps {
+            @Step {
+                The Parse Swift SDK configuration is handled by ParseServerSwift, but you can customize it if needed:
+                
+                @Code(name: "sdk-manual-config.swift", file: sdk-manual-config.swift)
+                
+                For more SDK configuration options, see the [Parse Swift documentation](https://swiftpackageindex.com/netreconlab/Parse-Swift/documentation/parseswift/).
+            }
+        }
+    }
+    
+    @Section(title: "Starting the Server") {
+        @ContentAndMedia {
+            Once configured, you can start your ParseServerSwift server.
+        }
+        
+        @Steps {
+            @Step {
+                **On macOS/Linux**: Run from the terminal in your project root:
+                
+                @Code(name: "start-server.sh", file: start-server.sh)
+                
+                Your server will start on the configured hostname and port.
+            }
+            
+            @Step {
+                **In Docker**: Use docker-compose to start all service. This starts ParseServerSwift along with your Parse Server and database. See the [docker-compose.yml example](https://github.com/netreconlab/parse-server-swift/blob/main/docker-compose.yml) for a complete setup.
+                
+                @Code(name: "start-docker.sh", file: start-docker.sh)
+            }
+            
+            @Step {
+                **Verify it's working**: Check the logs for successful startup messages:
+                
+                @Code(name: "startup-logs.txt", file: startup-logs.txt)
+            }
+        }
+    }
+    
+    @Section(title: "Registering Cloud Code with Parse Server") {
+        @ContentAndMedia {
+            ParseServerSwift automatically registers your Cloud Code functions and triggers with Parse Server.
+        }
+        
+        @Steps {
+            @Step {
+                When your server starts, it registers all routes as webhooks on your Parse Server. You can view them in the Parse Dashboard.
+            }
+            
+            @Step {
+                Navigate to your Parse Dashboard at `http://localhost:1337/dashboard`, go to your app, and click "Webhooks" to see all registered Cloud Code: Cloud Functions appear as function webhooks; Cloud Triggers appear as trigger webhooks. Each webhook will point to your ParseServerSwift server.
             }
         }
     }
 }
+

@@ -74,7 +74,6 @@ public func buildServerPathname(_ path: [PathComponent]) throws -> URL {
 }
 
 /// Check the Health of all Parse Servers.
-/// - parameter app: Core type representing a Vapor application.
 /// - throws: An error of `ParseError` type.
 public func checkServerHealth() async throws {
     for parseServerURLString in configuration.parseServerURLStrings {
