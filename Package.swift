@@ -19,7 +19,7 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/vapor/vapor.git",
-			.upToNextMajor(from: "4.121.4")
+			.upToNextMajor(from: "4.122.0")
 
         ),
         .package(
