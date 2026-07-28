@@ -18,7 +18,7 @@ jobs:
   spm-test:
     runs-on: macos-26
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
     - name: Install SwiftLint
       run: brew install swiftlint
     - name: Lint
@@ -49,7 +49,7 @@ jobs:
   linux:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: vapor/swiftly-action@v0.2
         with:
           toolchain: 6.2.3
@@ -72,7 +72,7 @@ jobs:
     timeout-minutes: 20
     runs-on: macos-26
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Generate Docs
         run: set -o pipefail && env NSUnbufferedIO=YES Scripts/generate-documentation
         env:
